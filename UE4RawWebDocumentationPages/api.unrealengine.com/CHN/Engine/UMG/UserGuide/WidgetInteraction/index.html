@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/UMG/UserGuide/WidgetInteraction/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:55 GMT -->
+<head>
+    <title>控件交互组件 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/UMG/UserGuide/WidgetInteraction/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/UMG/UserGuide/WidgetInteraction/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/UMG/UserGuide/WidgetInteraction/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/UMG/UserGuide/WidgetInteraction/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3612551" />
+<meta name="availability" content="Public" />
+<meta name="title" content="控件交互组件" />
+<meta name="description" content="说明如何使用控件交互组件和 3D 控件互动。" />
+<meta name="type" content="Overview" />
+<meta name="skilllevel" content="Beginner" />
+<meta name="version" content="4.17" />
+<meta name="parent" content="Engine/UMG/UserGuide" />
+<meta name="related" content="Engine/UMG/UserGuide" />
+<meta name="related" content="Engine/Blueprints" />
+<meta name="related" content="Engine/Components/Widget" />
+<meta name="order" content="10" />
+<meta name="tags" content="UMG UI Designer" />
+<meta name="topic-image" content="WidgetInteractionBanner.png" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="控件交互组件" />
+	<meta property="og:description" content="说明如何使用控件交互组件和 3D 控件互动。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">UMG界面设计器用户指南</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_17"><a id="version_link" href="../../../../SiteIndex/index8ccf.html">Unreal Engine 4.17</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">控件交互组件</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+
+                            <div class="version_tag_filter 4_17"><a id="version_link" href="../../../../SiteIndex/index8ccf.html">Unreal Engine 4.17</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="warning">
+	<p>此功能仍在实验阶段，一些部分可能无法正常工作，在未来更新中也可能被修改。 
+</p>
+</div><div class="banner">
+	<p><img alt="WidgetInteractionBanner.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/UMG/UserGuide/WidgetInteraction/WidgetInteractionBanner.jpg" />
+</p>
+</div><p>如您使用 <a id="content_link" href="../../../Components/Widget/index.html" ><span>控件组件</span></a>
+ 显示以 3D 形式存在于游戏世界中的 UI，还需要玩家与此控件进行交互，可通过 <strong>控件交互（Widget Interaction）</strong> 组件来实现交互。 
+</p><p>控件交互组件执行 <a id="content_link" href="../../../../Gameplay/HowTo/UseRaycasts/index.html" ><span>光线投射</span></a>
+，确定它是否命中世界场景中的控件组件。如命中，可设置规则确定与其交互的方式。交互通过模拟定义的按键来执行。例如一个按钮可通过鼠标左键点击，即可告知其他形式的输入模拟一次鼠标左键点击（控制器按钮按下、运动控制器扳机键按下等）。
+</p><div class="note">
+	<p>如要了解详细范例，请查阅 <a id="content_link" href="../../HowTo/InWorldWidgetInteraction/index.html" ><span>创建 3D 控件交互</span></a>
+ 和 <a id="content_link" href="../../HowTo/VirtualKeyboards/index.html" ><span>创建虚拟键盘交互</span></a>
+。 
+</p>
+</div><a name="addingawidgetinteractioncomponent" ></a><h2 id="添加控件交互组件">添加控件交互组件</h2>
+
+<p>通常需要将控件交互组件添加到玩家 <a id="content_link" href="../../../../Gameplay/Framework/Pawn/index.html" ><span>Pawn</span></a>
+ 或来自 <a id="content_link" href="../../../Blueprints/UserGuide/Components/index.html" ><span>组件窗口</span></a>
+ 的 <a id="content_link" href="../../../../Gameplay/Framework/Pawn/Character/index.html" ><span>角色</span></a>
+ 类。 
+</p><p><img alt="WidgetInteractionComponent.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/UMG/UserGuide/WidgetInteraction/WidgetInteractionComponent.jpg" />
+</p><p>我们将其添加并附加到角色手持的一把枪上，因此枪指向的方向就是控件交互组件的朝向。 
+</p><a name="widgetinteractionpropertyreference" ></a><h2 id="控件交互属性参考">控件交互属性参考</h2>
+
+<p>添加控件交互组件后，可调整 <strong>Details</strong> 面板中的数个属性来定义其功能。除常见的组件属性外（如 <strong>Transform</strong>、<strong>Rendering</strong>，或 <strong>Sockets</strong>），以下属性为控件交互组件专用。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p><strong>交互</strong></p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Virtual User Index</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>代表虚拟用户索引。控件交互组件通过虚拟用户索引产生作用，此索引将单独捕捉并处理聚焦状态。每个虚拟用户应由一个不同的索引所代表，确保它们保持单独的捕捉和聚焦状态。每个控件交互组件上线后，它将告知虚拟用户索引的 Slate 它已被指定、可作为真实 Slate 用户发送时间。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Pointer Index</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>每个用户的模拟虚拟控制器或虚拟指端应使用不同的指针索引。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Interaction Distance</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>组件能够和控件组件形成交互的距离（以游戏单位计）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Interaction Source</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定从何处开始投射并开始追踪（世界场景、鼠标、屏幕中心或自定义）。如将此设为自定义，则需要调用 <code >SetCustomHitResult()</code> 并提供自定义命中测试（在需要的任意位置执行）的结果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Enable Hit Testing</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定交互组件是否应该执行命中测试（自动或自定义）并尝试模拟悬停。如需要模拟键盘而虚拟键盘和虚拟指针设备为分离状态，应将此选项关闭并将另一个交互组件用于指针设备。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p><strong>调试</strong></p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Show Debug</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示调试线和命中球体，以便调试交互。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Debug Color</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定 <strong>Show Debug</strong> 启用时调试线的颜色。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p><strong>事件</strong></p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>On Hovered Widget Changed</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>悬停控件组件改变时调用。Slate 层的交互组件函数 — 因此它无法针对命中结果下的控件进行报告。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="widgetinteractionblueprintnodereference" ></a><h2 id="控件交互蓝图节点参考">控件交互蓝图节点参考</h2>
+
+<p>控件交互组件可模拟不同类型的输入方法（如按下、松开，或按下 + 松开），在蓝图快捷菜单的 <strong>Interaction</strong> 部分可找到这部分内容。还可获得其他信息，如控件交互组件注册的“命中”位置，或世界场景中的控件组件当前是否被悬停。 
+</p><p><img alt="WidgetInteractionBlueprint.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/UMG/UserGuide/WidgetInteraction/WidgetInteractionBlueprint.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>节点 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Get Hovered Widget Component</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>获取当前悬停的控件组件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Get Last Hit Result</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>获取组件生成的上一个命中结果。设置后将返回自定义命中结果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Is Over Focusable Widget</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如命中结果下的控件为可聚焦，则返回 true。为 <code >SupportsKeyboardFocus()</code> 返回 true 的 Slate 控件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Is Over Hit Test Visible Widget</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如命中结果下的控件的可视性设置使命中测试为可见状态，则返回 true。为 <code >GetVisibility().IsHitTestVisible()</code> 返回 true 的 Slate 控件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Is Over Interactable Widget</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如命中结果下的控件为交互式，则返回 true。为 <code >IsInteractble()</code> 返回 true 的 Slate 控件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Press and Release Key</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>按下和松开虚拟键盘键。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Press Key</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>按下虚拟键盘键。不要将此项用于 <code >a-z&#124;A-Z</code>，因为 Slate 中的可编辑文本框之类的资源将在 <strong>OnKeyChar</strong> 被调用后发出通知，说明特定字符正发送到控件。在这些情况下使用 <strong>SendKeyChar</strong> 代替。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Press Pointer Key</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>模拟在鼠标/指针上按下键。多数情况下应用的键是鼠标按键，但也可以使用任意键。支持高级的使用情况，如发送其他键通知控件执行特殊操作。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Release Key</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>松开键盘上已松开的键。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Release Pointer Key</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>模拟在鼠标/指针上松开键，与 Press Pointer Key 相似。多数情况下应用的键是鼠标按键，但也可以使用任意键。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Scroll Wheel</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>对上一个命中结果下的控件发送一个滚轮事件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Send Key Char</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>为字符串中列出的每个键模拟一个 OnKeyChar 事件，将列表中的字符传输到控件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Set Custom Hit Result</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置自定义命中结果。如交互源设为自定义，这是唯一需要考虑的一点。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>控件交互组件的属性也能以 getter 形式被获取，或通过 setter 节点进行设置。 
+</p><p><img alt="WidgetInteractionVariables.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/UMG/UserGuide/WidgetInteraction/WidgetInteractionVariables.jpg" />
+</p>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="../index.html" title="使用虚幻运动图形创建UI元素的指南。">UMG界面设计器用户指南</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Blueprints/index.html" title="关于使用蓝图可视化脚本系统制作游戏的概述。">蓝图 - 可视化脚本</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Components/Widget/index.html" title="描述控件组件，即可以在世界场景中与之交互的控件蓝图的三维实例。 ">控件组件</a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/UMG/UserGuide/WidgetInteraction/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:56 GMT -->
+</html>

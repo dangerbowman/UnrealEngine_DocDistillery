@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Foliage/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:24:04 GMT -->
+<head>
+    <title>植物实例化网格体 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../docs.unrealengine.com/latest/INT/Engine/Foliage/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../docs.unrealengine.com/latest/KOR/Engine/Foliage/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../docs.unrealengine.com/latest/JPN/Engine/Foliage/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../docs.unrealengine.com/latest/CHN/Engine/Foliage/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3807090" />
+<meta name="availability" content="Public" />
+<meta name="title" content="植物实例化网格体" />
+<meta name="description" content="在其他网格体表面上渲染实例化网格体的系统，将其用作植物或其他覆盖地面的效果。" />
+<meta name="version" content="4.12" />
+<meta name="skilllevel" content="Intermediate" />
+<meta name="parent" content="Engine" />
+<meta name="order" content="11" />
+<meta name="topic-image" content="Engine/Foliage/foliage_topic.png" />
+<meta name="topic-icon" content="%ROOT%/foliage_icon.png" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="植物实例化网格体" />
+	<meta property="og:description" content="在其他网格体表面上渲染实例化网格体的系统，将其用作植物或其他覆盖地面的效果。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">引擎的各个功能</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_12"><a id="version_link" href="../../SiteIndex/index2952.html">Unreal Engine 4.12</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">植物实例化网格体</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+                            <div class="version_tag_filter 4_12"><a id="version_link" href="../../SiteIndex/index2952.html">Unreal Engine 4.12</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="header_img">
+	<p><img alt="Foliage Tool" width="900" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Banner.jpg" />
+</p>
+</div><div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#植物编辑模式">植物编辑模式</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#网格体列表">网格体列表</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#选择网格体列表中的植物网格体">选择网格体列表中的植物网格体</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#笔刷设置">笔刷设置</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#植物工具">植物工具</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#绘制工具">绘制工具</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#绘制设置">绘制设置</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#重应用工具">重应用工具</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#选择工具">选择工具</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#套索工具">套索工具</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#填充工具">填充工具</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#剔除">剔除</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#lod">LOD</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#光照">光照</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#植物可延展性">植物可延展性</a>
+	</li>		    	        </ul>
+</div>
+<p>通过植物实例化网格体系统可在地形Actor、其他静态网格体Actor和BSP几何体上轻松绘制或清除静态网格体的集。这些网格体将自动集组成批，使用硬件实例化进行渲染，意味着只需要一个单一绘制调用即可对诸多实例进行渲染。
+</p><div class="note">
+	<p>如需了解植物工具的使用，请参见<a id="content_link" href="../../Resources/ContentExamples/Landscapes/index.html" ><span>地形内容示例</span></a>
+内容范例的<a id="content_link" href="../../Resources/ContentExamples/Landscapes/1_3/index.html" ><span>植物</span></a>
+部分。
+</p>
+</div><a name="foliageeditmode" ></a><h2 id="植物编辑模式">植物编辑模式</h2>
+
+<p>使用植物工具后，点击 <strong>模式</strong> 面板中的植物按钮（<strong>Shift+4</strong>）。 
+</p><p><img alt="FoliageMode.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/FoliageMode.jpg" />
+</p><p><strong>模式</strong> 面板中将出现“植物编辑模式”窗口。
+</p><p><img alt="FoliageWindowInitial.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/FoliageWindowInitial.jpg" />
+</p><a name="meshlist" ></a><h2 id="网格体列表">网格体列表</h2>
+
+<p>网格体列表中放置的静态网格体将用作植物。要将一个静态网格体添加到网格体列表，需要首先从 <strong>内容浏览器</strong> 将静态网格体拖入 <strong>将植物放置于此处</strong>。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_TextBar.png" ><span><img alt="Foliage_TextBar.png" width="400" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_TextBar.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="tip">
+	<p>尝试添加正确的actor类型时只显示黄色的植物类型。如果未看到其显示，尝试添加的内容将无法使用。
+</p>
+</div><p>为调整用作植物的静态网格体属性，则在网格体列表中选择“静态网格体”，然后按下植物工具右下角的 <strong>放大镜</strong> 图标。这将公开选中的静态网格体细节。 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Expose_Instanc_Options.png" ><span><img alt="Expose_Instanc_Options.png" width="190" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Expose_Instanc_Options.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p>按下后出现的效果应与下图相似。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Mesh_Options.png" ><span><img alt="Foliage_Mesh_Options.png" width="190" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Mesh_Options.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><a name="selectingfoliagemeshesinthemeshlist" ></a><h3 id="选择网格体列表中的植物网格体">选择网格体列表中的植物网格体</h3>
+
+<p>将鼠标悬停在列表中的网格体上，然后勾选/取消勾选左上角的勾选框，即可启用网格体列表中的植物网格体。 
+</p><p><img alt="Foliage_Selecting_Meshes.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Selecting_Meshes.jpg" />
+</p><p>在网格体列表中点击植物网格体即可将其选中。此操作将使其橙色高亮显示，然后便能在下方的选项面板中调整诸多属性。 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Selected_Meshes.png" ><span><img alt="Foliage_Selected_Meshes.png" width="190" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Selected_Meshes.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><a name="brushsettings" ></a><h2 id="笔刷设置">笔刷设置</h2>
+
+<p><img alt="Foliage_Brush_Settings.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Brush_Settings.jpg" />
+</p><p>在网格体列表中（如上图所示），网格体编辑工具将显示当前选中植物工具相关的属性。 
+（并不会显示每个植物工具的每项设置。）
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>项目 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>笔刷尺寸</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>笔刷的大小（以虚幻单位计）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>绘制密度</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用 <strong>鼠标左键</strong> 时添加实例的目标密度。
+</p><ul ><li><p>这是一个范围在0到1之间的值。值为1时将以每个网格体“网格体”属性中列出的最大密度来绘制网格体实例（如下所示）。
+</p></li><li><p>如笔刷中的网格体密度已大于此值，则不会添加网格体。
+</p></li></ul>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>擦除密度</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用 <strong>Ctrl+Shift+点击</strong> 擦除实例时希望达到的目标密度。
+</p><ul ><li><p>这是一个范围在0到1之间的值。0代表无网格体，1代表每个网格体“网格体”属性中列出的最大密度（如下所示）。如网格体的数量少于这个所需的擦除密度，则不会擦除更多网格体。 
+</p></li><li><p>此操作可用于使已绘制的网格体变薄，而无需完全移除所有实例。
+</p></li></ul>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>含有名称 <strong>地形</strong>、<strong>静态网格体</strong>、<strong>BSP</strong> 和 <strong>半透明</strong> 的勾选框决定着使用工具时植物网格体将被放置在哪种类型的Actor上。勾选框则说明应使用工具时植物网格体将被放置在这类Actor上。取消勾选框则说明植物网格体不会被放置在这类Actor上。
+</p><div class="note">
+	<p>同时还支持平板电脑按压灵敏度。在考虑所有其他参数后，笔按压将调制出添加或移除的植物网格体数量。
+</p>
+</div><a name="foliagetools" ></a><h2 id="植物工具">植物工具</h2>
+
+<p>在植物窗口顶部的工具栏中通过正确按钮可选择5种工具。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>项目 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Paint Tool" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/ToolPaint.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>绘制工具</strong> - 用于从场景添加和移除植物实例。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Reapply Tool" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/ToolReapply.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>重应用工具</strong> - 用于修改已在场景中绘制的实例的参数。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Select Tool" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/ToolSelect.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>选择工具</strong> - 用于选择单个实例，用于移动、删除等操作。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Paint Select Tool" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/ToolPaintSelect.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>套索工具</strong> - 用于选择使用绘制笔刷的各类实例。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Fill Tool" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/ToolFill.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>填充工具</strong> - 用于决定使用绘制工具放置的网格体数量。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="painttool" ></a><h3 id="绘制工具">绘制工具</h3>
+
+<p><img alt="Paint Tool" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/ToolPaint.jpg" />
+</p><p>绘制工具是植物编辑模式的默认工具。可使用它在关卡中绘制网格体列表中的静态网格体实例。启用植物编辑模式时，将在关卡中绘制一个透明球体笔刷，说明植物笔刷将在何处进行操作。可在下图中查看植物绘制笔刷的外观。
+</p><p><img alt="Foliage_Paint_Tool_Gimzo.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Paint_Tool_Gimzo.jpg" />
+</p><div class="tip">
+	<p>植物绘制也可在VR编辑器中使用。如需了解VR中的植物绘制功能按钮，请参见<a id="content_link" href="../Editor/VR/Controls/index.html" ><span>VR模式控制</span></a>
+。
+</p>
+</div><p><strong>将植物添加到笔刷区域的方法：</strong><br /></p><ul ><li><p>长按 <strong>鼠标左键</strong> 并 <strong>点击</strong> 希望添加植物之处。网格体列表中当前选中的所有网格体将根据其当前参数和设置进行添加。
+</p></li></ul><p>绘制网格体时，引擎将在与查看方向平行的球体中执行一些线条追踪，意味着能在球体中看到的所有表面均会成为植物实例的潜在目标。
+</p><p><strong>从笔刷区域擦除植物的方法：</strong><br /></p><ul ><li><p>长按 <strong>Shift</strong> 和 <strong>鼠标左键</strong>，<strong>点击</strong> 希望移除植物之处。
+</p></li></ul><a name="paintsettings" ></a><h3 id="绘制设置">绘制设置</h3>
+
+<p>网格体列表中的每个静态网格体都拥有数个属性，在绘制选中的静态网格体时控制实例的放置、缩放或旋转方式。在网格体列表中选择所需的静态网格体，然后再调整下方显示的属性，即可对属性进行访问。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_PaintSettings.png" ><span><img alt="Foliage_PaintSettings.png" width="190" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_PaintSettings.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p>以下是每个部分用途的高级描述：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>属性</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>网格体</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在此处输入要使用的静态网格体类型。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>绘制</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>可在此处调整多项属性，如植物网格体之间的最小距离、添加植物的密度、以及植物网格体是否可被缩放。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>放置</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性控制植物网格体在关卡中被绘制时将如何进行放置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>实例设置</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性可调整此实例的行为，不使用派生自内容浏览器中静态网格体的属性。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="reapplytool" ></a><h3 id="重应用工具">重应用工具</h3>
+
+<p><img alt="Reapply Tool" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/ToolReapply.jpg" />
+</p><p>利用重应用工具可选择性地修改已放置在场景中的植物网格体的特定参数。用启用的重应用工具在植物网格体上进行绘制时，在网格体列表中选中的植物网格体将更新，以反映在重应用工具中进行的修改。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Reapply.png" ><span><img alt="Foliage_Reapply.png" width="190" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Reapply.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p>设置复选框后，在现有实例上绘制笔刷时将重新应用相应的参数。使用绘制工具时多数设置均相同，然而也存在几点不同：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>项目 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>网格体</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在此处输入要使用的静态网格体类型。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>绘制</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>可在此处覆盖将植物网格体添加到关卡时要发生的情况。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>放置</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>可在此处覆盖植物网格体放置在关卡中的方式。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="selecttool" ></a><h3 id="选择工具">选择工具</h3>
+
+<p><img alt="Select Tool" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/ToolSelect.jpg" />
+</p><p>选择工具启用后，点击植物网格体的单个实例即可将其选中。按住 <strong>Ctrl</strong> 键同时点击关卡中的植物网格体即可一次性选中多个植物网格体。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_SelectInstance.png" ><span><img alt="Foliage_SelectInstance.png" width="600" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_SelectInstance.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p>选中网格体后，即可对其执行以下操作。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>操作</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>结果</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>拖动一根控件轴</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>选中的实例将随控件移动，根据控件模式进行旋转或缩放。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>按住Alt拖动一根控件轴</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>选中的实例将首先被复制，然后跟随控件进行移动。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Delete键</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>选中的实例将被删除。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>End键</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>选中的实例将尝试对齐到地面。如最初放置时此设置已启用，实例将对齐法线。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>通过诸多 <strong>选择</strong> 按钮可选择所有植物网格体Actor、选择所有无效植物网格体、或取消选中已选项。
+</p><p><img alt="Foliage_Select_Options.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Select_Options.jpg" />
+</p><a name="lassotool" ></a><h3 id="套索工具">套索工具</h3>
+
+<p><img alt="Lasso Tool" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/ToolPaintSelect.jpg" />
+</p><p>利用套索工具可以同时选中大量或少量植物网格体。可使用过滤设置来确保放置在特定对象上的植物网格体不会被选中。要选择植物网格体，按住 <strong>鼠标右键</strong> 并在场景中移动鼠标即可。要取消选择植物网格体，在绘制时按下 <strong>Shift</strong> 键即可。拥有选项后，即可切换至常规选择工具，执行植物网格体复制、移动和移除等操作。
+</p><p><img alt="Lasso Tool" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Lasso.jpg" />
+</p><a name="filltool" ></a><h3 id="填充工具">填充工具</h3>
+
+<p><img alt="Fill Tool" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/ToolFill.jpg" />
+</p><p>填充工具能够用选中的植物网格体来覆盖关卡中的整个静态网格体actor。填充工具的功能和绘制工具类似，主要不同在于一次点击即可覆盖植物中的整个actor。在希望被植物所覆盖的静态网格体上按下 <strong>鼠标左键</strong> 即可使用填充工具。点击鼠标键的次数越多，添加的植物就越多。移除植物的方法是按住 <strong>Shift</strong> 键，使用 <strong>鼠标左键</strong> 点击希望移除植物的静态网格体。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Fill.png" ><span><img alt="Foliage_Fill.png" width="600" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Fill.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="tip">
+	<p>如果用填充工具无法移除植物网格体，则需要点击其放置的actor，而非点击添加的植物网格体。
+</p>
+</div><a name="culling" ></a><h2 id="剔除">剔除</h2>
+
+<p>因为植物实例在单次绘制调用中被渲染为群集，所以每个群集将基于遮挡被渲染（或不被渲染）。如在 <strong>结束剔除距离</strong> 参数中设置了一个值，则超过此距离的群集也将被剔除。然而，此项将导致网格体分组因整个群集超出范围而突然消失。
+</p><p>添加一个 <strong>开始剔除距离</strong> 参数并正确设置材质即可解决此问题。
+ 在顶点着色器中将计算一个逐实例淡化因子，其在开始距离处为1.0、结束距离处为0.0。 
+ 可使用 <strong>PerInstanceFadeAmount</strong> 节点在材质中进行访问。
+ 如将此连接到一个不透明度或遮罩值，则可将其用于淡化一定距离之外的距离（在其到达 <strong>剔除距离结束</strong> 并从渲染中被移除之前）。
+</p><p>下方的材质范例将材质遮罩与淡化因子相乘，以弱化植物网格体的叶片，直到其完全消失。
+</p><p><img alt="Culling Material Example" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_MaterialSetup.jpg" />
+</p><a name="lod" ></a><h2 id="lod">LOD</h2>
+
+<p>植物上支持静态网格体LOD。但有几个注意事项：
+</p><ul ><li><p>须确保静态网格体在元素排列中只拥有一个条目（在LOD0下可见）。
+</p></li><li><p>注意：光照贴图和阴影贴图在所有LOD等级之间共享，因此所有LOD需使用相同的展开。
+</p></li><li><p>当前实例的整个群集将同时修改LOD。未来的版本中可能添加逐实例基于距离的淡化。
+</p></li></ul><a name="lighting" ></a><h2 id="光照">光照</h2>
+
+<p>每个个体网格体实例皆有由Lightmass生成的阴影贴图和/或光照贴图，他们将在每个预计算的批次中平铺在一起。为使预计算光照在实例化植物上拥有良好效果，应勾选静态网格体上的几项设置。为实例化网格体生成阴影贴图时Lightmass的宽容度较低；如果设置不正确，在构建灯光后可能出现黑色的网格体。
+</p><ul ><li><p><strong>光照贴图坐标索引</strong> - 此项必须设为拥有独有UV展开的有效UV通道。静态网格体编辑器的 <strong>生成独有UV</strong> 功能（可从 <strong>窗口</strong> 菜单中访问）即可迅速生成一个独有展开。
+</p></li><li><p><strong>光照贴图分辨率</strong> - 此项必须是一个足够小的数字，以便单一群集中实例的所有阴影贴图（默认为100）平铺在一起，而不会超过最大纹理分辨率（4094x4096）。
+</p></li></ul><a name="foliagescalability" ></a><h2 id="植物可延展性">植物可延展性</h2>
+
+<p>植物静态网格体可使用<a id="content_link" href="../Performance/Scalability/ScalabilityReference/index.html" ><span>可延展性系统</span></a>
+来增加或减少当前被渲染到屏幕上的植物实例数量。要将此功能添加到项目，须执行以下操作：
+</p><div class="note">
+	<p>为使用“植物绘制”模式，关卡必须包含启用了碰撞的地形地貌或静态网格体。 
+</p>
+</div><ol ><li><p>在内容浏览器中点击右键。在 <strong>创建高级资源（Create Advanced Asset）</strong> 部分中展开 <strong>杂项（Miscellaneous）</strong> 部分，并选择 <strong>植物类型（Foliage Type）</strong> 选项。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_00.png" ><span><img alt="Foliage_Scalability_00.png" width="300" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_00.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>为植物类型输入一个命名（此例中我们使用的是 <strong>FT_Box</strong>），然后双击FT_Box植物类型将其打开。<br /></p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_01.png" ><span><img alt="Foliage_Scalability_01.png" width="405" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_01.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>FT_Box打开后，展开 <strong>网格体（Mesh）</strong> 和 <strong>可延展性（Scalability）</strong> 部分。
+</p><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content 操作系统 windows ">
+    <div class="container">
+        <div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_02_Windows.png" ><span><img alt="Foliage_Scalability_02_Windows.png" width="405" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_02_Windows.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div>
+    </div>
+</div><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content 操作系统 mac ">
+    <div class="container">
+        <div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_02_Mac.png" ><span><img alt="Foliage_Scalability_02_Mac.png" width="405" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_02_Mac.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div>
+    </div>
+</div></li><li><p>在 <strong>内容浏览器</strong> 中选中一个静态网格体（在此例中我们使用的是初学者内容包中的 <strong>Shape_Cube</strong>）。在FT_Box植物类型中，在 <strong>网格体</strong> 部分下将 <strong>Shape_Cube</strong> 从内容浏览器拖至 <strong>网格体</strong> 选项。
+</p><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content 操作系统 windows ">
+    <div class="container">
+        <div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_03_Windows.png" ><span><img alt="Foliage_Scalability_03_Windows.png" width="405" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_03_Windows.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div>
+    </div>
+</div><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content 操作系统 mac ">
+    <div class="container">
+        <div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_03_Mac.png" ><span><img alt="Foliage_Scalability_03_Mac.png" width="405" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_03_Mac.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div>
+    </div>
+</div></li><li><p>在FT_Box植物类型的 <strong>可延展性</strong> 部分中，点击 <strong>启用密度缩放（Enable Density Scaling）</strong> 旁的小框，使可延展性系统能够访问此静态网格体。
+</p><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content 操作系统 windows ">
+    <div class="container">
+        <div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_04_Windows.png" ><span><img alt="Foliage_Scalability_04_Windows.png" width="405" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_04_Windows.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div>
+    </div>
+</div><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content 操作系统 mac ">
+    <div class="container">
+        <div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_04_Mac.png" ><span><img alt="Foliage_Scalability_04_Mac.png" width="405" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_04_Mac.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div>
+    </div>
+</div><div class="note">
+	<p>只应为不带碰撞的细节植物（如小石块和灌木丛）<strong>启用</strong> <strong>启用密度缩放（Enable Density Scaling）</strong> 选项。就带碰撞的植物类型（如树木）而言，此项应被 <strong>禁用</strong>，因为被移除实例的碰撞仍将留存在游戏中。
+</p>
+</div></li><li><p>在 <strong>模式</strong> 面板中选择 <strong>植物工具</strong>。将FT_Box植物类型选中，并从内容浏览器拖至 <strong>将植物放置于此处</strong> 区域。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_05.png" ><span><img alt="Foliage_Scalability_05.png" width="250" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_05.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>选中放置在植物类型列表中的FT_Box植物类型。在视口中长按 <strong>鼠标左键</strong> 开始将FT_Box植物类型网格体绘制到一个表面上。 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_06.png" ><span><img alt="Foliage_Scalability_06.png" width="592" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_06.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>在 <strong>工具条</strong> 上点击 <strong>运行</strong> 来启动关卡。导航至已添加植物的位置。
+</p><p><img alt="Foliage_Scalability_07.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/Foliage_Scalability_07.jpg" />
+</p></li><li><p>按下 <strong>重音符</strong> 键（`）打开 <strong>控制台</strong> 并输入以下命令（后接0到1之间的一个小数）即可控制植物渲染的密度。
+</p><ul ><li><p><strong>foliage.DensityScale</strong>
+</p></li></ul><div class="warning">
+	<p>调整“植物密度缩放”设置时，可以看到结果不会在任何编辑器视口中实时更新。要看到植物密度实时更新的唯一方法是项目处于PIE、模拟或Standalone游戏模式中时输入命令。 
+</p>
+</div></li></ol><p>如下所示，植物密度在foliage.DensityScale设置设为0.1、0.2、0.3、0.4、0.5、0.6、0.7、0.8、0.9、1.0时会发生变化。
+</p><div class="fullwidth">
+	<!--
+id:paramliteral
+max:paramliteral
+ext:paramliteral
+caption:paramliteral
+image_list:param
+-->
+<div class="slider_container" id="FS">
+    <div id="FS_Image"></div>
+    <div class="slider"></div>
+    <div class="caption">
+                <b><p><strong>拖动滑条即可在0.1到1.0之间调整foliage.DensityScale设置。</strong></p></b>
+            </div>
+    <div id="images" class="hidden">
+        <p><img alt="FS_1.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/FS_1.jpg" />
+<img alt="FS_2.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/FS_2.jpg" />
+<img alt="FS_3.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/FS_3.jpg" />
+<img alt="FS_4.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/FS_4.jpg" />
+<img alt="FS_5.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/FS_5.jpg" />
+<img alt="FS_6.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/FS_6.jpg" />
+<img alt="FS_7.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/FS_7.jpg" />
+<img alt="FS_8.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/FS_8.jpg" />
+<img alt="FS_9.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/FS_9.jpg" />
+<img alt="FS_10.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Engine/Foliage/FS_10.jpg" /></p>
+    </div>
+</div>
+</div>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Foliage/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:24:05 GMT -->
+</html>

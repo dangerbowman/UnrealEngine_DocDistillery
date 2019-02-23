@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Editor/VR/Controls/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:12 GMT -->
+<head>
+    <title>VR模式控制 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Editor/VR/Controls/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Editor/VR/Controls/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Editor/VR/Controls/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Editor/VR/Controls/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3782314" />
+<meta name="availability" content="Public" />
+<meta name="title" content="VR模式控制" />
+<meta name="description" content="学习在VR模式中创建世界场景时使用的诸多控制方式和交互。" />
+<meta name="parent" content="Engine/Editor/VR" />
+<meta name="type" content="overview" />
+<meta name="order" content="1" />
+<meta name="tags" content="VR" />
+<meta name="version" content="4.17" />
+<meta name="skilllevel" content="intermediate" />
+<meta name="topic-image" content="vreditor_controls.png" />
+<meta name="prereq" content="Engine/Editor/VR/ActivateVRMode" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="VR模式控制" />
+	<meta property="og:description" content="学习在VR模式中创建世界场景时使用的诸多控制方式和交互。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">虚幻引擎 VR 模式</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_17"><a id="version_link" href="../../../../SiteIndex/index8ccf.html">Unreal Engine 4.17</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">VR模式控制</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+                            <div class="version_tag_filter 4_17"><a id="version_link" href="../../../../SiteIndex/index8ccf.html">Unreal Engine 4.17</a></div>
+
+							</span>
+                            <div class="prereq">
+    <div class="normaltitle">
+        先决条件页面
+    </div>
+    <p style="margin-bottom:8px;">
+        在阅读本页面前应对以下页面有所了解，如尚不了解，则请先浏览以下页面。
+    </p>
+    <ul style="margin-bottom:0.5em;">
+                <li>
+            <p>
+                <a href="../ActivateVRMode/index.html" title="学习如何在虚幻编辑器中启用VR模式">启动VR模式</a>
+            </p>
+        </li>
+            </ul>
+</div>
+
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#控制器界面">控制器界面</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#激光指示">激光指示</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#vr中的ui">VR中的UI</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#交互者手部">交互者手部</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#菜单控制">菜单控制</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#窗口控制">窗口控制</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#在vr中进行编辑">在VR中进行编辑</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#导航控制">导航控制</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#选择控制">选择控制</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#变换控制">变换控制</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#在vr中绘制">在VR中绘制</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#网格体绘制控制">网格体绘制控制</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#植物绘制控制">植物绘制控制</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#地形绘制控制">地形绘制控制</a>
+	</li>					</ul>
+	</li>		    	        </ul>
+</div>
+<p>虚拟现实（VR）中有多种控制方式，用于导航场景、选择并操纵Actor，以及使用编辑器面板和窗口。
+</p><a name="controllerinterface" ></a><h2 id="控制器界面">控制器界面</h2>
+
+<div class="raw">
+	<p><img alt="controller.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/controller.png" />
+</p>
+</div><ol ><li><p>修改键
+</p></li><li><p>追踪板
+</p></li><li><p>扳机键
+</p></li><li><p>侧边键
+</p></li></ol><a name="laserpointer" ></a><h3 id="激光指示">激光指示</h3>
+
+<p>每个控制器均会发射称为“激光指示”的光束，用于确定将要交互的Actor。光束颜色代表控制器当前所处的交互模式。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>颜色 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>外观 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>含义 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>红色</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><img alt="standardmode.png" width="192" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/standardmode.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制器处于标准交互模式中。这是控制器的默认状态。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>橙色</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><img alt="selectionmode.png" width="192" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/selectionmode.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制器处于选择模式中，意味着其当前已选中一个 Actor。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>绿色</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><img alt="movementmode.png" width="192" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/movementmode.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制器处于移动模式中，意味着其正用于导航世界场景。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>蓝色</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><img alt="UImode.png" width="192" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/UImode.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制器处于UI交互模式中，意味着其正用于移动UI。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="uiinvr" ></a><h2 id="vr中的ui">VR中的UI</h2>
+
+<p>利用“VR中的UI”模式无需离开VR环境便能在编辑器中进行工作。使用控制方式呼出菜单系统即可访问诸多设置和编辑器窗口。以下章节将介绍如何调用这些系统并与之进行交互。
+</p><a name="interactorhand" ></a><h2 id="交互者手部">交互者手部</h2>
+
+<p>前往 <strong>编辑器偏好（Editor Preferences）</strong> > <strong>通用（General）</strong> > <strong>VR模式（VR Mode）</strong> 即可修改主激光附加的手部。然后在 <strong>通用</strong> 部分中将 <strong>交互器手部</strong> 改为 <strong>左</strong> 或 <strong>右</strong>。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/InteractionHand.png" ><span><img alt="InteractionHand.png" width="472" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/InteractionHand.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p>点击查看全图。
+</p>
+</div><a name="menucontrols" ></a><h3 id="菜单控制">菜单控制</h3>
+
+<p>如果希望使用VR模式中的菜单，请参考下表，了解 <strong>圆形</strong> 和 <strong>圆形菜单</strong>。 
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>控制 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Modifier Button" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/radial_menu.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>拇指轻按追踪板即可打开 <strong>圆形菜单</strong>。在追踪版上移动拇指即可高亮选项。完全按下追踪板即可选中高亮的选项。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Pressing the Menu Button" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/Menu_Button.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>按下另一个控制器上的“Menu”键即可访问 <strong>圆形菜单</strong>。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="windowcontrols" ></a><h3 id="窗口控制">窗口控制</h3>
+
+<p>如果需要在VR编辑模式中控制诸多窗口，请参照下表，可在其中了解到如何显示和隐藏窗口，以及如何放大或缩小窗口。
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>控制 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Aim Controller at Window Grip + Squeeze Trigger + Track Pad Towards or Away" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/scale_window.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用控制器瞄准窗口的握把并按下扳机键即可抓取窗口。在追踪板上上下移动拇指即可放大或缩小窗口。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="editinginvr" ></a><h2 id="在vr中进行编辑">在VR中进行编辑</h2>
+
+<p>在VR模式中进行编辑时，使用者需要以更直观的方式遍历场景并操纵场景中的actor。以下部分将介绍如何与actor进行交互，如何对其进行移动、缩放和旋转，以及如何在VR中有效导航场景。 
+</p><a name="navigationcontrols" ></a><h3 id="导航控制">导航控制</h3>
+
+<p>如要在VR环境中进行导航，请参考下表。其介绍了如何用手推拉场景、导航至场景中的位置、旋转周围的场景，以及放大缩小场景。
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>控制 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Press Side Buttons + Move Controller" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/move_world.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>按下侧边键并移动控制器，操作方法类似于用自己的手抓住场景并进行推拉。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Press Side Buttons + Aim Controller + Squeeze Trigger" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/teleport_world.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>按下侧边键、瞄准控制器并按下扳机键从当前位置瞬移到控制器瞄准的位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Press Side Buttons + Move Controllers Around Each Other" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/rotate_world.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>按下两个控制器上的侧边键并交替移动即可旋转周围的场景，操作方式类似于用自己的手抓住场景并进行旋转。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Press Side Buttons + Move Controllers Towards or Away From Each Other" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/scale_world.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>按下两个控制器上的侧边键并移近移远，即可放大缩小场景。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Press Side Buttons + Tap the Tack Pad" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/Reset_World_Scale.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>按下侧边键抓取场景，在编辑时按下追踪板便能即时将场景的缩放重设为默认玩家的大小。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="selectioncontrols" ></a><h3 id="选择控制">选择控制</h3>
+
+<p>如果需要选中VR环境中的Actor，请参照下表，了解如何选中一个actor，以及如何一次选中多个actor。 
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>控制 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Aim Controller at Actor + Squeeze Trigger" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/select_actor.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>选中单个actor的方法是用运动控制器瞄准场景中的一个actor，然后按下扳机键将其选中。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/multi_select_actors.png" ><span><img alt="multi_select_actors.png" height="108" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/multi_select_actors.png" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span></p>
+</div></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>选择多个actor的方法是长按交互者手部运动控制器上的菜单键，然后将运动控制器瞄准需要选择的actor。在按住菜单键的同时按下运动控制器扳机键即可在选择中添加或移除actor。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="transformcontrols" ></a><h3 id="变换控制">变换控制</h3>
+
+<p>如需使用平移、旋转和缩放小工具来变换actor，请参照下表，了解如何在VR中移动、旋转、缩放和滑动actor。
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>控制 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Aim Controller at Actor + Squeeze Trigger + Move Controller" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/move_actor.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将控制器瞄准场景中的actor，并按下扳机键将其选中。移动控制器即可将actor移至其瞄准的位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Aim Controllers at Actor + Squeeze Triggers + Move Controller Around Each Other" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/rotate_actor.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将两个控制器瞄准场景中的一个actor并按下两个扳机键将其选中。交替移动两个控制器即可旋转actor，操作方式类似于用手抓住进行旋转。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Aim Controllers at Actor + Squeeze Triggers + Move Controllers Towards or Away From Each Other" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/scale_actor.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将两个控制器瞄准场景中的一个actor并按下两个扳机键将其选中。将两个控制器移远移近即可放大/缩小actor。操作方式类似于用手抓住进行拉伸。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Aim Controller at Actor + Squeeze Trigger + Track Pad Towards or Away" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/slide_actor.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将控制器瞄准场景中的一个actor并按下扳机键将其选中。在追踪板上上下移动拇指即可将选中的actor拉近/推远。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="paintinginvr" ></a><h2 id="在vr中绘制">在VR中绘制</h2>
+
+<p>在VR模式中进行绘制时，可选择与桌面编辑器相似的选项，例如用植物工具和网格体绘制对地形模式进行绘制。以下部分将讲述如何使用可用工具和选项进行这些模式的绘制。 
+</p><a name="meshpaintingcontrols" ></a><h3 id="网格体绘制控制">网格体绘制控制</h3>
+
+<p>如果需要使用顶点绘制在一个网格体上进行绘制，请参考下表了解如何绘制与擦除已绘制的区域。 
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>控制 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Aim Controller at Actor + Squeeze Trigger + Move Controller" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/MeshPaint_2_NoModifier.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将控制器瞄准场景中的一个静态网格体并按下扳机键即可开始绘制。移动控制器即可沿网格体移动笔刷。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Modifier + Aim Controller at Actor + Squeeze Trigger + Move Controller" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/ModifierMeshPaint.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>长按修改键即可进行擦除。将控制器瞄准场景中的静态网格体并按下扳机键即可开始擦除。移动控制器即可沿网格体移动擦除器。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="foliagepaintingcontrols" ></a><h3 id="植物绘制控制">植物绘制控制</h3>
+
+<p>如要使用植物绘制控制，请参考下表了解植物的绘制和擦除。值得一提的是，扳机键拥有压力感应，可以控制区域绘制和擦除的强度。
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>控制 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Aim Controller at Actor + Squeeze Trigger + Move Controller" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/MeshPaint_2_NoModifier.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在 <strong>模式</strong> 面板中选择一个植物类型。将控制器瞄准场景中的一个位置并按下扳机键即可开始绘制植物。移动控制器即可在场景中移动笔刷。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Modifier + Aim Controller at Actor + Squeeze Trigger + Move Controller" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/ModifierMeshPaint.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>长按修改键即可擦除植物。将控制器瞄准场景中的位置并按下扳机键即可开始擦除。移动控制器即可在场景中移动擦除器。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="landscapepaintingcontrols" ></a><h3 id="地形绘制控制">地形绘制控制</h3>
+
+<p>如要了解地形工具，请参考下表了解地形的升降。值得一提的是，扳机键拥有压力感应，可以控制区域升降的强度。 
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>控制 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Aim Controller at Actor + Squeeze Trigger + Move Controller" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/MeshPaint_2_NoModifier.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在 <strong>雕刻</strong> 面板中选择一个地形笔刷。将控制器瞄准场景中的一个位置并按下扳机键即可开始升高地形。移动控制器即可在场景中移动笔刷。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Modifier + Aim Controller at Actor + Squeeze Trigger + Move Controller" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Editor/VR/Controls/ModifierMeshPaint.png" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在 <strong>雕刻</strong> 面板中选中一个笔刷并按住修改键来降低地形。将控制器瞄准场景中的一个位置并按下修改键，然后按下扳机键开始降低地形。移动控制器即可降低场景中的不同区域。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div>
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Editor/VR/Controls/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:13 GMT -->
+</html>

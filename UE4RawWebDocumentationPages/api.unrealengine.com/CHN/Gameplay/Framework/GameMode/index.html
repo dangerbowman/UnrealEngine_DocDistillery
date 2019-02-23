@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Gameplay/Framework/GameMode/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 03:19:29 GMT -->
+<head>
+    <title>Game Mode 和 Game State | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Gameplay/Framework/GameMode/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Gameplay/Framework/GameMode/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Gameplay/Framework/GameMode/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Gameplay/Framework/GameMode/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3429254" />
+<meta name="availability" content="Public" />
+<meta name="title" content="Game Mode 和 Game State" />
+<meta name="description" content="Game Mode 和 Game State 总览" />
+<meta name="version" content="4.14" />
+<meta name="type" content="overview" />
+<meta name="parent" content="Gameplay/Framework" />
+<meta name="order" content="2" />
+<meta name="tags" content="Gameplay Framework" />
+<meta name="related" content="Gameplay/Framework/Controller/PlayerController" />
+<meta name="topic-image" content="Gameplay/Framework/gamemode_lander.png" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="Game Mode 和 Game State" />
+	<meta property="og:description" content="Game Mode 和 Game State 总览" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">Gameplay框架</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0a98.html">Gameplay Framework</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_14"><a id="version_link" href="../../../SiteIndex/index5327.html">Unreal Engine 4.14</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">Game Mode 和 Game State</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_14"><a id="version_link" href="../../../SiteIndex/index5327.html">Unreal Engine 4.14</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#gamemodes">Game Modes</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#gamestate">Game State</a>
+	</li>		    	        </ul>
+</div>
+<p>两个主要类负责处理进行中游戏的相关信息：<strong>Game Mode</strong> 和 <strong>Game State</strong>。
+</p><p>即使最开放的游戏也拥有基础规则，而这些规则构成了 <strong>Game Mode</strong>。在最基础的层面上，这些规则包括：
+</p><ul ><li><p>出现的玩家和观众数量，以及允许的玩家和观众最大数量。
+</p></li><li><p>玩家进入游戏的方式，可包含选择生成地点和其他生成/重生成行为的规则。
+</p></li><li><p>游戏是否可以暂停，以及如何处理游戏暂停。
+</p></li><li><p>关卡之间的过渡，包括游戏是否以动画模式开场。
+</p></li></ul><p>基于规则的事件在游戏中发生，需要进行追踪并和所有玩家共享时，信息将通过 <strong>Game State</strong> 进行存储和同步。这些信息包括：
+</p><ul ><li><p>游戏已运行的时间（包括本地玩家加入前的运行时间）。
+</p></li><li><p>每个个体玩家加入游戏的时间和玩家的当前状态。
+</p></li><li><p>当前 Game Mode 的基类。
+</p></li><li><p>游戏是否已开始。
+</p></li></ul><h2 id="gamemodes">Game Modes</h2>
+
+<p>特定的基础（如进行游戏所需要的玩家数量，或玩家加入游戏的方法）在多种类型的游戏中具有共通性。可根据开发的特定游戏进行无穷无尽的规则变化。无论规则如何，Game Modes 的任务都是定义和实现规则。Game Modes 当前常用的基类有两个。 
+</p><p>4.14 版本中加入了 <code >AGameModeBase</code>，这是所有 Game Mode 的基类，是经典的 <code >AGameMode</code> 简化版本。<code >AGameMode</code> 是 4.14 版本之前的基类，仍然保留，功能 如旧，但现在是 <code >AGameModeBase</code> 的子类。由于其比赛状态概念的实现，<code >AGameMode</code> 更适用于标准游戏类型（如多人射击游戏）。<code >AGameModeBase</code> 简洁高效，是新代码项目中包含的全新默认游戏模式。
+</p><h3 id="agamemodebase">AGameModeBase</h3>
+
+<p>所有 Game Mode 均为 <code >AGameModeBase</code> 的子类。而 <code >AGameModeBase</code> 包含大量可覆盖的基础功能。部分常见函数包括：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>函数/事件 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>目的 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><code >InitGame</code></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><code >InitGame</code> 事件在其他脚本之前调用（包括 <code >PreInitializeComponents</code>），由 <code >AGameModeBase</code> 使用，初始化参数并生成其助手类。  <div class="note">
+	<p>它在任意 Actor 运行 <code >PreInitializeComponents</code> 前调用（包括 Game Mode 实例自身）。</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><code >PreLogin</code></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>接受或拒绝尝试加入服务器的玩家。如它将 <code >ErrorMessage</code> 设为一个非空字符串，会导致 <code >Login</code> 函数失败。<code >PreLogin</code> 在 <code >Login</code> 前调用，Login 调用前可能需要大量时间，加入的玩家需要下载游戏内容时尤其如此。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><code >PostLogin</code></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>成功登录后调用。这是首个在 <code >PlayerController</code> 上安全调用复制函数之处。<code >OnPostLogin</code> 可在蓝图中实现，以添加额外的逻辑。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><code >HandleStartingNewPlayer</code></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在 <code >PostLogin</code> 后或无缝游历后调用，可在蓝图中覆盖，修改新玩家身上发生的事件。它将默认创建一个玩家 pawn。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><code >RestartPlayer</code></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>调用开始生成一个玩家 pawn。如需要指定 Pawn 生成的地点，还可使用 <code >RestartPlayerAtPlayerStart</code> 和 <code >RestartPlayerAtTransform</code> 函数。<code >OnRestartPlayer</code> 可在蓝图中实现，在此函数完成后添加逻辑。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><code >SpawnDefaultPawnAtTransform</code></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这实际生成玩家 Pawn，可在蓝图中覆盖。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><code >Logout</code></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>玩家离开游戏或被摧毁时调用。可实现 <code >OnLogout</code> 执行蓝图逻辑。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>可针对游戏提供的每个比赛格式、任务类型或特殊区域创建 <code >AGameModeBase</code> 的子类。一款游戏可拥有任意数量的 Game Mode，因此也可拥有任意数量的 <code >AGameModeBase</code> 类子类；然而，给定时间上只能使用一个 Game Mode。每次关卡进行游戏实例化时 Game Mode Actor 将通过 <code >UGameEngine::LoadMap()</code> 函数进行实例化。 
+</p><p>Game Mode 不会复制到加入多人游戏的远程客户端；它只存在于服务器上，因此本地客户端可看到之前使用过的留存 Game Mode 类（或蓝图）；但无法访问实际的实例并检查其变量，确定游戏进程中已发生哪些变化。如玩家确实需要更新与当前 Game Mode 相关的信息，可将信息保存在一个 <code >AGameStateBase</code> Actor 上，轻松保持同步。<code >AGameStateBase</code> Actor 随 Game Mode 而创建，之后被复制到所有远程客户端。
+</p><h3 id="agamemode">AGameMode</h3>
+
+<p><code >AGameMode</code> 是 <code >AGameModeBase</code> 的子类，拥有一些额外的功能支持多人游戏和旧行为。所有新建项目默认使用 <code >AGameModeBase</code>。如果需要此额外行为，可切换到从 <code >AGameMode</code> 进行继承。如从 <code >AGameMode</code> 进行继承，也可从 <code >AGameState</code> 继承游戏状态（其支持比赛状态机）。
+</p><p><code >AGameMode</code> 包含一个跟踪比赛状态或整体游戏流程的状态机。可使用 <code >GetMatchState</code> 或 <code >HasMatchStarted</code>、<code >IsMatchInProgress</code> 和 <code >HasMatchEnded</code> 之类的封装器查询当前的状态。以下是可能的比赛状态：
+</p><ul ><li><p><code >EnteringMap</code> 是初始状态。Actor 尚未进行 tick，世界场景尚未完整初始化。内容完整加载后将过渡到下个状态。
+</p></li><li><p><code >WaitingToStart</code> 是下个状态，进入时将调用 <code >HandleMatchIsWaitingToStart</code>。Actor 正在进行 tick，但玩家尚未生成。如 <code >ReadyToStartMatch</code> 返回 <em>true</em> 或 <code >StartMatch</code> 被调用，它将过渡到下个状态。
+</p></li><li><p><code >InProgress</code> 是游戏主体所发生的状态。进入此状态时将调用 <code >HandleMatchHasStarted</code>，然后在所有 Actor 上调用 <code >BeginPlay</code>。此时，正常游戏进程已在进行中。<code >ReadyToEndMatch</code> 返回 <em>true</em> 或调用 <code >EndMatch</code> 时比赛将过渡到下个状态。
+</p></li><li><p><code >WaitingPostMatch</code> 是倒数第二个状态，进入时将调用 <code >HandleMatchHasEnded</code>。Actor 仍在 tick，但新玩家无法加入。地图转换开始时它将过渡到下个状态。
+</p></li><li><p><code >LeavingMap</code> 是正常流程中的最后一个状态，进入时将调用 <code >HandleLeavingMap</code>。转换到新地图时比赛将保持在此状态中，进入新地图时将过渡回到 <code >EnteringMap</code>。
+</p></li><li><p><code >Aborted</code> 是失败状态，调用 <code >AbortMatch</code> 可开始此状态。出现无法恢复的错误时将进行此设置。
+</p></li></ul><p>游戏状态将固定为 <code >InProgress</code>，因为这是调用 <code >BeginPlay</code>、actor 开始 tick 的状态。然而，个体游戏可能覆盖这些状态的行为，用更复杂的规则构建一个多人游戏，如在一款多人射击游戏中等待其他玩家加入时允许玩家在关卡中自由飞行。
+</p><a name="gamemodeblueprints" ></a><h3 id="gamemode蓝图">Game Mode 蓝图</h3>
+
+<p>可创建派生自 Game Mode 类的蓝图，并将它们用作项目或关卡的默认 Game Mode。
+</p><p>派生自 Game Mode 的蓝图可进行以下默认设置：
+</p><ul ><li><p>默认 <a id="content_link" href="../Pawn/index.html" ><span>Pawn</span></a>
+ 类
+</p></li><li><p>HUD 类
+</p></li><li><p><a id="content_link" href="../Controller/PlayerController/index.html" ><span>PlayerController(玩家控制器)</span></a>
+ 类
+</p></li><li><p>Spectator 类
+</p></li><li><p>Game State 类
+</p></li><li><p>Player State 类
+</p></li></ul><p>此外，Game Mode 的蓝图十分实用，因为它们无需调整代码即可启用变量调整。因此可用于使单一 Game Mode 适用到多个不同关卡，无需使用硬编码资源引用或为每次调整请求工程支持和代码修改。
+</p><a name="settingthegamemode" ></a><h3 id="设置gamemode">设置 Game Mode</h3>
+
+<p>设置关卡的 Game Mode 有多种，此处的排序从优先级最低到最高：
+</p><ul ><li><p>设置 <code >DefaultEngine.ini</code> 文件的 <code >/Script/EngineSettings.GameMapsSettings</code> 部分的 <code >GlobalDefaultGameMode</code> 输入将设置项目中所有地图的默认游戏模式。
+</p>
+<pre class="prettyprint"><code>&#91;/Script/EngineSettings.GameMapsSettings&#93;
+GlobalDefaultGameMode="/Script/MyGame.MyGameGameMode"
+GlobalDefaultServerGameMode="/Script/MyGame.MyGameGameMode"</code></pre></li><li><p>在编辑器中 <strong>World Settings</strong> 标签下设置 <strong>GameMode Override</strong> 即可覆盖个体地图的项目设置。
+</p><p><img alt="WorldSettings_GameMode.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Gameplay/Framework/GameMode/WorldSettings_GameMode.jpg" />
+</p></li><li><p>URL 可被传到可执行文件，强制游戏加载时带特定选项。使用 <code >game</code> 选项设置游戏模式。查看 <a id="content_link" href="../../../Programming/Basics/CommandLineArguments/index.html" ><span>命令行参数</span></a>
+ 中的详细内容。
+</p>
+<pre class="prettyprint"><code>UE4Editor.exe /Game/Maps/MyMap?game=MyGameMode -game</code></pre></li><li><p>最后，可在 <code >DefaultEngine.ini</code> 文件的 <code >/Script/Engine.WorldSettings/</code> 部分中设置地图前缀（和 URL 法的别名）。这些前缀设置所有拥有特定前缀的地图的默认游戏模式。
+</p>
+<pre class="prettyprint"><code>&#91;/Script/EngineSettings.GameMapsSettings&#93;
++GameModeMapPrefixes=(Name="DM",GameMode="/Script/UnrealTournament.UTDMGameMode")
++GameModeClassAliases=(Name="DM",GameMode="/Script/UnrealTournament.UTDMGameMode")</code></pre></li></ul><div class="note">
+	<p>请查阅 [设置 Game Mode] 文档中设置 Game Mode 的范例。
+</p>
+</div><h2 id="gamestate">Game State</h2>
+
+<p><strong>Game State</strong> 负责启用客户端监控游戏状态。从概念上而言，Game State 应该管理所有已连接客户端已知的信息（特定于 Game Mode 但不特定于任何个体玩家）。它能够追踪游戏层面的属性，如已连接玩家的列表、夺旗游戏中的团队得分、开放世界游戏中已完成的任务，等等。
+</p><p>Game State 并非追踪玩家特有内容（如夺旗比赛中特定玩家为团队获得的分数）的最佳之处，因为它们由 <strong>Player State</strong> 更清晰地处理。整体而言，GameState 应该追踪游戏进程中变化的属性。这些属性与所有人皆相关，且所有人可见。Game mode 只存在于服务器上，而 Game State 存在于服务器上且会被复制到所有客户端，保持所有已连接机器的游戏进程更新。
+</p><p><code >AGameStateBase</code> 是基础实现，其部分默认功能包括：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>函数或变量 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>使用 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><code >GetServerWorldTimeSeconds</code></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是 <code >UWorld</code> 函数 <code >GetTimeSeconds</code> 的服务器版本，将在客户端和服务器上同步，因此该时间可用于复制，十分可靠。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><code >PlayerArray</code></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是所有 <code >APlayerState</code> 对象的阵列，对游戏中所有玩家执行操作时十分实用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><code >HasBegunPlay</code></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如 <code >BeginPlay</code> 函数在游戏中的 actor 上调用，则返回 true。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p><code >AGameStateBase</code> 通常在 C++ 或蓝图中延展，包含用于使游戏中玩家知晓当前情况的额外变量和函数。进行的特定修改通常基于 Game State 的配对 Game Mode。Game Mode 自身也可将其默认 Game State 类覆盖为派生自 <code >AGameStateBase</code> 的任意 C++ 类或蓝图。
+</p>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="../Controller/PlayerController/index.html" title="PlayerController实现了从玩家获得输入数据并把它们转换为动作(比如运动、使用道具、开射武器)的功能。">PlayerController(玩家控制器)</a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0a98.html">Gameplay Framework</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Gameplay/Framework/GameMode/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 03:19:29 GMT -->
+</html>

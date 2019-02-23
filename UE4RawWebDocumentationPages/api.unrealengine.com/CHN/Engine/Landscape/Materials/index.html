@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Landscape/Materials/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:19:59 GMT -->
+<head>
+    <title>地形材质 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Engine/Landscape/Materials/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Engine/Landscape/Materials/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Engine/Landscape/Materials/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Engine/Landscape/Materials/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="4828948" />
+<meta name="availability" content="Public" />
+<meta name="title" content="地形材质" />
+<meta name="description" content="设置与地形一起使用的材质。" />
+<meta name="type" content="" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine/Landscape" />
+<meta name="order" content="2" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="地形材质" />
+	<meta property="og:description" content="设置与地形一起使用的材质。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">Landscape室外地形</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">地形材质</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<p>虽然任何随机 <strong>材质</strong> 都可以与 <strong>地形</strong> Actor一起使用，但虚幻引擎4（UE4）中的材质系统确实提供了一些特定于地形的特殊材质节点，它们可以极大地帮助您更好地处理地形纹理。在下面的文档中，我们将深入了解这些节点，它们的工作方式，以及如何在地形材质中使用它们。
+</p><div class="note">
+	<p>在<a id="content_link" href="../../Rendering/Materials/Editor/index.html" ><span>材质编辑器</span></a>
+中，您可以像修改其他材质一样修改与地形一起使用的材质。
+</p>
+</div><a name="layerweightsandordering" ></a><h2 id="图层权重和排序">图层权重和排序</h2>
+
+<p>地形使用权重混合而不是阿尔法混合，因此任何位置的所有图层的混合系数之和将为1.0。这样做的优点是不存在顺序依赖性—您可以在任何时间绘制任何图层，其权重将增加，而其他现有图层的权重将减少。缺点则在于，当您将一个图层完全绘制到100%时，其他所有图层的权重值将为0%。在使用<a id="content_link" href="../Editing/PaintMode/index.html#paint" ><span>绘制</span></a>
+工具移除一个已100%绘制的图层时，这一点显而易见。该工具不知道用什么其他图层来替换您要移除的图层，因此该工具最终似乎不会执行任何操作。
+</p><a name="landscapespecificmaterialnodes" ></a><h2 id="地形特定的材质节点">地形特定的材质节点</h2>
+
+<p>在材质编辑器中，您将发现有六种特殊节点可以与地形系统一起使用。您可以在 <strong>情境（Context）</strong> 菜单或在地形类别下的 <strong>面板（Palette）</strong> 菜单中找到所有节点。
+</p><p> <strong>情境菜单</strong>
+</p><p><img alt="Material Editor Context Menu" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Mat_Context.jpg" />
+</p><p> <strong>面板菜单</strong>
+</p><p><img alt="Landscape_Mat_Palette.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Mat_Palette.jpg" />
+</p><a name="landscapelayerblendnode" ></a><h3 id="地形图层混合节点">地形图层混合节点</h3>
+
+<p> <strong>LandscapeLayerBlend</strong> 节点允许您将多个纹理或材质网络混合在一起，以便它们可以用作地形图层。LandscapeLayerBlend 使用一个阵列存储有关地形图层的信息。若要向该阵列添加图层，请单击条目旁边的加号图标：“0个元素（0 elements）”。
+</p><p><img alt="Landscape_Add_To_Array.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Add_To_Array.jpg" />
+</p><p>当您将多个图层添加到 <strong>LandscapeLayerBlend</strong> 节点时，您会得到如下图所示的内容：
+</p><p><img alt="LandscapeLayerBlend Node" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_LayerBlend.jpg" />
+</p><p>您可以在 <strong>材质编辑器（Material Editor）</strong> 的 <strong>详细信息（Details）</strong> 面板中设置 <strong>LandscapeLayerBlend</strong> 节点的属性。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>编号 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>1:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>图层（Layers）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此节点所包含之图层的列表。您可以通过单击加号图标(<img alt="Plus Sign" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/icon_Landscape_PlusSign.jpg" />)来添加图层。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>2:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>图层名称（Layer Name）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>您给予图层的唯一名称。<strong>图层名称（Layer Name）</strong> 对应于在地形工具窗口中的<a id="content_link" href="../Editing/PaintMode/index.html#layers" ><span>绘制节点</span></a>
+中使用的图层名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>3:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>混合类型（Blend Type）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>LB_AlphaBlend</strong>、<strong>LB_HeightBlend</strong> 或 <strong>LB_WeightBlend</strong>。这些将在本页稍后进行介绍。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>4:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>预览权重（Preview Weight）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>它用作图层的权重值，以在材质编辑器中预览混合效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>5:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>常量图层输入（Const Layer Input）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>它是为了在不希望使用纹理的情况下提供一个数值作为颜色。它主要用于调试有问题的图层。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>6:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>常量高度输入（Const Height Input）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>它是为了在不希望使用纹理的情况下提供一个数值作为高度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>7:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>其他图层（Additional Layers）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>它们是其他图层处于折叠状态时的外观。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p><img alt="Landscape_LayerBlend_Node.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_LayerBlend_Node.jpg" />
+</p><p>下表详细说明了 <strong>图层混合节点的</strong> 输入和输出。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>编号 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>项目 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>1:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>Layer（图层） *LayerName（图层名称）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>每个图层均添加一个图层输入以便混合在一起。在 <strong>详细信息（Details）</strong> 面板中添加图层之前，这些输入将不可用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>2:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>Height（高度） *LayerName（图层名称）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是您提供高度图以进行混合的地方。请注意，此输入将仅在 <strong>混合类型（Blend Type）</strong> 属性设置为 <strong>LB_HeightBlend</strong> 的图层上可见。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>3:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>无标记输出（Unlabeled Output）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>混合在一起的图层的结果。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>使用某些图层混合模式组合时，在地形上不同图层的相交处，您可能会以黑点结束。当针对多个图层使用LB_HeightBlend模式时，此问题尤为普遍。LB_HeightBlend通过使用指定高度值调整图层的混合系数或权重来工作。当您在一个区域上绘制多个图层，并且它们都被设置为LB_HeightBlend时，在特定区域中绘制的所有图层可能同时具有为0的高度值，因此每个图层的所需混合系数将变为0。由于没有隐式或显式排序，所有图层对都不会对该区域有任何贡献，因此结果将为黑点。当混合法线贴图时，情况则更糟，因为这会导致一个为(0,0,0)的法线值，该值不仅无效而且会引起照明出现渲染问题。该问题的解决方案是针对其中一个图层使用 <strong>LB_AlphaBlend</strong>，类似于以下示例。<img alt="LB_HeightBlend Problem" width="800" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/HeightBlendProblem.jpg" />
+</p><p>在左图中，所有图层都为LB_HeightBlend，从而导致一些区域为黑色。在右图中，红色的“1”层已经更改为使用LB_AlphaBlend，从而解决了该问题。
+</p><p>下面是有关 <strong>Landscape Layer Blend</strong> 节点的属性的一个示例，该节点用于多个混合在一起的图层。请注意 <strong>土壤（Soil）</strong> 图层如何将混合模式设置为LB_AlphaBlend，而其他图层如何将其混合模式设置为LB_HeightBlend。这是为了阻止上面提到的问题（图层的相交处出现黑点）的发生。
+</p><p><img alt="Layer Blend Properties" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/LayerBlendProperties.jpg" />
+</p><p>若要删除一个图层，请单击图层元素号右侧的下拉箭头以打开情境菜单，然后单击 <strong>删除（Delete）</strong>。
+</p><p><img alt="Delete Layer" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_DeleteBlendLayer2.jpg" />
+</p><a name="landscapelayercoordsnode" ></a><h3 id="地形图层坐标节点">地形图层坐标节点</h3>
+
+<p> <strong>LandscapeLayerCoords</strong> 节点生成可用于将材质网络映射到地形的UV坐标。
+</p><p><img alt="LandscapeLayerCoords Node" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Material_CoordsExp.jpg" />
+</p><p>您可以在 <strong>详细信息（Details）</strong> 面板中设置 LandscapeLayerCoords 节点的属性。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>编号 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>1:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>映射类型（Mapping Type）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>ELandscapeCoordMappingType</strong>，指定将材质（或网络）映射到地形时要使用的方向。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>2:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>自定义UV类型（Custom UVType）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>地形上要使用的贴图位置。<strong>CustomUVType</strong> 输出UV坐标，以根据给定的属性值将材质映射到地形。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>3:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>映射比例（Mapping Scale）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>要应用于UV坐标的等分缩放。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>4:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>映射旋转（Mapping Rotation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>要应用于UV坐标的旋转，其单位为度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>5:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>映射平移[U]（Mapping Pan [U]）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>要应用于UV坐标的[U]方向上的偏移。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>6:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>映射平移[V]（Mapping Pan [V]）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>要应用于UV坐标的[V]方向上的偏移。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>7:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>无标记输出（Unlabeled Output）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>输出UV坐标，以根据给定的属性值将材质映射到地形。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="landscapelayerswitchnode" ></a><h3 id="地形图层开关节点">地形图层开关节点</h3>
+
+<p>当某一特定图层没有对地形的一个区域做出贡献时，<strong>LandscapeLayerSwitch</strong> 节点允许您排除某些材质运算。这允许您在某一特定图层的权重为零时通过移除不必要的计算来优化材质。
+</p><p><img alt="LandscapeLayerSwitch Node" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/LayerSwitchNode.jpg" />
+</p><p>您可以在 <strong>详细信息（Details）</strong> 面板中设置 LandscapeLayerSwitch 节点的属性。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>编号 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>1:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>参数名称（Parameter Name）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>您给予参数唯一名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>2:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>已使用预览（Preview Used）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果选中，使用预览。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>3:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>已使用图层（LayerUsed）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当节点属性中指定的图层被地形的当前区域使用时要使用的结果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>4:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>未使用图层（LayerNotUsed）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当该图层不被地形的当前区域使用且权重为零时要使用的结果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>5:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>无标记输出（Unlabeled Output）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>LayerUsed</strong> 或 <strong>LayerNotUsed</strong> 输入，取决于该图层是否对地形的特定区域有贡献。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="landscapelayerweightnode" ></a><h3 id="地形图层权重节点">地形图层权重节点</h3>
+
+<p> <strong>LandscapeLayerWeight</strong> 表达式允许基于相关图层的权重来混合材质网络，该相关图层从应用材质的地形中获得。
+</p><p><img alt="LandscapeLayerWeight Node" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Mat_LayerWeightNode.jpg" />
+</p><p>您可以在 <strong>详细信息（Details）</strong> 面板中设置 LandscapeLayerWeight 节点的属性。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>编号 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>1:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>参数名称（Parameter Name）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>属于要与该表达式关联的地形的图层的名称。该图层的权重将用作混合两个输入网络的阿尔法值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>2:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>预览权重（Preview Weight）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在材质编辑器中用于预览的权重。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>3:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>常量底层（Const Base）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>您可以在此处指定一个您想要地形拥有的底色</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>4:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>底层（Base）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将与该图层混合的网络。它通常是所有之前图层混合的结果，但如果它是第一个图层，则可以为空。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>5:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>图层（Layer）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将混合在一起以创建该图层的网络。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>6:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>无标记输出（Unlabeled Output）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>根据所涉及图层的图层权重，输出 <strong>底层（Base）</strong> 与 <strong>图层（Layer）</strong> 输入之间混合的结果。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="landscapevisibilitymasknode" ></a><h2 id="地形可视性遮罩节点">地形可视性遮罩节点</h2>
+
+<p> <strong>LandscapeVisibilityMask</strong> 节点用于移除地形的各个部分的可视性，以便您可以创建洞，例如用于创建洞穴。
+</p><p><img alt="LandscapeVisibilityMask Node" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_VisibilityMask.jpg" />
+</p><p>您可以在 <strong>详细信息（Details）</strong> 面板中设置 LandscapeVisibilityMask 节点的属性。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>编号 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>1:</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>无标记输出（Unlabeled Output）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>输出可视性遮罩属性。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>要使该节点正确工作，您所要做的是确保其输出连接到材质的 <strong>不透明遮罩（Opacity Mask）</strong> 槽，且 <strong>材质混合节点（Materials Blend Mode）</strong> 设置为 <strong>遮罩（Masked）</strong>。
+</p><p><img alt="Landscape_VisibilityMaskSetup.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_VisibilityMaskSetup.jpg" />
+</p><a name="layerblending" ></a><h2 id="图层混合">图层混合</h2>
+
+<p>能够将多种纹理和材质网络混合到可绘制的地形图层中是对地形进行纹理处理的基础。为了将图层混合在一起，您可以使用多个 <strong>LandscapeLayerWeight</strong> 节点，也可以使用一到两个 <strong>LandscapeLayerBlend</strong> 节点，这取决于您是否使用法线贴图。
+</p><a name="usinglandscapelayerweightnodes" ></a><h3 id="使用地形图层权重节点">使用地形图层权重节点</h3>
+
+<p>设置和使用 <strong>LandscapeLayerWeight</strong> 节点是一个非常简单的过程，下面将对此进行概述。
+</p><div class="note">
+	<p>因为图层名称必须是唯一的，所以最好是尽量为每个图层给出一个描述性名称。
+</p>
+</div><ol ><li><p>在 <strong>材质编辑器</strong> 中，将一个 <strong>LandscapeLayerWeight</strong> 节点添加到材质图表。默认情况下，它会有一个 <strong>参数名称</strong> “None”。
+</p><div class="fullwidth">
+	<p><img alt="Landscape_Layer_Weight_Base.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Layer_Weight_Base.jpg" />
+</p>
+</div></li><li><p>在 <strong>详细信息（Details）</strong> 面板中，将该 <strong>参数名称</strong> 更改为图层的描述性名称，例如“Rock”。
+</p><p><img alt="Layer Name" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Mat_ParamName.jpg" />
+</p><p>输入一个 <strong>参数名称</strong> 后，它自己会在节点上进行更新。
+</p><p><img alt="Landscape_Layer_Weight_Named_Layer.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Layer_Weight_Named_Layer.jpg" />
+</p></li><li><p>添加其他 <strong>LandscapeLayerWeight</strong> 节点，直到您希望材质拥有的每个图层都有一个节点。在此示例中，我们将只使用两个 <strong>LandscapeLayerWeight</strong> 节点。
+</p></li><li><p>将 <strong>纹理样本</strong> 或其他材质网络表达式添加到 <strong>LandscapeLayerWeight</strong> 节点并进行连接。
+</p></li><li><p>添加一个 <strong>LandscapeLayerCoords</strong> 节点，将其UV标题设置为想要的标题，并将其连接到 <strong>纹理样本</strong> 节点。
+</p></li><li><p>从每个 <strong>图层</strong> 节点的输出引脚拖至下一个图层节点的 <strong>底层（Base）</strong> 引脚，用导线将它们连接起来（不连接第一个图层节点的 <strong>底层（Base）</strong> 引脚）。
+</p></li><li><p>从最后一个 <strong>图层</strong> 节点的输出引脚拖至材质的 <strong>底层（Base）</strong> 节点的 <strong>底色（Base Color）</strong> 输入。
+</p></li></ol><p>完成后，您应该会获得类似下例使用 <strong>LandscapeLayerWeight</strong> 节点的结果：
+</p><p><img alt="Landscape Layer Nodes" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_MaterialLayers.jpg" />
+</p><div class="note">
+	<p>您可以通过更改 <strong>LandscapeLayerWeight</strong> 节点的 <strong>预览权重（Preview Weight）</strong> 属性，来预览不同权重在材质上的效果。
+</p>
+</div><a name="usinglandscapelayerblendnodes" ></a><h3 id="使用地形图层混合节点">使用地形图层混合节点</h3>
+
+<p>作为使用 <strong>LandscapeLayerWeight</strong> 节点手动将图层混合在一起的替代方法，<strong>LandscapeLayerBlend</strong> 节点使用阿尔法混合或带基于高度的偏移的阿尔法混合将多个图层混合在一起。基于高度的偏移允许基于高度图输入将图层与其他图层混合。
+</p><p> <strong>使用LandscapeLayerBlend节点：</strong>
+</p><ol ><li><p>在材质编辑器（Material Editor）中，添加一个LandscapeLayerBlend节点。
+</p><p><img alt="Landscape_LayerBlend_Material_Example_00.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_LayerBlend_Material_Example_00.jpg" />
+</p></li><li><p>在 <strong>详细信息（Details）</strong> 面板中，单击 <strong>图层（Layers）</strong> 旁边的加号图标(<img alt="Plus Sign" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/icon_PlusSymbol_12x.jpg" />)以添加一个图层。
+</p><p><img alt="Landscape_LayerBlend_Material_Example_01.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_LayerBlend_Material_Example_01.jpg" />
+</p></li><li><p>展开该图层以查看其属性。
+</p><p><img alt="Layer Properties" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Mat_LayerBlendDetails.jpg" />
+</p></li><li><p>将 <strong>参数名称</strong> 更改为该图层的一个描述性名称，例如 “Rock”。
+</p><p><img alt="Layer Name" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Mat_LayerName.jpg" />
+</p></li><li><p>确定您希望该图层是阿尔法混合型还是高度混合型图层，并相应地设置 <strong>混合类型（Blend Type）</strong>。
+</p><p><img alt="Blend Type" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Mat_BlendType.jpg" />
+</p></li><li><p>为地形材质添加所需数量的其他图层。对它们进行重命名，并相应地设置 <strong>混合类型（Blend Type）</strong>。
+</p></li><li><p>将LandscapeLayerBlend节点的输出连接到材质的基本节点的 <strong>底色（Base Color）</strong> 输入。
+</p></li><li><p>添加纹理样本节点，并将它们的主要输出连接到 <strong>LandscapeLayerBlend</strong> 节点的 <strong>图层（Layer）</strong> 输入。（或者，您可以创建一个更复杂的材质网络，并将其连接到LandscapeLayerBlend的 <strong>图层（Layer）</strong>）对于任何高度混合图层，将纹理样本的阿尔法输出连接到LandscapeLayerBlend的 <strong>高度（Height）</strong> 输入。
+</p></li></ol><p>完成后，地形材质网络将如下所示：
+</p><p><img alt="Landscape Blend Node" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_MaterialBlend.jpg" />
+</p><div class="note">
+	<p>您可以通过更改 <strong>LandscapeLayerBlend</strong> 节点的 <strong>预览权重（Preview Weight）</strong> 属性，来预览不同权重在材质上的效果。
+</p>
+</div><a name="landscapelayerblendtypes" ></a><h3 id="地形图层混合类型">地形图层混合类型</h3>
+
+<p>地形 <strong>图层混合</strong> 材质节点有三种不同的混合模式可供选择。当您试图获得一个不同的结果时，将使用每种不同的 <strong>图层混合</strong> 类型。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>混合类型 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>功能 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LB权重混合（LB Weight Blend）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果您的图层来自外部程序，例如World Machine，或者如果您想要在无需担忧图层顺序的情况下独立绘制任何图层，这种模式很适合使用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LB 阿尔法混合（LB Alpha Blend）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果您想要绘制细节，而且还想要有一个定义的图层顺序，从而使在岩石和草地上绘制积雪将遮挡它们，而擦除积雪将恢复显示积雪下面的岩石和草地，这种模式将非常适用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LB高度混合（LB Height Blend）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这种模式与LB_WeightBlend基本相同，但它还根据高度图向图层之间的过渡添加了细节。例如，它允许在图层过渡点处岩石之间的缝隙中显示灰尘，而不是仅仅在岩石与灰尘之间平滑混合。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>下面是使用 <strong>LB高度混合（LB Height Blend）</strong> 的一个示例。正如您所看到的，在图层过渡点处，岩石之间的缝隙中显示了灰尘。这样，在图层的相交处会获得一个很好的过渡。
+</p><p><img alt="LB_HeightBlend.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/LB_HeightBlend.jpg" />
+</p><a name="landscapelayerblendtechnicalinformation" ></a><h3 id="地形图层混合技术信息">地形图层混合技术信息</h3>
+
+<p>在后台，这些图层节点的行为类似于<a id="content_link" href="../../Rendering/Materials/ExpressionReference/Parameters/index.html#staticswitchparameter" ><span>静态切换参数</span></a>
+节点，这允许您从使用材质的某一部分切换到使用另一部分。地形的每个组件都有自己的材质实例常量（MaterialInstanceConstant），它是从主要地形材质创建的，并且仅应用于该组件。如果某个特定的图层没有在某个特定的地形组件上使用，则连接到该图层的节点的分支树将被丢弃。这将降低材质的整体复杂性，允许应用于地形的材质包含任意数量的纹理样本，只要在任何单个组件上使用的样本数量不超过着色器模型规范所规定的最大数量（SM 3.0为16个）。这意味着，可以设置一个包含在地形上的任意位置使用的每个纹理或网络的主材质，它最终可以是一个非常复杂的网络集合，同时在硬件允许的参数范围内，仍保留应用于地形的各个组件的最终材质。
+</p><div class="note">
+	<p>任何材质表达式的网络都可以连接到 <strong>图层</strong> 输入，而不是简单的 <strong>TextureSample</strong>。这使得执行更复杂的效果成为可能，例如根据图层的观看距离从细节纹理过渡到更大的宏纹理。
+</p>
+</div><a name="landscapeholematerials" ></a><h2 id="地形洞材质">地形洞材质</h2>
+
+<p>在地形中创建洞是可以在<a id="content_link" href="../Editing/ManageMode/index.html" ><span>管理模式</span></a>
+下完成的操作，但只能通过一次性删除全部地形组件来实现。为了解决这一问题，您可以使用地形洞材质来遮罩地形上某个位置的可视性和碰撞。如果您想要在山峰的一侧制作一个洞穴入口，这种方法是一个很不错的选择。
+</p><div class="tip">
+	<p>您可以针对地形材质和地形洞材质使用同一材质，但要注意，使用不透明遮罩的材质比不使用不透明遮罩的材质在性能方面需要付出更高的成本。这就是为什么您可以选择创建一个单独的地形洞材质的原因。
+</p>
+</div><p> <strong>创建地形洞材质的方法：</strong>
+</p><ol ><li><p>首先，在材质编辑器中打开或创建一个新的材质。打开材质后，查看 <strong>详细信息（Details）</strong> 面板，并将 <strong>混合模式（Blend Mode）</strong> 设置为 <strong>遮罩（Masked）</strong>。
+</p><p><img alt="Landscape_BaseNodeOpacity.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_BaseNodeOpacity.jpg" />
+</p></li><li><p>接下来，搜索一个 <strong>LandscapeVisibilityMask</strong> 节点并将其添加到材质图表，并将其输出连接到 <strong>不透明遮罩（Opacity Mask）</strong> 输入。
+</p><p><img alt="Landscape_VisibilityMaskNode.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_VisibilityMaskNode.jpg" />
+</p></li><li><p>现在，您可以像往常一样设置地形材质的剩余部分，完成后，您应该会获得如下所示的内容。
+</p><p><img alt="Landscape_VisibilityMaskSetup_In_Material.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_VisibilityMaskSetup_In_Material.jpg" />
+</p></li><li><p>在编译材质后，现在是时候将它指定到地形，以便可以使用它。这可以在 <strong>详细信息（Details）</strong> 面板的 <strong>地形洞材质（Landscape Hole Material）</strong> 部分完成。
+</p><p><img alt="Landscape_Hole_Materail_Assign.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Hole_Materail_Assign.jpg" />
+</p></li><li><p>完成所有工作后，您现在应该能够像下面视频中一样遮罩或取消遮罩地形的可视性。
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_6NxNppmZRss"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="6NxNppmZRss" width="100%" height="100%" src="../../../../../external.html?link=https://www.youtube.com/embed/6NxNppmZRss?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_6NxNppmZRss
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_6NxNppmZRss:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style></li></ol><div class="note">
+	<p>有关使用绘图工具创建地形洞的信息，请参阅 <a id="content_link" href="../Editing/SculptMode/index.html" ><span>使用不透明遮罩创建洞</span></a>
+。
+</p>
+</div><a name="assigningmaterialstolandscapes" ></a><h2 id="将材质指定到地形">将材质指定到地形</h2>
+
+<p>为地形创建一个材质后，必须将该材质指定到关卡中的地形Actor（Landscape Actor），以便能够使用和查看它。您可以按照以下方式将材质指定到地形Actor。
+</p><p> <strong>将材质指定到地形：</strong>
+</p><ol ><li><p>找到并选择想要在 <strong>内容浏览器</strong> 中使用的地形材质。
+</p></li><li><p>在视口中或在 <strong>世界场景大纲视图（World Outliner）</strong> 中选择地形。
+</p></li><li><p>在关卡编辑器中，在该地形的 <strong>详细信息（Details）</strong> 面板的 <strong>地形（Landscape）</strong> 部分，单击 <strong>地形材质（Landscape Material）</strong> 旁边的指定（Assign）箭头（<img alt="Assign arrow" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/icon_assign_left_16x.jpg" />）以指定选定材质。
+</p><p><img alt="Assigned Material" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_Material_Assigned.jpg" />
+</p></li></ol><p>您可以指定另一材质作为 <strong>地形洞材质</strong>，该材质是一种具有特定不透明度设置的材质，您可以在地形的各个部分上使用它来移除它们，以便创建洞，例如洞穴。
+</p><p> <strong>将地形洞材质指定到地形：</strong>
+</p><ol ><li><p>找到并选择想要在 <strong>内容浏览器</strong> 中使用的地形洞材质。
+</p></li><li><p>在视口中或在 <strong>世界场景大纲视图（World Outliner）</strong> 中选择地形。
+</p></li><li><p>在关卡编辑器中，在该地形的 <strong>详细信息（Details）</strong> 面板的 <strong>地形（Landscape）</strong> 部分，单击 <strong>地形洞材质（Landscape Hole Material）</strong> 旁边的指定（Assign）箭头（!(icon_assign_left_16x.png)）以指定选定材质。
+</p><p><img alt="Landscape_HoleSettings.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_HoleSettings.jpg" />
+</p></li></ol><div class="note">
+	<p>有关使用地形洞材质的信息，请参阅 <a id="content_link" href="../Editing/SculptMode/index.html" ><span>使用不透明遮罩创建洞</span></a>
+。
+</p>
+</div><a name="tessellationanddisplacement" ></a><h2 id="曲面细分和位移">曲面细分和位移</h2>
+
+<p>材质的 <strong>曲面细分乘数（Tessellation Multipliers）</strong> 和 <strong>世界场景位移（World Displacement）</strong> 信道可以与地形结合使用，以在地形靠近摄像机时提供更多的细节和变形。它们的使用与任何其他标准材质完全一样，并且图层混合可以与它们一起使用，就像与 <strong>底线</strong>、<strong>法线</strong> 或任何其他信道一样。地形还将仅在最高细节级别（LOD）渲染硬件曲面细分，当地形接近第二个LOD时它们将逐渐淡出。后续LOD将不再启用曲面细分，当在地形上针对位移启用了曲面细分时，这将大大提高性能。
+</p><div class="note">
+	<p>这些功能仅限于在启用了DirectX 11时使用。因此，它们应该作为次级抛光效果使用，除非您专门针对的是DirectX 11硬件。通过查看<a id="content_link" href="../../../Resources/ContentExamples/MaterialNodes/1_12/index.html" ><span>曲面细分乘数</span></a>
+页面，您可以了解有关如何在项目中启用和使用曲面细分的更多信息。
+</p>
+</div><p><img alt="Landscape_HW_Tess.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/Landscape_HW_Tess.jpg" />
+</p><div class="caption">
+	<p>在上面的可视化中，渲染最高LOD（白色）时启用曲面细分，渲染其他LOD（彩色）时不启用曲面细分。
+</p>
+</div><a name="mobilelandscapematerials" ></a><h2 id="移动地形材质">移动地形材质</h2>
+
+<p>移动地形不再局限于三个地形图层。虽然三个图层仍是一种优化情况，但只要有足够的纹理采样器（Texture Sampler），就可以支持任意数量的图层。地形图层分配现在采用<a id="content_link" href="../../Rendering/Materials/ExpressionReference/Utility/index.html" ><span>功能级别切换材质节点</span></a>
+，允许单个PC或控制台地形材质也有一个用于移动设备的版本。下图显示了PC和控制台版本Fortnite Battle Royal中使用的地形在移动设备中使用时的情况。
+</p><p><img alt="MobileLandscape_FeatureLevel.png" title="MobileLandscape842352655FeatureLevel.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/Materials/MobileLandscape_FeatureLevel.jpg" />
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Landscape/Materials/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:19:59 GMT -->
+</html>

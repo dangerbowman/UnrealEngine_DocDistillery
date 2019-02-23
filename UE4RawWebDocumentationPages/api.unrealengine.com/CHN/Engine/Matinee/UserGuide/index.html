@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Matinee/UserGuide/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:32:10 GMT -->
+<head>
+    <title>Matinee 用户指南 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Engine/Matinee/UserGuide/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Engine/Matinee/UserGuide/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Engine/Matinee/UserGuide/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Engine/Matinee/UserGuide/index.html" hreflang="zh-CN" />
+
+	<meta name="availability" content="Public" />
+<meta name="title" content="Matinee 用户指南" />
+<meta name="description" content="关于使用Matinee来使得属性和游戏中的Actor产生动画的指南。" />
+<meta name="parent" content="Engine/Matinee" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="Matinee 用户指南" />
+	<meta property="og:description" content="关于使用Matinee来使得属性和游戏中的Actor产生动画的指南。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">Matinee 及过场动画（Cinematic）</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">Matinee 用户指南</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="fullwidth">
+	<p><img alt="MatineeOverview.png" width="800" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/UserGuide/MatineeOverview.jpg" />
+</p>
+</div><div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#创建matinee序列">创建Matinee序列</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#使用组和轨迹">使用组和轨迹</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#锁定视图至组">锁定视图至组</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#相机actor">相机Actor</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#matinee复制">Matinee 复制</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#过场动画">过场动画</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#导入和导出matinee数据">导入和导出 Matinee 数据</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#关键帧简化">关键帧简化</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#在蓝图中控制matinee序列">在蓝图中控制Matinee序列</a>
+	</li>		    	        </ul>
+</div>
+<h2 id="创建matinee序列">创建Matinee序列</h2>
+
+<p>要想创建Matinee序列，您需要创建一个MatineeActor并将其放置到场景中。您可以使用几种不同的方法来完成该处理：
+</p><ul ><li><p>点击虚幻编辑器顶部的工具条中的 <strong>Matinee</strong> 按钮，然后点击 <strong>添加Matinee</strong> 。
+</p><p><img alt="MatineeToolbar.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/UserGuide/MatineeToolbar.jpg" />
+</p></li><li><p>在 <strong>Place Mode（放置模式）</strong> 面板中, 从 <strong>All Classes（所有类别）</strong> 下找到Matinee，并将其拖拽到视口中。
+</p></li></ul><p>当您创建完MatineeActor后，要想查看Matinee界面并修改您的过场动画，请在 <strong>世界大纲视图</strong> 或 视口中  <strong>选择</strong> 该Matinee Actor， 
+然后单击 <strong>详细信息</strong> 面板中的 <strong>打开Matinee</strong> 。或者，您可以在编辑器顶部的工具条中单击 Matinee 按钮， 
+并从列表中 <strong>选择</strong> 您的Matinee Actor。
+</p><div class="note">
+	<p>如果您想在Matinee中设置按键绑定键盘快捷方式，那么您可以通过在 <strong>编辑</strong> 菜单中单击 <strong>编辑器偏好设置</strong> ，然后点击 <strong>键盘快捷方式</strong> 。
+向下滚动到Matinee部分，并展开它来查看并设置按键绑定。
+</p>
+</div><h2 id="使用组和轨迹">使用组和轨迹</h2>
+
+<p>Matinee 的架构是围绕 Group（组）概念来设计的，每个组均包含多个不同的 Track（轨迹）。Group（组）与关卡中的特定 Actor 相关联。
+</p><p>关于不同轨迹类型及轨迹应用的更多信息，请参照 <strong><a id="content_link" href="../TrackReference/index.html" ><span>Matinee轨迹参考指南</span></a>
+</strong> 文档。
+</p><h3 id="创建一个新组">创建一个新组</h3>
+
+<p>为了在您的 Matinee 序列中创建一个新的 Group（组），首先在关卡中选择您希望修改的 Actor。然后右击Matinee左侧下面的灰条， 
+并 <strong>选择</strong> ‘添加新组’。
+</p><p><img alt="New Group menu" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/UserGuide/Matinee_NewGroup.jpg" />
+</p><p>将会提示您为新的组命名 - 该名称在 Matinee 序列中应该是独一无二的，不得含有任何空格。当您选择‘确定’时，您将会发现一个新的组 
+标题。如果您现在从蓝图中查看您的Matinee动作，您可以看到它已经创建了一个新的变量连接器，名称为您的组的名称，还创建了一个新的对象变量， 
+该变量包含了到您想让该组处理的Actor的引用。多个Actor可以连接到同一个组连接器上，比如如果您想 
+以相同的方式随着时间控制光源数量，那么这是非常有用的。
+</p><p>在组标题中的小彩色条是这个编辑器的“组颜色”。它被用于 Matinee 中的不同事物，帮助您辨识场景中哪些对象是被 Matinee 中的哪个 Group（组） 
+所控制。选择 Group（组），并修改窗口底部的 GroupColor（组色彩）属性，即可修改它。<strong>右击</strong> 组标题允许您 
+重命名或删除整个组。只要您选定了一个 Group（组），按住向上箭头和向下箭头键，将允许您在列表中到处移动它，这对整理相似的<br />Group（组）较为有用。
+</p><p>注意，无论您何时选择一个 Group（组）（或 Group（组）中的轨迹），关卡中的 Actor 均会为您选定，反之亦然。
+</p><h3 id="创建一条新轨迹">创建一条新轨迹</h3>
+
+<p>Group（组）自身并不影响对应的 Actor。为了利用某种方式修改它，我们必须将一条 Track（轨迹）添加到这个 Group（组）中。<strong>右击</strong> 组标题， 
+它将弹出"新建轨迹菜单"。这列出了所有可添加的不同类型的 Matinee 轨迹。选择您需要的轨迹，它将会出现在这个组中。根据轨迹类别的不同， 
+您在进行添加之前，可能向您提示更多的信息。
+</p><p><img alt="New Track menu" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/UserGuide/Matinee_NewTrack.jpg" />
+</p><p>有些轨迹类型（比如 运动轨迹），允许您让每个组只拥有一个轨迹，而其他类型却允许您同一个组拥有多个轨迹（比如 浮点数属性轨迹）。
+</p><p>当您在视口中选择了一个Actor且该Actor在Matinee中具有一条轨迹，那么Matinee编辑器将会打开，该Actor的轨迹在Matinee编辑器中将高亮显示。
+</p><p>如果您想要隐藏一个组中所有的轨迹，您可以按下组标题上的箭头，将其“合并”起来。您可以在组中修改轨迹的排序 - 就像您移动组一样 - 
+仅需选中轨迹然后使用向上箭头和向下箭头按键操作。
+</p><p>通过选择轨迹名称旁边的复选框，即可打开和关闭轨迹效果。 比如，在下面的图片中，运动轨迹被禁用， 
+那么当matinee序列运行时将不会看到该轨迹的效果。
+</p><p><img alt="Track view with Movement track disabled" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/UserGuide/Matinee_TrackDisabled.jpg" />
+</p><h3 id="关键帧">关键帧</h3>
+
+<p>Matinee 的选择和操作控制与 虚幻引擎4中其他组成部分中的工具类似。
+</p><p>点击一个关键帧，将把播放位置移至那个关键帧上，并让 Matinee 进入“录制”模式。修改由该轨迹所控制的 Actor 的属性， 
+从而修改关键帧的数值。在编辑关键帧时，一个小红圈将会出现在 Matinee 信息框中：
+</p><p><img alt="Key recording indicator" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/UserGuide/Matinee_KeyMovement.jpg" />
+</p><p>拖拉至一个不同位置或开始播放，均会让您退出“录制”模式，从而无法记住对场景中 Actor 的修改。
+</p><h3 id="调整序列长度">调整序列长度</h3>
+
+<p>修改序列长度的非常简单 - 仅需抓住那个标明您序列结束处的红色柄，并将其拖至您希望序列结束的新时间点。
+让关键帧处于序列范围之外亦绝对安全。
+</p><p>将播放位置移至您希望插入时间的位置点，然后从“Edit（编辑）”菜单中选择“Insert Space At Current（在当前位置插入空间）”， 
+即可在序列中的一个特定点处添加时间。
+</p><h3 id="循环区">循环区</h3>
+
+<p>Matinee 中高亮显示的绿色区域即为“Loop Section（循环区）”。这在 Matinee 中有多种用途，并且可以通过拖拽滑动条中的绿色手柄进行调整， 
+该绿色手柄代表循环区的开始和结束点。
+</p><p>如果您按下“Loop preview playback（循环预览回放）”按钮，则播放位置将跳至循环区的开始位置，播放它，然后再次跳回开始位置。这允许 
+您重复查看序列中的小块区域，确保它准确执行您要求的工作。
+</p><p>您还可以将当前循环区“伸展”成一个新的长度。想要实现上述目的，可在您想要伸展的区域上设置循环区，并在“Edit（编辑）”菜单中，选择“Stretch Section（拉伸区域）”。
+一个文本输入的对话框将为您显示该区域的当前长度，并允许您输入你希望的新长度。关键帧将会在该区域的新长度上被定位。
+此外，在“Edit（编辑）”菜单中选择“Delete Section（删除区域）”，您可以完全删除循环区。
+</p><h2 id="锁定视图至组">锁定视图至组</h2>
+
+<p>在 Matinee 中，尤其是在创建电影效果时，可将编辑器视图锁定到一个您在场景中控制的 Actor 上，这通常非常有用。当您按下 
+组标题栏上的<img alt="Locking button" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/UserGuide/lockview_button.jpg" />按钮时，它将所有的透视视窗锁定在该组控制的 Actor 的位置处。随着您拖拽 
+该序列，相机将与对象一起移动。此外，当您移动编辑器相机时，它将会移动 Actor，以跟随此相机。当调整一个对象的关键帧来在一个特定方向上查看时， 
+这是非常有用的。
+</p><p>当您将相机锁定到导演 组上的时，它将会从当前的‘激活’相机查看。这将允许您预览场景在游戏中的实际效果。任何时候， 
+当您打开一个含有导演组的 Matinee 序列，它均将自动打开各个透视窗口上的‘实时’模式，并将相机锁定到导演组上。
+</p><p>当您添加一个导演组时，您可以在Matinee编辑器的顶部找到它。导演组的底部包含了一个时间轴。
+</p><div class="note">
+	<p>每个Matinee序列仅能有一个导演组。
+</p>
+</div><h2 id="相机actor">相机Actor</h2>
+
+<p>在创建一个过场动画序列时，使用在关卡上放置的相机 Actor 会非常有用。尽管您可以通过您针对每个组设置的Actor进行查看，但相机Actor 
+通过浮点型轨迹赋予了您一些额外的属性，比如相机视场和屏宽比，并允许您在编辑器中逐渐地查看相机视图平截头体。
+</p><p>通过打开 <strong><a id="content_link" href="../../UI/ClassViewer/index.html" ><span>类查看器</span></a>
+</strong>，从 Actor 类别结构中，选择 CameraActor，在关卡中右击，选择“Add CameraActor Here（在这里添加相机 Actor）”，即可将一个 Camera Actor（相机 Actor） 
+添加到关卡中。
+</p><p>这里是一个关卡中的 CameraActor：
+</p><p><img alt="Camera Actor" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/UserGuide/CHN/camera_actor.jpg" />
+</p><p>相机网格物体和视锥只会出现在编辑器中，而不会出现在游戏中。当您在 Matinee 中到处拖动时，处于活动状态的相机视锥将会高亮显示为黄色。Each camera frustum is 
+使用组编辑器颜色进行描画，使得可轻松表明哪个组正在控制哪个相机。
+</p><p>当通过相机Actor进行查看且设置 <em>Constrain Aspect Ratio（限制长宽比）</em> 为 <em>真</em> 时，黑色栏将会被添加到视口上，用以强化屏面外形。在编辑器中， 
+仅当视图当前锁定到相机Actor上时才会添加这些内容。
+</p><h2 id="matinee复制">Matinee 复制</h2>
+
+<p>bClientSideOnly 设置为 <em>假</em> 的Matinee对象，将自动从服务器复制给客户端。任何时候当在服务器上激活该动作时，服务器将会发送信息 
+给客户端，并保持它们同步。
+</p><p>注意，此次自动复制仅处理设置 bStatic 或 bNoDelete 为启用状态的Actor（也就是，Actor必须放置在虚幻编辑器中的关卡内），并且连接到matinee上的对象变量 
+必须在虚幻编辑器中设置为所需的对象(不是在运行时通过另一个动作设置)。不符合这些情况的Actor负责通过 
+它们自己的蓝图或C++复制代码来复制matinee本身导致的修改。
+</p><h2 id="过场动画">过场动画</h2>
+
+<p>在您的游戏中，您或许会有很多过场动画序列，但是使用光照环境设置的人物上的光照可能看上去是很简单的基本的，而要想使得模型真正完好地展现 
+可能有点困难。在这种情况下，您可以使用自定义光照通道(有时候，为单独的角色使用一个独立的光照通道来控制每个角色的光源数量)， 
+并可以使用自定义放置的动态光照来在特写镜头时照亮角色。
+</p><p>对于这些序列，您可以使用真正的动态光源，因为它们可以看上去更好并且可以给予您更多的控制。但您仍然应该使用非常少的光源，并且通常仅使用一个光源用于 
+投射阴影。
+</p><p>这会产生一个小的性能差别，但是因为过场动画没有游戏可玩性来进一步使性能下降，所以您应该可以中和这些性能消耗。要使得一切在游戏机上正常运行， 
+您可能要让关卡设计人员进入到过场动画地图并对其进行几次优化。在大多数情况下，过场动画中的所有静态几何体(除了角色所站立的地面，它需要实时光照以获得阴影) 
+仍然都是可以有光照贴图的。
+</p><h2 id="导入和导出matinee数据">导入和导出 Matinee 数据</h2>
+
+<p>Matinee 有 <em>导出</em> 和 <em>导入</em> 选项，允许您将整个 Matinee 序列导出到一个FBX文件中，该文件可以加载到3D内容创建包内。 
+它允许您使用外部程序来让您的 actor、相机以及其它属性，比如运动模糊量和相机视角的运动产生动画效果。 场景的很多方面内容都可以导出， 
+以至于您可以在使用动画序列时可视化您的世界几何体。
+</p><p>当导出 Matinee 时，虚幻编辑器将尝试导出场景中和动画曲线数据相关的大多数几何体。
+</p><p>以下数据将会被导出：
+</p><ul ><li><p>绑定到动画序列的相机
+</p></li><li><p>绑定到动画序列的 Actor
+</p><ul ><li><p>特定轨迹的动画曲线
+</p></li><li><p>运动轨迹
+</p></li></ul></li><li><p>浮点型属性轨迹
+</p></li><li><p>当前关卡中的所有光源
+</p></li><li><p>当前关卡中的所有静态网格物体（包括多边形、画刷几何体以及材质）
+</p></li><li><p>当前关卡中的所有发射器（仅位置信息）
+</p></li></ul><p>注意，目前还不支持导出地貌 actor、源画刷模型以及某些其它的对象类型。
+</p><p>导出的对象的命名和它们在 UnrealEd 中的命名类似。 当在3D建模包中对数据进行修改后，您将会想把这些修改导回到一个FBX文件内， 
+通过该FBX文件，可以再次将数据导入到Matinee中。 在这个过程中使场景中的对象的名称保持一致是很重要的！
+</p><p>当把一个新的 FBX 文件导回到编辑器中时，Matinee 将会尝试导入所有和绑定到活动的 Matinee 序列的 actor 名称相匹配的所有 actor 的 
+动画曲线。 在某些情况下（比如相机），您也可以通过在建模包中创建新的对象然后把它们导出为 FBX  格式来添加新的对象。
+</p><h2 id="关键帧简化">关键帧简化</h2>
+
+<p>关键帧简化工具，可以在"编辑"选卡下找到，使得您可以轻松地删除单独轨迹动画曲线中不需要的关键帧。您可能有一条轨迹，该轨迹的曲线具有几个关键帧， 
+它们均匀地分布在一条直线上。在这样的情况下，实际上只需要第一帧和最后一帧。关键帧简化工具可以删除中间的关键帧， 
+来减少对内存的影响，防止执行没用的计算。
+</p><p><img alt="Key Reduction tool" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/UserGuide/KeyReduction.jpg" />
+</p><p>这个工具有一些属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>项目</p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述</p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Tolerance（公差）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置一个关键距离前一帧和下一帧之间的直线距离多远才可以被删除。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Full interval（完整间隔）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为 <em>真</em>，那么在简化关键帧时将会使用轨迹关键帧的完整间隔。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Interval Start（间隔起点）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置要开始简化关键帧的时间。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Interval End（间隔终点）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置要停止简化关键帧的时间。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="在蓝图中控制matinee序列">在蓝图中控制Matinee序列</h2>
+
+<p>您可以在蓝图图表中通过函数调用来播放Matinee序列。最常见的情形是在关卡蓝图中进行此种处理，来添加过场动画或动画元素到关卡中。
+</p><p><strong>要想播放Matinee序列:</strong>
+</p><ol ><li><p>在世界大纲视图中 <strong>选择</strong> 包含您想播放的序列的MatineeActor。
+</p></li><li><p><strong>打开</strong> 关卡蓝图。 确保该蓝图处于图表模式。
+</p></li><li><p>在关卡蓝图中，选中Matinee Actor，在图表中右击。在出现的关联菜单中，展开 “在‘您的Matinee名称’上调用函数”，展开过场动画部分， 
+然后 <strong>点击</strong> 播放。(或者，在关联菜单中，开始输入”播放“来过滤结果，并从列表中 <strong>选择</strong> 播放。) <strong>播放</strong> 节点出现， 
+并且 'Matinee Actor' 节点已经附加到了它上面。
+</p><p><img alt="Matinee_Play.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/UserGuide/Matinee_Play.jpg" />
+</p></li><li><p>决定您想使用何种事件来触发”播放“函数。比如，您可以使用一个Begin Play(开始播放)事件。 添加该事件，并将它的输出执行引脚连接到 
+Play（播放）节点的输入执行引脚上。
+</p><p><img alt="Matinee_EventBeginPlay.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/UserGuide/Matinee_EventBeginPlay.jpg" />
+</p></li><li><p>编译关卡蓝图，并保存您的关卡。
+</p></li></ol><p>您可也可以使用单独的函数节点来通过Matinee Actor执行以下任意处理：
+</p><ul ><li><p><strong>Change Playback Direction（修改播放方向）</strong>
+</p></li><li><p><strong>Pause（暂停）</strong>
+</p></li><li><p><strong>Reverse（反向播放）</strong>
+</p></li><li><p><strong>Set Looping State（设置循环状态）</strong>
+</p></li><li><p><strong>Set Position（设置位置)</strong>
+</p></li><li><p><strong>Stop(停止)</strong>
+</p></li></ul><p>您可以在Matinee下的 <strong>Palette（控制面板）</strong> 中找到这些节点。
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Matinee/UserGuide/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:32:13 GMT -->
+</html>

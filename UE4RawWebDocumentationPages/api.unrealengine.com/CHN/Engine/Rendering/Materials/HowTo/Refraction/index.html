@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/Materials/HowTo/Refraction/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:01 GMT -->
+<head>
+    <title>使用折射 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/Materials/HowTo/Refraction/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/Materials/HowTo/Refraction/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/Materials/HowTo/Refraction/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/Materials/HowTo/Refraction/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3242329" />
+<meta name="availability" content="Public" />
+<meta name="title" content="使用折射" />
+<meta name="description" content="有关在材质中使用折射的操作指南。" />
+<meta name="related" content="Resources/ContentExamples/MaterialNodes/1_14" />
+<meta name="related" content="Resources/ContentExamples/MaterialProperties/1_11" />
+<meta name="related" content="Engine/Rendering/Materials/MaterialInputs" />
+<meta name="version" content="4.9" />
+<meta name="skilllevel" content="Intermediate" />
+<meta name="tags" content="Materials" />
+<meta name="parent" content="Engine/Rendering/Materials/HowTo" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="使用折射" />
+	<meta property="og:description" content="有关在材质中使用折射的操作指南。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">材质 - 操作指南</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">使用折射</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#折射">折射</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#折射率或ior">折射率或 IOR</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#在材质中使用折射">在材质中使用折射</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#折射提示与技巧">折射提示与技巧</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#折射与法线贴图">折射与法线贴图</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#折射和移动">折射和移动</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#折射深度偏移">折射深度偏移</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#总结">总结</a>
+	</li>		    	        </ul>
+</div>
+<p>当光线从一种媒介传播到另一种媒介时，例如从空气传播到水时，光线传播方向会在这两种媒介的交界处发生改变。 
+这种照明现象称为“折射”，是因为光线所接触的不同类型材质会改变光线传播速度而发生。 
+在虚幻引擎 4 中，您可以使用“折射”在材质中模拟这种照明现象。 
+</p><a name="refraction" ></a><h2 id="折射">折射</h2>
+
+<p>术语 <strong>折射</strong> 用于描述因传输媒介改变而使光波方向改变的现象。 
+换而言之，当光线投射到某些表面（例如水面或玻璃）时，光线会发生轻微弯折，因为这些表面会影响光线穿透它们的速度。
+将铅笔的一部分放入水中，您即可看到折射效果的最佳示例。
+由于折射原因，放入水中的铅笔部分看起来
+像是在铅笔与水接触的位置发生弯折。
+下面这个非常简单的示例说明折射如何发生。
+</p><p><img alt="R_Refraction_Example.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Refraction_Example.jpg" />
+</p><p>从摄像机查看时，由于折射原因，位于水下的铅笔部分像是发生弯折。 
+这是因为，来自原始铅笔位置 X 的光波受水折射影响，当通过摄像机查看时，好像是实际来自 Y。
+出现这种现象的原因是，光线传播速度在光线投射到水面时发生改变，而遇到空气时会再次改变。 
+</p><a name="indexofrefractionorior" ></a><h2 id="折射率或ior">折射率或 IOR</h2>
+
+<p>光学测量值 <strong>折射率</strong>（简称 IOR）可用于准确说明光线从一种媒介传播到另一种媒介时的弯折程度。 
+由于这种光学现象可测量，我们可以在 UE4 中使用这些测量值来影响折射，从而使我们的 3D 世界的现实感更加强烈。 
+以下是您每天都可能接触到的对象的一些 IOR 值。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>材质 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>IOR 值</p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>空气</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>1.00</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>水</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>1.33</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>冰</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>1.31</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>玻璃</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>1.52</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>钻石</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>2.42</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="usingrefractioninmaterials" ></a><h2 id="在材质中使用折射">在材质中使用折射</h2>
+
+<p>通过遵循以下指示，可以设置使用折射的材质。 
+</p><div class="note">
+	<p>本教程假设您已将起步内容包括在项目中。如果未包括该内容，请了解如何将起步内容从另一项目 <a id="content_link" href="../../../../Content/Browser/UserGuide/Migrate/index.html" ><span>迁移</span></a>
+ 到此项目。
+</p>
+</div><ol ><li><p>首先，在 <strong>内容浏览器</strong> 中使用鼠标 <strong>右键单击</strong>，从 <strong>基本资产列表（Basic Assets List）</strong>中选择 <strong>材质（Material）</strong>以创建新材质，然后将该材质命名为 <strong>Refraction_Material</strong>。完成后，您的 <strong>内容浏览器</strong> 应该如下所示。 
+</p><p><img alt="R_Create_Refraction_Material.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Create_Refraction_Material.jpg" />
+</p></li><li><p>在 <strong>内容浏览器</strong> 中使用 <strong>鼠标左键双击</strong> 刚刚创建的材质，以将其打开。材质打开之后，请将 <strong>混合模式（Blend Mode）</strong>从 <strong>不透明（Opaque）</strong>更改为 <strong>半透明（Translucent）</strong>，并将 <strong>照明模型（Lighting Model）</strong>从 <strong>体积无方向（Volumetric Non Directional）</strong>更改为 <strong>表面半透明体积（Surface Translucency Volume）</strong>。完成之后，材质 <strong>细节（Details）</strong>面板应该类似于下图。
+</p><p><img alt="DetailsPanel.jpg" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/DetailsPanel.jpg" />
+</p></li><li><p>材质现已具有正确的属性，我们可以开始添加必需的材质表达式节点。对于此材质，我们需要下列类型及数量的材质表达式节点。
+</p><ul ><li><p>常量（Constant）x 5
+</p></li><li><p>插值（Lerp） x 1
+</p></li><li><p>菲涅耳效果（Fresnel） x 1
+</p></li></ul><p><img alt="R_Required_Nodes.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Required_Nodes.jpg" />
+</p></li><li><p>需要的所有材质表达式节点现已添加到材质图中，我们可以开始将它们连接到一起。 
+完成之后，您的材质图应该类似于下图。
+</p><p><img alt="R_Finshed_Material.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Finshed_Material.jpg" />
+</p></li><li><p>为了以后测试方便，请选中与“插值”（Lerp）节点的 <strong>B</strong> 输入相连接的“常量”（Constant）材质表达式节点，并 <strong>右键单击</strong> 该节点。从显示的菜单中，选择 <strong>转换为参数（Convert to Parameter）</strong>选项。完成此操作后，务必命名该输入。在本示例中，我们将使用 <strong>IOR</strong> 作为其名称。完成之后，您的材质图应该类似于下图。
+</p><p><img alt="R_Finshed_Material_IOR_Tweak.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Finshed_Material_IOR_Tweak.jpg" />
+</p></li><li><p>材质现已设置完毕，请确保按 <strong>应用（Apply）</strong>和 <strong>保存（Save）</strong>按钮并关闭材质。 
+</p><p><img alt="R_Apply_&_Save.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Apply_&amp;_Save.jpg" />
+</p></li><li><p>关闭材质后，请在 <strong>内容浏览器</strong> 中找到该材质。找到之后，请使用鼠标 <strong>右键单击</strong> 该材质，然后从菜单中选择 <strong>创建材质实例（Create Material Instance）</strong>选项。完成后，您的 <strong>内容浏览器</strong> 应该如下所示。 
+</p><p><img alt="R_Create_New_MI.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Create_New_MI.jpg" />
+</p></li><li><p>材质实例现已创建完毕，我们可在环境中添加一些对象，以便更好地预览材质。如果您已将起步内容包括在项目中，那么可以在 <strong>形状（Shapes）</strong>文件夹中找到许多不同形状网格。在本示例中，已在环境中添加“立方体” （Cube）、“圆锥体”（Cone）和“球体”（Sphere）。 
+</p><p><img alt="R_Adding_Test_Meshes.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Adding_Test_Meshes.jpg" />
+</p><div class="note">
+	<p>如果您找不到“立方体”（Cube）、“圆锥体”（Cone）和“球体”（Sphere），那么可能表示您未将起步内容包括在项目中。如果未包括起步内容，您可以创建一个新项目并确保包括起步内容，也可以将起步内容从另一个项目 <a id="content_link" href="../../../../Content/Browser/UserGuide/Migrate/index.html" ><span>迁移</span></a>
+ 到此项目。
+</p>
+</div></li><li><p>现已添加一些测试形状，请将折射材质实例应用于这些形状，方法如下：在 <strong>内容浏览器</strong> 中使用 <strong>鼠标左键</strong> 选择材质实例，然后将该材质实例拖到某个形状上并释放 <strong>鼠标左键</strong>。完成后，关卡应该会显示类似下图的内容。
+</p><p><img alt="R_Applied_Material.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Applied_Material.jpg" />
+</p></li><li><p>在 <strong>内容浏览器</strong> 中，通过 <strong>鼠标左键双击</strong> 打开折射材质实例。打开后，通过使用 <strong>鼠标左键</strong> 单击复选框来启用 IOR 参数。激活后，您可将 IOR 设置为不同的值，以模拟不同的表面相互作用。在以下示例中，IOR 从默认值 1.33（水的 IOR）更改为 1.52（玻璃的 IOR），最后更改为 2.42（钻石的 IOR）。 
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_9wRgOXYwMvs"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="9wRgOXYwMvs" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/9wRgOXYwMvs?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_9wRgOXYwMvs
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_9wRgOXYwMvs:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style></li></ol><a name="refractiontips&tricks" ></a><h2 id="折射提示与技巧">折射提示与技巧</h2>
+
+<p>在下一节中，我们会说明将折射与材质编辑器的其他方面结合使用的一些其他方法，这些方法可产生一些非常有趣的结果。 
+</p><a name="refraction&normalmaps" ></a><h3 id="折射与法线贴图">折射与法线贴图</h3>
+
+<p>添加折射材质的选项以使用法线贴图，可产生一些非常有趣的结果，这在法线贴图中有大量有趣细节的区域尤其明显。 
+按以下方式修改刚才创建的材质，以允许它与法线贴图配合使用。
+</p><ol ><li><p>首先，找到要使用的法线贴图。在本示例中，使用的是 <strong>T_Brick_Clay_Old_N</strong>，但可以使用任何法线贴图。找到法线贴图之后，请打开 <strong>Refraction_Material</strong>，然后将该法线贴图从 <strong>内容浏览器</strong> 拖到材质图中。
+</p><p><img alt="R_Adding_Normal_Map.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Adding_Normal_Map.jpg" />
+</p></li><li><p>将法线贴图放入材质图之后，请将其连接到“法线”（Normal）输入。连接之后，请选中“法线贴图纹理样本”（Normal map Texture Sampler）节点，并使用鼠标 <strong>右键单击</strong> 此节点。从显示的菜单中，选择 <strong>转换为参数（Convert to Parameter）</strong>选项，并将其命名为 <strong>Normal_Map</strong>。 
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_HkQHIkEyll0"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="HkQHIkEyll0" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/HkQHIkEyll0?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_HkQHIkEyll0
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_HkQHIkEyll0:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style></li><li><p>务必单击 <strong>应用（Apply）</strong>和 <strong>保存（Save）</strong>按钮，然后关闭材质。 
+</p><p><img alt="R_Apply_&_Save.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Apply_&amp;_Save.jpg" />
+</p></li><li><p>材质现已经过编译并保存，请打开材质实例，并查看 <strong>纹理参数值（Texture Parameters Values）</strong>部分中的 <strong>参数组（Parameter Groups）</strong>。在这里，您应该会看到，法线贴图已变为可编辑的参数。要更改法线贴图，您首先应双击灰色的复选框以启用该贴图。启用之后，您可以更改法线贴图，方法如下：在 <strong>内容浏览器</strong> 中查找新的法线贴图，将其选中，然后使用 <strong>使用内容浏览器中选中的资产（Use Selected Assets from the Content Browser）</strong>按钮将选择的法线贴图指定给材质实例。 
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_zZ5kijsLZQY"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="zZ5kijsLZQY" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/zZ5kijsLZQY?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_zZ5kijsLZQY
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_zZ5kijsLZQY:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style></li><li><p>通过更改法线贴图，您可以通过非常有趣的方式影响折射效果。以下示例仅使用起步内容的“纹理”（Textures）文件夹中的法线贴图。
+</p><p><img alt="R_Reflection_&_Normal_Maps.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Reflection_&amp;_Normal_Maps.jpg" />
+</p></li></ol><a name="refractionandmovement" ></a><h3 id="折射和移动">折射和移动</h3>
+
+<p>如果将 <strong>平移（Panner）材质表达式</strong> 节点添加到材质图，并将其连接到 UV 的法线贴图纹理的，那么将产生一些非常有趣的结果。 
+这种方法适合于玻璃窗，对于剧烈爆炸产生的热霾或扭曲等视觉效果也非常有用。 
+</p><p><img alt="R_Panning_Normal_Map.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_Panning_Normal_Map.jpg" />
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_4vSs2NTMb78"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="4vSs2NTMb78" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/4vSs2NTMb78?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_4vSs2NTMb78
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_4vSs2NTMb78:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style><a name="refractiondepthbias" ></a><h3 id="折射深度偏移">折射深度偏移</h3>
+
+<p><strong>折射深度偏移</strong> 方法用于防止距离较近的对象以锐视角渲染到扭曲的表面。
+但是，这可能会增加表面与折射开始位置之间的距离。
+在 UE4 中，可以在两个位置调整 <strong>折射深度偏离（Refraction Depth Bias）</strong>。 
+</p><ul ><li><p><strong>材质编辑器</strong> - 您可以在**细节（Details）<strong>面板的“材质”部分中找到 </strong>折射深度偏离（Refraction Depth Bias）**。您需要按白色三角形（突出显示时显示为绿色）才能显示此属性。
+</p><p><img alt="R_RDB_Materail_Editor.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_RDB_Materail_Editor.jpg" />
+</p></li><li><p><strong>材质实例</strong> - 您可以在 <strong>细节（Details）</strong>面板的 <strong>常规（General）</strong>部分中找到 <strong>折射深度偏离（Refraction Depth Bias）</strong>。
+</p><p><img alt="R_RDB_Materail_Instance.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/Refraction/R_RDB_Materail_Instance.jpg" />
+</p></li></ul><a name="conclusion" ></a><h2 id="总结">总结</h2>
+
+<p>向材质（特别是玻璃和水）添加折射可产生非常逼真的效果。 
+请记住使用您尝试模拟的表面类型的正确 IOR 值。 
+您也可能很希望将 IOR 值增大到超过表面类型的正确 IOR 值，但务必克制这种冲动。 
+IOR 值源自现实世界中的测量值，所以，将 IOR 值增大或减小到合理水平以外并不会产生更好的效果。 
+</p>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="../../../../../Resources/ContentExamples/MaterialNodes/1_14/index.html" title="材质节点示例关卡概述，示例 1.14: 折射。">1.14 - 折射</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../../../Resources/ContentExamples/MaterialProperties/1_11/index.html" title="材质实例示例关卡概述，示例1.11： 折射深度偏移">1.11 -折射深度偏移</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../MaterialInputs/index.html" title="深入了解材质上可用的各种输入以及如何使用它们。">材质输入          </a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/Materials/HowTo/Refraction/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:01 GMT -->
+</html>

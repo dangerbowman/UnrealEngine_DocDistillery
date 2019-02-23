@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/PostProcessEffects/Bloom/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:37 GMT -->
+<head>
+    <title>泛光 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/PostProcessEffects/Bloom/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/PostProcessEffects/Bloom/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/PostProcessEffects/Bloom/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/PostProcessEffects/Bloom/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3801260" />
+<meta name="availability" content="Public" />
+<meta name="title" content="泛光" />
+<meta name="description" content="光晕能使光源等明亮物体产生辉光效果。" />
+<meta name="type" content="reference" />
+<meta name="version" content="4.16" />
+<meta name="parent" content="Engine/Rendering/PostProcessEffects" />
+<meta name="order" content="1" />
+<meta name="tags" content="Post Process" />
+<meta name="topic-image" content="bloom_Topic.png" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="泛光" />
+	<meta property="og:description" content="光晕能使光源等明亮物体产生辉光效果。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">后处理效果</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexed41.html">Post Process</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_16"><a id="version_link" href="../../../../SiteIndex/index6b5c.html">Unreal Engine 4.16</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">泛光</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_16"><a id="version_link" href="../../../../SiteIndex/index6b5c.html">Unreal Engine 4.16</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#泛光卷积">泛光卷积</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#泛光尘土蒙版">泛光尘土蒙版</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#培训视频">培训视频</a>
+	</li>		    	        </ul>
+</div>
+<p><strong>泛光（Bloom）</strong> 是一种现实世界中的光现象，通过它能够以较为适度的渲染性能成本极大地增加渲染图像的真实感。用肉眼观察黑暗背景下非常明亮 
+的物体时会看到泛光效果。亮度更高的物体还会造成其他效果（条纹、镜头光斑），但这些效果不在经典的泛光 
+效果范畴内。我们的显示器（电视、TFT屏等）通常不支持HDR（高动态范围），因此实际上无法渲染太亮的物体。于是我们模拟了 
+当光线射到胶片（胶片次表面散射）或摄像机前（乳白色玻璃滤光片）时眼睛中出现的效果（视网膜的次表面散射）。这种效果不一定符合实际 
+情况，但它可以帮助表现对象的相对亮度，或者给屏幕上显示的LDR（低动态范围）图像添加真实感。
+</p><div class="fullwidth">
+	<p><img alt="泛光效果" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/bloom.jpg" />
+</p>
+</div><p>泛光可以用一个高斯模糊来实现。为了提高质量，我们将多个不同半径的高斯模糊组合起来。为了获得更好的性能，我们在大大降低的分辨率下 
+进行很宽范围的模糊。在UE 3中，高斯模糊的分辨率为1/4、1/8和1/16。而现在我们可以使用多种模糊，分辨率从1/2（Blur1）到1/32（Blur5）。 
+</p><p>通过改变模糊效果的组合方式，我们可以进行更多的控制，取得更高的质量。为了获得最佳的性能，应该使用高分辨率模糊（小值）来实现较窄的模糊，而主要使用低分辨率模糊 
+（大值）实现较宽的模糊。
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>强度（Intensity）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>线性调节整个泛光效果的颜色。可用于：随着时间的推移淡入或淡出，变暗。<div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="Bloom Intensity - 0" width="250" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/bloom_intensity_0_small.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="Bloom Intensity - 1" width="250" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/bloom_intensity_1_small.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="Bloom Intensity - 5" width="250" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/bloom_intensity_5_small.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>0.0</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>1.0</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>5.0</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>阈值（Threshold）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>定义了单一颜色需要多少亮度单位才能产生泛光。除了阈值之外，还有一个线性部分（1个单位宽度），其中的颜色仅部分地影响泛光。如果希望场景中的所有颜色都参与泛光效果，需要使用数值-1。可用于：对某些不真实的HDR内容、梦序进行调整。<!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Threshold - 0.0" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/bloom_threshold_0_small.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Threshold - 10.0" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/bloom_threshold_10_small.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>#1/#2/#3/#4/#5着色（1/#2/#3/#4/#5 Tint）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>修改每个泛光的亮度和颜色。如果你使用黑色，尽管不会使得渲染速度加快，但也是可以的。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>#1/#2/#3/#4/#5尺寸（1/#2/#3/#4/#5 Size）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>以屏幕宽度的百分比表示的尺寸。它受一些数字的限制。如果你需要较大的数字，请使用下一个更低分辨率（较大数字）的模糊。<div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="Bloom Tint 1" width="145" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/bloom_tint_1_small.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="Bloom Tint 2" width="145" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/bloom_tint_2_small.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="Bloom Tint 3" width="145" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/bloom_tint_3_small.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="Bloom Tint 4" width="145" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/bloom_tint_4_small.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="Bloom Tint 5" width="145" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/bloom_tint_5_small.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>#1</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>#2</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>#3</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>#4</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>#5</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="bloomconvolution" ></a><h2 id="泛光卷积">泛光卷积</h2>
+
+<p>使用泛光 <strong>卷积（Convolution）</strong> 效果可以添加自定义泛光内核形状，其纹理能够展现逼真的泛光效果。
+它利用内核图像对源图像进行卷积运算，以此来模拟摄像机或人眼中光线的散射和衍射。 
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="泛光卷积：Enabled" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/FFTBloom_Enabled.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="泛光卷积：Disabled" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/FFTBloom_disabled.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><div class="caption">
+	
+</div><div class="caption">
+	<p>在这个例子中，泛光技术产生了连续反应，例如星爆效果、扩散发光区域。
+</p>
+</div><p>内核表示光学设备对视野中间的单点源的响应。源中的每个像素按照内核图像的指示 
+将其部分亮度贡献给相邻像素。源像素越亮，生成的泛光越明显。究其根本而言，这种能量守恒散射可以转化为卷积运算公式， 
+并通过使用快速傅里叶变换（FFT）加速。
+</p><div class="warning">
+	<p>泛光卷积专门用于游戏内过场动画、离线过场动画，或在高端硬件中使用，但 <strong><em>标准</em> 泛光</strong> 可用于大多数游戏应用程序。 
+就利弊而言，_标准_泛光在性能方面具有明显优势，但它并不稳妥（它会导致图像整体变得更亮）， 
+并且无法赶上泛光卷积的视觉复杂性。
+</p>
+</div><p>要启用“泛光卷积（Bloom Convolution）”，请在“后期处理体积（Post Process Volume）”的 <strong>镜头（Lens）</strong> 部分中，使用 <strong>方法（Method）</strong> 旁边的选择框选择 <strong>卷积（Convolution）</strong>。
+</p><p><img alt="ConvolutionBloomSettings.png" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/ConvolutionBloomSettings.jpg" />
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>卷积内核（Convolution Kernel）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于选择定义内核的纹理。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 高级属性 </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>卷积缩放（Convolution Scale）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>表示以视口为单位的卷积内核图像的相对大小。默认值为1。主要用于减少泛光的大小。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>卷积中心（Convolution Center）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在UV坐标中，默认为（1/2、1/2）。理想情况下，卷积内核图像精确地对较亮光源进行居中响应，但实际通常需要进行一些微调。如果出现偏移，将使泛光图像完全偏移。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>卷积增强（Convolution Boost）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在应用卷积泛光过滤器之前，增强所选像素的强度。这包括最小值、最大值和乘数。按乘数使高于最小值的亮度增量放大。默认情况下，此增强处于禁用状态，应谨慎使用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>卷积缓冲（Convolution Buffer）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>它是一个使用屏幕大小的一部分的隐式缓冲区，以确保泛光效果不会环绕图像。随着此值的增加，性能会变差。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="kernelimagebestpractices" ></a><h3 id="内核图像最佳实践">内核图像最佳实践</h3>
+
+<p>基于图像的卷积之所以能产生额外的真实感，是因为它能够使用视觉上很有趣的非对称内核图像。当 
+创建内核并将其设置用于泛光卷积时，需要注意一些事项。 
+</p><ul ><li><p>所有内核图像都应在GPU上，并以全分辨率提供。否则，如果使用低分辨率版本的内核， 
+质量将显著降低。为此，请在纹理编辑器中为内核图像设置以下属性：
+</p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="CB_TextureProperties.png" width="475" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/CB_TextureProperties.jpg" />
+</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<ul ><li><p>Mip生成设置（Mip Gen Settings）：<strong>无Mip贴图</strong>
+</p></li><li><p>从不流送：<strong>已启用</strong>
+</p></li></ul>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></li><li><p>泛光是一种整体的图像滤镜，因此使用泛光卷积可以使图像中最显眼的部分明显比其余部分更亮（可以很好地与.exr格式兼容）。
+如果不使用泛光卷积，滤镜会在屏幕上生成强烈的模糊效果。
+</p></li><li><p>系统要求最显眼的点位于内核图像的中心，但可以使用 <strong>卷积中心</strong> 功能按钮进行调整。
+</p></li><li><p>如果泛光内核结构良好，它将填充大部分内核图像。如果在Photoshop中查看默认内核图像，你会看到从中心辐射的径向线延伸到
+相当大的图像范围。
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Kernel Image unaltered" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/KernelImage1.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Kernel Image adjusted for demonstration" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/KernelImage2.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div></li><li><p>如果要大幅改变卷积行为，应该使用泛光卷积高级属性来微调内核图像。
+</p></li></ul><a name="bloomdirtmask" ></a><h2 id="泛光尘土蒙版">泛光尘土蒙版</h2>
+
+<p><strong>泛光尘土蒙版（Bloom Dirt Mask）</strong> 效果使用纹理来增亮某些已定义屏幕区域的泛光。它可以用于创建战地摄像机图像、更令人印象深刻的HDR效果或摄像机 
+瑕疵图像。
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Dirt Mask Enabled" width="600" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/DirtMaskEnabled.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Dirt Mask Disabled" width="600" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/DirtMaskDisabled.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><p>要启用泛光尘土蒙版，请在“后期处理体积（Post Process Volume）”的 <strong>镜头（Lens）</strong> 部分中启用 <strong>尘土蒙版纹理（Dirt Mask Texture）</strong> 选项。使用纹理（Texture）选择将纹理应用于尘土蒙版。
+</p><p><img alt="DirtMaskProperties.png" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/DirtMaskProperties.jpg" />
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>尘土蒙版纹理（Dirt Mask Texture）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用选取框指定要用于尘土蒙版的Texture2D。请注意，此属性不能与其他后处理体积混合。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>尘土蒙版强度（Dirt Mask Intensity）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>线性调整泛光尘土蒙版效果的颜色。此属性用于调整尘土蒙版的亮度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>尘土蒙版着色颜色（Dirt Mask Tint Color）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于使尘土蒙版纹理更暗或着色。它可以用于调整尘土蒙版的亮度和颜色。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="dirtmaskimagebestpractices" ></a><h3 id="尘土蒙版图像最佳实践">尘土蒙版图像最佳实践</h3>
+
+<p>在创建尘土蒙版纹理并将其设置用于泛光尘土蒙版时，需要注意一些事项。 
+</p><ul ><li><p>纹理应全部在GPU上，并以全分辨率提供。为此，请在纹理编辑器中设置以下属性： 
+</p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="DirtMaskTextureProperties.png" width="475" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/DirtMaskTextureProperties.jpg" />
+</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<ul ><li><p>Mip生成设置（Mip Gen Settings）：<strong>无Mip贴图</strong>
+</p></li><li><p>从不流送：<strong>已启用</strong>
+</p></li></ul>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></li><li><p>此“后期处理”属性不能与关卡中的其他“后期处理体积”混合。 
+</p></li><li><p>构建尘土蒙版纹理时，请注意以下几点： 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/DirtMaskTextureExample.png" ><span><img alt="DirtMaskTextureExample.png" width="500" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/Bloom/DirtMaskTextureExample.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p><div class="caption">
+	<p> 在载具游戏中使用尘土蒙版纹理的示例。</p>
+</div>
+</p><ul ><li><p>建议使用的图片尺寸不等于2的整数幂。这避免了进行Mip创建和流式传输，而这些能够进行自动设置。但是，如果使用等于2的整数幂的纹理尺寸，你需要在“纹理编辑器”属性中对这些进行设置。
+</p></li><li><p>你可以使用低分辨率纹理，因为低分辨率纹理通常足以呈现摄像机上的尘土或划痕，而它们反正都会失焦和模糊。如果出现压缩失真，请尝试使用更高分辨率的图像。
+</p></li><li><p>你可以使用Photoshop（或类似图像编辑软件）中的镜头模糊（Lens Blur）功能来创建纹理。 
+</p></li><li><p>在纹理中使用色差（彩色条纹）可以帮助改善尘土蒙版的外观。
+</p></li></ul></li></ul><a name="trainingstreams" ></a><h2 id="培训视频">培训视频</h2>
+
+<!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_SkJgopq-JQA"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="SkJgopq-JQA" width="100%" height="100%" src="../../../../../../external.html?link=https://www.youtube.com/embed/SkJgopq-JQA?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;loop=1&amp;controls=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_SkJgopq-JQA
+{
+	margin: 0px;
+	width: 100%;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_SkJgopq-JQA:after
+{
+	content: "";
+	padding-top: 56.25%;
+	display: block;
+}
+</style>
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexed41.html">Post Process</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/PostProcessEffects/Bloom/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:37 GMT -->
+</html>

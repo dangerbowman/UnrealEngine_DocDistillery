@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Slate/ClippingSystem/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 02:01:19 GMT -->
+<head>
+    <title>Slate 裁剪系统 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Programming/Slate/ClippingSystem/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Programming/Slate/ClippingSystem/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Programming/Slate/ClippingSystem/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Programming/Slate/ClippingSystem/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3801260" />
+<meta name="availability" content="Public" />
+<meta name="title" content="Slate 裁剪系统" />
+<meta name="description" content="虚幻引擎 4 中 Slate 裁剪系统的总览。" />
+<meta name="type" content="Overview" />
+<meta name="skilllevel" content="Advanced" />
+<meta name="version" content="4.17" />
+<meta name="parent" content="Programming/Slate" />
+<meta name="related" content="Engine/UMG/UserGuide/Clipping" />
+<meta name="order" content="1" />
+<meta name="tags" content="Programming" />
+<meta name="tags" content="Slate" />
+<meta name="tags" content="UMG UI Designer" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="Slate 裁剪系统" />
+	<meta property="og:description" content="虚幻引擎 4 中 Slate 裁剪系统的总览。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">Slate 用户界面框架</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0f06.html">Programming</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index345d.html">Slate</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_17"><a id="version_link" href="../../../SiteIndex/index8ccf.html">Unreal Engine 4.17</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">Slate 裁剪系统</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+                            <div class="version_tag_filter 4_17"><a id="version_link" href="../../../SiteIndex/index8ccf.html">Unreal Engine 4.17</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#全新内容">全新内容</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#从4stop16及更旧版本转换到4stop17及更新版本的指南">从 4.16 及更旧版本转换到 4.17 及更新版本的指南</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#启用控件裁剪">启用控件裁剪</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#弃用的api">弃用的 API</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#自定义裁剪">自定义裁剪</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#包裹裁剪状态">包裹裁剪状态</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#剔除修改">剔除修改</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#调试裁剪">调试裁剪</a>
+	</li>		    	        </ul>
+</div>
+<div class="warning">
+	<p>虚幻引擎 4.17 版本发布后，全新的 Slate 裁剪系统打破了对 4.16 及更老版本的反向兼容。请参考此页面的 <a id="content_link" href="index.html#conversionguidefrom4stop16andearlierto4stop17andlater" ><span>转换指南</span></a>
+ 部分更新项目。 
+</p>
+</div><p>虚幻引擎 4（UE4）的 Slate 裁剪系统可将图像或文本限制到画面的一个区域中。其实现方式是围绕创建的物体和面板创建一个裁剪矩形（或称裁剪 rect）。编辑器和 UMG UI 设计器工具均使用该系统。用户可根据需求利用 Slate 在编辑器中移动面板并调整其大小，裁剪系统则将文字和图像限制在裁剪 rect 中。结合 UMG 可实现更佳的渲染变形，对 UI 进行适当的裁剪。 
+</p><h2 id="全新内容">全新内容</h2>
+
+<p>虚幻引擎 4.17 版本对裁剪系统进行了极大修改，比旧版本更灵活。这也创造了给更多可能，使 <a id="content_link" href="../../../Engine/UMG/UserGuide/index.html" ><span>UMG</span></a>
+ 之类的工具系统能够添加更多渲染效果，用于项目的 UI 中。旧版本中的裁剪系统功能有限，布局空间仅为轴对齐，会导致难以渲染变形（常围绕边缘），如下例所示：
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="OldClippingIssue1.png" width="350" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Slate/ClippingSystem/OldClippingIssue1.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><img alt="OldClippingIssue2.png" width="350" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Slate/ClippingSystem/OldClippingIssue2.jpg" /></p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>在上图中，控件已旋转，但裁剪 rect（白点）却并未旋转。这样一来，即使图像位于 Canvas 面板边界中，也无法被渲染。 
+</p><p>以下列表说明了裁剪系统 1.0 和 2.0 版本之间的区别：
+</p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>Clipping 1.0（4.16 及更旧版本） </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>Clipping 2.0（4.17 及更新版本） </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<ul ><li><p>轴对齐裁剪 - 只在布局空间中发挥作用
+</p></li><li><p>每个控件均被裁剪
+</p></li><li><p>所有裁剪均在像素着色器中完成（要求每个顶点六个浮点）
+</p></li><li><p>允许对多个裁剪 rect 进行批处理，因为这些 rect 是批数据的一部分
+</p></li><li><p>渲染变形较为“特殊”，因为它们允许在父项所提供的裁剪 rect 之外进行渲染，而布局 rect 被裁剪掉后会存在不良后果
+</p></li></ul>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<ul ><li><p>任意四边形的裁剪
+</p><ul ><li><p>使用 Scissor Rects 进行裁剪的轴对齐裁剪区，可避免不必要的像素着色器运算
+</p></li><li><p>复杂的裁剪区使用模板缓存将裁剪区的任意堆叠组成模板缓存，然后用于裁剪绘制调用
+</p></li></ul></li><li><p>只有少数几个控件会（默认）进行裁剪，主要是滚动面板和可编辑文本域
+</p><ul ><li><p>渲染变形不再“特殊”，只要变形不进行裁剪，便允许用户在另一个控件之外进行渲染。
+</p></li></ul></li><li><p>Slate 无法对裁剪区进行批处理。这使得 Slate 顶点格式中不要求 6 个浮点，不再需要在像素着色器中进行裁剪
+</p></li></ul>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>新系统支持在控件的渲染空间中进行裁剪，不需要轴对齐；使用系统时不再需要担心裁剪问题（左图），而是会直接裁剪掉最外侧的控件。新版本中，应用到内部控件的变形将在边缘被正确裁剪（右图）。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="ClippingOld.png" width="350" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Slate/ClippingSystem/ClippingOld.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="ClippingNew.png" width="350" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Slate/ClippingSystem/ClippingNew.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>4.16 与更旧版本中的裁剪和变形。</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在 4.17 与更新版本中应用到边缘上的裁剪</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>以及子项的变形。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>多数情况下您都无需担心控件裁剪状态的变化。以游戏 UI 为例，您无需调整 UMG 中的控件，而多数情况下都需要对其进行修改，如滚动面板或编辑器，在这些区域中用户无法控制文本长度，需要对其进行裁剪，调整窗口或面板某个部分的大小。
+</p><p><img alt="ClippingExamples.png" width="500" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Slate/ClippingSystem/ClippingExamples.jpg" />
+</p><p>此处的几个例子说明了不同裁剪设置的效果：
+</p><ul ><li><p>左图 - 按键或文本上未启用裁剪。
+</p></li><li><p>中图 - 文本上已启用裁剪。
+</p></li><li><p>右图 - 按键上已启用裁剪。
+</p></li></ul><p>请参考裁剪应用到不同对象上时的变化。因为系统裁剪到边界，所以填补之类的因素此处无需考虑。如果按键启用裁剪（右图），那么内容将在切断发生之前向边缘移动。如果文本负责处理裁剪（中图），那么文本将基于按键内容填补之类进行裁剪，缩减文本填入的空间。
+</p><p>除简单的轴对齐裁剪外，系统还支持相互堆叠的任意裁剪四边形。 
+</p><p><img alt="TransformClipping.png" width="400" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Slate/ClippingSystem/TransformClipping.jpg" />
+<div class="caption">
+	
+</div>
+</p><p>举一个较为极端的例子，组合多个任意矩形是使用 3D 变形和投射的先决条件，因为被投射裁剪的控件需要在投射空间中执行裁剪。 
+</p><a name="conversionguidefrom4stop16andearlierto4stop17andlater" ></a><h2 id="从4stop16及更旧版本转换到4stop17及更新版本的指南">从 4.16 及更旧版本转换到 4.17 及更新版本的指南</h2>
+
+<p>4.17 版本中对 Slate 裁剪系统进行的修改会破坏对旧版本的兼容性，因此您需要根据以下部分的说明来更新项目，避免出现转换问题，同时了解在项目中对控件进行调试的新方法。
+</p><h3 id="启用控件裁剪">启用控件裁剪</h3>
+
+<p>对于所有 UMG 控件而言，用户可以调整所选控件 <strong>Details</strong> 面板中的 <strong>Clipping</strong> 属性。
+</p><p><img alt="UMGClippingProperty.png" width="600" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Slate/ClippingSystem/UMGClippingProperty.jpg" />
+</p><p>您可在此了解关于 <a id="content_link" href="../../../Engine/UMG/UserGuide/Clipping/index.html" ><span>用 UMG UI 设计器进行裁剪</span><span class="newlink">NEW!</span></a>
+ 的更多内容。
+</p><p>如需在代码中启用裁剪，需要将 <code >EWidgetClipping</code> 的裁剪属性设为以下其中一个状态：
+</p><ul ><li><p>Inherit
+</p></li><li><p>ClipToBounds
+</p></li><li><p>ClipToBoundsWithoutIntersecting
+</p></li><li><p>ClipToBoundsAlways
+</p></li><li><p>OnDemand
+</p></li></ul><p>请参考以下代码范例： 
+</p>
+<pre class="prettyprint"><code>SNew( SBorder )
+.Clipping(EWidgetClipping::ClipToBounds)
+&#91;
+    ...
+&#93;</code></pre>
+<h3 id="弃用的api">弃用的 API</h3>
+
+<p>以下 API 在 4.16 之后的版本中弃用。如果您的项目曾使用这些 API，则需要考虑现在是否仍然需要它们。并非每个控件都执行裁剪，因此您也许不再需要那些用于移动裁剪区的代码。
+</p><ul ><li><p><code >FSlateDrawElement::Make___(...)</code> - 无需再将裁剪 rect 传入每个绘制调用，因此只需要移除函数调用即可自动使用新版本。
+</p></li><li><p><code >SScissorRectBox</code> - 这已不再需要，因为每个轴对齐的裁剪 rect 现在均是 scissor rect。使其最直接的子控件启用裁剪，将这些内容删除并替换之前进行的任务。
+</p></li></ul><h3 id="自定义裁剪">自定义裁剪</h3>
+
+<p>在一些情况下您可能需要在控件内部进行裁剪。举例而言，<code >SProgressBar</code> 可能需要基于进度条的进度对任意位置的进度条绘制进行裁剪。添加裁剪需要在 <code >OnPaint</code> 中执行以下操作：
+</p>
+<pre class="prettyprint"><code>OutDrawElements.PushClip(FSlateClippingZone(AllottedGeometry));
+
+//TODO 在此进行绘制，否则将调用子控件绘制。
+
+OutDrawElements.PopClip();</code></pre>
+<p><code >FSlateClippingZone</code> 是窗口空间中的任意裁剪区域，可使用数种方法开启，对已有代码进行直接转换。
+</p><p>如果还需要自定义裁剪影响 Hit Testing，则需要进行以下设置，将裁剪区推到 Hit Test Grid 上：
+</p>
+<pre class="prettyprint"><code>OutDrawElements.PushClip(FSlateClippingZone(AllottedGeometry));
+Args.GetGrid().PushClip(FSlateClippingZone(GetCachedGeometry()));
+
+//TODO 在此进行绘制，否则将调用子控件绘制。
+
+OutDrawElements.PopClip();
+Args.GetGrid().PopClip();</code></pre>
+<div class="note">
+	<p>命中测试网格的裁剪 rect 使用缓存的几何体，而并非 AllotedGeometry。在 <code >OnPaint</code> 中，<code >AllotedGeometry</code> 处于窗口空间中，而 Hit Test Grid 处于桌面空间中，因此必须使用 Tick 中获得的几何体。
+</p>
+</div><h3 id="包裹裁剪状态">包裹裁剪状态</h3>
+
+<p>在一些情况下，拥有裁剪状态的控件不负责进行裁剪。例如 <code >SScrollBox</code> 能让用户公开修改和其他控件相似的裁剪状态，然而当 <code >SScrollBox</code> 构造后，它会把 <code >bClippingProxy</code> 设为 <code >true</code>。因此 Slate 渲染此控件时将忽略其裁剪状态。
+</p><p>在内部，<code >SScrollBox</code> 告知另一个嵌套控件其需要进行裁剪或执行被告知的裁剪状态。此外，用户修改裁剪状态时，<code >SScrollBox</code> 将覆盖名为 <code >OnClippingChanged</code> 的 <code >SWidget</code> 函数，使其了解合适将新的裁剪状态镜像到嵌套私有控件上。 
+</p><h2 id="剔除修改">剔除修改</h2>
+
+<p>虽然裁剪在渲染空间中执行，引擎仍然使用简单的边界框执行剔除。然而该框是基于渲染变形裁剪区的边界框。此外，裁剪和剔除可能随时间出现更多细微差别。如果您有一个自定义面板，执行 <code >MyClippingRect.IntersectionWith</code> 识别并剔除无法被绘制的控件，则需要使用 <code >SWidget</code> 函数 <code >IsChildWidgetCulled</code>。请参考下例：
+</p>
+<pre class="prettyprint"><code>for (int32 ChildIndex = 0; ChildIndex &lt; ArrangedChildren.Num(); ++ChildIndex)
+{
+    FArrangedWidget&amp; CurWidget = ArrangedChildren&#91;ChildIndex&#93;;
+
+    if (!IsChildWidgetCulled(MyCullingRect, CurWidget))
+    {
+        // 绘制此控件。
+    }
+}</code></pre>
+<div class="warning">
+	<p>将 <code >MyClippingRect</code> 纳入 OnPaint 调用之处都需要被重命名为 <code >MyCullingRect</code>。
+</p>
+</div><p>虽然裁剪系统有所修改，但 Slate 的剔除方法仍未改变。您需要注意，如果下例中的父控件（蓝色）在裁剪区（绿色）外被剔除，则子控件（黄色）也将被剔除。即使其拥有变形，能够在父项边界外进行整体渲染，也同样如此。裁剪属性 <strong>Clip to Bounds - Without Intersecting</strong> 启用时情况也是如此，因为标记只会被直接的父控件所勾选。
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Widgets viewed outside | the clipping zone." width="600" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Slate/ClippingSystem/Slate_CullingEd.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Widgets culled outside | the clipping zone." width="600" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Slate/ClippingSystem/Slate_CullingEd2.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><h2 id="调试裁剪">调试裁剪</h2>
+
+<p><strong>Widget Reflector</strong> 在编辑器中显示所选控件的裁剪状态。
+</p><div class="fullwidth">
+	<p><img alt="WidgetReflector.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Slate/ClippingSystem/WidgetReflector.jpg" />
+</p>
+</div><p><div class="caption">
+	<p>使用 Widget Reflector 选中一个文本块，说明裁剪状态被设为 On Demand。</p>
+</div>
+</p><p>打开 <strong>Widget Reflector</strong> 的方法是：前往 File 菜单，选择 <strong>Window</strong> > <strong>Developer Tools</strong> > <strong>Widget Reflector</strong>。
+</p><p>以下控制台变量可用于调试编辑器中任意控件的裁剪和剔除状态：
+</p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>控制台变量 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Slate.ShowClipping</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用后，这将显示所有轴对齐裁剪 rect（Scissor Rects）的黄色轮廓，以及全部模板裁剪四边形的红色轮廓。<div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Slate/ClippingSystem/ShowClipping.png" ><span><img alt="ShowClipping.png" width="200" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Slate/ClippingSystem/ShowClipping.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p><div class="caption">
+	<p>点击图片查看全图。 </p>
+</div>
+</p></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Slate.DebugCulling</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用后，这将有助于您更好地理解剔除在面板中的工作原理，以及其未能正常工作的原因。它在 GPU 上禁用裁剪，但一切均照常进行，因此您能够看到所有内容在裁剪区边界外渲染，并确定它们是否根据需求被剔除。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Slate.EnableDrawEvents</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用后，绘制事件将被启用。对 RenderDoc 或相似内容进行调试时便更容易理解批处理或裁剪状态转换。使用调试版本时此变量默认启用。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="../../../Engine/UMG/UserGuide/Clipping/index.html" title="概述了UMG界面设计器中的裁剪属性。">裁剪</a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0f06.html">Programming</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index345d.html">Slate</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Slate/ClippingSystem/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 02:01:20 GMT -->
+</html>

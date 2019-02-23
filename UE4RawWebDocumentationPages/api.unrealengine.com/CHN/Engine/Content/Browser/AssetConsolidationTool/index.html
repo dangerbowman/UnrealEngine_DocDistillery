@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Content/Browser/AssetConsolidationTool/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:03 GMT -->
+<head>
+    <title>替换引用工具 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Content/Browser/AssetConsolidationTool/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Content/Browser/AssetConsolidationTool/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Content/Browser/AssetConsolidationTool/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Content/Browser/AssetConsolidationTool/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3782314" />
+<meta name="availability" content="Public" />
+<meta name="title" content="替换引用工具" />
+<meta name="description" content="通过将多个资源合并成单个资源并修复引用来删除重复资源的工具。" />
+<meta name="skilllevel" content="Intermediate" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine/Content/Browser" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="替换引用工具" />
+	<meta property="og:description" content="通过将多个资源合并成单个资源并修复引用来删除重复资源的工具。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">内容浏览器</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">替换引用工具</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#使用替换引用工具">使用替换引用工具</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#调用替换引用工具">调用替换引用工具</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#合并资源">合并资源</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#保存已更新的包">保存已更新的包</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#替换引用工具的工作方式">替换引用工具的工作方式</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#最佳实践">最佳实践</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#限制和警告">限制和警告</a>
+	</li>		    	        </ul>
+</div>
+<p> <strong>替换引用工具（Replace References Tool）</strong> 在编辑器中提供了一种将多个资源合并成一个资源的简单方法。例如，考虑到某个在开发过程中进行了多次复制的纹理，由于存储了相当于同一纹理的多个副本，从而造成了资源浪费。替换引用工具允许用户根据需要选择所有这些使用，并让它们都指向纹理的一个特定实例。
+</p><p>虽然虚幻引擎的仅重新导入源资源功能大大减少了资源浪费，但如果您尝试两次添加完全相同的文件（相同的名称和路径），它仍可以在多人游戏中出现。
+</p><a name="usingthereplacereferencestool" ></a><h2 id="使用替换引用工具">使用替换引用工具</h2>
+
+<p>虽然资源合并使用起来相当简单，但必须谨慎操作才能正确利用。
+</p><a name="invokingthereplacereferencestool" ></a><h3 id="调用替换引用工具">调用替换引用工具</h3>
+
+<p>若要访问该工具，只需在 <strong>内容浏览器（Content Browser）</strong> 中选择至少一项您希望在合并过程中使用的资源。然后，<strong>单击右键</strong> 并在出现的上下文菜单中，单击“<strong>替换引用（Replace References）</strong>”。替换引用（Replace References）对话框随即出现，其中填充了在召唤该工具时选择的所有资源。您可以通过将其他资源从 <strong>内容浏览器（Content Browser）</strong> 拖至该对话框的主要部分来添加它们。
+</p><div class="note">
+	<p>合并通常仅限于选择同一类型的对象，但对纹理和材质则存在一些例外。如果没有看到替换引用（Replace References）选项或者不允许拖放操作，那么您应确保您只选择了同一类型的资源！如果您不小心添加了不希望添加的资源，您可以通过选择它并按下键盘上的 <strong>删除（Delete）</strong> 键来将其从对话框中删除。
+</p>
+</div><p><img alt="Consolidate1.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Browser/AssetConsolidationTool/Consolidate1.jpg" />
+</p><p>这里有一个被复制了多次的纹理！选择所有副本并 <strong>单击右键</strong> 将提供替换引用（Replace References）选项。
+</p><a name="consolidatingassets" ></a><h3 id="合并资源">合并资源</h3>
+
+<p>当您在对话框中填充了想要在合并过程中使用的所有资源后，选择其中一个资源作为“目标合并资源”，然后单击 <strong>合并资源（Consolidate Assets）</strong>。对列表中没有选择的资源的所有引用将被替换为对您所选择的资源的引用，同时将在流程中删除所有未选择的资源。
+</p><div class="note">
+	<p>合并资源（Consolidate Assets）按钮将显示为灰色（且不可用），直至对话框中出现了至少两个资源且其中至少一个资源已被选中。
+</p>
+</div><p><img alt="Consolidate2.PNG" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Browser/AssetConsolidationTool/Consolidate2.jpg" />
+</p><p>在替换引用（Replace References）对话框中，选择一个资源会将其标记为“目标合并资源”。
+</p><p><img alt="Consolidate2.1.PNG" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Browser/AssetConsolidationTool/Consolidate2.1.jpg" />
+</p><p>单击合并资源（Consolidate Assets）后，删除资源（Delete Assets）对话框随即出现，该对话框允许您删除不再引用因而不再需要的资源。单击 <strong>删除（Delete）</strong>。
+</p><p><img alt="Consolidate3.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Browser/AssetConsolidationTool/Consolidate3.jpg" />
+</p><p>所有重复项都已合并到选定资源中！
+</p><a name="savingdirtiedpackages" ></a><h3 id="保存已更新的包">保存已更新的包</h3>
+
+<p>合并对话框在左下角提供保存已更新的包选项。如果选中此选项，将在合并操作完成时提示您保存流程所更新的任何UAsset。这种方法很方便，可以确保受合并影响的所有UAsset都正确保存，而不必您亲自在 <strong>内容浏览器（Content Browser）</strong> 中查找。如果由于某种原因合并失败或发生错误，UAsset将不会进行保存，您将收到相应的警告。
+</p><a name="howthereplacereferencestoolworks" ></a><h2 id="替换引用工具的工作方式">替换引用工具的工作方式</h2>
+
+<p>实际的合并过程分为多个步骤。首先，对于要合并的任何有效对象，该工具尝试在已加载的且位于内存中的对象/UAsset中将这些对象的所有引用替换为“目标合并对象”的引用。这意味着，如果您已经打开了一个图或UAsset，而它引用了其中一个要合并的对象，该工具将尝试立即更新它。接下来，该工具将尝试直接删除要合并的对象（可能会失败，请参阅<a id="content_link" href="index.html#limitationsandcaveats" ><span><strong>限制和警告（Limitations and Caveats）</strong></span></a>
+）。最后，如果删除成功，该工具将[<strong>对象重定向器（object redirectors）</strong>]保留在被删除对象的位置。它们会将包含对已删除对象之引用的卸载UAsset重定向到目标合并对象。
+</p><a name="bestpractices" ></a><a name="bestpractices" ></a><h3 id="最佳实践">最佳实践</h3>
+
+<ul ><li><p>考虑到替换引用工具执行的性质，该工具使用不当可能会极其危险。该工具的用户应始终仔细考虑他们将要执行的任务，并决定由此产生的操作在他们资源的环境中是否有意义。虽然该工具会尝试防止一些明显错误的合并，但用户仍然应始终保持谨慎，以避免毁坏UAsset。请记住，该工具将删除已合并的资源，并将之前对它们的使用路由到选定对象；它不是执行“替换actor”型操作的替代方法。 
+</p></li><li><p>虽然替换引用工具将尝试在当前加载的且位于内存中的UAsset/图中强行替换对要合并的对象的引用，但最好的方法是在使用该工具时尽可能少地引用要合并的对象，从而最大限度地提高成功合并的可能性。特别是，让子编辑器（例如蓝图编辑器或静态网格体编辑器）打开并利用即将合并的资源是极不明智之举。
+</p></li><li><p>替换引用工具大量使用[**对象重定向器**]，这意味着，在使用替换引用工具之后，偶尔使用Fixup Redirects Commandlet是一种务实的策略。
+</p></li></ul><a name="limitationsandcaveats" ></a><a name="limitationsandcaveats" ></a><h2 id="限制和警告">限制和警告</h2>
+
+<p>虽然替换引用工具很有帮助，但它也有一些限制和警告，如下所述：
+</p><ul ><li><p>为了防止用户不慎毁坏他们的工作，替换引用工具只能针对同一类/类型的资源调用，但当所有对象都是一种材质或纹理类型时除外（这意味着，某个材质可以合并到一个贴花材质，即使它们严格意义上不是同一类型）。这一限制是为了防止可能导致崩溃的合并，例如将某个材质合并到一个静态网格体。即使在允许跨类型合并的地方，该工具也会给出一条清晰可见的警告，说明已经选择了多个类型进行合并。
+</p></li><li><p>替换引用工具并非总是能合并用户选择的资源。如果用户选择的“目标合并资源”包含对其中一个要合并的资源的引用，则不会合并该要合并的特定资源。允许这样的操作将使“目标合并资源”引用自身，而这必定会带来问题。在合并操作结束时，用户会收到有关跳过了其中哪些资源的合并（如有）的警告。
+</p></li><li><p>如果不能清除某个其他有效资源的所有引用，或者由于某种原因无法删除它，那么替换引用工具有时可能无法对它进行合并。这种类型的失败非常严重，会导致“部分合并”，在这种情况下，资源的一些使用已经合并，而另一些使用则没有合并。这种类型的失败应该非常少见，但是如果出现这种情况，用户会收到警告，出现的对话框中将显示受影响的资源和潜在受影响的UAsset。用户 <strong>不</strong> 应保存任何受影响的UAsset，否则它们将接受一个可能导致灾难性后果的部分合并。
+</p></li><li><p>正如在<a id="content_link" href="index.html#bestpractices" ><span><strong>最佳实践（Best Practices）</strong></span></a>
+中提到的，当各种子编辑器（例如Persona或蓝图编辑器）中使用潜在受影响的资源时，使用替换引用工具是极其不明智的。最后，到目前为止，大多数的子编辑器对从它们下面交换引用并没有很好的响应，所以在合并时使用子编辑器可能会导致子编辑器进入无效状态且/或可能崩溃。
+</p></li><li><p>替换引用工具仅在操作时已加载的UAsset中替换对合并的对象的引用。它依赖于<a id="content_link" href="../../../Basics/Redirectors/index.html" ><span><strong>对象重定向器</strong></span></a>
+来修复卸载UAsset中的剩余引用。这意味着，除非特别需要，否则应注意不要执行践踏、覆盖、删除重定向器等操作。否则，一些UAsset将获得正确修复，而另一些UAsset则不会。如前所述，使用Fixup Redirects Commandlet可以缓解这一问题。
+</p></li><li><p>目前，一旦成功执行合并操作，建议先保存相关UAsset，然后再尝试将还引用了其中一个合并的对象的任何已卸载UAsset加载到内存中。如果先加载引用的UAsset然后再进行保存，那么当前未解决的内容浏览器/对象重定向器“错误”会导致合并的资源在浏览器中重新出现。
+</p></li></ul>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Content/Browser/AssetConsolidationTool/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:03 GMT -->
+</html>

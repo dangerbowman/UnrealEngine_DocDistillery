@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Sequencer/HowTo/TracksEvent/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:10:22 GMT -->
+<head>
+    <title>使用自定义事件和结构体 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Sequencer/HowTo/TracksEvent/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Sequencer/HowTo/TracksEvent/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Sequencer/HowTo/TracksEvent/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Sequencer/HowTo/TracksEvent/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3774504" />
+<meta name="availability" content="Public" />
+<meta name="title" content="使用自定义事件和结构体" />
+<meta name="description" content="说明如何使用事件轨迹以及自定义结构体调用自定义事件，以在蓝图中使用。 " />
+<meta name="version" content="4.18" />
+<meta name="skilllevel" content="Intermediate" />
+<meta name="parent" content="Engine/Sequencer/HowTo" />
+<meta name="order" content="1" />
+<meta name="checkpoint" content="editorqs" />
+<meta name="related" content="Engine/Sequencer/Overview" />
+<meta name="related" content="Engine/Sequencer/ReferenceEditor" />
+<meta name="tags" content="Sequencer" />
+<meta name="type" content="how-to" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="使用自定义事件和结构体" />
+	<meta property="og:description" content="说明如何使用事件轨迹以及自定义结构体调用自定义事件，以在蓝图中使用。 " />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">Sequencer - 操作指南</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_18"><a id="version_link" href="../../../../SiteIndex/indexe23f.html">Unreal Engine 4.18</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">使用自定义事件和结构体</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+                            <div class="version_tag_filter 4_18"><a id="version_link" href="../../../../SiteIndex/indexe23f.html">Unreal Engine 4.18</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<p><strong>事件轨迹</strong> 可用于调用可在多个蓝图中执行<a id="content_link" href="../../../Blueprints/index.html" ><span>蓝图脚本</span></a>
+的<a id="content_link" href="../../../Blueprints/UserGuide/Events/Custom/index.html" ><span>自定义事件</span></a>
+。 
+当自定义事件被调用时，与它连接的脚本也将被执行，并且可根据你的需要用于任意数量的方案。 
+当使用事件轨迹并调用自定义事件时，你也可以通过你自己的自定义<a id="content_link" href="../../../Blueprints/UserGuide/Variables/Structs/index.html" ><span>结构体</span></a>
+进行传递，它可用于更新其中包含的变量。 
+当需要在关卡序列播放过程中更新其他变量时，这种方法非常有用。 
+</p><p>在本示例中，我们将使用事件轨迹和自定义结构体调用事件，自定义结构体用于移动 <strong>关卡蓝图</strong> 中的一个对象并关闭/打开另一个蓝图中的点光源。 
+</p><p> <img alt="EndResultImage.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EndResultImage.jpg" />
+</p><a name="steps" ></a><h2 id="步骤">步骤</h2>
+
+<div class="note">
+	<p>在本操作指南中，我们使用启用了 <strong>初学者内容包</strong> 的 <strong>蓝图第三人称模板（Blueprint Third Person Template）</strong> 项目。 
+</p>
+</div><ol ><li><p>从 <strong>内容浏览器</strong> 的 <strong>Content/StarterContent/Shapes</strong> 文件夹下，将 <strong>Shape_Cube</strong> 网格体拖到关卡中。 
+</p><p><img alt="EventTrack1.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack1.jpg" />
+</p><p>将该网格体放置到关卡中的任意位置。 
+</p></li><li><p>在该网格体的 <strong>细节（Details）</strong> 面板中，将它设置为 <strong>可移动（Movable）</strong>。 
+</p><p><img alt="EventTrack1b.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack1b.jpg" />
+</p><p>这使我们能够在游戏进程中移动该网格体。
+</p></li><li><p>在 <strong>内容浏览器</strong> 中单击 <strong>添加（Add New）</strong> 按钮，然后选择 <strong>蓝图（Blueprints）</strong> 下的 <strong>结构体（Structure）</strong> 选项。 
+</p><p><img alt="EventTrack2.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack2.jpg" />
+</p></li><li><p>输入名称 <strong>MyStruct</strong>，然后打开该资源并添加名称为 <strong>MoveCube</strong> 的 <strong>矢量（Vector）</strong> 变量。 
+</p><p><img alt="EventTrack3.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack3.jpg" />
+</p><div class="note">
+	<p>此处的变量命名非常重要，因为稍后引用它们时需要用到这些名称。 
+</p>
+</div></li><li><p>向关卡中添加名称为 <strong>Master</strong> 的新 <strong>关卡序列</strong>，然后在 <strong>Sequencer</strong> 中添加一个 <strong>事件轨迹</strong>。 
+</p><p><img alt="EventTrack4.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack4.jpg" />
+</p></li><li><p>将时间轴移至第 <strong>5</strong> 帧并添加关键帧，然后右键单击该关键帧并将事件命名为 <strong>LiftCube</strong>。现在，指定 <strong>MyStruct</strong> 并将 <strong>Z</strong> 数值设置为 <strong>100</strong>。 
+</p><p><img alt="EventTrack5.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack5.jpg" />
+</p><p>当到达该序列中的此关键帧时，网格体将沿Z轴向上移动100单位。 
+</p></li><li><p>将时间轴移至第 <strong>10</strong> 帧并按下 <strong>]</strong> 键，使该序列在第10帧处结束。 
+</p><p><img alt="EventTrack6.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack6.jpg" />
+</p></li><li><p>选中你在关卡中添加的网格体以及关卡序列，然后从工具栏中单击 <strong>蓝图（Blueprints）</strong> 按钮并选择 <strong>打开关卡蓝图（Open Level Blueprint）</strong>。 
+</p><p><img alt="EventTrack7.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack7.jpg" />
+</p></li><li><p>在 <strong>关卡蓝图</strong> 中，右键单击并搜索 <strong>Reference</strong>，然后选择 <strong>创建对2个已选中Actor的引用（Create References to 2 selected Actors）</strong>。 
+</p><p><img alt="EventTrack8.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack8.jpg" />
+</p></li><li><p>在图表中右键单击并添加 <strong>1</strong> 个键盘事件，然后从 <strong>Master</strong> 关卡序列拖出引线，搜索并添加 <strong>设置播放位置（Set Playback Position）</strong> 节点。 
+</p><p><img alt="EventTrack9.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack9.jpg" />
+</p><div class="note">
+	<p>此节点用于在发出播放函数调用前就开始播放序列时重置它。 
+</p>
+</div></li><li><p>从添加的 <strong>序列播放器（Sequence Player）</strong> 节点拖出引线并使用 <strong>播放（Play）</strong> 节点，按如下所示进行连接。 
+</p><p><img alt="EventTrack10.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack10.jpg" />
+</p></li><li><p>在图表中右键单击并创建名称为 <strong>LiftCube</strong> 的 <strong>自定义事件</strong>。 
+</p><p><img alt="EventTrack11.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack11.jpg" />
+</p><div class="warning">
+	<p>自定义事件的名称必须与你在Sequencer中的 <strong>事件名称（Event Name）</strong> 下为关键帧指定的名称相同，否则，将无法调用它。 
+</p>
+</div></li><li><p>在自定义事件的 <strong>细节（Details）</strong> 面板中，单击 <strong>+</strong> 按钮添加一个输入，将它命名为 <strong>MoveCube</strong>，并将变量类型设置为 <strong>矢量（Vector）</strong>。 
+</p><p><img alt="EventTrack12.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack12.jpg" />
+</p><div class="warning">
+	<p>如果不满足以下条件，事件将不会被调用：
+</p><ul ><li><p>输入名称必须与你在结构体中使用的名称相同。 
+</p></li><li><p>输入的数量必须等于你在自定义结构体中定义的变量的数量。
+</p></li></ul><p>例如，如果结构体中包含2个变量，自定义事件必须具有2个具有正确变量名称和类型的输入。 
+</p>
+</div></li><li><p>从网格体引用拖出引线，搜索并使用 <strong>AddActorLocalOffset</strong> 节点。 
+</p><p><img alt="EventTrack13.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack13.jpg" />
+</p></li><li><p>将 <strong>MoveCube</strong> 矢量引脚与 <strong>Delta Location</strong> 引脚相连接，并将 <strong>LiftCube</strong> 可执行引脚与 <strong>AddActorLocalOffset</strong> 节点相连接，如下所示。 
+</p><p><img alt="EventTrack14.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack14.jpg" />
+</p><p>如果在编辑器中播放，每次你按下 <strong>1</strong> 键时，该立方体将沿Z轴向上移动。
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_wlLcUr8BXvY"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="wlLcUr8BXvY" width="100%" height="100%" src="../../../../../../external.html?link=https://www.youtube.com/embed/wlLcUr8BXvY?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;loop=1&amp;controls=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_wlLcUr8BXvY
+{
+	margin: 0px;
+	width: 100%;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_wlLcUr8BXvY:after
+{
+	content: "";
+	padding-top: 56.25%;
+	display: block;
+}
+</style><p>我们使用 <strong>关卡蓝图</strong> 执行 <strong>自定义事件</strong>，但是可能也存在需要让自定义事件对不同蓝图或多个蓝图产生影响的情况。 
+</p></li><li><p>从 <strong>内容浏览器</strong> 的 <strong>Content/StarterContent/Blueprints</strong> 下，将 <strong>Bluperint_CeilingLight</strong> 蓝图拖到关卡中。 
+</p><p><img alt="EventTrack15.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack15.jpg" />
+</p></li><li><p>在 <strong>Master</strong> 关卡序列的 <strong>细节（Details）</strong> 面板中，展开 <strong>通用（General）</strong> 下的附加选项，并将 <strong>Blueprint_CeilingLight</strong> 添加为 <strong>附加事件接收器（Additional Event Reciever）</strong>。 
+</p><p><img alt="EventTrack16.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack16.jpg" />
+</p></li><li><p>打开 <strong>Blueprint_CeilingLight</strong> 蓝图并添加以下脚本。 
+</p><p><img alt="EventTrack17.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Sequencer/HowTo/TracksEvent/EventTrack17.jpg" />
+</p><ul ><li><p>创建名称为 <strong>LiftCube</strong> 的自定义事件，与 <strong>Sequencer</strong> 中的 <strong>事件</strong> 相对应。 
+</p></li><li><p>将一个 <strong>触发器（Flip Flop）</strong> 节点与 <strong>点光源</strong> 的 <strong>设置强度（Set Intesnity)</strong>（<strong>0</strong>（关闭）或 <strong>5000</strong>（打开））相连接。
+</p></li></ul><p>Master关卡序列播放时，以上设置将使灯在关闭或打开之间切换。
+</p><div class="warning">
+	<p>请注意，尽管我们未在此蓝图中使用自定义结构体 <strong>MoveCube</strong>，你仍然需要添加它，以便能够调用事件。 
+</p>
+</div></li><li><p>在编辑器中运行。
+</p></li></ol><a name="endresult" ></a><h2 id="最终结果">最终结果</h2>
+
+<p>在编辑器中运行时，当你按下 <strong>1</strong> 键，灯将在打开/关闭状态之间切换，同时立方体将沿Z轴向上移动。 
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_Ftm9I_TEXYE"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="Ftm9I_TEXYE" width="100%" height="100%" src="../../../../../../external.html?link=https://www.youtube.com/embed/Ftm9I_TEXYE?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;loop=1&amp;controls=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_Ftm9I_TEXYE
+{
+	margin: 0px;
+	width: 100%;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_Ftm9I_TEXYE:after
+{
+	content: "";
+	padding-top: 56.25%;
+	display: block;
+}
+</style><p>在本示例中，我们在 <strong>关卡蓝图</strong> 中以及<a id="content_link" href="../../../Blueprints/UserGuide/Types/ClassBlueprint/index.html" ><span>蓝图类</span></a>
+内调用来自 <strong>Sequencer</strong> 的事件。 
+我们没有指定摄像机以从其查看过场动画，而是使用Sequencer和蓝图执行脚本序列。 
+在项目中，你可以将事件轨迹与自定义事件和自定义结构体配合使用， 
+以更新你在过场动画序列的已定义的点上的动画中的玩家信息（例如，玩家生命值增加、获得新武器或你选择的与游戏进程相关的其他效果）。 
+</p>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="../../Overview/index.html" title="Sequencer是虚幻引擎4的多轨迹编辑器，用于实时创建和预览过场动画序列。">Sequencer概述</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../ReferenceEditor/index.html" title="Sequencer 编辑器的 UI 和控件参考页面。 ">Sequencer 编辑器参考</a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+
+						</div>
+						                        <script type="text/javascript">
+    checkpoint = "editorqs";
+</script>
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Sequencer/HowTo/TracksEvent/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:10:22 GMT -->
+</html>

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Replay/Streamers/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:38:48 GMT -->
+<head>
+    <title>DemoNetDriver 和流送器 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Engine/Replay/Streamers/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Engine/Replay/Streamers/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Engine/Replay/Streamers/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Engine/Replay/Streamers/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3260683" />
+<meta name="availability" content="Public" />
+<meta name="title" content="DemoNetDriver 和流送器" />
+<meta name="description" content="录制和播放游戏进程的回放系统总览" />
+<meta name="version" content="4.14" />
+<meta name="parent" content="Engine/Replay" />
+<meta name="order" content="17" />
+<meta name="topic-image" content="replay_topic.png" />
+<meta name="tags" content="Replays" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="DemoNetDriver 和流送器" />
+	<meta property="og:description" content="录制和播放游戏进程的回放系统总览" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">回放系统</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index4429.html">Replays</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_14"><a id="version_link" href="../../../SiteIndex/index5327.html">Unreal Engine 4.14</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">DemoNetDriver 和流送器</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_14"><a id="version_link" href="../../../SiteIndex/index5327.html">Unreal Engine 4.14</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#demonetdriver功能">DemoNetDriver 功能</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#回放数据格式">回放数据格式</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#null流送器">NULL 流送器</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#内存流送器">内存流送器</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#内存流送器用法详情">内存流送器用法详情</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#http流送器">HTTP 流送器</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#http流送器用法详情">HTTP 流送器用法详情</a>
+	</li>					</ul>
+	</li>		    	        </ul>
+</div>
+<h2 id="demonetdriver功能">DemoNetDriver 功能</h2>
+
+<ul ><li><p>DemoNetDriver 默认使用 NULL 流送器，但接收设为不同流送器厂商模块名称的 URL 选项“ReplayStreamerOverride”（如“InMemoryNetworkReplayStreaming”或“HttpNetworkReplayStreaming”）后即可覆盖。在项目 <code >DefaultEngine.Ini</code> 文件的“NetworkReplayStreaming”部分设置“DefaultFactoryName”变量即可修改默认值“NullNetworkReplayStreaming”。调用 <code >InitBase</code> 并将正确的 URL 作为参数也可实现相同效果。
+</p></li><li><p>DemoNetDrivers 可将“demo.CheckpointSaveMaxMSPerFrame”CVar 设为正值，分摊录制回放数据的时间开销。在每帧时间限制前未录制进回放的 <code >Actor</code> 将排入队列，在下一帧进行录制。此功能的优点是会限制检查点录制和捕捉的时间量，使游戏不存在卡顿。而缺点则是播放中可能出现细微的视觉错误。出现这类错误的原因是检查点包含从不同帧上获取的 Actor 的数据。只有在游戏录制检查点的时间超过指定时间限制时，此功能才会被启用。这意味着此功能将被主要应用至低端设备，或应用到性能开销较大的游戏上。
+</p></li><li><p>如 <code >bPrioritizeActors</code> 设为 true，被存入回放的 Actor 将按照录制顺序的优先级进行预排序（基于虚拟函数 <code >GetReplayPriority</code>）。通过 <code >MaxDesiredRecordTimeMS</code> 与分摊录制结合时十分实用。
+</p></li><li><p>修改 CVar <code >demo.CVarCheckpointUploadDelayInSeconds</code> 即可调整检查点录制频率。默认为 30 秒。增加检查点之间的时间长度将使向后播放或跳过回放的速度变慢，但会使回放文件的容量变小。
+</p></li><li><p>录制 demo 时变量 <code >bPauseRecording</code> 可被设为 true，以暂停录制。将其设回 false 即可继续录制。
+</p></li><li><p>查看回放时，<strong>Game Mode</strong> 将使用一个不同的 <strong>Player Controller</strong> 类（指定为 <code >ReplaySpectatorPlayerControllerClass</code>）。
+</p></li><li><p>使用 <code >SetViewerOverride</code>，<code >DemoNetDriver</code> 可通过创建一个用于录制的 <strong>Player Controller</strong>，变更 Actor 网络关联、剔除和优化的确定方式。这在带有大地图的游戏中尤为实用（如 Paragon）。在这些游戏中，玩家无法确切了解实时游戏中之后会发生的情况（处于效率和防作弊两方面的原因），但会希望能够查看回放。
+</p></li><li><p>DemoNetDrivers 能与 Slate 同时进行运算。为完成此操作，“tick.DoAsyncEndOfFrameTasks”和“demo.ClientRecordAsyncEndOfFrame”CVars 不能为零。
+</p></li></ul><div class="note">
+	<p>回放生成的 Actor 将使函数调用和即时游戏进程 Actor 的作用相似。这将导致函数调用的作用和带最小回放数据的即时 Actor 相似。但这也意味着影响共享对象（如 <code >GameInstance</code>、<code >GameState</code> 或 <code >GameMode</code>）将仍能被回放 Actor 使用，并能以多种非计划中的方式影响游戏状态。以内存流送器为例则尤为明显（该流送器可在即时游戏进行仍在运行时观看回放）。为防止 Actor 产生不应有的影响，建议首先对这些操作进行检查，确定 Actor 是否为即时或或回放关卡的一部分，并使其拥有正确的作用。这是每个游戏特定的问题，必须基于每个项目的不同情况进行处理。举例而言，一个特定的游戏可能需要在回放中更新玩家的体力条或全屏伤害覆层，但不调整玩家的得分。
+</p>
+</div><h2 id="回放数据格式">回放数据格式</h2>
+
+<p>在数据方面，回放包含三种游戏状态信息，以及部分额外的文字数据。开始时描述游戏世界开始状态的基线数据。作为游戏世界净变（从基线发生）快照的检查点将以玩家定义的固定间隔出现。各个检查点之间的空间由游戏世界中单独物体的增量变化所填充。游戏中的任意时刻均可被引擎快速而准确地重建：将世界场景初始化到开始状态，在选定时间前执行上个检查点中描述的变化，然后在检查点到达所需要的时间点后应用每个增量变化。回放中包含的文本数据由显示名（可在制作面向玩家的列表时使用）和用户定义文本标记（仅限 HTTP 流送器，可在搜索或过滤游戏列表时使用）组成。
+</p><h2 id="null流送器">NULL 流送器</h2>
+
+<p>NULL 流送器是录制回放的默认方式。该流送器将把回放数据写入硬盘（如本地硬盘）。它适用于进行本地录制，尤其适合单机游戏。录制的内容用途十分广泛，可制作游戏预告片或游戏中的过场动画，或使玩家只能在游戏中查看并分享快速通关或教学视频。回放数据文件将被保存至项目中的 Saved/Demos/（回放名称）文件夹。
+</p><h2 id="内存流送器">内存流送器</h2>
+
+<p>内存流送器可将把本机内存中的回放数据设为用户可调的长度（如 10 秒、3 分钟等）。这类流送最适合最近精彩瞬间的即时回放，如体育比赛中的得分、射击游戏中的击杀，或动作游戏中 boss 战的最后瞬间。
+</p><h3 id="内存流送器用法详情">内存流送器用法详情</h3>
+
+<p>内存流送器的特别之处在于它在单一会话中进行录制、回放和继续游戏进程。玩家观看回放时实时游戏进程可以隐式和无声地继续进行，因此回放结束后即可无缝继续游戏。加载时，引擎将把关卡收集到 3 个组中：静态关卡（Static Levels）、动态源关卡（Dynamic Source Levels）和动态复制关卡（Dynamic Duplicate Levels）。这些群组决定关卡和实时游戏进程以及回放之间的交互方式，如下：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>关卡集合 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>添加到此集合的关卡 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>行为 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>静态关卡</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>并非为固定关卡，且拥有 <code >IsStatic</code> 标记的关卡。</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>不受游戏进程影响，将在实时播放和回放中显示。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>动态源关卡</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><code >IsStatic</code> 布尔变量设为 false 的固定关卡和所有子关卡。</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>受实时游戏进程影响。在回放时隐藏，但游戏进程仍然正常运行。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>动态复制关卡</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>加载时从动态源关卡制作的拷贝。不存在于专用服务器上或编辑器模式中。</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在实时游戏进程中隐藏。回放发生在这些关卡中，然后将被清空。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>在 Window 菜单中打开 Levels 视图便可找到“Is Static”设置，然后在选中子关卡的情况下点击 Level Details 按钮。
+<img alt="Sublevel.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Replay/Streamers/Sublevel.jpg" />
+之后，“Is Static”选项将出现在 Level Details 窗口中。固定关卡的此窗口为空，因此必须选择子关卡。
+<img alt="IsStatic.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Replay/Streamers/IsStatic.jpg" />
+</p><div class="note">
+	<p>这些关卡集合为关卡流送进程的一部分，与回放系统并非特定相关。
+</p>
+</div><p>将此系统纳入考虑后，可为动态源关卡创建一个 <code >DemoNetDriver</code>，再为动态复制关卡创建一个 <code >DemoNetDriver</code>。该操作便于在动态源关卡中录制实时游戏进程，并在动态复制关卡中播放数据。隐藏动态源关卡并在回放中显示动态复制关卡，游戏可继续进行并接受不受回放影响的网络更新。第三个群组静态关卡可随时启用并显示。包含不受实时游戏进程影响内容——静态世界场景几何体、环境背景声效、粒子和动画，因此不需要参与回放过程。回放完成后，动态复制关卡的内容将被销毁，然后进入垃圾回收流程。然后动态源关卡将再次变为拥有声音/显示。动态源关卡不会被销毁或暂停（只会被隐藏），因此查看回放时游戏将正常进行，可随时切回游戏画面显示（不会有卡顿）。此外，开发者可利用该系统将关卡标记为静态，以便将其从回放录制和播放中剔除，节约内存和时间、提高效率。
+</p><h2 id="http流送器">HTTP 流送器</h2>
+
+<p>HTTP 流送器将把回放数据发送至另一个服务器，可以是 LAN 或网络上的其他地方。这适用于即时流送比赛，或保存比赛记录以便随时查看。在专属服务器游戏中，只有服务器知晓游戏中随时随地的情况，卸载回放数据处理将增加单个服务器上可创建的同步游戏数量。因此 HTTP 流送器尤其适用于这类游戏。该工具可以从游戏运行方完全控制的电脑中获取数据，因此也可用作调解或反作弊工具。
+</p><h3 id="http流送器用法详情">HTTP 流送器用法详情</h3>
+
+<p>HTTP 流送器将通过 <a id="content_link" href="HTTPRESTAPI/index.html" ><span>HTTP 流送器 REST API</span></a>
+ 与自定义写入回放服务器进行通信，使用 GET 和 POST 法将数据作为二进制或 JSON 格式字符串发送。如要设置自己的回放服务器，必须首先创建 URL。项目 DefaultEngine.Ini 文件中的 <code >&#91;HttpNetworkReplayStreaming&#93;</code> 部分下包含回放服务器的 URL（在变量 <code >ServerURL</code> 中）。<code >ServerURL</code> 的格式为“http://replay.yourgame.com/”。最后的“/”十分重要，因为 HTTP 流送器不会自行假设 URL 格式需要修改。
+</p>
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index4429.html">Replays</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Replay/Streamers/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:38:48 GMT -->
+</html>

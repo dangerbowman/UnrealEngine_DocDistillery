@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Landscape/TechnicalGuide/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:23:18 GMT -->
+<head>
+    <title>地形技术指南 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Engine/Landscape/TechnicalGuide/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Engine/Landscape/TechnicalGuide/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Engine/Landscape/TechnicalGuide/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Engine/Landscape/TechnicalGuide/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3807090" />
+<meta name="availability" content="Public" />
+<meta name="title" content="地形技术指南" />
+<meta name="description" content="地形的技术设置。" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine/Landscape" />
+<meta name="order" content="6" />
+<meta name="topic-image" content="Engine/Landscape/Materials/LS_Technical.png" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="地形技术指南" />
+	<meta property="og:description" content="地形的技术设置。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">Landscape室外地形</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">地形技术指南</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#技术细节">技术细节</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#地形组件">地形组件</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#组件分段">组件分段</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#计算高度图维度">计算高度图维度</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#性能注意事项">性能注意事项</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#建议地形大小">建议地形大小</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#图层调试模式">图层调试模式</a>
+	</li>		    	        </ul>
+</div>
+<p>为了使地形系统发挥最佳性能，必须遵守一定的技术限制。以下文档旨在提醒您注意这些限制，并为您提供有价值的信息，以便您能够在地形的美观和性能之间达到最佳平衡。 
+</p><a name="technicaldetails" ></a><h2 id="技术细节">技术细节</h2>
+
+<p>刚开始时，地形高度图的有效维度并不总是立即会显示出来。要确定高度图的哪些维度是有效的，以及除此之外哪些维度是最佳的，还需要对地形的底层架构有一个全面的了解。为了创建一个允许使用巨大地形但又能继续高效利用内存和性能的系统，架构隐式地对高度图的维度进行了限制，这意味着某些维度是有效的，而其他维度则无效。在虚幻引擎中先前的地形系统中，没有任何限制（即任何维度都是有效可行的）或限制相当简单（即只允许两个高度图的平方幂）。地形高度图的限制更加复杂和严格。
+</p><p>地形Actor是采用颜色编码，这样更容易说明每个部分发挥什么作用。地形的边缘用黄色突出显示，每个组件的边缘用浅绿色显示，分段边缘（如果设置为2x2分段）用中绿色显示，单独的地形四边形用深绿色显示。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>颜色：</p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>地形组件</p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>黄色：</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>地形Actor边缘</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>浅绿色：</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>地形组件边缘</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>中绿色：</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>地形分段边缘</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>深绿色：</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>地形单独四边形</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p><img alt="Landscape_Create_Preview.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/TechnicalGuide/Landscape_Create_Preview.jpg" />
+</p><a name="landscapecomponents" ></a><h2 id="地形组件">地形组件</h2>
+
+<p>地形分为多个组件，它们是虚幻的基本渲染单元、可视性计算单元和碰撞单元。地形中的组件都具有相同的大小，并且总是呈现为正方形。地形组件的大小是在创建地形时决定的，而选择取决于您希望创建的地形的大小和细节。
+</p><p>各个组件的高度数据存储在单个纹理中。因此，它的大小必须是顶点数的2次幂。沿着两个相邻组件边缘的共享顶点行被复制并存储在每个组件中。因此，考虑每个组件中的四边形数量是有意义的。
+</p><p>下面是一个非常简单的地形（其轮廓为绿色），包含四个组件。每个组件由一个四边形组成。一个组件已经被分离，以显示组件相交处的顶点是如何重复的。
+</p><p><img alt="Landscape_Components.jpg" width="256" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/TechnicalGuide/Landscape_Components.jpg" />
+</p><a name="componentsections" ></a><h2 id="组件分段">组件分段</h2>
+
+<p>组件可以分为1或4（2x2）个子分段。这些分段是地形LOD计算的基本单元。
+</p><p>使用4（2x2）子分段选项可以得到与使用四倍组件（每个组件只有一个子分段）相同大小的高度图，但是使用更少的组件通常可以获得更好的性能。
+</p><p>每个分段的大小（以顶点数量计）必须是2的幂（最大为256x256）。这样，不同的LOD级别可以存储在纹理的mipmap中。这将导致一个组件中的四边形的数量要么是2的幂减1（如果每个组件有1个分段），要么是2的幂减2（如果每个组件有4个分段）。
+</p><p>下面是一个单独的组件（其轮廓为绿色），包含四个分段。每个分段由9（3x3）个四边形组成。同样，您可以看到这些分段相交的顶点都是重复的。
+</p><p><img alt="Landscape_Component_Sections.jpg" width="256" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/TechnicalGuide/Landscape_Component_Sections.jpg" />
+</p><a name="calculatingheightmapdimensions" ></a><h2 id="计算高度图维度">计算高度图维度</h2>
+
+<p>正如您所看到的，地形的维度是基于每个分段中的四边形数量、每个组件中的分段数量以及地形中呈现的组件数量。一旦确定了组件数量和每个组件的分辨率，计算整个地形的维度就变得非常简单。
+</p><p>以下是一些示例场景：
+</p><p> <strong>示例1</strong>
+</p><p>如果我们从包含64x64个顶点的单个分段组成的组件开始，那么组件的大小就是63x63个四边形。假设我们有一个由10x10个这些组件组成的地形，那么地形中总共有630x630个四边形。现在，如果我们想要导入这样一个地形的高度，我们必须有一个有631x631个顶点的高度图，因为存在的顶点总是比四边形多一行（想象一个1x1四边形 - 它需要4个顶点）。因此631x631是一个有效的地形大小。
+</p><p> <strong>示例2</strong>
+</p><p>如果某个组件可分成4个子分段，且每个子分段由64x64个顶点组成。这样每个分段就有63x63个四边形，每个组件就有126x126个四边形。如果我们有32x32个这样的组件，我们在每个方向上得到共计126 * 32 = 4032个四边形。因此整个地形将有4033x4033个顶点。
+</p><p>上述例子都以正方形地形为探讨对象。但是，您可以创建非正方形的地形。例如，在第一个例子中，10x10并不特殊。假设每个组件有63个四边形，您可以得到由AxB个组件组成，且总大小为(A*63+1 , B*63+1)个顶点的任意地形。
+</p><a name="performanceconsiderations" ></a><h2 id="性能注意事项">性能注意事项</h2>
+
+<p>组件大小与组件总数的选择是一种性能上的权衡。较小的组件大小可实现更快的LOD过渡，也可实现更多地形的遮挡，但是组件越小，需要的组件越多。
+</p><p>每个组件都有一个渲染线程CPU处理成本，每个分段都是一个绘制调用，所以尽量将这些数字保持在最小值。对于最大的地形，Epic建议最多使用1024个组件。
+</p><a name="recommendedlandscapesizes" ></a><h2 id="建议地形大小">建议地形大小</h2>
+
+<p>为了让事情变得更简单，这里有一些尺寸可以用于在最大化面积的同时最小化地形组件的数量。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>整体大小（Overall Size）</strong>（顶点） </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>四边形 / 分段（Quads / Section）</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>分段 / 组件（Sections / Component）</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>组件大小（Component Size）</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>组件总数（Total Components）</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>8129x8129</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>127</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>4 (2x2)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>254x254</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>1024 (32x32)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>4033x4033</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>4 (2x2)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>126x126</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>1024 (32x32)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>2017x2017</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>4 (2x2)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>126x126</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>256 (16x16)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>1009x1009</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>4 (2x2)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>126x126</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>64 (8x8)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>1009x1009</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>1</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63x63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>256 (16x16)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>505x505</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>4 (2x2)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>126x126</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>16 (4x4)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>505x505</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>1</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63x63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>64 (8x8)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>253x253</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>4 (2x2)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>126x126</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>4 (2x2)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>253x253</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>1</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63x63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>16 (4x4)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>127x127</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>4 (2x2)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>126x126</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>1</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>127x127</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>1</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>63x63</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>4 (2x2)</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="layerdebugmode" ></a><h2 id="图层调试模式">图层调试模式</h2>
+
+<p> <strong>图层调试（Layer Debug）</strong> 模式允许在视口中将特定图层的权重显示在地形上。您可以在视口的视图（View）菜单下的 <strong>地形查看器（Landscape Visualizers）</strong> 下启用图层调试模式。有关视口的地形相关视图模式的更多信息，请参阅<a id="content_link" href="../../UI/LevelEditor/Viewports/ViewModes/index.html#landscapevisualizers" ><span>地形查看器</span></a>
+。
+</p><p>启用图层调试模式后，将显示可用于选择单独颜色信道的单选按钮，且目标图层将包含在列表中。
+</p><p><img alt="Landscape_Target_Debug.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/TechnicalGuide/Landscape_Target_Debug.png" />
+</p><p>选择一个信道将对地形应用一个着色器，该着色器显示所选目标图层的信道所覆盖的区域。
+</p><p><img alt="Landscape_Target_Debug_Demo.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Landscape/TechnicalGuide/Landscape_Target_Debug_Demo.jpg" />
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Landscape/TechnicalGuide/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:23:18 GMT -->
+</html>

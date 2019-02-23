@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/Materials/HowTo/DetailTexturing/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:59 GMT -->
+<head>
+    <title>添加细节纹理 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/Materials/HowTo/DetailTexturing/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/Materials/HowTo/DetailTexturing/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/Materials/HowTo/DetailTexturing/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/Materials/HowTo/DetailTexturing/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3242329" />
+<meta name="availability" content="Public" />
+<meta name="title" content="添加细节纹理" />
+<meta name="description" content="有关向材质添加细节纹理的指南" />
+<meta name="related" content="Engine/Rendering/Materials/ExpressionReference/Coordinates" />
+<meta name="related" content="Engine/Rendering/Materials/CustomizedUVs" />
+<meta name="related" content="Engine/Rendering/Materials/Functions/Reference/Texturing" />
+<meta name="related" content="Platforms/Oculus" />
+<meta name="related" content="Engine/Rendering/Materials/ExpressionReference/Textures" />
+<meta name="version" content="4.9" />
+<meta name="skilllevel" content="Intermediate" />
+<meta name="tags" content="Materials" />
+<meta name="parent" content="Engine/Rendering/Materials/HowTo" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="添加细节纹理" />
+	<meta property="og:description" content="有关向材质添加细节纹理的指南" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">材质 - 操作指南</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">添加细节纹理</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#细节纹理化">细节纹理化</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#“细节纹理化”（detailtexturing）节点明细">“细节纹理化”（Detail Texturing）节点明细</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#将纹理样本转换为纹理对象">将纹理样本转换为纹理对象</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#如何在材质中使用细节纹理化功能">如何在材质中使用细节纹理化功能</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#使用“细节纹理化”（detailtexturing）材质函数">使用“细节纹理化”（Detail Texturing）材质函数</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#不使用细节材质函数">不使用细节材质函数</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#细节纹理化提示与技巧">细节纹理化提示与技巧</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#基于距离的细节纹理化">基于距离的细节纹理化</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#结论">结论</a>
+	</li>		    	        </ul>
+</div>
+<p>以非常近的距离查看材质时，您会注意到，材质中使用的纹理会细化为像素点，导致视觉效果欠佳。 
+为了解决此问题，您可以使用“细节纹理”，来帮助隐藏以非常近的距离查看材质时产生的纹理像素化。 
+</p><a name="detailtexturing" ></a><h2 id="细节纹理化">细节纹理化</h2>
+
+<p><strong>细节纹理化</strong> 通过引入叠加在对象原始漫射及法线贴图上的高度重复漫射及法线贴图组合，使纹理产生更加细腻的错觉。 
+这可以在近距离查看时产生优于正常的细节效果错觉。 
+以下是作用中的细节纹理化示例。 
+</p><p><img alt="DT_With_Without.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_With_Without.jpg" />
+</p><p>在左图（标有数字 1）中，材质使用了细节纹理化功能。 
+在右图（标有数字 2）中，材质未使用细节纹理化功能。 
+您可以注意到，左图 (1) 中的法线贴图看起来细节较多，并且这些细节比右图清晰得多。 
+</p><a name="detailtexturingnodebreakdown" ></a><h2 id="“细节纹理化”（detailtexturing）节点明细">“细节纹理化”（Detail Texturing）节点明细</h2>
+
+<p>如果在 <strong>选用板</strong> 中搜索“Detail Texturing”，您将找到可以使用的 <strong>DetailTexturing</strong> 材质函数。 
+虽然这不是将细节纹理应用于材质的唯一方法，但却是最快的方法，因为您只需输入所要使用的纹理和设置。 
+</p><p><img alt="DT_Node_Break_Down.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Node_Break_Down.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明</p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>刻度（Scale(S)）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置细节纹理的刻度。数值越大，产生的平铺就越多；数值越小，产生的平铺就越少。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>漫射（Diffuse(V3)）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是漫射纹理的输入。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>细节漫射（DetailDiffuse(T2d)）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是漫射细节纹理的输入。此输入只能接受纹理对象。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>漫射强度（DiffuseIntensity(S)）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制细节漫射纹理的强度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>法线（Normal(V3)）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是法线贴图纹理的输入。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>细节法线（DetailNormal(T2D)）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是法线贴图细节纹理的输入。此输入只能接受纹理对象。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>法线强度（NormalIntensity(S)）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制细节法线贴图纹理的强度。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="convertingtexturesampletotextureobjects" ></a><h3 id="将纹理样本转换为纹理对象">将纹理样本转换为纹理对象</h3>
+
+<p>为了让“细节纹理化”材质函数正确工作，必须将您要用作细节纹理的纹理从常规纹理转换为纹理对象。 
+要将纹理转换为纹理对象，只需完成下列步骤。
+</p><ol ><li><p>首先，找到要用作细节纹理的纹理。 
+</p><p><img alt="DT_Regular_Texture.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Regular_Texture.jpg" />
+</p></li><li><p>找到该纹理后，请使用鼠标 <strong>右键单击</strong> 该纹理。这将显示快捷菜单，请从中选择 <strong>转换为纹理对象（Convert To Texture Object）</strong>选项。<br /></p><p><img alt="DT_Convert_Texture_To_Object.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Convert_Texture_To_Object.jpg" />
+</p></li><li><p>完成上述操作后，纹理样本现在显示如下。 
+</p><p><img alt="DT_Texture_Object_Texture.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Texture_Object_Texture.jpg" />
+</p></li></ol><a name="howtousedetailtexturinginyourmaterial" ></a><h2 id="如何在材质中使用细节纹理化功能">如何在材质中使用细节纹理化功能</h2>
+
+<p>以下是设置材质以使其使用细节纹理化功能的两种不同方法。 
+您可以根据材质和项目的需要，来选择使用其中一种方法。 
+这两种方法的结果完全相同，并无优劣之分。 
+</p><div class="note">
+	<p>如果您的项目包含 <strong>起步内容</strong>，那么您可找到下列各节中使用的所有内容。虽然此处展示的技巧适用于任何纹理，但如果您想采用这些技巧，请确保项目包含 <strong>起步内容</strong>。
+</p>
+</div><p>但是，在开始之前，需要先设置一个非常简单的材质以用于测试。 
+为此，请在 <strong>内容浏览器</strong> 中 <strong>右键单击</strong>，然后从弹出菜单的 <strong>创建基本资产（Create Basic Asset）</strong>部分中选择 <strong>材质（Material）</strong>。 
+选择此选项将创建新的 <strong>材质</strong>。请将该材质命名为 <strong>Detail_Material</strong>。完成后，<strong>内容浏览器</strong> 应该如下所示。
+</p><p><img alt="DT_Creat_New_Material.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Creat_New_Material.jpg" />
+</p><a name="withthedetailtexturingmaterialfunction" ></a><h3 id="使用“细节纹理化”（detailtexturing）材质函数">使用“细节纹理化”（Detail Texturing）材质函数</h3>
+
+<ol ><li><p>首先，在 <strong>内容浏览器</strong> 中，使用 <strong>鼠标左键双击</strong> 刚才创建的材质以将其打开。
+</p></li><li><p>打开该材质后，通过将下列纹理从 <strong>内容浏览器</strong> 拖入材质图，添加这些纹理。 
+</p><ul ><li><p><strong>T_Brick_Clay_Old_D</strong>
+</p></li><li><p><strong>T_Brick_Clay_Old_N</strong>
+</p></li><li><p><strong>T_Ground_Gravel_D</strong>
+</p></li><li><p><strong>T_Ground_Moss_N</strong>
+</p></li></ul><p>完成之后，您的材质图应该类似于下图：
+</p><p><img alt="DT_Adding_Textures.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Adding_Textures.jpg" />
+</p></li><li><p>现在，所有需要的纹理都已添加到材质图中，您可以开始添加 <strong>细节纹理化（Detail Texturing）</strong>材质函数。为此，请先在 <strong>选用板</strong> 中搜索 <strong>Detail Texturing</strong>。
+</p><p><img alt="DT_Search_DT_MF.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Search_DT_MF.jpg" />
+</p></li><li><p>找到 <strong>细节纹理化（Detail Texturing）</strong>材质函数之后，使用 <strong>鼠标左键</strong> 单击将其选中，然后按住 <strong>鼠标左键</strong> 将 <strong>细节纹理化（Detail Texturing）</strong>材质函数从 <strong>选用板</strong> 拖入材质图。当鼠标指针位于材质图上方时，释放 <strong>鼠标左键</strong> 即可将 <strong>细节纹理化（Detail Texturing）</strong>材质函数放入材质图。 
+</p><p><img alt="DT_Adding_DT_MF.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Adding_DT_MF.jpg" />
+</p></li><li><p><strong>细节纹理化（Detail Texturing）</strong>材质函数现已添加完成，您可以开始连接所需的输入和输出，以使此材质可工作。在本示例中，我们将使用 <strong>T_Brick_Clay_Old</strong> 纹理作为基本纹理，并使用 <strong>T_Ground_Gravel</strong> 作为细节纹理。这意味着，<strong>T_Brick_Clay_Old</strong> 的漫射及法线贴图将连接到“漫射”（Diffuse）和“法线”（Normal）输入，而 <strong>T_Ground_Gravel</strong> 漫射贴图和 <strong>T_Ground_Moss</strong> 法线贴图将连接到“细节漫射”（Detail Diffuse）和“细节法线”（Detail Normal）输入。完成之后，您的材质图应该类似于下图。
+</p><p><img alt="DT_Hooked_Up_Textures.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Hooked_Up_Textures.jpg" />
+</p><div class="note">
+	<p>请记住，<strong>T_Ground_Gravel</strong> 漫射贴图和 <strong>T_Ground_Moss</strong> 法线贴图纹理样本需要转换为 <strong>纹理对象</strong>，否则此材质无法工作。有关此操作的详细信息，请参阅上面的 <strong>将纹理样本转换为纹理对象</strong> 一节。 
+</p>
+</div></li><li><p>纹理现已完成连接，您可以开始添加一些常量材质表达式，以便微调细节纹理的刻度和强度等设置。要查找常量材质表达式，请在材质选用板中搜索 Constant，然后将“常量”（Constant）从 <strong>选用板</strong> 拖到材质图中。您已添加一个常量材质表达式，现在，通过先将其选中再按键盘上的 <strong>CTRL + W</strong> 两次，复制这个表达式。最后，我们一共有 3 个常量材质表达式。 
+</p><p><img alt="DT_Adding_Constant_Nodes.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Adding_Constant_Nodes.jpg" />
+</p></li><li><p>将适量的常量材质表达式节点添加到材质图之后，可以对其进行连接并填充数据。为此，我们只需将 <strong>常量（Constant）</strong>材质表达式节点的输出连接到 <strong>细节纹理化（Detail Texturing）</strong>材质函数的输入。然后，在每个 <strong>常量（Constant）</strong>材质表达式节点中输入值 1。完成之后，您的材质图应该类似于下图。 
+</p><p><img alt="DT_All_Connections_Made.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_All_Connections_Made.jpg" />
+</p></li><li><p>通过调整常量材质表达式节点的值，可以影响细节纹理的外观效果。以下示例是将“刻度”（Scale）依次设置为 1、5 和 10 所产生的效果。 
+</p><p><img alt="DT_Different_Scale_Settings.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Different_Scale_Settings.jpg" />
+</p></li></ol><a name="withoutthedetailmaterialfunction" ></a><h3 id="不使用细节材质函数">不使用细节材质函数</h3>
+
+<p>如果因为任何原因而无法使用 <strong>细节纹理化（Detail Texturing）</strong>材质函数，您始终可以在材质图中使用“材质表达式”（Material Expression）节点构建此功能，以下是相关说明。
+</p><ol ><li><p>在 <strong>内容浏览器</strong> 中，通过 <strong>右键单击</strong> 材质并从菜单中选择 <strong>复制（Duplicate）</strong>，建立 Detail_Material 的副本。 
+</p><p><img alt="DT_Duplicate_Material.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Duplicate_Material.jpg" />
+</p></li><li><p>创建之后，将材质标注为 Detail_Material_2。完成后，您的 <strong>内容浏览器</strong> 应该如下所示。
+</p><p><img alt="DT_Duplicate_Materia_Namedl.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Duplicate_Materia_Namedl.jpg" />
+</p></li><li><p>使用鼠标左键 <strong>双击</strong> 新创建的材质将其打开。打开该材质后，删除除纹理以外的所有内容，并确保将纹理对象重新转换为纹理样本，方法如下：先选中所有纹理对象，然后 <strong>右键单击</strong> 并从菜单中选择 <strong>转换为纹理样本（Convert To Texture Sampler）</strong>。完成之后，材质图应该如下所示。 
+</p><p><img alt="DT_New_Material_Setup.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_New_Material_Setup.jpg" />
+</p></li><li><p>所有内容现已清除并转换完毕，您可以开始布置所需的材质表达式节点。在此部分中，我们需要下列类型及数量的节点。您可以通过在 <strong>选用板</strong> 中搜索来找到下列每一个材质表达式节点。 
+</p><ul ><li><p>纹理坐标（Texture Coordinate）x 1
+</p></li><li><p>限制（Clamp）x 1
+</p></li><li><p>常量（Constant）x 2
+</p></li><li><p>加法（Add）x 2
+</p></li><li><p>乘法（Multiply）x 3
+</p></li></ul><p>完成上述操作后，材质图应该如下所示。 
+</p><p><img alt="DT_RequiredNodes.jpg" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_RequiredNodes.jpg" />
+</p></li><li><p>需要的所有材质表达式节点现已添加完毕，您可以开始将这些节点连接到一起。首先，需要对“底色”（Base Color）部分进行连接。完成上述操作后，材质图应该如下所示。 
+</p><p><img alt="DT_BaseColor_Connections.jpg" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_BaseColor_Connections.jpg" />
+</p></li><li><p>接着，采用与设置“底色”（Base Color）相同的方法，对“法线贴图”（Normal Map）进行连接。完成上述操作后，材质图应该如下所示。 
+</p><p><img alt="DT_NormalMap_Connections.jpg" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_NormalMap_Connections.jpg" />
+</p></li><li><p>现在，“底色”（Base Color）和法线贴图（Normal map）都已彼此连接，您可以编译、保存和使用此材质了。 
+</p><p><img alt="DT_Complete_Material.jpg" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Complete_Material.jpg" />
+</p></li></ol><h2 id="细节纹理化提示与技巧">细节纹理化提示与技巧</h2>
+
+<p>下一节阐述有关在材质中使用细节纹理化功能的不同方法的一些提示与技巧。
+</p><h3 id="基于距离的细节纹理化">基于距离的细节纹理化</h3>
+
+<p>处理大型表面（例如地形）时，您将注意到，即使您所使用的纹理可以平铺，也会存在许多观看效果不佳的明显重复，从远距离查看时尤其如此。
+为了解决此问题，我们可以在先前创建的细节材质的基础上进行构建，使其在距离摄像机较近时显示一个纹理，而在距离摄像机较远时显示另一个纹理。 
+这通常称为“基于距离的纹理混合”，其设置步骤如下。 
+</p><ol ><li><p>首先，建立 Detail_Material_2 的副本，并将它命名为 Distance_Fade。命名之后，打开该材质，在 <strong>选用板</strong> 中搜索以下材质表达式节点，并将它们添加到材质图中。
+</p><ul ><li><p>全局位置（World_Position）x 1
+</p></li><li><p>摄像机位置 WS（Camera_Position_WS）x 1
+</p></li><li><p>距离（Distance）x 1
+</p></li><li><p>除法（Divide）x 1
+</p></li><li><p>幂（Power）x 1
+</p></li><li><p>限制（Clamp）x 1
+</p></li><li><p>常量（Constant）x 2
+</p></li></ul></li><li><p>需要的所有材质表达式节点现已添加到材质图中，我们可以开始将它们连接到一起。引起纹理变化的距离由第一个 <strong>常量（Constant）</strong>控制，该常量连接到 <strong>除法（Divide）</strong>材质表达式，在示例图中当前设置为 512。完成后，您应该看到类似下图的内容。 
+</p><p><img alt="DT_Distance_Based_Blending_Nodes.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Distance_Based_Blending_Nodes.jpg" />
+</p></li><li><p>完成基于距离的混合之后，现在可以将它添加到材质的剩余部分。为此，我们首先需要向材质图添加两个 <strong>插值（LERP）</strong>材质表达式。这是因为，“插值”（LERP）材质表达式的阿尔法输入将控制切换纹理的距离。现在，剩余的工作只是将材质的余下部分连接到一起。此材质与原始材质的唯一差别是，此材质使用“插值”（LERP），而不是在结束时将纹理加到一起。完成之后，您的材质图应该类似于下图。
+</p><p><img alt="DT_Distance_Based_Completed_Material.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/HowTo/DetailTexturing/DT_Distance_Based_Completed_Material.jpg" />
+</p></li><li><p>要查看效果，您只需在“材质预览”（Material Preview）窗口中 <strong>按住鼠标右键</strong>，然后前后移动鼠标。当您离开预览网格足够远时，您应该会看到材质从一种纹理过渡到另一种纹理。如果看不到此效果，请将连接到 <strong>除法（Divide）</strong>材质表达式的第一个 <strong>常量（Constant）</strong>（当前设置为 512）调整为较小的数字，以便在距对象较近的位置看到此效果。 
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_GMSSIxdT9CA"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="GMSSIxdT9CA" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/GMSSIxdT9CA?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_GMSSIxdT9CA
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_GMSSIxdT9CA:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style></li></ol><h2 id="结论">结论</h2>
+
+<p>细节纹理化是功能非常强大的工具，可以真正帮助您实现 3D 项目。 
+但是，就像所有其他功能强大的工具一样，您必须十分谨慎，确保这种强大的功能在您的掌控之下。 
+请记住，细节纹理化只能在一定程度上消除像素化。 
+允许玩家摄像机放大对象等行为可能会导致细节纹理化所实现的好处失效。 
+另外，请记住，添加细节纹理化可能会在材质中添加两个或两个以上额外的纹理查找操作，这可能会产生一些性能/内存问题，在移动平台上更是如此。 
+</p>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="../../ExpressionReference/Coordinates/index.html" title="对纹理坐标、可用作纹理坐标的输出值或者用来修改纹理坐标的输出值执行操作的表达式。">坐标表达式</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../CustomizedUVs/index.html" title="此功能允许在顶点着色器中运行计算，与逐个像素地运行计算相比，这可以提高性能。">定制 UV</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../Functions/Reference/Texturing/index.html" title="各种用于帮助处理纹理的函数，例如重新投射 UV 以及裁切等等。">纹理处理</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../../../Platforms/Oculus/index.html" title="关于使用UE4为Oculus Rift HMD进行开发的信息。">Oculus Rift开发</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../ExpressionReference/Textures/index.html" title="对纹理进行取样和输出的表达式。">纹理表达式</a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/Materials/HowTo/DetailTexturing/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:59 GMT -->
+</html>

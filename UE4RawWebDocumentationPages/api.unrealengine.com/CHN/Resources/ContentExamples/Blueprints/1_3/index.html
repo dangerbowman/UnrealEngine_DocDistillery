@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Resources/ContentExamples/Blueprints/1_3/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 03:19:50 GMT -->
+<head>
+    <title>1.3 - 变量 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Resources/ContentExamples/Blueprints/1_3/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Resources/ContentExamples/Blueprints/1_3/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Resources/ContentExamples/Blueprints/1_3/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Resources/ContentExamples/Blueprints/1_3/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3807090" />
+<meta name="availability" content="Public" />
+<meta name="title" content="1.3 - 变量" />
+<meta name="description" content="蓝图示例关卡的概述，示例1.3：变量" />
+<meta name="related" content="Engine/Blueprints/Overview " />
+<meta name="related" content="Engine/Blueprints/UserGuide/Components" />
+<meta name="related" content="Engine/Blueprints/UserGuide/Variables" />
+<meta name="related" content="Engine/Blueprints/UserGuide/BlueprintComms" />
+<meta name="related" content="Engine/Blueprints/UserGuide/Types/MacroLibrary" />
+<meta name="related" content="Engine/Animation/AnimBlueprints/EventGraph" />
+<meta name="related" content="Engine/Blueprints/UserGuide/UserConstructionScript" />
+<meta name="related" content="Gameplay/HowTo/SetUpInput/Blueprints" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Resources/ContentExamples/Blueprints" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="1.3 - 变量" />
+	<meta property="og:description" content="蓝图示例关卡的概述，示例1.3：变量" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">蓝图内容范例</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">1.3 - 变量</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="fullwidth">
+	<p><img alt="BPVariablesExample.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/1_3/BPVariablesExample.jpg" />
+</p>
+</div><div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#组件">组件</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#变量设置">变量设置</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#变量创建">变量创建</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#构造脚本">构造脚本</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#设置光源颜色">设置光源颜色</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#创建动态材质实例并存储它们">创建动态材质实例并存储它们</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#分配新的动态材质实例">分配新的动态材质实例</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#为动态材质实例设置颜色">为动态材质实例设置颜色</a>
+	</li>					</ul>
+	</li>		    	        </ul>
+</div>
+<p>在本例中，我们有一个蓝图Actor，它设置了两个聚光灯。每个聚光灯的颜色由一个 <strong>变量（variable）</strong> 控制。在编程中，变量被定义为计算机内存中存储一定数量数据的位置。在蓝图脚本中，变量的使用方式与虚拟容器完全相同，我们可以将一些信息放入虚拟容器中，也可以从中查询某些信息。在本例中，我们示例中的每一个光源都使用一个线性颜色变量，该变量存储特定颜色的RGB值。我们可以为这个颜色输入默认值，对其进行查询以便在不同的位置使用，并为它设置新颜色，这些都是蓝图脚本的一部分。
+</p><p>尽管在本例中我们主要使用线性颜色变量，但是在蓝图脚本中有许多不同类型的变量可供使用。每种类型的变量都包含不同类型的数据，至少要基本了解什么是主要数据类型，这一点很重要。有关这些类型的列表和有关变量使用的更多信息，请参阅<a id="content_link" href="../../../../Engine/Blueprints/UserGuide/Variables/index.html" ><span>蓝图变量文档</span></a>
+。
+</p><p>在左侧聚光灯上，该变量已被设置为 <strong>公共（public）</strong>，这意味着在选择蓝图Actor时，它将在 <strong>细节（Details）</strong> 面板中可编辑。右边是类似的设置，但是线性颜色变量仍然是 <strong>私有（private）</strong>。这意味着，要更改颜色值，需要为Actor打开蓝图脚本并更改私有变量的默认设置，或者以其他方式将其作为脚本功能的一部分进行更改。
+</p><p>将变量公开只需要选中它的 <strong>可编辑（Editable）</strong> 属性，或者单击 <strong>我的蓝图（My Blueprint）</strong> 窗口中变量名称旁边的眼睛图标。一旦一个变量是可编辑的，它旁边的眼睛形状的按钮将突出显示为黄色。这表明，尽管该变量是可公开编辑的，但它没有工具提示，这可能会让一些用户感到困惑。要解决这个问题，请在变量的 <strong>提示文本（Tooltip）</strong> 属性中输入描述。完成此操作后，眼睛形状的按钮将显示为绿色。
+</p><p>对于初学者来说，重要的是要注意，您并不总是希望您的变量是公开的。有时，让用户能够轻松更改关键变量可能会破坏或潜在地更改重要功能。始终确保你的公共变量是艺术家或关卡设计师需要访问的东西，并将他们不应该触碰的东西保留为私有。
+</p><div class="tip">
+	<p>您应该始终确保您的公共变量有工具提示来解释它们的用途。
+</p>
+</div><a name="components" ></a><h2 id="组件">组件</h2>
+
+<p>此蓝图Actor的组件相当广泛，因为这个示例有两个完全独立的工作光源。大多数组件都是静态网格体组件，只有少数文本渲染组件用于标记。当然，我们还必须有一些聚光灯组件来完成这个效果。 
+</p><p><img alt="LightComponentList.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/1_3/LightComponentList.jpg" /> <img alt="LightComponentPreview.png" width="550" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/1_3/LightComponentPreview.jpg" />
+</p><p>有两种不同的设置，尽管它们本质上是相同的。每个光源的组件设置如下：
+</p><div class="note">
+	<p>请注意，单词 <strong>公共（Public）</strong> 和 <strong>私有（Private）</strong> 将作为每个光源设置的前缀添加到这些名称中。此外，请注意缩进表示从一个组件到另一个组件的父级关系，就像在组件列表中所做的那样。
+</p>
+</div><ul ><li><p><strong>壁挂（Wall Mount）</strong> - 这是静态网格体组件，固定在墙上。
+</p><ul ><li><p><strong>支架（Bracket）</strong> - 这是静态网格体组件，它将连接到壁挂，并支撑灯具。
+</p><ul ><li><p><strong>灯具（Light Fixture）</strong> - 这是灯具本身的静态网格体组件。对玩家来说，这就像是聚光灯。第二个材质元素（元素1）应用了一个特殊的材质，它的颜色将更新以匹配光源颜色。
+</p><ul ><li><p><strong>聚光灯（Spot Light）</strong> - 这是聚光灯组件，为这个效果提供照明。
+</p></li></ul></li></ul></li><li><p><strong>文本（Text）</strong> - 文本渲染组件，用作公共（Public）或私有（Private）的标签。
+</p><ul ><li><p><strong>说明（Description）</strong> - 一些描述性的文字，帮助进一步解释这种效果。
+</p></li></ul></li></ul></li></ul><a name="variablesetup" ></a><h2 id="变量设置">变量设置</h2>
+
+<p>当向蓝图Actor添加组件时，您将注意到 <strong>我的蓝图（My Blueprint）</strong> 面板（如在图表（Graph）模式中所示）自动为每个组件填充变量。这允许您在需要从组件中获取数据或设置数据时访问各个组件。然而，除此之外，我们还有一些专门为本例设置的特殊变量。 
+</p><p><img alt="LightVariables.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/1_3/LightVariables.jpg" />
+</p><p>专门为此效果创建的自定义变量如下所示：
+</p><ul ><li><p><strong>PublicColor</strong> - 这是一个线性颜色变量，用于存储应用于公共光源的颜色，位于左侧。我们在属性上设置了默认值绿色。
+</p></li><li><p><strong>PrivateColor</strong> - 这也是一个线性颜色变量，存储应用于私有光源的颜色，位于右侧。我们在属性上设置了默认值红色。
+</p></li></ul><p>还有另外两个变量用于保存应用于灯具镜头的动态材质实例。将这些设置好，我们就可以将上述变量的颜色值发送到其中，从而改变光源的镜头颜色，以匹配聚光灯组件的颜色。
+</p><ul ><li><p><strong>PublicLightLensMaterial</strong> - 这保存了公共灯具镜头的动态材质实例。 
+</p></li><li><p><strong>PrivateLightLensMaterial</strong> - 这保存了私有灯具镜头的动态材质实例。
+</p></li></ul><a name="variablecreation" ></a><h3 id="变量创建">变量创建</h3>
+
+<p>并不是所有的变量都需要在 <strong>我的蓝图（My Blueprint）</strong> 面板中手动创建。如果在节点的输入或输出中看到需要存储在变量中的值，可以在适当的数据引脚上 <strong>右键单击</strong>，并从上下文菜单中选择 <strong>提升为变量（Promote to variable）</strong>。这将执行以下操作：
+</p><ul ><li><p>如果您 <strong>右键单击</strong> 数据输入（变量左侧）
+</p><ul ><li><p>将创建相应类型的新变量。
+</p></li><li><p>您可以立即输入新变量的名称。
+</p></li></ul></li><li><p>如果您 <strong>右键单击</strong> 数据输出（变量右侧）
+</p><ul ><li><p>将创建相应类型的新变量。
+</p></li><li><p>还为新变量创建了一个集合（Set）节点，将新变量的初值设置为等于引脚的输出值。
+</p></li></ul></li></ul><a name="constructionscript" ></a><h2 id="构造脚本">构造脚本</h2>
+
+<p>这种效果下的大部分工作实际上是在构造脚本中完成的。由于游戏开始后光源不需要更新，所以我们不使用事件图。
+</p><p>为了便于理解本例中的构造脚本，我们将其分解为一系列注释块，如下所示：
+</p><p> <strong>单击查看完整尺寸（Click for full size）</strong>
+</p><div class="lightbox">
+	<div class="fullwidth">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/1_3/LightConstructionScript.png" ><span><img alt="LightConstructionScript.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/1_3/LightConstructionScript.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div>
+</div><div class="tip">
+	<p>如果您自己在蓝图编辑器中打开这个示例的构造脚本，它将更容易可视化！
+</p>
+</div><p>执行的任务包括：
+</p><ul ><li><p>设置光源颜色。
+</p></li><li><p>创建动态材质实例并将它们存储到变量中。
+</p></li><li><p>将新的动态材质实例分配到灯具网格体中。
+</p></li><li><p>为动态材质实例设置颜色。
+</p></li></ul><a name="settinglightcolor" ></a><h3 id="设置光源颜色">设置光源颜色</h3>
+
+<div class="fullwidth">
+	<p><img alt="SetLightColor.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/1_3/SetLightColor.jpg" />
+</p>
+</div><p>在脚本的这些部分中，我们只使用应用的默认值，并将它们馈送到每个光源的光源颜色。因为这是脚本中要做的第一件事，所以它首先应用默认值，私有变量是红色的，公共变量是绿色的。设置这些节点最简单的方法是：
+</p><ol ><li><p>通过 <strong>Ctrl-拖动</strong> 到图形中创建每个聚光灯组件的Get引用。
+</p></li><li><p>拖出每一根线，在搜索栏中输入“光源颜色（Light Color）”。您将在列表中看到设置光源颜色（Set Light Color）节点。
+</p></li></ol><p><img alt="SetLightColor_node.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/1_3/SetLightColor_node.jpg" />
+</p><a name="createdynamicmaterialinstancesandstorethem" ></a><h3 id="创建动态材质实例并存储它们">创建动态材质实例并存储它们</h3>
+
+<div class="fullwidth">
+	<p><img alt="CreateStoreDMI.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/1_3/CreateStoreDMI.jpg" />
+</p>
+</div><p>网络的下一部分为每个灯具静态网格体创建一个动态材质实例。动态材质实例是材质的实例化副本，可以在游戏过程中以某种方式进行更新。在这种情况下，我们可以更改材质的自发光颜色，使其与聚光灯组件中使用的颜色相匹配。您将注意到，我们创建了两个单独的动态材料实例。这是因为我们需要两个不同颜色的不同实例。 
+</p><p>在每个创建动态材质（Create Dynamic Material）实例节点之后，您还将看到我们将新创建的材质存储在一个变量中。这让我们可以在以后使用这些材质，如果我们想要调整颜色的话，就需要这些材质。我们可以稍后将返回值输出连接到网络中的其他位置，但是将其存储在变量中会使蓝图脚本看起来更整洁，并使我们能够在事件图中需要时访问该材质。
+</p><a name="assigningthenewdynamicmaterialinstances" ></a><h3 id="分配新的动态材质实例">分配新的动态材质实例</h3>
+
+<div class="fullwidth">
+	<p><img alt="AssigningDMIs.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/1_3/AssigningDMIs.jpg" />
+</p>
+</div><p>仅仅创建动态材料实例是不够的。您还必须将这些新材质分配到网格体的表面。在脚本的这一部分中，我们将新的动态材质实例应用到灯具静态网格体中。需要注意的是，我们使用的是材质元素索引1，它已经被设置在要放置在镜头上的静态网格体上。这意味着我们的材质将用于更改光源镜头的颜色。
+</p><a name="setcolorfordynamicmaterialinstances" ></a><h3 id="为动态材质实例设置颜色">为动态材质实例设置颜色</h3>
+
+<div class="fullwidth">
+	<p><img alt="SetLensColor.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/1_3/SetLensColor.jpg" />
+</p>
+</div><p>现在，动态材质实例已经应用到表面，我们的最后一步是为这些材质分配颜色。在这种情况下，我们通过两个变量来做。在本例中，我们将其中一个设置为公共（public），另一个设置为私有（private）。但是，应当注意的是，这主要是为了学术目的。实际上，如果这两个变量都是公共的，可能会更有用。
+</p>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="../../../../Engine/Blueprints/Overview/index.html" title="蓝图总览页面包含蓝图剖析和可用的不同蓝图类型。 ">蓝图总览</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../../Engine/Blueprints/UserGuide/Components/index.html" title="简述在蓝图中的组件窗口内使用组件。 ">组件窗口</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../../Engine/Blueprints/UserGuide/Variables/index.html" title="保存值或参考世界场景中的对象或Actor的属性。">蓝图变量</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../../Engine/Blueprints/UserGuide/BlueprintComms/index.html" title="如何从一个蓝图中使用另一个蓝图的函数、事件和变量。">直接蓝图通信</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../../Engine/Blueprints/UserGuide/Types/MacroLibrary/index.html" title="声明和定义宏以便在其他蓝图中重复利用的蓝图。">蓝图宏库</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../../Engine/Animation/AnimBlueprints/EventGraph/index.html" title="基于事件的图表，用于更新动画了蓝图并计算值以供在动画图表中使用。">事件图表</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../../Engine/Blueprints/UserGuide/UserConstructionScript/index.html" title="当创建一个蓝图实例来执行初始化动作时执行该构造脚本。">构造脚本</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../../Gameplay/HowTo/SetUpInput/Blueprints/index.html" title="关于如何在蓝图中进行输入设置的操作指南。">如何在蓝图中设置输入</a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Resources/ContentExamples/Blueprints/1_3/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 03:19:50 GMT -->
+</html>

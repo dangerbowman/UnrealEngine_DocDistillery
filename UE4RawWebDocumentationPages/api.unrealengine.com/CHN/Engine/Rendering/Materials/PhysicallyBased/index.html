@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/Materials/PhysicallyBased/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:07 GMT -->
+<head>
+    <title>基于物理的材质        | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/Materials/PhysicallyBased/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/Materials/PhysicallyBased/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/Materials/PhysicallyBased/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/Materials/PhysicallyBased/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3782314" />
+<meta name="availability" content="Public" />
+<meta name="title" content="基于物理的材质       " />
+<meta name="description" content="有关主要材质输入及如何加以善用的概述。" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine/Rendering/Materials" />
+<meta name="order" content="13" />
+<meta name="topic-image" content="physically_based_topic.png" />
+<meta name="type" content="overview" />
+<meta name="tags" content="Physically Based Shading" />
+<meta name="tags" content="PBR" />
+<meta name="tags" content="Materials" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="基于物理的材质       " />
+	<meta property="og:description" content="有关主要材质输入及如何加以善用的概述。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">材质</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexfce4.html">Physically Based Shading</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8a9f.html">PBR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">基于物理的材质       </h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="fullwidth">
+	<p><img alt="PhysMatHeader.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/PhysMatHeader.jpg" />
+</p>
+</div><p>本文旨在为那些需要快速开始了解虚幻引擎 4 中基于物理的材质系统的用户提供帮助。本文假定
+您至少在一定程度上熟悉虚幻引擎（至少虚幻引擎 3 或更高版本）中的材质创建。如果您完全不熟悉虚幻引擎中的材质，
+您可从 <a id="content_link" href="../IntroductionToMaterials/index.html" ><span>基本材质概念</span></a>
+ 页面入手。
+</p><p>在这里，我们的目标只是“以普通语言”向您提供有关如何使用此系统建立标准材质的基本知识，因为
+即使是有先前虚幻引擎迭代经验的用户也可能会在这方面遇到困扰。我们仅将注意力放在
+基于物理的方法所涉及的材质方面。要获取可用输入的纲要，请参阅<a id="content_link" href="../MaterialInputs/index.html" ><span>材质输入</span></a>
+。
+</p><a name="whatdoesphysicallybasedmean?" ></a><h2 id="“基于物理”有何含义？">“基于物理”有何含义？</h2>
+
+<p>基于物理的明暗处理意味着我们估算光线的实际情况，而不是估算我们
+凭直觉认为它应该发生的情况。最终结果是，这样可产生更准确并且通常更加自然的外观。基于物理
+的材质在所有照明环境中都可以同样完美地工作。另外，材质值可以
+不那么复杂，相互依赖也可以少一些，从而产生更加直观的界面。这些益处甚至适用于非逼真
+渲染，您可在皮克斯 <a id="content_link" href="index.html#smits" ><span>[4]</span></a>
+ 和迪士尼 <a id="content_link" href="index.html#burley" ><span>[3]</span></a>
+ 的最新电影中找到证明。
+</p><p>由于这些及其他原因，虚幻引擎 4 已采用基于物理的新材质和明暗处理模型。要了解
+有关 UE4 中基于物理的材质和明暗处理模型的深入技术说明，请参阅我的 SIGGRAPH 演示稿 <a id="content_link" href="index.html#karis" ><span>[2]</span></a>
+。
+</p><a name="materialparameters" ></a><h2 id="材质参数">材质参数</h2>
+
+<p>在材质系统的“基于物理”方面，只有 4 个您需要熟悉的不同属性。它们是：
+</p><ul ><li><p><strong>底色（Base Color）</strong> 
+</p></li><li><p><strong>粗糙度（Roughness）</strong> 
+</p></li><li><p><strong>金属色（Metallic）</strong>
+</p></li><li><p><strong>高光（Specular）</strong>
+</p></li></ul><div class="note">
+	<p>所有这些输入都设计成接收介于 0 与 1 之间的值。对于 <em>底色（Base Color）</em>，这表示 RGB 值介于 0 与 1 之间的颜色。
+</p>
+</div><p>基于物理的值可以从现实材质中测得。下面是一些示例。
+</p><a name="basecolor" ></a><h3 id="底色">底色</h3>
+
+<p><strong>底色（Base Color）</strong>无非定义材质的整体颜色。它接收 Vector3 (RGB) 值，并且每个通道都自动限制在 0 与 1 之间。
+</p><p>如果是从现实世界获得的，那么这是使用偏振滤光器拍摄时获得的颜色 
+（偏振在校准时会消除非金属材质的镜面反射）。
+</p><div class="fullwidth">
+	<p><img alt="BaseColor_QS.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/BaseColor_QS.jpg" />
+</p>
+</div><p><strong>对于非金属材质测得的底色值（仅限强度）：</strong>
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>材质       </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>底色强度 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>木炭</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.02</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>新鲜沥青</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.02</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>老化沥青</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.08</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>裸露土壤</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.13</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>绿色草地</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.21</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>沙漠沙子</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.36</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>新鲜混凝土</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.51</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>海冰</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.56</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>新鲜雪</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.81</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p><strong>针对金属测得的底色：</strong>
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>材质 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>底色 (R, G, B)   </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>铁</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>(0.560, 0.570, 0.580)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>银</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>(0.972, 0.960, 0.915)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>铝</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>(0.913, 0.921, 0.925)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>金</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>(1.000, 0.766, 0.336)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>铜</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>(0.955, 0.637, 0.538)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>铬</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>(0.550, 0.556, 0.554)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>镍</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>(0.660, 0.609, 0.526)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>钛</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>(0.542, 0.497, 0.449)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>钴</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>(0.662, 0.655, 0.634)</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>铂</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>(0.672, 0.637, 0.585)</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="roughness" ></a><h3 id="粗糙度">粗糙度</h3>
+
+<p><strong>粗糙度（Roughness）</strong>输入实际控制材质的粗糙度。与平滑的材质相比，粗糙的材质将向更多方向散射所反射的光线。
+您可根据反射的模糊或清晰度或者镜面反射高光的广度或密集度加以 
+确定。粗糙度 0（平滑）是镜面反射，而粗糙度 1（粗糙）是完全无光泽或漫射。
+</p><p><img alt="roughness_nonmetal.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/roughness_nonmetal.png" />
+<img alt="roughness_metal.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/roughness_metal.png" />
+</p><div class="caption">
+	<p>粗糙度 0 到 1。上图为非金属，下图为金属。
+</p>
+</div><!--
+id:paramliteral
+max:paramliteral
+ext:paramliteral
+caption:paramliteral
+image_list:param
+-->
+<div class="slider_container" id="粗糙度（Roughness）">
+    <div id="粗糙度（Roughness）_Image"></div>
+    <div class="slider"></div>
+    <div class="caption">
+                <b><p><strong>拖动滑块可查看“粗糙度”（Roughness）值更新</strong></p></b>
+            </div>
+    <div id="images" class="hidden">
+        <p><img alt="Roughness_1.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_1.jpg" />
+<img alt="Roughness_2.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_2.jpg" />
+<img alt="Roughness_3.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_3.jpg" />
+<img alt="Roughness_4.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_4.jpg" />
+<img alt="Roughness_5.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_5.jpg" />
+<img alt="Roughness_6.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_6.jpg" />
+<img alt="Roughness_7.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_7.jpg" />
+<img alt="Roughness_8.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_8.jpg" />
+<img alt="Roughness_9.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_9.jpg" />
+<img alt="Roughness_10.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_10.jpg" />
+<img alt="Roughness_11.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_11.jpg" />
+<img alt="Roughness_12.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_12.jpg" />
+<img alt="Roughness_13.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_13.jpg" />
+<img alt="Roughness_14.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_14.jpg" />
+<img alt="Roughness_15.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_15.jpg" />
+<img alt="Roughness_16.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_16.jpg" />
+<img alt="Roughness_17.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_17.jpg" />
+<img alt="Roughness_18.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_18.jpg" />
+<img alt="Roughness_19.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_19.jpg" />
+<img alt="Roughness_20.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_20.jpg" />
+<img alt="Roughness_21.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Roughness_21.jpg" /></p>
+    </div>
+</div><a name="mappingroughness" ></a><h4 id="贴图粗糙度">贴图粗糙度</h4>
+
+<p>粗糙度是一个属性，它将频繁地在对象上进行贴图，以便向表面添加大部分物理变化。
+</p><div class="fullwidth">
+	<!--
+id:paramliteral
+max:paramliteral
+ext:paramliteral
+caption:paramliteral
+image_list:param
+-->
+<div class="slider_container" id="粗燥偏差（RoughBias）">
+    <div id="粗燥偏差（RoughBias）_Image"></div>
+    <div class="slider"></div>
+    <div class="caption">
+                <b><p><strong>拖动滑块可查看在纹理中有所偏差的“粗燥度”（Roughness）值更新。接近 0.5 时，可产生最有趣的效果。</strong></p></b>
+            </div>
+    <div id="images" class="hidden">
+        <p><img alt="RoughBias_1.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_1.jpg" />
+<img alt="RoughBias_2.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_2.jpg" />
+<img alt="RoughBias_3.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_3.jpg" />
+<img alt="RoughBias_4.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_4.jpg" />
+<img alt="RoughBias_5.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_5.jpg" />
+<img alt="RoughBias_6.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_6.jpg" />
+<img alt="RoughBias_7.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_7.jpg" />
+<img alt="RoughBias_8.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_8.jpg" />
+<img alt="RoughBias_9.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_9.jpg" />
+<img alt="RoughBias_10.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_10.jpg" />
+<img alt="RoughBias_11.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_11.jpg" />
+<img alt="RoughBias_12.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_12.jpg" />
+<img alt="RoughBias_13.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_13.jpg" />
+<img alt="RoughBias_14.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_14.jpg" />
+<img alt="RoughBias_15.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_15.jpg" />
+<img alt="RoughBias_16.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_16.jpg" />
+<img alt="RoughBias_17.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_17.jpg" />
+<img alt="RoughBias_18.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_18.jpg" />
+<img alt="RoughBias_19.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_19.jpg" />
+<img alt="RoughBias_20.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_20.jpg" />
+<img alt="RoughBias_21.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/RoughBias_21.jpg" /></p>
+    </div>
+</div>
+</div><div class="tip">
+	<p>如果您已经在虚幻引擎的先前迭代中建立材质，并且不习惯基于物理的材质，请记住，粗糙度贴图是您处理大部分镜面反射纹理的位置。
+</p>
+</div><a name="metallic" ></a><h3 id="金属色">金属色</h3>
+
+<p><strong>金属色（Metallic）</strong>输入实际控制表面在多大程度上“像金属”。非金属的金属色（Metallic）值为 0，
+金属的金属色（Metallic）值为 1。对于纯表面，例如纯金属、纯石头、
+纯塑料等等，此值将是 0 或 1，而不是任何介于它们之间的值。创建受腐蚀、落满灰尘或生锈金属之类的混合表面时，
+您可能会发现需要 <em>介于</em> 0 与 1 之间的值。 
+</p><p><img alt="metallic.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/metallic.png" />
+</p><div class="caption">
+	<p>金属色 0 到 1
+</p>
+</div><div class="tip">
+	<p>最初，您可能会勉强将任何材质设置为完全金属。请忍住，不要这样做！
+</p>
+</div><p>您将注意到，我们在此示例中添加了少许粗糙度。这完全是艺术性选择。 
+</p><!--
+id:paramliteral
+max:paramliteral
+ext:paramliteral
+caption:paramliteral
+image_list:param
+-->
+<div class="slider_container" id="金属色（Metallic）">
+    <div id="金属色（Metallic）_Image"></div>
+    <div class="slider"></div>
+    <div class="caption">
+                <b><p><strong>拖动滑块可查看“金属色”（Metallic）值更新</strong></p></b>
+            </div>
+    <div id="images" class="hidden">
+        <p><img alt="Metallic_1.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_1.jpg" />
+<img alt="Metallic_2.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_2.jpg" />
+<img alt="Metallic_3.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_3.jpg" />
+<img alt="Metallic_4.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_4.jpg" />
+<img alt="Metallic_5.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_5.jpg" />
+<img alt="Metallic_6.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_6.jpg" />
+<img alt="Metallic_7.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_7.jpg" />
+<img alt="Metallic_8.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_8.jpg" />
+<img alt="Metallic_9.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_9.jpg" />
+<img alt="Metallic_10.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_10.jpg" />
+<img alt="Metallic_11.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_11.jpg" />
+<img alt="Metallic_12.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_12.jpg" />
+<img alt="Metallic_13.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_13.jpg" />
+<img alt="Metallic_14.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_14.jpg" />
+<img alt="Metallic_15.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_15.jpg" />
+<img alt="Metallic_16.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_16.jpg" />
+<img alt="Metallic_17.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_17.jpg" />
+<img alt="Metallic_18.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_18.jpg" />
+<img alt="Metallic_19.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_19.jpg" />
+<img alt="Metallic_20.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_20.jpg" />
+<img alt="Metallic_21.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Metallic_21.jpg" /></p>
+    </div>
+</div><a name="specular" ></a><h3 id="高光">高光</h3>
+
+<p>不应连接 <strong>高光（Specular）</strong>输入，在大多数情况下，应将其保留为默认值 0.5。
+</p><p>它是介于 0 与 1 之间的值，并用于调整 <em>非金属</em> 表面上的当前镜面反射量。它在金属上没有效果。
+</p><div class="tip">
+	<p>对于漫射度非常大的材质，您可能倾向于将此值设置为零。请忍住，不要这样做！所有材质 
+都具有镜面反射，请参阅此帖子以获取示例 <a id="content_link" href="index.html#hable" ><span>[5]</span></a>
+。对于漫射度非常大的材质，您真正想做的是 
+使它们粗糙。
+</p>
+</div><p>一般而言，通过修改“高光”（Specular），可添加轻微的吸着现象或小比例的遮蔽，例如在法线贴图中表示的裂缝。有时，将这些现象称为腔洞。
+比例较小的几何体，尤其是仅存在于高多边形中且并入法线贴图的细节，不会被渲染器的实时阴影拾取。为了捕获这种遮蔽，我们生成腔洞贴图，
+这通常是追踪距离非常短的 AO 贴图。此贴图先乘以最终的底色，然后输出并乘以 0.5（镜面反射默认值）以作为镜面反射输出。
+即，BaseColor = Cavity*OldBaseColor，Specular = Cavity*0.5。
+</p><p>对于高级使用，这可用来控制折射率 (IOR)。我们发现对于 99% 的材质，这并非必要。以下是基于实测 IOR 的镜面反射值。
+</p><p><strong>实测镜面反射值：</strong>
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>材质 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>镜面反射 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>玻璃</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.5</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>塑料</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.5</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>石英</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.570</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>冰</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.224</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>水</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.255</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>牛奶</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.277</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>皮肤</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0.35</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><!--
+id:paramliteral
+max:paramliteral
+ext:paramliteral
+caption:paramliteral
+image_list:param
+-->
+<div class="slider_container" id="高光（Specular）">
+    <div id="高光（Specular）_Image"></div>
+    <div class="slider"></div>
+    <div class="caption">
+                <b><p><strong>拖动滑块可查看“高光”（Specular）值更新。</strong></p></b>
+            </div>
+    <div id="images" class="hidden">
+        <p><img alt="Specular_1.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_1.jpg" />
+<img alt="Specular_2.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_2.jpg" />
+<img alt="Specular_3.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_3.jpg" />
+<img alt="Specular_4.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_4.jpg" />
+<img alt="Specular_5.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_5.jpg" />
+<img alt="Specular_6.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_6.jpg" />
+<img alt="Specular_7.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_7.jpg" />
+<img alt="Specular_8.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_8.jpg" />
+<img alt="Specular_9.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_9.jpg" />
+<img alt="Specular_10.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_10.jpg" />
+<img alt="Specular_11.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_11.jpg" />
+<img alt="Specular_12.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_12.jpg" />
+<img alt="Specular_13.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_13.jpg" />
+<img alt="Specular_14.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_14.jpg" />
+<img alt="Specular_15.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_15.jpg" />
+<img alt="Specular_16.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_16.jpg" />
+<img alt="Specular_17.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_17.jpg" />
+<img alt="Specular_18.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_18.jpg" />
+<img alt="Specular_19.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_19.jpg" />
+<img alt="Specular_20.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_20.jpg" />
+<img alt="Specular_21.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/Specular_21.jpg" /></p>
+    </div>
+</div><p><img alt="measured_materials.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/PhysicallyBased/measured_materials.png" />
+</p><div class="caption">
+	<p>实测材质示例。顶部：木炭、新鲜混凝土、老化沥青。底部：铜、铁、金、铝、银、镍、钛
+</p>
+</div><a name="references" ></a><h2 id="参考">参考</h2>
+
+<a name="lagarde" ></a><p><strong>1</strong>.Lagarde：<a id="content_link" href="../../../../../../external.html?link=http://seblagarde.wordpress.com/2011/08/17/feeding-a-physical-based-lighting-mode/" ><span>Feeding a physically based shading model</span></a>
+
+</p><a name="karis" ></a><p><strong>2</strong>.Karis：<a id="content_link" href="../../../../../../external.html?link=https://de45xmedrsdbp.cloudfront.net/Resources/files/2013SiggraphPresentationsNotes-26915738.pdf" ><span>Real Shading in Unreal Engine 4</span></a>
+
+</p><a name="burley" ></a><p><strong>3</strong>.Burley：<a id="content_link" href="../../../../../../external.html?link=http://blog.selfshadow.com/publications/s2012-shading-course/burley/s2012_pbs_disney_brdf_slides_v2.pdf" ><span>Physically-Based Shading at Disney</span></a>
+
+</p><a name="smits" ></a><p><strong>4</strong>.Smits：<a id="content_link" href="../../../../../../external.html?link=http://blog.selfshadow.com/publications/s2012-shading-course/smits/s2012_pbs_pixar_model_slides_v2.pdf" ><span>Reflection Model Design for WALL-E and Up</span></a>
+
+</p><a name="hable" ></a><p><strong>5</strong>.Hable：<a id="content_link" href="../../../../../../external.html?link=http://filmicgames.com/archives/547" ><span>Everything is Shiny</span></a>
+
+</p>
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexfce4.html">Physically Based Shading</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8a9f.html">PBR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/Materials/PhysicallyBased/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:07 GMT -->
+</html>

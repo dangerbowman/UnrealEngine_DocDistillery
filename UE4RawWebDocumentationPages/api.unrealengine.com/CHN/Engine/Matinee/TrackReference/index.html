@@ -1,0 +1,1494 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Matinee/TrackReference/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:31:40 GMT -->
+<head>
+    <title>Matinee轨迹参考指南 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Engine/Matinee/TrackReference/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Engine/Matinee/TrackReference/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Engine/Matinee/TrackReference/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Engine/Matinee/TrackReference/index.html" hreflang="zh-CN" />
+
+	<meta name="availability" content="Public" />
+<meta name="title" content="Matinee轨迹参考指南" />
+<meta name="description" content="本指南介绍了Matinee动画工具中的所有可用轨迹类型。" />
+<meta name="parent" content="Engine/Matinee" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="Matinee轨迹参考指南" />
+	<meta property="og:description" content="本指南介绍了Matinee动画工具中的所有可用轨迹类型。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">Matinee 及过场动画（Cinematic）</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">Matinee轨迹参考指南</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#运动轨迹">运动轨迹</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#导演组">导演组</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#渐变轨迹">渐变轨迹</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#属性轨迹">属性轨迹</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#材质参数轨迹">材质参数轨迹</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#粒子轨迹">粒子轨迹</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#动画轨迹">动画轨迹</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#事件轨迹">事件轨迹</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#音效轨迹">音效轨迹</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#切换轨迹">切换轨迹</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#可见性轨迹">可见性轨迹</a>
+	</li>		    	        </ul>
+</div>
+<p>Matinee提供了许多内置 <strong>轨迹类型</strong>，从而可以使得各种不同类型的actor上的不同数据类型产生动画。
+通过使用 <em>轨迹</em> ，您可以指示 <em>Actor</em> 在场景中四处运动、在 <em>蓝图</em> 中触发事件、调整 <em>Actor</em> 的颜色或材质属性，以及本页面中介绍的其他元素。
+</p><h2 id="运动轨迹">运动轨迹</h2>
+
+<p>其中一个最重要的 <em>轨迹</em> 类别是 <strong>运动轨迹</strong> ，它用于在场景中随着时间四处移动 <em>Actor</em> 。此应用的一个主要示例是 
+生成 <em>Actor</em> 要遵循的路径。创建路径非常简单，仅需选择您想修改的 <em>运动轨迹</em> ，并执行以下操作：
+</p><ul ><li><p>拖拽到您想添加新的关键帧的时间点处。
+</p></li><li><p><strong>按下回车键</strong> 或者 <strong>Add Key（添加关键帧）</strong> 按钮来在那个时刻创建一个新的关键帧。
+</p></li><li><p>把 <em>Actor</em> <strong>移动</strong> 到在那帧所期望的放置位置。
+</p></li><li><p>针对 <strong>每个关键帧</strong> 和期望的位置重复该操作，以创建您的路径。
+</p></li></ul><p>当关卡加载时在Actor的初始位置为其创建一个初始关键帧然后再也不移动那个关键帧是个好主意。
+否则随着Actor向动画数据禁止的地方移动，动画开始播放时将会看到‘跳跃’现象。
+</p><div class="fullwidth">
+	<p><img alt="move_3dpath.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/move_3dpath.jpg" />
+</p>
+</div><p>您将会在3D视口看到 <em>Actor</em> 的路径。当选中该 <em>组</em> 时，路径描画为黄色，当取消选择该组时则设置为 <em>编辑器组</em> 的颜色。
+您可以在3D视口中 <strong>左击</strong>  大的关键帧（较大的方框）来选中关键帧，这使您可以像在主要Matinee窗口中选中它们进行编辑时那样 
+对其进行编辑。较小的框(更新)表示是0.1秒时间间隔，从而让您了解物体的速度。
+</p><p>当在关卡中选中关键帧时将会看到一个绿色的手柄，这允许您控制那个关键帧处的速度并允许重新调整曲线形状。
+默认情况下，关键帧之间的插值模式是曲线，但是您可以通过在主要 <em>Matinee</em> 窗口中 <strong>右击</strong> 一个关键帧并使用‘Interp Mode（插值模式）’菜单 
+来改变插值模式。
+</p><p><img alt="interp_mode_menu.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/interp_mode_menu.jpg" />
+</p><div class="note">
+	<p><em>Matinee</em> 窗口中的关键帧三角形的颜色指出了它当前使用的插值模式。
+</p>
+</div><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Ang Curve Tension（角度曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制旋转路径的曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Disable Movement（禁用运动）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>允许您在预览时禁用该 <em>运动轨迹</em> ; 当您相对于另一个 <em>Actor</em> 对 <em>Actor</em> 进行关键帧插值时这是有用的。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Hide 3D Track(隐藏3D轨迹)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>切换视口中轨迹的3D运动路径的显示情况。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Lin Curve Tension（线性曲线的张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制平移路径的曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Rot Mode(旋转模式)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>允许您选择决定所控制的Actor的旋转方式。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Show Arrow At Keys(在关键帧处显示箭头)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在每个关键帧处显示一个箭头，从而允许您看到每个关键帧处的方位。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Show Rotation On Curve Ed（在曲线编辑器上显示旋转情况）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为 <em>假</em> , 那么当在 <em>Matinee</em> 内的曲线编辑器上显示该轨迹时，不显示旋转轨迹。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Show Translation On Curve Ed（在曲线编辑器上显示平移）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为 <em>假</em> , 那么当在 <em>Matinee</em> 内的曲线编辑器上显示该轨迹时，不显示平移轨迹。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Use Quat Interpolation （使用四元插值）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在关键帧之间使用 <em>四元</em> 线性插值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><div class="tip">
+	<p>请参照<a id="content_link" href="../HowTo/MHT_1/index.html" ><span>设置一扇门</span></a>
+ 和<a id="content_link" href="../HowTo/MHT_2/index.html" ><span>设置电梯</span></a>
+来获得关于应用运动轨迹在场景中移动Actor的示例。
+</p>
+</div><h3 id="旋转度插值">旋转度插值</h3>
+
+<p><em>Matinee</em> 使用两种不同的旋转度插值机制来在关键帧之间旋转 <em>Actors</em> : <strong>Euler（欧拉插值）</strong> 和 <strong>Quaternion（四元插值）</strong> 。
+</p><ul ><li><p><em>Euler(欧拉插值)</em> -是默认使用的机制，它通过在关键帧的值之间插值Actor的Yaw(偏转)、Pitch(倾斜)及Roll(旋转)进行工作。这允许您在曲线编辑器中随着时间编辑这三条曲线来调整方位并控制关键帧之间的 缓入/缓出。它也支持绕圈 -  也就是，如果您把一个对象旋转很多次，那么关键帧将存放周转的次数，而不是丢弃它。这使得给某些对象添加关键帧变得容易，比如正在拧到墙里的螺丝钉，同时使您可以完全地控制当Actor在两个方位之间移动时Actor所采用的方向。
+</p></li><li><p><em>Quaternion（四元插值）</em> - 这种插值方法不支持绕圈，从本质上讲在关键帧之间它是线性的，不支持 缓入/缓出。但是，它更加强大，它总是可以找到两个不同方位之间的最短路线。
+</p></li></ul><p>您可以使用详细信息面板中的 <strong>Use Quat Interpolation（使用四元插值）</strong> 设置来控制使用哪种方法。 
+</p><h3 id="旋转模式">旋转模式</h3>
+
+<p><em>Matinee</em> 中有两种不同的旋转模式： <strong>Keyframed（关键帧）</strong> 和 <strong>Look At Group（朝向组）</strong> 。
+</p><ul ><li><p><em>Keyframed（关键帧）</em> 是默认模式，Actor的方位由关键帧决定。
+</p></li><li><p><em>Look At Group（朝向组）</em> - 表示您想让 <em>Actor</em> 总是指向由另一个 <em>组</em> 控制的 <em>Actor</em> 。
+</p></li></ul><p>当使用相机时 <em>Look At Group(朝向组)</em> 模式是有用的，因为无论它移动到哪里您都可以使它总是朝向特定目标。要想使用 <em>Look At Group（朝向组）</em> 作为旋转模式，请在 <strong>LookAtGroupName</strong> 域中输入您想让 <em>Actor</em> 指向的组的名称，并设置  <strong>RotMode(旋转模式)</strong> 为 <strong>RotMode</strong> 。
+</p><h3 id="相对于其他组运动">相对于其他组运动</h3>
+
+<p>可以让一个 <em>运动轨迹</em> 关键帧在同一个 <em>Matinee</em> 序列中的另一个 <em>组</em> 中查找变换信息。 
+这意味着一个关键帧可以指向一个运动的对象，并且让 <em>运动轨迹</em> 在那个位置处进行插值。 
+这个应用的一个示例是设置一个总是能射中以不可预知方式移动的角色的射弹。
+</p><p>要想设置一个关键帧来在另一个 <em>组</em> 中查找它的位置，那么请 <strong>右击</strong> 关键帧并选择 "Select Transform Lookup Group(选择变换查找组)..."。
+</p><p><img alt="lookup_track1.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/lookup_track1.jpg" />
+</p><p>这将显示一个对话框，让选择一个组，以便从该组中查找变换信息。
+</p><p><img alt="lookup_track2.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/lookup_track2.jpg" />
+</p><p>当选择组后，关键帧将把查找组的名称显示在其上面。 
+以下图片显示了4个使用组Box1和Box2的关键帧在查找它们的位置信息。
+</p><div class="fullwidth">
+	<p><img alt="lookup_track3.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/lookup_track3.jpg" />
+</p>
+</div><p>要想清除一个关键帧的查找组，那么请 <strong>右击</strong> 关键帧并选择"Clear Transform Lookup Group(清除变换查找组)"。
+</p><p><img alt="lookup_track4.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/lookup_track4.jpg" />
+</p><h3 id="分离平移和旋转">分离平移和旋转</h3>
+
+<p>现在，可以把一个运动轨迹的平移分量和旋转分量分离开来，以便可以在每个坐标轴上独立地对其添加关键帧。 
+这允许对运动轨迹曲线进行更加精细的控制。 分离 <em>运动轨迹</em> 是一个可选的过程。 
+最初，所有运动轨迹组合到一起，这意味着平移和旋转曲线具有相同数量的关键帧，并且所有关键帧位于相同的时间处。 
+</p><p>要想分离一个 <em>运动轨迹</em>, 仅需简单地右击一个 <em>运动轨迹</em> 并从关联菜单中 <strong>选择</strong> <strong>分离平移和旋转</strong> 。
+</p><p><img alt="MoveTrackMenu.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/MoveTrackMenu.jpg" />
+</p><p>一旦分离了 <em>运动轨迹</em> ，它将如下所示：
+</p><div class="fullwidth">
+	<p><img alt="SplitMoveTrack.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/SplitMoveTrack.jpg" />
+</p>
+</div><p>每个坐标轴可以作为独立轨迹操作，以便您可以在它们内设置任何数量的关键帧。
+</p><p>当不使用时，可以把平移和旋转分量放到一个组中，并且可以合并到一起。 平移和旋转组附近的竖条代表 
+一个或多个坐标轴中的关键帧。 选中一个竖条，将选中它下面的所有关键帧。 这允许您一次选择多个关键帧。 
+</p><div class="note">
+	<p>当平移分量和旋转分量分离开时不能使用四元插值模式。
+</p>
+</div><h3 id="正规化速度">正规化速度</h3>
+
+<p>当使用Bezier(贝塞尔)曲线时，通常可以使得对象根据曲线形状和关键帧之间的间距而沿着曲线加速运动或 
+减速运动。 <strong>正规化速度</strong> 选项可以修改运动轨迹的平移曲线，以便使得对象沿着曲线以恒定速度运动。 
+知道恒定速度使用您的运动轨迹曲线生成的3D路径是非常重要的。 当应用正规化速度时，每个坐标轴的二维平移曲线 
+可以改变形状，但是它生成的三维路径则不可能从其原始路径发生修改。 
+</p><p>当选中Normalize velocity(正规化速度)菜单项后，它不会强制曲线变为恒定速度。 
+它简单地通过检查原始曲线并把修改它们，进行一次性的调整以保持恒定速度。 
+任何对曲线的后续修改都会导致它不再具有恒定速度。<em>正规化速度</em> 仅在分离了 
+平移和旋转的 <em>运动轨迹</em> 上可用(请参照上面的 <em>分离平移和旋转</em> )。 
+</p><p>您可以在曲线片段上 <em>正规化速度</em> ，而不必在完整的间隔上进行正规化。当进行这种处理时， <em>正规化速度</em> 照常 
+在正规化部分的前面或后面添加一个关键帧。这样做是为了确保没有正规化的曲线部分仍然不影响。当一个对象沿着曲线变换到 <em>正规化速度</em> 部分或者从 <em>正规化速度</em> 部分变换而来时， 
+您可能会发现有 <em>抖动</em> 现象。 要想修复该问题，您将需要手动地 
+调整此正规化片段之前和之后的关键帧。
+</p><h2 id="导演组">导演组</h2>
+
+<p>Director Groupa(导演组)是一种特殊类型的组，它不会作用于在场景中任意Actor上，比如正常的Actor，但是它间接地作用于‘玩家’。
+当您想把序列设计为过场动画时或者您想控制玩家视角时就要使用到它。
+</p><p>和正常的Group（组）一样，您可以使用相同的方式来把Director Group（导演组）添加到Matinee序列中，但是这次要选择‘Add New Director Group（添加新的调导演组）’。<em>导演组</em> 的标题颜色和正常的组标题颜色有所区别， 
+以便可以更轻松地找到它。
+</p><p><em>导演组</em> 有一组可以进行添加的独特 <em>轨迹类型</em> ，下面对其进行了概述。
+</p><h3 id="导演轨迹">导演轨迹</h3>
+
+<p><strong>Director Track(导演轨迹)</strong> 允许随着序列的进行把玩家视角附加到不同的Actor上。当您添加一个新关键帧到 <em>导演轨迹</em> 时， 
+有一个复选框允许您选择此时将该视图分配给哪个 <em>组</em> 。
+</p><p><em>导演轨迹</em> 上的彩色横条允许您查看在序列的每个点处相机正在通过哪个组查看 - 颜色对应着 
+每个组的编辑器组颜色。
+</p><p>如果您想将相机返还给玩家，那么请简单地添加一个‘倒回’到 <em>导演组</em> 本身(将 <em>导演组</em> 想像成一个和玩家相关的特殊组)。
+在该序列的尾部，视图将自动返还给玩家，所以不需要给 <em>导演组</em> 添加倒回处理。
+</p><p><img alt="dir_track.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/dir_track.jpg" />
+</p><h4 id="镜头">镜头</h4>
+
+<p><em>导演轨迹</em> 细分为所谓的 <strong>镜头</strong> ，就像您在标准的电影制作中所遇到的一样。 每个帧代表一个新的镜头，并且该镜头持续那帧 
+那么长的时间。
+</p><p><img alt="shot_label.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/shot_label.jpg" />
+</p><p>默认情况下，会根据镜头在时间轴上的位置对镜头进行编号。在两个现有关键帧之间添加一个新的关键帧将会导致和新关键帧相关的 
+镜头编号在这个现有镜头之间。
+</p><p><strong>现有关键帧:</strong>
+</p><div class="fullwidth">
+	<p><img alt="shot_before.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/shot_before.jpg" />
+</p>
+</div><p><strong>添加新的关键帧后:</strong>
+</p><div class="fullwidth">
+	<p><img alt="shot_after.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/shot_after.jpg" />
+</p>
+</div><p>可以通过关联菜单来重命名镜头。
+</p><ol ><li><p>现有镜头名称:<br /><img alt="shot_label.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/shot_label.jpg" />
+</p></li><li><p><strong>选择</strong> 和该镜头相关的关键帧，右击它，并在关联菜单中选择 <em>Rename(重命名)</em> 。<br /><img alt="track_menu.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/track_menu.jpg" />
+</p></li><li><p>在 <strong>Set Camera Shot Number(设置相机镜头编号)</strong> 对话框中输入该镜头的编号：<br /><img alt="shot_dialog.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/shot_dialog.jpg" />
+</p></li><li><p>现在该镜头被重命名为:<br /><img alt="shot_renamed.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/shot_renamed.jpg" />
+</p></li></ol><h2 id="渐变轨迹">渐变轨迹</h2>
+
+<p>Fade Track（渐变轨迹）用于控制场景向某个特定颜色渐变过程。为了控制随着时间的渐变量， 
+您必须使用<a id="content_link" href="../../UI/CurveEditor/index.html" ><span>曲线编辑器</span></a>
+。当Fade Amount(渐变量)是0.0时，不会发生渐变；当它是1.0时，场景将完全淡出。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Persist Fade（保持渐变）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用及禁用 <em>Fade Track（渐变轨迹）。</em></p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="慢动作轨迹">慢动作轨迹</h3>
+
+<p>通过使用 <strong>Slomo Track（慢动作轨迹）</strong> ，您可以给过场动画应用一种特殊效果，来降低游戏速度。该 <em>轨迹</em> 的工作原理和 <em>渐变轨迹</em> 类似， 
+您使用 <a id="content_link" href="../../UI/CurveEditor/index.html" ><span>曲线编辑器</span></a>
+ 随着时间来修改慢动作运动。慢动作因数为1.0，将使用默认游戏速度，使用较小的值将降低游戏速度， 
+使用较大的值将增加游戏速度。
+</p><p>Slomo（慢动作）处理影响所有游戏动作、物理、粒子等,同时也影响序列本身的速度。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="音频控制轨迹">音频控制轨迹</h3>
+
+<p><strong>Audio Master Track(音频控制轨迹)</strong> 允许您控制游戏音频的整体音量和音调。当把一个 <em>Master Track(音频控制轨迹)</em> 添加到 <em>导演组</em> 中时， 
+在序列的开始处有一个默认关键帧，该序列的 <strong>插值模式</strong> 是线性插值。添加新的关键帧允许您在序列播放过程中修改 音量 和/或 音调。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="颜色比例轨迹">颜色比例轨迹</h3>
+
+<p> <strong>Color Scale Track(颜色比例轨迹)</strong> 可以修改渲染的场景输出的颜色比例，允许您给场景着色。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="属性轨迹">属性轨迹</h2>
+
+<p><strong>属性轨迹</strong> 包含了几种不同的 <em>轨迹类型</em> 并且在该 <em>轨迹</em> 附加到的 <em>Actor</em> 内包含一个变量。
+您可以通过 <strong>右击</strong> 一个关键帧并选择同选中的 <em>轨迹类型</em> 相对应的 <strong>设置</strong> 动作来为 <em>属性轨迹</em> 设置新的变量值。
+</p><p>然而，在可以将 <em>属性轨迹</em> 添加到 <em>Matinee</em> 之前，必须先“暴露”它，以便 <em>Matinee</em> 可以影响它。
+</p><h3 id="暴露轨迹给matinee">暴露轨迹给Matinee</h3>
+
+<p>通过选择变量所在的 <em>蓝图</em> 的详细信息面板中的 <strong>暴露给Matinee</strong> 复选框，便可以将一个变量暴露给 <em>Matinee</em> ， 
+正如下图所示。
+</p><p><img alt="Expose_ToMatinee.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/Expose_ToMatinee.jpg" />
+</p><p>一旦您编译了您的 <em>蓝图</em> 后，该变量类型便可以在 <em>Matinee</em> 中用作为一种 <em>轨迹类型</em> 。
+</p><div class="note">
+	<p>要想在代码中暴露变量，那么只需在[<code>UPROPERTY()</code> 宏]中简单地添加 <code >Interp</code> 作为关键字。
+</p>
+</div><p>尽管大部分 <em>轨迹</em> 都可以立即添加并应用，但是以下 <em>轨迹类型</em> 需要暴露给 <em>Matinee</em> (或通过代码)才能使用它们。 
+</p><h3 id="布尔型属性轨迹">布尔型属性轨迹</h3>
+
+<p>**布尔型属性轨迹**控制和包含该轨迹的组相连的actor中的布尔变量。当添加该 _轨迹_ 时， 
+将会出现一个对话框，允许您从连接到 _Matinee_ 可以控制的 _Actor_ 的所有布尔型变量中选择。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Property Name（属性名称）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>它是个只读变量，指出了该轨迹随着时间所修改的连接actor中的属性的名称。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="浮点型属性轨迹">浮点型属性轨迹</h3>
+
+<p> Float Property Track(浮点型属性轨迹)允许您随着时间修改浮点型属性的值，比如光源的亮度、或者静态网格物体的描画比例。当您创建这种类型的轨迹时，将会弹出一个组合框显示了那个组的Actor的所有可修改的属性。选择其中一个您想修改的属性，然后使用和操作Movement Track(运动轨迹)一样的方式来 添加/修改关键帧。您可以使用<a id="content_link" href="../../UI/CurveEditor/index.html" ><span>曲线编辑器</span></a>
+ 来随着时间调整参数的值。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Property Name（属性名称）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>它是个只读变量，指出了该轨迹随着时间所修改的连接actor中的属性的名称。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="向量型属性轨迹">向量型属性轨迹</h3>
+
+<p>Vector Property Track(向量属性轨迹)允许您随着时间修改Actor的Vector（向量）属性的值，比如静态网格物体的DrawScale3D变量。当您创建这种类型的 <em>轨迹</em> 时， 
+将会弹出一个组合框显示了那个组的Actor的所有可修改的属性。选择您需要的属性，然后就像您给 <em>运动轨迹</em> 添加/修改关键帧一样 
+对其进行处理。您可以使用<a id="content_link" href="../../UI/CurveEditor/index.html" ><span>曲线编辑器</span></a>
+ 来随着时间调整参数的值。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Property Name（属性名称）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>它是个只读变量，指出了该轨迹随着时间所修改的连接actor中的属性的名称。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="线性颜色属性轨迹">线性颜色属性轨迹</h3>
+
+<p> Linear Color Property Track(线性颜色属性轨迹)用于修改附加actor中的线性颜色变量。
+比如，如果您有一个 <em>光源组件</em> 作为 <em>蓝图</em> 的一部分，那么您可以分配一个线性颜色变量作为该光源的颜色，然后可以使用这种类型的轨迹修改它。
+线性颜色的分量所使用的值的范围在0到1之间(较高的值将超出分量的范围)。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Property Name（属性名称）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>它是个只读变量，指出了该轨迹随着时间所修改的连接actor中的属性的名称。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="颜色属性轨迹">颜色属性轨迹</h3>
+
+<p> Color Property Track(颜色属性轨迹)用于控制附加的actor中的基于字节的Color（颜色）变量。
+比如，和 <strong>线性颜色属性轨迹</strong> 不同，如果您直接在关卡中放置了一个  <em>光源Actor</em> ，那么您便可以通过这种类型的轨迹 
+调整 <strong>光源颜色</strong> 。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Property Name（属性名称）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>它是个只读变量，指出了该轨迹随着时间所修改的连接actor中的属性的名称。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="材质参数轨迹">材质参数轨迹</h2>
+
+<p>有两种类型可以由 <em>Matinee</em> 驱动的 <strong>材质参数轨迹</strong> ： <strong>浮点型材质参数</strong> 和 <strong>向量型材质参数</strong> 。
+</p><h3 id="浮点型材质参数轨迹">浮点型材质参数轨迹</h3>
+
+<p> <strong>浮点型材质参数轨迹 </strong> 用于在运行时修改材质中的Scalar Parameters(标量参数)。该 <em>轨迹</em> 获取一系列的材质，并修改 
+这些材质中的特定参数的值。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Target Materials（目标材质）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将要修改其参数的材质列表，及在关卡中到这些材质的引用，这些引用需要被赋予MaterialInstanceConstants ，在保存时编译。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Param Name（参数名称）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>材质中要修改的参数的名称。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="向量型材质参数轨迹">向量型材质参数轨迹</h3>
+
+<p><strong>向量材质参数轨迹</strong> 用于在运行时修改材质中的Scalar Parameters(标量参数)。该 <em>轨迹</em> 获取一系列的材质，并修改 
+这些材质中给定参数的值。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Materials（材质）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将要修改其参数的材质列表，及在关卡中到这些材质的引用，这些引用需要被赋予MaterialInstanceConstants ，在保存时编译。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Param Name（参数名称）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>材质中要修改的参数的名称。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="粒子轨迹">粒子轨迹</h2>
+
+<p>有两种类型可以由 <em>Matinee</em> 驱动的 <strong>粒子轨迹</strong> ： <strong>浮点型粒子参数轨迹</strong> 和 <strong>粒子重放轨迹</strong> 。
+</p><h3 id="浮点型粒子参数轨迹">浮点型粒子参数轨迹</h3>
+
+<p><strong>浮点型粒子参数轨迹</strong> 用于在运行时修改粒子系统中的参数分布。将会修改连接到 
+包含该 <em>轨迹</em> 的组上的任何粒子系统中具有特定参数名称的任何参数。这意味着，您可以具有一个火粒子系统，有针对火焰、火花、 
+烟雾的发射器，每个发生器都有控制生成速率的参数  <em>SpawnRate(生成速率)</em> 。一个单独的 <em>浮点型粒子参数轨迹</em> 可以驱动所有这些参数来 
+控制火焰。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Param Name(参数名称)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>粒子系统中要修改的参数的名称。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="粒子重放轨迹">粒子重放轨迹</h3>
+
+<p><strong>Particle Replay Track（粒子重放轨迹）</strong> 允许您创建并播放预先录制的粒子仿真。当您想让粒子在所有镜头中都表现一样时，这是 
+非常有用的。当您向 <em>粒子重放轨迹</em> 添加一个新的关键帧时，从本质上讲您是添加了一个新的要录制的剪辑。对于每个剪辑，时间轴上会显示一个横条， 
+代表该剪辑的持续时间。
+</p><p><img alt="replay_bar.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/replay_bar.jpg" />
+</p><p>当选中该横条时，您可以通过使用时间轴中的剪辑横条任何一段的手柄来调整剪辑的起始点和持续时间。在任何手柄上 <strong>左击</strong> 
+并拖拽鼠标，通过移动那个手柄来调整剪辑的持续时间。要想移动该剪辑，而不修改其持续时间，那么请按住 <strong>Ctrl+左击</strong> 并 
+在关键帧本身上 <strong>拖拽</strong> 。
+</p><div class="fullwidth">
+	<p><img alt="replay_handles.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/replay_handles.jpg" />
+</p>
+</div><p>通过在时间轴上右击剪辑的横条并从菜单中选择适当的选项，您也可以调整剪辑的起始位置、持续时间 
+和修改剪辑ID。
+</p><p><img alt="replay_menu.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/replay_menu.jpg" />
+</p><p>要想开始录制粒子系统，只要 <strong>右击</strong> 轨迹并从关联菜单中选择 <strong>Start Recording Particles(开始录制粒子)</strong> 即可。
+</p><p><img alt="replay_start.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/replay_start.jpg" />
+</p><p>当录制激活时，剪辑横条在时间条上高亮显示。
+</p><p><img alt="replay_start_bar.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/replay_start_bar.jpg" />
+</p><p>按下工具条上的 <img alt="replay_play.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/replay_play.jpg" /> 按钮开始播放。当录制启用时，轨迹将会在播放期间录制粒子。
+一旦录制完成，再次右击轨迹并选择 <strong>Stop Recording Particles(停止录制粒子)</strong> 即可。
+</p><p><img alt="replay_stop.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/replay_stop.jpg" />
+</p><p>现在，当您按下 <img alt="replay_play.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/replay_play.jpg" />时，粒子系统将从录制的剪辑开始重放，您可以 
+拖拽时间轴来在剪辑上向前及向后移动来检查该录制效果。
+</p><h2 id="动画轨迹">动画轨迹</h2>
+
+<p><strong>Animation Track（动画轨迹）</strong> 允许您让 <em>Actor</em> 的属性随着时间产生动画，以创建动态游戏可玩性或过场动画游戏序列。
+通过使用这种 <em>轨迹类型</em> ，您可以放置关键帧来控制何时及如何播放特定动画。
+</p><p>要想添加动画到该 <em>轨迹</em> ，请沿着该轨迹拖拽，并按下 <strong>回车</strong> 键或者 <strong>添加关键帧</strong> 按钮。当添加了一个关键帧后，将提示您 
+通过如下所示的弹出窗口来选择要添加到该轨迹的动画。
+</p><div class="fullwidth">
+	<p><img alt="animtrack_animation_select.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/animtrack_animation_select.jpg" />
+</p>
+</div><p>一旦动画添加到该 <em>轨迹</em> 后，它将显示为蓝色。您可以通过 <strong>左击</strong> 该关键帧选中它来操作该动画。
+</p><p>选中该动画后，您可以通过移动鼠标光标到起始点或结束点，直到双向箭头显示为如下所示，并在 
+任意方向上进行拖拽来调整长度。
+</p><div class="fullwidth">
+	<p><img alt="animtrack_adjust_time.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/animtrack_adjust_time.jpg" />
+</p>
+</div><p>您也可以通过在动画上按下 <strong>CTRL+左击</strong> 并沿着该 <em>轨迹</em> 拖拽它来在轨迹上移动动画的位置。
+</p><div class="fullwidth">
+	<p><img alt="animtrack_moving.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/animtrack_moving.jpg" />
+</p>
+</div><p>动画上显示的数字表示该动画将播放速度的乘数(起点->终点)。Start/End(起点/终点)乘数后的数字(比如x0.89),表示 
+当该值为1.0时，动画的播放速率是默认速率，较高的值则增加播放速率，较低的值则降低播放速度。要想调整播放速度， 
+请在调整动画长度是按住 <strong>CTRL</strong> 键。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Slot Name（镜头名称）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>播放动画时使用的镜头名称。传给 <em>Actor</em> 。当多个任务使用相同的镜头名称时，那么在调用 <em>SetAnimPosition</em> 时则为每个镜头赋予一个不同的 <em>ChannelIndex</em> 。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Skip Anim Notifiers（跳过动画通知）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>跳过所有动画通知。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="事件轨迹">事件轨迹</h2>
+
+<p>Event Track（事件轨迹）给Matinee提供了一种在序列的特定点处激活事件使它返回到 <em>蓝图</em> 中的机制。当您在一个 <em>事件轨迹</em> 上放置一个关键帧时， 
+将要求您提供一个 <strong>事件名称</strong> 。每个独特的 <em>事件名称</em> 将在 <em>Matinee Actor</em> 上创建一个新的输出连接器。当该序列到达该关键帧时，任何连接到该输出的 
+<em>蓝图</em> 节点都将被激活。如果您有多个具有相同名称的关键帧，那么将会创建一个输出连接器，但是每当经过这些关键帧中的每一个时都 
+会触发该输出端。
+</p><p>这里是具有一个关键帧"ToggleLight"的 <em>事件轨迹</em> 。
+</p><p><img alt="event_track.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/event_track.jpg" />
+</p><p>这是 <em>蓝图</em> 中的 <em>Matinee Actor</em> ,显示了您可以连接其触发事件的新的输出连接器。
+</p><p><img alt="event_connector.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/event_connector.jpg" />
+</p><p><em>事件轨迹</em> 手柄上的<img alt="eventarrows.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/eventarrows.jpg" /> 按钮允许您控制当序列正向播放、逆向播放或者双向播放时是否应 
+该触发Output端。如果右箭头按钮是黄色的，那么当正向播放序列经过轨迹上的这些事件时触发它们。如果左箭头是黄色， 
+则当逆向播放序列时激活事件。
+</p><p>无论该 <em>事件轨迹</em> 位于哪个组中， 无论是否有 <em>Actor</em> 附加到该组上， <em>Matinee Actor</em> 都将会为 
+放置到其 <em>轨迹</em> 上的每个关键帧创建一个输出连接器。您也可以 <strong>右击</strong> 一个关键帧来重命名它，这样做将重命名具有相同名称的任何其他关键帧及 
+<em>Matinee Actor</em> 上的输出连接器。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Fire Events When Backwards（当反向播放时激活事件）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为true，那么当Matinee反向播放时激活该轨迹上的事件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Fire Events When Forwards（当正向播放时激活事件）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为true，那么当Matinee正向播放时激活该轨迹上的事件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Fire Events When Jumping Forward（当跳跃正向播放时激活事件）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为true，将允许激活轨迹上的所有事件，即时Matinee跳跃播放也可以。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="音效轨迹">音效轨迹</h2>
+
+<p> Sound Track(声效轨迹)用于在Matinee序列过程中从SoundCues播放音频。当放置一个关键帧时，将会使用内容浏览器中当前选中的SoundCue。Sound Track(声效轨迹)的关键帧看上去和动画控制轨迹的关键帧类似。您将看到一个名称为 <em>SoundCue</em> 的横条，延伸长度为此 <em>SoundCue</em> 的持续时间长度。
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Continue Sound On Matinee End(当到达Matinee尾端时继续播放声效)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为true，那么如果声效的持续时间超出Matinee序列的尾端时将不会终止音效播放。而是继续播放音效直到其结束为止。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Play On Reverse(反向播放)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为true，那么仅当Matinee序列反向播放时才播放在这个轨迹的声效。当正向播放序列时不播放声效。使用这个功能的一个示例是具有不同开始音乐和结束音乐的Movers（移动对象）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Suppress Subtitles（禁止字幕）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为true，那么将不显示在这个轨迹上播放的声效相关的任何字幕。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="切换轨迹">切换轨迹</h2>
+
+<p> <strong>Toggle Track(切换轨迹) </strong> 为Matinee提供了一种在序列的特定点处切换 <em>Emitter actor(发射器actor)</em> 打开或关闭状态的机制。当您在一个 <em>切换轨迹</em> 上放置一个关键帧时， 
+将呈现以下对话框：
+</p><p><img alt="PSysToggle_Key.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/PSysToggle_Key.jpg" />
+</p><p>选项是:
+</p><ul ><li><p><strong>Trigger(触发器)</strong> - 一次性激活粒子系统。
+</p></li><li><p><strong>On</strong> - 打开粒子系统。
+</p></li><li><p><strong>Off</strong> - 关闭粒子系统。
+</p></li></ul><p>当启动发射器时，轨迹将显示一个绿条，使得辨别actor的状态变得更加容易。正如下面所示，一个 <em>切换轨迹</em> 
+启动了发射器又再次将其关闭。
+</p><p><img alt="PSysToggle_Track.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/PSysToggle_Track.jpg" />
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Activate System Each Update(每次更新时激活系统)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为ture，那么每次更新 (旧的'错误' 行为)都会在发射器上调用ActivateSystem。如果该项为false，仅当粒子系统先前为非激活状态时才激活它。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Activate with Just Attached Flag（仅使用附加标志激活）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为 <em>true</em>, 则仅使用附加标志激活系统。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Fire Events When Backwards（当反向播放时激活事件）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为true，那么当Matinee反向播放时激活该轨迹上的事件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Fire Events When Forwards（当正向播放时激活事件）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为true，那么当Matinee正向播放时激活该轨迹上的事件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Fire Events When Jumping Forward（当跳跃正向播放时激活事件）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该项为true，将允许激活轨迹上的所有事件，即时Matinee跳跃播放也可以。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="可见性轨迹">可见性轨迹</h2>
+
+<p>Visibility Track(可见性轨迹)用于控制一个Actor是否可以见(通过使用 <strong>游戏中隐藏的Actor</strong> 属性)。当为该 <em>轨迹</em> 添加一个新的关键帧时， 
+将为您呈现一个对跨框，提供了选项供您 <strong>显示</strong> 、<strong>隐藏</strong> 及 <strong>切换</strong> 相关的 <em>Actor</em> 。
+</p><p><img alt="visibilitymenu.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/visibilitymenu.jpg" />
+</p><p>当Actor设置为可见稍后又设置为不可见状态时该轨迹将显示一个绿色的横条，使得actor状态的辨别变得更加容易。正如下面所示的， 
+一条 <em>可见性轨迹</em> 将该 <em>Actor</em> 显示1秒有将其隐藏起来。
+</p><p><img alt="visibilitytrack.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/visibilitytrack.jpg" />
+</p><p>用于切换actor可见性而设置的关键帧显示为小红条，代表它们是用于切换的关键帧。
+</p><p><img alt="visibilitytoggle.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Matinee/TrackReference/visibilitytoggle.jpg" />
+</p><p>以下是可以从 <strong>详细信息</strong> 面板中为该 <em>轨迹</em> 调整的一些 <em>属性</em> 。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Active Condition(激活条件)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置什么时候启用该轨迹：总是启用、当启用血腥时、或当禁用血腥时。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Curve Tension（曲线张力）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制当使用自动切线时曲线的张力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Property Name（属性名称）</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>它是个只读变量，指出了该轨迹随着时间所修改的连接actor中的属性的名称。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Matinee/TrackReference/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:31:43 GMT -->
+</html>

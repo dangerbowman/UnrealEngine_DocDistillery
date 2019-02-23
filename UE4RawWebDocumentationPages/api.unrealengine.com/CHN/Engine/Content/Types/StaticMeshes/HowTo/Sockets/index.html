@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Content/Types/StaticMeshes/HowTo/Sockets/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:07:59 GMT -->
+<head>
+    <title>为静态网格物体设置 Socket 并使用 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../../../docs.unrealengine.com/latest/INT/Engine/Content/Types/StaticMeshes/HowTo/Sockets/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../../../docs.unrealengine.com/latest/KOR/Engine/Content/Types/StaticMeshes/HowTo/Sockets/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../../../docs.unrealengine.com/latest/JPN/Engine/Content/Types/StaticMeshes/HowTo/Sockets/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../../../docs.unrealengine.com/latest/CHN/Engine/Content/Types/StaticMeshes/HowTo/Sockets/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3782314" />
+<meta name="availability" content="Public" />
+<meta name="title" content="为静态网格物体设置 Socket 并使用" />
+<meta name="description" content="如何设置和使用 Socket" />
+<meta name="skilllevel" content="Beginner" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine/Content/Types/StaticMeshes/HowTo" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="为静态网格物体设置 Socket 并使用" />
+	<meta property="og:description" content="如何设置和使用 Socket" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">静态网格模型操作说明</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../../SiteIndex/index3207.html">Beginner</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">为静态网格物体设置 Socket 并使用</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../../SiteIndex/index3207.html">Beginner</a></div>
+
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<p>在 UE4 中制作场景时，有时您可能需要将某些东西附加到静态网格物体。您可以在 <strong>World Outliner</strong> 中向静态网格物体生成一个对象，但您还必须将其置于与网格物体相关的准确位置，这样做单调乏味。不过，就像您可以通过使用 Socket 将对象附加到骨骼网格物体一样，您也可以使用 Socket 将对象附加到静态网格物体。其操作非常简单，就像您在静态网格物体编辑器中创建 Socket、将其置于与网格物体相关的位置，然后将光、粒子效果甚至其他静态网格物体附加到网格物体那样。本操作指南将向您展示如何为静态网格物体创建 Socket，以及如何在场景中使用它。
+</p><a name="setup" ></a><h2 id="设置">设置</h2>
+
+<p>您可能已经拥有要处理的场景和静态网格物体。如果您已经有了上述条件，可以忽略此步骤。如果还没有，请从启动程序启动 UE4，然后创建一个新项目。务必选择一个保存路径并为您的项目命名。另外，选择一个要使用的模板。在下图中，我们选择了蓝图的第一人称模板，但是您可以使用任意模板。
+</p><p> 另外还要确保启用了 <strong>Starter Content</strong>。如果未启用该选项，您将无法使用本教学指南的后续步骤中要用到的资源，那就很难跟着继续操作下去了。
+</p><p><img alt="NewProjectWithStarterContent.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/NewProjectWithStarterContent.jpg" />
+</p><a name="creatingourfirstsocket" ></a><h2 id="创建第一个socket">创建第一个 Socket</h2>
+
+<p>打开项目后，在 <strong>Content Browser(内容浏览器)</strong> 中找到 <strong>Starter Content</strong> 文件夹。然后浏览至 <strong>Props</strong> 文件夹，找到其中名为 <strong>SM_DoorFrame</strong> 的静态网格物体。
+</p><p><img alt="ContentBrowserWithStarterContent.png" width="462" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/ContentBrowserWithStarterContent.jpg" />
+<img alt="DoorFrameInContentBrowser.png" width="462" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/DoorFrameInContentBrowser.jpg" />
+</p><p>找到 <strong>SM_DoorFrame</strong> 后，在静态网格物体编辑器中打开资源，方法是 <strong>double-clicking(双击)</strong> 该资源或 <strong>right-clicking(右键单击)</strong> 该资源并从出现的弹出窗口中选择 <strong>Edit</strong>。完成后，您将可以看到类似以下画面。
+</p><p><img alt="DoorFrameInEditor.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/DoorFrameInEditor.jpg" />
+</p><p>现在，我们已经在静态网格物体编辑器中打开了网格物体，我们将创建一个 Socket，这样我们便可将火焰粒子置于门口中间，以创建某种死亡之拱。开始前，我们需要创建 Socket。要执行此操作，请单击编辑器顶部的 <strong>Window</strong> 下拉菜单，然后选择 <strong>Socket Manager</strong>。此时将出现 Socket Manager 窗口。您将可以看到类似以下右侧显示的画面：
+</p><p><img alt="WindowMenu.png" height="450" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/WindowMenu.jpg" />
+<img alt="CreateSocketButton.png" height="450" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/CreateSocketButton.jpg" />
+</p><p>打开 <strong>Socket Manager</strong> 窗口后，单击以绿色高亮显示的 <strong>Create Socket</strong> 按钮。单击此按钮后，将创建一个新 Socket 并要求您为其命名。在此示例中，我们将 Socket 命名为 <strong>Fire</strong>。单击 <strong>Create Socket</strong> 按钮后，您的 <strong>Socket Manager</strong> 窗口看上去应该类似于以下画面：
+</p><p><img alt="NewSocket.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/NewSocket.jpg" />
+</p><p>如果您在视口中查看此网格物体，您应该会看到一个 3D 小组件和一个转换小组件。如果没有，请单击工具栏中的 <strong>Sockets</strong> 按钮使 Socket 可见。   (<img alt="SocketsButton.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/SocketsButton.jpg" />)
+</p><p>看到 Socket 后，它并非位于所需的位置。默认情况下，创建新的 Socket 时，它将位于静态网格物体所在的原始位置，这里即位于网格物体的底部正中间。我们需要 Socket 位于门口中间，这样玩家在穿过门时必须穿过火。您可以使用视口中的转换小组件手动移动该 Socket，您也可以更改其相对位置、旋转和从 <strong>Socket Manager</strong> 面板内缩放。为了达到预期效果，请将相对位置的 <strong>Z</strong> 值从 0 到 115 之间更改。之后，您将可以看到类似以下画面。
+</p><p><img alt="FireSocket.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/FireSocket.jpg" />
+</p><a name="attachingobjectstoastaticmesh" ></a><h2 id="将对象附加到静态网格物体">将对象附加到静态网格物体</h2>
+
+<p>现在我们在静态网格物体上已经有了要附加的 Socket，接下来我们将在场景中将对象附加到静态网格物体。单击静态网格物体编辑器内工具栏中的 <strong>Save</strong> 按钮，然后返回场景编辑器。找到 <strong>Content Browser</strong> 中的 <strong>SM_DoorFrame</strong>，然后将其副本拖入场景中。完成后，转到 <strong>Starter Content</strong> 文件夹中的 <strong>Particles</strong> 文件夹，然后找到名为 <strong>P_Fire</strong> 的资源。
+</p><p><img alt="FireParticle.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/FireParticle.jpg" />
+</p><p>找到 <strong>P_Fire</strong> 后，也将其副本拖入场景中。这将充当玩家要穿过的火，即我们要附加到 <strong>SM_DoorFrame</strong> 的对象。拖入 <strong>P_Fire</strong> 的一个实例后，<strong>right-click(右键单击)</strong> 视口中的粒子。您将看到一个类似于以下画面的菜单：
+</p><p><img alt="ContextMenuForFire.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/ContextMenuForFire.jpg" />
+</p><p>在弹出菜单中，选择 <strong>Attach To</strong>，在出现的搜索框内，开始键入 <strong>Door Frame</strong>。此时应会出现 <strong>SM_DoorFrame</strong>。
+</p><p><img alt="FireAttachToFrame.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/FireAttachToFrame.jpg" />
+</p><p>选择 <strong>SM_DoorFrame</strong> 后，系统将询问您要将对象附加到的位置。列表包括 <strong>None</strong> 和您为静态网格物体创建的每个 Socket。选择 <strong>Fire</strong>，<strong>P_Fire</strong> 粒子效果将会神奇地附加到静态网格物体上 Socket 所在的位置。该粒子效果现已附加到静态网格物体。
+</p><p><img alt="ChooseSocket.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/ChooseSocket.jpg" />
+<img alt="FireInFrameComplete.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/FireInFrameComplete.jpg" />
+</p><p>注意，即使您通过 Socket 将粒子效果附加到了静态网格物体，您仍可以从静态网格物体中单独移动、旋转、缩放粒子效果，但对静态网格物体做出的任何转换也会影响其附加的任何对象。
+</p><a name="detaching" ></a><h2 id="分离">分离</h2>
+
+<p>分离对象和附加对象一样简单，您可以随时执行此操作。<strong>right-click(右键单击)</strong> 您要从中分离的对象，从出现的弹出菜单中选择 <strong>Detach</strong>。该对象已不再附加到另一对象。
+</p><p><img alt="Detach.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/Detach.jpg" />
+</p><a name="creatingadoorwaywithasoliddoor" ></a><h2 id="创建有实心门的门口">创建有实心门的门口</h2>
+
+<a name="overview" ></a><h3 id="综述">综述</h3>
+
+<p>您已经使用 Socket 创建末日之拱，接下来我们将使用 Socket 创建一些实用的东西。在 <strong>Starter Content</strong> 中的 <strong>Props</strong> 文件夹中，找到 <strong>SM_DoorFrame</strong>，再将其一个副本拖入场景中。然后，找到 <strong>SM_Door</strong>，也将其副本拖入场景中。现在，我们可以使用已有的 Socket 将门附加到门框，但是有一个问题。在将一个对象附加到另一个对象时，对象会在其原始位置附加到 Socket。静态网格物体 <strong>SM_Door</strong> 在其底角存在源，因此将门附加到 <strong>Fire</strong> Socket 会使门浮到空中，并且穿过门口的角落。要修复此问题，我们要创建另一个 Socket。
+</p><a name="creatinganewsocket" ></a><h3 id="创建新的socket">创建新的 Socket</h3>
+
+<p>在 <strong>Content Browser</strong> 中找到 <strong>SM_DoorFrame</strong>，然后 <strong>double-clicking(双击)</strong> 资源，在静态网格物体编辑器中将其打开。如果 <strong>Socket Manager</strong> 面板仍处于打开状态，则单击 <strong>Add Socket</strong> 按钮。如果没有，您可以从编辑器顶部的 <strong>Window</strong> 下拉菜单中选择 <strong>Socket Manager</strong> 重新打开 <strong>Socket Manager</strong> 面板。完成后，直接单击 <strong>Add Socket</strong> 按钮。
+</p><p>创建 Socket 后，将提示您为其命名。在此示例中，我们将 Socket 命名为 <strong>Door</strong>，以便我们稍后知晓这是我们要将门网格物体要附加到的 Socket。再次创建 Socket 后，则会在网格物体的源位置创建，这里指的是门框中间的底部位置。门网格物体的源位置是底角，这是我们要将 <strong>Door</strong> Socket 要移到的位置。您可以使用 3D 小组件手动移动 Socket，或者您可以更改其相对位置、旋转或从 <strong>Socket Manager</strong> 面板内缩放来移动。对于此示例，将 Socket 相对位置的 <strong>Y</strong> 值更改为 45 可实现预期效果。将 Socket 移到底角后，您的门框网格物体看起来应类似于以下显示的画面。
+</p><p><img alt="DoorSocket.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/DoorSocket.jpg" />
+</p><p>如果您未看到 Socket，请确保高亮显示 <img alt="SocketsButton.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/SocketsButton.jpg" />，以使 Socket 可见。
+</p><a name="attachingthedoortotheframe" ></a><h3 id="将门附加到框">将门附加到框</h3>
+
+<p>我们已经有了将门附加到框的 Socket，请直接保存门框网格物体，然后返回场景编辑器。选择位于场景内的门的实例，<strong>right-click(右键单击)</strong> 调出弹出菜单。从弹出菜单中，选择 <strong>Attach</strong> 并搜索 <strong>SM_DoorFrame</strong>。找到您要将门附加到的门框的实例，然后 <strong>left-clicking(左键单击)</strong> 它将其选中。当询问您要附加到哪个 Socket 时，请选择 <strong>Door</strong>。完成后，您将可以看到类似以下画面。
+</p><p><img alt="DoorSocketComplete.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/HowTo/Sockets/DoorSocketComplete.jpg" />
+</p><p>默认情况下，<strong>SM_Door</strong> 不设置碰撞。如果您现在玩该场景，那么玩家会穿过实心门，这不是非常有用。继续在静态网格物体编辑器内为门设置简易盒体碰撞，以使玩家无法在门关闭时穿过门。
+如果您不知道怎么做，您可以 <a id="content_link" href="../SettingCollision/index.html" title="如何设置碰撞"><span>在此</span></a>
+ 阅读说明 。
+</p><p>由于门是实心门，玩家无法穿过，因此您可以使用蓝图设置门的脚本行为，使其可以打开和关闭。这不在本教学指南系列的范围内，但是现在您必须通过要使用的门来阻止玩家，并将其附加到门框上，您可以 <a id="content_link" href="../../../../../Blueprints/UserGuide/Timelines/Examples/OpeningDoors/index.html" ><span>在此</span></a>
+ 了解如何获取开门和关门的脚本行为。
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Content/Types/StaticMeshes/HowTo/Sockets/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:07:59 GMT -->
+</html>

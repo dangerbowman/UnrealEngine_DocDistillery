@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:03 GMT -->
+<head>
+    <title>次表面预设类型着色模型 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="2699405" />
+<meta name="availability" content="Public" />
+<meta name="title" content="次表面预设类型着色模型" />
+<meta name="description" content="材质中可用的次表面预设类型着色模型的说明及技术细节。" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine/Rendering/Materials/LightingModels" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="次表面预设类型着色模型" />
+	<meta property="og:description" content="材质中可用的次表面预设类型着色模型的说明及技术细节。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">材质明暗处理模型</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                                                <!-- start loc warning -->
+                        <div class="warning">
+                        	<!------ 
+                        	The translation of this page is out of date. Please see the English version for the latest version of the page.
+                        	------>
+                            此中文页面内容对应的英文页面有后续更新，如需浏览最新文档可切换至英文页面浏览。
+                        </div>
+                        <!-- end loc warning -->
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">次表面预设类型着色模型</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#什么是次表面预设类型">什么是次表面预设类型</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#启用、创建和使用次表面预设类型">启用、创建和使用次表面预设类型</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#材质输入通道">材质输入通道</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#技术细节">技术细节</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#比例调整和控制台命令">比例调整和控制台命令</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#特别鸣谢">特别鸣谢</a>
+	</li>		    	        </ul>
+</div>
+<p>渲染逼真人体皮肤的能力，对于任何现代电子游戏引擎来说都不可或缺。为了满足此需求，虚幻引擎 4 (UE4) 现在提供了一种专门用于皮肤或蜡状表面的明暗处理方法，称为 <strong>次表面预设类型</strong>。 
+次表面预设类型着色模型具有与次表面着色模型类似的属性，其关键区别在于渲染方式有所不同。 
+次表面预设类型使用基于屏幕空间的渲染方法，因为这有助于更好地显示人体皮肤上的微妙次表面效果，而反向散射是仅在少数情况（例如，耳朵）下才会出现的次级效果。
+以下文档将阐述什么是次表面预设类型以及如何在工作中使用它们。 
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="不使用次表面预设类型" width="700" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/Results_1.png" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="使用次表面预设类型" width="700" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/Results_2.png" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><div class="note">
+	<p>特别感谢 Lee Perry-Smith 和他的公司 <a id="content_link" href="../../../../../../../external.html?link=http://ir-ltd.net/" ><span>Infinite Realities</span></a>
+ 提供 3D 扫描头部模型及协助。 
+</p>
+</div><h2 id="什么是次表面预设类型">什么是次表面预设类型</h2>
+
+<p>次表面散射轮廓存储关于次表面散射渲染方式的信息。 
+它可以像任何其他 Actor 一样创建、共享并保存在 <strong>内容浏览器</strong> 中。 
+次表面散射轮廓通过存储美工驱动的数据来工作，这些数据与次表面中应该散射的光线距离、次表面颜色以及光线退出对象后具有的衰减颜色相关。 
+然后，可以将此数据应用于次表面材质，以影响次表面的外观。 
+您也可以采用交互方式来调整次表面预设类型，这表示您无需重新编译材质即可看到编辑结果。 
+</p><h2 id="启用、创建和使用次表面预设类型">启用、创建和使用次表面预设类型</h2>
+
+<p>要在某个材质中使用次表面预设类型，您必须先在该材质的 <strong>细节（Details）</strong>面板中将 <strong>着色模型（Shading Model）</strong>设置为 <strong>次表面预设类型（Subsurface Profile）</strong>，从而使该材质能够使用次表面预设类型。 
+通过在 <strong>次表面预设类型（Subsurface Profile）</strong>输入中输入另一个次表面预设类型，您可覆盖用于此材质的次表面预设类型。
+</p><div class="tip">
+	<p>次表面预设类型的默认设置接近于白种人皮肤。但请注意，这只是呈现栩栩如生的皮肤所需的要素之一。<em>请始终确保纹理的底色适合于次表面散射轮廓。</em>
+</p>
+</div><p><img alt="启用次表面预设类型" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/1.jpg" />
+</p><p>另外，也可以在材质实例中覆盖次表面预设类型。为此，您需要先打开要更改的材质实例。 
+然后，在该材质实例的 <strong>细节（Details）</strong>部分中启用 <strong>覆盖次表面预设类型（Override Subsurface Profile）</strong>，接着在 <strong>次表面预设类型（Subsurface Profile）</strong>输入中提供要使用的次表面预设类型。 
+</p><p><img alt="6.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/6.jpg" />
+</p><p>要创建次表面预设类型，请先在 <strong>内容浏览器</strong> 中 <strong>右键单击</strong>。然后，选择 <strong>材质与纹理（Materials &amp; Textures）</strong>选项，并选择 <strong>次表面预设类型（Subsurface Profile）</strong>选项。 
+</p><p><img alt="创建次表面预设类型" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/2.jpg" />
+</p><div class="note">
+	<p>如果未指定任何次表面预设类型，那么它将使用默认的次表面预设类型，即白种人皮肤。
+</p>
+</div><p>在 <strong>内容浏览器</strong> 中，使用 <strong>鼠标左键双击</strong> 次表面预设类型可将其打开，然后进行编辑。 
+打开后，您可调整次表面散射轮廓的各个属性，方法如下：使用键盘输入数值，或使用 <strong>鼠标左键单击</strong> 颜色条以显示取色器。 
+</p><p><img alt="调整次表面预设类型" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/3.jpg" />
+</p><ul ><li><p><strong> 散射半径（Scatter Radius）：</strong>执行散射的距离（采用世界空间单位）。 
+</p></li><li><p><strong> 次表面颜色（Subsurface Color）：</strong>次表面颜色可用作次表面效果的权重。黑色表示不会发生次表面散射。 
+白色表示所有光线都进入材质并向四周散射。非灰阶值可以对进入表面的
+颜色成分进行更多控制，从而产生外观更加复杂的明暗处理。 
+</p></li><li><p><strong>衰减颜色（Falloff Color）：</strong>衰减颜色用于定义光线进入材质后的材质散射颜色。 
+如果您希望在看到散射的区域实现更加复杂的明暗变化，那么应该避免在此处使用鲜艳的颜色。
+</p></li></ul><div class="note">
+	<p> 请记住，整个计算是节能的，因此无法通过散射创建更多光线（与旧/其他次表面方法不同）。
+</p>
+</div><h2 id="材质输入通道">材质输入通道</h2>
+
+<p>“屏幕空间”次表面明暗处理轮廓与“照亮”明暗处理模式没有很大的区别，它们之间的主要区别在于“金属色”（Metallic）输入的用途已改变，不可使用。<br /></p><p><strong>底色（Base Color）输入：</strong>“底色”（Base Color）输入照例用于漫射照明。因为“屏幕空间”次表面散射不应该更改颜色或亮度，而仅仅将光线重新分布到邻近像素，所以没有额外的次表面散射颜色。 
+因此，如果某个材质应该以特定颜色散射，那么需要将该颜色表示为底色的组成部分。 
+底色应该是最终颜色，就像是从无法区分散射与漫射光线的遥远距离观察材质一样。 
+</p><div class="note">
+	<p> 人体皮肤可看作薄薄的苍白色层，其表面下方是更有活力的红色，这就是默认颜色的外观。人体皮肤的可见散射距离大概是 1.2 厘米，这是次表面预设类型的默认值。
+</p>
+</div><p><strong>金属色（Metallic）输入：</strong>使用次表面预设类型时，“金属色”（Metallic）输入通道不可用，这是因为“金属色”（Metallic）输入的 GBuffer 空间的用途已改变，无法容纳次表面预设类型数据。
+</p><p><strong>“不透明度”（Opacity）输入：</strong>“不透明度”（Opacity）输入通道用来屏蔽次表面散射的影响。 
+其工作方式为：使用 0 到 1 范围内的值来支持在次表面散射强度的不同区域之间平滑过渡。 
+例如，如果将值 0 输入到“不透明度”（Opacity）输入，那么将禁用次表面散射。 
+输入值 1 将显示次表面散射的整个范围。 
+为了更好地控制次表面散射的加强或减弱，最好使用蒙版纹理。<br />蒙版纹理中值接近于 1（即，白色）的区域将具有最强的次表面散射效果，而接近于 0（即，黑色）的区域的效果不明显。 
+调整次表面颜色有助于在区域过暗时进行补偿，请记住，使用较亮的颜色将导致更多次表面散射。 
+</p><p>在这里，您可以看到如何使用蒙版来使用一个材质渲染两种表面类型。请注意，过渡比较柔和，并且不限于三角形边界。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/4.png" ><span><img alt="4.png" width="920" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/4.png" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><h2 id="技术细节">技术细节</h2>
+
+<p>目前，次表面散射轮廓着色模型与“照亮”区别不大（朗伯漫射，GGX 镜面反射，无金属色）。
+ 大部分魔法在计算所有光线之后的后处理过程中发生。 
+</p><div class="note">
+	<p>次表面散射轮廓基于 <a id="content_link" href="../../../../../../../external.html?link=http://www.iryoku.com/" ><span>Jorge Jimenez</span></a>
+ 的工作。请确保查阅他的网页，以获得有关如何使 3D 图像更加逼真的许多有用提示。
+</p>
+</div><p>我们将非镜面反射（并非依赖于视图）的光线影响分隔开，以便在次表面材质上支持镜面反射并向下采样，从而提高性能。 
+与高斯模糊类似，我们使用两遍（假定内核可分离）后处理过程来过滤图像。 
+过滤内核依赖于次表面散射轮廓，后者存储在 GBuffer 中（每个场景最多 255 个活动轮廓）。 
+此内核具有彩色权重以及特定的取样位置，它们在轮廓中可进行比例调整（以每厘米单位数定义）。 
+在最终步骤中，我们将散射光线的影响与完整的解析图像进行重新组合。为了将依赖于视图的光线与并非依赖于视图的光线分隔开，我们在场景颜色阿尔法通道中存储一个加权项。 
+这种近似法需要 64 位的渲染目标（请参阅 r.SceneColorFormat），并且适用于大部分情况。
+</p><p>它会成功地剔除镜面反射，但对于这些镜面反射像素，您将获得更加去饱和度且并非依赖于视图的颜色。您可以通过将两个 32 位渲染目标用于所有照明通道加以改善。它们具有相同的存储带宽，但在某些硬件上，速度可能较慢。这可能是我们想要更改的情况（已增加代码复杂性）。
+</p><p>在以下示例中，我们在应用模糊之前去除了镜面反射。请注意，在最后的图像（最右边的图像）中，镜面反射清晰而平滑。这就是我们想要实现的效果。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/Good_Combination.png" ><span><img alt="Good_Combination.png" width="920" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/Good_Combination.png" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p>在以下示例中，我们在应用模糊之前未去除镜面反射。请注意，在最后的图像（最右边的图像）中，镜面反射显得暗沉并且有点拉伸。这不是渲染此效果的正确方法。<br /></p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/Bad_Combination.png" ><span><img alt="Bad_Combination.png" width="920" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/Bad_Combination.png" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><h2 id="比例调整和控制台命令">比例调整和控制台命令</h2>
+
+<p>您可使用一些比例调整和性能控制台命令，来帮助在高品质视觉效果与更好的性能之间进行良好平衡。 
+</p><p><strong>r.SSS.Scale</strong>：允许禁用后处理过程或调整效果，以便快速加以试验。 
+</p><p><strong>r.SSS.SampleSet</strong>：允许减少所使用的样本，以加快效果的运行速度。但是，这意味着效果质量欠佳或产生渲染失真。
+</p><p>下图显示系统的更多一些内部信息。您可使用 <strong>ShowFlag.VisualizeSSS 1</strong> 来启用此视图。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/5.png" ><span><img alt="5.png" width="920" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/5.png" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p>虽然次表面散射轮廓着色模型在渲染皮肤方面取得很大进步，但在处理能力方面还是有所局限。
+ <em>请注意，随着此系统变得越来越完美，此列表可能会有变化。</em>
+</p><ul ><li><p>此功能在非延迟（移动）渲染模式下无法工作。
+</p></li><li><p>设置较大的屏幕散射半径会导致在极端照明条件下显示带状失真。
+</p></li><li><p>目前，没有光线反向散射。 
+</p></li><li><p>目前，当 SSS 材质被非 SSS 材质遮挡时，会出现灰色轮廓。
+</p></li></ul><h2 id="特别鸣谢">特别鸣谢</h2>
+
+<p>特别感谢 Lee Perry-Smith 和他的公司 <a id="content_link" href="../../../../../../../external.html?link=http://ir-ltd.net/" ><span>Infinite Realities</span></a>
+ 提供头部模型及协助。 
+另外，特别感谢 <a id="content_link" href="../../../../../../../external.html?link=http://www.iryoku.com/" ><span>Jorge Jimenez</span></a>
+ 发布他的实现，因为此功能以他的工作成果为基础。
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/Materials/LightingModels/SubSurfaceProfile/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:03 GMT -->
+</html>

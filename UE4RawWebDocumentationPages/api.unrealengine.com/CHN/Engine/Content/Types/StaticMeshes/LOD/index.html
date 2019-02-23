@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Content/Types/StaticMeshes/LOD/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:07:59 GMT -->
+<head>
+    <title>Simplygon LOD | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/INT/Engine/Content/Types/StaticMeshes/LOD/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/KOR/Engine/Content/Types/StaticMeshes/LOD/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/JPN/Engine/Content/Types/StaticMeshes/LOD/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/CHN/Engine/Content/Types/StaticMeshes/LOD/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3782314" />
+<meta name="availability" content="Public" />
+<meta name="title" content="Simplygon LOD" />
+<meta name="description" content="用于为静态网格物体管理和自动生成 LOD 网格物体的管道与工具。" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine/Content/Types/StaticMeshes" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="Simplygon LOD" />
+	<meta property="og:description" content="用于为静态网格物体管理和自动生成 LOD 网格物体的管道与工具。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">静态网格体</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">Simplygon LOD</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#lod管理">LOD 管理</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#lod生成">LOD 生成</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#lod预览">LOD 预览</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#lod设置">LOD 设置</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#构建设置">构建设置</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#约简设置">约简设置</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#lod组">LOD 组</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#组默认设置">组默认设置</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#组的全局设置">组的全局设置</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#simplygon??">Simplygon??</a>
+	</li>		    	        </ul>
+</div>
+<div class="note">
+	<p>本部分描述的是利用 Simplygon 功能在虚幻引擎 4 中为静态网格物体创建 LOD 的用法。如果您没有 Simplygon 许可证，可使用标准 FBX 管道为静态网格物体导入 LOD。
+有关更多详情，请参见 <a id="content_link" href="../../../FBX/StaticMeshes/index.html" ><span>FBX 静态网格物体管道</span></a>
+ 文档。
+</p>
+</div><p><em>StaticMesh</em> 管道能够创建预设和自动生成完整作为一项核心功能的 
+LOD (LOD) 链。这可让艺术家创建网格物体，然后导入， 
+并使创建的优化版本实现远距离渲染，从而提升渲染性能， 
+而且无需对这方面执行其他操作。
+</p><p>主要功能包括：
+</p><ul ><li><p>LOD 组，用于定义默认 LOD 设置和光照贴图分辨率，以及允许全局覆盖 
+（例如，将所有 SmallProp LOD 约简 10%）。您可以在导入时选择 LOD 组， 
+并且随时可以在静态网格物体编辑器中更改。
+</p></li><li><p>您可以按平台或设备定义和覆盖 LOD 组设置。
+</p></li><li><p>法线和切线始终从 FBX 导入。您可以随时选择是否使用导入的法线/切线， 
+或是否让虚幻引擎重新计算它们。
+</p></li><li><p>在 <a id="content_link" href="../Editor/index.html" ><span>静态网格物体编辑器</span></a>
+ 中设置和调整 LOD 的精简工作流程。
+</p></li><li><p>利用 Simplygon 自动生成 LOD。
+</p></li></ul><div class="warning">
+	<p>尽管随同虚幻引擎发行了Simplygon,但是授权用户必须首先从Donya Labs (<a id="content_link" href="../../../../../../../external.html?link=http://simplygon.com/" ><span>simplygon.com/</span></a>
+) 获得授权才能使用这个功能。 请联系它们了解关于获得授权的详细信息。 
+</p>
+</div><a name="lodmanagement" ></a><h2 id="lod管理">LOD 管理</h2>
+
+<p><strong>StaticMesh Editor*(静态网格物体编辑器)</strong>中的 <strong>Level of Detail</strong> (LOD) 面板能够根据您设置的规则，按照 <a id="content_link" href="index.html#bookmarklodgroup" ><span>LOD 组</span></a>
+ 或按网格物体和 LOD 的形式管理和生成完整的 LOD 链。
+</p><p><img alt="Level of Detail Panel" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/LOD/lod_panel.jpg" />
+</p><a name="lodgeneration" ></a><h3 id="lod生成">LOD 生成</h3>
+
+<p>自动 LOD 生成功能采用 Simplygon 创建简化版本的基础网格物体，以用作 LOD。这些算法会考虑诸多因素，例如目标复杂度、轮廓保存和纹理坐标等，以生成可远距离显示且没有明显退化的新网格物体或 artifact。
+</p><p><strong>应用 LOD 组：</strong>
+</p><ol ><li><p>选择要在 <a id="content_link" href="index.html#bookmarklodsettings" ><span>LOD 设置</span></a>
+ 中使用的 <strong>LOD Group</strong>。
+</p><p><img alt="group_select.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/LOD/group_select.jpg" />
+</p></li><li><p>按下 <img alt="Apply" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/LOD/button_apply.jpg" /> 按钮，创建新的 LOD 网格物体。
+</p></li></ol><p><strong>要生成自定义 LOD 链：</strong>
+</p><ol ><li><p>选择要在 <a id="content_link" href="index.html#bookmarklodsettings" ><span>LOD 设置</span></a>
+ 中生成的 LOD 网格物体数量。
+</p><div class="tip">
+	<p>您也可以选择 <strong>LOD Group(LOD 组)</strong> 作为起点，然后从那里开始修改设置。
+</p>
+</div><p><img alt="lod_number.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/LOD/lod_number.jpg" />
+</p></li><li><p>为要生成的每个 LOD 网格物体设置 <a id="content_link" href="index.html#bookmakrreductionsettings" ><span>约简设置</span></a>
+。
+</p><p><img alt="lod_settings.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/LOD/lod_settings.jpg" />
+</p></li><li><p>按下 <img alt="Apply" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/LOD/button_apply.jpg" /> 按钮，创建新的 LOD 网格物体。
+</p></li></ol><a name="lodpreview" ></a><h3 id="lod预览">LOD 预览</h3>
+
+<p>LOD 网格物体可利用工具栏中的控件预览：
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_qyAFwJwy0vc"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="qyAFwJwy0vc" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/qyAFwJwy0vc?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_qyAFwJwy0vc
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_qyAFwJwy0vc:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style><a name="bookmarklodsettings" ></a><h3 id="lod设置">LOD 设置</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>设置 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LOD Group(LOD 组)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定网格物体使用的 <a id="content_link" href="index.html#bookmarklodgroup" ><span>LOD 组</span></a>
+。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Number of LODs (LOD 数量)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置网格物体的 LOD 数量。随着此值修改，LOD 列表也会更新，但是在按下 <img alt="Apply" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Types/StaticMeshes/LOD/button_apply.jpg" /> 按钮前不会产生实际变化。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Auto compute LOD Distance(自动计算 LOD 距离)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果启用，可通过简单的误差测度确定 LOD 之间出现过渡的距离。否则，将利用每个 LOD 的距离属性确定何时过渡到 LOD。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LOD Distance Error(LOD 距离误差)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>测量在利用自动计算功能的情况下 LOD 之间出现过渡的距离。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="buildsettings" ></a><h3 id="构建设置">构建设置</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>设置 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Recompute Normals(重新计算法线)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果启用，可由虚幻引擎重新计算光滑组。否则，光滑组将从 FBX 文件保留下来。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Recompute Tangents(重新计算切线)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果启用，可由虚幻引擎重新计算切线。否则，切线将被从 FBX 文件保留下来。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Remove Degenerates(移除退化)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果启用，导入期间发现的退化三角形将被移除。禁用此选项将保留发现的退化三角形。一般来说，应该启用此选项。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Use Full Precision UVs(使用全精度 UV)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果启用，网格物体的 UV 将存储为 32 位浮点，而不是 16 位。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="bookmakrreductionsettings" ></a><h3 id="约简设置">约简设置</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>设置 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Percent Triangles(三角形百分比)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>编辑器将简化网格物体，直至指定确切数量的三角形。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Max Deviation(最大偏差)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>与基础网格物体的最大偏差，以包围球的百分比表示。编辑器按照预期质量计算网格物体的误差测度。此误差测度可防止工具简化网格物体后造成新网格物体表面与原网格物体表面偏差过大。此方法的优势是，在原网格物体的一定偏差范围内，工具可以智能优化网格物体，且无需在任意三角形界限处停止。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Silhouette(轮廓)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定网格物体轮廓的重要性等级。您可以从 <em>关</em>、 <em>最低</em>、 <em>低</em>、 <em>正常</em>、 <em>高</em> 和 <em>最高</em> 中选择。选择较高的设置会造成轮廓简化，从而能够更好地保存网格物体的几何形状，但是会产生较高的三角形计数。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Texture(纹理)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定纹理密度的重要性等级。您可以从 <em>关</em>、 <em>最低</em>、 <em>低</em>、 <em>正常</em>、 <em>高</em> 和 <em>最高</em> 中选择。选择较高的设置会造成纹理简化，从而避免纹理拉伸 artifact，但是会产生较高的三角形计数。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Shading(着色)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定着色质量的重要性等级。您可以从 <em>关</em>、 <em>最低</em>、 <em>低</em>、 <em>正常</em>、 <em>高</em> 和 <em>最高</em> 中选择。选择较高的设置将造成着色简化，从而能够更好地保存着色质量，但是会产生较高的三角形计数。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Welding Threshold(焊接阈值)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此距离范围内的顶点将自动相互焊接。这样有助于消除较小的面。利用大值会产生不良结果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Hard Edge Angle Threshold(硬边角度阈值)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果角度大于各面之间的这个值，将在面之间产生硬边。较小的角度将产生柔化边缘。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="bookmarklodgroup" ></a><h2 id="lod组">LOD 组</h2>
+
+<p>LOD 组用于定义默认 LOD 设置，以及一些在全局层面修改静态网格物体的选项。 
+</p><p>“组”在 <code >Engine.ini</code> 文件的 <code >&#91;StaticMeshLODSettings&#93;</code> 部分定义。例如：
+</p>
+<pre class="prettyprint"><code>&#91;StaticMeshLODSettings&#93;
+LevelArchitecture=(NumLODs=4,LightMapResolution=32,LODPercentTriangles=0.5,SilhouetteImportance=4)
+SmallProp=(NumLODs=4,LODPercentTriangles=0.5)
+LargeProp=(NumLODs=4,LODPercentTriangles=0.5)
+Vista=(NumLODs=1)
+Foliage=(NumLODs=1)</code></pre>
+<p>这些设置可定义五个 LOD 组：
+</p><ul ><li><p>LevelArchitecture
+</p></li><li><p>SmallProp
+</p></li><li><p>LargeProp
+</p></li><li><p>Vista
+</p></li><li><p>Foliage。
+</p></li></ul><p>无需修改代码，仅编辑 INI 即可添加或移除 LOD 组。附加 LOD<br />组将自动出现在编辑器 UI 中。未移除组中的网格物体将使用代码确定的默认设置。 
+也可以通过定义非LOD 组在 INI 中覆盖这些默认设置。
+</p><a name="groupdefaultsettings" ></a><h3 id="组默认设置">组默认设置</h3>
+
+<p>下列设置用于定义每个组的默认设置。仅在网格物体已导入或 
+网格物体的 LOD 组已更改时应用。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>设置 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>NumLODs</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>要生成的默认 LOD 数量。此数值必须在 1 至 4 之间。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LightMapResolution</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>要使用的光照贴图分辨率。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>BasePercentTriangles</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>要在基础 LOD 中保留的三角形百分比，位于 0.0 至 1.0 之间。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LODPercentTriangles</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>每个 LOD 约简的三角形百分比。例如，如果针对某个具有 4 个 LOD 的网格物体将此值设为 0.5，LOD0 拥有 5000 个三角形，则剩余的 LOD 依次分别拥有 2500、1250 和 625 个三角形。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>MaxDeviation</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>LOD 表面可与本地坐标内基础 LOD 偏离的最大距离。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>WeldingThreshold</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果两个顶点之间的距离小于此值，它们就会焊接在一起。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>HardAngleThreshold</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果两个三角形之间的角度大于此值（用度数表示），它们之间的边缘上的法线就不光滑。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>SilhouetteImportance</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>较高的值将在生成 LOD 时设法保存对象的轮廓。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>TextureImportance</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>较高的值将在生成 LOD 时设法防止纹理拉伸。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>ShadingImportance</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>较高的值将在生成 LOD 时设法尽量减少对正常着色的更改。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="groupglobalsettings" ></a><h3 id="组的全局设置">组的全局设置</h3>
+
+<p>下列设置可用于更改组内的所有网格物体。这些设置对新网格物体和现有网格物体均会产生影响：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>设置 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>BasePercentTrianglesMult</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>进一步约简基础 LOD。例如，如果此值设为 0.9，该组内所有网格物体的基础 LOD 都将约简 10% 的三角形。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LODPercentTrianglesMult</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>进一步约简每个 LOD 的三角形。与 BasePercentTrianglesMult 相似，但是不适用于基础 LOD。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>MaxDeviationBias</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>调整约简期间所有网格物体的最大偏差。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>WeldingThreshold</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>调整约简期间所有网格物体的焊接阈值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>HardAngleThreshold</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>调整约简期间所有网格物体的硬边角度阈值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>SilhouetteImportance</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>调整约简期间所有网格物体的轮廓重要性等级。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>TextureImportance</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>调整约简期间所有网格物体的纹理重要性等级。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>ShadingImportance</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>调整约简期间所有网格物体的着色重要性等级。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="simplygon??">Simplygon??</h2>
+
+<p><img alt="Simplygon" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/UI/Tools/Simplygon/simplygon_logo.jpg" />
+</p><p>Simplygon 通过尽可能多地移除网格物体的信息，同时不降低一定屏幕大小的 LOD 质量，自动生成具有特定像素分辨率的游戏就绪型 LOD 模型 (LODs)。
+Simplygon 采用专有网格物体约简方法，可保留几何 LOD 的完整性和 LOD 切换的视觉质量，从而生成可在三 A 级游戏中直接使用的 AutoLOD。 
+</p><p>虚幻引擎 4 利用 Simplygon 提供高质量网格物体约简，且无需离开虚幻编辑器。开发者可以快速简化网格物体，生成 LOD，然后立即在他们的贴图中看到成果。
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Content/Types/StaticMeshes/LOD/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:00 GMT -->
+</html>

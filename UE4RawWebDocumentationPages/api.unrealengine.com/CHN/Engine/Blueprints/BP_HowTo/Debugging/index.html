@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Blueprints/BP_HowTo/Debugging/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 03:12:59 GMT -->
+<head>
+    <title>蓝图调试 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Blueprints/BP_HowTo/Debugging/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Blueprints/BP_HowTo/Debugging/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Blueprints/BP_HowTo/Debugging/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Blueprints/BP_HowTo/Debugging/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3244370" />
+<meta name="availability" content="Public" />
+<meta name="title" content="蓝图调试" />
+<meta name="description" content="讲述对蓝图进行调试的方法。 " />
+<meta name="related" content="Engine/Blueprints/UserGuide/Debugging" />
+<meta name="related" content="Engine/Blueprints" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine/Blueprints/Workflow" />
+<meta name="order" content="6" />
+<meta name="tags" content="Blueprints" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="蓝图调试" />
+	<meta property="og:description" content="讲述对蓝图进行调试的方法。 " />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../../Workflow/index.html">蓝图工作流程工具</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">蓝图调试</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#启用调试">启用调试</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#断点">断点</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#调试控制">调试控制</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#观察数值">观察数值</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#蓝图调试器标签">蓝图调试器标签</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#编译错误">编译错误</a>
+	</li>		    	        </ul>
+</div>
+<p>在使用蓝图时，可能出现预料之外的状况。为诊断这些问题，蓝图可视化脚本工具除自带调试器外，还拥有最强大的功能之一：在图表中为节点添加 <strong>断点（Breakpoints）</strong>。在图表中为节点添加断点后，可在编辑器中正常进行（或模拟）游戏。到达存在断点的节点后，游戏将暂停并跳至图表中的节点，以便对脚本进行检查，确认问题出于何处。 
+</p><p>另一个实用调试功能是 <strong>Watch Values</strong>，它可将蓝图中一个（或多个）变量标记到 <strong>观察（Watch）</strong>，以便在游戏运行时在蓝图中看到变量数值。这对调试变量错误计算或数值十分重要，因为可以在变量实时变化时发现错误的源头。 
+</p><p>在本页中，您将学习如何为蓝图设置调试，以及用于诊断问题的其他方法。
+</p><div class="note">
+	<p>如需了解蓝图调试的更多内容，请查阅 <a id="content_link" href="../../UserGuide/Debugging/index.html" ><span>蓝图调试</span></a>
+ 文档。 
+</p>
+</div><a name="enabledebugging" ></a><h2 id="启用调试">启用调试</h2>
+
+<p>如需启用蓝图调试，首先必须规定需要进行调试的蓝图实例位于关卡中。 
+</p><p>在蓝图中，点击 <strong>Debug Object</strong> 下拉菜单，然后选择调试器中的实例。 
+</p><p><img alt="DebugHowTo1.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo1.jpg" />
+</p><p>选定对象后，点击放大镜图标可在关卡中跳至该对象。 
+</p><p><img alt="DebugHowTo2.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo2.jpg" />
+</p><p>在编辑器中进行游戏时，将蓝图放置于另一个窗口中，则可看到脚本执行时跳动的“活性线条”。 
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_UtS3wgltYgg"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="UtS3wgltYgg" width="100%" height="100%" src="../../../../../../external.html?link=https://www.youtube.com/embed/UtS3wgltYgg?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_UtS3wgltYgg
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_UtS3wgltYgg:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style><p>在上例的关卡中有两个火焰效果蓝图，各自拥有不同的停止时间。在 <strong>Event Begin Play</strong> 节点上（游戏启动后），<strong>Delay</strong> 节点用于在变量指定的时间结束后 <strong>停止</strong> 火焰和相关音效。 
+</p><p>游戏启动后（当跳动线条离开 Event Begin Play 节点，进入 Delay 节点时）可在左边窗口中看到脚本的执行。在指定时间后，跳动线条进入第三个节点，而该节点用于停止其中一个火焰效果。 
+</p><a name="breakpoints" ></a><h2 id="断点">断点</h2>
+
+<p>在任意执行节点上 <strong>单击右键</strong> 选择 <strong>Add Breakpoint</strong>，可添加一个 <strong>断点</strong> 至蓝图脚本。 
+</p><p><img alt="DebugHowTo3.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo3.jpg" />
+</p><div class="tip">
+	<p>除 <strong>单击右键</strong> 的方法外，还可在选定的节点上按 <strong>F9</strong> 键切换断点的开关。 
+</p>
+</div><p>断点被添加至节点后，节点的左上角将出现一个红圈。 
+</p><p><img alt="DebugHowTo4.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo4.jpg" />
+</p><p>游戏进程中脚本到达此点时，游戏将暂停并聚焦于此节点。 
+</p><p><img alt="DebugHowTo7.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo7.jpg" />
+</p><p>也可临时禁用断点，记录之前哪些节点指派了断点。 
+</p><p><img alt="DebugHowTo6.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo6.jpg" />
+</p><p>断点被禁用后，到达节点时将忽略断开指令。 
+</p><p><strong>Debug</strong> 菜单中的选项可用于 <strong>禁用/启用</strong> 或 <strong>删除全部断点</strong>。 
+</p><p><img alt="DebugHowTo18.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo18.jpg" />
+</p><a name="bookmarkdebuggingcontrols" ></a><h2 id="调试控制">调试控制</h2>
+
+<p>当蓝图到达断点时，可选额外控制选项，便于进行蓝图脚本导航。 
+</p><p><img alt="DebugHowTo9.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo9.jpg" />
+</p><p>顶部从左至右，<strong>Resume</strong> 用于在编辑器中继续游戏和退出调试模式。<strong>Frame Skip</strong> 用于以单帧前进游戏进程；<strong>Stop</strong> 用于编辑器会话中完全停止游戏。<strong>Find Node</strong> 选项用于从游戏会话跳至当前活动的节点；<strong>Step</strong> 用于在当前执行流中前进至下个节点。 
+</p><div class="note">
+	<p>在节点上放置一个断点后开始脚本进程，然后到达当前执行流的终点时，将自动返回游戏。 
+</p>
+</div><p>调试的常规工作流是为节点添加一个断点，然后使用 <strong>Step</strong> 在脚本中前进，找到问题源头。放置断点需要注意的是在脚本中无法后退，需将其放置在问题发生之前，才能完整地看到问题的前后全貌。 
+</p><a name="watchingvalues" ></a><h2 id="观察数值">观察数值</h2>
+
+<p>在变量上 <strong>单击右键</strong> 并选择 <strong>Watch this value</strong> 选项即可观察变量值。 
+</p><p><img alt="DebugHowTo11.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo11.jpg" />
+</p><p>选择观察变量后，变量访问之处将出现放大镜图标。 
+</p><p><img alt="DebugHowTo12.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo12.jpg" />
+</p><p>变量上方的浮动文本框显示变量的当前数值。在编辑器中进行游戏时，如变量发生变化，它也将反映在文本框中，以便查看其变化和当前数值。观察变量的选项不限于数值式变量，任意变量均可被观察，以便了解数值（下图中的 Boolean 正被观察，我们可以了解其当前状态）。 
+</p><p><img alt="DebugHowTo10.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo10.jpg" />
+</p><p>可通过 <strong>Debug</strong> 菜单中的 <strong>Delete All Watches</strong> 选项从所有变量上移除观察符号。 
+</p><p><img alt="DebugHowTo18.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo18.jpg" />
+</p><a name="blueprintdebuggertab" ></a><h2 id="蓝图调试器标签">蓝图调试器标签</h2>
+
+<p>也可通过 <strong>Blueprint Debugger</strong> 对蓝图进行调试，该选项位于 <strong>Window</strong> / <strong>Developer Tools</strong> 部分。
+</p><p><img alt="DebugHowTo13.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo13.jpg" />
+</p><p>不在编辑器中进行游戏时，Blueprint Debugger 显示所有被观察的变量或指派的断点（下图黄色框中的内容）。
+</p><p><img alt="DebugHowTo14.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo14.jpg" />
+</p><p>按住 <strong>Shift</strong> 键点击关卡中的 Actors 可将多个蓝图添加至 Blueprint Debugger 标签。 
+</p><p>在编辑器中进行（或模拟）游戏时，调试器的下部将被填入内容。这部分为 <strong>执行追踪（Execution Trace）</strong>。 
+</p><p><img alt="DebugHowTo15.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo15.jpg" />
+</p><p>它是所有被执行指令的日志记录，以生成时间排序（上方为最近生成）。 
+</p><p>到达断点时，可在蓝图调试器标签中直接访问本页中提及的 <a id="content_link" href="index.html#bookmarkdebuggingcontrols" ><span>调试控制</span></a>
+。 
+</p><a name="compileerrors" ></a><h2 id="编译错误">编译错误</h2>
+
+<p>编译蓝图时出现 <strong>编译错误</strong> （下图黄色框所示）存在多种原因。<br /></p><p><img alt="DebugHowTo19.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo19.jpg" />
+</p><p>出现这种情况后，进行游戏时将出现类似于下图的提示信息。 
+</p><p><img alt="DebugHowTo23.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo23.jpg" />
+</p><p>存在错误的蓝图将同样被反映在关卡编辑器视口中。 
+</p><p><img alt="DebugHowTo24.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo24.jpg" />
+</p><p>在这种情况下，可能无法通过调试方法成功确定错误。在编译报错的蓝图中，引起错误的节点将被标记，以便确定问题所在之处。 
+</p><p><img alt="DebugHowTo20.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo20.jpg" />
+</p><p>可在 <strong>Compiler Results</strong> 窗口中查看关于报错的更多信息。 
+</p><p><img alt="DebugHowTo21.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/BP_HowTo/Debugging/DebugHowTo21.jpg" />
+</p><p>出现错误时 Compiler Results 窗口将自动弹出。可点击放大镜跳至错误所在位置和问题节点。为帮助解决问题，将显示错误的文本描述。 
+</p>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="../../UserGuide/Debugging/index.html" title="使用断点暂停执行，以检查图表和变量值。">蓝图调试</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../index.html" title="关于使用蓝图可视化脚本系统制作游戏的概述。">蓝图 - 可视化脚本</a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Blueprints/BP_HowTo/Debugging/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 03:13:24 GMT -->
+</html>

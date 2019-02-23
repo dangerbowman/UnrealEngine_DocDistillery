@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Physics/Destructibles/DestructibleProperties/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:51 GMT -->
+<head>
+    <title>可破坏物属性矩阵 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Physics/Destructibles/DestructibleProperties/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Physics/Destructibles/DestructibleProperties/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Physics/Destructibles/DestructibleProperties/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Physics/Destructibles/DestructibleProperties/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="4649792" />
+<meta name="availability" content="Public" />
+<meta name="title" content="可破坏物属性矩阵" />
+<meta name="description" content="DestructibleMesh Editor 中可破坏 Actors 所有属性的描述。" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine/Physics" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="可破坏物属性矩阵" />
+	<meta property="og:description" content="DestructibleMesh Editor 中可破坏 Actors 所有属性的描述。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../../index.html">物理模拟</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">可破坏物属性矩阵</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="banner">
+	<p><img alt="Physics" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/physics_landing_banner.jpg" />
+</p>
+</div><a name="destructiblemeshcategory" ></a><h2 id="可破坏网格体类型">可破坏网格体类型</h2>
+
+<a name="defaultdestructibleparameterssubcategory" ></a><h3 id="默认可破坏物参数子类">默认可破坏物参数子类</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> <em>损坏参数</em> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Damage Threshold</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使体块出现破裂的损坏程度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Damage Spread</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制损坏传播到可破坏 Actor 中的距离。应用到体块的损坏乘以 Damage Spread 的数值可得到传播的距离。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Enable Impact Damage</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>与对象发生碰撞时是否将损坏应用到可破坏物上。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Impact Damage</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如体块所在的深度已设置冲击损坏，它受到的损坏计算方法为：冲击损坏值乘以它和其他物体碰撞时的冲击力（假定两个物体均启用了 Report Rigid Collisions）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Custom Impact Resistance</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>和可破坏物发生碰撞的对象将默认弹回。使用自定义抗力可以精确控制可破坏物将碰撞对象“推回”的距离。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Impact Resistance</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当体块因物理接触受到冲击损坏时，该参数为碰撞产生的最大冲量。偏弱材质的此数值较低，便于较重的物体在形成破裂时直接穿透。数值 0.0 意味着无穷。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Default Impact Damage</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>冲击损坏将被带入这个深度。如为负值，则禁用冲击损坏。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> <em>残骸参数</em> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Debris Lifetime Min</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>“残骸体块”（查阅下文的残骸深度）和非残骸体块分离一段时间（以秒为单位）后将被破坏。实际的生命周期在这两个 bDebrisTimeout 之间基于模块的 LOD 设置内插。取消勾选标记框中的 bDebrisTimeout 标记即可禁用生命周期。如 <code >debrisLifetimeMax &lt; debrisLifetimeMin</code>，则两者将使用其平均值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Debris Lifetime Max</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Debris Max Separation Min</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>“残骸体块”（查阅下文的残骸深度）离开源点的距离大于 maxSeparation 时将被破坏。实际的 maxSeparation 在这两个值之间基于模块的 LOD 设置内插。取消勾选标记框中的 bDebrisMaxSeparation 标记即可禁用 maxSeparation。如 <code >debrisMaxSeparationMax &lt; debrisMaxSeparationMin</code>，则两者将使用其平均值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Debris Max Separation Max</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Valid Bounds</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>“残骸体块”（查阅下文的残骸深度）离开此框便会被破坏。此框随可破坏 Actor 的初始位置平移，但不能执行旋转或缩放。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> <em>高级参数</em> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Damage Cap</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>限制应用到体块的损坏程度。可有效防止可破坏物被高强度的破坏力粉碎。使用冲击损坏时很可能出现这种情况，损坏程度与冲击力成正比（查阅 forceToDamage）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Impact Velocity Threshold</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如刚体在彼此之间生成，将产生较大的冲击力。在这种情况下，两个物体之间的相对速度较低。使用该变量设置冲击的最小速度阈限，确保体块以最小速度移动并带有冲击力。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Max Chunk Speed</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如该数值大于零，体块的速度不允许超过此数值。使用 0 值将禁用此功能（此为默认值）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Fracture Impulse Scale</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>出现破裂时沿体块法线应用冲击力的缩放因子。用于破裂时将碎块“吹飞”。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> <em>特殊层次深度</em> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Support Depth</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>创建支持图表的体块层次深度。更高的深度层级可提供更细致的支持，但会使计算量增大。支持深度以下的体块将不会获得支持。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Minimum Fracture Depth</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>低于此深度的体块将不会被打破。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Debris Depth</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>体块被识别为“残骸”的体块层次深度。在此深度或以下的体块将被赋予多项残骸的设置，如 debrisLifetime。负值意味着不存在进行残骸识别的体块深度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Essential LOD Depth</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>体块固定被处理的体块层次深度。这些体块将被识别为游戏性和视觉上的必需部分。最小值为 0，意味着等级 0 的体块固定被识别为必需部分。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> <em>深度参数 - 每个深度等级</em> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Impact Damage Override</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在 Default Impact Damage Depth 中设置的深度，达到此深度的体块将受到冲击损坏，除非选中重叠选项之一。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> <em>标记</em> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Accumulate Damage</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置此项后，体块将保存所受到损坏，因此低于损坏阈值的多次损坏将使体块出现破裂。如未设此项，单次损坏度必须超过损坏阈值方能使体块破裂。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Asset Defined Support</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置此项后，标记为“支持”的体块将在静态可破坏物中拥有环境支持。注意：如 bAssetDefinedSupport 和 bWorldSupport 两项皆设，体块必须被标记为“支持”体块并重叠 NxScene 静态几何体，以确保拥有环境支持。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>World Support</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置此项后，重叠 NxScene 静态几何体的体块将在静态可破坏物中获得环境支持。注意：如 bAssetDefinedSupport 和 bWorldSupport 两项皆设，体块必须被标记为“支持”体块并重叠 NxScene 静态几何体，以确保拥有环境支持。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Debris Timeout</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置位于“残骸”深度或更低位置的体块是否暂停。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Debris Max Separation</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如位于“残骸”深度或更低位置的体块离源点太远，其是否会被移除。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Crumble Smallest Chunks</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置此项后，最小的体块将进一步碎裂。成因为流动碎屑（如 NxDestructibleActorDesc 中指定了碎屑粒子系统），或在无指定碎屑粒子系统时删除体块的指令。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Accurate Raycasts</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置此项后，光线投射功能将在最近的可见体块中进行搜索，寻找和子体块发生的碰撞。此项用于获得更佳的光线投射位置和法线，避免父碰撞体积和图像网格体未紧密匹配时出现的偏差。然而，返回的体块索引将固定为相交可视父项的索引。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Use Valid Bounds</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置此项后，将使用 NxDestructibleParameters 的 validBounds 域。这些边界将被移动（但不可缩放或旋转）至可破坏 Actor 的源点。如体块或体块的岛状区移动到这些边界之外，它将被破坏。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Form Extended Structures</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置此项后，如可破坏物初始为静态，在和其他设置此项的静态可破坏物发生接触时它将变为延伸支持结构的一个部分。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> <em>破裂效果 - 每个深度等级</em> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Particle System</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>体块破碎时执行生成的粒子系统。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Sound</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>体块破碎时播放的音效和提示音。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>如需了解属性的物理和碰撞章节，请查阅 <a id="content_link" href="../../Collision/index.html" ><span><strong>碰撞</strong></span></a>
+ 文档。
+</p><a name="skeletalmeshsubcategory" ></a><h3 id="骨架网格体子类">骨架网格体子类</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>属性</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> <em>材质 - 每个元素</em> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Material Interface</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该元素所使用的材质。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Enable Shadow Casting</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使该材质能投射阴影。此项在每个元素等级上，每个破裂等级可拥有不同的材质，因此可关闭破裂物体更小等级上的阴影。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Force CPUSkinning</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>所有的蒙皮均默认为 GPU 蒙皮，将强制可破坏 Actor 使用 GPU 蒙皮。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Use Full Precision UVs</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>true</em>，此物体将使用 32 位 UV。如为 <em>true</em>，将使用 16 位 UV 节约内存。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="texturestreamingsubcategory" ></a><h3 id="纹理流子类">纹理流子类</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>属性</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Streaming Distance Multiplier</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>调整纹理使用 UV 0 流入/流出的距离。1.0 为默认值，更高的数值将增加流入分辨率。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="chunkparameterscategory" ></a><h2 id="体块参数类型">体块参数类型</h2>
+
+<a name="chunkssubcategory" ></a><h3 id="体块子类">体块子类</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>属性</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Is Support Chunk</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如已在 NxDestructibleParameters 中设置合适当的 NxDestructibleParametersFlag 标记，体块将被定义为受环境支持。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Do Not Fracture</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将体块定义为不可破裂。如此项为 true，体块子项也为不可破裂。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Do Not Damage</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将体块定义为不可损坏。意味着该体块不可破裂，但其子项可能破裂。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Do Not Damage</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将体块定义为不可形成碎屑。意味着无论此体块承受多大程度的损坏，都不会变为流动网格体粒子。注意：此项仅应用于无子项的体块。如体块拥有子项：1) 如未设置 doNotCrumble 标记，体块可能碎为其子项，之后其子项可能成为碎屑；2) 如可破坏模块的体块深度偏移 LOD 设定为此体块并无子项，则将应用 doNotCrumble 标记。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="fracturesettingscategory" ></a><h2 id="破裂设置类型">破裂设置类型</h2>
+
+<a name="voronoisubcategory" ></a><h3 id="voronoi子类">Voronoi 子类</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>属性</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Cell Site Count</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>破裂过程中生成的体块数量。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="generalsubcategory" ></a><h3 id="总体子类">总体子类</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>属性</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> <em>破裂材质描述</em> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>UVScale</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>内部材质使用的 UV 标尺。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>UVOffset</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>内部材质的 UV 源偏移。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Tangent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定表面切线方向的物体空间矢量。如该矢量为（0.0.0.0, 0.0），将任意选择一个方向。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>UAngle</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>来自 u 坐标轴切线方向的角度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Interior Element Index</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>新建三角形使用的元素索引。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Random Seed</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>随机数生成器用于打碎网格体的种子。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Physics/Destructibles/DestructibleProperties/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:51 GMT -->
+</html>

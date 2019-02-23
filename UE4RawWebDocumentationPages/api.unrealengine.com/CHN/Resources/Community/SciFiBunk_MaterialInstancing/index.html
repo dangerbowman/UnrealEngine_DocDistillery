@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Resources/Community/SciFiBunk_MaterialInstancing/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 03:19:48 GMT -->
+<head>
+    <title>SciFi Bunk：材质实例 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Resources/Community/SciFiBunk_MaterialInstancing/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Resources/Community/SciFiBunk_MaterialInstancing/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Resources/Community/SciFiBunk_MaterialInstancing/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Resources/Community/SciFiBunk_MaterialInstancing/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3782314" />
+<meta name="availability" content="Public" />
+<meta name="title" content="SciFi Bunk：材质实例" />
+<meta name="description" content="此文档说明在 SciFi Bunk 项目中构建环境时主材质和材质实例的使用方式。" />
+<meta name="version" content="4.9" />
+<meta name="skilllevel" content="Intermediate" />
+<meta name="topic-image" content="scifi_bunk_topic.png" />
+<meta name="parent" content="Resources" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="SciFi Bunk：材质实例" />
+	<meta property="og:description" content="此文档说明在 SciFi Bunk 项目中构建环境时主材质和材质实例的使用方式。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../../index.html">示例与教学</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">SciFi Bunk：材质实例</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#前言">前言</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#目标">目标</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#主材质设置">主材质设置</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#反射率设置">反射率设置</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#金属感设置">金属感设置</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#粗糙度设置">粗糙度设置</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#遮挡设置">遮挡设置</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#自发光设置">自发光设置</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#法线设置">法线设置</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#视差设置">视差设置</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#材质实例">材质实例</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#应用到模型">应用到模型</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#更多特性">更多特性</a>
+	</li>		    	        </ul>
+</div>
+<a name="foreword" ></a><h2 id="前言">前言</h2>
+
+<p>此教程由社区成员 Liam Tart（PogoP）提供，授权转载于此。
+</p><p>Liam，感谢你！
+</p><p>此教程将说明如何使用主材质和材质实例快速有效地构建一套平铺材质，应用到场景中的模型上。使用平铺材质设置模型贴图后，便无需依赖高多边形模型的烘焙，快速修改场景的观感效果。
+</p><p>此教程的编写随 <strong>Unreal Launcher Learn</strong> 标签下的 <strong>Sci-fi Bunk Room</strong> 场景制作过程编写。推荐下载此场景，在实际操作中了解材质实例的使用。
+</p><p>此教程将说明如何设置有效主材质，将其实例化，用于制作广泛的不同材质类型（如各种金属和塑料），然后再应用到模型上不同的材质 ID。主材质还使用大量开关，根据制作中的材质开关特定函数，如视差贴图和细节法线贴图。
+</p><p>开始此教程之前推荐阅读 <a id="content_link" href="../../../Engine/Rendering/Materials/index.html" ><span>材质</span></a>
+ 文档，理解材质和材质实例的工作原理。此教程说明如何将这些概念应用到工作环境。
+</p><a name="goals" ></a><h2 id="目标">目标</h2>
+
+<p>设置主材质的目标是创建一个可被实例化的材质，并访问多个参数，以便快速对材质进行调整。可将所需的任意选项和特性放入主材质。作为基础，主材质允许选项输入指定的反射率、粗糙度、金属感和法线贴图，并添加反射色度和粗糙度以及金属感数值，对这些特性进行微调控制。 
+</p><p>下方的截图展示了它能为场景带来的灵活度，调整几项数值便可迅速改变场景的效果。 
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Material Instance Color: Orange" width="400" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/Image_0_Left.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Material Instance Color: White" width="400" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/Image_0_Right.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><a name="mastermaterialsetup" ></a><h2 id="主材质设置">主材质设置</h2>
+
+<p>从创建主材质开始。场景中的所有材质均从主材质实例化而来。因此需要对其进行正确有效的设置，避免过度复杂。使用主材质的一个优点是 — 如果之后需要为材质添加更多特性，只需将其应用到主材质即可，将向下传递到实例。
+</p><p>下例为最终的主材质设置。此材质中的所有输入纹理和常量将被参数化，以便在实例化材质中访问。可在数值或贴图上点击右键选择 <strong>Convert to parameter</strong> 执行此操作，然后为其指定一个命名。这便于在材质实例中进行快速修改。
+</p><p>此外，<strong>Static Switch</strong> 参数大量应用于此材质中，便于在特定设置之间进行选择（如细节法线贴图、视差贴图等）。这可关闭不需要的特性，降低最终材质实例的开销。可在此处阅读更多内容： <a id="content_link" href="../../../Engine/Rendering/Materials/ExpressionReference/Parameters/index.html" ><span>Parameter Expressions</span></a>
+
+</p><p><img alt="image_1.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_1.jpg" />
+</p><a name="albedosetup" ></a><h3 id="反射率设置">反射率设置</h3>
+
+<p><img alt="image_2.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_2.jpg" />
+</p><p>在此部分中，您可选择使用指定的反射贴图或简单颜色值。指定一个简单值获得正确的反射率，迅速完成材质原型。可将此数值转到 Photoshop 中使用，作为最终反射率贴图的基础。这也将应用到此教程的 <strong>粗糙度设置</strong> 部分。
+</p><p>如之前所述，可使用此设置为基础色彩选择使用反射率贴图或色彩值。可通过实例化材质中名为 <strong>UseDiffuseMap?</strong> 的静态切换参数在二者之间进行选择。如此项设为 true，即可输入特定的反射率纹理。此纹理将添加一个 <strong>DiffTint</strong> 常量值，此值用于特定反射率贴图的着色。如未使用反射率贴图，可使用 <strong>DiffuseValue</strong> 定义反射率数值。 
+</p><p>在 DiffMap 纹理输入的左边，一个节点已被插入 UV 槽。它连接到主材质的 <strong>Parallax</strong> 部分。也可加入 UV 平铺设置，在 UE4 中（而不在 3D 模型包中）控制材质平铺。
+</p><p>下例展现了该系统的灵活性。左图为使用单色的反射率贴图。中图为反射率贴图。右图为着色为橘色的反射率贴图。这说明了如何使用相同贴图在引擎中实现多种效果。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="image_3_1.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_3_1.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="image_3_2.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_3_2.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="image_3_3.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_3_3.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>单色反射率贴图</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>反射率贴图</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>带色彩的反射率贴图</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p><img alt="image_3.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_3.jpg" />
+</p><a name="metallicsetup" ></a><h3 id="金属感设置">金属感设置</h3>
+
+<p><img alt="image_4.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_4.jpg" />
+</p><p>该设置非常简单，选择使用金属感贴图或单一值定义材质的金属感属性。
+</p><p>此设置十分实用，可选择使用单一值（便于平铺金属材质）；也可选择指定金属感贴图，将材质的一部分设为非金属感，其他部分设为金属感。 
+</p><p>下例为实际效果。左边材质使用的金属感值为 0，中间材质的值为 1，右边材质使用特定的金属感贴图。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="image_5_1.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_5_1.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="image_5_2.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_5_2.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="image_5_3.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_5_3.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>金属感值 - 0</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>金属感值 - 1</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>金属感纹理贴图</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="roughnesssetup" ></a><h3 id="粗糙度设置">粗糙度设置</h3>
+
+<p><img alt="image_6.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_6.jpg" />
+</p><p>和反射率设置相似，该设置可选择使用粗糙度贴图或单一值来定义整体粗糙度。这便于将粗糙度值快速指定到材质，之后将此值转入 Photoshop，为材质创建独特的粗糙度贴图。
+</p><p>下例为实际效果。左边材质使用的粗糙度值为 1，中间材质的值为 0，右边材质使用特定的粗糙度贴图。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="image_7_1.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_7_1.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="image_7_2.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_7_2.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="image_7_3.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_7_3.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>粗糙度值 - 1</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>粗糙度值 - 0</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>粗糙度纹理贴图</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>通过 <strong>UseDetailRoughness?</strong> 静态切换可使用插入 <strong>DetailTiling</strong> 常量的细节粗糙度贴图。该常量与 TexCoord 叠加，对细节粗糙度贴图进行平铺。此值也将插入细节法线贴图。它适用于这类材质 — 拥有需要近距离观察的纹理且平铺率极高。 
+</p><p>下例为实际效果。左边的材质并未使用细节粗糙度/法线贴图，中间的材质使用平铺率为 1 的细节贴图，右边材质的平铺率为 4。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="image_75_1.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_75_1.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="image_75_2.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_75_2.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="image_75_3.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_75_3.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>未使用法线贴图</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>带法线贴图，平铺设为 1</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>带法线贴图，平铺设为 4</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="occlusionsetup" ></a><h3 id="遮挡设置">遮挡设置</h3>
+
+<p><img alt="image_8.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_8.jpg" />
+</p><p>此设置使用静态切换参数选择使用遮挡贴图或单一值。多数材质使用的遮挡值为 1（即为简单的白色），而此设置可选择使用特定的环境遮挡贴图（如材质需要）。例如材质用于一个独特的未包裹模型，此模型的部分区域无法接受光照。
+</p><a name="emissivesetup" ></a><h3 id="自发光设置">自发光设置</h3>
+
+<p><img alt="image_9.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_9.jpg" />
+</p><p>可通过此设置选择材质是否自发光（默认设为 false，以便提升性能）。可使用另一个静态切换选择指定一个自发光贴图。如不使用指定的自发光贴图，可使用 EmissiveScale 参数设置自发光值。然而，指定自发光贴图时也将使用 EmissiveScale，以便更好地控制材质亮度。
+</p><p>下例为自发光设置的实际效果。左边材质的自发光值设为 0，中间材质的值设为 1，右边材质的值设为 2。 
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="image_10_1.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_10_1.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="image_10_2.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_10_2.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="image_10_3.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_10_3.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>自发光值 - 0</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>自发光值 - 1</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>自发光值 - 2</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="normalsetup" ></a><h3 id="法线设置">法线设置</h3>
+
+<p><img alt="image_11.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_11.jpg" />
+</p><p>法线贴图设置看上去较难，实际却相当简单。此材质默认使用扁平法线贴图纹理，可添加开关将法线贴图关闭转而使用常量值，可节约纹理内存。
+</p><p>还可通过此设置将法线贴图和细节法线贴图组合。<strong>DetailTiling</strong> 常量与 <strong>TexCoord</strong> 叠加，对平铺率进行控制。可通过 <strong>DetailNormalStrength</strong> 控制细节法线贴图的强度。 
+</p><a name="parallaxsetup" ></a><h3 id="视差设置">视差设置</h3>
+
+<p><img alt="image_12.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_12.jpg" />
+</p><p>可通过视差设置使用 <strong>BumpOffset</strong> 节点，应用高度图后可在材质上形成虚拟景深效果。可在此处阅读更多内容 (<a id="content_link" href="../../../Engine/Rendering/Materials/ExpressionReference/Utility/index.html#bumpoffset" ><span>Bump Offset</span></a>
+)。 
+</p><p>此设置将被插入所有上文提及部分的 <strong>UV</strong> 槽中，意味着启用视差后所有贴图均会获得效果。
+</p><p>下例为视差的实际效果。左图禁用了视差，右图中视差设为 0.007。此处效果不甚明显，但在某些材质上效果明显。
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Parallax Disabled" width="400" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/Image_13_Left.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Parallax Enabled" width="400" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/Image_13_Right.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><a name="materialinstancing" ></a><h2 id="材质实例">材质实例</h2>
+
+<p>主材质设置完成后，可右键单击主材质并创建一个材质实例。 
+</p><p><img alt="image_14.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_14.jpg" />
+</p><p>可将此材质命名并放入任意文件夹中。推荐按材质类型设置文件夹，如金属文件夹、塑料文件夹等。
+</p><p>双击新建的材质实例将显示下图：
+</p><p><img alt="image_15.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_15.jpg" />
+</p><p>如图所示，在主材质中设置的所有参数化数值和静态切换均显示在材质实例中。使用 <strong>UseDiffuseMap?</strong> 之类的切换可输入自建弥散/反射率贴图，还可启用与此相连的特定参数（如此例中的弥散叠加选项）。
+</p><p>下图为 Sci-fi Bunk 场景的材质设置。此处使用诸多颜色和材质属性创建了一个平铺材质库，可轻松应用到场景中的模型上。
+</p><p><img alt="image_16.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_16.jpg" />
+</p><a name="applicationtomeshes" ></a><h2 id="应用到模型">应用到模型</h2>
+
+<p>材质库设置完成后，即可将这些平铺材质应用到模型。如下图所示，此模型不使用任何单独烘焙的法线贴图，而通过平铺材质来构建效果惊艳的表面。拥有以此方法构建的模型库后，即可了解使用材质实例的优点 — 调整单一数值即可传播到整个场景。举例而言，如需修改此场景中使用的木头纹理，只需在木头材质实例中进行一次修改即可，整个场景皆会更新。较之于对数个单独的弥散贴图重新设置纹理，这种方法更加快捷。
+</p><p><img alt="image_17.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/Community/SciFiBunk_MaterialInstancing/image_17.jpg" />
+</p><a name="extrafeatures" ></a><h2 id="更多特性">更多特性</h2>
+
+<p>基础主材质和材质库设置完成后，即可轻松展开主材质添加更多特性。例如，在此材质设置中没有顶点绘制的选项。可添加一个基础插值函数，结合顶点绘制进行绘制（例如在材质表面绘制尘土）。可在此处阅读更多内容：<a id="content_link" href="../../../Engine/UI/LevelEditor/Modes/MeshPaintMode/VertexColor/MaterialSetup/2Way/index.html" ><span>2路混合材质</span></a>
+。
+</p><p>以上便是场景基础主材质设置的全部教学内容。请查看 Sci-fi Bunk 房间场景，确定具体的应用方法。祝您好运！
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Resources/Community/SciFiBunk_MaterialInstancing/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 03:19:48 GMT -->
+</html>

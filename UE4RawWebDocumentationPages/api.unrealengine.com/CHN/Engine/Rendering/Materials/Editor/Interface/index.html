@@ -1,0 +1,1197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/Materials/Editor/Interface/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:58 GMT -->
+<head>
+    <title>材质编辑器 UI | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/Materials/Editor/Interface/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/Materials/Editor/Interface/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/Materials/Editor/Interface/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/Materials/Editor/Interface/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3481084" />
+<meta name="availability" content="Public" />
+<meta name="title" content="材质编辑器 UI" />
+<meta name="description" content="材质编辑器 UI 的使用指南。" />
+<meta name="version" content="4.9" />
+<meta name="tags" content="Materials" />
+<meta name="parent" content="Engine/Rendering/Materials/Editor" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="材质编辑器 UI" />
+	<meta property="og:description" content="材质编辑器 UI 的使用指南。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">材质编辑器用户指南</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">材质编辑器 UI</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#菜单栏">菜单栏</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#file">File</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#edit">Edit</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#assets">Assets</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#window">Window</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#help">Help</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#工具栏">工具栏</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#视口面板">视口面板</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#details面板">Details 面板</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#graph面板">Graph 面板</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#palette面板">Palette 面板</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#stats面板">Stats 面板</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#hlsl代码面板">HLSL 代码面板</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#图表功能键">图表功能键</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#鼠标功能键">鼠标功能键</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#键盘功能键">键盘功能键</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#热键">热键</a>
+	</li>					</ul>
+	</li>		    	        </ul>
+</div>
+<p>材质编辑器 UI 由菜单栏、工具栏和默认的四个开启面板组成。
+</p><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content OS windows ">
+    <div class="container">
+        <p><img alt="MaterialEditor_Windows.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/MaterialEditor_Windows.jpg" /></p>
+    </div>
+</div><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content OS mac ">
+    <div class="container">
+        <p><img alt="MaterialEditor_Mac.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/MaterialEditor_Mac.jpg" /></p>
+    </div>
+</div><ol ><li><p><a id="content_link" href="index.html#menubar" ><span>菜单栏</span></a>
+ - 列出当前材质的菜单选项。
+</p></li><li><p><a id="content_link" href="index.html#toolbar" ><span>工具栏</span></a>
+ - 含材质使用工具。
+</p></li><li><p><a id="content_link" href="index.html#viewportpanel" ><span>视口面板（Viewport Panel）</span></a>
+ - 预览材质在网格体上的效果。
+</p></li><li><p><a id="content_link" href="index.html#detailspanel" ><span>细节面板（Details Panel）</span></a>
+ - 列出材质、所选材质表现或函数节点的属性。
+</p></li><li><p><a id="content_link" href="index.html#graphpanel" ><span>图表面板（Graph Panel）</span></a>
+ - 显示创建材质着色器指令的材质表现和函数节点。
+</p></li><li><p><a id="content_link" href="index.html#palettepanel" ><span>调色板面板（Palette Panel）</span></a>
+ - 列出所有材质表现和函数节点。
+</p></li></ol><div class="note">
+	<p>此外还有一个默认不显示的 HLSL 代码面板。在 <strong>Window</strong> 菜单中点击 <strong>HLSL Code</strong> 即可显示。如需了解更多内容，请查阅 <a id="content_link" href="index.html#hlslcodepanel" ><span>HLSL 代码</span></a>
+。
+</p>
+</div><div class="tip">
+	<p>您可以通过点击选卡右上角的小 "X" 来关闭任何面板。您也可以通过右击面板，然后在弹出的关联菜单中点击 <strong>Hide Tab（隐藏选卡）</strong>，来隐藏任何面板。要想再次显示您已经关闭的面板，在 <strong>Window(窗口)</strong> 菜单中点击那个面板的名称即可。
+</p>
+</div><a name="menubar" ></a><h2 id="菜单栏">菜单栏</h2>
+
+<h3 id="file">File</h3>
+
+<ul ><li><p><strong>Save</strong> - 保存您的当前处理的资源。
+</p></li><li><p><strong>Save All（保存所有）</strong> - 保存您的项目中所有未保存的关卡及资源。
+</p></li><li><p><strong>Choose Files to Save（选择要保存的文件）</strong> - 弹出一个对话框，允许您选择您想为您的项目保存的关卡及资源。
+</p></li><li><p><strong>Connect To Source Control（连接到源码控制）</strong> - 弹出一个对话框，允许选择一个虚幻编辑器可以集成的源码控制系统或者同其进行交互。
+</p></li></ul><h3 id="edit">Edit</h3>
+
+<ul ><li><p><strong>Undo（取消）</strong> - 取消最近的操作。
+</p></li><li><p><strong>Redo（重复）</strong> - 如果最后一次操作是取消操作，则重复执行最近一次取消的操作。
+</p></li><li><p><strong>Editor Preferences（编辑器偏好设置）</strong> - 提供了一个选项列表，其中点击任何一个选项都会打开 <strong>Editor Preferences（编辑器偏好设置）</strong> 的相应部分，在那里，您可以修改您的虚幻编辑偏好设置。
+</p></li><li><p><strong>Project Settings（项目设置）</strong> - 提供了一个选项列表，点击其中任何一项都会打开 <strong>Project Settings（项目设置）</strong> 窗口的对应部分，在那里您可以修改您的虚幻引擎项目的各种设置。
+</p></li></ul><h3 id="assets">Assets</h3>
+
+<ul ><li><p><strong>Find in Content Browser（在内容浏览器中查找）</strong> - 在内容浏览器中定位并选择当前资源。
+</p></li></ul><h3 id="window">Window</h3>
+
+<ul ><li><p><strong>Toolbar（工具条）</strong> - 切换工具条的显示状态。
+</p></li><li><p><strong>Viewport（视口）</strong> - 切换 <strong>Viewport（视口）</strong> 面板的显示状态。
+</p></li><li><p><strong>Graph</strong> - 开关 <strong>Graph</strong> 面板的显示。
+</p></li><li><p><strong>Details（详细信息）</strong> - 切换 <strong>Details（详细信息）</strong> 面板的显示状态。
+</p></li><li><p><strong>Palette</strong> - 开关 <strong>Palette</strong> 面板的显示。
+</p></li><li><p><strong>Stats</strong> - 开关 <strong>Stats</strong> 面板的显示。
+</p></li><li><p><strong>HLSL Code</strong> - 开关 <strong>HLSL Code</strong> 面板的显示（默认为关闭）。
+</p></li><li><p><strong>Content Browser（内容浏览器）</strong> - 在一个单独的窗口中打开内容浏览器。
+</p></li><li><p><strong>Developer Tools（开发者工具）</strong> - 在单独的视口中打开选中的开发者工具(相机调试器、碰撞分析器、调试工具、模块、控件映射器)
+</p><ul ><li><p><strong>Blueprint Debugger（蓝图调试器）</strong> - 在一个单独的窗口中打开蓝图调试器。
+</p></li><li><p><strong>Collision Analyzer</strong> - Brings up the <strong>Collision Analyzer</strong> in a separate window.
+</p></li><li><p><strong>Debug Tool</strong> - Brings up the <strong>Debug Tool</strong> in a separate window. 
+</p></li><li><p><strong>Message Log（消息日志）</strong> - 在一个单独的窗口中打开消息日志。
+</p></li><li><p><strong>Output Log（输出日志）</strong> - 在一个单独的窗口中打开输出日志。
+</p></li><li><p><strong>Visual Logger</strong> - Bring up the <strong>Visual Logger</strong> tool in a separate window. 
+</p></li><li><p><strong>Class Viewer（类别查看器）</strong> - 在一个单独的窗口中打开类别查看器。
+</p></li><li><p><strong>Device Manager（设备管理器）</strong> - 在一个单独的窗口中打开设备管理器。
+</p></li><li><p><strong>Device Profiles</strong> - Brings up the <strong>Device Profiles</strong> in a separate window.
+</p></li><li><p><strong>Modules</strong> - Brings up <strong>Modules</strong> in a separate window. 
+</p></li><li><p><strong>Session Frontend（会话前端）</strong> - 在一个单独的窗口中打开Unreal Frontend。
+</p></li><li><p><strong>Widget Reflector</strong> - Brings up <strong>Widget Reflector</strong> in a separate window.
+</p></li></ul></li><li><p><strong>Undo History</strong> - Brings up the <strong>Undo History</strong> panel in a separate window.
+</p></li><li><p><strong>Plugins（插件）</strong> - 弹出插件窗口。
+</p></li><li><p><strong>Reset Layout</strong> - Resets your layout to a default arrangement. Requires the editor to restart after saving your changes and creating a backup of your settings. 
+</p></li><li><p><strong>Save Layout（保存布局）</strong> - 将面板的当前布局保存作为新的默认布局。
+</p></li><li><p><strong>Enable Fullscreen（启用全屏）</strong> - 为该应用程序启用全屏模式，在整个显示器上展开应用程序。
+</p></li></ul><h3 id="help">Help</h3>
+
+<ul ><li><p><strong>Browse documentation（浏览文档）</strong> - 打开一个浏览器窗口，并导航到关于该工具的文档处。
+</p></li><li><p><strong>Forums</strong> - Opens a browser window to the Unreal Engine Forums where you can discuss the Unreal Engine with other users.
+</p></li><li><p><strong>Answer Hub</strong> - Opens a browser window to the Unreal Engine 4 Answer Hub where you can ask questions and find useful answers provided by other users and experts.
+</p></li><li><p><strong>Wiki</strong> - Opens a browser window to the official Unreal Engine 4 Wiki where you can find useful tutorials and examples made by both users and experts here at Epic.
+</p></li><li><p><strong>Visit EpicGames.com（访问EpicGames.com）</strong> - 在浏览器窗口中打开EpicGames.com。
+</p></li><li><p><strong>About Unreal Editor（关于虚幻编辑器）</strong> - 显示应用程序的制作人员、版权信息、及版本信息。
+</p></li></ul><a name="toolbar" ></a><h2 id="工具栏">工具栏</h2>
+
+<p><img alt="Material Editor Toolbar" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/MaterialEditor_Toolbar.jpg" />
+</p><p>下表列出了工具栏中的选项以及它们的功能。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>图标</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Common_Toolbar_Save.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Shared/Editors/Common/EditorToolbarItems/Common_Toolbar_Save.jpg" />
+</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>保存当前资源。
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Common_Toolbar_CB.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Shared/Editors/Common/EditorToolbarItems/Common_Toolbar_CB.jpg" />
+</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在内容浏览器中查找并选中当前资源。
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_apply.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/toolbar_apply.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>应用材质编辑器中对原始材质进行的变更，以及该材质在世界场景中的使用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_search.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/Material_Toolbar_Button_Search.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>找到当前材质中的表现和注解。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_home.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/toolbar_home.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在 <strong>Graph</strong> 面板中使基础材质节点居中。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_clean.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/toolbar_clean.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>删除未与材质连接的材质节点。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_show.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/toolbar_show.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示或隐藏未连接的材质节点。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_live_nodes.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/toolbar_live_nodes.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用后将实时更新每个材质节点中的材质。禁用此项后材质编辑器性能更佳。请查阅 <a id="content_link" href="../index.html#livenodesandliveupdate" ><span>实时节点和实时更新</span></a>
+ 部分。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_live_update.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/toolbar_live_update.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用后，在节点被添加、被删除、被连接、被断开连接，或其属性值发生改变时对所有子表现的着色器进行编译。禁用此项后材质编辑器性能更佳。请查阅 <a id="content_link" href="../index.html#livenodesandliveupdate" ><span>实时节点和实时更新</span></a>
+ 部分。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_stats.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/toolbar_stats.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>隐藏或显示 <strong>Graph</strong> 面板中的材质统计。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toobar_release_stats" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/Material_Toolbar_Button_Release_Stats.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在状态报告中切换使用发布着色器或开发着色器。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_built_in_stats" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/Material_Toolbar_Button_Built_In_Stats.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>切换空材质的状态显示。有助于确定图表中变更的开销。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_mobile_stats" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/Material_Toolbar_Button_Mobile_Stats.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>切换移动平台材质状态和汇编错误。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="viewportpanel" ></a><h2 id="视口面板">视口面板</h2>
+
+<p><img alt="Material Editor Preview Panel" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/MaterialEditor_Preview.jpg" />
+</p><p><strong>视口</strong> 面板显示应用到网格体的材质（正处于编辑中）。 
+</p><p>可使用下表中的选项在 <strong>视口</strong> 面板中导航。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>操作</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>鼠标左键拖动</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>旋转网格体</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>鼠标中键拖动</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>平移</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>鼠标右键拖动</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>缩放</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>长按 <strong>L</strong> 鼠标左键拖动</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>旋转光源方向</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>使用相关工具栏功能按钮（形状按钮、<strong>选择预览网格体（Select Preview Mesh）</strong> 组合按钮、<strong>使用所选静态网格体（Use Selected StaticMesh）</strong> 按钮）可变更视口网格体。视口网格体和材质一同保存， 
+材质下次在材质编辑器中打开时即可在相同的网格体上进行预览。
+</p><p><strong>预览（Preview）</strong> 面板顶部有数个图标，下表为它们的用法细节。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>图标</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_cylinder.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/toolbar_cylinder.jpg" /><img alt="toolbar_sphere.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/toolbar_sphere.jpg" /><img alt="toolbar_plane.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/toolbar_plane.jpg" /><img alt="toolbar_cube.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/toolbar_cube.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在 <strong>Preview</strong> 面板中显示当前材质在各个原始形态上的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_mesh.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/toolbar_mesh.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将 <strong>Content Browser</strong> 中选中的静态网格体设为预览网格体。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_grid.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/toolbar_grid.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>开关 <strong>Preview</strong> 面板中的背景网格。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="toolbar_realtime_preview.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/toolbar_realtime_preview.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用后将实时更新预览网格体上的材质。禁用此项后材质编辑器性能更佳。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="detailspanel" ></a><h2 id="details面板">Details 面板</h2>
+
+<p><img alt="Material Editor Details Panel" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/MaterialEditor_Details.jpg" />
+</p><p>此面板包含所有当前选中材质表现和函数节点。如未选中节点，将显示 
+编辑中材质的属性。
+</p><p>可在 <a id="content_link" href="../../MaterialProperties/index.html" ><span>材质属性</span></a>
+ 中查阅所有材质属性 
+的描述。
+</p><a name="graphpanel" ></a><h2 id="graph面板">Graph 面板</h2>
+
+<p><img alt="MaterialGraph1.jpg" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/MaterialGraph1.jpg" />
+</p><p>此面板包含属于此材质的所有材质表现的图表。每个材质默认包含一个单独基础材质节点。此节点拥有一系列输入，每个都和材质的一个不同方面 
+（其他材质节点可进行连接）相关。
+</p><p><img alt="Material Editor Material Node" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/MaterialEditor_MaterialNode.jpg" />
+</p><p>可在 <a id="content_link" href="../../MaterialInputs/index.html" ><span>材质输入</span></a>
+ 中查阅基础材质节点 
+诸多输入的描述。
+</p><a name="palettepanel" ></a><h2 id="palette面板">Palette 面板</h2>
+
+<p><strong>Palette</strong> 面板包含可通过“拖放”放置到材质中的材质节点列表。如需放置一个新的材质节点， 
+将其拖入 <strong>Graph</strong> 面板即可。
+</p><div class="tip">
+	<p>可在 <strong>Category</strong> 下拉列表中选择 <strong>Expressions</strong> 或 <strong>Functions</strong>，对 <strong>Palette</strong> 面板中列出的材质节点进行过滤。
+</p>
+</div><p>如需了解材质函数的更多内容，请查阅 <a id="content_link" href="../../Functions/index.html" ><span>材质函数</span></a>
+。
+</p><a name="statspanel" ></a><h2 id="stats面板">Stats 面板</h2>
+
+<p><img alt="StatsPanel.jpg" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/StatsPanel.jpg" />
+</p><p>此面板显示材质中使用的着色器指令数量和 <a id="content_link" href="../index.html#compilererrors" ><span>编译器错误</span></a>
+。指令数越少，材质的开销越低。未和基础材质节点连接的材质表现节点不计算在材质的指令数（开销）以内。
+</p><a name="hlslcodepanel" ></a><h2 id="hlsl代码面板">HLSL 代码面板</h2>
+
+<p><img alt="MaterialEditor_HLSLPanel.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/Editor/Interface/MaterialEditor_HLSLPanel.jpg" />
+</p><p>此面板显示当前材质生成的 <strong>高级着色器语言（High Level Shader Language）</strong>（HLSL） 代码。注意：这并非是一个编辑器；无法修改 HLSL 代码。这只是一个查看器，显示材质网络定义的代码。
+</p><div class="note">
+	<p>Code View 面板默认不显示。在 <strong>Window</strong> 菜单中点击 <strong>HLSL Code</strong> 即可显示。
+</p>
+</div><a name="graphcontrols" ></a><h2 id="图表功能键">图表功能键</h2>
+
+<p>材质编辑器中的功能键通常和虚幻编辑器中其他工具的功能键相匹配。例如以其他连接对象编辑器的方式在材质表现图表中导航，材质预览网格体可根据其他网格体进行导向，等等。
+</p><a name="mousecontrols" ></a><h3 id="鼠标功能键">鼠标功能键</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>功能键</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>操作</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>在背景上拖动鼠标左键或右键</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>平移材质表现图表</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>旋转鼠标滚轮</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>放大缩小</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>鼠标左键加右键拖动</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>放大缩小</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>在对象上按下鼠标左键</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>选择表现/注释</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>在对象上按下 Ctrl + 鼠标左键</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>切换选择表现/注释</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Ctrl + 鼠标左键拖动</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>移动当前选择/注释</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Ctrl + Alt + 鼠标左键拖动</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>框选</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Ctrl + Alt + Shift + 鼠标左键拖动</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>框选（添加到当前选择）</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>在接头上拖动鼠标左键</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>创建连接（在接头上松开）</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>从连接拖动鼠标左键</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>移动连接（在同类接头上松开）</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>在接头上 Shift + 鼠标左键双击</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>标记接头。在已标记的接头上再次执行此操作将在两个接头之间建立连接。通过此法可快速创建长距离连接。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>在背景上按下鼠标右键</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>呼出 <strong>New Expression</strong> 菜单</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>在对象上按下鼠标右键</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>呼出 <strong>Object</strong> 菜单</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>在接头上按下鼠标右键</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>呼出 <strong>Object</strong> 菜单</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>在接头上按下 Alt + 鼠标左键</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>断开到接头的所有连接</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="keyboardcontrols" ></a><h3 id="键盘功能键">键盘功能键</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>功能键</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>操作</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Ctrl + B</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在 Content Browser 中进行寻找</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Ctrl + C</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>复制选中的表现</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Ctrl + S</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>全部保存</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Ctrl + V</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>粘贴</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Ctrl + W</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>生成选中对象的副本</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Ctrl + Y</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>重做</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Ctrl + Z</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>撤销</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Delete</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>删除选中的对象</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>空格键</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>强制更新所有材质表现预览</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Enter</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>（和点击应用相同）</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="hotkeys" ></a><h3 id="热键">热键</h3>
+
+<p>可使用热键放置常用的材质表现类型。长按热键并 <strong>单击左键</strong> 在节点中进行放置。热键如下：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>热键</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>表现</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>A</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Add</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>B</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>BumpOffset</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>C</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Comment</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>D</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Divide</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>E</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Power</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>F</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>MaterialFunctionCall</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>I</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>If</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>L</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>LinearInterpolate</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>M</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Multiply</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>N</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Normalize</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>O</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>OneMinus</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>P</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Panner</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>R</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>ReflectionVector</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>S</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>ScalarParameter</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>T</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>TextureSample</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>U</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>TexCoord</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>V</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>VectorParameter</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Constant</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>2</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Constant2Vector</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>3</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Constant3Vector</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>4</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Constant4Vector</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Shift + C</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>ComponentMask</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/Materials/Editor/Interface/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:58 GMT -->
+</html>

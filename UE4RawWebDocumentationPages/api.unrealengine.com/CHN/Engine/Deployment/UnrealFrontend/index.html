@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Deployment/UnrealFrontend/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:40:06 GMT -->
+<head>
+    <title>Unreal Frontend(虚幻前端) | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Engine/Deployment/UnrealFrontend/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Engine/Deployment/UnrealFrontend/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Engine/Deployment/UnrealFrontend/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Engine/Deployment/UnrealFrontend/index.html" hreflang="zh-CN" />
+
+	<meta name="availability" content="Public" />
+<meta name="title" content="Unreal Frontend(虚幻前端)" />
+<meta name="description" content="用于管理应用程序及将应用程序部署到游戏机平台上的工具。" />
+<meta name="parent" content="Engine/Deployment" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="Unreal Frontend(虚幻前端)" />
+	<meta property="og:description" content="用于管理应用程序及将应用程序部署到游戏机平台上的工具。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">游戏的打包（Packaging）和烘焙（Cooking）</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">Unreal Frontend(虚幻前端)</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="fullwidth">
+	<p><img alt="UnrealFrontend.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Deployment/UnrealFrontend/UnrealFrontend.jpg" />
+</p>
+</div><div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#功能">功能</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#入门指南">入门指南</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#界面">界面</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#启动器">启动器</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#build（编译）">Build（编译）</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#cook（烘焙）">Cook（烘焙）</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#设备浏览器">设备浏览器</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#会话浏览器">会话浏览器</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#会话控制台">会话控制台</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#自动化">自动化</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#虚幻远程代理">虚幻远程代理</a>
+	</li>		    	        </ul>
+</div>
+<p><strong>虚幻前端（UnrealFrontend）</strong> (UFE) 是一个用来简化和加快视频游戏日常开发及测试任务的工具，它可以用来准备游戏构建，将游戏部署到设备上并进行启动。 UFE是所有游戏开发，分析和测试任务的核心界面。
+</p><h2 id="功能">功能</h2>
+
+<p>虚幻前端提供了以下功能：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>功能</p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述</p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Launcher（启动器）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>编译、烘焙、部署及启动您的游戏。 虚幻前端允许您将游戏同时部署到运行不同目标平台的多个设备上，这些设备可以是本地连接的，也可以位于网络上的任何位置处。 您可以在每个设备(支持的平台)上启动多个实例，并且可以为每个实例配置不同的任务，以便可以大大地加速您的工作流程，来测试单玩家或多玩家跨平台游戏。
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Sessions（会话）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>远程监控网络上当前运行的所有活动的游戏会话，并同它们交互。 新设计的 <strong>Session Browser（会话浏览器）</strong> 将允许您定位网络上当前运行的游戏实例。 Session Console(会话控制台)  显示了每个游戏会话输出日志的实时反馈信息，它允许您在一个或多个目标设备上远程执行控制台命令。 不久的将来，您还可以远程同其他开发人员或美术师共享您的活动会话，从而获得他们的意见，而不需要让它们来到你的电脑前查看效果。
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Automation（自动化）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>自动化地测试代码和内容，并验证它们的完整性。 这是一个新功能，在之前的引擎版本中没有提供。 您将可以为您游戏的自定义C++类及内容编写单元测试、功能测试、压力测试，您还可以创建自定义的测试来验证常用的工作流程，比如验证所有地图或包是否已经正确无误地加载。 同时，我们也在努力将自动化测试集成到我们的编译系统中，以便可以自动化地运行这些测试，在连续集成过程中发现潜在的问题。
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Profiling（分析）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>远程分析您的游戏性能并找到瓶颈。 如果您熟悉我们之前在UE3中提供的那套分析工具，那么您听到我们正在努力将所有这些不相关的工具集成到UFE中来提供一种单一的用户体验，您一定会非常高兴。
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Device Management（设备管理）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>管理您的开发工具包、移动设备及其他用于测试的电脑。 在之前版本的虚幻前端就已经提供了简单的设备查找搜寻功能，但是在UE4中，该功能将变得更强大。 我们去除了目标设备必须通过物理方式或者通过设备的SDK连接到本地计算机的限制。 您将可以检测到本地连接的设备、网络连接的设备，并且以将这些设备同其他人共享。 现在，Windows和Mac计算机也可以作为目标设备进行部署、启动及自动化测试。
+</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="入门指南">入门指南</h2>
+
+<p>虚幻前端可以通过两种方式访问，一种是通过虚幻编辑器的一个选卡，另一种通过独立的应用程序。 尽管它们的功能是一样的，但是对于测试人员和程序员来说，他们更倾向于使用轻量级的独立应用程序。 美工人员可能更喜欢用编辑器中内置的版本，因为他们一天大多数时候都会打开虚幻编辑器。 该虚幻编辑器选卡可以通过 <strong>Window（窗口）</strong> 菜单访问： 
+</p><p><img alt="workspace_menu.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Deployment/UnrealFrontend/workspace_menu.jpg" />
+</p><p>虚幻前端的独立应用程序位于/Engine/Binaries/Win64目录中：
+</p><p><img alt="explorer.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Deployment/UnrealFrontend/explorer.jpg" />
+</p><h2 id="界面">界面</h2>
+
+<p>虚幻前端的用户界面有以下几个组件构成：
+</p><p><img alt="UnrealFrontend_UI.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Deployment/UnrealFrontend/UnrealFrontend_UI.jpg" />
+</p><ol ><li><p><a id="content_link" href="index.html#设备浏览器" ><span>设备浏览器</span></a>
+
+</p></li><li><p><a id="content_link" href="index.html#启动器" ><span>启动器</span></a>
+
+</p></li><li><p><a id="content_link" href="index.html#会话浏览器" ><span>会话浏览器</span></a>
+
+</p></li><li><p><a id="content_link" href="index.html#自动化" ><span>Automation（自动化）</span></a>
+
+</p></li><li><p><a id="content_link" href="index.html#会话控制台" ><span>Session Console（会话控制台）</span></a>
+
+</p></li></ol><h2 id="启动器">启动器</h2>
+
+<p>Launcher(启动器)选卡允许您编译、烘焙、及启动您的游戏。 最终会有很多方法来完成这个处理，但是到书写本文为止，仅支持以下设置：
+</p><ul ><li><p>Build（编译）: 创建一个新版本。
+</p></li><li><p>Cook（烘焙）: 运行中(Windows及选中的游戏机平台)。
+</p></li><li><p>Deploy（部署）: 文件服务器(本地Windows 及选中的游戏机平台), 部署到设备 (本地Windows)。
+</p></li><li><p>Launch(启动): 使用默认任务(也就是，每个设备一个实例+所有设备具有同样的设置)。
+</p></li></ul><p>启动器中的所有设置都会合并到概述文件中。 这允许您并行地维持不同的设置组合，这对于一天中需要运行很多不同测试的测试人员是非常方便的。 当您第一次打开启动器时，将不会呈现任何概述文件，您需要创建一个新的概述文件：
+</p><p><img alt="profile_add.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Deployment/UnrealFrontend/profile_add.jpg" />
+</p><p>一旦创建好概述文件，就会显示一些设置类目：
+</p><h3 id="build（编译）">Build（编译）</h3>
+
+<div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="launcher_build.png" width="384" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Deployment/UnrealFrontend/launcher_build.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>设置 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Game（游戏）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定要编译的游戏项目。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Build Configuration（编译配置）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置编译游戏时要使用的配置。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><h3 id="cook（烘焙）">Cook（烘焙）</h3>
+
+<div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="launcher_cook.png" width="384" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Deployment/UnrealFrontend/launcher_cook.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>设置 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Cooked Platforms(烘焙平台)</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定要针对那个平台烘焙游戏内容。 <div class="note">
+	<p>目前任何平台上都不支持未烘焙的内容。</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Cooked Languages（烘焙语言）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定要针对哪种语言烘焙游戏内容。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Cooked Maps（烘焙的地图）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定要烘焙的地图。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Only cook modified content（仅烘焙修改的内容）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果启用该项，那么烘焙器将忽略任何没有修改的内容。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Save packages without versions（保存包但没有版本号）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Cooker Build Configuration（烘焙器编译配置）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置配置信息来决定烘焙使用哪种二进制形式。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Additional Cooker Options（其他烘焙器选项）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><h2 id="设备浏览器">设备浏览器</h2>
+
+<p> <strong>Device Browser（设备浏览器）</strong> 的功能目前是非常有限的，但是最终它将可以管理及共享网络上的所有目标设备(包括传送日志文件)。 它可以自动检测本地可用设备，并提供一个界面供您手动地添加不能发现的设备。
+</p><p>目前，设备拥有者没有实际意义。 我们要把它实现到何种程度(包括锁定在多个程序员间共享的设备）仍有待商量。
+</p><p><img alt="device_browser.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Deployment/UnrealFrontend/device_browser.png" />
+</p><div class="note">
+	<p>Note: 目前，我们仅支持本地可以搜寻发现的设备。 到书写本文为止，这些设备包括本地Windows PC (Win32 和 Win64 平台)及网络上选中的游戏机设备。
+</p>
+</div><h2 id="会话浏览器">会话浏览器</h2>
+
+<p>当在一个或多个设备上启动一个游戏时，启动器将创建一个由正在运行的每个实例  构成的新会话，您可以在 <strong>Session Browser（会话浏览器）</strong> 中跟踪该会话。 会话浏览器在虚幻前端中的作用非常大，因为当前选中的会话(或会话实例)决定了其他虚幻前端选卡的功能，比如Session Console(会话控制台)选卡、Automation(自动化)选卡、及即将提供的Profiler(分析器)。
+</p><p><img alt="session_browser.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Deployment/UnrealFrontend/session_browser.png" />
+</p><p>和Device Browser(设备管理器)一样，Session Browser（会话浏览器）的功能仍然有限。 目前它由分割的列表布局构成。 顶部列表列出了所发现的会话，底部列表显示了选中会话一部分的游戏实例。 一个会话不一定仅包含游戏，还可以包含辅助工具，比如内容烘焙器及文件服务器。
+</p><div class="note">
+	<p>当在虚幻编辑器中运行虚幻前端时，目前总会显示一个 <em>Unnamed Session（未命名的会话）</em> ，它代表虚幻编辑器实例本身。
+</p>
+</div><h2 id="会话控制台">会话控制台</h2>
+
+<p><strong>Session Console(会话控制台)</strong> 是从会话浏览器中当前选中的所有实例收集日志输出的中央枢纽。 具体显示哪个日志由会话浏览器中当前选中的实例决定。  然后您可以通过搜索字符串或类目，以及使用各种过滤器(4b)来过滤日志信息(4a)列表。 您可以把控制台命令发送给选中的游戏实例 (4c)。 对于发送给多个实例的命令，每个实例都会执行该命令。 最后，您还可以把所有日志信息或选中的日志信息导入到一个文件(4d)中。
+</p><p><img alt="console.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Deployment/UnrealFrontend/console.png" />
+</p><div class="note">
+	<p>到书写本文为止，仅可获得自提供了发现会话功能之后的日志。 我们稍后将修改这个功能，使它可以搜索运行虚幻前端之前生成的日志。
+</p>
+</div><h2 id="自动化">自动化</h2>
+
+<p><strong>Automation（自动化）</strong> 面板提供了访问自动化测试功能的方法。 会话中的每个实例 (包括在编辑器中运行虚幻前端时的本地虚幻编辑器实例)都可以在任何特定时刻执行自动化的单元测试、功能测试及压力测试，来验证代码和内容。
+</p><p><img alt="automation.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Deployment/UnrealFrontend/automation.png" />
+</p><ol ><li><p><strong>Control Panel（控制面板）</strong>
+</p></li><li><p><strong>Filter Panel（过滤器面板）</strong>
+</p></li><li><p><strong>Test list（测试列表）</strong>
+</p></li><li><p><strong>Results（结果）</strong>
+</p></li></ol><p>在会话浏览器中选择一个或多个实例后，测试列表将显示这些实例可用的所有测试。 然后，您可以通过选择一个或多个测试的复选框，来决定您实际想运行哪个测试，或者您可以使用Filter Panel（过滤器面板）来过滤测试列表。 要想执行选中的测试，请在 <strong>Control Panel（控制面板）</strong> 中按下启动按钮。 测试结果(包括错误信息)将汇集在 <strong>Results View（结果视图）</strong> 中。 
+</p><div class="note">
+	<p>您可以在多个实例上并行地运行自动化测试(通过选择多个实例)。 您可以在多个实例上并行地运行自动化测试(通过选择多个实例)。目前，我们正在努力实现测试组，它将允许不同程度的并行处理（各种类型的加载平衡、冗余的测试等）。 请查看关于自动化系统的文档来获得关于如何创建新测试的详细信息。
+</p>
+</div><h2 id="虚幻远程代理">虚幻远程代理</h2>
+
+<p><strong>Unreal Remote Agent（虚幻远程代理）</strong> (URA) 是一个独立的应用程序，运行在远程个人计算机（及Mac）的系统托盘中，使得这些连接到它们上计算机及游戏机平台设备通过网络变为可用状态。 虚幻远程代理，之前需要部署及启动游戏，但是目前不再支持该处理，正在升级中。
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Deployment/UnrealFrontend/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:40:10 GMT -->
+</html>

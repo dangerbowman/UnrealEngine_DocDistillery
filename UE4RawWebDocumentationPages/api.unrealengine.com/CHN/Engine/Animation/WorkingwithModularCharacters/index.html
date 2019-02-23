@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Animation/WorkingwithModularCharacters/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:10:14 GMT -->
+<head>
+    <title>使用模块化角色 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Engine/Animation/WorkingwithModularCharacters/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Engine/Animation/WorkingwithModularCharacters/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Engine/Animation/WorkingwithModularCharacters/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Engine/Animation/WorkingwithModularCharacters/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="4385465" />
+<meta name="availability" content="Public" />
+<meta name="title" content="使用模块化角色" />
+<meta name="description" content="描述创建由多个骨架网格体组成的模块化角色的多种方法。 " />
+<meta name="type" content="" />
+<meta name="version" content="4.20 " />
+<meta name="parent" content="Engine/Animation" />
+<meta name="order" content="2" />
+<meta name="tags" content="undefined" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="使用模块化角色" />
+	<meta property="og:description" content="描述创建由多个骨架网格体组成的模块化角色的多种方法。 " />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">Persona：骨架网格体动画系统</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8d3c.html">undefined</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_20 "><a id="version_link" href="../../../SiteIndex/index9c4a.html">Unreal Engine 4.20 </a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">使用模块化角色</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_20 "><a id="version_link" href="../../../SiteIndex/index9c4a.html">Unreal Engine 4.20 </a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<p><img alt="ModularBanner.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/WorkingwithModularCharacters/ModularBanner.jpg" />
+</p><p>在创建允许玩家自定义角色并切换不同部位的系统时，例如不同的头部或身体类型、衣着或其他选项，您需要以模块化方式构造角色。作为取代完整角色骨架网格体的替代方法，可以将骨架网格体分解成多个分段，例如躯干、腿和头，然后将它们导入到引擎中；接下来您可以使用本页所述的一些方法来组装这些部件并添加动画。这样不仅提高了生成不同角色的灵活性，也可以提高性能。 
+</p><h2 id="主姿势组件">主姿势组件</h2>
+
+<p><strong>主姿势组件</strong> 是一个可以通过蓝图调用的函数，您可以用它将一个 <strong>有皮肤网格体组件对象</strong>（或多个有皮肤网格体组件对象）设置为另一个打算用作主对象的有皮肤网格体组件对象的子代。例如，您可以将躯干定义为主姿势组件，为躯干分配动画，然后添加脚、腿、手和头作为子代，这些部位将跟随为躯干分配的动画而动。 
+</p><p>在后台，子代不使用任何骨骼变换缓冲，即使对子代设置了动画也不会运行任何动画，在渲染时，子代仅使用躯干的骨骼变换缓冲，这样就会形成一个超轻量级的连接系统。唯一必须运行动画的组件是躯干，所有连接的组件都将使用躯干的骨骼变换（在以下示例设置中，我们为躯干分配了动画）。 
+</p><p><img alt="SetMasterPoseComponentImage.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/WorkingwithModularCharacters/SetMasterPoseComponentImage.jpg" />
+</p><p><em>在上图中，我们在蓝图内部使用 <strong>构造脚本（Construction Script）</strong> 将躯干骨架网格体设置为 <strong>主骨骼组件（Master Bone Component）</strong>，并将其他模块化角色部位设置为子代。</em><br /></p><div class="note">
+	<p><strong>设置主姿势组件</strong> 功能还有一个布尔型参数，名为 <strong>强制更新（Force Update）</strong>。如果“强制更新（Force Update）”为false，则所有运行时信息与输入主组件相同时则跳过更新（如果启用，将强制更新运行时信息）。这个参数仅在注册期间有效，因为注册是可以序列化的，并且需要刷新所有运行时数据。
+</p>
+</div><p>角色的每个方面都是一个骨架网格体，我们可以换成另一个 <strong>骨架网格体组件</strong>。 
+</p><p><img alt="HiddenComponents.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/WorkingwithModularCharacters/HiddenComponents.jpg" />
+</p><p><em>在上图中，我们关闭了躯干和脚的显示（我们可以将它们更换为具有相同骨架层级的不同的骨架网格体）。</em>
+</p><p>但有一个需要考虑的问题，就是在使用 <strong>主姿势组件</strong> 时，虽然会降低游戏线程成本，但不会降低渲染成本。您仍需要单独渲染相同数量的组件，需要牢记的是每个组件的分段越多，就会需要越多的绘制调用。 
+</p><div class="note">
+	<p>还有一个限制，即主骨骼的任何子代都必须是具有完全匹配结构的子集，不能有任何多余的关节或省略任何关节。由于多余关节没有骨骼缓冲数据，因此将使用引用姿势进行渲染。此外，还无法对任何子代运行任何其他动画或物理效果。
+</p>
+</div><h2 id="从网格体复制姿势">从网格体复制姿势</h2>
+
+<p><strong>从网格体复制姿势</strong> 是一个可以在子代的 <strong>动画蓝图</strong> 上使用的 <strong>动画图形</strong> 节点，允许您从任意 <strong>骨架网格体组件</strong> 复制动画姿势。 <br /></p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/WorkingwithModularCharacters/CopyPoseFromMesh.png" ><span><img alt="CopyPoseFromMesh.png" width="900" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/WorkingwithModularCharacters/CopyPoseFromMesh.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p>单击查看大图。
+</p>
+</div><p><em>“从网格体复制姿势”不仅复制匹配的骨骼，还会复制使用引用姿势的所有内容。但是，您可以如上图所示，在任何复制的变换上播放动画。</em>
+</p><p>在使用<a id="content_link" href="../AnimHowTo/CopyPose/index.html" ><span>从网格体复制姿势</span><span class="newlink">NEW!</span></a>
+时，您需要确保作为复制来源的骨架网格体组件已经有了tick事件，否则将复制最后一帧动画（例如，从身体进行复制且头是子代）。为确保身体有tick事件，可以将头与身体连接起来，这样就可以确保父代先发生tick事件，而后轮到子代。 
+</p><div class="note">
+	<p>您还可以用代码设置此关系。如果将其设置为先决条件，便可确保它们先发生tick事件，而后轮到当前组件。请参阅<a id="content_link" href="../../../Programming/UnrealArchitecture/Actors/Ticking/index.html" ><span>Tick依赖关系</span></a>
+页面以了解更多信息。
+</p>
+</div><p>使用“从网格体复制姿势”时要考虑的一些要素包括，它比主姿势组件的开销更大，因为它会在每个子代上运行动画。此外，如果想要在子代上使用物理效果，则需要改为使用<a id="content_link" href="../NodeReference/SkeletalControls/RigidBody/index.html" ><span>刚体</span><span class="newlink">NEW!</span></a>
+或<a id="content_link" href="../NodeReference/SkeletalControls/AnimDynamics/index.html" ><span>AnimDynamics</span></a>
+骨架控制节点。
+</p><p>在动画编辑器中预览动画时，可以指定更多将自动使用“从网格体复制姿势”的网格体。您还可以创建自定义 <strong>预览网格体集合</strong>，用来构建一起制作动画的相关骨架网格体集合（例如，一个角色的组成部分）。下面我们将说明如何为预览更改和分配不同的骨架网格体，以便为角色切换不同的头部。 
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_-a_GC1y2SA0"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="-a_GC1y2SA0" width="100%" height="100%" src="../../../../../external.html?link=https://www.youtube.com/embed/-a_GC1y2SA0?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_-a_GC1y2SA0
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_-a_GC1y2SA0:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style><h2 id="骨架网格体合并">骨架网格体合并</h2>
+
+<p>在运行时，可以通过代码，利用 <code >FSkeletalMeshMerge</code> 将多个骨架网格体合并为一个骨架网格体。虽然这样初始创建骨架网格体的成本较高，但渲染成本会降低，因为您只需渲染一个骨架网格体，而不是多个网格体。例如，如果您的一个角色由三个组件（头、身体和腿）组成，而屏幕上有50个角色，这就会导致 <strong>50次绘制调用</strong>。如果不使用骨架网格体合并，则每个组件都有自己的绘制调用，因此每个角色有三个调用，总共产生 <strong>150次绘制调用</strong>。 
+</p><p>在使用 <code >FSkeletalMeshMerge</code> 时，您的主“身体”必须包含所有动画，因为合并后的网格体仅使用设置的骨架，而不包含您需要添加动画的所有关节。如果您的某些身体部位有额外的关节，还必须在身体上包含所有动画。其他要考虑的事情包括，只能在合并的网格体上运行一个动画，而且不支持将变形目标传输到合并的网格体。但是，如果查看 <code >FSkeletalMeshMerge::GenerateLODModel</code>，当您有了骨架网格体后，就可以通过计算基本网格体和任意变形之间的 <code >FMorphTargetDelta</code> 来创建变形目标。 
+</p><p>此外，在使用 <code >FSkeletalMeshMerge</code> 时，您很可能需要从头开始以一种特定方式构建内容。您需要使用一个常用材质，并决定纹理图集（例如，靴子放这个区域，手套放这个区域等），这样就可以对纹理进行裁剪和拼接，创建新纹理并将整个角色渲染为一个分段。 
+</p><h3 id="网格体合并示例">网格体合并示例</h3>
+
+<p>在以下示例中，我们使用网格体合并代码在运行时组装多个骨架网格体。 
+</p><p><img alt="Individual_Meshes.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/WorkingwithModularCharacters/Individual_Meshes.jpg" />
+</p><p>在上图中，我们需要在运行时连接多个骨架网格体以形成一个骨架网格体。在该示例中，我们创建一个可以通过蓝图调用的函数，名为 <strong>网格体合并（Mesh Merge）</strong>，它将让我们能够定义想要合并起来的网格体。需要做的第一件事是根据<a id="content_link" href="../../../Programming/BlueprintFunctionLibraries/index.html" ><span>蓝图函数库</span></a>
+创建C++类，以便从任意蓝图调用该函数，我们将其命名为 <strong>MeshMergeFunctionLibrary</strong>。 
+</p><p><img alt="Blueprint_FunctionLibrary.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/WorkingwithModularCharacters/Blueprint_FunctionLibrary.jpg" />
+</p><p>下面我们提供了相同的代码块，供您在您的 <strong>标头</strong> 和 <strong>源代码</strong> 文件中使用： 
+</p><p><strong>.h示例代码</strong>
+</p>
+<pre class="prettyprint"><code>//在项目设置的“描述”页面中填写版权声明。
+#pragma once
+#include "CoreMinimal.h"
+#include "Kismet/BlueprintFunctionLibrary.h"
+#include "UObject/NoExportTypes.h"
+#include "MeshMergeFunctionLibrary.generated.h"
+/**
+* 等效于FSkeleMeshMergeSectionMapping的蓝图
+* 用于将单个源骨架网格体的所有分段映射到
+* 合并后骨架网格体中的最后一个分段条目的信息。
+*/
+USTRUCT(BlueprintType)
+struct PROJECTNAME_API FSkelMeshMergeSectionMapping_BP
+{
+    GENERATED_BODY()
+        /**合并后骨架网格体的最终分段条目的索引*/
+        UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mesh Merge Params")
+        TArray SectionIDs;
+};
+/**
+* 用于包含一个网格体的一组UV变换。
+*/
+USTRUCT(BlueprintType)
+struct PROJECTNAME_API FSkelMeshMergeUVTransform
+{
+    GENERATED_BODY()
+        /** 在给定网格体上应如何变换UV的列表，其中索引表示具体的UV通道。*/
+        UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mesh Merge Params")
+        TArray UVTransforms;
+};
+/**
+* 等效于FSkelMeshMergeUVTransforms的蓝图
+* 用于映射所有分段的有关如何变换UV的信息
+*/
+USTRUCT(BlueprintType)
+struct PROJECTNAME_API FSkelMeshMergeUVTransformMapping
+{
+    GENERATED_BODY()
+        /** 对于每个网格体上的每个UV通道，描述应如何变换UVS。*/
+        UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mesh Merge Params")
+        TArray UVTransformsPerMesh;
+};
+/**
+* 包含用于执行骨架网格体合并的所有参数的结构。
+*/
+USTRUCT(BlueprintType)
+struct PROJECTNAME_API FSkeletalMeshMergeParams
+{
+    GENERATED_BODY()
+        FSkeletalMeshMergeParams()
+    {
+        MeshSectionMappings = TArray();
+        UVTransformsPerMesh = TArray();
+        StripTopLODS = 0;
+        bNeedsCpuAccess = false;
+        bSkeletonBefore = false;
+        Skeleton = nullptr;
+    }
+    // 一个可选数组，用于将源网格体的分段映射到合并后的分段条目
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        TArray MeshSectionMappings;
+    // 一个可选数组，用于变换每个网格体中的UV
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        TArray UVTransformsPerMesh;
+    // 要合并的骨架网格体的列表。
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        TArray MeshesToMerge;
+    // 要从输入网格体移除的高LOD的数量
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        int32 StripTopLODS;
+    // CPU是否会因任何原因（例如，产生粒子效果）而需要访问所产生的网格体。
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        uint32 bNeedsCpuAccess :1;
+    // 先更新骨架再合并。否则，合并后更新。
+    // 还必须提供骨架。
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+        uint32 bSkeletonBefore :1;
+    // 将用于合并后网格体的骨架。
+    // 如果生成的骨架正常，则留空。
+    UPROPERTY(EditAnywhere, BlueprintReadOnly)
+        class USkeleton* Skeleton;
+};
+/**
+*
+*/
+UCLASS()
+class PROJECTNAME_API UMeshMergeFunctionLibrary : public UBlueprintFunctionLibrary
+{
+    GENERATED_BODY()
+public:
+    /**
+    * 将指定的网格体合并为一个网格体。
+    * @return合并的网格体（如果合并失败将失效）。
+    */
+    UFUNCTION(BlueprintCallable, Category = "Mesh Merge", meta = (UnsafeDuringActorConstruction = "true"))
+        static class USkeletalMesh* MergeMeshes(const FSkeletalMeshMergeParams&amp; Params);
+};
+~~~</code></pre>
+<p>在标头中，需要将所有 <strong>PROJECTNAME_API</strong> 引用更改为引用实际项目名称。例如，如果项目名为“MyProject”，需要在所有出现的引用中改为使用 <strong>MYPROJECT_API</strong>，这样代码才能起作用。 
+</p><p><strong>.cpp示例代码</strong>
+</p>
+<pre class="prettyprint"><code>//在项目设置的“描述”页面中填写版权声明。
+#include "MeshMergeFunctionLibrary.h"
+#include "SkeletalMeshMerge.h"
+#include "Engine/SkeletalMeshSocket.h"
+#include "Engine/SkeletalMesh.h"
+#include "Animation/Skeleton.h"
+static void ToMergeParams(const TArray&lt;FSkelMeshMergeSectionMapping_BP&gt;&amp; InSectionMappings, TArray&lt;FSkelMeshMergeSectionMapping&gt;&amp; OutSectionMappings)
+{
+    if (InSectionMappings.Num() &gt; 0)
+    {
+        OutSectionMappings.AddUninitialized(InSectionMappings.Num());
+        for (int32 i = 0; i &lt; InSectionMappings.Num(); ++i)
+        {
+            OutSectionMappings&#91;i&#93;.SectionIDs = InSectionMappings&#91;i&#93;.SectionIDs;
+        }
+    }
+}
+static void ToMergeParams(const TArray&lt;FSkelMeshMergeUVTransformMapping&gt;&amp; InUVTransformsPerMesh, TArray&lt;FSkelMeshMergeUVTransforms&gt;&amp; OutUVTransformsPerMesh)
+{
+    if (InUVTransformsPerMesh.Num() &gt; 0)
+    {
+        OutUVTransformsPerMesh.Empty();
+        OutUVTransformsPerMesh.AddUninitialized(InUVTransformsPerMesh.Num());
+        for (int32 i = 0; i &lt; InUVTransformsPerMesh.Num(); ++i)
+        {
+            TArray&lt;TArray&lt;FTransform&gt;&gt;&amp; OutUVTransforms = OutUVTransformsPerMesh&#91;i&#93;.UVTransformsPerMesh;
+            const TArray&lt;FSkelMeshMergeUVTransform&gt;&amp; InUVTransforms = InUVTransformsPerMesh&#91;i&#93;.UVTransformsPerMesh;
+            if (InUVTransforms.Num() &gt; 0)
+            {
+                OutUVTransforms.Empty();
+                OutUVTransforms.AddUninitialized(InUVTransforms.Num());
+                for (int32 j = 0; j &lt; InUVTransforms.Num(); j++)
+                {
+                    OutUVTransforms&#91;i&#93; = InUVTransforms&#91;i&#93;.UVTransforms;
+                }
+            }
+        }
+    }
+}
+USkeletalMesh* UMeshMergeFunctionLibrary::MergeMeshes(const FSkeletalMeshMergeParams&amp; Params)
+{
+    TArray&lt;USkeletalMesh*&gt; MeshesToMergeCopy = Params.MeshesToMerge;
+    MeshesToMergeCopy.RemoveAll(&#91;&#93;(USkeletalMesh* InMesh)
+    {
+        return InMesh == nullptr;
+    });
+    if (MeshesToMergeCopy.Num() &lt;= 1)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Must provide multiple valid Skeletal Meshes in order to perform a merge."));
+        return nullptr;
+    }
+    EMeshBufferAccess BufferAccess = Params.bNeedsCpuAccess ?
+        EMeshBufferAccess::ForceCPUAndGPU :
+        EMeshBufferAccess::Default;
+    TArray&lt;FSkelMeshMergeSectionMapping&gt; SectionMappings;
+    TArray&lt;FSkelMeshMergeUVTransforms&gt; UvTransforms;
+    ToMergeParams(Params.MeshSectionMappings, SectionMappings);
+    ToMergeParams(Params.UVTransformsPerMesh, UvTransforms);
+    bool bRunDuplicateCheck = false;
+    USkeletalMesh* BaseMesh = NewObject&lt;USkeletalMesh&gt;();
+    if (Params.Skeleton &amp;&amp; Params.bSkeletonBefore)
+    {
+        BaseMesh-&gt;Skeleton = Params.Skeleton;
+        bRunDuplicateCheck = true;
+        for (USkeletalMeshSocket* Socket :BaseMesh-&gt;GetMeshOnlySocketList())
+        {
+            if (Socket)
+            {
+                UE_LOG(LogTemp, Warning, TEXT("SkelMeshSocket:%s"), *(Socket-&gt;SocketName.ToString()));
+            }
+        }
+        for (USkeletalMeshSocket* Socket :BaseMesh-&gt;Skeleton-&gt;Sockets)
+        {
+            if (Socket)
+            {
+                UE_LOG(LogTemp, Warning, TEXT("SkelSocket:%s"), *(Socket-&gt;SocketName.ToString()));
+            }
+        }
+    }
+    FSkeletalMeshMerge Merger(BaseMesh, MeshesToMergeCopy, SectionMappings, Params.StripTopLODS, BufferAccess, UvTransforms.GetData());
+    if (!Merger.DoMerge())
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Merge failed!"));
+        return nullptr;
+    }
+    if (Params.Skeleton &amp;&amp; !Params.bSkeletonBefore)
+    {
+        BaseMesh-&gt;Skeleton = Params.Skeleton;
+    }
+    if (bRunDuplicateCheck)
+    {
+        TArray&lt;FName&gt; SkelMeshSockets;
+        TArray&lt;FName&gt; SkelSockets;
+        for (USkeletalMeshSocket* Socket :BaseMesh-&gt;GetMeshOnlySocketList())
+        {
+            if (Socket)
+            {
+                SkelMeshSockets.Add(Socket-&gt;GetFName());
+                UE_LOG(LogTemp, Warning, TEXT("SkelMeshSocket:%s"), *(Socket-&gt;SocketName.ToString()));
+            }
+        }
+        for (USkeletalMeshSocket* Socket :BaseMesh-&gt;Skeleton-&gt;Sockets)
+        {
+            if (Socket)
+            {
+                SkelSockets.Add(Socket-&gt;GetFName());
+                UE_LOG(LogTemp, Warning, TEXT("SkelSocket:%s"), *(Socket-&gt;SocketName.ToString()));
+            }
+        }
+        TSet&lt;FName&gt; UniqueSkelMeshSockets;
+        TSet&lt;FName&gt; UniqueSkelSockets;
+        UniqueSkelMeshSockets.Append(SkelMeshSockets);
+        UniqueSkelSockets.Append(SkelSockets);
+        int32 Total = SkelSockets.Num() + SkelMeshSockets.Num();
+        int32 UniqueTotal = UniqueSkelMeshSockets.Num() + UniqueSkelSockets.Num();
+        UE_LOG(LogTemp, Warning, TEXT("SkelMeshSocketCount:%d &#124; SkelSocketCount:%d &#124; Combined:%d"), SkelMeshSockets.Num(), SkelSockets.Num(), Total);
+        UE_LOG(LogTemp, Warning, TEXT("SkelMeshSocketCount:%d &#124; SkelSocketCount:%d &#124; Combined:%d"), UniqueSkelMeshSockets.Num(), UniqueSkelSockets.Num(), UniqueTotal);
+        UE_LOG(LogTemp, Warning, TEXT("Found Duplicates:%s"), *((Total != UniqueTotal) ?FString("True") :FString("False")));
+    }
+    return BaseMesh;
+}</code></pre>
+<p>当您在编辑器中编译完代码后，就会创建具有 <strong>骨架网格体组件</strong> 和 <strong>骨架网格体参数</strong> 类型的公开变量的ActorBlueprint。该变量将为您提供多个属性，不仅可以定义要合并的骨架网格体，还可以定义如何合并这些网格体和其他选项。
+</p><p><img alt="SkelMeshParams.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/WorkingwithModularCharacters/SkelMeshParams.jpg" />
+</p><p>以下是您可以用来定义如何合并骨架网格体的选项： 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>网格体分段映射（Mesh Section Mappings）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是一个可选数组，用于将源网格体的分段映射到合并后的分段条目。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>每个网格体的UV变换（UVTransforms Per Mesh）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是一个可选数组，用于变换每个网格体中的UV。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>要合并的网格体（Meshes to Merge）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这些是将要合并起来的骨架网格体。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>分割顶级LOD（Strip Top LOD）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>要从输入网格体中移除的顶级LOD数量。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>需要CPU访问（Needs Cpu Access）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>CPU是否会因任何原因（例如，产生粒子效果）而需要访问所产生的网格体。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>骨架先于（Skeleton Before）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是在合并之前还是之后更新骨架（还必须提供骨架）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>骨架（Skeleton）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是将用于合并后网格体的骨架。如果生成的骨架正常，则留空。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>在 <strong>事件图形（Event Graph）</strong> 内部，在 <strong>事件开始播放（Event Begin Play）</strong> 时，使用以下节点网络。 <br /></p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/WorkingwithModularCharacters/MeshMergeBPScript.png" ><span><img alt="MeshMergeBPScript.png" width="900" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/WorkingwithModularCharacters/MeshMergeBPScript.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p>单击查看大图。<br /></p><p>您可以使用新的蓝图函数 <strong>合并网格体</strong>，通过网格体合并参数传递来返回骨架网格体对象引用。然后可以使用添加到蓝图的 <strong>骨架网格体组件</strong> 作为目标，以设置要使用的新骨架网格体，并将它指向合并网格体函数调用的返回值。在以上示例中，我们还可以为骨架网格体分配闲置动画，以在所有网格体合并完成后播放。 <br /></p><p>在将网格体合并蓝图添加到关卡后，在 <strong>细节（Details）</strong> 面板内部，可以定义 <strong>网格体合并参数（Mesh Merge Parameters）</strong>，包括要使用的 <strong>要使用的网格体（Meshes to Use）</strong> 和 <strong>骨架（Skeleton）</strong> 资源。 <br /></p><p><img alt="AssignedDetails-1.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/WorkingwithModularCharacters/AssignedDetails-1.jpg" />
+</p><p>在运行时，网格体合并函数将根据定义的网格体执行并组装骨架网格体。
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_N4dri0RLZFg"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="N4dri0RLZFg" width="100%" height="100%" src="../../../../../external.html?link=https://www.youtube.com/embed/N4dri0RLZFg?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_N4dri0RLZFg
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_N4dri0RLZFg:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style><h2 id="比较图表">比较图表</h2>
+
+<p>无论您是使用 <strong>主姿势组件</strong>、<strong>从网格体复制姿势</strong> 还是 <strong>骨架网格体合并</strong>，每种方法都存在一些优势和劣势。下表概括了各自关联的设置和性能成本，以及支持（或不支持）的其他功能。<br /></p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>主姿势 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>复制姿势 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>网格体合并 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>设置成本</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>最小</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>中等</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>高</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>游戏线程成本</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>最小</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>高</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>中等</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>渲染线程成本</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>高</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>高</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>低</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>物理</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>否</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>AnimDynamics或刚体</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>变形目标</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>否</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8d3c.html">undefined</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Animation/WorkingwithModularCharacters/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:10:14 GMT -->
+</html>

@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Content/Tools/PivotPainter/PivotPainter2/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:09 GMT -->
+<head>
+    <title>Pivot Painter工具2.0  | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/INT/Engine/Content/Tools/PivotPainter/PivotPainter2/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/KOR/Engine/Content/Tools/PivotPainter/PivotPainter2/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/JPN/Engine/Content/Tools/PivotPainter/PivotPainter2/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/CHN/Engine/Content/Tools/PivotPainter/PivotPainter2/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3807090" />
+<meta name="availability" content="Public" />
+<meta name="title" content="Pivot Painter工具2.0 " />
+<meta name="description" content="Pivot Painter 2.0 MAXScript的相关指南，该软件将模型枢轴和旋转数据存储在顶点内以用于交互动画。" />
+<meta name="type" content="Overview" />
+<meta name="skilllevel" content="Advanced" />
+<meta name="version" content="4.16" />
+<meta name="parent" content="Engine/Content/Tools/PivotPainter" />
+<meta name="order" content="2" />
+<meta name="related" content="Engine/Content/Tools/PivotPainter/PivotPainter2/Reference/" />
+<meta name="related" content="Engine/Rendering/Materials/Functions/Reference/PivotPainter2" />
+<meta name="related" content="Engine/Content/Tools/PivotPainter/PivotPainter1" />
+<meta name="related" content="Resources/ContentExamples/PivotPainter/" />
+<meta name="topic-image" content="PivotPainter2_Topic.png" />
+<meta name="social-image" content="PivotPainter2_Social.png" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="Pivot Painter工具2.0 " />
+	<meta property="og:description" content="Pivot Painter 2.0 MAXScript的相关指南，该软件将模型枢轴和旋转数据存储在顶点内以用于交互动画。" />
+		<meta property="og:image" content="https://docs.unrealengine.com/latest/images/Engine/Content/Tools/PivotPainter/PivotPainter2/PivotPainter2_Social.png" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">枢轴点绘制工具</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_16"><a id="version_link" href="../../../../../SiteIndex/index6b5c.html">Unreal Engine 4.16</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">Pivot Painter工具2.0 </h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+                            <div class="version_tag_filter 4_16"><a id="version_link" href="../../../../../SiteIndex/index6b5c.html">Unreal Engine 4.16</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#pivotpainter2stop0的新功能">Pivot Painter 2.0的新功能</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#3dsmax版本和脚本信息">3DS Max版本和脚本信息</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#导入资源">导入资源</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#编写着色器">编写着色器</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#其他注意事项">其他注意事项</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#故障排除">故障排除</a>
+	</li>		    	        </ul>
+</div>
+<!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_Kcqm89nu0tw"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="Kcqm89nu0tw" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/Kcqm89nu0tw?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;loop=1&amp;controls=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_Kcqm89nu0tw
+{
+	margin: 0px;
+	width: 100%;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_Kcqm89nu0tw:after
+{
+	content: "";
+	padding-top: 56.25%;
+	display: block;
+}
+</style><p> <strong>Pivot Painter 2.0</strong> MAXScript将枢轴和旋转信息存储在模型的纹理中。这些纹理随后即可在Unreal的着色器系统内引用，以创建交互效果。 
+</p><p>示例视频中显示的动作由顶点着色器按步骤实时生成。Pivot Painter材质函数为模型的每个树叶和树枝生成动作继承
+信息。每个元素都使用单个枢轴点、方向矢量、边界大小和继承动作进行动画处理。其效果流畅且真实。
+</p><p>随着<a id="content_link" href="../../../../Rendering/Materials/Functions/Reference/PivotPainter/index.html" ><span>Pivot Painter 2的材质函数</span></a>
+的加入，创建这些类型的材质已变得更加简单。示例内容<a id="content_link" href="../../../../../Resources/ContentExamples/PivotPainter/index.html" ><span>如内容示例中给出的内容</span></a>
+
+展示了如何生成诸如以上所示的动画，因此也大有帮助。现在，检索子对象枢轴点已经十分简单，只需在3D Studio Max中使用Pivot Painter脚本处理网格体， 
+导入文件，然后使用可用的Pivot Painter函数创建材质。示例植物动作材质函数支持深达4层的层级和30,000个模型元素。 
+</p><p>以这种方式创建动作有其优势。使用此技术处理的模型比标准静态网格体（Static Mesh）仅仅多使用一个UV信道，但其动画在成本上却远远低于骨架动画， 
+因为它们都是实时计算的。在图形方面，顶点着色器指令计数通常不会像像素指令计数那么容易出现性能问题，因为模型上顶点的数 
+通常明显少于该模型所绘制像素的数量。 
+</p><div class="note">
+	<p>如需深入了解本页面所示的一些示例，您可以从Epic Games启动器（Epic Games Launcher）下载 <a id="content_link" href="../../../../../Resources/ContentExamples/index.html" ><span>内容示例</span></a>
+ 项目，并打开 <strong>PivotPainter2</strong> 地图。
+</p><p><img alt="CE_PivotPainter2Map.png" width="500" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/CE_PivotPainter2Map.jpg" />
+</p>
+</div><a name="what'snewforpivotpainter2stop0" ></a><h2 id="pivotpainter2stop0的新功能">Pivot Painter 2.0的新功能</h2>
+
+<p>随着 Pivot Painter 2.0 的推出，您会发现MAXScript已经有了一些改进和变化。虽然一些选项已经删除（例如层级格式刷（Hierarchy Painter））或重命名（例如按对象格式化（Per Object Painter）更名为顶点Alpha格式刷（Vertex Alpha Painter）），
+但这对整个工作流程而言却是一种改进，简化了创建这些类型具体资源的过程。这一切都是为了扩展Pivot Painter 2的功能而服务，以获得
+比之前更好的效果，最终在您开发自己的内容时为您提供最丰富的选项。请阅读下文，了解已添加的其他改进。
+</p><a name="workflowimprovements" ></a><h3 id="工作流程改进">工作流程改进</h3>
+
+<p>装置预处理步骤现在可通过3DS Max的标准 <strong>链接（Link）</strong> 工具完成。只需将树木建模为单独的逻辑元素，例如树叶和树枝。确保将它们枢轴在位置和方向上都很理想
+（X轴沿对象长度向下），然后将它们连接在一起，如同传统装置中的一个整体。
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_2Db9AREZbb0"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="2Db9AREZbb0" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/2Db9AREZbb0?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;loop=1&amp;controls=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_2Db9AREZbb0
+{
+	margin: 0px;
+	width: 75%;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_2Db9AREZbb0:after
+{
+	content: "";
+	padding-top: 56.25%;
+	display: block;
+}
+</style><p>最终，这让制作复杂植物变得更加简单。您可以设置、复制然后放置一个树枝。重新父子化的树枝也将保留其子项的层级排列。
+</p><p>将树木设置并建模后，只需选择树木中以及和渲染选项（Render Options Section）分段下的任意元素，并按下 <strong>处理所选对象层级（Process The Selected Object Hierarchy）</strong> 按钮。脚本将自动
+遍历所选元素的层级以查找其根，然后返回关系链以收集和处理其所有子项，最后使用从可用的
+渲染选项（Render Option）中选择的任意数据渲染纹理。 
+</p><p><img alt="ScriptMotion_UI.png" width="950" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/ScriptMotion_UI.jpg" />
+</p><div class="caption">
+	<p>此方法同时支持单个元素和链接元素。对于既有草地又有树的模型，则可一次性选择每片树叶，然后从树中选择一个元素，再按下 <strong>处理所选对象层级（Process Selected Object Hierarchy）</strong> 按钮。
+</p>
+</div><a name="texturecoordinatecontrol" ></a><h3 id="纹理坐标控制">纹理坐标控制</h3>
+
+<p>现在，您可以控制要写入哪一个UV集，这使您能够将此系统与其他系统（例如<a id="content_link" href="../../../../Animation/Tools/VertexAnimationTool/index.html" ><span>顶点动画工具</span></a>
+）相结合。另外，在Pivot Painter 2.0中
+选择的首选项标注在最终输出纹理名称中，用作有效的提醒。 
+</p><p>以下是自动命名约定： 
+</p>
+<pre class="prettyprint"><code>&#91;MeshName&#93;_rgb_&#91;当前纹理RGB选择&#93;_a_&#91;Alpha选择&#93;_&#91;UV通道&#93;</code></pre>
+<p>示例最终输出看上去与此类似。 
+</p>
+<pre class="prettyprint"><code>ExampleMesh_rgb_PivotPos_a_ParentIndex_UV_2</code></pre>
+<a name="extensibility" ></a><h3 id="扩展性">扩展性</h3>
+
+<p>由于处理和渲染代码已彻底抽象化，日后只需执行极少量的工作即可添加新渲染选项。 
+</p><a name="newrenderingoptions" ></a><h3 id="新渲染选项">新渲染选项</h3>
+
+<p>作为MAXScript改进的一部分，场景背后使用了一种新位移算法，该算法将整数存储为浮点数据。由此使层级深度得以扩展，并将最大对象计数从3,000增加至30,000，而这对 
+呈现复杂植物而言至关重要。
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_Kcqm89nu0tw"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="Kcqm89nu0tw" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/Kcqm89nu0tw?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;loop=1&amp;controls=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_Kcqm89nu0tw
+{
+	margin: 0px;
+	width: 75%;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_Kcqm89nu0tw:after
+{
+	content: "";
+	padding-top: 56.25%;
+	display: block;
+}
+</style><div class="caption">
+	<p><em>此特定树资源包含14,431个子模型。</em>
+</p>
+</div><ul ><li><p><strong>16位RGB：</strong>
+</p><ul ><li><p>枢轴点位置（Pivot Point Location）
+</p></li><li><p>原点位置（Origin Positon）
+</p></li><li><p>原点范围（Origin Extents）
+</p></li></ul></li><li><p><strong>8位RGB：</strong>
+</p><ul ><li><p>对象基础向量（Object Basis Vectors）（一次一个矢量）
+</p></li></ul></li><li><p><strong>16位Alpha：</strong>
+</p><ul ><li><p>父级索引（Parent Index）（整数存储为浮点数）
+</p></li><li><p>从根开始的步数（Number of Steps From Root）
+</p></li><li><p>各元素的随机0-1值（Random 0-1 Value Per Element）
+</p></li><li><p>边界框直径（Bounding Box Diameter）
+</p></li><li><p>选择顺序（Selection Order）（整数存储为浮点数）
+</p></li><li><p>规格化0-1层级位置（Normalized 0-1 Hierarchy Position）
+</p></li><li><p>对象从枢轴位置开始在X、Y、Z轴方向上的边界长度（Object X,Y, Z Bound Lengths From Pivot Location）
+</p></li><li><p>父级索引（Parent Index）（浮点数 - 最多2048个）
+</p></li></ul></li><li><p><strong>8位Alpha：</strong>
+</p><ul ><li><p>层级中的规格化0-1位置（Normalized 0-1 Position in the Hierarchy）
+</p></li><li><p>各元素的随机0-1值（Random 0-1 Value Per Element）
+</p></li><li><p>对象在X、Y、Z轴方向上的边界长度（Object X,Y, Z Bounds Length）（最大为2048）
+</p></li></ul></li></ul><a name="recreatingboundingboxes" ></a><h3 id="重新创建边界框">重新创建边界框</h3>
+
+<p>使用 3DS Max 时，模型的边界框会随着其子对象几何图形在建模过程中移位而扩展。该对象的边界框在此过程中不再朝向网格体或 
+与网格体对齐。当您改变网格体的枢轴变形时，上述现象便会发生。为了消解这种现象，<strong>重新创建边界框（Recreate Bounding Boxes）</strong>分段将使用与网格体枢轴点正确对齐并朝向该网格体
+枢轴点的边界框替换所选网格体的边界框，这对于脚本的其他数据收集功能（顶点Alpha格式刷和边界信息（Vertex Alpha Painter and Bound Information）非常有用。 
+</p><p><img alt="BoundingBox.png" width="900" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/BoundingBox.jpg" />
+<div class="caption">
+	<p> 在左侧，模型的枢轴变形已发生改变，但边界框并未正确对齐或定向。使用重新创建边界框（Recreate Bounding Boxes）分段下的 <strong>处理所选对象（Process Selected Objects）</strong> 按钮后，最右侧模型的边界框已正确对齐和定向。</p>
+</div>
+</p><a name="mergeselectedmodel'snormals" ></a><h3 id="合并所选模型的法线">合并所选模型的法线</h3>
+
+<p>合并所选模型的法线（Merge Selected Model's Normal）功能可以在多个模型上均衡法线，其中开放边缘顶点恰好位于彼此之上。此选项将解决将单个模型
+分解为多个部分以专门与Pivot Painter一起使用时出现的法线接缝问题。 
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align="center"/>
+	<col align="center"/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="MergeMeshNormalsButton.png" width="350" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/MergeMeshNormalsButton.jpg" />
+</p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Before" width="775" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/MergeMeshNormals1.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="After" width="775" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/MergeMeshNormals2.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="center">
+		<p>按下合并网格体法线（Merge Mesh Normal）按钮以调节任何相交开放面的法线。</p>
+		</td>
+		<td rowspan="1" colspan="1" align="center">
+		<p>合并法线前，法线与每一个面对齐。合并之后，法线更紧密地对齐，从而使边缘更自然地融合在一起。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="3dsmaxversionandscriptinformation" ></a><h2 id="3dsmax版本和脚本信息">3DS Max版本和脚本信息</h2>
+
+<p>此工具目前已在 <strong>3DS Max 2015</strong> 和 <strong>2016</strong> 上经过测试。但它尚未专门在其他版本的3DS Max上进行测试，因此请注意，使用这些版本的3DS Max时可能 
+会遇到问题。
+</p><p>若要安装MAXScript，只需将其从 <strong>[UE4Directory]/Engine/Extras/3dsMaxScripts/PivotPainter2.ms</strong> 拖放至3DS Max视口，脚本随后将自动启动。
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_NxFokPHgutI"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="NxFokPHgutI" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/NxFokPHgutI?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;loop=1&amp;controls=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_NxFokPHgutI
+{
+	margin: 0px;
+	width: 75%;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_NxFokPHgutI:after
+{
+	content: "";
+	padding-top: 56.25%;
+	display: block;
+}
+</style><div class="tip">
+	<p>如果您发现自己经常使用此脚本，则可将其添加至其中一个工具栏或四边形菜单内。如果您不熟悉如何执行此操作，_Autodesk_网站列出了<a id="content_link" href="../../../../../../../external.html?link=http://knowledge.autodesk.com/support/3ds-max/learn-explore/caas/CloudHelp/cloudhelp/2015/ENU/3DSMax/files/GUID-A2CF8BAA-7B52-40A8-8C40-803B1AB5FC05-htm.html" ><span>非常详细的操作步骤</span></a>
+
+，它将为您说明操作过程。 
+</p>
+</div><a name="3dsmaxunitsetup
+" ></a><h3 id="3dsmax单位设置">3DS Max单位设置</h3>
+
+<p>开始使用此工具前，您需要首先确保，3DS Max使用的度量单位已经过设置以正确匹配并与UE4使用的度量单位。这样您就可以确保
+该工具从3DS Max 导出的数据将UE4中以同样的方式运行。因为UE4使用厘米作为默认的度量单位，所以您需要确保3DS Max也使用厘米作为
+度量单位。若要在3DS Max中更改此设置，请执行以下操作：
+</p><ol ><li><p>打开3DS Max，从主工具栏（Main Toolbar）选择 <strong>自定义（Customize）</strong> > <strong>单位设置（Unit Setup）</strong>。
+</p></li><li><p>然后单击 <strong>系统单位设置（System Unit Setup）</strong> 按钮和 <strong>系统单位比例（System Unit Scale）</strong> 分段。使用下拉菜单，将设置从 <strong>英寸（inches）</strong> 更改为 <strong>厘米（centimeters）</strong>。然后按下 <strong>确定（OK）</strong> 按钮。 
+1.最后，将 <strong>显示单位比例（Display Unit Scale）</strong> 更改为 <strong>通用单位（Generic Units）</strong>，然后按下 <strong>确定（OK）</strong> 按钮。
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_lZ6d6Q902qw"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="lZ6d6Q902qw" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/lZ6d6Q902qw?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;loop=1&amp;controls=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_lZ6d6Q902qw
+{
+	margin: 0px;
+	width: 75%;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_lZ6d6Q902qw:after
+{
+	content: "";
+	padding-top: 56.25%;
+	display: block;
+}
+</style></li></ol><a name="importingassets" ></a><h2 id="导入资源">导入资源</h2>
+
+<p>导入资源时，您应注意以下几项，以获得最佳效果。按照以下所示的 <strong>静态网格体（Static Meshe）</strong> 和 <strong>纹理</strong> 设置进行操作。
+</p><a name="staticmeshes" ></a><h3 id="静态网格体">静态网格体</h3>
+
+<p>在 <strong>导入选项(Import Option)</strong> 窗口中，确保取消勾选 <strong>骨架网格体（Skeletal Mesh）</strong>，并启用 <strong>组合网格体（Combined Mesh）</strong>。
+</p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+<tbody>
+<tr>
+	<th rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 静态网格体导入选项（Static Mesh Import Option）</p>
+</div></p>
+		</th>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/ImportOptions.png" ><span><img alt="ImportOptions.png" width="250" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/ImportOptions.jpg" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p><em>单击图片以查看完整尺寸视图</em>
+</p>
+</div>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<ul ><li><p><strong>骨架网格体（Skeletal Mesh）：</strong> 已取消勾选
+</p></li><li><p><strong>组合网格体（Combine Mesh）：</strong>已启用
+</p></li></ul>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> [可选]静态网格构建设置（Static Mesh Build Setting）</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/SMBuildSettings.png" ><span><img alt="SMBuildSettings.png" width="250" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/SMBuildSettings.jpg" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p><em>单击图片以查看完整尺寸视图</em>
+</p>
+</div>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<ul ><li><p>如果已为项目启用了网格体距离场（Mesh Distance Field），您可能需要从静态网格体编辑器构建设置（Static Mesh Editor Build Setting）中启用 <strong>按照双面条件生成距离场（Generate Distance Field as if Two-Sided）</strong>。视具体内容而定，您可能根本不需要启用距离场。在这种情况下，您应将 <strong>距离场分辨率比例（Distance Field Resolution Scale）</strong> 设置为0，或者从 <strong>关卡详细信息（Level Detail）</strong> 面板中取消勾选 <strong>影响距离场照明（Affect Distance Field Lighting）</strong> 选项。 
+</p></li><li><p>对于某些内容，如果您发现树叶正偏离其位置，则可能需要启用 <strong>全精度 UV（Full Precision UV）</strong>。
+</p></li></ul>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><div class="note">
+	<p>建议您在每次更新时执行“完全”重新导入（覆盖之前的模型），而非使用 <strong>重新导入（Reimport）</strong> 选项。这是预防任何材质问题的最安全方法。
+</p>
+</div><a name="textures" ></a><h3 id="纹理">纹理</h3>
+
+<p>导入使用Pivot Painter 2.0创建的已生成纹理后，请确保打开纹理资源（Texture Asset）并设置以下各项：<br /></p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+<tbody>
+<tr>
+	<th rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 8 位BMP纹理设置（Texture Setting） </p>
+</div></p>
+		</th>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/Texture8BitSettings.png" ><span><img alt="Texture8BitSettings.png" width="250" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/Texture8BitSettings.jpg" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p><em>单击图片以查看完整尺寸视图</em>
+</p>
+</div>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<ul ><li><p><strong>Mip 通用设置（Mip Gen Setting）:</strong>NoMipMaps
+</p></li><li><p><strong>压缩设置（Compression Setting）：</strong>VectorDisplacementMap(RGBA8)
+</p></li><li><p><strong>sRGB：</strong>已取消勾选
+</p></li><li><p><strong>筛选器（Filter）：</strong>最近
+</p></li></ul>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 16位EXR纹理设置（Texture Setting） </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/Texture16BitSettings.png" ><span><img alt="Texture16BitSettings.png" width="250" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/Texture16BitSettings.jpg" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p><em>单击图片以查看完整尺寸视图</em>
+</p>
+</div>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<ul ><li><p><strong>Mip 通用设置（Mip Gen Setting）:</strong>NoMipMaps
+</p></li><li><p><strong>压缩设置（Compression Setting）：</strong>HDR（RGB，无sRGB）
+</p></li><li><p><strong>sRGB：</strong>已取消勾选 
+</p></li><li><p><strong>筛选器（Filter）：</strong>最近
+</p></li></ul>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="writingshaders" ></a><h2 id="编写着色器">编写着色器</h2>
+
+<p>从Pivot Painter渲染的所有纹理为我们提供了许多工具来创建树木的子对象（树枝和树叶）的简单数学表达式。
+有了这些信息，我们便可以开始近似计算每个子资源对风吹源的反应，从而能够创建非常详细的元素层级来产生
+自然运动。
+</p><div class="note">
+	<p>如果您希望编写自己的着色器，则必须知道某些数据类型需要解压缩。这些解压缩函数使用以下命名约定：
+</p>
+<pre class="prettyprint"><code>ms_PivotPainter2_*</code></pre>
+<p>如果符合您的需要，就目前而言，PivotPainter2FolaigeShader材质函数（Material Function）本身可以作为有用的材质（Material）运行，或者也可用作您自有版本植物着色器的
+基架。有关可用于Pivot Painter的材质函数（Material Function），请访问<a id="content_link" href="../../../../Rendering/Materials/Functions/Reference/PivotPainter/index.html" ><span>Pivot Painter材质函数参考</span></a>
+页面。
+</p>
+</div><a name="pivotpainter2foliageshader" ></a><h3 id="pivotpainter2植物着色器">Pivot Painter 2植物着色器</h3>
+
+<p>现在，在材质（Material）内实现Pivot Painter 2.0动画已经非常简单，而且大量的后端工作已经为您设置完毕！您只需将 <strong>PivotPainter2FoliageShader</strong> 输入到
+材质（Material）代码中，然后建立与材质属性输入引脚（Material Attributes Input Pin）的最终连接即可。另外，您还需要确保在材质详细信息（Material Detail）面板中
+禁用 <strong>切线空间法线（Tangent Space Normals）</strong>。 
+</p><p><img alt="PivotPainter2FoliageShader.png" width="600" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/PivotPainter2FoliageShader.jpg" />
+</p><div class="note">
+	<p>此材质函数（Material Function）假设您已使用Pivot Painter的默认UV和纹理设置处理资源。
+</p>
+</div><p>创建材质实例（Material Instance）后，您将可以访问可用的风吹设置（Wind Setting），它们能够让您控制子对象层级。为了使用这些设置，您首先需要 
+为您希望对其施加影响的关卡启用 <strong>风吹设置（Wind Setting）</strong>。
+</p><div class="raw">
+	<p><img alt="EnableWindSettings.png" width="1000" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/EnableWindSettings.jpg" />
+</p>
+</div><p><div class="caption">
+	<p> 启用风吹设置（Wind Setting）后，该层级深度的可用选项将可见并可编辑。</p>
+</div>
+</p><p>现在，您便可以访问 <strong>共享风吹设置（Shared Wind Setting）</strong>，它们允许您从Pivot Painter分配已渲染的纹理。 
+</p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="SharedWindSettings.png" width="450" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/SharedWindSettings.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<ul ><li><p><strong>定位和索引纹理（Position and Index Texture）：</strong>将已渲染的枢轴定位纹理（Pivot Positional Texture）分配至此槽。
+</p></li><li><p><strong>X轴矢量和X轴范围纹理（X-Vector and X-Extent Texture）：</strong>将已渲染的X轴矢量和X轴范围纹理（X-Vector and X-Extent Texture）分配至此槽。
+</p></li></ul>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>分配正确的纹理后，您现在可以打开 <strong>风吹设置（Wind Setting）</strong> 群组，并启用所需的功能。每个风吹设置（Wind Setting）群组都控制着处于某一特定层级深度的
+网格体。在树木这一示例中，风吹设置1（Wind Setting 1）控制树干，下一群组控制树枝，以此类推。 
+</p><a name="windturbulenceandgusts" ></a><h3 id="风湍流和阵风">风湍流和阵风</h3>
+
+<p>此设置应当可以使您制作出美妙的植物动画。如果它们不是为您的喜好而量身定制的，您可以创建新的风吹湍流和阵风幅值纹理。为此，请使用矢量的RGB值 
+以抵消风吹矢量，然后使用alpha控制风力。着色器中对两个信道集都进行了单独采样。 
+</p><p><img alt="Parameter.png" width="600" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/Parameter.jpg" />
+<div class="caption">
+	<p> 使用纹理控制矢量偏移和风力以产生变化。</p>
+</div>
+</p><a name="optimizations" ></a><h3 id="优化">优化</h3>
+
+<p>在尝试优化效果时，懂得材质的工作原理将对您大有帮助。PivotPainter2FoliageShader材质函数（Material Function）已采用通用方式进行设计。它执行
+相同的风吹反应代码4次。每次使用其他设置集时，它便会在更深一步的一个层级关卡上执行。您可以打开PivotPainter2FoliageShader材质函数（Material Function）来了解其工作原理。
+</p><p><img alt="WindParameters.png" width="850" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/WindParameters.jpg" />
+<div class="caption">
+	<p> 如果您打开了PivotPainter2FolaigeShader材质函数（Material Function），在创建材质实例（Material Instance）时，您将找到公开的风吹层级深度（Wind Hierarchy Depth）的着色器功能网络。</p>
+</div>
+</p><p>现在，您可以使用以下分段了解能够使用的优化技术。
+</p><a name="materialinstance" ></a><h4 id="材质实例">材质实例</h4>
+
+<p>启用所有着色器功能后，您可以制作出相当昂贵的材质。禁用无需进行动画处理的风吹设置群组（Wind Setting Group）（或树木的层级关卡） 
+可优化着色器。例如，您只需启用风吹设置4（Wind Setting 4）即可自行对该模型的树叶进行动画处理。按照层级深度对风吹反应设置进行分组
+意味着应以相同方式对模型的元素进行分组。所有树叶应距离根对象“X”步远。行为相似的所有树枝也应要归入一组。 
+因此，建议您为树木之类的资源设置“父”或“主”材质实例（Material Instance），这样便可在其中轻松拥有多个层级。 
+</p><p><img alt="InstanceParents.png" width="350" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Tools/PivotPainter/PivotPainter2/InstanceParents.jpg" />
+</p><p>将基本材质（Base Material）实例化，以构建用于在单个位置定义所有风吹设置的“主”材质实例（Material Instance）。然后，使用其他材质实例（Material Instance）定义 
+层级的像素着色器组件，如树干、树枝和树叶的基本颜色纹理。这样，您还可以禁用和优化该层级深度 
+不需要的任何属性。
+</p><p>例如，树叶材质实例（Leaf Material Instance）需要模拟树干、两个树枝集和及树叶本身的效果，以便其可以随着树木的其他部分一起正确运动。另一方面，树干
+只需模拟树干动画，这意味着您可以禁用树叶和树枝的其他层级，因为它们并非必需项。
+</p><a name="bendnormal" ></a><h4 id="弯曲法线">弯曲法线</h4>
+
+<p>另一项应考虑的优化（尤其是当您编写自己的着色器或计划编辑此着色器时）则是我们用来弯曲法线的方法。当用户选择更新着色器中的法线时，<strong>PivotPainter2FoliageShader</strong> 材质函数（Material Function）
+会对表面法线执行实际旋转。使用自定义UV和 <strong>BlendAngleCorrectedNormals</strong> 材质函数（Material Function） 
+能够以更低的成本完成此操作（但有穿帮的风险）。
+</p><a name="additionaluseexample" ></a><h3 id="补充使用示例">补充使用示例</h3>
+
+<p>使用位置信息和层级深度，您可以创建自己的程序化增长或建筑动画，如下所示。您亦可参阅内容示例地图（Content Example Map）<strong>PivotPainter2</strong> 以了解
+关于如何设置这些类型示例的示例。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_Ror5uMuNRJ4"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="Ror5uMuNRJ4" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/Ror5uMuNRJ4?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_Ror5uMuNRJ4
+{
+	margin: 0px;
+	width: 560px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_Ror5uMuNRJ4:after
+{
+	content: "";
+	padding-top: 280px;
+	display: block;
+}
+</style>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_RGmGCrL6ZF8"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="RGmGCrL6ZF8" width="100%" height="100%" src="../../../../../../../external.html?link=https://www.youtube.com/embed/RGmGCrL6ZF8?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_RGmGCrL6ZF8
+{
+	margin: 0px;
+	width: 560px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_RGmGCrL6ZF8:after
+{
+	content: "";
+	padding-top: 280px;
+	display: block;
+}
+</style>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>这些示例可在Epic Games Launcher中的 <strong>学习（Learn）</strong> 选项卡所提供的 <strong>内容示例（Content Example）</strong> 项目中找到。打开 <strong>PivotPainter2.umap</strong> 以深入了解上述示例和其他示例。
+</p><a name="othernote" ></a><h2 id="其他注意事项">其他注意事项</h2>
+
+<ul ><li><p>UE4中现已不再使用风吹Actor（Wind Actor），后者可使用材质参数集和蓝图（Material Parameter Collection and Blueprint）来替代。您可以使用浮点4风吹Actor参数（Wind Actor Parameter）
+来创建更新材质参数集合（Material Parameter Collection）的蓝图。该材质参数集合（Material Parameter Collection）随后可以在给定的植物材质中引用，以替代风吹Actor（Wind Actor）。
+</p></li></ul><a name="troubleshooting" ></a><h2 id="故障排除">故障排除</h2>
+
+<p>如果模型看上去动画效果不佳，请尝试以下解决方案：
+</p><ul ><li><p>重新导入资源。
+</p></li><li><p>检查模型和纹理设置。
+</p></li><li><p>确保材质（Material）已禁用 <strong>切线空间法线（Tangent Space Normal）</strong>。
+</p></li><li><p>3DS Max中非均匀缩放的网格体将返回错误的变形数值并导致糟糕的结果。如果情况似乎如此，请尝试“重置XForm（Reset XForm）”操作。通过子对象非均匀缩放网格体始终比在对象级别非均匀缩放网格体更安全。我们建议您在开始复制、父子化和放置模型元素前，先执行此操作。
+</p></li><li><p>有些网格体出现扭曲是因优化在着色器内执行所致。为了正确计算风吹对树枝的影响，我们需要先计算风吹对每个树叶枢轴及其矢量的影响，然后再执行每一次网格体旋转。由于每次旋转和偏移操作的成本都很昂贵，因此我们在每一个元素的局部空间内对该元素执行网格体旋转（然后再考虑其他旋转）。旋转产生的网格体偏移随后将添加到其他变形中。结果虽然在准确率上有所下降，但成本明显更低。有时候，准确率降低会导致植物比例根据偏移量的组合而稍有改变。所以如果出现上述情况，请尝试以下操作：
+</p><ul ><li><p>降低风吹模拟的强度。
+</p></li><li><p>对更少的层级关卡进行动画处理。
+</p></li><li><p>旋转网格体，以降低同时发生的频率。
+</p></li></ul></li></ul>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="Reference/index.html" title="本文为支点描画器2功能集的属性参考和说明。 ">支点描画器工具2.0 MAXScript参考</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../../Rendering/Materials/Functions/Reference/PivotPainter2/index.html" title="旨在使枢轴绘制器2 MAXScript能够用于虚幻引擎着色器网络的材质函数。">枢轴绘制器工具2.0材质函数</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../PivotPainter1/index.html" title="枢轴绘制器工具1.0 MAXScript的相关指南，该软件将模型枢轴和旋转数据存储在顶点内以用于交互动画。">枢轴绘制器工具1.0</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../../../Resources/ContentExamples/PivotPainter/index.html" title="简要介绍Pivot Painter内容示例中提供的示例。">Pivot Painter内容示例</a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Content/Tools/PivotPainter/PivotPainter2/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:09 GMT -->
+</html>

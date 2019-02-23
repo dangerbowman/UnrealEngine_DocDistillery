@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:12 GMT -->
+<head>
+    <title>反射环境 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="4300533" />
+<meta name="availability" content="Public" />
+<meta name="title" content="反射环境" />
+<meta name="description" content="捕捉并显示局部光泽反射的系统。" />
+<meta name="version" content="4.14" />
+<meta name="topic-image" content="reflection_topic.png" />
+<meta name="parent" content="Engine/Rendering/LightingAndShadows" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="反射环境" />
+	<meta property="og:description" content="捕捉并显示局部光泽反射的系统。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">照亮环境</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_14"><a id="version_link" href="../../../../SiteIndex/index5327.html">Unreal Engine 4.14</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">反射环境</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_14"><a id="version_link" href="../../../../SiteIndex/index5327.html">Unreal Engine 4.14</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#快速反射环境设置">快速反射环境设置</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#设置关卡使用反射环境">设置关卡使用反射环境</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#光泽间接高光度">光泽间接高光度</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#反射采集光照贴图混合">反射采集光照贴图混合</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#光照贴图混合与现有内容">光照贴图混合与现有内容</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#高质量反射">高质量反射</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#高精确度静态网格体顶点法线和切线编码">高精确度静态网格体顶点法线和切线编码</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#高精确度gbuffer法线编码">高精确度GBuffer法线编码</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#反射采集形状">反射采集形状</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#球形">球形</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#盒形">盒形</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#编辑反射探头">编辑反射探头</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#更新反射探头">更新反射探头</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#在反射探头中使用一个自定义hdri立方体贴图">在反射探头中使用一个自定义HDRI立方体贴图</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#调整反射探头分辨率">调整反射探头分辨率</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#调整天空光照反射分辨率">调整天空光照反射分辨率</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#混合多个反射探头数据">混合多个反射探头数据</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#显示">显示</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#性能注意事项">性能注意事项</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#限制">限制</a>
+	</li>		    	        </ul>
+</div>
+<p><strong>反射环境</strong> 功能在关卡的每个区域提供有效光泽反射。金属之类的诸多重要材质均依赖于反射环境提供的各方向反射。其针对的目标是主机和中配PC，因此运行速度极快。支持动态对象或尖锐反射，但需要额外的内存开销。 
+</p><div class="fullwidth">
+	<p><img alt="Reflection Environment" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/reflection_environment.jpg" />
+</p>
+</div><a name="quickreflectionenvironmentsetup" ></a><h2 id="快速反射环境设置">快速反射环境设置</h2>
+
+<p>执行以下操作即可快速使在项目关卡中快速搭建反射环境：
+</p><ol ><li><p>将数个光源添加到关卡并构建光照，因为显示反射环境需要一些间接漫反射光照。 
+</p></li><li><p>在 <strong>视觉效果（Visual Effects）</strong> 部分下的 <strong>模式</strong> 面板中选择并将一个 <strong>球体反射采集</strong> Actor拖入关卡。
+</p></li></ol><p>如果关卡中未出现反射，或反射强度未达到期望效果，可尝试以下操作：
+</p><ul ><li><p>使材质拥有明显的高光度和较低的粗糙度，这样便于显示反射。
+</p></li><li><p>使用反射覆盖视图模式显示正在被采集的内容，以便更好地确认材质中的哪些值需要进行调整。
+</p></li></ul><a name="settingupaleveltousethereflectionenvironment" ></a><h2 id="设置关卡使用反射环境">设置关卡使用反射环境</h2>
+
+<p>构建良好反射的第一步是使用光照图来设置包含间接光照的漫反射光照。如不熟悉用法，可参见<a id="content_link" href="../Lightmass/index.html" ><span>Lightmass</span></a>
+中的详情。如果构建光照后Lightmass间接光照无法正常工作，其中常见原因包括但不限于以下几种：
+</p><ul ><li><p>阴影投射天空盒。
+</p></li><li><p><strong>LightmassImportanceVolume</strong> 缺失。
+</p></li><li><p>光照图UV缺失或未正确设置。
+</p></li><li><p>在 <strong>场景属性</strong> 中将 <strong>强制无预计算光照</strong> 设为了 <strong>True</strong>。
+</p></li></ul><p>场景的漫反射颜色将通过反射环境来进行反射，因此需要执行以下操作来达到最佳效果。 
+</p><ul ><li><p>确保直接光照和阴影区域之间拥有较高的对比度。 
+</p></li><li><p>请注意：明亮的漫反射光照区域将清晰地显示在反射中。
+</p></li><li><p>反射可见度最高的区域是暗阴影区域。 
+</p></li><li><p>禁用高光度显示标签，再使用光照视图模式查看关卡即可了解反射采集的效果。
+</p></li></ul><p>同时需要将以下重要事项牢记于胸，以便设置关卡材质完美兼容反射环境。 
+</p><ul ><li><p>扁平的镜像表面将揭示出将投射到简单形状上的立方体贴图组合起来的不准确性。 
+</p></li><li><p>曲面几何体或粗糙表面均可弱化这些瑕疵，提供更准确的结果。 
+</p></li><li><p>使用详细法线贴图非常重要，并在用于平坦区域的材质上增加一些粗糙度， 
+这有助于其更好地显示反射。
+</p></li></ul><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="Curvy and Sharp" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/1CurvyAndSharp.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="Flat and Rough" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/1FlatAndRough.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="Flat and Sharp" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/1FlatAndSharp.jpg" /></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>表面平滑的曲面几何体：高质量反射</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>表面粗糙的平面几何体：高质量反射</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>表面平滑的平面几何体：反射明显不匹配</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>将反射采集放置在需要拥有反射的区域中。尝试对球体采集进行放置，使得需要反射的关卡部分刚好包含在其半径之中，因为关卡将被重新投射到该球形之上。避免让采集过于靠近关卡几何体，附近的几何体将因此占据主导，阻挡其后的重要细节。
+</p><a name="glossyindirectspecular" ></a><h2 id="光泽间接高光度">光泽间接高光度</h2>
+
+<p>用技术术语来讲，反射环境将提供间接高光度。可以从解析光源获得直接高光度，但这只会提供几个明亮的方向上的反射。也可以通过天空光照获取来自天空的光照度；但这并不会提供本地反射，因为天空光照立方体贴图所处位置必定很远。间接高光度使关卡的所有部分在所有其他部分上进行反射，对没有漫反射反应的材质（如金属）而言尤其重要。
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Diffuse Only" width="700" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/DiffuseOnly.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Reflection Only" width="700" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/ReflectionOnly.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><p><strong>完整光照</strong>
+</p><div class="fullwidth">
+	<p><img alt="Full Scene" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Complete.jpg" />
+</p>
+</div><p>反射环境的工作原理是采集多个点处的静态关卡，并将其重新投射到反射中的简单形状上（如球形）。美术师放置 <strong><em>ReflectionCapture</em></strong> Actor即可选择采集点。反射在编辑中实时更新，以协助放置，但在运行时为静态。将采集的关卡投射到简单形状上可构成反射的近似视差。每个像素在多个立方体贴图之间混合，以获得最终结果。较小的ReflectionCapture Actor将覆盖较大的Actor，因此可根据需要提升区域中的反射视差准确度。举例而言，可将一个采集放置在房间中央，然后在房间角落放置较小的采集来提升反射效果。 
+</p><p>从采集立方体贴图生成模糊mipmap即可支持带不同光泽度的材质。
+</p><p><img alt="Varying Glossiness" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/VaryingGlossiness.jpg" />
+</p><p>然而，只在非常粗糙的表面上使用立方体贴图反射会造成过于明亮的反射，由于缺少本地遮挡，其将出现重大泄露。重新使用由Lightmass生成的光照贴图数据即可解决此问题。立方体贴图反射基于材质的粗糙度与光照贴图间接高光度进行混合。非常粗糙的材质（全漫反射）将在光照贴图结果上收敛。从根本上而言，此混合是将一套光照数据（立方体贴图）的高细节部分与另一套光照数据（光照贴图）的低频率部分进行组合。为使此混合正常进行，光照贴图中只能拥有间接光照。这意味着只有来自静止光源的间接光照才能改良粗糙表面上的反射质量。<strong>静态光源类型不应与反射环境同用，因其会将直接光照放入光照贴图中。</strong> 注意，和光照贴图的这个混合也意味着贴图必须含有有意义的间接漫反射光照，且该光照已构建，才能显示出结果。
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Reflections on a rough surface with no shadowing" width="550" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/2RoughWithNoShadowing.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Rough with Shadowing" width="550" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/2RoughWithShadowing.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><a name="reflectioncapturelightmapmixing" ></a><h2 id="反射采集光照贴图混合">反射采集光照贴图混合</h2>
+
+<p>使用反射采集Actor时，UE4将把来自反射采集的间接高光度与来自光照贴图的间接漫反射光照进行混合。这有助于减轻泄露，因为反射立方体贴图只在空间中的一个点处进行采集，但光照贴图却是在所有接收者表面上计算，且包含本地阴影投射信息。
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Reduce Lightmap Mixing On Smooth Surfaces Off" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/ReduceLightmapMixingOnSmoothSurfaces_Off.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Reduce Lightmap Mixing On Smooth Surfaces On.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/ReduceLightmapMixingOnSmoothSurfaces_On.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><p>虽然光照贴图混合在粗糙表面上效果极佳，但此方法在平滑表面上却无用武之地，因为来自反射采集Actor的反射与其他方法（如屏幕空间反射或平面反射）形成的反射并不匹配。因此，光照贴图混合不再应用到非常平滑的表面上。粗糙度值为0.3的表面将获得完整的光照贴图混合，粗糙度0.1或以下则淡化至无光照贴图混合。这也使得反射采集和屏幕空间反射更好地匹配，两者之间的过渡也更加自然。
+</p><a name="lightmapmixingandexistingcontent" ></a><h3 id="光照贴图混合与现有内容">光照贴图混合与现有内容</h3>
+
+<p>光照贴图混合将被默认启用，意味着其将影响现有内容。在平滑表面上出现反射泄露时，泄露将更加明显。为解决此问题，可在关卡周围放置更多反射采集Actor来减轻泄露；或切换为旧有光照贴图混合行为，方法为：前往 <strong>编辑</strong> > <strong>项目设置</strong> > <strong>渲染</strong> > <strong>反射</strong>，然后取消勾选 <strong>减弱平滑表面上的光照贴图混合</strong>。
+</p><p><img alt="Enable_LM_Mixing.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Enable_LM_Mixing.jpg" />
+</p><p>通过UE4控制台调整以下命令即可微调将发生的光照贴图混合量。 
+</p><ul ><li><p><strong>r.ReflectionEnvironmentBeginMixingRoughness (default = 0.1)</strong>
+</p></li><li><p><strong>r.ReflectionEnvironmentEndMixingRoughness (default = 0.3)</strong>
+</p></li><li><p><strong>r.ReflectionEnvironmentLightmapMixBasedOnRoughness (default = 1)</strong>
+</p></li><li><p><strong>r.ReflectionEnvironmentLightmapMixLargestWeight (default = 1000)</strong>
+</p></li></ul><a name="highqualityreflections" ></a><h2 id="高质量反射">高质量反射</h2>
+
+<p>使用默认的反射质量设置可以在性能和视觉质量上达到良好平衡，但有些情况下也需要达到更高质量的反射。以下部分描述了达到高质量反射的可用方法。
+</p><a name="highprecisionstaticmeshvertexnormalandtangentencoding" ></a><h3 id="高精确度静态网格体顶点法线和切线编码">高精确度静态网格体顶点法线和切线编码</h3>
+
+<p>达成高质量反射的重要因素是顶点法线和切线的呈现精确度。极高密度的网格体可能导致相邻顶点量化到相同的顶点法线和切线值。这可能会在法线朝向上形成块状跳跃。我们添加了将法线和切线编码为每通道矢量16位的选项，使开发者能够在更高质量和编码顶点缓冲内存使用率之间进行权衡。 
+</p><p><strong>启用高精确度静态网格体顶点法线和切线编码的方法：</strong>
+</p><ol ><li><p>在 <strong>内容浏览器</strong> 中双击静态网格体将其在 <strong>静态网格体编辑器</strong> 中打开。
+</p></li><li><p>在静态网格体编辑器中前往 <strong>细节</strong> 面板并展开 <strong>LOD0</strong> 选项。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/SM_HP_Vertex_Normals_00.png" ><span><img alt="SM_HP_Vertex_Normals_00.png" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/SM_HP_Vertex_Normals_00.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p><strong>LOD0</strong> 下方有一个名为 <strong>构建设置（Build Settings）</strong> 的部分。点击“构建设置（Build Settings）”旁的小三角形即可展开选项。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/SM_HP_Vertex_Normals_01.png" ><span><img alt="SM_HP_Vertex_Normals_01.png" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/SM_HP_Vertex_Normals_01.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>点击 <strong>使用高精确度切线基础</strong> 选项旁边的勾选框将其启用，然后按下 <strong>应用修改（Apply Changes）</strong> 按钮来应用新设置。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/SM_HP_Vertex_Normals_02.png" ><span><img alt="SM_HP_Vertex_Normals_02.png" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/SM_HP_Vertex_Normals_02.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li></ol><p>视口将自动更新来显示修改。 
+</p><div class="note">
+	<p>被查看的反射的质量与静态网格体的曲面细分密度直接相关。拥有更少曲面细分的静态网格体在反射中出现的拉伸瑕疵多于拥有更多曲面细分的静态网格体。
+</p>
+</div><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="High Precision Vertex Normal Off" height="580" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/SM_HP_Vertex_Normals_Off.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="High Precision Vertex Normal On" height="580" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/SM_HP_Vertex_Normals_On.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/SM_HP_Vertex_Normals_Wireframe.png" ><span><img alt="SM_HP_Vertex_Normals_Wireframe.png" width="582" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/SM_HP_Vertex_Normals_Wireframe.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><a name="highprecisiongbuffernormalencoding" ></a><h3 id="高精确度gbuffer法线编码">高精确度GBuffer法线编码</h3>
+
+<p>启用“高精确度GBuffer法线编码”选项将允许GBuffer使用更高精确度的法线编码。这个高准确度GBuffer法线编码将把法线矢量编为3个通道，每个通道为16位。使用此高精确度编码后，屏幕空间反射（SSR）等技术将依赖于高精确度法线。 
+</p><p><strong>启用高精确度GBuffer法线编码的方法：</strong>
+</p><ol ><li><p>在 <strong>主工具栏</strong> 中选择 <strong>编辑</strong> > <strong>项目设置</strong> 来打开 <strong>项目设置</strong>。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/ARCS_00.png" ><span><img alt="ARCS_00.png" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/ARCS_00.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>在 <strong>引擎（Engine）</strong> 部分下的项目设置中，点击 <strong>渲染（Rendering）</strong> 选项，然后在 <strong>优化（Optimizations）</strong> 部分下将 <strong>Gbuffer格式（Gbuffer Format）</strong> 从 <strong>默认</strong> 改为 <strong>高精确度法线</strong>。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/HPGBuffer_01.png" ><span><img alt="HPGBuffer_01.png" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/HPGBuffer_01.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="warning">
+	<p>注意：此编码需要增加GPU内存，启用此项将对项目的性能产生直接影响。
+</p>
+</div></li></ol><p>修改GBuffer格式无需重启编辑器，因此可以在不同GBuffer格式之间快速切换，查看其对反射效果的影响。下图展示了将GBuffer格式从默认改为高精确度法线后反射效果和质量的变化。
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Default GBuffer Format" height="600" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Default_GBuffer_Format.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="High Precision GBuffer Format" height="600" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Hight_P_GBuffer_Format.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><a name="reflectioncaptureshapes" ></a><h2 id="反射采集形状">反射采集形状</h2>
+
+<p>当前有两个反射采集形状：球体和盒体。形状十分重要，因为它控制着场景的哪个部分将被采集到立方体贴图中、反射中关卡被重新投射到什么形状上，以及关卡的哪个部分可以接收来自该立方体贴图的反射（影响区域）。
+</p><a name="sphereshape" ></a><h3 id="球形">球形</h3>
+
+<p>当前球形最为实用。其永远不会匹配被反射几何体的外形，但不含间断或角落，因此错误一致。 
+</p><p><img alt="Sphere Shape" width="720" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/SphereShape.jpg" />
+</p><p>球形拥有橙色的影响半径，控制会受立方体贴图影响的像素、以及关卡将被重新投射到的球体。 
+</p><p>较小的采集将覆盖较大的采集，因此在关卡周围放置较小的采集能够进行提升。
+</p><a name="boxshape" ></a><h3 id="盒形">盒形</h3>
+
+<p>盒形的实用性十分有限，通常只用于走廊和矩形房间。其原因是只有盒体中的像素可看到反射，同时盒体中的所有几何体将投射到盒体上，在很多情况下会出现重大瑕疵。
+</p><p><img alt="Box Shape" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/BoxShape.jpg" />
+</p><p>选中盒体后，投射形状将拥有一个橙色预览。其只采集此盒体外 <strong>盒体过渡距离</strong> 之内的关卡。此采集的影响也会在盒体中随过渡距离淡入。 
+</p><a name="editingreflectionprobes" ></a><h2 id="编辑反射探头">编辑反射探头</h2>
+
+<p>对反射探头进行编辑时，需要牢记几点才能得到想要的结果。下文将讲述这些要点以及使用者如何才能在项目中得到质量最佳的反射
+</p><a name="updatingreflectionprobes" ></a><h3 id="更新反射探头">更新反射探头</h3>
+
+<p>特别需要注意的是：反射探头不会自动保持更新。只有以下操作才会自动更新放置在关卡中的反射探头。
+</p><ul ><li><p>加载地图。
+</p></li><li><p>直接编辑一项反射采集Actor属性。
+</p></li><li><p>构建关卡光照。
+</p></li></ul><p>如果要使对关卡的编辑达到类似于修改光源明亮度或移动关卡几何体的效果，则需要选择一个反射采集Actor并点击 <strong>更新采集</strong> 按钮来传播修改。 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Update_Captures_Button.png" ><span><img alt="Update_Captures_Button.png" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Update_Captures_Button.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><a name="usingacustomhdricubemapinareflectionprobe" ></a><h3 id="在反射探头中使用一个自定义hdri立方体贴图">在反射探头中使用一个自定义HDRI立方体贴图</h3>
+
+<p>反射探头不仅可以指定其将哪个立方体贴图用于反射数据，还可指定立方体贴图的大小。在之前的版本中，UE4对已烘焙立方体贴图反射探头使用的分辨率进行了硬编码。现在开发者可基于性能、内存和质量权衡来选择最满足需要的分辨率。以下对比图像显示了使用 <strong>采集场景（Captured Scene）</strong> 选项和 <strong>指定立方体贴图（Specified Cubemap）</strong> 选项之间的差异。 
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Captured Scene" height="500" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/CC_Capture_Scene.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Specified Cubemap" height="500" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/CC_Specified_Cubemap.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><p>如要指定项目反射探头使用的自定义HDRI立方体贴图，需要执行以下选项：
+</p><ol ><li><p>首先确保有可用的HDRI立方体贴图纹理。如果项目中没有HDRI立方体贴图纹理，可在初学者内容包中选择名为 <strong>HDRI_Epic_Courtyard_Daylight</strong> 的文件。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Custom_Cubemap_00.png" ><span><img alt="Custom_Cubemap_00.png" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Custom_Cubemap_00.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="note">
+	<p>使用<a id="content_link" href="../../../Content/Browser/UserGuide/Migrate/index.html" ><span>迁移</span></a>
+功能即可将资源从一个项目移至另一个。
+</p>
+</div></li></ol><ol ><li><p>选择已放置在关卡中的 <strong>反射探头</strong> Actor，并在 <strong>反射采集（Reflection Capture）</strong> 部分下的 <strong>细节</strong> 面板中将 <strong>反射源类型（Reflection Source Type）</strong> 从 <strong>采集场景</strong> 改为 *指定立方体贴图***
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Custom_Cubemap_01.png" ><span><img alt="Custom_Cubemap_01.png" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Custom_Cubemap_01.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>在关卡中选中反射探头，前往内容浏览器并选择希望使用的JDRI纹理。然后在反射采集Actor中 <strong>反射采集</strong> 下，将HDRI纹理从内容浏览器拖至 <strong>立方体贴图</strong> 输入。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Custom_Cubemap_02.png" ><span><img alt="Custom_Cubemap_02.png" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Custom_Cubemap_02.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>按下 <strong>更新采集</strong> 按钮刷新反射采集Actor使用刚指定的新HDRI立方体贴图纹理。 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Custom_Cubemap_03.png" ><span><img alt="Custom_Cubemap_03.png" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Custom_Cubemap_03.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li></ol><a name="adjustingreflectionproberesolution" ></a><h3 id="调整反射探头分辨率">调整反射探头分辨率</h3>
+
+<p>执行以下操作即可整体调整用于反射采集Actor的HDRI立方体贴图分辨率： 
+</p><ol ><li><p>前往 <strong>主工具栏</strong> 并选择 <strong>编辑</strong> > <strong>项目设置</strong> 来打开 <strong>项目设置</strong>。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/ARCS_00.png" ><span><img alt="ARCS_00.png" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/ARCS_00.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>在项目设置菜单中，前往 <strong>引擎</strong> > <strong>渲染</strong> 部分，然后查找 <strong>纹理</strong> 选项。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/ARCS_01.png" ><span><img alt="ARCS_01.png" width="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/ARCS_01.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>调整 <strong>反射采集分辨率（Reflection Capture Resolution）</strong> 选项即可增加或减少指定的HDRI立方体贴图纹理的大小。
+</p><p><img alt="ARCS_02.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/ARCS_02.jpg" />
+</p><div class="warning">
+	<p>使用分辨率极高的纹理时应极其小心，由于GPU内存要求，其可能对性能产生极大影响。
+</p>
+</div></li></ol><p>下图显示了反射采集分辨率被设为 <strong>1</strong>、<strong>4</strong>、<strong>8</strong>、<strong>16</strong>、<strong>32</strong>、<strong>64</strong>、<strong>128</strong>、<strong>256</strong>, <strong>512</strong> 和 <strong>1024</strong> 时反射的效果。
+</p><div class="fullwidth">
+	<!--
+id:paramliteral
+max:paramliteral
+ext:paramliteral
+caption:paramliteral
+image_list:param
+-->
+<div class="slider_container" id="RCR">
+    <div id="RCR_Image"></div>
+    <div class="slider"></div>
+    <div class="caption">
+                <b><p><strong>拖动滑条即可查看不同分辨率对反射效果产生的影响。</strong></p></b>
+            </div>
+    <div id="images" class="hidden">
+        <p><img alt="RCR_1.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/RCR_1.jpg" />
+<img alt="RCR_2.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/RCR_2.jpg" />
+<img alt="RCR_3.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/RCR_3.jpg" />
+<img alt="RCR_4.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/RCR_4.jpg" />
+<img alt="RCR_5.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/RCR_5.jpg" />
+<img alt="RCR_6.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/RCR_6.jpg" />
+<img alt="RCR_7.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/RCR_7.jpg" />
+<img alt="RCR_8.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/RCR_8.jpg" />
+<img alt="RCR_9.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/RCR_9.jpg" />
+<img alt="RCR_10.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/RCR_10.jpg" /></p>
+    </div>
+</div>
+</div><a name="adjustingskylightreflectionresolution" ></a><h3 id="调整天空光照反射分辨率">调整天空光照反射分辨率</h3>
+
+<p>和反射探头一样，天空光照也可以定义并调整其用于反射的HDRI立方体贴图的分辨率。执行以下操作即可在UE4项目中使用此功能： 
+</p><ol ><li><p>在 <strong>光源</strong> 部分下的 <strong>模式</strong> 面板中，选择并将一个 <strong>天空光照</strong> 拖入关卡。 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Skylight_Reflection_00.png" ><span><img alt="Skylight_Reflection_00.png" width="500" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Skylight_Reflection_00.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>选择天空光照，在 <strong>光源（Light）</strong> 部分的 <strong>细节</strong> 面板下将 <strong>源类型</strong> 从 <strong>SLS采集场景</strong> 改为 <strong>SLS指定立方体贴图</strong>。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Skylight_Reflection_01.png" ><span><img alt="Skylight_Reflection_01.png" width="500" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Skylight_Reflection_01.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>点击 <strong>立方体贴图（Cubemap）</strong> 部分中的下拉框，并从列表中选择一个HDRI立方体贴图。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Skylight_Reflection_02.png" ><span><img alt="Skylight_Reflection_02.png" width="300" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Skylight_Reflection_02.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>选中立方体贴图后，修改 <strong>立方体贴图分辨率</strong> 中输入的值即可调整其分辨率。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Skylight_Reflection_03.png" ><span><img alt="Skylight_Reflection_03.png" width="300" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Skylight_Reflection_03.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="note">
+	<p>请注意：立方体贴图分辨率数字只能是2的幂次方，如16、64、128、25、512和1024。<br /></p>
+</div></li></ol><h3 id="混合多个反射探头数据">混合多个反射探头数据</h3>
+
+<p>为反射采集Actor提供不同的HDRI立方体贴图即可在多个不同立方体贴图反射之间进行混合。执行以下步骤即可在UE4项目中完成此操作：
+</p><ol ><li><p>首先将至少一个 <strong>反射探头</strong> 添加至关卡，将 <strong>反射源类型</strong> 改为 <strong>特定立方体贴图</strong>，并将HDRI纹理输入到 <strong>立方体贴图</strong> 输入。 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Blend_RFD_00.png" ><span><img alt="Blend_RFD_00.png" width="600" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Blend_RFD_00.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>将一个新反射探头复制或添加到关卡，并放置/调整其 <strong>影响半径</strong>，使其黄色影响半径的一部分与第一个反射探头相交。 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Blend_RFD_01.png" ><span><img alt="Blend_RFD_01.png" width="600" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Blend_RFD_01.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>选择新复制/创建的反射探头Actor，在 <strong>立方体贴图</strong> 部分下的 <strong>细节</strong> 面板中将HDRI立方体贴图改为其他项。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Blend_RFD_02.png" ><span><img alt="Blend_RFD_02.png" width="600" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Blend_RFD_02.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>保持选中添加/复制的反射探头，前往 <strong>反射采集（Reflection Capture）</strong> 部分中的 <strong>细节</strong> 面板，然后按下 <strong>更新采集（Update Captures）</strong> 按钮进行更新，使反射使用在立方体贴图输入中输入的内容。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Blend_RFD_03.png" ><span><img alt="Blend_RFD_03.png" width="600" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/Blend_RFD_03.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p>选择并围绕关卡移动反射探头，即可了解两个HDRI立方体贴图的混合方式。
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_QYbSsYP2Nkk"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="QYbSsYP2Nkk" width="100%" height="100%" src="../../../../../../external.html?link=https://www.youtube.com/embed/QYbSsYP2Nkk?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_QYbSsYP2Nkk
+{
+	margin: 0px;
+	width: 50%;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_QYbSsYP2Nkk:after
+{
+	content: "";
+	padding-top: 56.25%;
+	display: block;
+}
+</style></li></ol><a name="visualizing" ></a><h3 id="显示">显示</h3>
+
+<p>已添加反射覆盖查看模式，便于查看反射的设置效果。此查看模式将把所有法线覆盖为平滑的顶点法线，并使所有表面均拥有完整高光度且为纯平（如同镜面）。反射环境的限制和瑕疵在此模式中同样清晰可见，因此必须定期切换至光照，确认反射在普通条件下的效果（凹凸法线、多种光泽度、模糊高光度）。
+</p><p><img alt="Reflection Override" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/ReflectionOverride.jpg" />
+</p><p>已新添加一些显示标签，适用于隔离光照的组件：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>标签 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>光照组件 > 漫反射</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>禁用漫反射后，所有光照法中的漫反射贡献均会隐藏。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>光照组件 > 高光度</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>禁用高光度后，所有发射法中的高光度贡献均会隐藏。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>光照特性 > 反射环境</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这将禁用反射环境特性，但其他反射特性仍然开启（SSR、解析高光度）。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="performanceconsiderations" ></a><h2 id="性能注意事项">性能注意事项</h2>
+
+<p>反射环境开销只取决于影响屏幕上像素的采集数量。此原理与延迟光照十分相似。反射采集由其影响半径绑定，因此将被十分积极地剔除。光泽度通过立方体mipmap实现，因此尖锐或粗糙发射之间的性能差异并不大。
+</p><a name="limitations" ></a><h2 id="限制">限制</h2>
+
+<ul ><li><p>此方法通过近似模拟实现反射。具体而言，由于投射到简单形状上，物体的反射很少能与场景中的实际物体相匹配。此方法通常会在反射中创建物体的多个版本（因为多个立方体贴图将被混合在一起）。导致镜面反射的平滑表面会将错误明确地显示出来。使用细节法线贴图和粗糙度有助于打破反射和这些瑕疵。
+</p></li><li><p>将关卡采集到立方体贴图中是一个缓慢的进程，必须在游戏进程之外进行。这意味着动态物体无法被反射，但其可接收来自静态关卡的反射。
+</p></li><li><p>只采集关卡的漫反射来降低错误。纯高光度表面（金属）的高光度将应用，效果类似于采集中漫反射。
+</p></li><li><p>一堵墙的两个面上拥有不同光照条件时可能出现重大泄露。一面可设置为拥有正确的反射，但其将必定会泄露到另一面。 
+</p></li><li><p>由于DX11硬件限制，拥有采集关卡的立方体贴图每面均为128，场景可一次性启用最多341个反射采集。
+</p></li></ul>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/LightingAndShadows/ReflectionEnvironment/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:12 GMT -->
+</html>

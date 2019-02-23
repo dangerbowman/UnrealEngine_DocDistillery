@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Tutorials/FirstPersonShooter/3/5/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 02:10:03 GMT -->
+<head>
+    <title>3.5 - 在视口中添加准星 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/INT/Programming/Tutorials/FirstPersonShooter/3/5/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/KOR/Programming/Tutorials/FirstPersonShooter/3/5/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/JPN/Programming/Tutorials/FirstPersonShooter/3/5/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/CHN/Programming/Tutorials/FirstPersonShooter/3/5/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3967023" />
+<meta name="availability" content="Public" />
+<meta name="title" content="3.5 - 在视口中添加准星" />
+<meta name="description" content="学习在第一人称射击游戏项目的视口中添加准星的方法。" />
+<meta name="skilllevel" content="Beginner" />
+<meta name="version" content="4.15" />
+<meta name="parent" content="Programming/Tutorials/FirstPersonShooter/3" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="3.5 - 在视口中添加准星" />
+	<meta property="og:description" content="学习在第一人称射击游戏项目的视口中添加准星的方法。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">3 - 实现发射物</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../SiteIndex/index3207.html">Beginner</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_15"><a id="version_link" href="../../../../../SiteIndex/indexbb3f.html">Unreal Engine 4.15</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">3.5 - 在视口中添加准星</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../SiteIndex/index3207.html">Beginner</a></div>
+
+                            <div class="version_tag_filter 4_15"><a id="version_link" href="../../../../../SiteIndex/indexbb3f.html">Unreal Engine 4.15</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<p>在这步中，我们将在游戏中添加一个准星HUD元素，以便射击时进行瞄准。
+</p><a name="importingacrosshairasset" ></a><h2 id="导入准星资源">导入准星资源</h2>
+
+<div class="note">
+	<p>开始之前先从以下链接下载并提取样本图像：
+</p><ul ><li><p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/attachments/Programming/Tutorials/FirstPersonShooter/3/5/Crosshair_fps_tutorial.zip" title="Sample Crosshair Image"><span>样本准星图像<img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p></li></ul>
+</div><ol ><li><p>在内容浏览器的文件框中点击右键打开 <strong>导入资源（Import Asset）</strong> 对话框。
+</p></li><li><p>点击 <strong>导入到/游戏（Import to /Game）</strong> 打开 <strong>导入（Import）</strong> 对话框。
+</p><p><img alt="RightClickImport.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Tutorials/FirstPersonShooter/3/5/RightClickImport.jpg" />
+`
+</p></li><li><p>找到并选择 <strong>crosshair.TGA</strong> 图像文件。
+</p></li><li><p>点击 <strong>打开（Open）</strong> 开始将图像文件导入项目。
+</p></li><li><p>点击 <strong>保存（Save）</strong> 按钮保存导入的图像。
+</p></li></ol><a name="addinganewhudclass" ></a><h2 id="新增一个hud类">新增一个HUD类</h2>
+
+<ol ><li><p>在“文件（File）”菜单中，选择 <strong>新建C++类（New C++ Class...）</strong> 来选择新的父类。
+</p></li><li><p><strong>选择父类（Choose Parent Class）</strong> 菜单将会打开。向下滚动，将 <strong>HUD</strong> 选为父类并点击 <strong>下一步（Next）</strong>。
+</p><p><img alt="ChooseParentHUDClass.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Tutorials/FirstPersonShooter/3/5/ChooseParentHUDClass.jpg" />
+</p></li><li><p>将新建的类命名为“FPSHUD”，然后点击 <strong>创建（Create）</strong>。
+</p><p><img alt="NameHUDClass.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Tutorials/FirstPersonShooter/3/5/NameHUDClass.jpg" />
+</p></li><li><p>在 <strong>解决方案浏览器</strong> 中找到 <code >FPSHUD</code> 类头文件，打开 <code >FPSHUD.h</code> 并添加以下受保护变量：
+</p>
+<pre class="prettyprint"><code>protected:
+    // 将在屏幕中央绘制此项。
+    UPROPERTY(EditDefaultsOnly)
+    UTexture2D* CrosshairTexture;</code></pre></li><li><p>在 <code >FPSHUD.h</code> 中添加以下函数声明：
+</p>
+<pre class="prettyprint"><code>public:
+    // HUD的主绘制调用。
+    virtual void DrawHUD() override;</code></pre></li><li><p>接着在 <code >FPSHUD.cpp</code> 中实现 <code >DrawHUD</code> 函数：
+</p>
+<pre class="prettyprint"><code>void AFPSHUD::DrawHUD()
+{
+    Super::DrawHUD();
+
+    if (CrosshairTexture)
+    {
+        // 找到画布中心。
+        FVector2D Center(Canvas-&gt;ClipX * 0.5f, Canvas-&gt;ClipY * 0.5f);
+
+        // 纹理维度进行一半偏移，使纹理中心和画布中心对齐。
+        FVector2D CrossHairDrawPosition(Center.X - (CrosshairTexture-&gt;GetSurfaceWidth() * 0.5f), Center.Y - (CrosshairTexture-&gt;GetSurfaceHeight() * 0.5f));
+
+        // 在中心点绘制准星。
+        FCanvasTileItem TileItem(CrossHairDrawPosition, CrosshairTexture-&gt;Resource, FLinearColor::White);
+        TileItem.BlendMode = SE_BLEND_Translucent;
+        Canvas-&gt;DrawItem(TileItem);
+    }
+}</code></pre></li><li><p>在Visual Studio中保存 <code >FPSHUD.h</code> 和 <code >FPSHUD.cpp</code>。
+</p></li><li><p>在 <strong>解决方案浏览器（Solution Explorer）</strong> 中找到 <strong>FPSProject</strong>。
+</p></li><li><p>右键点击 <strong>FPSProject</strong> 并选择 <strong>编译（Build）</strong> 来编译项目。
+</p><p><img alt="BuildFPSProject.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Tutorials/FirstPersonShooter/3/5/BuildFPSProject.jpg" />
+</p></li></ol><a name="extendingyourcpphudclasstoblueprints" ></a><h2 id="将cpphud类延展到蓝图">将CPP HUD类延展到蓝图</h2>
+
+<p>现在正是将CPP HUD类延展到蓝图的最佳时机。请前往<a id="content_link" href="../../../../../Gameplay/ClassCreation/CodeAndBlueprints/index.html" ><span>C++和蓝图</span></a>
+参考页面，了解 C++ 类扩展为蓝图的更多内容。
+</p><ol ><li><p>右键点击 <code >FPSHUD</code> 类打开 <strong>C++类操作（C++ Class Actions）</strong> 菜单。
+</p><p><img alt="CPPClassActionsMenu.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Tutorials/FirstPersonShooter/3/5/CPPClassActionsMenu.jpg" />
+</p></li><li><p>点击 <strong>基于FPSHUD创建蓝图类（Create Blueprint class based on FPSHUD）</strong> 打开 <strong>添加蓝图类（Add Blueprint Class）</strong> 对话菜单。
+</p><p><img alt="CreateDerivedBPClass.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Tutorials/FirstPersonShooter/3/5/CreateDerivedBPClass.jpg" />
+</p></li><li><p>将新蓝图类命名为“BP_FPSHUD”，选择蓝图文件夹，然后点击 <strong>创建蓝图类（Create Blueprint Class）</strong> 按钮。
+</p><p><img alt="AddBPClass.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Tutorials/FirstPersonShooter/3/5/AddBPClass.jpg" />
+</p></li><li><p>现在蓝图文件夹中便有了一个新建的 <code >BP_FPSHUD</code> 蓝图类。
+</p><p><img alt="AddedBPClass.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Tutorials/FirstPersonShooter/3/5/AddedBPClass.jpg" />
+</p></li><li><p>关闭蓝图编辑器前务必保存 <code >BP_FPSHUD</code> 蓝图。
+</p></li></ol><a name="settingthedefaulthudclass" ></a><h2 id="设置默认hud类">设置默认HUD类</h2>
+
+<ol ><li><p>在 <strong>编辑（Edit）</strong> 菜单中点击 <strong>项目设置（Project Settings）</strong>。
+</p></li><li><p>在 <strong>项目设置（Project Settings）</strong> 标签左侧的 <strong>项目（Project）</strong> 标题下点击 <strong>地图与模式（Maps &amp; Modes）</strong>。
+</p></li><li><p>在 <strong>默认HUD（Default HUD）</strong> 下拉菜单中选择 <strong>BP_FPSHUD</strong>。
+</p><p><img alt="ChooseHUDClass.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Tutorials/FirstPersonShooter/3/5/ChooseHUDClass.jpg" />
+</p></li><li><p>关闭 <strong>项目设置（Project Settings）</strong> 菜单。
+</p></li><li><p>返回并打开 <code >BP_FPSHUD</code> 蓝图编辑器。
+</p></li><li><p>点击蓝图编辑器 <code >FPSHUD</code> 部分的下拉菜单，选择准星纹理。
+</p><p><img alt="SelectCrosshairTexture.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Tutorials/FirstPersonShooter/3/5/SelectCrosshairTexture.jpg" />
+</p></li><li><p>最后在关闭蓝图编辑器前保存 <code >BP_FPSHUD</code> 蓝图。
+</p></li></ol><a name="verifyingyourhud" ></a><h2 id="验证hud">验证HUD</h2>
+
+<ol ><li><p>点击“关卡编辑器工具栏(Level Editor Toolbar)”中的 <strong>运行（Play）</strong> 按钮。
+</p><p><img alt="CrosshairsInGame.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Tutorials/FirstPersonShooter/3/5/CrosshairsInGame.jpg" />
+</p></li><li><p>点击“关卡编辑器（Level Editor）”中的 <strong>停止（Stop）</strong> 按钮即可退出PIE模式。
+</p></li></ol><a name="finishedsectioncode" ></a><h2 id="完成的分段代码">完成的分段代码</h2>
+
+<p><strong>FPSProjectile.h</strong>
+</p>
+<pre class="prettyprint"><code>// Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
+
+#pragma once
+
+#include "GameFramework/Actor.h"
+#include "FPSProjectile.generated.h"
+
+UCLASS()
+class FPSPROJECT_API AFPSProjectile : public AActor
+{
+    GENERATED_BODY()
+
+public: 
+    // 设置该Aactor属性的默认值。
+    AFPSProjectile();
+
+protected:
+    // 游戏开始时或生成时调用
+    virtual void BeginPlay() override;
+
+public:
+    // 每帧调用。
+    virtual void Tick( float DeltaSeconds ) override;
+
+    // 球体碰撞组件。
+    UPROPERTY(VisibleDefaultsOnly, Category = Projectile)
+    USphereComponent* CollisionComponent;
+
+    // 发射物运动组件。
+    UPROPERTY(VisibleAnywhere, Category = Movement)
+    UProjectileMovementComponent* ProjectileMovementComponent;
+
+    // 在发射方向上初始化发射物速度的函数。
+    void FireInDirection(const FVector&amp; ShootDirection);
+
+    // 发射物命中物体时调用的函数。
+    void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult&amp; Hit);
+
+};</code></pre>
+<p><strong>FPSProjectile.cpp</strong>
+</p>
+<pre class="prettyprint"><code>// Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
+
+#include "FPSProject.h"
+#include "FPSProjectile.h"
+
+// 设置默认值
+AFPSProjectile::AFPSProjectile()
+{
+    // 将此Actor设为每帧调用Tick()。不需要时可将此功能关闭以提高性能。
+    PrimaryActorTick.bCanEverTick = true;
+
+    // 将球体用作简单碰撞。
+    CollisionComponent = CreateDefaultSubobject&lt;USphereComponent&gt;(TEXT("SphereComponent"));
+    CollisionComponent-&gt;BodyInstance.SetCollisionProfileName(TEXT("Projectile"));
+    CollisionComponent-&gt;OnComponentHit.AddDynamic(this, &amp;AFPSProjectile::OnHit);
+
+    // 设置球体的碰撞半径。
+    CollisionComponent-&gt;InitSphereRadius(15.0f);
+    // 将根组件设为碰撞组件。
+    RootComponent = CollisionComponent;
+
+    // 使用此组件驱动该发射物的运动。
+    ProjectileMovementComponent = CreateDefaultSubobject&lt;UProjectileMovementComponent&gt;(TEXT("ProjectileMovementComponent"));
+    ProjectileMovementComponent-&gt;SetUpdatedComponent(CollisionComponent);
+    ProjectileMovementComponent-&gt;InitialSpeed = 3000.0f;
+    ProjectileMovementComponent-&gt;MaxSpeed = 3000.0f;
+    ProjectileMovementComponent-&gt;bRotationFollowsVelocity = true;
+    ProjectileMovementComponent-&gt;bShouldBounce = true;
+    ProjectileMovementComponent-&gt;Bounciness = 0.3f;
+
+    // 3秒后消亡。
+    InitialLifeSpan = 3.0f;
+}
+
+// 游戏开始时或生成时调用。
+void AFPSProjectile::BeginPlay()
+{
+    Super::BeginPlay();
+}
+
+// 每帧调用。
+void AFPSProjectile::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+
+}
+
+// 在发射方向上初始化发射物速度的函数。
+void AFPSProjectile::FireInDirection(const FVector&amp; ShootDirection)
+{
+    ProjectileMovementComponent-&gt;Velocity = ShootDirection * ProjectileMovementComponent-&gt;InitialSpeed;
+}
+
+// 发射物命中物体时调用的函数。
+void AFPSProjectile::OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult&amp; Hit)
+{
+    if (OtherActor != this &amp;&amp; OtherComponent-&gt;IsSimulatingPhysics())
+    {
+        OtherComponent-&gt;AddImpulseAtLocation(ProjectileMovementComponent-&gt;Velocity * 100.0f, Hit.ImpactPoint);
+    }
+}</code></pre>
+<p><strong>FPSCharacter.h</strong>
+</p>
+<pre class="prettyprint"><code>// Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
+
+#pragma once
+
+#include "GameFramework/Character.h"
+#include "FPSCharacter.generated.h"
+
+UCLASS()
+class FPSPROJECT_API AFPSCharacter : public ACharacter
+{
+    GENERATED_BODY()
+
+public:
+    // 设置该角色属性的默认值。
+    AFPSCharacter();
+
+protected:
+    // 游戏开始时或生成时调用
+    virtual void BeginPlay() override;
+
+public:
+    // 每帧调用。
+    virtual void Tick( float DeltaSeconds ) override;
+
+    // 调用以将功能绑定到输入。
+    virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+
+    // 处理前后移动的输入。
+    UFUNCTION()
+    void MoveForward(float Value);
+
+    // 处理左右移动的输入。
+    UFUNCTION()
+    void MoveRight(float Value);
+
+    // 按下按键时设置跳跃标签。
+    UFUNCTION()
+    void StartJump();
+
+    // 松开按键时清除跳跃标签。
+    UFUNCTION()
+    void StopJump();
+
+    // 处理发射发射物的函数。
+    UFUNCTION()
+    void Fire();
+
+    // FPS相机。
+    UPROPERTY(VisibleAnywhere)
+    UCameraComponent* FPSCameraComponent;
+
+    // 第一人称网格体（手臂），仅对拥有玩家可见。
+    UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+    USkeletalMeshComponent* FPSMesh;
+
+    // 相机位置处的枪口偏移。
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+    FVector MuzzleOffset;
+
+    // 生成的发射物类。
+    UPROPERTY(EditDefaultsOnly, Category = Projectile)
+    TSubclassOf&lt;class AFPSProjectile&gt; ProjectileClass;
+};</code></pre>
+<p><strong>FPSCharacter.cpp</strong>
+</p>
+<pre class="prettyprint"><code>// Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
+
+#include "FPSProject.h"
+#include "FPSCharacter.h"
+#include "FPSProjectile.h"
+
+// 设置默认值
+AFPSCharacter::AFPSCharacter()
+{
+    // 将此角色设为每帧调用Tick()。不需要时可将此功能关闭以提高性能。
+    PrimaryActorTick.bCanEverTick = true;
+
+    // 创建一个第一人称相机组件。
+    FPSCameraComponent = CreateDefaultSubobject&lt;UCameraComponent&gt;(TEXT("FirstPersonCamera"));
+    // 将相机组件附加到胶囊体组件。
+    FPSCameraComponent-&gt;SetupAttachment(GetCapsuleComponent());
+    // 将相机放置在眼睛上方不远处。
+    FPSCameraComponent-&gt;SetRelativeLocation(FVector(0.0f, 0.0f, 50.0f + BaseEyeHeight));
+    // 允许Pawn控制相机旋转。
+    FPSCameraComponent-&gt;bUsePawnControlRotation = true;
+
+    // 为拥有玩家创建一个第一人称网格体组件。
+    FPSMesh = CreateDefaultSubobject&lt;USkeletalMeshComponent&gt;(TEXT("FirstPersonMesh"));
+    // 该网格体仅对拥有玩家可见。
+    FPSMesh-&gt;SetOnlyOwnerSee(true);
+    // 将FPS网格体添加到FPS相机。
+    FPSMesh-&gt;SetupAttachment(FPSCameraComponent);
+    // 禁用部分环境投影，保留存在单一网格体的假象。
+    FPSMesh-&gt;bCastDynamicShadow = false;
+    FPSMesh-&gt;CastShadow = false;
+
+    // 拥有玩家无法看到普通（第三人称）身体网格体。
+    GetMesh()-&gt;SetOwnerNoSee(true);
+}
+
+// 游戏开始时或生成时调用。
+void AFPSCharacter::BeginPlay()
+{
+    Super::BeginPlay();
+
+    if (GEngine)
+    {
+        // 显示五秒调试信息。-1“键”值（首个参数）表明无需更新或刷新此消息。
+        GEngine-&gt;AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("We are using FPSCharacter."));
+    }
+}
+
+// 每帧调用。
+void AFPSCharacter::Tick( float DeltaTime )
+{
+    Super::Tick( DeltaTime );
+
+}
+
+// 调用以将功能绑定到输入。
+void AFPSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+    Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+    // 设置“移动”绑定。
+    PlayerInputComponent-&gt;BindAxis("MoveForward", this, &amp;AFPSCharacter::MoveForward);
+    PlayerInputComponent-&gt;BindAxis("MoveRight", this, &amp;AFPSCharacter::MoveRight);
+
+    // 设置“观察”绑定。
+    PlayerInputComponent-&gt;BindAxis("Turn", this, &amp;AFPSCharacter::AddControllerYawInput);
+    PlayerInputComponent-&gt;BindAxis("LookUp", this, &amp;AFPSCharacter::AddControllerPitchInput);
+
+    // 设置“动作”绑定。
+    PlayerInputComponent-&gt;BindAction("Jump", IE_Pressed, this, &amp;AFPSCharacter::StartJump);
+    PlayerInputComponent-&gt;BindAction("Jump", IE_Released, this, &amp;AFPSCharacter::StopJump);
+    PlayerInputComponent-&gt;BindAction("Fire", IE_Pressed, this, &amp;AFPSCharacter::Fire);
+}
+
+void AFPSCharacter::MoveForward(float Value)
+{
+    // 明确“前进”的方向，并记录玩家试图向此方向移动。
+    FVector Direction = FRotationMatrix(Controller-&gt;GetControlRotation()).GetScaledAxis(EAxis::X);
+    AddMovementInput(Direction, Value);
+}
+
+void AFPSCharacter::MoveRight(float Value)
+{
+    // 明确“向右”的方向，并记录玩家试图向此方向移动。
+    FVector Direction = FRotationMatrix(Controller-&gt;GetControlRotation()).GetScaledAxis(EAxis::Y);
+    AddMovementInput(Direction, Value);
+}
+
+void AFPSCharacter::StartJump()
+{
+    bPressedJump = true;
+}
+
+void AFPSCharacter::StopJump()
+{
+    bPressedJump = false;
+}
+
+void AFPSCharacter::Fire()
+{
+    // 尝试发射发射物。
+    if (ProjectileClass)
+    {
+        // 获取相机变换。
+        FVector CameraLocation;
+        FRotator CameraRotation;
+        GetActorEyesViewPoint(CameraLocation, CameraRotation);
+
+        // 将MuzzleOffset从相机空间变换到场景空间。
+        FVector MuzzleLocation = CameraLocation + FTransform(CameraRotation).TransformVector(MuzzleOffset);
+        FRotator MuzzleRotation = CameraRotation;
+        // 将准星稍微上抬。
+        MuzzleRotation.Pitch += 10.0f; 
+        UWorld* World = GetWorld();
+        if (World)
+        {
+            FActorSpawnParameters SpawnParams;
+            SpawnParams.Owner = this;
+            SpawnParams.Instigator = Instigator;
+            // 在枪口处生成发射物。
+            AFPSProjectile* Projectile = World-&gt;SpawnActor&lt;AFPSProjectile&gt;(ProjectileClass, MuzzleLocation, MuzzleRotation, SpawnParams);
+            if (Projectile)
+            {
+                // 设置发射物的初始轨道。
+                FVector LaunchDirection = MuzzleRotation.Vector();
+                Projectile-&gt;FireInDirection(LaunchDirection);
+            }
+        }
+    }
+}</code></pre>
+<p><strong>FPSHUD.h</strong>
+</p>
+<pre class="prettyprint"><code>// Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
+
+#pragma once
+
+#include "GameFramework/HUD.h"
+#include "FPSHUD.generated.h"
+
+/**
+    * 
+    */
+UCLASS()
+class FPSPROJECT_API AFPSHUD : public AHUD
+{
+    GENERATED_BODY()
+
+public:
+    // HUD的主绘制调用。
+    virtual void DrawHUD() override;
+
+protected:  
+    // 将在屏幕中央绘制此项。
+    UPROPERTY(EditDefaultsOnly)
+    UTexture2D* CrosshairTexture;   
+};</code></pre>
+<p><strong>FPSHUD.cpp</strong>
+</p>
+<pre class="prettyprint"><code>// Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
+
+#include "FPSProject.h"
+#include "FPSHUD.h"
+
+void AFPSHUD::DrawHUD()
+{
+    Super::DrawHUD();
+
+    if (CrosshairTexture)
+    {
+        // 找到画布中心。
+        FVector2D Center(Canvas-&gt;ClipX * 0.5f, Canvas-&gt;ClipY * 0.5f);
+
+        // 纹理维度进行一半偏移，使纹理中心和画布中心对齐。
+        FVector2D CrossHairDrawPosition(Center.X - (CrosshairTexture-&gt;GetSurfaceWidth() * 0.5f), Center.Y - (CrosshairTexture-&gt;GetSurfaceHeight() * 0.5f));
+
+        // 在中心点绘制准星。
+        FCanvasTileItem TileItem(CrossHairDrawPosition, CrosshairTexture-&gt;Resource, FLinearColor::White);
+        TileItem.BlendMode = SE_BLEND_Translucent;
+        Canvas-&gt;DrawItem(TileItem);
+    }
+}</code></pre>
+<p>恭喜！你已经学会了如何：
+</p><p>&#x2713; 在游戏中添加发射物<br />&#x2713; 实现射击<br />&#x2713; 设置发射物碰撞和生命周期<br />&#x2713; 使发射物和场景形成交互<br />&#x2713; 在视口中添加准星<br /></p><p>下一部分将学习设置角色动画的方法。
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Tutorials/FirstPersonShooter/3/5/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 02:10:19 GMT -->
+</html>

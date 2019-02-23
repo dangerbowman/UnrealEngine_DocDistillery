@@ -1,0 +1,1228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/nDisplay/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:57 GMT -->
+<head>
+    <title>使用nDisplay在多显示屏上进行渲染 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/nDisplay/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/nDisplay/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/nDisplay/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/nDisplay/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="4276998" />
+<meta name="availability" content="Public" />
+<meta name="title" content="使用nDisplay在多显示屏上进行渲染" />
+<meta name="description" content="描述如何使用nDisplay系统同时在多个显示器上渲染您的虚幻引擎项目。" />
+<meta name="version" content="4.20" />
+<meta name="parent" content="Engine/Rendering" />
+<meta name="order" content="0" />
+<meta name="tags" content="Rendering " />
+<meta name="tags" content="Graphics " />
+<meta name="tags" content="Experimental " />
+<meta name="tags" content="Landing " />
+<meta name="tags" content="Page" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="使用nDisplay在多显示屏上进行渲染" />
+	<meta property="og:description" content="描述如何使用nDisplay系统同时在多个显示器上渲染您的虚幻引擎项目。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">图形和渲染</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index310e.html">Rendering </a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9902.html">Graphics </a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexb3c8.html">Experimental </a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index04ac.html">Landing </a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index4c67.html">Page</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_20"><a id="version_link" href="../../../SiteIndex/index9c4a.html">Unreal Engine 4.20</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">使用nDisplay在多显示屏上进行渲染</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_20"><a id="version_link" href="../../../SiteIndex/index9c4a.html">Unreal Engine 4.20</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<p><img alt="ndisplay_banner.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay_banner.jpg" />
+</p><p>互动式内容不仅限于显示在一个屏幕上，或者像VR头显这样的双屏设备上。越来越多的视觉化系统想要通过多个同步显示屏实时渲染内容，更高效地让观众沉浸在游戏世界中。这些系统可能由多个相邻的物理显示屏组成，如<a id="content_link" href="../../../../../external.html?link=https://en.wikipedia.org/wiki/Powerwall" ><span>Powerwall</span></a>
+显示屏；或者可能使用多个投影仪将3D环境投影到穹顶、倾斜幕墙、曲面屏等物理表面，如<a id="content_link" href="../../../../../external.html?link=https://en.wikipedia.org/wiki/Cave_automatic_virtual_environment" ><span>Cave</span></a>
+虚拟环境。
+</p><p>虚幻引擎通过一个系统 <strong>nDisplay</strong> 为这些使用场景提供支持。该系统可以解决将3D内容同时渲染到多个显示屏的一些最重要的挑战：
+</p><ul ><li><p>它有助于完成在网络中的不同计算机上部署和启动多个项目实例的过程，并且这些计算机各自可以渲染到一个或多个显示设备。
+</p></li><li><p>它管理根据显示硬件的空间布局，实时计算每个屏幕的视锥体所涉及的所有计算工作。
+</p></li><li><p>它确保各个屏幕上显示的内容保持 <em>完全</em> 同步，将确定性内容分发到所有引擎实例。
+</p></li><li><p>它提供无源和有源立体声渲染。
+</p></li><li><p>它可以受VR跟踪系统输入的驱动，这样显示屏中的视点就可以准确地实时跟随移动观众的视点。
+</p></li><li><p>它足够灵活，可以支持任意相对方向的任意数量的屏幕，并可以在任意数量的项目中轻松复用。
+</p></li></ul><h2 id="ndisplay系统概述">nDisplay系统概述</h2>
+
+<p>每个nDisplay设置都有一台 <em>主</em> 计算机和任意数量的附加计算机。<br /></p><ul ><li><p>网络中的每一台计算机都运行项目封装可执行文件的一个或多个实例。其中每一个虚幻引擎实例都负责将同一3D场景的一个分段渲染到单一屏幕或显示屏。
+</p></li><li><p>主节点还负责从VRPN设备接收输入，然后将该输入复制到所有其他相连的计算机。
+</p></li></ul><p><img alt="nDisplay network overview" title="nDisplay network overview" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/image5.jpg" />
+</p><p>为此，nDisplay向普通虚幻系统架构添加了多个组件：
+</p><ul ><li><p>一个网络配置和管理应用程序，名为 <strong>nDisplayLauncher</strong>。您在网络的一台计算机上运行该应用程序，以自动在网络中的所有计算机上部署和启动您的项目。 
+</p></li><li><p>一个独立的侦听器应用程序，名为 <strong>nDisplayListener</strong>，在每一台计算机上运行。该应用程序侦听从nDisplayLauncher传入的请求，并在本地计算机上处理这些请求。
+</p></li><li><p>一个包含所有设置的共享配置文件，nDisplay需要这些设置才能在正确的计算机上启动正确数量的实例，这些计算机各自渲染游戏3D世界中的正确视点，以产生在所有显示屏或投影仪上无缝渲染的错觉。请参阅下文<a id="content_link" href="index.html#aboutthendisplayconfigurationfile" ><span>关于nDisplay配置文件</span></a>
+。
+</p></li></ul><a name="gettingstarted" ></a><h2 id="入门">入门</h2>
+
+<p>本节介绍如何首次启动和运行nDisplay。准备工作：
+</p><ul ><li><p>确保您的物理设备（屏幕、投影仪等）已正确设置并能正常工作。
+</p></li><li><p>确保您打算在主计算机上使用的Windows帐户在您打算在nDisplay网络中使用的 <em>所有</em> 计算机上都有管理权限。
+</p></li><li><p>确保您想要在nDisplay网络中使用的所有计算机能够通过端口41000、41001和41002接收TCP/IP通信。(您可以使用不同的端口；请参阅下文<a id="content_link" href="index.html#changingcommunicationports" ><span>更改通信端口</span></a>
+。)
+</p></li></ul><h3 id="第1步stop设置项目以便使用ndisplay">第1步. 设置项目以便使用nDisplay</h3>
+
+<p>设置项目以使用nDisplay的最简单方法是根据nDisplay模板项目创建项目：
+</p><p><img alt="根据模板创建nDisplay项目" title="Create an nDisplay Project from the Template" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-create-from-template.jpg" />
+</p><p>这样会自动启用nDisplay插件，向项目添加一些样本配置文件，并提供已经配置有默认设置的默认关卡。
+</p><p>如果您有现成的项目想要使用nDisplay，可以手动进行相同配置。请参阅下文<a id="content_link" href="index.html#addingndisplaytoanexistingproject" ><span>向现有项目添加nDisplay</span></a>
+。
+</p><h3 id="第2步stop设置配置文件">第2步. 设置配置文件</h3>
+
+<p>您需要将以下信息告知nDisplay：想要在网络中使用的不同计算机、这些计算机将渲染到的屏幕或投影仪的尺寸和分辨率、关卡3D空间中这些屏幕之间的空间关系等。为此，需要创建一个配置文件，用一系列设置表达所有这些信息。
+</p><p>创建该配置文件可能是nDisplay设置中最棘手的部分，因此需谨慎操作。有关详细信息，请参阅下文<a id="content_link" href="index.html#aboutthendisplayconfigurationfile" ><span>关于nDisplay配置文件</span></a>
+。
+</p><p>通常，设置好配置文件后，您只需在网络拓扑发生变化时修改配置文件即可：例如，当您需要更改想要渲染到的计算机时，或者如果您更改真实世界中的屏幕和显示屏的物理布局。
+</p><p>将配置文件保存到项目的内容文件夹中。您将在下一步中用到该文件。<br /></p><h3 id="第3步stop封装和部署">第3步. 封装和部署</h3>
+
+<p>每次更改项目中的内容时，都需要封装游戏并部署到已在配置文件中标识的所有计算机。
+</p><ol ><li><p>在虚幻编辑器中，为Windows烘焙和封装游戏。有关详细信息，请参阅<a id="content_link" href="../../../../../docs.unrealengine.com/en-us/Engine/Deployment/BuildOperations.html" ><span>构建操作：烘焙、封装、部署和运行</span></a>
+。<br />然后，在将应用程序部署到从属计算机时，nDisplay会将其复制到每个目标计算机上的相同位置。因此，最好将项目封装到所有机器上都存在的位置。
+</p></li><li><p>在虚幻引擎安装文件夹下面找到 <em>Engine\Binaries\DotNET\nDisplayListener.exe</em> 应用程序。将该应用程序复制到包含您已为游戏封装的  <em>.exe</em> 文件的文件夹。
+</p></li><li><p>将nDisplay配置文件复制到相同文件夹。<br />您应将封装项目的 <em>.exe</em> 文件、<em>nDisplayListener.exe</em> 应用程序和配置文件全部并排放在同一个文件夹中。
+</p></li><li><p>运行虚幻引擎安装文件夹下面的 <em>Engine\Binaries\DotNET\nDisplayLauncher.exe</em> 应用程序。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay_launcher_config-1.png" ><span><img alt="在nDisplay Launcher中部署" title="Deploy in the nDisplay Launcher" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay_launcher_config-1.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>  <em>单击查看大图。</em>
+</p>
+</div></li><li><p>将封装项目的 <em>.exe</em> 文件添加到“应用程序（Applications）”列表。<br />单击 <strong>应用程序（Applications）</strong> 列表下面的 <strong>添加（Add）</strong>，然后浏览并选择您为项目封装的 <em>.exe</em> 文件。
+</p></li><li><p>指定配置文件。<br />单击 <strong>配置文件（Config Files）</strong> 控件右侧的 <strong>添加（Add）</strong>，然后浏览并选择您的配置文件。
+</p></li><li><p>单击 <strong>部署应用程序（Deploy application）</strong>。<br />nDisplay将包含项目可执行文件的文件夹的所有内容复制到您在配置文件中标识的所有其他计算机上的相同位置。
+</p></li></ol><h3 id="第4步stop启动所有节点">第4步. 启动所有节点</h3>
+
+<p>当您将项目成功部署到已在配置文件中标识的所有计算机后，可以使用 <strong>nDisplayLauncher</strong> 应用程序同时在所有计算机上启动该项目。
+</p><ol ><li><p>如果您尚未运行 <strong>nDisplayLauncher</strong> 应用程序，请启动该程序并按上一节所述设置应用程序和配置文件。<br /></p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay_launcher_launch.png" ><span><img alt="使用nDisplay Launcher运行" title="Run with the nDisplay Launcher" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay_launcher_launch.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span> <em>单击查看大图。</em>
+</p>
+</div></li><li><p>单击 <strong>启动侦听器（Start listeners）</strong>。这样会在您已在nDisplay配置文件中标识的每台计算机上运行nDisplayListener应用程序。
+</p></li><li><p>当nDisplay确认已在所有计算机上启动所有侦听器后，单击 <strong>运行（Run）</strong> 以启动所有实例。
+</p></li></ol><p>完成后：
+</p><ol ><li><p>单击 <strong>终止（Kill）</strong> 会自动关闭所有计算机上的所有虚幻引擎实例，或者直接关闭主计算机上运行的虚幻引擎实例即可。
+</p></li><li><p>单击 <strong>停止侦听器（Stop listeners）</strong> 以关闭所有计算机上的nDisplayListener应用程序。
+</p></li></ol><a name="aboutthendisplayconfigurationfile" ></a><h2 id="关于ndisplay配置文件">关于nDisplay配置文件</h2>
+
+<div class="tip">
+	<p>开始了解并创建自己的nDisplay配置文件的最佳方法是从nDisplay插件提供的示例配置入手。如果您已根据nDisplay模板创建了项目，会在项目文件夹 <em>Content/ConfigExamples</em> 中找到这些文件。如果还未创建，可以在虚幻引擎安装文件夹中的 <em>Templates/TP_nDisplayBP/Content/ConfigExamples</em> 下面找到这些文件。
+</p>
+</div><p>nDisplay配置文件的结构与它用来渲染视觉化的不同类型组件有直接关系。
+</p><ul ><li><p>您配置的每种不同类型的组件在该文件中都有自己的行，并以您指定的字符串ID标识。当一个配置节需要引用另一个配置节时，使用这些字符串ID。
+</p></li><li><p>在该文件中配置的许多组件已在3D空间中定义了位置（通常也定义了旋转）。每个对象的位置和旋转都相对于该对象的 <em>父代</em>。默认情况下，所有对象的父代都是VR空间原点：VR空间中被视为起点的3D场景空间中的任意点。您还可以配置3D空间中特定的命名变换，称为scene_node，它们可以充当一个或多个组件的父代。这有助于简化屏幕、摄像机和其他组件的空间布局。
+</p></li><li><p>除非另有说明，否则所有参数都需使用以米和度为单位的值。
+</p></li></ul><h3 id="摄像机配置">摄像机配置</h3>
+
+<p>nDisplay一次从一个视点渲染场景。每个潜在的视点都由一个 <strong>camera</strong> 配置文件定义。<br /></p><p>您可以在运行时切换这些视点。每个视点也都可以由跟踪设备驱动。
+</p><h4 id="示例配置：">示例配置：</h4>
+
+
+<pre class="prettyprint"><code>&#91;camera&#93; id=camera_static loc="X=0.Y=0,Z=1.7" tracker_id=VRPNTracking tracker_ch=0</code></pre>
+<h4 id="参数：">参数：</h4>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>参数 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>id</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该摄像机配置的唯一名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>loc</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该摄像机在VR空间中相对于其父代的位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>tracker_id</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>input</strong> 配置的名称，该配置定义您需要用于随着时间驱动摄像机位置的VR设备。可选参数。如果省略该参数，摄像机位置在VR空间中将保持不变。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>tracker_ch</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当您提供 <strong>tracker_id</strong> 时，该参数指定nDisplay将从中读取跟踪数据的设备信道。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>parent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>您希望用作该对象父代的 <strong>scene_node</strong> 配置的名称。该参数是可选的。如果指定父代，您在loc参数中设置的值将相对于该父代的位置。如果省略父代，您在loc参数中设置的值将相对于VR根。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="屏幕配置">屏幕配置</h3>
+
+<p>每个不同的输出显示屏都使用在3D VR空间中定义了大小和位置的矩形所定义的视锥体，从当前摄像机位置渲染场景。每个矩形都由一个 <strong>screen</strong> 配置定义。通常，每个投影屏在VR空间中都有与您用来渲染的物理屏幕相同的尺寸。<br /></p><p>屏幕轴心点始终是最中心点。
+</p><h4 id="示例配置：">示例配置：</h4>
+
+<p>该定义描述的是3*3米并直接位于其父代前面的屏幕。由于屏幕轴心点位于size参数定义的矩形中心，因此我们在Z轴上添加1.5米的偏移，以将屏幕向上移动一半高度。
+</p>
+<pre class="prettyprint"><code>&#91;screen&#93; id=screen_front loc="X=1.5.Y=0,Z=1.5" rot="P=0,Y=0,R=0" size="X=3,Y=3" parent=screens</code></pre>
+<p>要将屏幕定义在观众左侧，将其向左移动（Y轴用负值），并围绕着局部Y轴旋转（yaw）。 
+</p>
+<pre class="prettyprint"><code>&#91;screen&#93; id=screen_left loc="X=0,y=-1.5,Z=1.5" rot="P=0,Y=-90,R=0" size="X=3,Y=3" parent=screens</code></pre>
+<h4 id="参数：">参数：</h4>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>参数</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>说明</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>id</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该屏幕配置的唯一名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>loc</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该屏幕中心在VR空间中相对于其父代的位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>rot</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>屏幕所面向方向的Pitch（P）、Yaw（Y）和Roll（R）角度，以度为单位。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>size</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>屏幕矩形的局部X和Y轴的总大小，以米为单位。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>parent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>您希望用作该对象父代的 <strong>scene_node</strong> 配置的名称。该参数是可选的。如果指定父代，您在loc和rot参数中设置的值将相对于该父代的位置。如果省略父代，您在loc和rot参数中设置的值将相对于VR根。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="集群节点配置">集群节点配置</h3>
+
+<p>上述定义的每个投影屏通常都由虚幻引擎应用程序的不同实例渲染。对于每个实例，您需要定义一个 <strong>cluster_node</strong> 配置。每个集群节点都引用它应该渲染的投影屏配置。 
+</p><p>cluster_node 配置还定义将运行该应用程序实例的计算机的主机名或IP地址。您可以为每个cluster_node配置设置不同的物理计算机，也可以让多个cluster_node配置在同一个主机上运行。
+</p><h4 id="示例配置：">示例配置：</h4>
+
+<p>该示例配置主节点（每个网络一个）：
+</p>
+<pre class="prettyprint"><code>&#91;cluster_node&#93; id=node_front addr=192.168.0.1 screen=screen_front viewport=vp_front sound=true port_cs=41001 port_ss=41002 master=true</code></pre>
+<p>该示例显示非主集群节点：
+</p>
+<pre class="prettyprint"><code>&#91;cluster_node&#93; id=node_left addr=192.168.0.2 screen=screen_left viewport=vp sound=false</code></pre>
+<h4 id="参数：">参数：</h4>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>参数</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>说明</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>id</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该集群节点配置的唯一名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>addr</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将运行该虚幻引擎实例的计算机的IP地址。这必须是IPv4地址。不支持IPv6。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>screen</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>screen</strong> 配置的名称，该配置定义应该由该虚幻实例负责渲染的投影屏。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>viewport</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>viewport</strong> 配置的名称，该配置定义该虚幻引擎实例运行的应用程序窗口中的渲染框架位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>sound</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定该虚幻引擎实例是否应播放声音。这是可选参数，默认值为<code >false</code>。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Winx WinY</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定应用程序窗口左上角在桌面上的位置，以屏幕空间像素为单位。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>ResX ResY</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定应用程序窗口的大小，以屏幕空间像素为单位。确保您用于该集群节点的视口定义不会超过该窗口的大小。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>port_cs port_ss</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>port_ss 集群同步端口，主节点必须使用这些端口来与集群中的其他节点通信。这是可选参数：默认值为<code >14001</code>和<code >14002</code>。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>master</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定该虚幻引擎实例是否是集群的主节点。只有一个cluster_node节可以将该参数设置为true。这是可选参数，默认值为<code >false</code>。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="视口配置">视口配置</h3>
+
+<p>以上所述的每个 <strong>cluster_node</strong> 配置都引用 <strong>viewport</strong> 配置，视口配置定义游戏窗口中将映射渲染框架的矩形区域。 
+</p><p>通常，每个具有不同分辨率设置的显示设备都需要一个不同的视口配置。例如，如果所有显示屏都相同，则只需一个视口配置，您可以从所有集群节点配置引用该视口配置。
+</p><p>一般而言，视口从应用程序窗口左上角算起，宽度和高度已经设定好，这样就可以填充父窗口。但是，在某些情况下，您可能需要在父应用程序窗口中偏移视口。例如，如果需要设置两个部分重叠的投影仪，就需要这样操作。<br /></p><h4 id="示例配置：">示例配置：</h4>
+
+
+<pre class="prettyprint"><code>&#91;viewport&#93; id=vp_left X=0 Y=0 width=1920 height=1080</code></pre>
+<h4 id="参数：">参数：</h4>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>参数</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>说明</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>id</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该视口配置的唯一名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>X Y</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>视口左上角在主应用程序窗口的屏幕空间中的坐标，以像素为单位。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>width height</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>渲染框架的高度和宽度，以像素为单位。该尺寸不应该大于使用该视口的任何 <strong>cluster_node</strong> 配置的size参数所定义的游戏窗口大小。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="场景节点配置">场景节点配置</h3>
+
+<p>在配置文件中，您可以定义场景节点的层级，每个场景节点表示3D空间中的一个变换。如果您在配置文件中设置的任何对象在3D空间中需要有位置和旋转，例如摄像机或投影屏，可以使用其中一个 <em>scene_node</em> 配置作为其父代。这样可以帮助您定义视觉化系统所有不同组件之间的空间关系。
+</p><p>像摄像机一样，场景节点也可以由VR跟踪设备驱动。
+</p><h4 id="示例配置：">示例配置：</h4>
+
+<p>以下代码行定义两个节点的层级，其中子节点在其父代前面有2米偏移。
+</p>
+<pre class="prettyprint"><code>&#91;scene_node&#93; id=vr_space_root loc="X=0.Y=0,Z=0" rot="P=0,Y=0,R=0"
+&#91;scene_node&#93; id=walls_front_group loc="X=2.Y=0,Z=0" rot="P=0,Y=0,R=0" parent= vr_space_root</code></pre>
+<p>以下代码行显示了配置为由VR跟踪设备驱动的场景节点：
+</p>
+<pre class="prettyprint"><code>&#91;scene_node&#93; id=cave_wand loc="X=0, Y=0,Z=1" tracker_id=CaveTracking tracker_ch=1</code></pre>
+<h4 id="参数：">参数：</h4>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>参数</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>说明</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>id</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该场景节点配置的唯一名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>loc</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该场景节点在VR空间中相对于其父代的位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>rot</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>场景节点所面向方向的Pitch（P）、Yaw（Y）和Roll（R）角度，以度为单位。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>parent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>您希望用作该场景节点父代的另一个 <strong>scene_node</strong> 配置的名称。该参数是可选的。如果指定父代，您在 <strong>loc</strong> 和 <strong>rot</strong> 参数中设置的值将相对于该父代的位置。如果省略父代，您在 <strong>loc</strong> 和 <strong>rot</strong> 参数中设置的值将相对于VR根。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>tracker_id</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><strong>input</strong> 配置的名称，该配置定义您需要用于随着时间驱动场景节点位置的VR设备。可选参数。如果省略该参数，场景节点位置和旋转将在VR空间中相对于其父代保持不变。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>tracker_ch</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当您提供 <strong>tracker_id</strong> 时，该参数指定nDisplay将从中读取跟踪数据的设备信道。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="输入配置">输入配置</h3>
+
+<p>每个 <strong>camera</strong> 和每个 <strong>scene_node</strong> 可以选择性由VR跟踪设备驱动。为此，您为每个VR设备定义一个 <strong>input</strong> 节，并在 <strong>camera</strong> 或 <strong>scene_node</strong> 配置中引用该节。
+</p><h4 id="示例配置：">示例配置：</h4>
+
+
+<pre class="prettyprint"><code>&#91;input&#93; id=CaveTracking type=tracker addr=Tracker0@192.168.0.1 loc="X=-1.5,Y=0,Z=3.4" rot="P-0,Y=0,R=0" front=X right=Y up=-Z</code></pre>
+<h4 id="参数：">参数：</h4>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>参数 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>id</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该输入设备配置的唯一名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>type</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该VRPN输入设备的类型：
+</p><ul ><li><p><code >tracker</code>表示跟踪设备。
+</p></li><li><p><code >analog</code>表示产生轴数据的设备。
+</p></li><li><p><code >button</code>表示产生布尔按钮数据的设备。
+</p></li></ul>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>addr</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该VRPN输入设备的类型：   负责处理该特定设备的VRPN服务器的地址。该值必须采用以下格式：
+<code >DEVICENAME@SERVER_ADDRESS</code>
+<code >其中：</code>
+</p><ul ><li><p><code >DEVICENAME</code>是该设备的VRPN名称。
+</p></li><li><p><code >SERVER_ADDRESS</code>是VRPN服务器的IPv4地址。
+</p></li></ul>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>remap</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该参数重新映射跟踪设备的信道编号，以便在虚幻中可以从不同信道读取其输入。例如，某些控制器使用信道0进行头部跟踪，信道1用于控制器，其他则将信道1用于头部跟踪，信道5用于控制器。来回切换这两类设备可能需要更改配置和运行时代码以便匹配。为避免在此类情况下进行任何其他更改，可以使用该参数来重新映射信道。
+例如，值：
+<code >remap&#91;0:1, 5:2&#93;</code>
+会将跟踪设备信道1的数据转发到虚幻中的信道0，将跟踪设备信道2的数据转发到虚幻中的信道5。
+</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p><code >type=tracker</code>的设备还接受以下附加参数：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>参数</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>说明</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>loc rot</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>类似于其他配置节，<strong>loc</strong> 和 <strong>rot</strong> 参数指定该输入设备在局部空间中的位置和旋转偏移。但是，对于输入设备，通常使用这些偏移来调整跟踪设备在VR空间中的根位置，以匹配您希望它在场景节点层级中应该具有的位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>front right up</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这些参数将虚幻中跟踪器的每个局部轴（前、右和上）与跟踪器坐标系中的相应轴匹配。虚幻使用右手惯用Z轴向上的坐标系。如果您的跟踪器使用其他坐标系，可以使用这些参数将跟踪器坐标系映射到虚幻坐标系。
+例如，以下代码行将跟踪器Y轴映射到虚幻前（X）轴，将跟踪器X轴映射到虚幻右（Y）轴，将跟踪器负Z轴映射到虚幻上（Z）轴：
+<code >front=Y right=X up=-Z</code>
+</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="常规配置">常规配置</h3>
+
+<p><strong>general</strong> 配置行包含用于控制nDisplay集群总体运行的参数。
+</p><h4 id="示例配置：">示例配置：</h4>
+
+
+<pre class="prettyprint"><code>&#91;general&#93; swap_sync_policy=1</code></pre>
+<h4 id="参数：">参数：</h4>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>参数</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>说明</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>swap_sync_policy</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定输出在网络中的同步方式。
+</p><ul ><li><p>0：不同步。
+</p></li><li><p>1：软件交换同步
+</p></li><li><p>2：NV交换锁定（仅适用于使用OpenGL的NVIDIA卡渲染）
+</p></li></ul>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="立体声配置">立体声配置</h3>
+
+<p><strong>stereo</strong> 配置行设置立体声渲染的可选全局参数。
+</p><h4 id="示例配置：">示例配置：</h4>
+
+<p>[stereo] eye_swap=True eye_dist=0.064
+</p><h4 id="参数：">参数：</h4>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>参数</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>说明</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>eye_swap</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定是否交换为左右眼生成的图像。可选参数。默认值为false。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>eye_dist</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于调整为左右眼生成的图像偏移的瞳距值，以米为单位。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="结构">结构</h3>
+
+<p>以上概述的不同配置类型之间的引用即暗含了结构，红色箭头是必须存在的引用，绿色箭头是可选引用：
+</p><p><img alt="配置引用结构" title="Configuration reference structure" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-configuration-references.jpg" />
+</p><h3 id="示例">示例</h3>
+
+<p>为了举一个具体示例，打开 <em>wall_flat_3x2.cfg</em> 样本文件。该文件定义了六个投影屏，每个屏幕将由单独的物理计算机渲染。
+</p><p>它还定义了多个scene_node，它们共同形成了以下层级：
+</p><p><img alt="nDisplay示例场景层级" title="nDisplay example scene hierarchy" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-scene-hierarchy.jpg" />
+</p><p>该层级中节点的相对位置和旋转决定了摄像机的布局和VR空间中的六个屏幕的布局，因此六个投影屏是并排放置的，距离摄像机1米。 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-example-layout.png" ><span><img alt="nDisplay示例布局" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-example-layout.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p>单击查看大图。
+</p>
+</div><p>请注意，该配置暗示着每对相邻的投影屏之间存在一小块间隙，以便容纳渲染场景的显示器边缘。
+</p><h2 id="蓝图api">蓝图API</h2>
+
+<p>您可以使用蓝图API控制nDisplay系统在游戏运行时逻辑中的行为。
+</p><p>要在该API中公开用于管理集群、输入和渲染的函数：
+</p><ol ><li><p>在蓝图中创建新的 <strong>显示集群（Display Cluster）>获取插件API（Get Plugin API）</strong> 节点。
+</p></li><li><p>从 <strong>输出API（Out API）</strong> 引脚拖出一根引线，并在 <strong>显示集群（Display Cluster）</strong> 类别下查找所需选项：<br /><img alt="nDisplay获取插件API" title="nDisplay Get Plugin API" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-get-plugin-api.jpg" />
+</p></li></ol><h2 id="actor复制">Actor复制</h2>
+
+<p>所有nDisplay系统输入都只有主节点处理。如果不进行复制，则只有主节点会看到场景变化。因此，主节点需要能够将更改复制到nDisplay网络的所有其他部分。
+</p><p>为此，nDisplay提供了两种可以连接到Actor的不同组件：
+</p><ul ><li><p><strong>DisplayClusterSceneComponentSyncParent</strong> 组件跟踪其父组件的3D变换更改，并将这些更改推送到网络中的其他集群节点。<br />nDisplay系统使用的默认DisplayClusterPawn使用该组件。<br /></p></li><li><p><strong>DisplayClusterSceneComponentSyncParent</strong> 组件跟踪其子组件的3D变换更改，并将这些更改推送到网络中的其他集群节点。
+</p></li></ul><p>例如，在下面显示的Actor中，<strong>DisplayClusterSceneComponentSyncParent_DefaultSceneRoot</strong> 组件跟踪并复制其父Actor在关卡中四处移动时它的3D变换的更改。<strong>DisplayClusterSceneComponentSyncThis</strong> 组件跟踪并同步其子立方体组件相对于场景图形根移动时的运动。
+</p><p><img alt="DisplayClusterSceneComponentSyncParent " title="DisplayClusterSceneComponentSyncParent " src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-actor-replication.jpg" />
+</p><p>如果您的场景中包含可能在游戏期间受到影响的其他Actor，必须使用上述两个组件之一来将这些更改复制到所有节点。为此：
+</p><ol ><li><p>在关卡视口或 <strong>世界大纲视图</strong> 面板中选择需要复制的Actor。
+</p></li><li><p>在 <strong>细节（Details）</strong> 面板中，单击 <strong>添加组件（+ Add Component）</strong>。搜索 <strong>DisplayClusterSceneComponentSyncParent</strong> 或 <strong>DisplayClusterSceneComponentSyncThis</strong> 并从列表中选择它。<br /><img alt="添加nDisplay同步组件" title="Add an nDisplay sync Component" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-actor-replication-selection.jpg" />
+</p></li></ol><div class="note">
+	<p>这些组件不执行完全复制。只会将父Actor或子组件的变换发送到集群。
+</p>
+</div><h2 id="使用vrpn输入">使用VRPN输入</h2>
+
+<p>要将<a id="content_link" href="../../../../../external.html?link=https://en.wikipedia.org/wiki/VRPN" ><span>VRPN</span></a>
+输入设备与nDisplay一起使用：
+</p><ol ><li><p>在网络中安装VRPN服务器。<br />当前版本的nDisplay需要VRPN <strong>版本33</strong>。
+</p></li><li><p>在服务器的 <em>vrpn.cfg</em> 文件中（该文件位于服务器可执行文件附近），启用输入设备并指定名称。
+</p></li><li><p>在nDisplay配置文件中，添加一个条目来设置VRPN输入设备，调整它的坐标系并将其连接到摄像机。
+</p></li></ol><p>以下示例演示了设置ART DTrack跟踪系统的一种方法：
+</p><ul ><li><p>在vrpn服务器exe附近的Vrpn.cfg中，添加以下行：</p>
+<pre class="prettyprint"><code>vrpn_Tracker_DTrack DTrack  5000    </code></pre>
+<p>这样会让VRPN接收来自于端口5000的DTrack输入，并将它们映射到名为DTrack的VRPN设备。(确保将DTrack配置为在端口5000上输出其跟踪数据。)
+</p></li><li><p>在nDisplay配置文件中，添加以下行：</p>
+<pre class="prettyprint"><code>&#91;input&#93; id=CaveTracking type=tracker addr=DTrack@127.0.0.1 loc="X=1.32,Y=0,Z=0.93735" rot="P=0,Y=0,R=0" front=Z right=-X up=Y
+&#91;camera&#93; id=camera_dynamic loc="X=0,Y=0,Z=0" tracker_id=CaveTracking tracker_ch=0</code></pre>
+<p>第一行创建名为CaveTracking的nDisplay输入设备，它从VRPN地址DTrack@127.0.01获取数据。您必须在这里调整坐标系以适应您的跟踪系统和偏移。第二行告知nDisplay在信道0上从CaveTracking输入获取摄像机位置。
+</p></li></ul><p>要从游戏代码管理VRPN设备的状态，并检测按按钮等输入事件：
+</p><ul ><li><p>在C++中，使用<code >IDisplayClusterInputManager</code>类。
+</p></li><li><p>在蓝图中，使用 <strong>显示集群（DisplayCluster）>输入（Input）</strong> 下面的节点。确保您在节点中设置的ID与配置文件中设置的ID值相匹配。例如：<br /><img alt="ndisplay_vrpn_api.png" title="ndisplay842352655vrpn842352655api.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay_vrpn_api.jpg" />
+</p></li></ul><a name="changingcommunicationports" ></a><h2 id="更改通信端口">更改通信端口</h2>
+
+<p>nDisplay系统主机之间通过三个TCP/IP端口通信：14000、14001和14002。您需要确保在所有计算机上打开这些端口。
+</p><p>如果想要自己更改端口号，可以在以下位置进行更改。
+</p><ul ><li><p><strong>运行时同步端口</strong>。主节点使用两个端口与集群中的其他节点同步数据。要设置这两个端口，在配置文件中用于定义主节点的 <strong>cluster_node</strong> 行上包含 <strong>port_cs</strong> 和 <strong>port_ss</strong> 配置参数。例如：</p>
+<pre class="prettyprint"><code>&#91;cluster_node&#93; id=node_front addr=192.168.0.1 screen=screen_front viewport=vp_front port_cs=42001 port_ss=42002 master=true</code></pre></li><li><p><strong>nDisplay Launcher和nDisplay Listener端口</strong>。nDisplay Launcher和nDisplay Listener都需要配置为使用相同的通信端口。您可以在启动这些应用程序时，在命令行上进行指定。<br />当您启动nDisplay Launcher时，使用<code >listener_port</code>参数。例如：
+nDisplayLauncher.exe listener_port=15003
+</p></li></ul><p>  此外，您还需要在每个主机上使用<code >port</code>参数自行启动nDisplayListener应用程序。例如：</p>
+<pre class="prettyprint"><code>nDisplayListener.exe port=15003</code></pre>
+<a name="addingndisplaytoanexistingproject" ></a><h2 id="向现有项目添加ndisplay">向现有项目添加nDisplay</h2>
+
+<p>将现有项目设置为使用nDisplay：
+</p><ol ><li><p>启用nDisplay插件。<br />在虚幻编辑器中，从主菜单中选择 <strong>编辑（Edit）>插件（Plugins）</strong>。搜索“nDisplay”，选中 <strong>启用（Enabled）</strong> 复选框。<br /></p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-enable-plugin.png" ><span><img alt="启用nDisplay插件" title="Enable the nDisplay Plugin" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-enable-plugin.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span><br /><em>单击查看大图。</em>
+</p>
+</div></li><li><p>为项目启用nDisplay。<br />从主菜单中选择 <strong>编辑（Edit）>项目设置（Project Settings）</strong>，找到 <strong>插件（Plugins）> nDisplay</strong> 部分。选中 <strong>启用（Enabled）</strong> 复选框。<br /></p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-project-settings.png" ><span><img alt="nDisplay项目设置" title="nDisplay Project Settings" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-project-settings.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span><br /><em>单击查看大图。</em>
+</p>
+</div></li><li><p>还是在 <strong>项目设置（Project Settings）</strong> 窗口中，转至 <strong>项目（Project）>说明（Description）</strong> 部分，选中 <strong>设置（Settings）>使用无边框窗口（Use Borderless Window）</strong> 复选框。<br /></p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-project-settings-borderless.png" ><span><img alt="使用无边框窗口" title="Use Borderless Window" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-project-settings-borderless.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span><br /><em>单击查看大图。</em>
+</p>
+</div></li><li><p>重新启动虚幻编辑器，重新打开项目，然后打开项目的默认关卡。
+</p></li><li><p>在 <strong>场景设置（World Settings）</strong> 面板中，将 <strong>游戏模式（Game Mode）>游戏模式覆盖（GameMode Override）</strong> 设置为 <strong>DisplayClusterGameModeDefault</strong>。<br /></p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-world-settings.png" ><span><img alt="nDisplay场景设置" title="nDisplay World Settings" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-world-settings.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span><br /><em>单击查看大图。</em>
+</p>
+</div></li><li><p>向关卡添加新的 <strong>DisplayClusterSettings</strong> Actor。<br />您可以在 <strong>模式（Modes）</strong> 面板上的 <strong>所有类（All Classes）</strong> 列表中找到这个Actor。
+</p></li><li><p>继续完成上文<a id="content_link" href="index.html#gettingstarted" ><span>入门</span></a>
+中所述的其余设置操作。
+</p></li></ol><h2 id="ndisplaylauncherui参考">nDisplay Launcher UI参考</h2>
+
+<p>本节介绍nDisplay Launcher用户界面中提供的所有设置和选项。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-launcher-ui.png" ><span><img alt="nDisplay Launcher UI" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/nDisplay/ndisplay-launcher-ui.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span> 
+</p>
+</div><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>控件</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>渲染API（Render API）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定下次单击“运行（Run）”时使用的渲染API。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>渲染模式（Render mode）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定nDisplay产生的输出类型：
+</p><ul ><li><p>单视场（Monoscopic）：无立体声渲染
+</p></li><li><p>帧连续（Frame sequential）：有源四缓冲立体声
+</p></li><li><p>并排（Side-by-side）：无源水平一致立体声
+</p></li><li><p>自顶向下（Top-bottom）：无源垂直一致立体声
+</p></li></ul><p>单视场（Monoscopic）不需要任何特定的硬件功能，但帧连续（Frame sequential）需要。确保您的显示设备、GPU和驱动程序设置与您选择的渲染模式兼容。
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>使用所有可用核心（Use All Available Cores）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>强制每个虚幻实例使用其主机上所有可用的处理器。选择该选项时，nDisplay Launcher会在用于启动每个实例的命令行中添加USEALLAVAILABLECORES选项。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>无纹理流送（No Texture Streaming）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>禁用每个虚幻实例的纹理流送。始终加载最高质量的纹理。选择该选项时，nDisplay Launcher会在用于启动每个实例的命令行中添加NOTEXTURESTREAMING选项。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>自定义命令行参数（Custom command line arguments）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果想要nDisplay Launcher在用来启动每个虚幻实例的命令行上传递任何其他参数，请在此注明这些参数。有关详细信息，请参阅<a id="content_link" href="index.html" ><span>命令行参数</span></a>
+参考。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>应用程序（Applications）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>列出通过nDisplay Launcher运行的所有封装的虚幻应用程序。使用“添加（Add）”和“删除（Delete）”按钮编辑该列表。有关更多信息，请参见上文<a id="content_link" href="index.html" ><span>第3步. 封装和部署</span></a>
+。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>配置文件（Config Files）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>列出您已经为nDisplay Launcher设置的所有配置文件。使用“添加（Add）”和“删除（Delete）”按钮编辑该列表。有关更多信息，请参见上文<a id="content_link" href="index.html" ><span>第3步. 封装和部署</span></a>
+。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>运行（Run）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在您已从 <strong>配置文件（Config Files）</strong> 列表中选择的文件中配置的所有主机上，启动您从 <strong>应用程序（Applications）</strong> 列表中选择的应用程序。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>终止（Kill）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>关闭nDisplay Launcher启动的所有虚幻引擎实例。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>启动侦听器（Start listeners）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在您从 <strong>配置文件（Config Files）</strong> 列表中选择的文件中配置的每台主机上启动一个nDisplay Listener应用程序实例。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>停止侦听器（Stop listeners）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>关闭该nDisplay Launcher启动的所有nDisplay Listener应用程序实例。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>部署应用程序（Deploy application）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将您从 <strong>应用程序（Applications）</strong> 列表中选择的应用程序复制到您从 <strong>配置文件（Config Files）</strong> 列表中选择的文件中配置的每台主机。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>复制（Copy）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将左侧日志窗口中列出的所有消息复制到剪贴板。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>清理（Clean）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>从左侧日志窗口中清除所有消息。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index310e.html">Rendering </a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9902.html">Graphics </a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexb3c8.html">Experimental </a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index04ac.html">Landing </a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index4c67.html">Page</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/nDisplay/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:57 GMT -->
+</html>

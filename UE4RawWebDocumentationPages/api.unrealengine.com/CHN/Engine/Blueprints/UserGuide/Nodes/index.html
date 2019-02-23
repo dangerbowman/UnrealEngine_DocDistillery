@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Blueprints/UserGuide/Nodes/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 02:48:48 GMT -->
+<head>
+    <title>节点 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Blueprints/UserGuide/Nodes/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Blueprints/UserGuide/Nodes/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Blueprints/UserGuide/Nodes/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Blueprints/UserGuide/Nodes/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3244370" />
+<meta name="availability" content="Public" />
+<meta name="title" content="节点" />
+<meta name="description" content="节点图表通过使用事件和函数调用来执行动作，从而对和该蓝图相关的游戏性元素作出反应。" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine/Blueprints/Scripting" />
+<meta name="tags" content="Execution Flow" />
+<meta name="tags" content="Blueprints" />
+<meta name="order" content="4" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="节点" />
+	<meta property="og:description" content="节点图表通过使用事件和函数调用来执行动作，从而对和该蓝图相关的游戏性元素作出反应。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../../Scripting/index.html">基本脚本</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index4bbd.html">Execution Flow</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">节点</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<p><strong>Nodes（节点）</strong> 是指可以在图表中应用其来定义特定图表及其包含该图表的蓝图的功能的对象， 
+比如事件、函数调用、流程控制操作、 
+变量等。
+</p><a name="workingwithnodes" ></a><h2 id="应用节点">应用节点</h2>
+
+<p>尽管每种类型的节点执行一种特定的功能，但是所有节点的创建及应用方式都是相同的。这有助于在创建节点图表时提供一种直观的体验。
+</p><a name="placingnodes" ></a><h3 id="放置节点">放置节点</h3>
+
+<p>通过从 <strong>关联菜单</strong> 中选择一种节点类型，可以把新节点添加到图表中。关联菜单中所列出的节点类型，根据访问该类型列表的方式及当前选中的对象的不同而有所差别。
+</p><ul ><li><p>在 <strong>图表编辑器</strong> 选卡中，<strong>右击</strong> 空白区域，会弹出可以添加到图表中的所有节点的列表。如果选中一个Actor，那么将会列出那种类型的Actor支持的事件。
+</p><p><img alt="Blueprint Context Menu" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_context.jpg" />
+</p></li><li><p>从节点的一个引脚处拖拽鼠标产生一个连接并在空白处释放鼠标，会弹出一个节点列表，这些节点具有和连接的起始引脚相兼容的引脚。
+</p><p><img alt="Blueprint New Connection" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_connection_new.jpg" /><img alt="Blueprint Context Menu - Pin Specific" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_context_compat.jpg" />
+</p></li></ul><a name="selectingnodes" ></a><h3 id="选择节点">选择节点</h3>
+
+<p>在 <strong>图表编辑器</strong> 选卡中单击一个节点，可以选中该节点。
+</p><p><img alt="SelectNode.jpg" width="820" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/SelectNode.jpg" />
+</p><p>通过按住 <strong>Ctrl</strong> 键并单击节点，可以将节点添加到当前的选中项或者将其从当前的选中项删除。
+</p><p><img alt="VarMessage.jpg" width="820" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/VarMessage.jpg" />
+</p><p>通过单击并拖拽鼠标创建一个区域选择框，可以选中多个节点。按住 <strong>Ctrl</strong> 键+单击并拖拽鼠标创建一个区域选择框，可以切换对象的选中状态。按住 <strong>Shift</strong> 键+单击并拖拽鼠标创建一个区域选择框，可以把选择框中的对象添加到当前选中项。
+</p><p><img alt="DotBoxSpawnEmitter.jpg" width="820" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/DotBoxSpawnEmitter.jpg" />
+</p><p>要想取消选中所有节点，仅需点击 <strong>图表编辑器</strong> 选卡的空白区域即可。
+</p><a name="movingnodes" ></a><h3 id="移动节点">移动节点</h3>
+
+<p>通过单击并拖拽一个节点，可以移动该节点。如果选中了多个节点，那么单击选中项内的任何节点并拖拽鼠标将会移动所有节点。
+</p><p><img alt="Blueprint Moving Nodes" width="820" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_move.jpg" />
+</p><a name="pins" ></a><h3 id="引脚">引脚</h3>
+
+<p>节点两侧都可以有引脚。左侧的引脚是输入引脚，右侧的引脚是输出引脚。
+</p><p><img alt="Blueprint Input and Output Pins" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_pins.jpg" />
+</p><p>有两种主要引脚类型： 执行引脚（execution pins）和数据引脚（data pins）。
+</p><a name="executionpins" ></a><h4 id="执行引脚">执行引脚</h4>
+
+<p><img alt="Blueprint Exec Pins" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Shared/Glossary/E/k2_pins_exec.jpg" />
+</p><p> <strong>执行引脚（Execution pins）</strong> 用于将节点连接在一起以创建执行流程。当一个输入执行引脚被激活后，节点将被执行。一旦节点的执行完成，它将激活一个输出执行引脚来继续执行流程。执行引脚在未连接时显示为轮廓，在连接到另一个执行引脚时则显示为实心。函数调用节点始终只有一个输入执行引脚和一个输出执行引脚，因为函数只有一个进入点和一个退出点。其他类型的节点可以有多个输入执行引脚和输出执行引脚，从而允许不同的行为，具体取决于哪一个引脚被激活。
+</p><a name="datapins" ></a><h4 id="数据引脚">数据引脚</h4>
+
+<p><img alt="Blueprint Data Pin Types" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Shared/Glossary/D/k2_pins_data_types.jpg" />
+</p><p> <strong>数据引脚（Data Pins）</strong> 用于将数据导入节点或从节点输出数据。视其具体类型而定，数据引脚可以连接到同一类型的变量（这些变量有各自的数据引脚），也可以连接到另一个节点上同一类型的数据引脚。与执行引脚一样，数据引脚在未连接到任何对象时显示为轮廓，在连接到任何对象时则显示为实心。
+</p><p><img alt="Blueprint Data Pins" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Shared/Glossary/D/k2_pins_data.jpg" />
+</p><p>节点可以有任意数量的输入或输出数据引脚。函数调用（Function Call）节点的数据引脚对应于相应函数的参数和返回值。
+</p><a name="auto-casting" ></a><h4 id="自动类型转换">自动类型转换</h4>
+
+<p>通过蓝图中的自动类型转换功能，不同数据类型的引脚可以相连接。当尝试在两个引脚间建立连接时，可以通过显示的工具提示信息识别兼容的类型。
+</p><p><img alt="Blueprint - Compatible Types Message" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_autocast_message.jpg" />
+</p><p>从一种类型的引脚拖拽一条线连接到另一种类型的引脚，但是这两种类型是兼容的，那么将会创建一个 <strong>autocast(自动类型转换)</strong> 节点连接两个引脚。
+</p><p><img alt="Blueprint - Autocast Node" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_autocast_node.jpg" />
+</p><a name="promotetovariable" ></a><h4 id="promotetovariable（提升为变量）">Promote to Variable（提升为变量）</h4>
+
+<p>在蓝图中，数据引脚所表示的值可以通过 <strong>Promote to Variable（提升为变量）</strong> 命令转换为一个变量。这个命令会在蓝图中创建一个新的变量，并将其连接到那个提升为变量的数据引脚上。对于输出数据引脚来说，可以使用Set节点来设置新变量的值。从本质上讲，这仅是手动地添加一个新变量到图表中并将其和数据引脚相连的快捷方式。
+</p><p>您还可以使用 <strong>提升为变量（Promote to Variable）</strong> 选项创建变量。 
+</p><p> <strong>右键单击</strong> 蓝图节点上的任何输入或输出数据引脚，并选择 <strong>提升为变量（Promote to Variable）</strong> 选项。 
+</p><p><img alt="HT38.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Variables/HT38.jpg" />
+</p><p>通过在 <strong>新光源颜色（New Light Color）</strong> 引脚上 <strong>单击右键</strong> 并选择 <strong>提升为变量（Promote to Variable）</strong> 选项，我们可以将一个变量指定为 <strong>新光源颜色（New Light Color）</strong> 值。 
+</p><p><img alt="HT40.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Variables/HT40.jpg" />
+</p><p>或者，您可以拖出一个输入或输出引脚，并选择 <strong>提升为变量（Promote to Variable）</strong> 选项。 
+</p><p><img alt="HT39.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Variables/HT39.jpg" />
+</p><a name="wires" ></a><h3 id="连线">连线</h3>
+
+<p>引脚之间的连接称为  <strong>连线</strong> 。连线代表执行流程或者数据流向。
+</p><a name="executionwires" ></a><h4 id="执行引脚连线">执行引脚连线</h4>
+
+<p>执行引脚间的连线代表执行的流程。执行连线显示为白色的箭头，箭头从一个输出执行引脚指向一个输入执行引脚。箭头的方向表明执行流程的走向。
+</p><p><img alt="SelectNode.jpg" width="820" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/SelectNode.jpg" />
+</p><p>当正在执行‘执行引脚’间的连线时，执行引脚连线会产生一个可视化的标识符。在运行过程中，当一个节点完成执行并激活了下一个节点时，执行引脚间的连线突出显示，表明正在从一个节点转移到另一个节点。
+</p><p><img alt="k2_flow_exec.jpg" width="820" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_flow_exec.jpg" />
+</p><p>执行连线的可视化标识符会随着时间逐渐消失。
+</p><div class="lightbox fullwidth">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_flow_sustain.png" title="蓝图执行引脚连线  - Sustain State"><span><img alt="k2_flow_sustain.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_flow_sustain.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><a name="datawires" ></a><h4 id="数据连线">数据连线</h4>
+
+<p>数据连线把一个数据引脚连接到同种类型的另一个数据引脚上。数据连线显示为带颜色的箭头，用于可视化地表示数据的转移，箭头的方向代表数据移动的方向。和数据引脚的颜色一样，数据连线的颜色是由数据类型决定的。
+</p><p><img alt="Blueprint Data Wire" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_flow_data.jpg" />
+</p><a name="workingwithwires" ></a><h4 id="应用连线">应用连线</h4>
+
+<p>在 <strong>图标编辑器</strong> 选卡中，可以使用以下几种方法之一创建连线：
+</p><ul ><li><p>点击一个引脚并拖拽鼠标，在同类型的另一个引脚上释放鼠标，这样来创建一个直接连接。
+</p><p><img alt="HoverCheck.jpg" width="820" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/HoverCheck.jpg" />
+</p><p>仅能在两种兼容类型的引脚间创建连接。如果您向一个不兼容的引脚上拖拽一个连接，将会显示一个错误，提示您不能建立连接。
+</p><p><img alt="HoverCheckNo.jpg" width="820" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/HoverCheckNo.jpg" />
+</p></li><li><p>从一个引脚拖拽一个连接并在空白区域释放鼠标，会调出一个情境关联的菜单，该菜单中列出了和连线起始节点类型相兼容的所有节点。从列表中选择一个节点将会创建那个节点的一个新实例并且连线会连接到该节点的一个兼容引脚上。
+</p><p><img alt="Blueprint Wire Creation - New Node" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_connection_new.jpg" />
+</p><p><img alt="ConnectedNodes.jpg" width="820" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/ConnectedNodes.jpg" />
+</p><p>通过使用以下方法可以断开两个引脚间的连线:
+</p></li><li><p><strong>Alt + 单击</strong> 其中一个连接的引脚。
+</p></li><li><p><strong>右击</strong> 所连接的其中一个引脚，并选择Break Link(断开连接)。
+</p><p><img alt="BreakLinkNode.jpg" width="820" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/BreakLinkNode.jpg" />
+</p></li></ul><a name="collapsedgraphs" ></a><h3 id="合并的图表">合并的图表</h3>
+
+<p>出于组织管理的目的，图表中的一组节点可以合并到一个子图表中。这样会创建一个具有层次结构的图表，在父项图表中可以把一个大的或复杂的图表部分作为一个单独的节点看待，该节点具有输入和输出，但是仍然可以编辑合并的图表中的内容。
+</p><div class="lightbox fullwidth">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_collapse_select.png" title="蓝图合并节点 - 选中项"><span><img alt="k2_collapse_select.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_collapse_select.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p><p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_collapsed_node.png" title="蓝图合并节点"><span><img alt="k2_collapsed_node.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_collapsed_node.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p>和宏不同，一组合并的节点是不能共享的，即使在一个单独的关卡蓝图或蓝图类中也不可以共享。如果您复制此合并节点，它会复制内部图表。如果您想创建同种近似行为的多个变种，这个操作是非常方便的，但是这也意味着任何缺陷修复都要应用到每个拷贝版本中。设计这个功能的主要目的是整理图表，隐藏内部复杂度，而不是用于共享或重用。
+</p><a name="tunnels" ></a><h4 id="通道">通道</h4>
+
+<p>合并的图表使用通道节点来和包含它的图表进行外部通信和交互。
+</p><div class="lightbox fullwidth">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_tunnels.png" title="蓝图通道节点"><span><img alt="k2_tunnels.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_tunnels.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p><strong>Inputs（输入）</strong> 通道节点作为合并图标的入口点。它包含和父项图表中合并图表节点上的输入引脚相对应的执行引脚和数据引脚。
+</p><p><img alt="Blueprint Tunnel Entrance Node" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_tunnel_entrance.jpg" />
+</p><p> <strong>Outputs(输出)</strong> 通道节点作为合并图标的出口点。它包含和父项序列中合并图表节点上的输出引脚相对应的执行引脚和数据引脚。
+</p><p><img alt="Blueprint Tunnel Exit Node" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_tunnel_exit.jpg" />
+</p><p>这些引脚是在合并节点时自动生成的。连接到序列中第一个节点的引脚上的任何执行引脚连线和数据引脚连线，都会导致在 <strong>输入</strong> 通道节点上创建对应的引脚，这些引脚出在父项序列中出现在合并图表节点上作为输入引脚。类似地，任何连接到序列最后一个节点的执行引脚连线或数据引脚连线，都会导致在 <strong>输出（Outputs）</strong> 通道节点上创建对应的引脚，从而在父项序列中作为合并图表的引脚。
+</p><a name="tocollapseacollectionofnodes" ></a><h4 id="合并一组节点">合并一组节点</h4>
+
+<ol ><li><p>在图表中选择要合并的节点，这可以通过单击并在节点周围拖拽一个区域选择框或者通过 <strong>按住Ctrl并单击每个节点</strong> 来实现。
+</p><div class="lightbox fullwidth">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_collapse_select.png" title="蓝图合并节点 - 选中项"><span><img alt="k2_collapse_select.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_collapse_select.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li><li><p><strong>右击</strong> 其中一个节点并选择 <strong>Collapse Nodes（合并节点）</strong> 。
+</p><p><img alt="Blueprint Collapse Nodes - Menu Option" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_collapse_menu.jpg" />
+</p></li><li><p>在出现的新节点的文本域中输入该合并图标的名称并按下 <strong>回车</strong> 键。
+</p><p><img alt="Blueprint Collapse Nodes - Graph Name" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_collapse_name.jpg" />
+</p></li><li><p>现在，合并图表显示成了一个单独的节点，并在 <strong>My Blueprint（我的蓝图）</strong> 选卡中出现了到该合并图表的引用。
+</p><div class="lightbox fullwidth">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_collapsed_node.png" title="蓝图合并节点"><span><img alt="k2_collapsed_node.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_collapsed_node.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p><img alt="collapsed_graph_myblueprint.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/collapsed_graph_myblueprint.jpg" />
+</p></li><li><p>要想编辑该合并节点，请 <strong>双击</strong> 该合并图表节点或者在 <strong>我的蓝图</strong> 选卡中选择该子图表。
+</p><div class="lightbox fullwidth">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_collapse_edit.png" title="蓝图合并节点 - 结果图表"><span><img alt="k2_collapse_edit.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_collapse_edit.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div></li></ol><a name="toexpandacollapsedgraph:" ></a><h4 id="展开一个合并的图表:">展开一个合并的图表:</h4>
+
+<ol ><li><p><strong>右击</strong> 一个合并图表节点，并选择 <strong>Expand Node（展开节点）</strong> 。
+</p><p><img alt="Blueprint Expand Node - Menu Option" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_expand_menu.jpg" />
+</p></li><li><p>合并图表节点会被它所包含的节点所代替，不再出现在 <strong>我的蓝图</strong> 选卡的图表层次结构中。
+</p><p><img alt="Blueprint Expand Node - Resulting Nodes" width="900" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/UserGuide/Nodes/k2_expand_graph.jpg" />
+</p></li></ol>
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index4bbd.html">Execution Flow</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Blueprints/UserGuide/Nodes/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 02:48:50 GMT -->
+</html>

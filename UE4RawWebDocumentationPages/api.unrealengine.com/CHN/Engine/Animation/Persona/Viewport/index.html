@@ -1,0 +1,1504 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Animation/Persona/Viewport/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:10:07 GMT -->
+<head>
+    <title>动画视口 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Animation/Persona/Viewport/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Animation/Persona/Viewport/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Animation/Persona/Viewport/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Animation/Persona/Viewport/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3810557" />
+<meta name="availability" content="Public" />
+<meta name="title" content="动画视口" />
+<meta name="description" content="对每个动画工具中所显示之视口的概述。 " />
+<meta name="parent" content="Engine/Animation/Persona" />
+<meta name="related" content="Engine\Animation\Persona\Modes\Skeleton" />
+<meta name="related" content="Engine\Animation\Persona\Modes\Mesh" />
+<meta name="related" content="Engine\Animation\Persona\Modes\Animation" />
+<meta name="related" content="Engine\Animation\Persona\Modes\Graph" />
+<meta name="version" content="4.18" />
+<meta name="order" content="" />
+<meta name="type" content="reference" />
+<meta name="topic-image" content="viewportsmall.png" />
+<meta name="tags" content="animation" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="动画视口" />
+	<meta property="og:description" content="对每个动画工具中所显示之视口的概述。 " />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">动画编辑器</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index4efa.html">animation</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_18"><a id="version_link" href="../../../../SiteIndex/indexe23f.html">Unreal Engine 4.18</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">动画视口</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_18"><a id="version_link" href="../../../../SiteIndex/indexe23f.html">Unreal Engine 4.18</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<p>每个动画工具都包含一个 <strong>视口（Viewport）</strong> 窗口，它允许您预览动画资源的播放。 
+</p><p><img alt="viewport01.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/viewport01.jpg" />
+</p><p>该视口（Viewport）包括一个 <strong>视图选项（View Options）</strong> 工具栏(1)，一个 <strong>移动（Movement）</strong> 工具栏(2)，和一个当前所选骨架网格体（Skeletal Mesh）资源(3)的三维透视图视口。 
+</p><a name="viewoptionstoolbar" ></a><h2 id="视图选项工具栏">视图选项工具栏</h2>
+
+<p> <strong>视图选项工具栏（View Options Toolbar）</strong> 包含一系列按钮，这些按钮对应于有关视口中所显示之内容（以及显示方式）的选项。
+</p><a name="scenesetup" ></a><h3 id="场景设置">场景设置</h3>
+
+<p> <strong>场景设置（Scene Setup）</strong> 按钮提供以下选项： 
+</p><p><img alt="SceneSetup.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/SceneSetup.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 场景设置（Scene Setup） </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>预览场景设置（Preview Scene Settings）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>允许您更改视口的照明和后期处理设置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>地面高度偏移（Floor Height Offset）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>地面网格体的高度偏移。此高度偏移按网格体存储。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>自动将地面与网格体对齐（Auto Align Floor to Mesh）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此选项自动地将地板网格体与网格体边界对齐。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 摄像机（Camera） </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>摄像机跟随（Camera Follow）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>跟随网格体的边界。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>聚焦所选项（Focus Selected）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将摄像机移至选定项的前面。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>视野（Field of View）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>调整视口的视野。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 默认摄像机（Default Camera） </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>跳转到默认摄像机（Jump to Default Camera）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果设置了默认摄像机，则将跳转到其当前位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>将摄像机保存为默认设置（Save Camera as Default）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将当前摄像机保存为该网格体的默认摄像机。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>清除默认摄像机（Clear Default Camera）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>清除保存为该网格体默认摄像机的摄像机。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="perspective" ></a><h3 id="透视图">透视图</h3>
+
+<p> <strong>透视图（Perspective）</strong> 按钮提供以下选项： 
+</p><p><img alt="perspectivemode.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/perspectivemode.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>透视图（Perspective）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将视口切换为透视图视图（这是默认设置）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>顶部（Top）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将视口切换为顶部正视图。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>底部（Bottom）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将视口切换为底部正视图。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>左侧（Left）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将视口切换为左侧正视图。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>右侧（Right）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将视口切换为右侧正视图。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>正面（Front）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将视口切换为正面正视图。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>背面（Back）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将视口切换为背面正视图。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="viewmode" ></a><h3 id="视图模式">视图模式</h3>
+
+<p> <strong>视图（View）</strong> 模式按钮提供以下选项：
+</p><p><img alt="viewmodebutton.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/viewmodebutton.jpg" /> 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>光照（Lit）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用正常的灯光渲染场景（此为默认设置）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>无光照（Unlit）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>不用灯光渲染场景。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>线框（Wireframe）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在笔刷线框中渲染场景。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>细节光照（Detail Lighting）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>仅用细节光照渲染场景。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>仅光照（Lighting Only）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>仅用光照渲染场景，不用纹理。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>反射（Reflections）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>仅用反射渲染场景。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>优化视图模式（Optimization View Modes）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>允许您从不同的优化可视化工具中作出选择。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>曝光（Exposure）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用自动曝光或设置固定曝光值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="show" ></a><h3 id="显示">显示</h3>
+
+<p><strong>显示（Show）</strong> 按钮提供以下选项： 
+</p><p><img alt="showmenu.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/showmenu.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 一般显示标记（General Show Flags） </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>网格（Grid）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>切换网格体是否应该显示在视口中。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 物理渲染（Physics Rendering） </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>质量属性（Mass Properties）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示启用 <strong>模拟（Simulate）</strong> 时物理实体的质量属性。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>网格体（Mesh）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置在编辑和模拟时应如何绘制网格体。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>实体（Bodies）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示物理实体相关选项。<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>仅选定固体（Only Selected Solid）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>只有选中的碰撞体才会显示为“固体”。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>碰撞不透明度（Collision Opacity）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>允许调整碰撞体的透明度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>实体绘图（Body Drawing）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置在视口中编辑或在模拟时应如何绘制碰撞体。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>约束（Constraints）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示约束相关选项。<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>将约束绘制为点（Draw Constraints As Points）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用后，约束将作为视口中的点来绘制。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>约束比例（Constraint Scale）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>缩放视口中的约束。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>约束绘制（Constraint Drawing）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置应如何在视口中绘制约束；无、限制或位置。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 场景元素（Scene Elements） </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>网格体（Mesh）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示网格体相关选项。<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>重定向基本姿势（Retarget Base Pose）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在预览网格体上显示重定向基本姿势。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>边界（Bound）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示预览网格体上的边界体积。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>游戏内边界（In-Game Bound）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是否在预览网格体上使用游戏中的边界。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>网格体（Mesh）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示预览网格体。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>变换目标（MorphTargets）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是否在预览网格体上显示任何应用的变换目标。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>顶点颜色（Vertex Colors）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是否在预览网格体上显示任何绘制的顶点颜色。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>网格体信息（Mesh Info）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>应如何在视口中显示网格体信息。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>网格体覆层绘制（Mesh Overlay Drawing）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>应如何在视口中显示网格体。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>动画（Animation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示动画相关选项。<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>根运动（Root Motion）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>根据动画的根运动移动预览。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>未压缩动画（Uncompressed Animation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用未压缩的动画数据显示骨架。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>非重定向动画（NonRetargeted Animation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用非重定向动画数据显示骨架。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>附加基础（Additive Base）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>以附加基础姿势显示骨架。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>源动画（Source Animation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用未压缩动画数据显示骨架。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>已烘焙动画（Baked Animation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用非重定向动画数据显示骨架。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>骨骼（Bones）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示骨骼相关选项。<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>套接字（Sockets）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示套接字生命值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>骨骼名称（Bone Names）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在视口中显示骨架的骨骼名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>骨骼绘图（Bone Drawing）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于显示预览网格体上的骨骼加权（Bone Weighting）或变换目标顶点（Morph Target Vertice）。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>布料（Clothing）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示布料相关选项。<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>禁用布料模拟（Disable Cloth Simulation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>禁用布料模拟并显示未模拟的网格体。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>应用风吹（Apply Wind）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将风吹应用到衣服模拟。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>风吹强度（Wind Strength）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用 <strong>应用风吹（Apply Wind）</strong> 后，设置风吹的强度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>重力比例（Gravity Scale）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置应用到衣服以进行模拟的重力比例。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与布料子项碰撞（Collide with Cloth Children）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用在基本网格体中碰撞基元与预览场景中任何附件上布料之间的碰撞检测。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>暂停动画（Pause with Animation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用后，使用面板暂停动画时，衣服模拟将暂停。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>部分显示模式（Sections Display Mode）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置衣服在视口中应采用的显示方式。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>可视化（Visualizations）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用不同衣服属性的可视化。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>高级（Advanced）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>显示高级相关选项。<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>UV</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>切换指定信道的网格体的UV显示。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>皮肤（Skinning）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>切换CPU皮肤在视口中的显示。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>顶点法线可视化（Vertex Normal Visualization）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>允许在视口中显示顶点法线、切线和副法线。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>层级局部轴（Hierarchy Local Axes）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>为骨骼设置层级局部轴应采用的显示方式；全部显示，仅显示选中部分，或不显示。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 其他标记（Other Flags） </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>静音（Mute Audio）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使预览静音。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>使用音频衰减（Use Audio Attenuation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在预览中播放音频时使用音频衰减。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="physics" ></a><h3 id="物理">物理</h3>
+
+<p> <strong>物理（Physics）</strong> 按钮提供以下选项： 
+</p><p><img alt="PhysicsMenu.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/PhysicsMenu.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 动画（Anim） </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>物理弯曲（Physics Bend）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>让您手动控制物理和动画。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>从动画中更新关节（Update Joint from Animations）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用此选项后，任何关节都会在模拟时从动画中更新。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>物理更新模式（Physics Update Mode）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定根主体的模拟是否也更新组件变形。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>拨动暂停时间（Poke Pause Time）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>拨动布娃娃与开始混合回来之间的间隔时间。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>拨动混合时间（Poke Blend Time）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>从物理混合到动画所需的时间。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 模拟（Simulation） </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>重力比例（Grav Scale）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>模拟时使用的重力比例系数。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最大FPS（Max FPS）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>物理资源编辑器（Physics Asset Editor）中用于模拟的每秒最大帧数(FPS)。这有助于定位与您的游戏相同的FPS。值为-1将禁用设置的最大FPS（Max FPS）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 鼠标弹簧（Mouse Spring） </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>手柄线性阻尼（Handle Linear Damping）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>鼠标弹力的线性阻尼。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>手柄线性刚度（Handle Linear Stiffness）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>鼠标弹力的线性刚度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>手柄角度阻尼（Handle Angular Damping）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>鼠标弹力的角度阻尼。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>手柄角度刚度（Handle Angular Stiffness）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>鼠标弹力的角度刚度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>插值速度（Interpolation Speed）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>对鼠标弹力的物理目标变形进行插值的速度有多快。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 拨动（Poking）</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>拨动强度（Poke Strength）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用鼠标左键拨动时使用的脉冲强度。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="previewlods" ></a><h3 id="预览lod">预览LOD</h3>
+
+<p> <strong>预览LOD（Preview LODs）</strong> 按钮提供以下选项： 
+</p><p><img alt="lodmenu.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/lodmenu.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LOD自动（LOD Auto）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>自动选择细节级别(LOD)（此为默认设置）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LOD 0</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>选择LOD 0作为LOD。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="playbackspeed" ></a><h3 id="播放速度">播放速度</h3>
+
+<p> <strong>播放速度（Playback Speed）</strong> 按钮提供以下选项： 
+</p><p><img alt="playbackspeed.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/playbackspeed.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>x0.1</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将播放速度设置为0.1。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>x0.25</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将播放速度设置为0.25。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>x0.5</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将播放速度设置为0.5。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>x1.0</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将播放速度设置为1.0（此为默认设置）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>x2.0</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将播放速度设置为2.0。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>x5.0</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将播放速度设置为5.0。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>x10.0</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将播放速度设置为10.0。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="movementtoolbar" ></a><h2 id="移动工具栏">移动工具栏</h2>
+
+<p> <strong>移动工具栏（Movement Toolbar）</strong> 包含一组用于移动、旋转或缩放骨骼的工具，以及如何使用网格捕捉（Grid Snapping）移动、旋转或缩放骨骼。该工具栏还提供了一个用于设置移动或旋转的相对坐标系的选项，以及一个用于设置相机在视口中移动时的移动速度的选项。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Persona_Translate.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/Persona_Translate.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>平移骨架骨骼。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Persona_Rotate.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/Persona_Rotate.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>旋转骨架骨骼。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Persona_Scale.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/Persona_Scale.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>最后一个选项缩放骨架骨骼（如果适用）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Persona_World.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/Persona_World.jpg" /> <img alt="button_Persona_Local.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/button_Persona_Local.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置用于移动和旋转网格体的相对坐标系（<strong>世界场景（World）</strong> 或 <strong>局部（Local）</strong>）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Persona_GridSnap.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/Persona_GridSnap.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用或禁用在四处拖动对象时捕捉网格和位置网格捕捉（Position Grid Snap）值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Persona_GridSnap.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/Persona_GridSnap.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用或禁用在四处旋转对象时捕捉网格和旋转网格捕捉（Rotation Grid Snap）值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Persona_ScaleSnapping.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/Persona_ScaleSnapping.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用或禁用在缩放对象时捕捉网格和缩放网格捕捉（Scale Grid Snap）值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="Persona_CameraMoveSpeed.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/Persona_CameraMoveSpeed.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>调整摄像机在视口中移动时的速度。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="viewport" ></a><h2 id="视口">视口</h2>
+
+<p> <strong>视口（Viewport）</strong> 显示骨架网格体的预览和视口选项（Viewport Options）工具栏中设置的任何选项。 
+</p><p><img alt="Viewport Panel" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Animation/Persona/Viewport/ViewportPanel_Viewport.jpg" />
+</p>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="../Modes/Skeleton/index.html" title="重点介绍虚幻引擎4中骨架编辑器的核心功能。 ">骨架编辑器</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../Modes/Mesh/index.html" title="重点介绍虚幻引擎4中骨架网格体编辑器的核心功能。 ">骨架网格体编辑器</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../Modes/Animation/index.html" title="重点介绍虚幻引擎4中动画编辑器的核心功能。 ">动画编辑器</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../Modes/Graph/index.html" title="介绍虚幻引擎4中动画蓝图编辑器的核心功能。 ">动画蓝图编辑器</a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index4efa.html">animation</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Animation/Persona/Viewport/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:10:07 GMT -->
+</html>

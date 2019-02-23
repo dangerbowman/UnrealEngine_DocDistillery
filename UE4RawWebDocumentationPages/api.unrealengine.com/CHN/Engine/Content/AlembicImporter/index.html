@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Content/AlembicImporter/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:11 GMT -->
+<head>
+    <title>Alembic 文件导入器  | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Engine/Content/AlembicImporter/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Engine/Content/AlembicImporter/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Engine/Content/AlembicImporter/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Engine/Content/AlembicImporter/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3782314" />
+<meta name="availability" content="Public" />
+<meta name="title" content="Alembic 文件导入器 " />
+<meta name="description" content="描述 Alembic 文件导入过程和导入选项。 " />
+<meta name="navigation" content="topic" />
+<meta name="parent" content="Engine/Content" />
+<meta name="order" content="2" />
+<meta name="version" content="4.13" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="Alembic 文件导入器 " />
+	<meta property="og:description" content="描述 Alembic 文件导入过程和导入选项。 " />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">管理内容</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_13"><a id="version_link" href="../../../SiteIndex/index35ac.html">Unreal Engine 4.13</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">Alembic 文件导入器 </h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_13"><a id="version_link" href="../../../SiteIndex/index35ac.html">Unreal Engine 4.13</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="warning">
+	<p>这是尚处于开发阶段的实验性功能。一些方面可能无法正常使用，或会在未来版本中被修改。
+</p>
+</div><div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#导出alembic缓存">导出 Alembic 缓存</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#导入为静态网格体">导入为静态网格体</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#导入为几何体缓存">导入为几何体缓存</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#导入为骨架">导入为骨架</a>
+	</li>		    	        </ul>
+</div>
+<p>Alembic 文件格式（.abc）是一种开放式电脑图像交换框架，可将带动画的复杂场景提炼为一套非过程、应用程序独立的烘焙几何图形结果。在虚幻引擎 4 中可通过 <strong>Alembic 导入器</strong> 导入 Alembic 文件。因此可在外部软件中自由创建复杂动画，然后导入 UE4 中进行实时渲染。 
+</p><p>Alembic 文件的导入方式与其他形式的 <a id="content_link" href="../ImportingContent/index.html" ><span>内容导入</span></a>
+ 相似。
+</p><p>您可在 Animation Topics 上观看 Unreal Engine Live Stream，其中包含 Alembic 文件导入器： 
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_h2egrj1pXzw"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="h2egrj1pXzw" width="100%" height="100%" src="../../../../../external.html?link=https://www.youtube.com/embed/h2egrj1pXzw?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_h2egrj1pXzw
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_h2egrj1pXzw:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style><a name="exportingalembiccaches" ></a><h2 id="导出alembic缓存">导出 Alembic 缓存</h2>
+
+<p>选择从首选 DCC 包中导出 Alembic 缓存文件时，需要考虑一些选项： 
+</p><div class="section">
+	<div class="titlesection">
+	<p>选择3D美术工具
+</p>
+</div><!--
+category:paramliteral
+id:paramliteral
+label:paramliteral
+active:paramliteral
+-->
+<div class="button DCC maya active_button" onclick="setSelector('DCC', 'maya');">
+    <p>Autodesk Maya</p>
+</div><!--
+category:paramliteral
+id:paramliteral
+label:paramliteral
+active:paramliteral
+-->
+<div class="button DCC max " onclick="setSelector('DCC', 'max');">
+    <p>Autodesk 3ds Max</p>
+</div>
+</div><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content DCC maya active_button_content">
+    <div class="container">
+        <ol ><li><p>基于个人需求，从 <strong>File Menu</strong> 中的 <strong>Cache</strong> 和 <strong>Alembic Cache</strong> 下选择 <strong>Export All to Alembic...</strong>（或 <strong>Selection</strong>）。 
+<img alt="Maya_01.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/Maya_01.jpg" />
+</p></li><li><p>在 <strong>Export</strong> 窗口中的 <strong>Advanced Options</strong> 下启用 <strong>UV Write</strong> 和 <strong>Write Face Sets</strong> 选项，然后点击 <strong>Export</strong>。 
+</p><p><img alt="Maya_02.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/Maya_02.jpg" />
+</p><p>如您计划在导出 UE4 时创建材质，则需要启用 <strong>Write Face Sets</strong>，因为材质基于找到的 Face Set Names 而创建。
+</p></li></ol>
+    </div>
+</div><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content DCC max ">
+    <div class="container">
+        <ol ><li><p>点击 <strong>File Menu</strong> 下的 <strong>Export</strong>。 
+</p><p><img alt="Max_01.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/Max_01.jpg" />
+</p></li><li><p>指定保存路径并将存储类型改为 <strong>Alembic</strong>（*.ABC），然后 **保存**。 
+</p><p><img alt="Max_02.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/Max_02.jpg" />
+</p></li><li><p>基于个人需求定义 Alembic 导入器选项。 
+</p><p><img alt="Max_03.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/Max_03.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>File Format</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>较之于 HDF5，Ogawa 更新、更快、文件大小更小。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Cache Time Range</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>和 Maya 相同（单个为一帧，活动的部分是用户设置的时间滑块和帧范围）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Every Nth Frame</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>允许跳帧（例如：2 可能代表 0-2-4-6-8-10 等。)</p>
+		</td>
+	
+</tr>
+</tbody>
+</table></li></ol>
+    </div>
+</div><a name="importingalembicfiles" ></a><h3 id="导入alembic文件">导入 Alembic 文件</h3>
+
+<p>将 Alembic 文件导入虚幻引擎 4： 
+</p><ol ><li><p>在 <strong>Content Browser</strong> 中，点击 <strong>Import</strong> 按钮并指向 <strong>.abc</strong> 文件。 
+</p><p><img alt="Import.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/Import.jpg" />
+</p></li><li><p>将出现 <strong>Alembic Cache Import Options</strong> 窗口，定义导入方法/选项。 
+</p><p><img alt="Import03.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/Import03.jpg" />
+</p><p>窗口上方的高亮处显示的是文件名和导入的源路径。 
+此外还显示了选择导入（或从导入过程中移除）的文件中资源的复选框选项。
+</p></li></ol><a name="importasstaticmesh" ></a><h2 id="导入为静态网格体">导入为静态网格体</h2>
+
+<p>可在导入过程中定义导入内容的方式。<strong>Alembic Import Type</strong> 默认设为 <strong>Static Mesh</strong>。 
+</p><p><img alt="Import04_sm.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/Import04_sm.jpg" />
+</p><p>将 Alembic 缓存导入为 <strong>静态网格体</strong> 时，只会将第一帧导入为一个或多个静态网格体。Alembic 动画的一个单帧将导入为一个静态网格体资源，并且不会应用动画。选择此导入方法时，可利用一些设置定义资源导入方式，如下所述。 
+</p><a name="samplingoptions" ></a><h3 id="采样选项">采样选项</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Sampling Type</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>导入动画时执行的采样类型。<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>选项</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Per Frame</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>根据导入数据对动画进行采样（默认选项）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Per X Frames</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>以帧步长决定的给定间隔对动画进行采样。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Per Time Step</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>以时间步长决定的给定间隔对动画进行采样。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Frame Start</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>开始对动画进行采样的开始索引。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Frame End</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>停止对动画进行采样的终结索引。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="staticmeshoptions" ></a><h3 id="静态网格体选项">静态网格体选项</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Merge Meshes</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>导入时是否合并静态网格体（这可能引起重叠 UV 集的问题）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Propagate Matrix Transformations</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此项将在合并网格体之前应用矩阵变换到网格体（如适用）。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>将 Alembic 文件导入为静态网格体时，如数据包含数个网格体，可选择 <strong>Merge Meshes</strong>，在虚幻引擎中将多个网格体合并为单个静态网格体。如取消勾选此项，Alembic 文件中的每个网格体将作为单独的静态网格体导入 UE4，不会合为一体。 
+</p><p>启用 <strong>Merge Meshes</strong> 需要考虑另一个方面：合并网格体前是否 <strong>传播矩阵变换</strong>。这将采集 Alembic 文件中包含的变换数据并在合并时传播到网格体，使它们保留自身的变换数据。 
+</p><p>思考下方创建的场景范例，它作为 Alembic 缓存导出。 
+</p><p><img alt="MayaObjects.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/MayaObjects.jpg" />
+</p><p>启用 <strong>Merge Meshes</strong> 和 <strong>Propagate Matrix Transformations</strong>，将文件作为静态网格体导入 UE4 会得到以下效果： 
+</p><p><img alt="ImportMesh1.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/ImportMesh1.jpg" />
+</p><p>如勾选 <strong>Merge Meshes</strong> 但不勾选 <strong>Propagate Matrix Transformations</strong>，会得到以下效果： 
+</p><p><img alt="ImportMesh2.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/ImportMesh2.jpg" />
+</p><p>每个网格体在 0,0,0 原点合并。 
+</p><a name="normalcalculationoptions" ></a><h3 id="法线计算选项">法线计算选项</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Force One Smoothing Group Per Object</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是否为每个个体对象强制平滑法线而不计算平滑组。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Hard Edge Angle Threshold</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于确定两条法线之间的角度是否为硬角（越接近于 0，则越平滑）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Recompute Normals</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定是否应强制重新计算法线。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Ignore Degenerate Triangles</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定计算切线/法线时是否应无视退化三角形。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="hownormalsarecalculated" ></a><h5 id="法线计算方式">法线计算方式</h5>
+
+<p>以下高阶概览讲述基于 <strong>导入类型</strong> 的法线计算方式和导入文件中法线的使用方式。
+</p><ul ><li><p><strong>导入包含所有帧法线的文件时：</strong>
+</p><ul ><li><p><strong>静态网格体/几何体缓存</strong> - 使用现有法线。 
+</p></li><li><p><strong>骨架网格体</strong> - 第一帧的法线用于决定平滑组。平滑组将用于计算平均帧的法线和所有基础/变形目标（在所有情况下均如此操作）。
+</p></li></ul></li><li><p><strong>导入只包含第一帧法线的文件时：</strong>
+</p><ul ><li><p><strong>静态网格体</strong> - 如使用第 0 帧，则使用现有法线。否则将计算所请求帧的平滑组和法线。
+</p></li><li><p><strong>几何体缓存</strong> - 计算所有帧的平滑组和生成的法线。
+</p></li></ul></li><li><p><strong>导入不含法线的文件时：</strong>
+</p><ul ><li><p>将计算非平滑法线，根据计算法线生成平滑组并通过平滑组重新计算法线。
+</p></li></ul></li></ul><p>启用 <strong>Recompute Normals</strong> 时，使用以上指定的路径（无法线）。 
+</p><div class="warning">
+	<p>导入为 <strong>骨架网格体</strong> 时，如动画拥有较大的法线增量，法线可能不会正常显示。这是一个已知问题，由变形目标对面/顶点法线的调整方式所造成。作为解决方案，您可使用皮肤缓存功能（尚在实验阶段）避开这个问题。 
+</p><p>如需启用此功能，在 <strong>ConsoleVariables.ini</strong> 文件中添加以下代码： 
+</p>
+<pre class="prettyprint"><code>r.SkinCache.CompileShaders=1
+r.SkinCache.Mode=1
+r.SkinCache.RecomputeTangents=1</code></pre>
+<p>下次启动编辑器时便会重新编译着色器。打开骨架网格体资源时，您便可为每个材质/分段勾选 <strong>Recompute Tangent</strong> 选项。 
+</p>
+</div><a name="howsmoothinggroupsarecalculated" ></a><h5 id="平滑组计算方式">平滑组计算方式</h5>
+
+<p>如导入的网格体出现硬边，则可能需要查看 <strong>硬边角度阈值</strong> 以及平滑组计算的执行方式。 
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="1.0 Hard Edge Angle" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/NotSmooth.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="0.0 Hard Edge Angle" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/Smooth.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><p>要计算平滑组，先计算顶点/面法线，然后将它们用于查看一个特定面的所有相连面。通过计算法线之间的角度即可确定边是硬边或软边（与 Maya 中的软/硬边工具相似）。下方左图为软边，而右图为硬边。原因是左图中两条法线间的角度小于右图中两条法线间的角度。 
+</p><div class="raw">
+	<p><img alt="NormalsExample.jpg" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/NormalsExample.jpg" />
+</p>
+</div><p>明确这点后，我们使用点积生成 0-1 之间的一个阈值，以定义边的软硬。例如，值靠近 1 则意味着大角度形成硬边，而值靠近 0 则说明存在的是软边。该信息将用于生成共享软边的法线的组。在这些组中，我们平滑面上的法线，形成平滑面。 
+</p><div class="note">
+	<p>强行设置每个对象一个平滑组将使每个个体对象完全平滑（全为软边）。 
+</p>
+</div><a name="importasgeometrycache" ></a><h2 id="导入为几何体缓存">导入为几何体缓存</h2>
+
+<p>导入为 <strong>几何体缓存</strong> 时，将创建一种新型动画资源，以便播放顶点各不相同的序列。 
+</p><p><img alt="Import04_gc.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/Import04_gc.jpg" />
+</p><p>导入的 Alembic 动画将作为帧 flipbook 进行播放，性能将随网格体的复杂程度变化。 
+</p><div class="warning">
+	<p>它应被视作一个实验性导入选项，可能无法在所有情况下拥有最佳效果。 
+</p>
+</div><p>这种导入方法的导入选项包括相同的 <strong>采样</strong> 和 <strong>法线计算</strong> 选项，作为 <strong>静态网格体</strong> 导入选项。
+导入为几何体缓存还可根据找到的 <strong>Face Set</strong> 名创建 <strong>材质</strong>（前提是必须在外部软件中定义好 Face Sets 并随 Alembic 缓存导入）。<br /></p><div class="note">
+	<p>当前版本中，几何体缓存不支持邻接缓冲。而进行曲面细分设置需要邻接缓冲。解决方法是将动画导入为带变形目标的 <strong>骨架网格体</strong>（这种导入方式压缩程度更高），即可支持曲面细分。
+</p>
+</div><a name="importasskeletal" ></a><h2 id="导入为骨架">导入为骨架</h2>
+
+<p>这种导入法将 Alembic 文件导入为 <strong>骨架网格体</strong>，包含的基础姿势为变形目标，变形目标之间的混合则会形成正确的动画帧。 
+导入为骨架网格体是播放 Alembic 动画最有效方式（只要顶点数不发生变化）。 
+</p><p><img alt="Import04_sk.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/AlembicImporter/Import04_sk.jpg" />
+</p><p>在导入中，将使用 PCA 方案对动画序列进行压缩。在此计划中常规姿势（基础）被抽取和加权，构成播放时的原始动画。 
+导入为骨架网格体时，除 <strong>Sample</strong>、<strong>Normal Calculation</strong> 和 <strong>Create Materials</strong> 选项外，还可定义百分比调整压缩等级（或基础使用的固定数）。 
+</p><a name="compressionoptions" ></a><h3 id="压缩选项">压缩选项</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>选项 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Merge Meshes</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>个体网格体是否应被合并，进行压缩。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Bake Matrix Animation</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是否纯矩阵动画应被烘焙为顶点动画（或略过）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Base Calculation Type</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>决定存储为变形目标的基础最终数的计算方式。<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>选项</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Percentage Based</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定结合给定百分比使用的基础数（默认选项）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Fixed Number</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置导入的固定基础数。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Percentage (Max Number) of Total Bases</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这将生成基础的给定（百分比或固定数）作为变形目标。
+</p><p>这是压缩等级比较重要的方面之一。 
+输入数量较低的基础将使动画获得更大程度的压缩，但可能丧失精细的动画细节。 
+相反，输入数量较多的基础将形成更小的压缩，但能保留更多的动画细节。 
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Minimum Number Of Vertex Influence Percentage</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>受影响顶点的最低百分比要求存在有效变形目标。 
+</p><p>此设置可用于确定何时基于定义的影响百分比导入基础/变形目标。 
+例如有一个拥有 1000 个顶点的模型，其中一个基础只影响 10 个顶点。 
+如将此值设为 10，前文提及的基础/变形目标将不会被导入。 
+</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Content/AlembicImporter/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:12 GMT -->
+</html>

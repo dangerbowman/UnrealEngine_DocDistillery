@@ -1,0 +1,1780 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/GettingStarted/FromUnity/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:07:14 GMT -->
+<head>
+    <title>为 Unity 开发者准备的虚幻引擎 4 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../docs.unrealengine.com/latest/INT/GettingStarted/FromUnity/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../docs.unrealengine.com/latest/KOR/GettingStarted/FromUnity/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../docs.unrealengine.com/latest/JPN/GettingStarted/FromUnity/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../docs.unrealengine.com/latest/CHN/GettingStarted/FromUnity/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3806721" />
+<meta name="availability" content="Public" />
+<meta name="title" content="为 Unity 开发者准备的虚幻引擎 4" />
+<meta name="description" content="快速地将 Unity 的知识应用于虚幻 4。" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="GettingStarted" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="为 Unity 开发者准备的虚幻引擎 4" />
+	<meta property="og:description" content="快速地将 Unity 的知识应用于虚幻 4。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">虚幻引擎4入门</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">为 Unity 开发者准备的虚幻引擎 4</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<p><img alt="image_0.png" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_0.jpg" />
+</p><div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#编辑器">编辑器</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#快速词汇查找表">快速词汇查找表</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#项目文件和文件">项目文件和文件</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#从gameobjects到actors">从 GameObjects 到 Actors</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#如何在虚幻4中编写代码">如何在虚幻 4 中编写代码</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#在虚幻4中编写游戏逻辑代码">在虚幻 4 中编写游戏逻辑代码</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#常见问题">常见问题</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#然后呢？">然后呢？</a>
+	</li>		    	        </ul>
+</div>
+<p>本指南从一个 Unity 的用户视角来整体看待虚幻 4，并帮助将 Unity 的开发经验应用到虚幻 4 的世界中。
+</p><h2 id="编辑器">编辑器</h2>
+
+<p>下面是 Unity 编辑器和虚幻编辑器的图片，用颜色标识了同类的区块。每个区块也添加了标签，对应于虚幻术语表。虚幻编辑器完全可以通过对各个区块的拖拽做到窗口布局的自定义。
+</p><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content OS windows ">
+    <div class="container">
+        <p><img alt="EditorCompare_Windows.png" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/EditorCompare_Windows.jpg" /></p>
+    </div>
+</div><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content OS mac ">
+    <div class="container">
+        <p><img alt="EditorCompare_Mac.png" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/EditorCompare_Mac.jpg" /></p>
+    </div>
+</div><h3 id="编辑资源素材">编辑资源素材</h3>
+
+<p>在 Unity 中，Inspector 分页时用来编辑当前项目中选中的素材。在虚幻 4 中，<strong>细节</strong> 面板则用来展示并修改当前选中物体的属性，然后大量的编辑修改则需要专用的窗口或分页。编辑每种类型的资源时都会打开分页窗口，类似于网页浏览器。当然这些分页窗口也可以任意拖拽，并悬浮在其他窗口之上作为独立窗口显示。
+</p><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content OS windows ">
+    <div class="container">
+        <p><img alt="TabbedWindows_Windows.png" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/TabbedWindows_Windows.jpg" /></p>
+    </div>
+</div><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content OS mac ">
+    <div class="container">
+        <p><img alt="TabbedWindows_Mac.png" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/TabbedWindows_Mac.jpg" /></p>
+    </div>
+</div><h2 id="快速词汇查找表">快速词汇查找表</h2>
+
+<p>下表左侧包含了常见的 Unity 术语，右侧是对应的（或差不多的）虚幻 4 术语。虚幻 4 的关键词直接链接到更进一步的虚幻在线文档中。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>分类 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>Unity </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>虚幻 4 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>游戏内容类型</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Component</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Blueprints/UserGuide/Components/index.html" ><span>组件</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>GameObject</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Actors/index.html" ><span>Actor</span></a>
+, <a id="content_link" href="../../Gameplay/Framework/Pawn/index.html" ><span>Pawn</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Prefab</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Blueprints/index.html" ><span>蓝图类</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>编辑器界面</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Hierarchy Panel</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/UI/LevelEditor/index.html" ><span>世界大纲</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Inspector</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/UI/LevelEditor/index.html" ><span>细节面板</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Project Browser</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Content/Browser/index.html" ><span>内容浏览器</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Scene View</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/UI/LevelEditor/Viewports/index.html" ><span>视口</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>网格物体</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Mesh</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Actors/StaticMeshActor/index.html" ><span>静态网格物体</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Skinned Mesh</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Content/Types/SkeletalMeshes/index.html" ><span>骨骼网格物体</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>材质</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Shader</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Rendering/Materials/index.html" ><span>材质</span></a>
+, <a id="content_link" href="../../Engine/Rendering/Materials/Editor/index.html" ><span>材质编辑器</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Material</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Rendering/Materials/MaterialInstances/index.html" ><span>材质实例</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>特效</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Particle Effect</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Rendering/ParticleSystems/index.html" ><span>特效，粒子，级联</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Shuriken</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Rendering/ParticleSystems/index.html" ><span>级联</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>游戏界面</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>UI</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/UMG/index.html" ><span>UMG （虚幻示意图行 Unreal Motion Graphics）</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>动画</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Animation</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Animation/index.html" ><span>骨骼动画系统</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Mecanim</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Animation/Persona/index.html" ><span>Persona</span></a>
+ , <a id="content_link" href="../../Engine/Animation/AnimBlueprints/index.html" ><span>动画蓝图</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>2D</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Sprite Editor</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Paper2D/index.html" ><span>Paper2D</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>编程</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>C#</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Programming/index.html" ><span>C++</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Script</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Blueprints/index.html" ><span>蓝图</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>物理</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Raycast</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Physics/Tracing/index.html" ><span>Line Trace, Shape Trace</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>Rigid Body</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Engine/Physics/index.html" ><span>碰撞，物理</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>运行平台</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>iOS Player, Web Player</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../Platforms/index.html" ><span>支持的平台</span></a>
+</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="项目文件和文件">项目文件和文件</h2>
+
+<h3 id="那么目录和文件时怎么回事">那么目录和文件时怎么回事</h3>
+
+<p>和 Unity 的项目一样，虚幻的项目也存在于自有的目录，并有自己的项目文件。可以通过 <strong>双击</strong> 一个 <strong>.uproject</strong> 文件打开虚幻编辑器并加载该项目，或者 <strong>右键</strong> 来查看更多选项。项目目录中包含不同的子目录，保存了游戏的资源内容和源代码，以及各种配置文件和二进制文件。最重要的就是 <strong>Content</strong> 子目录和 <strong>Source</strong> 子目录。
+</p><h3 id="我的资源素材应该放在哪里？">我的资源素材应该放在哪里？</h3>
+
+<p>在虚幻 4 中，每个项目都有一个 <strong>Content</strong> 文件夹。类似于 Unity 项目的 Asset 目录，这里就是游戏资源素材保存的地方。要向游戏中导入素材的话，只需要将素材文件拷贝到 Content 目录，它们便会自动导入并出现在 <strong>内容浏览器</strong> 中。当使用外部程序修改这些资源时，编辑器中的资源也会自动的被更新。
+</p><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content OS windows ">
+    <div class="container">
+        <p><img alt="ProjectOnDisk_Windows.png" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/ProjectOnDisk_Windows.jpg" /></p>
+    </div>
+</div><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content OS mac ">
+    <div class="container">
+        <p><img alt="ProjectOnDisk_Mac.png" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/ProjectOnDisk_Mac.jpg" /></p>
+    </div>
+</div><h3 id="支持哪些通用资源文件格式？">支持哪些通用资源文件格式？</h3>
+
+<p>Unity 支持很多文件格式。虚幻 4 也支持最通用的文件格式，如下表：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>资源类型 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>支持的格式 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>3D</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>.fbx, .obj</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>贴图</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>.png, .jpeg, .bmp ,.tga, .dds, .exr, .psd, .hdr</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>声音</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>.wav</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>字体</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>.ttf, .otf</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>视频</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>.mov, .mp4, .wmv</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="场景是如何保存的？">场景是如何保存的？</h3>
+
+<p>在 Unity 中，GameObjects 被放置在场景中，并保存为一个场景资源文件。虚幻有一个地图文件，对应于 Unity 场景。地图文件保存了 <strong>关卡</strong> 的数据以及其中的物件，以及光照数据和某些关卡特定的设置。
+</p><h3 id="如果修改项目的设置？">如果修改项目的设置？</h3>
+
+<p>所有的项目设置都可以在主菜单的 <strong>Edit</strong> / <strong>Project Settings</strong> 中找到。类似于 Unity 的设置，能够对项目设定所需要的信息（比如项目的名称和图标），配置游戏输入的绑定，并定义运行项目时引擎的行为。可以在 <a id="content_link" href="../../Engine/UI/ProjectSettings/index.html" ><span>这里</span></a>
+ 了解更多单独项目的设置。Unity 还有被称为 “玩家设置” 的部分，在虚幻中，我们叫 “平台设置”，并且可以在项目设置的 “平台” 分类里找到。
+</p><h3 id="源文件在哪里？">源文件在哪里？</h3>
+
+<p>在 Unity 中，人们习惯于将 C# 的源文件放在资源目录中。
+</p><p>虚幻 4 工作机制有点不同。对那些拥有 C++ 代码的项目，可以在项目目录中找到一个 <strong>Source</strong> 的子目录包含多种文件，包括 C++ 源文件（.cpp）和头文件（.h），以及编译链接的脚本（.Build.cs，.Target.cs）。然后，只有蓝图的项目则不会有 Source 目录。
+</p><p>在虚幻 4 中开始使用 C++ 最方便的做法是用编辑器的菜单项来 <strong>Add Code To Project</strong>（在主菜单的文件菜单中），或应用某个模板来新建一个 C++ 的项目。可以直接在 <strong>内容浏览器</strong> 中直接看到 C++ 类，并通过双击它们便能直接在 Visual Studio 或 Xcode 中打开该文件。
+</p><h2 id="从gameobjects到actors">从 GameObjects 到 Actors</h2>
+
+<h3 id="gameobject去哪里了？">GameObject 去哪里了？</h3>
+
+<p>在 Unity 中，一个 GameObject 是可以被放置在世界中的一个 “东西”。在虚幻 4 中对应的是一个 Actor。在虚幻编辑器中，可以从物体面板中直接拖一个空的 Actor 放置到场景中：
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_UXGFtZ71mfQ"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="UXGFtZ71mfQ" width="100%" height="100%" src="../../../../external.html?link=https://www.youtube.com/embed/UXGFtZ71mfQ?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_UXGFtZ71mfQ
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_UXGFtZ71mfQ:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style><p><em>Youtube 视频</em>
+</p><p>虽然可以通过搭建并扩展空的 Actor 来制作游戏，但虚幻 4 提供了各种特殊类型的 Actor 并预制了它们的特性，比如 Pawn（用于作为玩家或者 AI 的角色），或者 Character（用于会做动作的生物）。和空的 Actor 一样，可以直接将它们拖拽至场景中，并给它们添加组件，或自定义属性。之后可以学习到更多相关内容，这里只需要了解虚幻 4 有个 (Gameplay 框架)[(Gameplay/Framework)] 来协同各种特殊的 Actor 一起工作。
+</p><p>虚幻 4 中的 Actor 还是和 Unity 中的 GameObjects 有不同之处。在 Unity 中，GameObject 是 C# 的类并且无法直接扩展。在虚幻 4 中，Actor 是 C++ 类，可以很容易的被继承或扩展来自定义。我们之后将会谈论更多！
+</p><h3 id="组件在哪里？">组件在哪里？</h3>
+
+<p>在 Unity 中，可以通过为一个 GameObject 添加组件来达到给予一定的功能。
+</p><p>在虚幻 4 中，也可以为 Actor 添加组件。在向关卡中放置了一个空的 Actor 后，点击添加组件按钮（在 <strong>细节</strong> 面板中），并选择一个组件来添加。这里我们通过放置一个空的 Actor 来创建一个火炬，并为它添加一个网格物体组件作为基座，以及一个光源和粒子系统作为它的火焰。
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_SknellY4I4g"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="SknellY4I4g" width="100%" height="100%" src="../../../../external.html?link=https://www.youtube.com/embed/SknellY4I4g?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_SknellY4I4g
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_SknellY4I4g:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style><p><em>Youtube 视频</em>
+</p><p>在 Unity 中，一个 GameObject 保存了组件的简单列表，但在虚幻 4 中，一个 Actor 保存了属于它的组件以及它们的继承结构关系。可以在上面的例子中看到，光源和粒子是连接到网格模型的。之后在 <a id="content_link" href="index.html#bookmarkcompoundobjects" ><span>复合 Actor 和 复合 GameObject</span></a>
+ 中会有重要的描述讨论。
+</p><h3 id="从unity的prefabs到虚幻4的蓝图类">从 Unity 的 prefabs 到虚幻 4 的蓝图类</h3>
+
+<p>Unity 的工作流程是基于 prefabs 的。在 Unity 中，创建一系列 GameObjects 以及它们的组件，并为它们创建 prefab。然后便可以在世界中放置 prefab 的实例，或者在运行时创建它们。
+</p><p>虚幻 4 则是基于蓝图类来协同工作。在虚幻 4 中，创建一个 Actor 以及它的组件，选择它并点击 <strong>蓝图 / 添加脚本</strong> 按钮（在 <strong>细节</strong> 面板中）。然后选择保存蓝图类的地方，并点击 <strong>创建蓝图</strong> 来保存新建的蓝图！
+</p><!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_n35cDTFBl3s"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="n35cDTFBl3s" width="100%" height="100%" src="../../../../external.html?link=https://www.youtube.com/embed/n35cDTFBl3s?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_n35cDTFBl3s
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_n35cDTFBl3s:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style><p><em>Youtube 视频</em>
+</p><p>新建的蓝图类可以在 <strong>内容浏览器</strong> 中找到。可以直接 <strong>双击</strong> 打开编辑它们，也可以将它们拖拽到任意场景关卡中。
+</p><h3 id="脚本组件和monobehaviour在哪里？">脚本组件和 MonoBehaviour 在哪里？</h3>
+
+<p>在 Unity 中，GameObject 有脚本组件，并可以添加 C# 脚本。可以创建 MonoBehavior 子类并定义那个组件做什么。
+</p><p>虚幻 4 也有类似的内容。可以自由创建全新的组件类并将它应用于任意 Actor。组件类可以使用蓝图脚本创建，也可以用 C++ 创建。
+</p><p>那么在虚幻 4 中如何创建自己的组件类呢？在 <strong>细节</strong> 面板中，添加组件（Add Component）的下拉框中，可以看到创建新组件，或者选择已经存在的组件：
+</p><p><img alt="image alt text" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_7.jpg" />
+</p><p>在 Unity 中，当创建新的 MonoBahaviour 时，将会有一个框架类文件，并有 Start() 函数和 Update() 函数。
+</p><p>在虚幻 4 中，也会有一个框架类，有一个 InitializeComponent() 函数和一个 TickComponent() 函数，它们和 Start、Update 具有类似的行为。
+</p><p>如果创建一个蓝图脚本组件，则会有可视化节点来表示类似的函数：
+</p><p><img alt="image alt text" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_8.jpg" />
+</p><h3 id="可编辑脚本actor蓝图类">可编辑脚本 Actor 蓝图类</h3>
+
+<p>这是个很酷的虚幻 4 功能：新建的 Actor 蓝图类可以拥有自己的可视化蓝图脚本编辑！这样能够为整个物体添加逻辑，而不仅仅是每个组件。结合继承结构关系（稍后下文解释），这将会提供游戏制作很多灵活性。
+</p><p>In addition to Blueprint Classes supporting visual scripting, UE4 also supports C++ Classes implemented with code.  Here are both, side-by-side.
+除了蓝图支持可视化脚本编辑，虚幻 4 还支持通过代码 C++ 类来实现。这里是双方的一个对照：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>Unity C# </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>UE4 C++ </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>虚幻4蓝图 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+<pre class="prettyprint"><code>using UnityEngine;
+using System.Collections;
+
+public class MyComponent : MonoBehaviour
+{
+    int Count;
+
+    // Use this for initialization.
+    void Start ()
+    {
+        Count = 0;
+    }
+
+    // Update is called once per frame.
+    void Update () 
+    {
+
+        Count = Count + 1;
+        Debug.Log(Count);
+    }
+}</code></pre>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+<pre class="prettyprint"><code>#pragma once
+#include "GameFramework/Actor.h"
+#include "MyActor.generated.h"
+
+UCLASS()
+class AMyActor : public AActor
+{
+    GENERATED_BODY()
+    int Count;
+
+    // Sets default values for this actor's properties.
+    AMyActor() 
+    {
+        // Allows Tick() to be called
+        PrimaryActorTick.bCanEverTick = true;  
+    }
+
+    // Called when the game starts or when spawned.
+    void BeginPlay()
+    {
+        Super::BeginPlay();
+        Count = 0;
+    }
+
+    // Called every frame.
+    void Tick(float DeltaSeconds)
+    {
+        Super::Tick(DeltaSeconds);
+        Count = Count + 1;
+        GLog-&gt;Log(FString::FromInt(Count));
+    }
+};</code></pre>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_28.png" ><span><img alt="image_28.png" width="220" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_28.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span></p>
+</div></p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="虚幻4蓝图类的扩展性">虚幻 4 蓝图类的扩展性</h3>
+
+<p>Unity 的 prefabs 和虚幻 4 的蓝图类在游戏中类似的实例化。然后 Unity 在 prefabs 之间的关系上有并发的问题，这限制了创作的扩展性。
+</p><p>在虚幻 4 中，可以通过扩展已有的蓝图类来创建新的蓝图类，并定义新的属性，组件功能及可视化脚本功能。
+</p><p>比如，在虚幻 4 中，可以创建一个蓝图类叫做 Monster，实现基本的怪物功能，比如追击人类。然后可以创建一个叫做 Dragon 的蓝图类来扩展它（某种特定的怪物，添加了火焰吐息的功能），再有一个 Grue（一种当它变黑是就有可能吃人的怪物），以及其他 8 种类型。这样一些 Monster 的子类都继承了基础的 Monster 类的功能，并在此基础上添加新的能力。
+</p><p>在 Unity 中，则需要创建很多不同的 GameObject 的 prefabs：为 Dragon 创建一个，为 Grue 创建一个，等等。假设这时希望为所有的怪物添加某个功能，比如使用一个 Speak 组件来说话，在 Unity 中则需要更新所有的 10 个 prefabs，拷贝粘贴到每个中。
+</p><p>在虚幻 4 中，只需简单的修改 Monster 的蓝图类，并为它添加新的 Speak 的能力，便做完了！Dragon，Grue 以及其他 8 种 Monster 的子类都会自动的继承这个说话的新功能，并不需要去修改这些子类。
+</p><p>但还有更多！我们关于蓝图类所说的一切，都同样适用于 C++ 的类，也同样对 Actors 和 组件 适用。我们的体系设计时考虑支持各种不同程度的开发形式，具有功能上的可扩展性，可以为 10 个开发人员的项目服务，也可以为 100 个人的项目人员服务。
+</p><h3 id="那么应该用蓝图脚本还是c++代码呢？或者同时使用？">那么应该用蓝图脚本还是 C++ 代码呢？或者同时使用？</h3>
+
+<p>可视化蓝图脚本是对游戏实时逻辑和序列型的事件的理想制作手段。这个系统对策划、美术以及面向可视化编程的程序员是非常好用的，它能够可视化的管理游戏内的物体，并且容易访问。完全可以通过蓝图就完成一个游戏的制作。请参考 Tappy Chicken 示例，它是一个完整的范例。
+</p><p>C++ 编程可以为更大体量的任务工作，比如构建一个游戏体系，制作复杂的 AI 行为，或者新增引擎功能。对于已有 C++ 技能的开发人员而言，可以翻阅一下 <a id="content_link" href="../../Programming/Basics/index.html" ><span>在虚幻 4 中的 C++ 编程简述</span></a>
+ 页面。
+</p><p>大部分的项目都将是混合使用蓝图和 C++。很多开发者使用蓝图来创作游戏原型，因为这个过程容易且有趣，但会在之后的性能调整和更严格的引擎使用时将部分蓝图或全部蓝图脚本转移至 C++。
+</p><h3 id="蓝图类也能扩展c++类">蓝图类也能扩展 C++ 类</h3>
+
+<p>虚幻 4 的游戏开发中很多令人着迷的过程来存在于程序员用 C++ 实现新的功能，而策划和美术在蓝图中使用这些功能，并提出更多要求！下图是针对一个虚幻 4 的射击游戏项目中实现拾取物品过程时，团队的一种形式，混合了 C++ 类的编程实现，以及蓝图类用于处理行为和表现。
+</p><p><img alt="image alt text" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_9.jpg" />
+</p><h3 id="转换组件">转换组件</h3>
+
+<p>在 Unity 中，每个 GameObject 都有一个转换组件（Transform Component），赋予该 GameObject 在世界中的位置、角度以及缩放比例。
+</p><p>在 虚幻 4 中类似，Actor 有一个 <strong>Root Component</strong>，能够作为场景组件的任意子类，<strong>场景组件</strong> 赋予 Actor 在世界中的位置、角度及缩放比例，这些参数会费赋予该 Actor 的组件关系结构中在它之下的所有组件。很多有用的组件都是场景组件的子类，因此让它们具有位置信息是非常有用的！
+</p><p>即便只放置一个空的 Actor，虚幻 4 也会为它创建一个“默认场景 Root 组件”，这是一个最简单的场景组件。当放置一个新的场景组件时，默认场景 Root 则会被替换掉。
+</p><a name="bookmarkcompoundobjects" ></a><h3 id="复合物体">复合物体</h3>
+
+<p>在 Unity 中，可以构建 GameObject 之间的关系并将他们的转换组件绑定，来创建复合物体。
+</p><p><img alt="image alt text" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_10.jpg" />
+</p><p>在虚幻 4 中，通过整洁的组件继承便能创建复合游戏物体。
+</p><p><img alt="image alt text" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_11.jpg" />
+</p><p>从上图可以看到，一个整洁的继承关系可以通过将场景组件互相附加来得到，由于他们有转换功能，类似于 Unity 中的转换的绑定。Actor 的各个组件（所有组件的基类）只能直接依附到 Actor 自己身上。
+</p><h3 id="我是否应该用组件来创造其他一切？">我是否应该用组件来创造其他一切？</h3>
+
+<p>其实这完全取决于你自己，大部分情况下应该结合 Actor 的类和自定义组件。我们先前已经提到过，虚幻 4 中已经提供了一些特殊类型的 Actor 用于某种能力并总是附带某些组件。比如一个 <strong>Character</strong> 总是会包含一个 <strong>Character Movement 组件</strong>。
+</p><p>有一些在引擎中常见的 Actor 类型，并且大部分种类的游戏都会用到它们。这里是我们已经制作的最常见类型 Actor 的列表：
+</p><ul ><li><p><strong>Pawn</strong> - Actor 的一种类型，用于表现一个可供控制的游戏物体，比如是玩家的角色。Pawn 通常都是被玩家或者 AI 通过 Controller 控制并移动。
+</p></li><li><p><strong>Character</strong> - 一种特殊类型的 Pawn，用于双足类型的角色，并具备一些复杂的功能。
+</p></li><li><p><strong>Controller</strong> - 依附并控制一个 Pawn。通过将 Pawn 和 Controller 的分离，我们可以编写 AI Controller，用于控制 Pawn，并且和玩家控制 Pawn 采用相同的接口。
+</p></li><li><p><strong>Player Controller</strong> - 一个更为特殊的 Controller，用于从玩家的手柄中获得输入信息，或者鼠标键盘中获得殊瑞星纳西，并将这些信息驱动它所控制的 Pawn 或者 Character 的行为。
+</p></li></ul><h3 id="那么所有的东西都是actor咯？">那么所有的东西都是 Actor 咯？</h3>
+
+<p>并不是所有的。<strong>Actor</strong> 是虚幻 4 中最常见的用于游戏的类，并是唯一能够在 <strong>世界</strong> 中被 <strong>创建生成 Spawn</strong> 的类。因此任何被放置在关卡中的东西都将是一个 Actor。
+</p><p>另外一个需要知道的重要类型是 <strong>Object</strong>。Object 实际上是所有虚幻引擎的类的基类，包括 Actor 以及一些其他的类。这是一个比 Actor 更加底层的类，具备一些作为虚幻引擎类的可预料的功能，比如 <strong>反射</strong> 和 <strong>序列化</strong>。Object 是一个非常基础的类，当我们需要定义一个新的类但又并非 Actor 的时候会使用它。比如 Actor Component 是所有组件的基类，而它则是继承 Object 而非 Actor。
+</p><h3 id="在虚幻4中gameplay框架是什么东西？">在虚幻 4 中 Gameplay 框架是什么东西？</h3>
+
+<p>好吧，这里开始事情变得一点点疯狂（酷炫的方向）。Unity 提供了一个干净的石板用于设计游戏，虚幻也做了同样的事情。在 Unity 中可以基于 GameObjects 和组件来创建所有的东西，而在虚幻中则是基于 Actor 和组件来创建。
+</p><p>然后，虚幻在顶层提供了叫做 <a id="content_link" href="../../Gameplay/Framework/index.html" ><span>Gameplay 框架</span></a>
+ 的部分，而 Unity 中并没有这块内容。虽然做一款游戏并不是一定要用到它，但如果用的话会非常酷！基本上来说，它提供了一些基础功能，如果遵循它的逻辑，您将能够很容易的获得一些很赞的功能，否则可能花费很多时间，并且实现也很困难，或者很难改造。（比如完整的多人游戏支持！）
+</p><p>已有大量的酷炫游戏基于虚幻的 Gameplay 框架之上制作，花点时间来了解该框架的机制是很值得的。没错，最终您将具有您自己的框架形式，如果想要这么做当然完全没问题！但虚幻 4 当前已有数以百计的炫酷开发者在使用它，因此我们花点时间来了解一下。
+</p><p>要使用 Gameplay 框架，只需要了解一些预制的 Actor 类，比如 <strong>Pawn</strong>，<strong>Character</strong>，和 <strong>Player Controller</strong>，并逐步了解虚幻的网络复制和网络其他功能。现在我们先回到最基本的部分。
+</p><h2 id="如何在虚幻4中编写代码">如何在虚幻 4 中编写代码</h2>
+
+<h3 id="我曾习惯于在monodevelop中写代码">我曾习惯于在 MonoDevelop 中写代码</h3>
+
+<p>对于蓝图脚本，只需要虚幻编辑器——所有的东西都已经包括了！要编写 C++ 代码，在 Windows 平台下载 Visual Studio 的免费版本，如果是 Mac 的话则需要安装 Xcode。当第一次创建一个新项目（或者为已有项目添加代码）时，虚幻 4 将会自动的创建 Visual Studio 的项目文件。您只需要在 <strong>内容浏览器</strong> 中双击一个 C++ 的类便能在 Visual Studio 中打开它，或者在主菜单的文件菜单中点击 <strong>Open Visual Studio</strong>。
+</p><p><img alt="image alt text" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_12.jpg" />
+</p><p>在虚幻 4 中有个重要的不同：有时必须要手动的更新 Visual Studio 的项目文件（比如，下载了 UE4 的新版本，或者对源代码文件的磁盘存放位置做了人为改变）。可以通过在主菜单中点击 <strong>Refresh Visual Studio Project</strong> 或者在项目目录中 <strong>右键点击</strong> <strong>.uproject 文件</strong> 并选择 <strong>Generate Visual Studio project files</strong> 便可。
+</p><p><img alt="image alt text" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_13.jpg" />
+</p><h3 id="编写事件函数（start，update等）">编写事件函数（Start，Update 等）</h3>
+
+<p>如果您曾用 MonoBehaviors 工作，那一定熟悉诸如 Start，Update 和 OnDestroy 等方法。以下是对 Unity 的行为和对应的虚幻 4 的 Actor 和组件的比较。
+</p><p>在 Unity 中，我们可能有一个简单的组件，类似下面的代码：
+</p>
+<pre class="prettyprint"><code>public class MyComponent : MonoBehaviour
+{
+    void Start() {}
+    void OnDestroy() {}
+    void Update() {}
+}</code></pre>
+<p>请记住，在虚幻 4 中，您可以直接为 Actor 写代码而无需创建新的组件来添加代码。这其实是很常见并有意义的。
+</p><p>类似于 Unity 的 Start，OnDestroy 和 Update 函数，虚幻 4 在 Actor 中有类似的方法：
+</p><p><strong>C++</strong>：
+</p>
+<pre class="prettyprint"><code>UCLASS()
+class AMyActor : public AActor
+{
+    GENERATED_BODY()
+
+    // Called at start of game.
+    void BeginPlay();
+
+    // Called when destroyed.
+    void EndPlay(const EEndPlayReason::Type EndPlayReason);
+
+    // Called every frame to update this actor.
+    void Tick(float DeltaSeconds);
+};</code></pre>
+<p><strong>蓝图</strong>：
+</p><p><img alt="image_29.png" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_29.jpg" />
+</p><p>在虚幻 4 中，组件具有不同的函数。以下是示例：
+</p><p><strong>C++</strong>：
+</p>
+<pre class="prettyprint"><code>UCLASS()
+class UMyComponent : public UActorComponent
+{
+    GENERATED_BODY()
+
+    // Called after the owning Actor was created
+    void InitializeComponent();
+
+    // Called when the component or the owning Actor is being destroyed
+    void UninitializeComponent();
+
+    // Component version of Tick
+    void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction);
+};</code></pre>
+<p><strong>蓝图</strong>：
+</p><p><img alt="image_30.png" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_30.jpg" />
+</p><p>请记住，在虚幻 4 中调用基类的方法很重要。
+</p><p>比如，在 Unity C# 中可能是调用 base.Update()，但在虚幻 4 的 C++ 中我们使用 Super::TickComponent()：
+</p>
+<pre class="prettyprint"><code>void UMyComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+    // Custom tick stuff here
+    Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+}</code></pre>
+<p>You may have noticed some things begin with "A" and others with "U" in C++.  The prefix "A" indicates an Actor sub-class.  Where as the prefix "U" indicates an <strong>Object</strong> sub-class.  There are some other prefixes too, for example "F" is used for most plain data structures or non-UObject classes.
+您也许已经注意到 C++ 中有些以 “A” 开头，而其他一些以 “U” 开头。前缀 “A” 代表它是一个 Actor 的子类，而前缀 “U” 代表它是一个 Object 的子类。还有其他一些前缀，比如 “F” 用于代表一个平铺的数据结构体，或者其他非 Uboject 的类。
+</p><h2 id="在虚幻4中编写游戏逻辑代码">在虚幻 4 中编写游戏逻辑代码</h2>
+
+<p>好了，现在开始稍微深入一些。我们将谈论一下创建游戏所需要的编程话题。因为您了解 Unity，我们来面向 C# 的用户解释 C++ 的功能，当然您也可以使用蓝图来完成几乎所有的事情！我们尽可能的为范例提供 C++ 的同时也提供蓝图。
+</p><p>先说一下一些通用的游戏逻辑编程模式，以及如何在虚幻中实现。许多在 Unity 中的函数在虚幻中都有类似的函数。我们先从最常见的开始。
+</p><h3 id="instantiatinggameobject/spawningactor">Instantiating GameObject / Spawning Actor</h3>
+
+<p>在 Unity 中，我们使用 Instantiate 函数来新建物体的实例。
+</p><p>该函数使用任意的 UnityEngine.Object 类型（GameObject，MonoBehaviour 等），并创建它的拷贝。
+</p>
+<pre class="prettyprint"><code>public GameObject EnemyPrefab;
+public Vector3 SpawnPosition;
+public Quaternion SpawnRotation;
+
+void Start()
+{
+    GameObject NewGO = (GameObject)Instantiate(EnemyPrefab, SpawnPosition, SpawnRotation);
+    NewGO.name = "MyNewGameObject";
+}</code></pre>
+<p>在虚幻 4 中，根据不同的需要，有一些不同的函数用于创建物体。NewObject 用于创建新的 UObject 类型实例，而 SpawnActor 用于创建新的 AActor 类型实例。
+</p><p>首先我们总体说一下 UObject 和 NewObject。在虚幻中 UObject 的子类很像 Unity 中 ScriptableObject 的子类。对于游戏过程中，它们是那些不需要在游戏世界中创建并看见的存在。
+</p><p>在 Unity 中，如果要创建自己的 ScriptableObject 子类，可能会像下面这样的初始化：
+</p>
+<pre class="prettyprint"><code>MyScriptableObject NewSO = ScriptableObject.CreateInstance&lt;MyScriptableObject&gt;();</code></pre>
+<p>在虚幻中，如果要创建 UObject 的继承类，是像下面这样的初始化：
+</p>
+<pre class="prettyprint"><code>UMyObject* NewObj = NewObject&lt;UMyObject&gt;();</code></pre>
+<p>那么 Actor 呢？Actor 的在世界（C++ 中的 UWorld）中生成是通过 SpawnActor 方法。如何获取 World 对象？有些 UObject 会提供一个 GetWorld 的方法，所有的 Actor 则都具有这个方法。
+</p><p>您可能已经注意到，并没有传递一个 Actor，我们传递了一个 Actor 的 “class” 来作为生成 Actor 的参数。在我们的范例中，是一个 AMyEnemy 类的任意子类。
+</p><p>但如果想要创建某个东西的“拷贝”，就像 Unity 的 Instantiate 函数那样，该怎么做呢？
+</p><p>NewObject 和 SpawnActor 函数也能通过给一个 “模板” 对象来工作。虚幻引擎会创建该一个对象的拷贝，而不是从零创建一个新的对象。这将会拷贝该对象的所有属性（UPROPERTY）和组件。
+</p>
+<pre class="prettyprint"><code>AMyActor* CreateCloneOfMyActor(AMyActor* ExistingActor, FVector SpawnLocation, FRotator SpawnRotation)
+{
+    UWorld* World = ExistingActor-&gt;GetWorld();
+    FActorSpawnParameters SpawnParams;
+    SpawnParams.Template = ExistingActor;
+    World-&gt;SpawnActor&lt;AMyActor&gt;(ExistingActor-&gt;GetClass(), SpawnLocation, SpawnRotation, SpawnParams);
+}</code></pre>
+<p>您也许想知道“从零开始创建”在这里具体是什么意思。每个对象类在创建时都有一个默认模板，包含了它的默认属性和组件。在创建时如果您并不像修改这些默认属性，并没有提供你自己的模板，虚幻将使用这些默认值来创建该对象。为了更好的说明这个，我们先来看一下 MonoBehaviour 的例子：
+</p>
+<pre class="prettyprint"><code>public class MyComponent : MonoBehaviour
+{
+    public int MyIntProp = 42;
+    public SphereCollider MyCollisionComp = null;
+
+    void Start()
+    {
+        // Create the collision component if we don't already have one
+        if (MyCollisionComp == null)
+        {
+            MyCollisionComp = gameObject.AddComponent&lt;SphereCollider&gt;();
+            MyCollisionComp.center = Vector3.zero;
+            MyCollisionComp.radius = 20.0f;
+        }
+    }
+}</code></pre>
+<p>在上面这个例子中，有一个 int 属性，默认是 42，并有一个 SphereCollider 组件默认半径是 20。
+</p><p>在虚幻 4 中，利用对象的构造函数也能达到同样的效果。
+</p>
+<pre class="prettyprint"><code>UCLASS()
+class AMyActor : public AActor
+{
+    GENERATED_BODY()
+
+    UPROPERTY()
+    int32 MyIntProp;
+
+    UPROPERTY()
+    USphereComponent* MyCollisionComp;
+
+    AMyActor()
+    {
+        MyIntProp = 42;
+
+        MyCollisionComp = CreateDefaultSubobject&lt;USphereComponent&gt;(FName(TEXT("CollisionComponent"));
+        MyCollisionComp-&gt;RelativeLocation = FVector::ZeroVector;
+        MyCollisionComp-&gt;SphereRadius = 20.0f;
+    }
+};</code></pre>
+<p>在 AMyActor 的构造函数中，我们为这个类设置了属性的默认值。请注意 CreateDefaultSubobject 函数。我们可以用它来创建组件并赋予组件默认值。所有子对象都将使用这个函数作为默认模板来创建，也可以在子类或者蓝图中对它进行修改。
+</p><h4 id="类型转换">类型转换</h4>
+
+<p>在这个例子中，获取了一个已知的组件，并将它转换为一个特定类型并有条件的做一些事情。
+</p><p>Unity C#:
+</p>
+<pre class="prettyprint"><code>Collider collider = gameObject.GetComponent&lt;Collider&gt;;
+SphereCollider sphereCollider = collider as SphereCollider;
+if (sphereCollider != null)
+{
+        // ...
+}</code></pre>
+<p>虚幻 4 C++:
+</p>
+<pre class="prettyprint"><code>UPrimitiveComponent* Primitive = MyActor-&gt;GetComponentByClass(UPrimitiveComponent::StaticClass());
+USphereComponent* SphereCollider = Cast&lt;USphereComponent&gt;(Primitive);
+if (SphereCollider != nullptr)
+{
+        // ...
+}</code></pre>
+<h4 id="销毁gameobject/actor">销毁 GameObject / Actor</h4>
+
+<div class="tablethird">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>Unity </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>C++ </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>蓝图  </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+<pre class="prettyprint"><code>Destroy(MyGameObject);</code></pre>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+<pre class="prettyprint"><code>MyActor-&gt;Destroy();</code></pre>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><img alt="image_23.png" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_23.jpg" />
+</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><h4 id="销毁gameobject/actor（1秒延迟）">销毁 GameObject / Actor （1 秒延迟）</h4>
+
+<div class="tablethird">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>Unity </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>C++ </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>蓝图  </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+<pre class="prettyprint"><code>Destroy(MyGameObject, 1);</code></pre>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+<pre class="prettyprint"><code>MyActor-&gt;SetLifeSpan(1);</code></pre>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_24.png" ><span><img alt="image_24.png" width="240" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_24.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p><em>点击查看大图。</em>
+</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><h4 id="禁用gameobjects/actors">禁用 GameObjects / Actors</h4>
+
+<div class="tablethird">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>Unity </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>C++ </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>Blueprint </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+<pre class="prettyprint"><code>MyGameObject.SetActive(false);</code></pre>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+<pre class="prettyprint"><code>// Hides visible components
+MyActor-&gt;SetActorHiddenInGame(true);
+
+// Disables collision components
+MyActor-&gt;SetActorEnableCollision(false);
+
+// Stops the Actor from ticking
+MyActor-&gt;SetActorTickEnabled(false);</code></pre>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_25.png" ><span><img alt="image_25.png" width="120" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_25.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p><em>点击查看大图。</em>
+</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><h4 id="通过组件访问gameobject/actor">通过组件访问 GameObject / Actor</h4>
+
+<div class="tablethird">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>Unity </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>C++ </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>蓝图 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+<pre class="prettyprint"><code>GameObject ParentGO = 
+MyComponent.gameObject; </code></pre>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+<pre class="prettyprint"><code> AActor* ParentActor = 
+ MyComponent-&gt;GetOwner();</code></pre>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_32.png" ><span><img alt="image_32.png" width="220" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_32.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p><em>点击查看大图。</em>
+</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><h4 id="通过gameobject/actor访问组件">通过 GameObject / Actor 访问组件</h4>
+
+<p><strong>Unity</strong> </p>
+<pre class="prettyprint"><code>MyComponent MyComp = gameObject.GetComponent&lt;MyComponent&gt;();</code></pre>
+<p><strong>C++</strong></p>
+<pre class="prettyprint"><code>UMyComponent* MyComp = MyActor-&gt;FindComponentByClass&lt;UMyComponent&gt;();</code></pre>
+<p><strong>蓝图</strong>
+</p><p><img alt="image_33.png" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_33.jpg" />
+</p><h4 id="查找gameobjects/actors">查找 GameObjects / Actors</h4>
+
+
+<pre class="prettyprint"><code>// Find GameObject by name
+GameObject MyGO = GameObject.Find("MyNamedGameObject");
+
+// Find Objects by type
+MyComponent&#91;&#93; Components = Object.FindObjectsOfType(typeof(MyComponent)) as MyComponent&#91;&#93;;
+foreach (MyComponent Component in Components)
+{
+        // ...
+}
+
+// Find GameObjects by tag
+GameObject&#91;&#93; GameObjects = GameObject.FindGameObjectsWithTag("MyTag");
+foreach (GameObject GO in GameObjects)
+{
+        // ...
+}
+
+// Find Actor by name (also works on UObjects)
+AActor* MyActor = FindObject&lt;AActor&gt;(nullptr, TEXT("MyNamedActor"));
+
+// Find Actors by type (needs a UWorld object)
+for (TActorIterator&lt;AMyActor&gt; It(GetWorld()); It; ++It)
+{
+        AMyActor* MyActor = *It;
+        // ...
+}</code></pre>
+<p><img alt="image alt text" width="720" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_14.jpg" />
+</p>
+<pre class="prettyprint"><code>// Find UObjects by type
+for (TObjectIterator&lt;UMyObject&gt; It; It; ++it)
+{
+    UMyObject* MyObject = *It;
+    // ...
+}
+
+// Find Actors by tag (also works on ActorComponents, use TObjectIterator instead)
+for (TActorIterator&lt;AActor&gt; It(GetWorld()); It; ++It)
+{
+    AActor* Actor = *It;
+    if (Actor-&gt;ActorHasTag(FName(TEXT("Mytag"))))
+    {
+        // ...
+    }
+}</code></pre>
+<p><img alt="image alt text" width="900" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_15.jpg" />
+</p><h4 id="为gameobjects/actors添加标签">为 GameObjects / Actors 添加标签</h4>
+
+
+<pre class="prettyprint"><code>MyGameObject.tag = "MyTag";
+
+// Actors can have multiple tags
+MyActor.Tags.AddUnique(TEXT("MyTag"));</code></pre>
+<p><img alt="image alt text" width="540" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_16.jpg" />
+</p><h4 id="为monobehaviours/actorcomponents添加标签">为 MonoBehaviours / ActorComponents 添加标签</h4>
+
+
+<pre class="prettyprint"><code>// This changes the tag on the GameObject it is attached to
+MyComponent.tag = "MyTag";
+
+// Components have their own array of tags
+MyComponent.ComponentTags.AddUnique(TEXT("MyTag"));</code></pre>
+<h4 id="比较gameobjects/actors和monobehaviours/actorcomponents的标签">比较 GameObjects / Actors 和 MonoBehaviours / ActorComponents 的标签</h4>
+
+
+<pre class="prettyprint"><code>if (MyGameObject.CompareTag("MyTag"))
+{
+    // ...
+}
+
+// Checks the tag on the GameObject it is attached to
+if (MyComponent.CompareTag("MyTag"))
+{
+    // ...
+}
+
+// Checks if an Actor has this tag
+if (MyActor-&gt;ActorHasTag(FName(TEXT("MyTag"))))
+{
+    // ...
+}</code></pre>
+<p><img alt="image alt text" width="540" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_17.jpg" />
+</p>
+<pre class="prettyprint"><code>// Checks if an ActorComponent has this tag
+if (MyComponent-&gt;ComponentHasTag(FName(TEXT("MyTag"))))
+{
+    // ...
+}</code></pre>
+<p><img alt="image alt text" width="700" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_18.jpg" />
+</p><h3 id="物理：刚体vsstop元组件">物理：刚体 vs. 元组件</h3>
+
+<p>在 Unity 中，要给一个 GameObject 物理特性，需要给它一个刚体组件。在虚幻中，任何元组件（C++ 中为 UPrimitiveComponent）都可以是物理对象。一些通用的元组件，比如 ShapeComponent（胶囊形，球形，盒形），StaticMeshComponent，以及 SkeletalMeshComponent。
+</p><p>和 Unity 不同，Unity 将碰撞体和可视物体分列到不同的组件中。而虚幻则将潜在的物理碰撞和潜在的可视效果组合到了 PrimitiveComponent 中。任何在世界中具有形状的物体，要么就是能够被渲染显示，要么就是能作物理交互，它们都继承于 PrimitiveComponent。
+</p><h3 id="层vs通道">层 vs 通道</h3>
+
+<p>在 Unity 中，它们被称为“层（Layer）”。虚幻使用碰撞通道（Collision Channel）来描述，这是类似的概念。可以在 <a id="content_link" href="../../../../www.unrealengine.com/en-US/blog/collision-filtering.html" ><span>此处</span></a>
+ 读到更多。
+</p><h3 id="raycastvsraytrace">RayCast vs RayTrace</h3>
+
+<p>Unity C#：
+</p>
+<pre class="prettyprint"><code>GameObject FindGOCameraIsLookingAt()
+{
+    Vector3 Start = Camera.main.transform.position;
+    Vector3 Direction = Camera.main.transform.forward;
+    float Distance = 100.0f;
+    int LayerBitMask = 1 &lt;&lt; LayerMask.NameToLayer("Pawn");
+
+    RaycastHit Hit;
+    bool bHit = Physics.Raycast(Start, Direction, out Hit, Distance, LayerBitMask);
+
+    if (bHit)
+    {
+        return Hit.collider.gameObject;
+    }
+
+    return null;
+}</code></pre>
+<p>虚幻 4 C++：
+</p>
+<pre class="prettyprint"><code>APawn* AMyPlayerController::FindPawnCameraIsLookingAt()
+{
+    // You can use this to customize various properties about the trace
+    FCollisionQueryParams Params;
+    // Ignore the player's pawn
+    Params.AddIgnoredActor(GetPawn());
+
+    // The hit result gets populated by the line trace
+    FHitResult Hit;
+
+    // Raycast out from the camera, only collide with pawns (they are on the ECC_Pawn collision channel)
+    FVector Start = PlayerCameraManager-&gt;GetCameraLocation();
+    FVector End = Start + (PlayerCameraManager-&gt;GetCameraRotation().Vector() * 1000.0f);
+    bool bHit = GetWorld()-&gt;LineTraceSingle(Hit, Start, End, ECC_Pawn, Params);
+
+    if (bHit)
+    {
+        // Hit.Actor contains a weak pointer to the Actor that the trace hit
+        return Cast&lt;APawn&gt;(Hit.Actor.Get());
+    }
+
+    return nullptr;
+}</code></pre>
+<p>虚幻 4 蓝图：
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_19.png" ><span><img alt="image alt text" width="700" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_19.jpg" /><img class="languageinline" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p><em>点击查看大图。</em>
+</p><h3 id="触发器">触发器</h3>
+
+<p>Unity C#：
+</p>
+<pre class="prettyprint"><code>public class MyComponent : MonoBehaviour
+{
+    void Start()
+    {
+        collider.isTrigger = true;
+    }
+    void OnTriggerEnter(Collider Other)
+    {
+        // ...
+    }
+    void OnTriggerExit(Collider Other)
+    {
+        // ...
+    }
+}</code></pre>
+<p>虚幻 4 C++：
+</p>
+<pre class="prettyprint"><code>UCLASS()
+class AMyActor : public AActor
+{
+    GENERATED_BODY()
+
+    // My trigger component
+    UPROPERTY()
+    UPrimitiveComponent* Trigger;
+
+    AMyActor()
+    {
+        Trigger = CreateDefaultSubobject&lt;USphereComponent&gt;(TEXT("TriggerCollider"));
+
+        // Both colliders need to have this set to true for events to fire
+        Trigger.bGenerateOverlapEvents = true;
+
+        // Set the collision mode for the collider
+        // This mode will only enable the collider for raycasts, sweeps, and overlaps
+        Trigger.SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+    }
+
+    virtual void NotifyActorBeginOverlap(AActor* Other) override;
+
+    virtual void NotifyActorEndOverlap(AActor* Other) override;
+};</code></pre>
+<p>虚幻 4 蓝图：
+</p><p><img alt="image alt text" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_20.jpg" />
+</p><p>还可以在 <a id="content_link" href="../../Engine/Physics/Collision/index.html" ><span>这里</span></a>
+ 读到更多关于设置碰撞的响应。
+</p><h3 id="刚体运动">刚体运动</h3>
+
+<p>Unity C#:
+</p>
+<pre class="prettyprint"><code>public class MyComponent : MonoBehaviour
+{
+    void Start()
+    {
+        rigidbody.isKinimatic = true;
+        rigidbody.velocity = transform.forward * 10.0f;
+    }
+}</code></pre>
+<p>在虚幻 4 中，碰撞组件和刚体组件是同一个组件，它的基类是 UPrimitiveComponent，它也有不同的子类（USphereComponent，UCapsuleComponent 等）来配合不同的需求。
+</p><p>虚幻 4 C++：
+</p>
+<pre class="prettyprint"><code>UCLASS()
+class AMyActor : public AActor
+{
+    GENERATED_BODY()
+
+    UPROPERTY()
+    UPrimitiveComponent* PhysicalComp;
+
+    AMyActor()
+    {
+        PhysicalComp = CreateDefaultSubobject&lt;USphereComponent&gt;(TEXT("CollisionAndPhysics"));
+        PhysicalComp-&gt;SetSimulatePhysics(false);
+        PhysicalComp-&gt;SetPhysicsLinearVelocity(GetActorRotation().Vector() * 100.0f);
+    }
+};</code></pre>
+<h3 id="输入事件">输入事件</h3>
+
+<p>Unity C#：
+</p>
+<pre class="prettyprint"><code>public class MyPlayerController : MonoBehaviour
+{
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire"))
+        {
+            // ...
+        }
+        float Horiz = Input.GetAxis("Horizontal");
+        float Vert = Input.GetAxis("Vertical");
+        // ...
+    }
+}</code></pre>
+<p>虚幻 4 C++：
+</p>
+<pre class="prettyprint"><code>UCLASS()
+class AMyPlayerController : public APlayerController
+{
+    GENERATED_BODY()
+
+    void SetupInputComponent()
+    {
+        Super::SetupInputComponent();
+
+        InputComponent-&gt;BindAction("Fire", IE_Pressed, this, &amp;AMyPlayerController::HandleFireInputEvent);
+        InputComponent-&gt;BindAxis("Horizontal", this, &amp;AMyPlayerController::HandleHorizontalAxisInputEvent);
+        InputComponent-&gt;BindAxis("Vertical", this, &amp;AMyPlayerController::HandleVerticalAxisInputEvent);
+    }
+
+    void HandleFireInputEvent();
+    void HandleHorizontalAxisInputEvent(float Value);
+    void HandleVerticalAxisInputEvent(float Value);
+};</code></pre>
+<p>虚幻 4 蓝图：
+</p><p><img alt="image alt text" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_21.jpg" />
+</p><p>这里是在项目设置中输入属性的设置界面：
+</p><p><img alt="image alt text" src="../../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_22.jpg" />
+</p><p>关于如何设置输入可以从在 <a id="content_link" href="../../Gameplay/Input/index.html" ><span>这里</span></a>
+ 阅读。
+</p><h2 id="常见问题">常见问题</h2>
+
+<h3 id="如何自动加载最后一个项目？">如何自动加载最后一个项目？</h3>
+
+<p>如果您习惯于 Unity 会自动加载上次工作的最后一个项目，在虚幻 4 中也一样可以做到。要开启这个功能的话，当打开项目时勾选“启动时总是加载最后一个项目”的选项。可以在任意时刻通过编辑器的主菜单的 编辑/编辑器首选项/加载和保存/启动 的部分来修改。
+</p><h3 id="哪里可以设置游戏的输入绑定？">哪里可以设置游戏的输入绑定？</h3>
+
+<p>在 Unity 中，如果您习惯于为项目用 Input Manager 来设置默认的输入的话，虚幻 4 也一样。您可以打开项目设置，并选择 Input 的分类。然后就可以添加不同的案件（Action）或者摇杆控制（Axe）。给每一种控制一个名称和默认绑定。然后，在游戏中的 Pawn 中当该输入事件发生时就能获取回调函数。查看 <a id="content_link" href="../../Gameplay/Input/index.html" ><span>输入文档页面</span></a>
+ 来了解详情。
+</p><h3 id="如何修改项目的初始场景？">如何修改项目的初始场景？</h3>
+
+<p>可以在项目设置的分页中为项目设定初始场景。从主菜单中选择 编辑/项目设置->地图和模式 便能进行修改。
+</p><h3 id="如何运行游戏？">如何运行游戏？</h3>
+
+<p>运行游戏最简单的方式是点击编辑器的主工具栏上的“运行”按钮，这将会直接在编辑器窗口中运行游戏。如果想要作为单独的程序运行，点击“运行”按钮边上的下拉箭头，并选择“Standalone Game”。如果想要在移动设备或者网页浏览器中运行游戏，那需要使用工具栏中的“启动”按钮（相应的平台需要预先安装所需软件）。
+</p><h3 id="单位是什么？">单位是什么？</h3>
+
+<p>在 Unity 中，主要的测量单位是米，在虚幻 4 中，主要的测量单位是厘米。
+</p><p>因此在 Unity 中移动一个单位（一米）相当于在虚幻 4 中移动 100 个单位（厘米）。
+</p><p>如果想要在 Unity 中移动 2 英尺，那么相当于 0.61 个单位，而在虚幻 4 中则是 61 个单位。
+</p><h3 id="坐标系是怎么回事？那个方向朝上？">坐标系是怎么回事？那个方向朝上？</h3>
+
+<p>Unity 和虚幻 4 都使用左手坐标系，但坐标轴则需要轮换一下。在虚幻 4 中，X 的正方向是“前”，Y 的正方向是“右”，Z 的正方向是“上”。
+</p><h3 id="如何查看游戏的输出日志？">如何查看游戏的输出日志？</h3>
+
+<p>在虚幻 4 编辑器中，可以从“窗口->开发人员工具”的菜单中打开“输出日志”。也可以在运行游戏时增加 “-log” 命令行参数，在游戏窗口以外启动一个专用的日志窗口，这非常有用！
+</p><h3 id="说道日志输出，debugstoplog在哪里？">说道日志输出，Debug.log 在哪里？</h3>
+
+<p>在虚幻 4 中做日志高度的可定制化。阅读 <a id="content_link" href="../../../../wiki.unrealengine.com/Logs%2c_Printing_Messages_To_Yourself_During_Runtime.html" ><span>这里</span></a>
+ 了解如何记录信息。
+</p><h3 id="如何抛出异常？">如何抛出异常？</h3>
+
+<p>在 Unity 中，您可能习惯于当发生问题是抛出异常。虚幻 4 则并不处理异常。取而代之的做法是，使用 “check()” 函数来触发严重的错误。可以传入一个错误信息提示。如果只是想报告一个错误，但并不希望打断整个程序，可以使用 “ensure()”。这将会记录一个完整堆栈的日志信息，但程序会继续执行。如果当前附加了调试器，那么这两个函数都会暂定并进入调试器。
+</p><h3 id="stopnetframework去哪里了？">.NET Framework 去哪里了？</h3>
+
+<p>和 Unity 不同，虚幻 4 并不使用 .NET Framework。虚幻 4 自有一套容器类和库。常见的容器来对照：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>.Net Framework </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>虚幻 4 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>String</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../../INT/API/API/Runtime/Core/Containers/FString.html" ><span>FString</span></a>
+, <a id="content_link" href="../../../INT/API/API/Runtime/Core/Internationalization/FText.html" ><span>FText</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>List</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../../INT/API/API/Runtime/Core/Containers/TArray.html" ><span>TArray</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>Dictionary</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../../INT/API/API/Runtime/Core/Containers/TMap.html" ><span>TMap</span></a>
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>HashSet</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><a id="content_link" href="../../../INT/API/API/Runtime/Core/Containers/TSet.html" ><span>TSet</span></a>
+</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p><a id="content_link" href="../../../INT/API/Runtime/Core/Containers/index.html" ><span>这里</span></a>
+ 可以阅读到更多虚幻 4 的容器。
+</p><h3 id="代码改变时虚幻会自动重新加载吗？">代码改变时虚幻会自动重新加载吗？</h3>
+
+<p>是的！您可以在编写代码是保持编辑器开启的状态。要在编写完成后直接从 Visual Studio 中编译代码，编辑器则会“热加载”您刚刚做的改动。也可以点击编辑器主工具栏上的 <strong>编译</strong> 按钮。当您在 Visual Studio 调试器连接的状态下这也很有用。
+</p><h2 id="然后呢？">然后呢？</h2>
+
+<p>感谢阅读本篇指引！这篇文章的创建时为了帮助各地的虚幻社区和虚幻开发者，我们很希望能收到您的反馈意见或者纠错意见。在我们不断了解如何能帮助大家过渡到虚幻 4 的过程中，我们将会保持改进这篇文档。
+</p><p>我们还有很多虚幻 4 的学习资料！
+</p><ul ><li><p>文档
+</p><ul ><li><p>开始虚幻之旅 - <a id="content_link" href="../index.html" ><span>开始虚幻之旅</span></a>
+
+</p></li></ul></li><li><p>教学视频 - <a id="content_link" href="../../../../academy.unrealengine.com/index.html" ><span>视频</span></a>
+
+</p></li><li><p>API 接口 - <a id="content_link" href="../../../INT/API/index.html" ><span>API</span></a>
+
+</p></li><li><p>AnswerHub - <a id="content_link" href="../../../../answers.unrealengine.com/index.html" ><span>https://answers.unrealengine.com</span></a>
+
+</p></li><li><p>论坛 - <a id="content_link" href="../../../../forums.unrealengine.com/index.html" ><span>https://forums.unrealengine.com</span></a>
+
+</p></li><li><p>Wiki - <a id="content_link" href="../../../../wiki.unrealengine.com/index.html" ><span>https://wiki.unrealengine.com</span></a>
+
+</p><ul ><li><p>关于 <a id="content_link" href="../../../../wiki.unrealengine.com/Unity3D_Developer%27s_Guide_to_Unreal_Engine_4.html" ><span>学习从 Unity 到虚幻 4</span></a>
+ 的 wiki 页面
+</p></li></ul></li></ul>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/GettingStarted/FromUnity/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:07:15 GMT -->
+</html>

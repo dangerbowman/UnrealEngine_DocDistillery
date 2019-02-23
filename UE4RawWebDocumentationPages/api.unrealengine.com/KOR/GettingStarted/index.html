@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/KOR/GettingStarted/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:07:10 GMT -->
+<head>
+    <title>언리얼 엔진 | UE4 시작하기</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_KO.css" />
+    <link rel="stylesheet" type="text/css" href="../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../docs.unrealengine.com/latest/INT/GettingStarted/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../docs.unrealengine.com/latest/KOR/GettingStarted/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../docs.unrealengine.com/latest/JPN/GettingStarted/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../docs.unrealengine.com/latest/CHN/GettingStarted/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3782314" />
+<meta name="availability" content="Public" />
+<meta name="title" content="UE4 시작하기" />
+<meta name="description" content="언리얼 엔진으로 게임 개발을 시작하려는 개발자를 위한 기본 정보입니다." />
+<meta name="navigation" content="start" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="%ROOT%" />
+<meta name="order" content="1" />
+<meta name="tags" content="Getting Started" />
+<meta name="type" content="landing" />
+<meta name="topic-image" content="gettingstarted_topic.png" />
+<meta name="topic-icon" content="%ROOT%/start_icon.png" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="UE4 시작하기" />
+	<meta property="og:description" content="언리얼 엔진으로 게임 개발을 시작하려는 개발자를 위한 기본 정보입니다." />
+	
+    <!-- Google WebFont -->
+<script type="text/javascript" src="../../../external.html?link=https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load( "webfont", "1" );
+google.setOnLoadCallback(function() {
+       WebFont.load({ custom: {
+             families: [ "NanumGothic" ],
+             urls: [ "https://fontface.kr/NanumGothic/css" ]
+       }});
+});
+</script>
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="CLick to toggle navigation menu">내비게이션</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-mobile">
+						<!-- Start of Other language links -->
+						<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR" selected>한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN">中国</option>
+
+</select>
+</div>
+						<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="../../../external.html?link=https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="../../../external.html?link=https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="../../../external.html?link=https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-label">공유:</li>
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index-2.html">언리얼 엔진 4 문서</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+								<!-- Start of Search -->
+								<div style="padding: 0px; overflow: hidden; z-index: 100; top: 0px;">
+									<form method="get" action="../../../external.html?link=https://www.unrealengine.com/bing-search">
+										<input type="image" src="../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+										<input type="hidden" name="filter" value="Documentation" />
+										<input type="text" name="keyword" placeholder="문서 검색..." class="searchbox" />
+									</form>
+								</div>
+								<!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">언어:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR" selected>한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN">中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								페이지 정보
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										태그:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/index551e.html">Getting Started</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										엔진 버전:
+									</div>
+									    <a href="../SiteIndex/index26d6.html" class="version_tag version4.9">언리얼 엔진 </a>
+    
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								문서 찾기
+								</div>
+								<div style="font-weight:bold;">
+								수준별
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								분류별
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">이 페이지가 도움이 되었나요?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								공유
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="../../../external.html?link=https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="../../../external.html?link=https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="../../../external.html?link=https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">UE4 시작하기</h1>
+						<!-- End of H1 -->                
+						<!-- Start of Markdown converted page content -->
+						<span id="inline_tags">
+						    <a href="../SiteIndex/index26d6.html" class="version_tag version4.9">언리얼 엔진 </a>
+    
+						</span>
+						
+						<h2 id="시작하기">시작하기</h2>
+
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+    <div class="topics item compact">
+        <a id="topic_compact_link" href="../Engine/QuickStart/index.html" title="<p>언리얼 에디터의 기본적인 준비를 돕는 문서입니다.</p>" >
+            <div class="img_container">
+                <p><img alt="engine_qs_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/QuickStart/engine_qs_topic.jpg" /></p>
+            </div>
+            <div class="info">
+                <div class="content">
+                    <div style="width:100%;float:none;padding:0px;">
+                        <div class="text">
+                            
+레벨 디자이너 퀵스타트 가이드
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+    <div class="topics item compact">
+        <a id="topic_compact_link" href="../Engine/Content/QuickStart/index.html" title="<p>콘텐츠 제작자로 언리얼 엔진 4 시작하는 법을 배워봅니다.</p>" >
+            <div class="img_container">
+                <p><img alt="artist_qs_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/QuickStart/artist_qs_topic.jpg" /></p>
+            </div>
+            <div class="info">
+                <div class="content">
+                    <div style="width:100%;float:none;padding:0px;">
+                        <div class="text">
+                            
+아티스트 퀵 스타트
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+    <div class="topics item compact">
+        <a id="topic_compact_link" href="../Programming/QuickStart/index.html" title="<p>첫 코드 프로젝트를 만들고, C++ 클래스를 새로 추가해 봅니다.</p>" >
+            <div class="img_container">
+                <p><img alt="newclass_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Programming/QuickStart/newclass_topic.jpg" /></p>
+            </div>
+            <div class="info">
+                <div class="content">
+                    <div style="width:100%;float:none;padding:0px;">
+                        <div class="text">
+                            
+프로그래밍 퀵스타트
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+    <div class="topics item compact">
+        <a id="topic_compact_link" href="Terminology/index.html" title="<p>언리얼 엔진 4 작업시 자주 사용되는 용어 대부분을 다룹니다.</p>" >
+            <div class="img_container">
+                <p><img alt="terminology_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/Terminology/terminology_topic.jpg" /></p>
+            </div>
+            <div class="info">
+                <div class="content">
+                    <div style="width:100%;float:none;padding:0px;">
+                        <div class="text">
+                            
+언리얼 엔진 4 용어
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+    <div class="topics item compact">
+        <a id="topic_compact_link" href="FromUnity/index.html" title="<p>유니티 사용자분들의 빠른 적응을 도울 수 있도록 유니티 지식을 UE4 로 옮겨봅니다.</p>" >
+            <div class="img_container">
+                <p><img alt="image_0.png" src="../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/FromUnity/image_0.jpg" /></p>
+            </div>
+            <div class="info">
+                <div class="content">
+                    <div style="width:100%;float:none;padding:0px;">
+                        <div class="text">
+                            <p>유니티 개발자를 위한 언리얼 엔진 4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+    <div class="topics item compact">
+        <a id="topic_compact_link" href="SubEditors/index.html" title="<p>언리얼 엔진 4 에는 여러가지 다양한 에디터 유형이 포함되어 있으며, 여기서는 그 각각을 집중 조명해 봅니다.</p>" >
+            <div class="img_container">
+                <p><img alt="editortypes_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/GettingStarted/SubEditors/editortypes_topic.jpg" /></p>
+            </div>
+            <div class="info">
+                <div class="content">
+                    <div style="width:100%;float:none;padding:0px;">
+                        <div class="text">
+                            
+툴 및 에디터
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+</div>
+<div class="section">
+	<div class="normaltitle">
+	<p>부가 정보
+</p>
+</div><ul ><li><p><a id="content_link" href="RecommendedSpecifications/index.html" title="언리얼 엔진으로 개발하는 데 있어 최소/추천 하드웨어 사양과 필수 소프트웨어 입니다."><span>하드웨어 &amp; 소프트웨어 사양</span></a>
+ 
+</p></li><li><p><a id="content_link" href="Installation/index.html" title="언리얼 엔진 설치법 단계별 안내입니다."><span>언리얼 엔진 설치하기</span></a>
+<br /></p></li><li><p><a id="content_link" href="DownloadingUnrealEngine/index.html" title="소스 코드 저장소에 접속하여 언리얼 엔진 최신 빌드를 다운로드하는 법에 대한 단계별 안내입니다."><span>언리얼 엔진 소스 코드 내려받기</span></a>
+
+</p></li><li><p><a id="content_link" href="../Support/Builds/index.html" title="언리얼 엔진 빌드 릴리즈 노트입니다."><span>릴리즈 노트</span></a>
+
+</p></li></ul>
+</div><h2 id="에디터기본">에디터 기본</h2>
+
+<p><strong>Project</strong>, 프로젝트란 각각의 게임을 이루는 콘텐츠와 코드 전부가 들어있는 독립적인 유닛으로, 디스크상의 디렉터리 세트와 일치합니다. 예를 들어 아래 그림에서 <strong>콘텐츠 브라우저</strong> 의 계층구조 트리에는 디스크의 Project 폴더 안에서 찾을 수 있는 동일한 디렉터리 구조가 들어있습니다.
+</p><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content OS windows ">
+    <div class="container">
+        <div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../external.html?link=https://api.unrealengine.com/images/Shared/Glossary/P/ProjectHierarchy_Windows.png" ><span><img alt="ProjectHierarchy_Windows.png" width="480" src="../../../external.html?link=https://api.unrealengine.com/images/Shared/Glossary/P/ProjectHierarchy_Windows.jpg" /><img class="languageinline" src="../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div>
+    </div>
+</div><!--
+category:paramliteral
+id:paramliteral
+content:param
+active:paramliteral
+-->
+<div class="button_content OS mac ">
+    <div class="container">
+        <div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../external.html?link=https://api.unrealengine.com/images/Shared/Glossary/P/ProjectHierarchy_Mac.png" ><span><img alt="ProjectHierarchy_Mac.png" src="../../../external.html?link=https://api.unrealengine.com/images/Shared/Glossary/P/ProjectHierarchy_Mac.jpg" /><img class="languageinline" src="../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div>
+    </div>
+</div><p><em>이미지를 클릭하면 원본을 확인합니다.</em>
+</p><p> Project 종종 그 파일에 관련된 .uproject 파일을 가리키기도 하지만, 서로와 공존하는 별개의 파일이 두 개 있습니다. .uproject 는 파일을 생성하고 열고 저장하는 데 사용되는 레퍼런스 파일인 반면, Project 에는 프로젝트에 관련된 모든 파일과 폴더가 들어있습니다.
+</p><p>프로젝트는 동시에 몇 개를 만들어 유지하면서 개발할 수 있습니다. 엔진(과 에디터) 둘 다 쉽게 전환이 가능하여, 주요 게임 프로젝트에 추가로 한 번에 다수의 게임 작업을 할 수 있습니다.
+</p><p>언리얼 에디터에서 게임 환경을 만드는 씬을 보통 <a id="content_link" href="../Engine/Levels/index.html" ><span><strong>레벨</strong></span></a>
+ 이라 합니다. 일련의 오브젝트와 지오메트리를 배치하여 플레이어가 경험하게 될 월드를 정의할 수 있는 3D 환경이라고도 생각해 볼 수 있습니다. 월드에 배치할 수 있는 오브젝트면, 그게 라이트든, 메시든, 캐릭터든, 모두 액터(Actor)로 간주됩니다. 엄밀히 말해서 <em>Actor</em> 는 언리얼 엔진에서 3D 위치, 회전, 스케일 데이터를 포함한 오브젝트를 정의하는 데 사용되는 프로그래밍 클래스입니다. 하지만 편의상, 액터라 하면 <em>레벨에 배치할 수 있는 오브젝트</em> 로 생각해 보는 것이 가장 쉽습니다.
+</p><!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/QuickStart/index.html">
+        <div class="img_container">
+            <p><img alt="engine_qs_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/QuickStart/engine_qs_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+레벨 디자이너 퀵스타트 가이드
+                    </div>
+                </div>
+                <div class="description">
+                    <p>언리얼 에디터의 기본적인 준비를 돕는 문서입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/UI/LevelEditor/index.html">
+        <div class="img_container">
+            <p><img alt="Editor_Topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/UI/LevelEditor/Editor_Topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+레벨 에디터
+                    </div>
+                </div>
+                <div class="description">
+                    <p>게임 레벨과 배경 디자인 및 조성에 대한 개요서입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/UI/LevelEditor/Toolbar/index.html">
+        <div class="img_container">
+            <p><img alt="LevelEditorToolbar_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/UI/LevelEditor/Toolbar/LevelEditorToolbar_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+레벨 에디터 툴바
+                    </div>
+                </div>
+                <div class="description">
+                    <p>흔히 사용되는 툴과 기능을 빠르게 사용할 수 있는 명령 모음입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="section">
+	<div class="normaltitle">
+	<p>관련 비디오
+</p>
+</div><div style="overflow:hidden;margin-bottom:40px;">
+    
+</div>
+
+</div><h2 id="에디터뷰포트">에디터 뷰포트</h2>
+
+<p>뷰포트란 언리얼에 생성되는 월드를 보는 창입니다. 게임에서와 마찬가지 방식으로 돌아다닐 수 있는 원근법으로 사용할 수도 있고, 건축 설계도와 같은 도면 작업이 가능한 직교법으로 사용할 수도 있습니다. 언리얼 에디터 뷰포트에는 여러가지 툴과 비주얼라이저가 있어 원하는 데이터를 정확히 파악할 수 있습니다.
+</p><!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/UI/LevelEditor/Viewports/Basics/index.html">
+        <div class="img_container">
+            <p><img alt="viewport_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/UI/LevelEditor/Viewports/Basics/viewport_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+뷰포트 기본
+                    </div>
+                </div>
+                <div class="description">
+                    <p>언리얼 에디터의 뷰포트에 대한 기본 개념 및 기능에 대한 글입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/UI/LevelEditor/Viewports/ViewportControls/index.html">
+        <div class="img_container">
+            <p><img alt="ViewportControls_Topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/UI/LevelEditor/Viewports/ViewportControls/ViewportControls_Topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+뷰포트 조작법
+                    </div>
+                </div>
+                <div class="description">
+                    <p>에디터 뷰포트의 다양한 조작법을 배워봅니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<h2 id="에디터모드">에디터 모드</h2>
+
+<p><strong>Modes</strong> (모드) 패널에는 에디터의 다양한 툴 모드 모음이 들어있습니다. 이들은 레벨 에디터의 주목적을 특수한 작업에 맞게 바꿔주는 것으로, 이를테면 월드에 새 애셋을 배치한다든가, 지오메트리 브러시와 볼륨을 만든다든가, 메시에 칠을 한다든가, 폴리지를 생성한다든가, 랜드스케이프를 조각한다던가 등입니다.
+</p><!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/UI/LevelEditor/Modes/index.html">
+        <div class="img_container">
+            <p><img alt="LevelEditorModes_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/UI/LevelEditor/Modes/LevelEditorModes_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+레벨 에디터 모드
+                    </div>
+                </div>
+                <div class="description">
+                    <p>현재 레벨 에디터 모드 설정, 빌더 브러시 모양 변경, BSP 지오메트리와 볼륨을 새로 만드는 데 사용되는 툴 세트입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<h2 id="액터&amp;지오메트리">액터 &amp; 지오메트리</h2>
+
+<p>가장 기본적인 레벨에서, 레벨 제작은 언리얼 에디터 안의 레벨에 항목을 배치하는 것이 핵심입니다. 이러한 항목은 월드 지오메트리, 브러시 형태의 장식, 스태틱 메시, 라이트, 플레이어 스타트, 웨폰, 비히클 등이 될 수 있습니다. 어떤 항목을 언제 추가할 것인지는 보통 레벨 디자인 팀에 사용되는 작업방식에 따라 결정됩니다.
+</p><!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/Actors/Placement/index.html">
+        <div class="img_container">
+            <p><img alt="actorplacement_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Placement/actorplacement_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+액터 배치하기
+                    </div>
+                </div>
+                <div class="description">
+                    <p>레벨에 소품, 라이트, 카메라와 같은 액터를 배치하는 법을 보여줍니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/Actors/Brushes/index.html">
+        <div class="img_container">
+            <p><img alt="Brushes_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Brushes/Brushes_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+지오메트리 브러시 액터
+                    </div>
+                </div>
+                <div class="description">
+                    <p>언리얼 에디터에서 브러시를 사용하여 레벨 지오메트리를 만드는 방법 안내서입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/Actors/Transform/index.html">
+        <div class="img_container">
+            <p><img alt="actortransform_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/actortransform_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+액터 트랜스폼
+                    </div>
+                </div>
+                <div class="description">
+                    <p>레벨에 배치된 액터의 위치, 회전, 스케일 변경하기 입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="section">
+	<div class="normaltitle">
+	<p>관련 비디오
+</p>
+</div><div style="overflow:hidden;margin-bottom:40px;">
+    
+</div>
+
+</div><h2 id="콘텐츠브라우저">콘텐츠 브라우저</h2>
+
+<p><strong>Content Browser</strong> (콘텐츠 브라우저)는 언리얼 에디터 안에서 콘텐츠 애셋을 만들고, 임포트하고, 정리하고, 확인하고, 변경할 때 주로 사용되는 영역입니다. 여기서는 콘텐츠 폴더를 관리할 수도 있고, 애셋 이름변경, 이동, 복사, 레퍼런스 확인 등의 기타 유용한 기능이 제공되기도 합니다. <strong>콘텐츠 브라우저</strong> 는 게임 내 모든 애셋에 대한 검색 및 상호작용이 가능합니다.
+</p><!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/Content/QuickStart/index.html">
+        <div class="img_container">
+            <p><img alt="artist_qs_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/QuickStart/artist_qs_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+아티스트 퀵 스타트
+                    </div>
+                </div>
+                <div class="description">
+                    <p>콘텐츠 제작자로 언리얼 엔진 4 시작하는 법을 배워봅니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/Basics/AssetsAndPackages/index.html">
+        <div class="img_container">
+            <p><img alt="content_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/content_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+애셋과 패키지
+                    </div>
+                </div>
+                <div class="description">
+                    <p>언리얼 엔진 4 에 사용되는 애셋과 패키지 시스템에 대한 개요입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/Content/Browser/index.html">
+        <div class="img_container">
+            <p><img alt="Browser_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/Content/Browser/Browser_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+콘텐츠 브라우저
+                    </div>
+                </div>
+                <div class="description">
+                    <p>패키지 파일 관리는 물론 애셋을 정리하고 생성하여 유용한 작업을 하기도 하는 툴입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<h2 id="라이팅">라이팅</h2>
+
+<p>씬의 라이팅은 광원 역할을 하면서 다음과 같은 빛의 특성을 결정하는 프로퍼티가 들어있는 라이트 액터를 통해 이루어집니다.
+</p><ul ><li><p>라이트가 얼마나 밝은가
+</p></li><li><p>라이트의 색은 어떠한가
+</p></li></ul><p>여러가지 방식으로 빛을 내뿜는 라이트 종류도 여러가지 있습니다. 예를 들어 일반적인 전구는 모든 방향으로 빛을 내뿜습니다. 언리얼 엔진에서,
+이러한 것은 <em>포인트 라이트</em> 라고 합니다. 한편 투광 조명등처럼 전구 뒷부분을 불투명하게 만들어 빛의 방출을 물리적으로 제한시키는 경우도 있습니다.
+그런 것은 <em>스포트 라이트</em> 라고 합니다. 태양에서 오는 야외의 빛은, 태양이 정말 먼 거리에 있기 때문에, 한 지점이 아닌 한 방향에서 오는 것처럼 보입니다.
+이러한 라이팅 유형의 시뮬레이션으로, <em>디렉셔널 라이트</em> 가 있습니다.
+</p><p>이 가이드에서는 다양한 라이팅 기법을 사용하여 작은 아파트에 조명 설치 작업을 해 보겠습니다.
+레벨에 라이트를 배치하고 셋업하는 법에 대한 기초입니다.
+</p><h2 id="머티리얼&amp;셰이딩">머티리얼 &amp; 셰이딩</h2>
+
+<p><strong>Material</strong> (머티리얼)이란 메시에 적용하여 씬의 시각적인 모습을 조절하는 데 사용되는 애셋입니다. 머티리얼에 대한 하이 레벨 설명으로는, 오브젝트에 칠하는 "페인트"로 이해하는 것이 가장 쉬울 수 있습니다. 하지만 그조차도 약간의 오해의 소지가 있는데, 머티리얼이 실제 오브젝트의 표면이 무엇으로 만들어 진 것처럼 보이는가, 즉 말 그대로 물체의 재질을 정의하는 것이기 때문입니다. 그 색깔, 광택, 투과도 등을 정의할 수 있는 것입니다.
+</p><p>좀 더 기술적인 용어로 풀어보면, 씬에 들어오는 빛이 표면에 닿을 때, 그 빛이 표면에 어떻게 반응하는지가 머티리얼을 사용해서 계산합니다. 이러한 계산은 머티리얼의 인풋에 입력된 여러가지 데이터를 통해 이루어지는데, 거기에는 다양한 이미지(텍스처), 수학 표현식, 머티리얼 자체에 상속되는 여러가지 프로퍼티 세팅 등이 포함됩니다.
+</p><p>언리얼 엔진 4 는 <em>물리 기반 셰이딩 모델</em> 을 활용합니다. 즉 머티리얼을 정의하는 데 있어 (디퓨즈 컬러나 스페큘러 파워같은) 임의의 속성을 사용하기 보다는, 현실에 보다 쉽게 연관지을 수 있는 속성을 사용한다는 뜻입니다. 여기에는 베이스 컬러(바탕색), 메탈릭(금속성), 스페큘러(반사성), 러프니스(거칠기) 등이 포함됩니다.
+</p><!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/Rendering/Materials/IntroductionToMaterials/index.html">
+        <div class="img_container">
+            <p><img alt="EssentialImage.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/EssentialImage.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+핵심 머티리얼 개념
+                    </div>
+                </div>
+                <div class="description">
+                    <p>UE4 머티리얼과 그 작동법에 대한 소개 문서입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="section">
+	<div class="normaltitle">
+	<p>관련 비디오
+</p>
+</div><div style="overflow:hidden;margin-bottom:40px;">
+    
+</div>
+
+</div><h2 id="블루프린트비주얼스크립팅">블루프린트 비주얼 스크립팅</h2>
+
+<p>언리얼 엔진의 비주얼 스크립팅 시스템인 <strong>Blueprint</strong> (블루프린트)는 언리얼 에디터 안에서 노드 기반 인터페이스를 사용하여 
+게임플레이 요소를 만드는 개념을 토대로 한 비주얼 스크립팅 시스템입니다. 일반적인 스크립팅 언어와 마찬가지로, 엔진 내 객체 지향형(OO) 클래스 또는 오브젝트를 정의하는 데 사용됩니다.
+UE4 를 사용하다 보면, 블루프린트를 사용하여 정의된 오브젝트를 그냥 일상적으로 "블루프린트" 라 하는 경우가 많습니다.
+</p><p>이 시스템은 매우 유연하고 강력해서, 보통은 프로그래머가 없으면 힘들었던 개념 구현이나 툴 작업 거의 전부를 디자이너 스스로 해낼 수 있게 되었습니다. 게다가,
+언리얼 엔진의 C++ 구현에서 가능한 블루프린트 전용 마크업을 통해 프로그래머가 어떤 기반 시스템을 제작하면, 디자이너가 그것을 확장하는 것도 가능합니다.
+</p><!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/Blueprints/GettingStarted/index.html">
+        <div class="img_container">
+            <p><img alt="intro_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/Blueprints/intro_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+블루프린트 소개
+                    </div>
+                </div>
+                <div class="description">
+                    <p>블루프린트가 처음이신 분들에게 블루프린트란 무엇이며 어떠한 것을 할 수 있는가에 대한 하이 레벨 개요입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="gallery">
+	<div class="normaltitle">
+	<p>관련 비디오
+</p>
+</div><div style="overflow:hidden;margin-bottom:40px;">
+    
+</div>
+
+</div><h2 id="프로그래밍">프로그래밍</h2>
+
+<p>게임플레이 구현과 엔진 변경은 어느 게임 프로젝트에 있어서도 핵심적인 부분입니다. 언리얼 엔진은 게임플레이 구현시
+코드를 통한 방식 말고도 블루프린트를 사용한 비주얼 방식으로도 가능하며, 심지어 엔진이나 에디터를 변경 및 
+확장시키는 플러그인을 제작하여 디자이너나 아티스트가 마음대로 커스텀 함수성을 
+추가할 수도 있습니다.
+</p><!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Programming/index.html">
+        <div class="img_container">
+            <p><img alt="ProgrammingGuide_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Programming/ProgrammingGuide_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+프로그래밍 가이드
+                    </div>
+                </div>
+                <div class="description">
+                    <p>언리얼 엔진으로 개발하는 프로그래머를 위한 정보입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Programming/Development/VisualStudioSetup/index.html">
+        <div class="img_container">
+            <p><img alt="SettingUpVSForUE4_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/SettingUpVSForUE4_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+UE4 용 Visual Studio 셋업하기
+                    </div>
+                </div>
+                <div class="description">
+                    <p>언리얼 엔진 4 로 개발하는 데 있어서 Visual Studio 셋업 관련 기법과 팁입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Programming/QuickStart/index.html">
+        <div class="img_container">
+            <p><img alt="newclass_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Programming/QuickStart/newclass_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+프로그래밍 퀵스타트
+                    </div>
+                </div>
+                <div class="description">
+                    <p>첫 코드 프로젝트를 만들고, C++ 클래스를 새로 추가해 봅니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Programming/Basics/index.html">
+        <div class="img_container">
+            <p><img alt="placeholder_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/placeholder_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+언리얼 엔진 프로그래밍 기본
+                    </div>
+                </div>
+                <div class="description">
+                    <p>언리얼 엔진으로 개발하는 프로그래머를 위한 정보입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Gameplay/Framework/QuickReference/index.html">
+        <div class="img_container">
+            <p><img alt="placeholder_topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/placeholder_topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+게임플레이 프레임워크 간단 참고서
+                    </div>
+                </div>
+                <div class="description">
+                    <p>게임의 프레임워크를 이루는 게임 규칙, 캐릭터, 컨트롤러, 유저 인터페이스 등에 대한 클래스 간단 개요입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="gallery">
+	<div class="normaltitle">
+	<p>관련 비디오
+</p>
+</div><div style="overflow:hidden;margin-bottom:40px;">
+    
+</div>
+
+</div><h2 id="게임플레이테스트">게임 플레이 테스트</h2>
+
+<p>언리얼 엔진 내장 기능을 사용하여 레벨과 게임플레이를 테스트하고 버그를 잡습니다. 
+<strong>에디터에서 플레이</strong> (PIE) 모드로 에디터에서 바로 실시간 피드백을 구하고, 
+<strong>에디터에서 시뮬레이트</strong> (SIE) 모드로는 실행중인 게임에서도 오브젝트를 확인하고 수정할 수 있습니다.
+이를 통해 플레이 도중에도 코드 변경, 리컴파일, 바로 적용이 가능합니다.
+</p><!--
+image:param
+title:param
+description:param
+path:param
+-->
+<div class="topics item">
+    <a id="topic_link" href="../Engine/UI/LevelEditor/InEditorTesting/index.html">
+        <div class="img_container">
+            <p><img alt="InEditorTesting_Topic.png" src="../../../external.html?link=https://api.unrealengine.com/images/Engine/UI/LevelEditor/InEditorTesting/InEditorTesting_Topic.jpg" /></p>
+        </div>
+        <div class="info">
+            <div class="content">
+                <div style="width:100%;float:none;padding:0px;">
+                    <div class="text">
+                        
+에디터내 테스팅 (플레이 & 시뮬레이트)
+                    </div>
+                </div>
+                <div class="description">
+                    <p>에디터 안에서 바로 레벨과 게임플레이를 테스트하는 방법 안내서입니다.</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+                    
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">태그</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../SiteIndex/index551e.html">Getting Started</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../SiteIndex/index.html">전체 토픽 인덱스</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2018, Epic Games, Inc. All rights reserved. Unreal and its logo are Epic’s trademarks or registered trademarks in the US and elsewhere.
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../external.html?link=http://epicgames.com/tou/ko">사용권 조항</a> | <a target="_blank" href="../../../external.html?link=http://epicgames.com/privacynotice/ko">개인정보 취급방침</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/KOR/GettingStarted/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:07:10 GMT -->
+</html>

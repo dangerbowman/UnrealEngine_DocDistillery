@@ -1,0 +1,1635 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Basics/Distributions/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:16 GMT -->
+<head>
+    <title>分布数据（Distributions） | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Engine/Basics/Distributions/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Engine/Basics/Distributions/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Engine/Basics/Distributions/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Engine/Basics/Distributions/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="2676166" />
+<meta name="availability" content="Public" />
+<meta name="title" content="分布数据（Distributions）" />
+<meta name="description" content="Data types that provide flexibility by allowing for constant values, random values within a range, values interpolated along a curve, and values driven by parameters." />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="分布数据（Distributions）" />
+	<meta property="og:description" content="Data types that provide flexibility by allowing for constant values, random values within a range, values interpolated along a curve, and values driven by parameters." />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../../index.html">引擎的各个功能</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                                                <!-- start loc warning -->
+                        <div class="warning">
+                        	<!------ 
+                        	The translation of this page is out of date. Please see the English version for the latest version of the page.
+                        	------>
+                            此中文页面内容对应的英文页面有后续更新，如需浏览最新文档可切换至英文页面浏览。
+                        </div>
+                        <!-- end loc warning -->
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">分布数据（Distributions）</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#分布数据的烘培">分布数据的烘培</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#分布类型">分布类型</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#floatdistributions_浮点型分布_">Float Distributions (浮点型分布)</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#distributionfloatconstant_浮点常量分布_">DistributionFloatConstant (浮点常量分布)</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#distributionfloatuniform_浮点型均匀分布_">DistributionFloatUniform(浮点型均匀分布)</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#distributionfloatconstantcurve_浮点常量曲线分布_">DistributionFloatConstantCurve (浮点常量曲线分布)</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#distributionfloatuniformcurve_浮点型均匀曲线分布_">DistributionFloatUniformCurve (浮点型均匀曲线分布)</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#distributionfloatparticleparam_浮点型粒子参数分布_">DistributionFloatParticleParam(浮点型粒子参数分布)</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#distributionfloatsoundparameter_浮点型声效参数分布_">DistributionFloatSoundParameter(浮点型声效参数分布)</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#vectordistributions_向量分布_">Vector Distributions (向量分布)</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#distributionvectorconstant_向量常量分布_">DistributionVectorConstant (向量常量分布)</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#distributionvectoruniform_向量均匀分布_">DistributionVectorUniform (向量均匀分布)</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#distributionvectorconstantcurve_向量常量曲线分布_">DistributionVectorConstantCurve (向量常量曲线分布)</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#distributionvectoruniformcurve_向量均匀曲线分布_">DistributionVectorUniformCurve (向量均匀曲线分布)</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#distributionvectorparticleparam_向量粒子参数分布_">DistributionVectorParticleParam (向量粒子参数分布)</a>
+	</li>					</ul>
+	</li>		    	        </ul>
+</div>
+<p><strong>分布</strong> 是一组数据类型，这些数据类型可以是常量值、某个范围内的随机值、沿着曲线上的插值及由参数驱动的值，从而提供了很好的灵活性。
+这些数据类型一般用于粒子系统属性和SoundCues节点中。
+</p><div class="note">
+	<p>尽管在编辑器中，按照字母排序的话 regions 也列着，但文档这里我们根据复杂度来整理。这么做只是为了帮助刚刚接触的同学更容易理解这些概念。
+</p>
+</div><h2 id="分布数据的烘培">分布数据的烘培</h2>
+
+<p>无论使用哪种分布类型，总是能够在下方看到 <strong>是否能被烘培（Can be Baked）</strong> 的选项。它决定分布数据的数值结果是否要被烘培到一个查找表中。
+相对于运行时实时计算随机数值或者曲线插值而言，预先将数值烘培到查找表中将会极大的提高效率。因此这个选项默认是勾选状态。
+</p><p><img alt="CanBeBaked.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/CanBeBaked.jpg" />
+</p><h2 id="分布类型">分布类型</h2>
+
+<p>当创建粒子系统时，为了获得最大的灵活性，大多数粒子属性都使用 DistributionFloat (浮点分布) 和 DistributionVector (向量分布)类型。
+当使用分布类型时有很多种可用的选项，在以下部分将会对各种类型进行详细解释。
+</p><p>注意实际使用的值是根据使用它的属性进行变化的。比如，粒子的 Initial Size (初始大小) 是在粒子产生的时间确定的。
+如果把这个属性的分布类型设置为常量曲线，那么将会使用粒子产生时的发射器时间来从曲线中计算获得所期望的值。
+</p><h2 id="floatdistributions_浮点型分布_">Float Distributions (浮点型分布)</h2>
+
+<p>当有需要美术人员控制的标量属性时，使用浮点型分布。一个实例便是粒子的生命周期或发射器的产生速率。
+</p><h3 id="distributionfloatconstant_浮点常量分布_">DistributionFloatConstant (浮点常量分布)</h3>
+
+<p>这种类型用于为常量属性提供一个值。下图显示了在数轴上的该数值
+</p><p><img alt="FloatConstant_Graph.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/FloatConstant_Graph.jpg" />
+</p><ol ><li><p>常量浮点值不会改变。
+</p></li></ol><p>当选中这个类型时，将会提供以下对话框来编辑值：
+</p><p><img alt="FloatConstant.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/FloatConstant.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="2" >
+		<p><div class="tableregion">
+	<p> <strong>DistributionFloatConstant 属性</strong> </p>
+</div> </p>
+		</th>
+	
+</tr><tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>单项</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>常量</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>为给定的属性设置静态且不变的数值</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="distributionfloatuniform_浮点型均匀分布_">DistributionFloatUniform(浮点型均匀分布)</h3>
+
+<p>这个类型用于为属性提供一定范围内的值。当计算时，在选中的范围随机地设置返回的值。
+</p><p><img alt="FloatUniform_Graph.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/FloatUniform_Graph.jpg" />
+</p><ol ><li><p>最小值。
+</p></li><li><p>最大值。
+</p></li><li><p>随机值的取值范围。
+</p></li></ol><p>当选中这个类型时，将会提供以下对话框来编辑值：
+</p><p><img alt="FloatUniform.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/FloatUniform.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="2" >
+		<p><div class="tableregion">
+	<p> <strong>DistributionFloatUniform 属性</strong> </p>
+</div> </p>
+		</th>
+	
+</tr><tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>单项</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最小</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>随机计算的最小值</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最大</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>随机计算的最大值</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="distributionfloatconstantcurve_浮点常量曲线分布_">DistributionFloatConstantCurve (浮点常量曲线分布)</h3>
+
+<p>这种类型用于为分布在曲线编辑器上的随着时间变化属性提供值。时间是绝对的(随着发射器的生命周期)或相对的(随着单个粒子的生命周期)取决于使用这个分布的模块。
+</p><p><img alt="floatConstantCurve_Graph.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/floatConstantCurve_Graph.jpg" />
+</p><ol ><li><p>关键帧点
+</p></li><li><p>插值曲线。最终数值是根据这条曲线在给定时间来得出。
+</p></li><li><p>切线句柄 - 它们定义了曲线在进入/离开关键帧的行为。
+</p></li></ol><p>当选中这个类型时，将会提供以下对话框来编辑值：
+</p><p><img alt="FloatConstantCurve.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/FloatConstantCurve.jpg" />
+</p><p>注意所有文本域都可以进行手动编辑，但是使用曲线编辑器来编辑这些值是我们推荐的方法。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="2" >
+		<p><div class="tableregion">
+	<p> <strong>DistributionFloatConstantCurve 属性</strong> </p>
+</div> </p>
+		</th>
+	
+</tr><tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>单项</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>点（points）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这个是数组属性，包含了曲线上所有的点。可以使用 <img alt="AddPoint_button.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/AddPoint_button.jpg" /> 按钮创建新的点。然而，通常在图形编辑器窗口中新增点更加容易。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tableregion">
+	<p> <strong>点（Point）的属性</strong> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>InVal</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这个是图形里水平轴的点，通常作为时间计算。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>OutVal</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是图形里垂直轴的点，通常作为属性数值计算。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>ArriveTangent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>提供点的切线进入角。有意义的数值通常在 -150 到 150。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LeaveTangent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>提供点的切线离去角。有意义的数值通常在  -150 到 150。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>InterpMode</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>让用户选择不同的曲线差值模式。查看 <a id="content_link" href="../../UI/CurveEditor/index.html" ><span>曲线编辑器用户手册</span></a>
+ 的页面来了解更多。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="distributionfloatuniformcurve_浮点型均匀曲线分布_">DistributionFloatUniformCurve (浮点型均匀曲线分布)</h3>
+
+<p>这个类型用于为分布在曲线编辑器上随着时间变化的属性提供一定范围的值。在特定的时间点上
+</p><p><img alt="FloatUniformCurve_graph.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/FloatUniformCurve_graph.jpg" />
+</p><ol ><li><p>最小值曲线 - 定义了随着时间变化的最小值。
+</p></li><li><p>最大值曲线 - 定义了随着时间变化的最大值。
+</p></li><li><p>值范围 - 定义了特定时间下最终值得取值范围。
+</p></li></ol><p>当选中这个类型时，将会提供以下对话框来编辑值：
+</p><p><img alt="FloatUniformCurve.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/FloatUniformCurve.jpg" />
+</p><p>和使用 ConstantCurve(常量曲线) 类型一样，我们推荐使用曲线编辑器来编辑这个分布类型。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="2" >
+		<p><div class="tableregion">
+	<p> <strong>DistributionFloatConstantCurve 属性</strong> </p>
+</div> </p>
+		</th>
+	
+</tr><tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>单项</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>点（points）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这个是数组属性，包含了曲线上所有的点。可以使用 <img alt="AddPoint_button.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/AddPoint_button.jpg" /> 按钮创建新的点。然而，通常在图形编辑器窗口中新增点更加容易。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tableregion">
+	<p> <strong>点（Point）的属性</strong> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>InVal</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这个是图形里水平轴的点，通常作为时间计算。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>OutVal</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是图形里垂直轴的点，通常作为属性数值计算。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>ArriveTangent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>提供点的切线进入角。有意义的数值通常在 -150 到 150。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LeaveTangent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>提供点的切线离去角。有意义的数值通常在  -150 到 150。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>InterpMode</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>让用户选择不同的曲线差值模式。查看 <a id="content_link" href="../../UI/CurveEditor/index.html" ><span>曲线编辑器用户手册</span></a>
+ 的页面来了解更多。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="distributionfloatparticleparam_浮点型粒子参数分布_">DistributionFloatParticleParam(浮点型粒子参数分布)</h3>
+
+<p>这种类型用于为发射器的参数进行简单的游戏代码设置。它提供了把输入值从一个范围映射到另一个范围的功能，
+允许您在 "Cascade-空间" 中调整参数而不需要更新游戏形代码。一旦游戏性编程人员定义了一个可靠的输入范围，
+美术工作人员便可以通过 Output(输出) 映射自由地调整属性了。
+</p><p>当选中这个类型时，将会提供以下对话框来编辑值：
+</p><p><img alt="FloatParticleParam.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/FloatParticleParam.jpg" />
+</p><p>输入到输出是线性映射，也就是说，最小输入为 0 最大输入为 5，最小输出为 0 最大输出为 100 时，如果用 2 作为输入，那么输出就是 40。
+</p><p>简单地设置输入值 0-1 映射到多个输入处值是非常有用的，因为您可以通过名称来共享粒子参数变量。比如，您可以设置通过粒子参数Foo来驱动SpawnRate，
+并设置输入值为 0-1、输出端为 20-200，同时在 InitialSize(初始大小) 中也是使用 Foo，使其它们具有相同的输入值，但输出值为 10-20。
+</p><p>在代码中，程序员将会书写类似于以下的代码：
+</p>
+<pre class="prettyprint"><code>ParticleComponent-&gt;SetFloatParameter('MyParameter', CurrentParameter);</code></pre>
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="2" >
+		<p><div class="tableregion">
+	<p> <strong>DistributionFloatParticleParameter 属性</strong> </p>
+</div> </p>
+		</th>
+	
+</tr><tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>单项</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>参数名称 ParameterName</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>脚本代码通过该参数名称来访问参数。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最小输入 Min Input</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>可以传递给分布数据的最小值，通常通过游戏代码设置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最大输入 Max Input</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>可以传递给分布数据的最大值，通常通过游戏代码设置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最小输出 Min Output</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>根据输入的范围，获得的最小输出值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最大输出 Max Output</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>根据输入的范围，获得的最大输出值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>参数模式 Param Mode</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>决定了如何使用输入值。详见下面的参数模式标记表格。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>常量 Constant</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当没有输入时，这里提供一个默认值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>参数模式标识ParamMode Flag</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>DPM_Normal</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>保持输入值不变。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>DPM_Abs</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在进行重新映射之前，使用输入值的绝对值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>DPM_Direct</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>直接使用输入值(没有重新映射)。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="vectordistributions_向量分布_">Vector Distributions (向量分布)</h2>
+
+<p>向量分布用于美术人员控制的基于向量的属性。比如粒子的大小或者速度。
+</p><h3 id="distributionvectorconstant_向量常量分布_">DistributionVectorConstant (向量常量分布)</h3>
+
+<p>这种类型用于为常量属性提供一个值。
+</p><p><img alt="VectorConstant_Graph.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/VectorConstant_Graph.jpg" />
+</p><ol ><li><p>X-轴数值
+</p></li><li><p>Y-轴数值
+</p></li><li><p>Z-轴数值
+</p></li></ol><p>当选中这个类型时，将会提供以下对话框来编辑值：
+</p><p><img alt="VectorConstant.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/VectorConstant.jpg" />
+</p><p>LockedAxes(锁定坐标轴)标志允许用户锁定一个坐标轴的值为另一个坐标轴的值。支持以下标志：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="2" >
+		<p><div class="tableregion">
+	<p> <strong>DistributionVectorConstant 属性</strong> </p>
+</div> </p>
+		</th>
+	
+</tr><tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>单项</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Constant 常量</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是给定属性的静态且不变的数值。作为向量，包含 X，Y，Z 三个值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Locked Axes 锁定轴</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这里定义了将某个轴固定到其他三个轴的方式来简化分布。查看下面的锁定坐标轴标志表格。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>LockedAxes(锁定坐标轴) 标志</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_None</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>不把坐标轴锁定为另一个坐标轴上的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XY</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Y-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Z-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_YZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Z-轴的值为Y-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XYZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Y-轴和Z-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>注意：当激活锁定标志时，值将不能反映在属性窗口的设置中。也就是，当设置 LockedAxes 标志为 EDVLF_XY 时，Y 值将不会显示 X 的内容。
+仅当从分布(代码中)计算出那个值时，才应用被锁定的坐标轴的值。
+</p><h3 id="distributionvectoruniform_向量均匀分布_">DistributionVectorUniform (向量均匀分布)</h3>
+
+<p>这个类型用于为属性提供一定范围内的值。当计算时，在选中的范围随机地设置返回的值。
+</p><p><img alt="VectorUniform_Graph.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/VectorUniform_Graph.jpg" />
+</p><ol ><li><p>X-轴最小值
+</p></li><li><p>X-轴最大值
+</p></li><li><p>X-轴随机值
+</p></li><li><p>Y-轴最小值
+</p></li><li><p>Y-轴最大值
+</p></li><li><p>Y-轴随机值
+</p></li><li><p>Z-轴最小值
+</p></li><li><p>Z-轴最大值
+</p></li><li><p>Z-轴随机值
+</p></li></ol><p>当选中这个类型时，将会提供以下对话框来编辑值：
+</p><p><img alt="VectorUniform.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/VectorUniform.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="2" >
+		<p><div class="tableregion">
+	<p> <strong>DistributionVectorUniform 属性</strong> </p>
+</div> </p>
+		</th>
+	
+</tr><tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>单项</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Min 最小值</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于随机计算的最小值。鉴于向量的规格，这包含了 X，Y，Z 三个值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Max 最大值</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于随机计算的最大值。鉴于向量的规格，这包含了 X，Y，Z 三个值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Use Extremes 使用极端值</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>意味选择的值应该作为 Min(最小值)或者 Max(最大值)，把这些值限定为这两个极端值其中的一个。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>LockedAxes(锁定坐标轴) 标志</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_None</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>不把坐标轴锁定为另一个坐标轴上的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XY</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Y-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Z-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_YZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Z-轴的值为Y-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XYZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Y-轴和Z-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>MirrorFlags(镜像标志)用于镜像值的每个分量的Min/Max(最小/最大)值。镜像支持以下标志：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>MirrorFlags(镜像标志)</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVMF_Same(相同)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在Min(最小值)处使用Max (最大值)。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVMF_Different(不同)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>按照最初设置使用每个值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVMF_Mirror</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在Min(最小值)处使用Max(最大值)的负值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><div class="note">
+	<p>Mirror 标志下的 0，1，2 属性相应的对应了 X，Y，Z 轴。
+</p>
+</div><h3 id="distributionvectorconstantcurve_向量常量曲线分布_">DistributionVectorConstantCurve (向量常量曲线分布)</h3>
+
+<p>这种类型用于为分布在曲线编辑器上的随着时间变化属性提供值。时间是绝对的(随着发射器的生命周期)或相对的(随着单个粒子的生命周期)取决于使用这个分布的模块。
+</p><p><img alt="VectorConstantCurve_Graph.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/VectorConstantCurve_Graph.jpg" />
+</p><ol ><li><p>根据时间变化的曲线上 Point 0 的 X 轴
+</p></li><li><p>根据时间变化的曲线上 Point 1 的 X 轴
+</p></li><li><p>根据时间变化的曲线上插值后的 X 轴
+</p></li><li><p>根据时间变化的曲线上 Point 0 的 Y 轴
+</p></li><li><p>根据时间变化的曲线上 Point 1 的 Y 轴
+</p></li><li><p>根据时间变化的曲线上插值后的 Y 轴
+</p></li><li><p>根据时间变化的曲线上 Point 0 的 Z 轴
+</p></li><li><p>根据时间变化的曲线上 Point 1 的 Z 轴
+</p></li><li><p>根据时间变化的曲线上插值后的 Z 轴
+</p></li></ol><p>当选中这个类型时，将会提供以下对话框来编辑值：
+</p><p><img alt="VectorConstantCurve.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/VectorConstantCurve.jpg" />
+</p><p>和使用 FloatConstantCurve (浮点常量曲线)一样，我们推荐通过曲线编辑器来编辑这种分布类型。
+</p><p>注意： 当一个 ConstantCurve (常量曲线)分布的 LockedAxes 标志设置为除 EDVLF_None 以外的其它选项时，为了避免混淆曲线编辑器将不会显示锁定的坐标轴。
+比如，当标志设置为 EDVLF_XY，那么曲线编辑器将仅包含 X 和 Z 曲线。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="2" >
+		<p><div class="tableregion">
+	<p> <strong>DistributionFloatConstantCurve 属性</strong> </p>
+</div> </p>
+		</th>
+	
+</tr><tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>单项</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>点（points）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这个是数组属性，包含了曲线上所有的点。可以使用 <img alt="AddPoint_button.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/AddPoint_button.jpg" /> 按钮创建新的点。然而，通常在图形编辑器窗口中新增点更加容易。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tableregion">
+	<p> <strong>点（Point）的属性</strong> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>InVal</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这个是图形里水平轴的点，通常作为时间计算。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>OutVal</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是图形里垂直轴的点，通常作为属性数值计算。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>ArriveTangent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>提供点的切线进入角。有意义的数值通常在 -150 到 150。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LeaveTangent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>提供点的切线离去角。有意义的数值通常在  -150 到 150。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>InterpMode</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>让用户选择不同的曲线差值模式。查看 <a id="content_link" href="../../UI/CurveEditor/index.html" ><span>曲线编辑器用户手册</span></a>
+ 的页面来了解更多。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>LockedAxes(锁定坐标轴) 标志</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_None</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>不把坐标轴锁定为另一个坐标轴上的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XY</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Y-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Z-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_YZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Z-轴的值为Y-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XYZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Y-轴和Z-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h3 id="distributionvectoruniformcurve_向量均匀曲线分布_">DistributionVectorUniformCurve (向量均匀曲线分布)</h3>
+
+<p>这个类型用于为分布在曲线编辑器上随着时间变化的属性提供一定范围的值。
+</p><p><img alt="VectorUniformCurve_graph.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/VectorUniformCurve_graph.jpg" />
+</p><ol ><li><p>最小 X 轴曲线
+</p></li><li><p>最大 X 轴曲线
+</p></li><li><p>X 轴的随即插值范围
+</p></li><li><p>最小 Y 轴曲线
+</p></li><li><p>最大 Y 轴曲线
+</p></li><li><p>Y 轴的随即插值范围
+</p></li><li><p>最小 Z 轴曲线
+</p></li><li><p>最大 Z 轴曲线
+</p></li><li><p>Z 轴的随即插值范围
+</p></li></ol><p>当选中这个类型时，将会提供以下对话框来编辑值：
+</p><p><img alt="VectorUniformCurve.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/VectorUniformCurve.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="2" >
+		<p><div class="tableregion">
+	<p> <strong>DistributionVectorUniformCurve 属性</strong> </p>
+</div> </p>
+		</th>
+	
+</tr><tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>单项</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>点（points）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这个是数组属性，包含了曲线上所有的点。可以使用 <img alt="AddPoint_button.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/AddPoint_button.jpg" /> 按钮创建新的点。然而，通常在图形编辑器窗口中新增点更加容易。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tableregion">
+	<p> <strong>点（Point）的属性</strong> </p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>InVal</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这个是图形里水平轴的点，通常作为时间计算。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>OutVal</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是图形里垂直轴的点，通常作为属性数值计算。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>ArriveTangent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>提供点的切线进入角。有意义的数值通常在 -150 到 150。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LeaveTangent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>提供点的切线离去角。有意义的数值通常在  -150 到 150。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>InterpMode</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>让用户选择不同的曲线差值模式。查看 <a id="content_link" href="../../UI/CurveEditor/index.html" ><span>曲线编辑器用户手册</span></a>
+ 的页面来了解更多。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Use Extremes 使用极端值</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>意味选择的值应该作为 Min(最小值)或者 Max(最大值)，把这些值限定为这两个极端值其中的一个。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>LockedAxes(锁定坐标轴) 标志</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_None</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>不把坐标轴锁定为另一个坐标轴上的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XY</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Y-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Z-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_YZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Z-轴的值为Y-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XYZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Y-轴和Z-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>MirrorFlags(镜像标志)用于镜像值的每个分量的Min/Max(最小/最大)值。镜像支持以下标志：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>MirrorFlags(镜像标志)</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVMF_Same(相同)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在Min(最小值)处使用Max (最大值)。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVMF_Different(不同)</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>按照最初设置使用每个值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVMF_Mirror</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在Min(最小值)处使用Max(最大值)的负值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>和其它曲线类型一样，我们推荐通过曲线编辑器来编辑这种分布类型。
+</p><h3 id="distributionvectorparticleparam_向量粒子参数分布_">DistributionVectorParticleParam (向量粒子参数分布)</h3>
+
+<p>这个类型是上面讨论的FloatParticleParam类型的向量类型等价物。
+</p><p>当选中这个类型时，将会提供以下对话框来编辑值：
+</p><p><img alt="VectorParticleParam.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Basics/Distributions/VectorParticleParam.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="2" >
+		<p><div class="tableregion">
+	<p> <strong>DistributionFloatParticleParameter 属性</strong> </p>
+</div> </p>
+		</th>
+	
+</tr><tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>单项</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>参数名称 ParameterName</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>脚本代码通过该参数名称来访问参数。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最小输入 Min Input</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>可以传递给分布数据的最小值，通常通过游戏代码设置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最大输入 Max Input</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>可以传递给分布数据的最大值，通常通过游戏代码设置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最小输出 Min Output</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>根据输入的范围，获得的最小输出值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最大输出 Max Output</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>根据输入的范围，获得的最大输出值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>参数模式 Param Mode</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>决定了如何使用输入值。详见下面的参数模式标记表格。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>常量 Constant</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当没有输入时，这里提供一个默认值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>LockedAxes(锁定坐标轴) 标志</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_None</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>不把坐标轴锁定为另一个坐标轴上的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XY</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Y-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Z-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_YZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Z-轴的值为Y-轴的值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>EDVLF_XYZ</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>锁定Y-轴和Z-轴的值为X-轴的值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>参数模式标识ParamMode Flag</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>DPM_Normal</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>保持输入值不变。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>DPM_Abs</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在进行重新映射之前，使用输入值的绝对值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>DPM_Direct</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>直接使用输入值(没有重新映射)。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Basics/Distributions/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:16 GMT -->
+</html>

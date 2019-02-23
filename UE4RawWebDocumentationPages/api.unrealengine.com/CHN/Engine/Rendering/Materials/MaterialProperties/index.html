@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/Materials/MaterialProperties/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:01 GMT -->
+<head>
+    <title>材质属性 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/Materials/MaterialProperties/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/Materials/MaterialProperties/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/Materials/MaterialProperties/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/Materials/MaterialProperties/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3810557" />
+<meta name="availability" content="Public" />
+<meta name="title" content="材质属性" />
+<meta name="description" content="关于UE4材质及其工作原理的介绍性文档。" />
+<meta name="version" content="4.9" />
+<meta name="topic-image" content="Engine/Rendering/Materials/MatProps.png" />
+<meta name="parent" content="Engine/Rendering/Materials" />
+<meta name="order" content="4" />
+<meta name="type" content="reference" />
+<meta name="tags" content="Materials" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="材质属性" />
+	<meta property="og:description" content="关于UE4材质及其工作原理的介绍性文档。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">材质</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">材质属性</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#物理材质">物理材质</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#材质">材质</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#半透明度">半透明度</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#半透明自投影">半透明自投影</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#用途">用途</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#移动">移动</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#曲面细分">曲面细分</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#后期处理材质">后期处理材质</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#全局光照">全局光照</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#材质界面">材质界面</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#缩略图">缩略图</a>
+	</li>		    	        </ul>
+</div>
+<p>本文档将细述材质上可用的属性。您可以通过在材质编辑器（Material Editor）中选择主材质（Main Material）节点来访问这些属性。
+</p><ul ><li><p>材质中的属性：
+</p></li></ul><p><img alt="PropertiesPanelMaterialEditor_Mat.png" height="445" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/PropertiesPanelMaterialEditor_Mat.jpg" /> 
+</p><p>基本材质节点具有许多影响材质行为的属性。下面将描述这些属性，每个类别都划分到各自的文档部分，并按照它们在 <strong>属性（Properties）</strong> 面板中出现的顺序显示。
+</p><a name="physicalmaterial" ></a><h2 id="物理材质">物理材质</h2>
+
+<p><img alt="PhysicalMaterials.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/PhysicalMaterials.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>物理材质（Phys Material）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>与该材质关联的<a id="content_link" href="../../../Physics/PhysicalMaterials/index.html" ><span>物理材质</span></a>
+。物理材质（Physical Material）提供了物理属性的定义，例如碰撞（弹力）以及其他基于物理的方面会保留多少能量。物理材质（Physical Material）对材质的外观没有影响。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="material" ></a><h2 id="材质">材质</h2>
+
+<p><img alt="MaterialSection.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/MaterialSection.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>材质域（Material Domain）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此设置允许您指定如何使用此材质。某些材质的使用（例如贴花）需要额外的说明，以便渲染引擎加以考虑。正因为如此，指定用于这些情况的材质十分重要。材质域（Material Domain）包括以下选项：
+</p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>域 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>表面（Surface）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该设置将材质定义为将用于对象表面的东西；您可以联想金属、塑料、皮肤或任何物理表面。因此，这是您大部分时间里都会用到的设置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>延迟贴花（Deferred Decal）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在制作<a id="content_link" href="../../../Actors/DecalActor/index.html" ><span>贴花材质</span></a>
+时，您将使用此设置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>光源函数（Light Function）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在创建与光源函数配合使用的材质时使用此设置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>后期处理（Post Process）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果材质将用作<a id="content_link" href="../../PostProcessEffects/PostProcessMaterials/index.html" ><span>后期处理材质</span></a>
+，则使用此设置。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>混合模式（Blend Mode）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>混合模式（Blend Mode）描述了当前材质的输出如何与背景中已经绘制的内容进行混合。更专业地说，它允许您控制引擎在渲染时如何将这个材质（<strong>源颜色（Source color）</strong>）与框架缓冲区中已经存在的材质（<strong>目标颜色</strong>（Destination color））结合起来。可用混合模式为：
+</p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>模式 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><em>混合（BLEND）</em>不透明（Opaque）_</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>最终颜色 = 源颜色。这意味着材质将在背景顶部绘制。此混合模式与照明兼容。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><em>混合（BLEND）</em>遮罩（Masked）_</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>最终颜色 = 如果OpacityMask > OpacityMaskClipValue，则为源颜色，否则该像素将被丢弃。此混合模式与照明兼容。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><em>混合（BLEND）</em>半透明（Translucent）_</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>最终颜色 = 源颜色 <em> 不透明度 + 目标颜色 </em> (1 - 不透明度)。此混合模式 <strong>不</strong> 与动态照明兼容。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><em>混合（BLEND）</em>添加（Additive）_</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>最终颜色 = 源颜色 + 目标颜色。此混合模式 <strong>不</strong> 与动态照明兼容。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><em>混合（BLEND）</em>调制（Modulate）_</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>最终颜色 = 源颜色 x 目标颜色。此混合模式 <strong>不</strong> 与动态照明或雾化兼容，除非该材质是贴花材质。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>有关这些混合模式的更多信息，请参阅<a id="content_link" href="BlendModes/index.html" ><span>混合模式文档</span></a>
+。 
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>贴花混合模式（Decal Blend Mode）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性定义了如何通过贴花材质通道操作GBuffer信道。（仅当MaterialDomain == MD_DeferredDecal时）</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>贴花响应（Decal Response）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性定义了材质对DBuffer贴花的反应（影响外观、性能和纹理/样本使用）。您可以在基元（例如静态网格体）上禁用非DBuffer贴花</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>着色模型（Shading Model）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>着色模型决定了材质输入（如自发光、漫射、镜面反射、法线）如何组合以形成最终颜色。<br /></p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>模型 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><em>无光照（Unlit）</em></strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>材质仅由自发光（Emissive）和不透明度（Opacity）输入定义。它不对应光源。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><em>默认光照（Default Lit）</em></strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>默认着色模型。非常适用于大部分实体对象。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><em>次表面（Subsurface）</em></strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于次表面散射材质，如蜡和冰。激活次表面颜色（Subsurface Color）输入。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><em>预整合皮肤（Preintegrated Skin）</em></strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于类似于人类皮肤的材质。激活次表面颜色（Subsurface Color）输入。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><em>透明涂层（Clear Coat）</em></strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于表面有半透明涂层的材质，如车漆或清漆。激活透明涂层（Clear Coat）和透明涂层粗糙度（Clear Coat Roughness）输入。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><em>次表面配置文件（Subsurface Profile）</em></strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于类似于人类皮肤的材质。需要使用<a id="content_link" href="../LightingModels/SubSurfaceProfile/index.html" ><span>次表面配置文件</span></a>
+才能正确工作。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>有关这些着色模型的更多信息，请参阅<a id="content_link" href="LightingModels/index.html" ><span>着色模型文档</span></a>
+。 
+</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>不透明遮罩剪辑值（Opacity Mask Clip Value）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性是遮罩材质的OpacityMask输入根据每个像素进行剪辑的参考值。任何高于OpacityMaskClipValue的值将符合要求，且像素将被绘制（不透明），而任何低于OpacityMaskClipValue的值将不符合要求，且像素将被丢弃（透明）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>双面（Two Sided）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>法线将被翻转到背面，这意味着将同时为正面和背面计算光照。这通常用于植物上，以避免多边形数量加倍。“双面”无法正常用于静态照明，因为网格体仍然只使用单一的紫外线集进行光源映射。因此，使用静态照明的双面材质两侧会有相同的阴影。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>切线空间法线（Tangent Space Normal）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>切线空间法线是根据物体表面计算出来的，Z轴（蓝色）总是指向远离物体表面的方向。世界场景空间法线使用世界场景坐标系计算像素角，忽略表面的原始方向。在性能方面，切线空间的计算稍微昂贵一些，但通常更方便，因为这些通常是可以在Photoshop等二维应用程序中创建的法线地图类型。在视觉上，切线空间的法线地图往往看上去以蓝色为主，而世界场景空间地图则是生动地呈现彩虹色。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>贴花混合模式（Decal Blend Mode）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>顾名思义，它定义了混合模式（Blend Mode），当材质域（Material Domain）属性设置为_延迟贴花（Deferred Decal）_时将使用这种混合模式，并且在对材质域（Material Domain）进行相应的设置之前不能更改。它包含的混合模式不同于表面可用的混合模式。
+</p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>模式 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>半透明（Translucent）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这将使贴花混合底色（Base Color）、金属感（Metallic）、镜面反射（Specular）、粗糙度（Roughness）、自发光（Emissive）颜色、不透明度（Opacity）和法线（Normal）。利用此模式，您可以混合完全独立的材质，比如一个波浪起伏的水坑，周围是普通的基于地图的多泥建筑。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>污点（Stain）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>仅混合底色（Base Color）和不透明度（Opacity）。适用于只改变颜色的贴花，如墙上的干喷漆。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>法线（Normal）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>仅混合法线（Normal）和不透明度（Opacity）。适用于向表面添加裂纹。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>自发光（Emissive）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>仅混合自发光（Emissive）和不透明度（Opacity）信道。非常适用于让原本不发光的东西发光。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>使用材质属性（Use Material Attributes）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此复选框将使材质主节点被压缩为单个标记为“材质属性（Material Attributes）”的输入。当您需要使用分层材质混入多个材质时，或者在使用制作材质属性（Make Material Attributes）表达式节点定义多个材质类型时，这一点非常有用。有关更多信息，请参阅分层材质（Layered Materials）文档。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>次表面配置文件（Subsurface Profile）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这允许您更改材质（Material）中使用的<a id="content_link" href="../LightingModels/SubSurfaceProfile/index.html" ><span>次表面配置文件</span></a>
+。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>自定义UV数量（Num Customized UVs）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性设置要显示的自定义UV输入的数量。未连接的自定义UV输入将仅穿过顶点UV。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>生成球形粒子法线（Generate Spherical Particle Normal’s）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当您绕着使用这种材质的粒子系统旋转时，此属性会生成保持球形的表面法线。这对于体积粒子系统非常有用，因为子画面总是旋转以面向摄像机。有了这个选项，它们将具有更加球形的体积外观。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>自发光（动态区域光）（Emissive(Dynamic Area Light)）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果启用，材质的自发光颜色会注入到光传播体积。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>线框（Wire Frame）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用应用该材质的网格体的线框视图。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>折射偏差（Refraction Bias）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性弥补折射测试的深度。当折射值导致附近不需要的对象（通常在半透明对象前面）呈现到材质表面时，这是非常有用的。但是，较高的数值将开始分离折射，造成表面和折射对象之间出现可见的分裂。此属性在将某个表达式节点连接到折射输入之前不会启用。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="translucency" ></a><h2 id="半透明度">半透明度</h2>
+
+<p><img alt="TranslucencyProperties.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/TranslucencyProperties.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>单独半透明度（Separate Translucency）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性表明材质应该在单独半透明通道（Separate Translucency Pass）中渲染（这意味着，它不会受到DOF的影响，并且需要在.INI文件中设置bAllowSeparateTranslucency）</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>响应性抗混叠（Responsive AA (Ant aliasing)）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>小型移动对象，尤其是粒子，有时会被抗混叠所消除；通过将此属性设置为_真（true）_，将使用另一种AA算法，该算法提供了更多定义。换句话说，如果您创建了一个暴风雪或类似的粒子系统，而您觉得您无法真正看到雪花，那就启用此属性 - 它会有所帮助。但是，此属性应_仅_用于小型移动对象，因为它会在背景上产生混叠瑕疵。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>半透明照明模式（Translucency Lighting Mode）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这允许对半透明（Translucency）在该材质中使用的照明模式进行控制。这对于利用半透明（Translucency）的粒子系统（例如自投影烟雾或蒸汽）特别有用。 
+</p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>模式 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>体积非定向（Volumetric NonDirectional）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将针对体积计算照明，且照明没有方向性。此设置用于烟雾和灰尘等粒子特效。这是最便宜的照明方法，但是材质法线并未纳入其考虑范围。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>体积定向（Volumetric Directional）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将针对体积计算照明，且照明具有方向性，因此材质法线也被纳入考虑范围。请注意，默认粒子切线空间是面向摄像机的，因此启用 <strong>bGenerateSphericalParticleNormals</strong> 以获取更有用的切线空间。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>体积按顶点非定向（Volumetric PerVertex NonDirectional）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>与体积非定向（Volumetric NonDirectional）相同，但照明只在顶点处计算，因此像素着色器的成本明显降低。请注意，照明仍然来自于一个体积纹理，所以它被限制在一定范围内。定向光源在远处将变得无阴影。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>体积按顶点定向（Volumetric PerVertex Directional）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>与体积定向（Volumetric Directional）相同，但照明只在顶点处计算，因此像素着色器的成本明显降低。请注意，照明仍然来自于一个体积纹理，所以它被限制在一定范围内。定向光源在远处将变得无阴影。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>表面半透明体积（Surface Translucency Volume）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将为表面计算光照。光在一个体积中累积，因此结果是模糊而有限的距离，但每像素的成本非常低。在半透明的表面（如玻璃和水）上使用。仅支持漫射光源。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>表面前向着色（Surface Forward Shading）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将为表面计算光照。在半透明的表面（如玻璃和水）上使用。这是通过前向着色实现的，因此支持来自本地光源的镜面反射高光，但是不支持许多纯延迟功能。这是 <strong>最昂贵</strong> 的半透明照明方法，因为每个光源的贡献是按像素计算的。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>  请参阅<a id="content_link" href="../../LightingAndShadows/LitTranslucency/index.html" ><span>LitTranslucency</span></a>
+。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>半透明定向照明强度（Translucency Directional Lighting Intensity）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于人为加强法线对半透明照明效果的影响。大于1的值会加强法线的影响，而小于1的值会使光照更切合环境。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>禁用深度测试（Disable Depth Test）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>允许材质禁用深度测试，此属性只有在半透明混合模式下才有意义。禁用深度测试将使渲染明显变慢，因为被遮挡的像素无法进行Z剔除。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>使用半透明顶点雾化（Use Translucency Vertex Fog）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置为_真（true）<em>时，半透明材质将被雾化。默认设置为_真（true）</em>。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="translucencyselfshadowing" ></a><h2 id="半透明自投影">半透明自投影</h2>
+
+<p><img alt="TransSelfShadowingProperties.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/TransSelfShadowingProperties.jpg" /> <img alt="PerPixNonDirectional.png" height="189" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/PerPixNonDirectional.jpg" />
+</p><p>半透明自阴影是一种获得体积光照半透明对象（例如烟柱或蒸汽柱）的好方法法。自投影分为两个主要部分：自我阴影密度（Self Shadow Density）和第二自我阴影密度（Second Self Shadow Density）。这两个部分的存在为变化提供了可能。您可以单独定义各个部分的密度，并使用它们之间的差异在整个自我阴影中获得您所需的模式。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>半透明阴影密度比例（Translucent Shadow Density Scale）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性设置了由该半透明材质投射到其他表面的阴影的密度。这有点像阴影的主比例；如果设置为0，则没有任何阴影。当您将数值增加到1或更高时，投影和自我阴影都会变暗。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>半透明自我阴影密度比例（Translucent Self Shadow Density Scale）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置该材质投射在自身上的阴影的密度。考虑烟雾柱中的阴影。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>半透明自我阴影第二密度比例（Translucent Self Shadow Second Density Scale）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是第二个自我阴影密度，可以设置进行变化。这个值和半透明自我阴影密度比例（Translucent Self Shadow Density Scale）之间产生了一个内部梯度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>半透明自我阴影第二不透明度（Translucent Self Shadow Second Opacity）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性设置了第二自我阴影的不透明度值，用作一种缩放自我阴影与第二自我阴影之间梯度效应的方法。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>半透明反向散射指数（Translucent Backscattering Exponent）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性控制使用次表面着色模型和半透明（Translucency）时使用的反向散射。较大的值会产生较小、较亮的反向散射高光。此值仅用于由定向光源形成的体积半透明阴影中。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>半透明多重散射消光（Translucent Multiple Scattering Extinction）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>对于具有体积半透明阴影的对象（如烟雾或蒸汽），这将给出一个彩色消光值（基本上相当于阴影颜色）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>半透明阴影开始偏移（Translucent Shadow Start Offset）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是在半透明体中创建的自我阴影的世界场景空间偏移量。数值越高，阴影离光源越远。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="usage" ></a><h2 id="用途">用途</h2>
+
+<p><img alt="UsageFlagProperties.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/UsageFlagProperties.jpg" />
+</p><p>用途（Usage）标记用于控制将在其上使用材质的对象的类型。在编译材料时，这些设置允许引擎为每个应用程序编译特殊版本。这些仅在使用表面材质域（Surface Material Domain）设置时有效。
+</p><p>在编辑器中，这些标记将自动为地图中已经存在的任何对象而设置。例如，如果您有一个粒子系统，它使用放置在某个关卡某处的材质，当您在编辑器中加载该地图时，它将自动设置_与粒子系统配合使用（Used with Particle System）_标记。您需要保存材质资源，才能让游戏在该特定网格体上使用该材质。
+</p><div class="warning">
+	<p> 如果您没有设置适当的用途标志，游戏中将使用默认的世界场景网格材质！游戏客户端日志中会对此给出相应的消息。
+</p>
+</div><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与骨架网格体配合使用（Used with Skeletal Mesh）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果材质将被放置在一个静态网格体（Static Mesh）上，则设置此属性。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与编辑器组合配合使用（Used with Editor Compositing）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果材质将用于编辑器UI，设置此属性。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与地形配合使用（Used with Landscape）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果材质将用于地形表面，设置此属性。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与粒子子画面配合使用（Used with Particle Sprites）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果此材质将放置于粒子系统上，则使用此属性。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与光束轨迹配合使用（Used with Beam Trails</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果材质将与光束轨迹配合使用，则设置此属性。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与网格体粒子配合使用（Used with Mesh Particles）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>说明该材质及其实例可以与网格体粒子配合使用。这将导致支持网格体粒子所需的着色器被编译，从而增加着色器编译时间和内存使用量。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与静态照明配合使用（Used with Static Lighting）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果考虑静态照明所用的材质，例如，它使用应会影响照明的自发光效应时，则设置此属性。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与流体表面配合使用（Used with Fluid Surfaces）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>虚幻引擎4中不再支持流体表面。此选项不久之后将被删除。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与变换目标配合使用（Used with Morph Targets）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果该材质将应用于使用变换目标的骨架网格体，则设置此属性。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与样条网格体配合使用（Used with Spline Meshes）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果材质将应用于地形样条网格体，则设置此属性。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与实例化静态网格体配合使用（Used with Instanced Static Meshes）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果材质将应用于实例化静态网格体，则设置此属性。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与失真配合使用（Used with Distortion）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>不再支持失真（它现在是折射），此选项不久之后将被删除。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与布料配合使用（Used with Clothing）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果材质将应用于Apex物理模拟衣服，则应设置此属性。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>与UI配合使用（Used with UI）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性表明该材质和任何材质实例都可以与Slate UI和UMG配合使用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>在编辑器中自动设置用途（Automatically Set Usage in Editor）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是否根据在编辑器中应用材质的对象自动设置用途标志。该属性的默认选项为启用。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="mobile" ></a><h2 id="移动">移动</h2>
+
+<p><img alt="MobileProperties.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/MobileProperties.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>完全粗糙（Fully Rough）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性会强制材质变得完全粗糙，而这样做可以节省许多着色器指令和一个纹理采样器。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>使用光照图方向性（Use Lightmap Directionality）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此属性将使用光照图方向性和逐像素法线。如果禁用此属性，光照图中的光照将是平面的，但成本更低。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="tessellation" ></a><h2 id="曲面细分">曲面细分</h2>
+
+<p><img alt="TessellationProperties.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/TessellationProperties.jpg" />
+</p><p>曲面细分功能允许您在运行时向网格体添加更多的物理细节。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>曲面细分模式（Tessellation Mode）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此模式控制您的材质将采用的曲面细分类型（如有）。
+</p><div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>模式 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>无曲面细分（No Tessellation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>网格体将不会进行曲面细分。有效地禁用此功能。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>平面曲面细分（Flat Tessellation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>曲面细分的简单形式。此模式会在不平滑网格体的情况下添加更多三角形。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>PN三角形（PN Triangles）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用简单的基于样条的曲面细分，这种曲面细分虽然更昂贵，但细节表现效果更佳。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>启用无裂纹位移（Enable Crack Free Displacement）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用一个位移算法，以修复可能出现在网格体中的任何裂纹。但这样做成本更高，所以如果您在位移时没有发现裂纹，请将此属性设置为_假（False）_。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>启用自适应曲面细分（Enable Adaptive Tessellation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这种曲面细分方法试图为每个三角形保持相同的像素数。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="postprocessmaterial" ></a><h2 id="后期处理材质">后期处理材质</h2>
+
+<p><img alt="PostProcessMaterialProperties.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/PostProcessMaterialProperties.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>可混合位置（Blendable Location）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果此材质用作后期处理材质，则此属性允许您控制材质是在色调映射前还是色调映射后计算。如果您的材质将用于修改后期处理的颜色，那么此属性很重要。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>可混合优先级（Blendable Priority）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是一个优先级值，可用于可应用于后期处理的任何其他材质。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="lightmass" ></a><h2 id="全局光照">全局光照</h2>
+
+<p><img alt="LightmassProperties.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/LightmassProperties.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>像在遮罩状态一样下投射阴影（Cast Shadow as Masked）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果设置为_真（true）_，照明半透明对象会投下阴影，就好像它们在使用遮罩照明模式。这有助于在半透明对象上得到更清晰的阴影。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>漫射增强（Diffuse Boost）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>材质漫射分量对静态照明之影响的乘数。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>导出分辨率比例（Export Resolution Scale）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>导出该材质属性时的分辨率的乘数。在需要详细信息时应增大这一数值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="materialinterface" ></a><h2 id="材质界面">材质界面</h2>
+
+<p><img alt="MaterialInterfaceProperties.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/MaterialInterfaceProperties.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>预览网格体（Preview Mesh）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置用于在 <strong>预览（Preview）</strong> 窗格中预览材质的静态网格体。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="thumbnail" ></a><h2 id="缩略图">缩略图</h2>
+
+<p><img alt="ThumbnailProperties.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/Materials/MaterialProperties/ThumbnailProperties.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>基元类型（Primitive Type）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置缩略图预览中使用的形状基元的类型。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>预览网格体（Preview Mesh）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置缩略图预览中使用的网格体。此属性仅在基元类型（Primitive Type）设置为 <strong>TPT无（TPT None）</strong> 时才有效</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>轨道俯仰角（Orbit Pitch）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置围绕对象之轨道摄像机的俯仰角。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>轨道偏航角（Orbit Yaw）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置围绕对象之轨道摄像机的偏航角。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>轨道缩放（Orbit Zoom）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>从边界球体到资源之距离的偏移量。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/Materials/MaterialProperties/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:01 GMT -->
+</html>

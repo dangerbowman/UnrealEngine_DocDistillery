@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/AI/EnvironmentQuerySystem/UserGuide/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:14:45 GMT -->
+<head>
+    <title>场景查询系统用户指南 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/AI/EnvironmentQuerySystem/UserGuide/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/AI/EnvironmentQuerySystem/UserGuide/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/AI/EnvironmentQuerySystem/UserGuide/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/AI/EnvironmentQuerySystem/UserGuide/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3750407" />
+<meta name="availability" content="Public" />
+<meta name="title" content="场景查询系统用户指南" />
+<meta name="description" content="此文档介绍了行为树中场景查询系统的界面和最常用的工作流。" />
+<meta name="version" content="4.9" />
+<meta name="skilllevel" content="Advanced" />
+<meta name="parent" content="Engine/AI/EnvironmentQuerySystem" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="场景查询系统用户指南" />
+	<meta property="og:description" content="此文档介绍了行为树中场景查询系统的界面和最常用的工作流。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">场景查询系统</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">场景查询系统用户指南</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<a name="enablingtheenvironmentquerysystem" ></a><h2 id="启用场景查询系统">启用场景查询系统</h2>
+
+<ol ><li><p><strong>编辑菜单（Edit Menu）</strong> -> <strong>编辑器偏好（Editor Preferences）</strong>
+</p></li><li><p><strong>实验性功能（Experimental）</strong>
+</p></li><li><p>向下滚动到 <strong>AI</strong>
+</p></li><li><p>启用 <strong>场景查询系统</strong>
+</p></li></ol><a name="partsofaenvironmentquery" ></a><h2 id="场景查询的各部分">场景查询的各部分</h2>
+
+<p>一个 <strong>场景查询</strong> 实际上由多个部分组成。必须从行为树调用一个场景查询，之后实际的场景查询将使用其生成器（Generator）、引用其情境（Context），并使用其测试（Test）为行为树提供最高的加权结果。
+</p><a name="behaviortree" ></a><h3 id="行为树">行为树</h3>
+
+<p>通过 <strong>Run EQS Query</strong> 任务节点即可在行为树中使用场景查询。
+</p><p><img alt="runEQS.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/runEQS.jpg" />
+</p><p>在行为树中将其选中即可设置 <strong>查询模板（Query Template）</strong> 属性（场景查询资源）、设置其 <strong>查询参数（Query Params）</strong> 属性（即为传入场景查询资源的命名数值），以及设置最高加权结果返回的黑板键（对象或矢量）。
+</p><p><img alt="runEQS_details.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/runEQS_details.jpg" />
+</p><p>如需了解其使用的详细内容，请查阅<a id="content_link" href="../../BehaviorTrees/index.html" ><span>行为树</span></a>
+文档。
+</p><a name="environmentquery" ></a><h3 id="场景查询">场景查询</h3>
+
+<p>使用 <strong>Run EQS Query</strong> 节点在行为树中调用的是场景查询资源，以便对多个Actor或位置进行测试，找到最佳选择。而“最佳”的定义取决于测试（Test）在场景查询中的构成方式。
+</p><p>场景查询（Environment Query）可在蓝图和C++中创建。
+</p><a name="generator" ></a><h3 id="生成器">生成器</h3>
+
+<p><strong>生成器（Generator）</strong> 生成位置或Actor（统称为 <strong>项目</strong>）。它们将被测试和加权，最高加权的位置或Actor将被返回到行为树。
+</p><p>生成器（Generator）可在蓝图和C++中创建。
+</p><a name="contexts" ></a><h3 id="情境">情境</h3>
+
+<p><strong>情境(Context)</strong> 是诸多测试和生成器的参考框架。它们可能像 <strong>查询器（Querier）</strong> 一样简单，也可能像 <strong>一种类型的所有Actor</strong> 那样复杂。
+</p><p>需要注意的是生成器（如简单网格生成器）可使用返回多个位置或Actor的情境。这将在每个情境的位置创建一个拥有特定尺寸和密度的简单网格。
+</p><p>情境（Context）可在蓝图和C++中创建。
+</p><a name="tests" ></a><h3 id="测试">测试</h3>
+
+<p>场景查询通过测试（Test）来确定生成器中的哪个项目为“最佳”。默认测试包含较大比例的使用情况，如项目是否能追踪至另一个位置，或项目和情境之间的距离是否处于特定范围内。
+</p><div class="note">
+	<p>当前版本中，<strong>测试（Test）</strong> 必须在C++中创建，当前其没有可通过蓝图实现的版本。
+</p>
+</div><a name="creatingaquery" ></a><h2 id="创建查询">创建查询</h2>
+
+<div class="raw">
+	<p><img alt="newQuery.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/newQuery.jpg" />
+</p>
+</div><ol ><li><p>在内容浏览器中 <strong>左键点击</strong> <strong>创建（Create）</strong> 按钮
+</p></li><li><p>选择 <strong>杂项（Miscellaneous）</strong> -> <strong>环境查询（Environment Query）</strong>
+</p></li></ol><a name="creatingablueprintcontext" ></a><h2 id="创建蓝图情境">创建蓝图情境</h2>
+
+<ol ><li><p>在内容浏览器中 <strong>左键点击</strong> <strong>创建（Create）</strong> 按钮
+</p></li><li><p>选择 <strong>蓝图（Blueprint）</strong>
+</p></li><li><p>点开 <strong>所有类（All Classes）</strong>
+</p></li><li><p>搜索 <strong>EnvQueryContext</strong>
+</p></li><li><p>选择 <strong>EnvQueryContext_BlueprintBase</strong>
+</p></li></ol><a name="creatingablueprintgenerator" ></a><h2 id="创建蓝图生成器">创建蓝图生成器</h2>
+
+<ol ><li><p>在内容浏览器中 <strong>左键点击</strong> <strong>创建（Create）</strong> 按钮
+</p></li><li><p>选择 <strong>蓝图（Blueprint）</strong>
+</p></li><li><p>点开 <strong>所有类（All Classes）</strong>
+</p></li><li><p>搜索 <strong>EnvQueryGenerator</strong>
+</p></li><li><p>选择 <strong>EnvQueryGenerator_BlueprintBase</strong>
+</p></li></ol><a name="connectingtheroottothegenerator" ></a><h2 id="将root和generator连接起来">将Root和Generator连接起来</h2>
+
+<p><img alt="connectRootToGen.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/connectRootToGen.jpg" />
+</p><p>点击左键，从Root节点下方的深色条 <strong>拖动</strong> 至Generator节点上方的深色条，构成连接。
+</p><p>此外，<strong>左键单击</strong> 并 <strong>拖动</strong> 进图表区中也将出现新建Generator节点的选项。
+</p><div class="note">
+	<p>虽然可以在Root节点上连接多个Generator节点，但只有最左边的有效Generator才会用于查询中。
+</p>
+</div><a name="addingaquerytoabehaviortree" ></a><h2 id="为行为树添加查询">为行为树添加查询</h2>
+
+<p>通过 <strong>Run EQS Query</strong> 任务节点即可在行为树中使用场景查询。
+</p><p><img alt="runEQS.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/runEQS.jpg" />
+</p><ol ><li><p>在行为树图表区中 <strong>点击右键</strong>。
+</p></li><li><p>创建一个 <strong>Task</strong> -> <strong>Run EQSQuery</strong> 节点。
+</p></li><li><p>选择新建的 <strong>Run EQSQuery</strong> 节点，将 <strong>查询模板（Query Template）</strong> 属性改为您的场景查询资源（或在下拉菜单中新建一个资源）。
+</p></li><li><p>可根据需求选择性地设置场景查询寻找的 <strong>查询参数（Query Params）</strong>。
+</p></li><li><p>最后，选择场景查询设置的黑板键，此处仅限使用对象和矢量黑板键。
+</p></li></ol><a name="editingaquery" ></a><h2 id="编辑查询">编辑查询</h2>
+
+<a name="addingagenerator" ></a><h3 id="添加生成器">添加生成器</h3>
+
+<ol ><li><p>在查询的图表区中点击右键，选择一个生成器。
+</p></li></ol><p><img alt="addGenToQuery.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/addGenToQuery.jpg" />
+</p><a name="addingtests" ></a><h3 id="添加测试">添加测试</h3>
+
+<ol ><li><p>右键点击生成器并选择添加一个测试。
+</p></li></ol><p><img alt="addTest.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/addTest.jpg" />
+</p><a name="modifyingtests" ></a><h3 id="修改测试">修改测试</h3>
+
+<ol ><li><p>在生成器上选择一个测试，并在 <strong>细节</strong> 面板中进行修改
+</p></li></ol><p><img alt="editTest.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/editTest.jpg" />
+</p><p>请参阅<a id="content_link" href="../NodeReference/index.html" ><span>场景查询系统节点参考</span></a>
+中的个体测试使用信息。
+</p><a name="previewingthequeryresults" ></a><h3 id="预览查询结果">预览查询结果</h3>
+
+<p>在<a id="content_link" href="../EQSPawn/index.html" ><span>场景查询系统测试Pawn</span></a>
+文档中可查阅到如何预览查询结果。
+</p><p><img alt="testingPawnBanner.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/EQSPawn/testingPawnBanner.jpg" />
+</p><a name="editingacontext" ></a><h2 id="编辑情境">编辑情境</h2>
+
+<p>新建的EnvQueryContext蓝图拥有4个可实现函数：
+</p><ul ><li><p><strong>提供单一位置</strong>
+</p></li><li><p><strong>提供单一Actor</strong>
+</p></li><li><p><strong>提供位置集</strong>
+</p></li><li><p><strong>提供Actor集</strong>
+</p></li></ul><p>应用一个（或多个）函数可创建您的自定义情境，以便在查询的测试中使用。右键点击需要实现的函数，然后选择 <strong>实现函数（Implement Function）</strong>。
+</p><p><img alt="implementableFunctions.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/implementableFunctions.png" />
+</p><a name="providesinglelocation" ></a><h3 id="提供单一位置">提供单一位置</h3>
+
+<p>返回一个单一位置（矢量）。如何生成位置由您决定。举例而言，此函数将返回查询器1500厘米内随机Actor（DesiredObjectType排列中的类型，如Pawn、载具等）的追踪命中位置。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/ProvideSingleLocationImplmented.png" ><span><img alt="ProvideSingleLocationImplmented.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/ProvideSingleLocationImplmented.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><a name="providesingleactor" ></a><h3 id="提供单一actor">提供单一Actor</h3>
+
+<p>返回一个单一Actor。如何找到该Actor由您决定。在此例中，函数将返回玩家0控制的（拥有的）Actor：
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/provideSingleActorImp.png" ><span><img alt="provideSingleActorImp.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/provideSingleActorImp.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><a name="providelocationsset" ></a><h3 id="提供位置集">提供位置集</h3>
+
+<p>返回位置的排列（矢量）。如何生成这些位置由您决定。此范例图表将从半径为1500个单位的圆上16个平均分布的位置处进行追踪，返回成功的场景命中。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/provideLocSetFunction.png" ><span><img alt="provideLocSetFunction.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/provideLocSetFunction.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><a name="provideactorsset" ></a><h3 id="提供actor集">提供Actor集</h3>
+
+<p>返回一个Actor的排列。如何找到这些Actor由您决定。举例而言，此函数将返回 <strong>MyCharacter</strong> Actor的一个排列，其变量 <strong>Team Number</strong> 设为 <code >1</code>：
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/provideActorSetFunction.png" ><span><img alt="provideActorSetFunction.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/provideActorSetFunction.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><a name="editingagenerator" ></a><h2 id="编辑生成器">编辑生成器</h2>
+
+<a name="eventdoitemgeneration" ></a><h3 id="eventdoitemgeneration">Event Do Item Generation</h3>
+
+<div class="raw">
+	<p><img alt="implementDoItem.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/implementDoItem.jpg" />
+</p>
+</div><p>这是生成器的主函数。实现此函数时将获得一个位置的排列，这些位置是从场景查询传入的情境位置。这完全取决于情境，它可能只是查询器位置条目的排列，也可能是关卡中每个体力回复包的所在位置。
+</p><a name="addgeneratedactor" ></a><h3 id="添加生成的actor">添加生成的Actor</h3>
+
+<p><img alt="AddGenActor.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/AddGenActor.png" />
+</p><p>因为函数只能返回一个值，“Do Item Generation”函数实际拥有2个排列，可巧妙地把它们传回到场景查询。此节点将添加一个Actor到Actor返回排列，也可与Add Generated Vector节点共用，返回位置数值。
+</p><p>生成器将基于从EnvQuery节点设置的黑板键来定义实际传回行为树的内容。
+</p><a name="addgeneratedvector" ></a><h3 id="添加生成的矢量">添加生成的矢量</h3>
+
+<p><img alt="AddGenVec.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/AddGenVec.png" />
+</p><p>因为函数只能返回一个值，“Do Item Generation”函数实际拥有2个排列，可巧妙地把它们传回到场景查询。此节点将添加一个矢量到矢量返回排列，也可与Add Generated Actor节点共用，返回Actor数值。
+</p><p>生成器将基于从EnvQuery节点设置的黑板键来定义实际传回行为树的内容。
+</p><a name="examplegenerator" ></a><h3 id="范例生成器">范例生成器</h3>
+
+<p>它从一个圆的边沿开始向查询器追踪，此圆的半径为 <strong>Rad</strong>。它基于 <strong>辐条数量（Number of Spokes）</strong> 值将追踪以一定角度分隔开（为360/<strong>辐条数量</strong>）。追踪命中场景时才会保存其位置，本质上是寻找一个无法看到调用者的表面。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/customGenExample.png" ><span><img alt="customGenExample.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/customGenExample.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p>最终效果类似于下图：
+</p><p><img alt="customGenOutput.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/AI/EnvironmentQuerySystem/UserGuide/customGenOutput.jpg" />
+</p><div class="note">
+	<p>此范例应该执行操作是：使用从 <strong>Do Item Generation</strong> 传入的 <strong>情境位置（Context Locations）</strong> 对圆的生成位置进行修改。由于图像尺寸限制，此操作未能完成。
+</p>
+</div>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/AI/EnvironmentQuerySystem/UserGuide/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:15:01 GMT -->
+</html>

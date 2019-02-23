@@ -1,0 +1,1969 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/ParticleSystems/Reference/Modules/Location/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:32 GMT -->
+<head>
+    <title>Location 模块 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/ParticleSystems/Reference/Modules/Location/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/ParticleSystems/Reference/Modules/Location/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/ParticleSystems/Reference/Modules/Location/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/ParticleSystems/Reference/Modules/Location/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="2750681" />
+<meta name="availability" content="Public" />
+<meta name="title" content="Location 模块" />
+<meta name="description" content="Location 模块影响粒子在其生命周期中多个时间的所在位置。" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine/Rendering/ParticleSystems/Reference" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="Location 模块" />
+	<meta property="og:description" content="Location 模块影响粒子在其生命周期中多个时间的所在位置。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../../index.html">粒子系统参考</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                                                <!-- start loc warning -->
+                        <div class="warning">
+                        	<!------ 
+                        	The translation of this page is out of date. Please see the English version for the latest version of the page.
+                        	------>
+                            此中文页面内容对应的英文页面有后续更新，如需浏览最新文档可切换至英文页面浏览。
+                        </div>
+                        <!-- end loc warning -->
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">Location 模块</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#initiallocation">Initial Location</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#initialloc_seed_">Initial Loc (Seed)</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#worldoffset">World Offset</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#bone/socketlocation">Bone/Socket Location</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#directlocation">Direct Location</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#emitterinitloc">Emitter Init Loc</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#emitterdirectloc">Emitter Direct Loc</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#cylinder">Cylinder</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#cylinder_seeded_">Cylinder (Seeded)</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#sphere">Sphere</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#sphere_seeded_">Sphere (Seeded)</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#triangle">Triangle</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#skeletalmeshvertex/surfacelocation_skelvert/surfloc_">Skeletal Mesh Vertex/Surface Location (Skel Vert/Surf Loc)</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#sourcemovement">Source Movement</a>
+	</li>		    	        </ul>
+</div>
+<p>Location 模块影响粒子在其生命周期中多个时间的所在位置。
+</p><h2 id="initiallocation">Initial Location</h2>
+
+<!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_LAd89U2b-YY"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="LAd89U2b-YY" width="100%" height="100%" src="../../../../../../../../external.html?link=https://www.youtube.com/embed/LAd89U2b-YY?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_LAd89U2b-YY
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_LAd89U2b-YY:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style><p><strong>Initial Lotation</strong> 模块用于设置粒子生成时的初始旋转。它包含下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>Location</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Location</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定粒子发射位置（与发射器相关）的浮点 distribution。基于粒子生成的 EmitterTime 获取数值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Distribute over NPoints</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当此属性被设为非零的数值时，它沿发射粒子的等分 distribution 生成多个均衡分布的点。例如，如一个 distribution 的最小和最大值将一条线的长度定义为 100 个单位，将该值设为 2 则会造成只在实际的最大和最小位置发射粒子，两者之间不存在发射的位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Distribute Threshold</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当 <em>Distribute over NPoints</em> 被设为任何非零数字时，将获得这些平均分布的点上粒子发射量的百分点。例如，数值 1 将使所有粒子从这些点发射。数值 0.5 将使一半的粒子从这些点发射，另外一半从随机位置发射。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>生成粒子时，模块从使用当前发射器时间的 distribution 获取适当的值。如粒子发射器没有 <em>Use Local Space</em> 标记，该值将被转换进全局空间中。Particle.Location 场则拥有添加的值。
+</p><h2 id="initialloc_seed_">Initial Loc (Seed)</h2>
+
+<p><strong>Initial Loc (Seeded)</strong> 模块与生成时设置粒子初始位置的 <a id="content_link" href="index.html#initiallocation" ><span>Initial Location</span></a>
+ 模块相同；然而此模块可对种子信息进行指定。该种子信息用于选择 distribution 值，从发射器每次使用的模块获得更稳定的效果。它包含下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>RandomSeed</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Random Seed Info</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>为该模块属性选择“随机”值而使用的随机种子。<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>属性</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Get Seed From Instance</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>ture</em>，则模块将尝试从实例所有者处获得种子（Seed）。如获取失败，将返回从 <em>Random Seeds</em> 阵列中获得种子。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Instance Seed Is Index</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>ture</em>，从实例中恢复的种子值即为 <em>Random Seeds</em> 阵列中的索引。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Parameter Name</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置种子所放置实例显示的名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Random Seeds</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>本模块应用的随机种子值。如多个值被指定，实例将随机选取一个值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Reset Seed On Emitter Looping</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>ture</em>，每次发射器循环时将重新设置该种子。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>Location</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Location</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定粒子发射位置（与发射器相关）的浮点 distribution。基于粒子生成的 EmitterTime 获取数值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Distribute over NPoints</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当此属性被设为非零的数值时，它沿发射粒子的等分 distribution 生成多个均衡分布的点。例如，如一个 distribution 的最小和最大值将一条线的长度定义为 100 个单位，将该值设为 2 则会造成只在实际的最大和最小位置发射粒子，两者之间不存在发射的位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Distribute Threshold</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当 <em>Distribute over NPoints</em> 被设为任何非零数字时，将获得这些平均分布的点上粒子发射量的百分点。例如，数值 1 将使所有粒子从这些点发射。数值 0.5 将使一半的粒子从这些点发射，另外一半从随机位置发射。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>生成粒子时，模块从使用当前发射器时间的 distribution 获取适当的值。如粒子发射器没有 <em>Use Local Space</em> 标记，该值将被转换进全局空间中。Particle.Location 场则拥有添加的值。
+</p><h2 id="worldoffset">World Offset</h2>
+
+<p><strong>World Offset</strong> 模块用于偏移粒子生成时的初始位置。偏移位于全局空间中，但在粒子的生命周期中将遵守 <em>Use Local Space</em> 标记。这意味着粒子将无视发射器方向在全局空间中生成偏移，但在其生命周期中将相对于发射器保持该偏移。它包含下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>Location</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Location</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个矢量 distribution，用于确定粒子所使用的全局空间偏移。基于粒子生成的 EmitterTime 获取数值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Distribute over NPoints</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当此属性被设为非零的数值时，它沿发射粒子的等分 distribution 生成多个均衡分布的点。例如，如一个 distribution 的最小和最大值将一条线的长度定义为 100 个单位，将该值设为 2 则会造成只在实际的最大和最小位置发射粒子，两者之间不存在发射的位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Distribute Threshold</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当 <em>Distribute over NPoints</em> 被设为任何非零数字时，将获得这些平均分布的点上粒子发射量的百分点。例如，数值 1 将使所有粒子从这些点发射。数值 0.5 将使一半的粒子从这些点发射，另外一半从随机位置发射。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="bone/socketlocation">Bone/Socket Location</h2>
+
+<p><strong>Bone/Socket Location</strong> 模块允许粒子从骨骼网格体的骨骼或套接字的所在位置直接发射。它拥有下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>BoneSocket</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Source Type</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定源点位置是骨骼或套接字。<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>类型</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>BONESOCKETSOURCE_Sockets</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>生成粒子的 <em>Source Locations</em> 是套接字名。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>BONESOCKETSOURCE_Bones</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>生成粒子的 <em>Source Locations</em> 是骨骼。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Universal Offset</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>应用至每个骨骼或套接字源点的偏移。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Source Locations</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>骨骼网格图上的源骨骼或套接字阵列，从此处生成粒子。<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>属性</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Bone Socket Name</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定作为粒子源点使用的骨骼网格体上的骨骼或套接字名。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Offset</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>除 <em>Universal Offset</em> 之外使用的个体骨骼或套接字偏移。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Selection Method</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>从 <em>Source Locations</em> 阵列选择骨骼或套接字的方法。<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>方法</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>BONESOCKETSEL_Sequential</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>按顺序次序选择 <em>Source Locations</em> 阵列中的项目。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>BONESOCKETSEL_Sequential</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>随机选择 <em>Source Locations</em> 阵列中的项目。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>BONESOCKETSEL_RandomExhaustive</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>随机选择 <em>Source Locations</em> 中的项目，但在所有源点均被使用前不会出现选择两个相同项目的情况。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Update Position Each Frame</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>true</em>，粒子位置将被更新至每帧中骨骼或套接字的位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Orient Mesh Emitters</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>true</em>，网格体发射器发射的网格体粒子方向将定为骨骼或套接字源点。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Skel Mesh Actor Param Name</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>范例参数的名称，指定为游戏提供 SkeletalMeshComponent 的 SkeletalMeshActor。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Editor Skel Mesh</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定在编辑器中用于预览的骨骼网格体。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="directlocation">Direct Location</h2>
+
+<p><strong>Direct Location</strong> 模块用于直接设置粒子的位置。它包含下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>Location</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Location</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定特定时间粒子位置的矢量 distribution。基于粒子的 RelativeTime 获取该数值。请注意，粒子位置设为此数值，因此复写任意之前的模块均会产生影响。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Location Offset</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个矢量 distribution，确定从 Location 计算所获取的位置而进行应用的偏移。利用 EmitterTime 获取偏移。它在以下情况十分实用：通过对 Actor 或其他资源进行脚本代码编写使用 Location 场集时，或使用随机 LocationOffset 在对象周围产生偏移时。偏移将在粒子生命周期中将保持恒定。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Scale Factor</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个矢量 distribution，用于在时间线特定的点上对对象的速度进行调整。它将使粒子变形，与跟随的路径相吻合。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Direction</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当前未使用。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="emitterinitloc">Emitter Init Loc</h2>
+
+<p><strong>Emitter InitLoc</strong> 模块将粒子的初始位置设为来自另一个发射器的粒子位置（在同一个粒子系统中）。它包含下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>Location</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Emitter Name</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>发射器的名称，用作位置粒子的源点。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Selection Method</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此列举说明从源发射器选择粒子的方法。可为下列数值之一：<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>方法</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>ELESM_Random</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>从源发射器随机选择一个粒子。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>ELESM_Sequential</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>从源发射器按顺序依次逐句通过每个粒子。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Inherit Source Velocity</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于确定生成的粒子继承源粒子速度的布尔值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Inherit Source Velocity Scale</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>继承时源速度的调整量。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Inherit Source Rotation</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于确定生成的粒子继承源粒子旋转的布尔值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Inherit Source Rotation Scale</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>继承时源旋转的调整量。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="emitterdirectloc">Emitter Direct Loc</h2>
+
+<p><strong>Emitter DirectLoc</strong> 模块将粒子在整个生命周期中的位置设为来自另一个发射器的粒子位置（在同一个粒子系统中）。它包含下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>Location</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>EmitterName</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>发射器的名称，用作位置粒子的源点。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>使用的粒子为同一索引中的粒子，因为粒子的位置已经设置好。
+</p><h2 id="cylinder">Cylinder</h2>
+
+<!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_sefKMZtdGR0"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="sefKMZtdGR0" width="100%" height="100%" src="../../../../../../../../external.html?link=https://www.youtube.com/embed/sefKMZtdGR0?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_sefKMZtdGR0
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_sefKMZtdGR0:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style><p><strong>Cylinder</strong> 模块用于在圆柱体中设置粒子的初始位置。它包含下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>Location</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Radial Velocity</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个布尔值，表明粒子速度仅应用于圆柱体的 <code >圆形</code> 表面。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Radius</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定圆柱体半径的浮点 distribution。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Height</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定圆柱体高度的浮点 distribution - 位置居中。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Height Axis</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此列举说明粒子系统的哪条轴将代表圆柱体高度轴。可为下列之一：<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>轴</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>PMLPC_HEIGHTAXIS_X</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将粒子系统 X 轴设为圆柱体的高度方向。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>PMLPC_HEIGHTAXIS_Y</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将粒子系统 Y 轴设为圆柱体的高度方向。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>PMLPC_HEIGHTAXIS_Z</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将粒子系统 Z 轴设为圆柱体的高度方向。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Positive_X, Positive_Y, Positive_Z, Negative_X, Negative_Y, Negative_Z</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个布尔值，用于确定有效的粒子生成轴。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Surface Only</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个布尔值，确定粒子仅在基元表面生成。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Velocity</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个布尔值，确定粒子从基元中的位置获取速度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Velocity Scale</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个浮点 distribution，用于确定应用于速度的调整量。仅在 Velocity 值为勾选状态（为 <em>true</em>）时使用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Location</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个矢量 distribution，用于确定边界基元相对发射器所在点的位置。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="cylinder_seeded_">Cylinder (Seeded)</h2>
+
+<p><strong>Cylinder (Seeded)</strong> 模块与在圆柱体中设置粒子初始位置的 <a id="content_link" href="index.html#cylinder" ><span>Cylinder</span></a>
+ 模块相同；然而此模块可对种子信息进行指定。该种子信息用于选择 distribution 值，从发射器每次使用的模块获得更稳定的效果。它包含下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>RandomSeed</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Random Seed Info</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>为该模块属性选择“随机”值而使用的随机种子。<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>属性</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Get Seed From Instance</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>ture</em>，则模块将尝试从实例所有者处获得种子（Seed）。如获取失败，将返回从 <em>Random Seeds</em> 阵列中获得种子。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Instance Seed Is Index</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>ture</em>，从实例中恢复的种子值即为 <em>Random Seeds</em> 阵列中的索引。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Parameter Name</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置种子所放置实例显示的名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Random Seeds</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>本模块应用的随机种子值。如多个值被指定，实例将随机选取一个值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Reset Seed On Emitter Looping</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>ture</em>，每次发射器循环时将重新设置该种子。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>Location</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Radial Velocity</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个布尔值，表明粒子速度仅应用于圆柱体的 <code >圆形</code> 表面。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Radius</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定圆柱体半径的浮点 distribution。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Height</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定圆柱体高度的浮点 distribution - 位置居中。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Height Axis</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此列举说明粒子系统的哪条轴将代表圆柱体高度轴。可为下列之一：<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>轴</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>PMLPC_HEIGHTAXIS_X</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将粒子系统 X 轴设为圆柱体的高度方向。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>PMLPC_HEIGHTAXIS_Y</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将粒子系统 Y 轴设为圆柱体的高度方向。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>PMLPC_HEIGHTAXIS_Z</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将粒子系统 Z 轴设为圆柱体的高度方向。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Positive_X, Positive_Y, Positive_Z, Negative_X, Negative_Y, Negative_Z</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>布尔值，用于确定有效的粒子生成轴。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Surface Only</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个布尔值，确定粒子仅在基元表面生成。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Velocity</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个布尔值，确定粒子从基元中的位置获取速度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Velocity Scale</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个浮点 distribution，用于确定应用于速度的调整量。仅在 Velocity 值为勾选状态（为 <em>true</em>）时使用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Location</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个矢量 distribution，用于确定边界基元相对发射器所在点的位置。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="sphere">Sphere</h2>
+
+<!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_ZM6GkFxO-b0"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="ZM6GkFxO-b0" width="100%" height="100%" src="../../../../../../../../external.html?link=https://www.youtube.com/embed/ZM6GkFxO-b0?rel=0&amp;modestbranding=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_ZM6GkFxO-b0
+{
+	margin: 0px;
+	width: 640px;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_ZM6GkFxO-b0:after
+{
+	content: "";
+	padding-top: 360px;
+	display: block;
+}
+</style><p><strong>Sphere</strong> 模块用于在球体中设置粒子的初始位置。本类包含下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>Location</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Radius</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定球体半径的浮点 distribution。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Positive_X, Positive_Y, Positive_Z, Negative_X, Negative_Y, Negative_Z</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>布尔值，用于确定有效的粒子生成轴。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Surface Only</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个布尔值，确定粒子仅在基元表面生成。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Velocity</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个布尔值，确定粒子从基元中的位置获取速度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Velocity Scale</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个浮点 distribution，用于确定应用于速度的调整量。仅在 Velocity 值为勾选状态（为 <em>true</em>）时使用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Location</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个矢量 distribution，用于确定边界基元相对发射器所在点的位置。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="sphere_seeded_">Sphere (Seeded)</h2>
+
+<p><strong>Sphere (Seeded)</strong> 模块与在球体中设置粒子初始位置的 <a id="content_link" href="index.html#sphere" ><span>Sphere</span></a>
+ 模块相同；然而此模块可对种子信息进行指定。该种子信息用于选择 distribution 值，从发射器每次使用的模块获得更稳定的效果。它包含下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>RandomSeed</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Random Seed Info</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>为该模块属性选择“随机”值而使用的随机种子。<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>属性</strong> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Get Seed From Instance</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>ture</em>，则模块将尝试从实例所有者处获得种子（Seed）。如获取失败，将返回从 <em>Random Seeds</em> 阵列中获得种子。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Instance Seed Is Index</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>ture</em>，从实例中恢复的种子值即为 <em>Random Seeds</em> 阵列中的索引。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Parameter Name</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置种子所放置实例显示的名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Random Seeds</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>本模块应用的随机种子值。如多个值被指定，实例将随机选取一个值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>Reset Seed On Emitter Looping</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>ture</em>，每次发射器循环时将重新设置该种子。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>Location</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Radius</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定球体半径的浮点 distribution。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Positive_X, Positive_Y, Positive_Z, Negative_X, Negative_Y, Negative_Z</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>布尔值，用于确定有效的粒子生成轴。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Surface Only</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个布尔值，确定粒子仅在基元表面生成。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Velocity</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个布尔值，确定粒子从基元中的位置获取速度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Velocity Scale</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个浮点 distribution，用于确定应用于速度的调整量。仅在 Velocity 值为勾选状态（为 <em>true</em>）时使用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Location</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个矢量 distribution，用于确定边界基元相对发射器所在点的位置。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="triangle">Triangle</h2>
+
+<p><img alt="Triangle.png" src="../../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/ParticleSystems/Reference/Modules/Location/Triangle.jpg" />
+</p><p><strong>Triangle</strong> 模块允许用户定义三角形的形状和位置，粒子将从该三角形的 2D 和 3D 区域发射（取决于是否应用了厚度）。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>Location</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Start Offset</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>定义三角形位置偏移的矢量 distribution。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Height</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>定义三角形边长的浮点 distribution。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Angle</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>确定斜边和对边之间角度的浮点 distribution。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Thickness</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个浮点 distribution，确定三角形的厚度，将其转为 3D 楔形物。粒子将从三维区域中进行发射。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="skeletalmeshvertex/surfacelocation_skelvert/surfloc_">Skeletal Mesh Vertex/Surface Location (Skel Vert/Surf Loc)</h2>
+
+<p><strong>Skel Vert/Surf Loc</strong> 模块允许粒子从骨骼网格体的顶点或多边形表面发射。它拥有下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>Vert Surface</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Source Type</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定源点位置是顶点或表面。<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>类型</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>VERTSURFACESOURCE_Vert</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>生成粒子的 <em>Source Locations</em> 为网格体顶点。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>VERTSURFACESOURCE_Surface</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>生成粒子的 <em>Source Locations</em> 为网格体表面。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Universal Offset</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>应用至每个骨骼或套接字源点的偏移。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Update Position Each Frame</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>true</em>，粒子位置将被更新至每帧中顶点或表面的位置。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Orient Mesh Emitters</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>true</em>，网格体发射器发射的网格体粒子方向将定为顶点或表面源点。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Inherit Bone Velocity</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>true</em>，粒子生成时将继承相关的骨骼速度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Skel Mesh Actor Param Name</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>范例参数的名称，指定为游戏提供 SkeletalMeshComponent 的 SkeletalMeshActor。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Editor Skel Mesh</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定在编辑器中用于预览的骨骼网格体。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Valid Associated Bones</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>骨骼网格体上的源骨骼阵列，顶点/表面在生成粒子时必须与其关联（通过皮肤权重）。<div class="simpletable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><strong>属性</strong></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><strong>描述</strong></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><em>(Numbered Entry)</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指定骨骼网格体上骨骼的名称。顶点或表面必须受其权重，以便成为粒子的源点。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Enforce Normal Check</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如为 <em>true</em>，<em>Normal to Compare</em> 和 <em>Normal Check Tolerance Degree</em> 场将用于确定表面是否拥有粒子释放的适当法线。它在需要面对网格体表面向上发射烟雾和火焰（而非向下发射）时十分实用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Normal to Compare</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如 <em>Enforce Normal Check</em> 为 <em>true</em>，它将提供一个法线方向进行测试。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Normal Check Tolerance Degree</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Enforce Normal Check</em> 为 <em>true</em> 时，将确定和 <em>Normal to Compare</em> 数值之间的公差值。值 0 意味着法线必须精确匹配，值 180 使任意法线方向均有效。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Valid Material Indices</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>提供应用至发射粒子的骨骼网格体的材质列表。仅在特定材质需要发射粒子时方有作用。设为空可使材质进行发射。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><h2 id="sourcemovement">Source Movement</h2>
+
+<p><strong>Source Movement</strong> 模块基于源点（即发射器）的移动设置粒子位置的偏移。它拥有下列属性：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p>SourceMovement</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Source Movement</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个矢量 distribution，指定添加到粒子位置前应用至源点移动的缩放因子。使用粒子相对时间获取该数值。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/ParticleSystems/Reference/Modules/Location/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:32 GMT -->
+</html>

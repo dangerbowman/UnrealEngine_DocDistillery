@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Resources/ContentExamples/Blueprints/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 03:19:49 GMT -->
+<head>
+    <title>蓝图内容范例 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Resources/ContentExamples/Blueprints/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Resources/ContentExamples/Blueprints/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Resources/ContentExamples/Blueprints/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Resources/ContentExamples/Blueprints/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="4309085" />
+<meta name="availability" content="Public" />
+<meta name="title" content="蓝图内容范例" />
+<meta name="description" content="蓝图内容范例中的样本总览。" />
+<meta name="related" content="Engine/Blueprints/Overview " />
+<meta name="related" content="Engine/Blueprints/UserGuide/Variables" />
+<meta name="related" content="Engine/Blueprints/UserGuide/BlueprintComms" />
+<meta name="related" content="Engine/Blueprints/UserGuide/Types/MacroLibrary" />
+<meta name="related" content="Engine/Animation/AnimBlueprints/EventGraph" />
+<meta name="related" content="Engine/Blueprints/UserGuide/UserConstructionScript" />
+<meta name="related" content="Gameplay/HowTo/SetUpInput/Blueprints" />
+<meta name="version" content="4.9" />
+<meta name="topic-image" content="blueprint_ce_compact.png" />
+<meta name="parent" content="Resources/ContentExamples" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="蓝图内容范例" />
+	<meta property="og:description" content="蓝图内容范例中的样本总览。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">内容示例</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">蓝图内容范例</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="banner">
+	<p><img alt="BlueprintInput_Header.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/BlueprintInput_Header.png" />
+</p>
+</div><div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#蓝图_总览页面">蓝图_总览页面</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#蓝图_高级页面">蓝图_高级页面</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#蓝图_通信页面">蓝图_通信页面</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#蓝图_输入_范例页面">蓝图_输入_范例页面</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#蓝图_鼠标_互动页面">蓝图_鼠标_互动页面</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#蓝图_hud页面">蓝图_HUD页面</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#蓝图_样条页面">蓝图_样条页面</a>
+	</li>		    	        </ul>
+</div>
+<p>内容范例项目中放置了数个 <strong>蓝图</strong> 页面，以展示 <strong>蓝图</strong> 系统的强大与灵活性。无论是需要定义玩家功能键、应用回复剂/拾取系统，还是需要简单设置一个玩家靠近时开启的门，这些页面中的范例均会为您指出实现方法。 
+</p><p>本页将介绍每张页面中包含的范例，以及其所在之处，以便使用者快速发现感兴趣的部分并即刻开始撰写脚本。如果初识蓝图，建议以 <strong>蓝图_总览</strong> 页面开始，其中包含蓝图系统的核心组成部分，便于用户学习使用方法。 
+</p><div class="note">
+	<p>在范例相应的表格中点击其名称即可找到范例构建的额外资源（如有）。
+</p>
+</div><a name="blueprints_overviewmap" ></a><h2 id="蓝图_总览页面">蓝图_总览页面</h2>
+
+<p><img alt="blueprint_ce_header.png" width="640" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/blueprint_ce_header.jpg" />
+</p><p><strong>蓝图_总览</strong> 页面包含了以下蓝图重要组成部分：<strong>组件</strong>、使用 <strong>构造脚本</strong> 和 <strong>事件图表</strong>、<strong>变量</strong> 及其编辑/设置方式、简单运算、使用不同类型的 <strong>流控制</strong> 节点控制蓝图的流程。这些部分均为蓝图的常用要素，请仔细阅读。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>范例 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>展示内容 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="1_1/index.html" ><span>1.1 Hello World 范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在关卡中显示浮动文本的基础蓝图（如进行游戏时，浮动文本“Hello World”显示在关卡中）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="1_2/index.html" ><span>1.2 组件范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>组件范例，以及在单个蓝图中使用多个组件的方法（如 sprite、静态网格体、以及灯光均在一个蓝图中使用）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="1_3/index.html" ><span>1.3 变量范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将变量设为公开或私有的方法，及其编辑方式（如可通过细节面板变更一个灯光颜色，或只可在蓝图中进行变更）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="1_4/index.html" ><span>1.4 构造脚本范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用构造脚本禁用/启动蓝图组件的方法（如使用复选框开关蓝图中的组件）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="1_5/index.html" ><span>1.5 事件图表范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>构造脚本和事件图表用于自定义网格体颜色，无需编辑材质（如通过细节面板定义火箭的颜色）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="1_6/index.html" ><span>1.6 简单运算范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该蓝图中使用了一个事件Tick，随时间流逝执行简单加法（如一个从0秒开始向上计数的计时器）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="1_7/index.html" ><span>1.7 流程范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此蓝图使用不同类型流程控制修改物体的移动、颜色和特效（如一个硬币移动的方向、其颜色，及是否通过细节面板应用特效）。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="blueprints_advancedmap" ></a><h2 id="蓝图_高级页面">蓝图_高级页面</h2>
+
+<p><img alt="BlueprintAdvanced_Header.png" width="640" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/BlueprintAdvanced_Header.jpg" />
+</p><p> <strong>蓝图_高级</strong> 页面详细介绍了使用 <strong>构造脚本</strong> 和 <strong>事件图表</strong> 生成内容的方法。 
+</p><a name="constructionscriptexamples" ></a><h3 id="构造脚本范例">构造脚本范例</h3>
+
+<p><strong>构造脚本</strong> 部分说明：在特定半径中随机生成网格体、基于Actor的中心点自动生成网格体、对称地生成网格体、或生成自定义聚光灯的所有组件的方式方法。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>范例 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>展示内容 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="../Blueprints_Advanced/1_1/index.html" ><span>1.1 随机分布网格体范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在特定半径中随机生成静态网格体的方法（如在一个半径中随机生成地面杂物或岩石）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="../Blueprints_Advanced/1_2/index.html" ><span>1.2 自动墙范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>从Actor的中心点延伸出一排网格体的方法（如可进行长度调整的围栏）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="../Blueprints_Advanced/1_3/index.html" ><span>1.3 自动环形范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将特定数量的网格体间隔开形成一个环形，同时每个网格体的位置决定其旋转的方法（如间隔均匀、位置决定朝向的网格体环形）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="../Blueprints_Advanced/1_4/index.html" ><span>1.4 自定义聚光灯范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用构造脚本将一个聚光灯的所有组件组合为一个Actor的方法（如一个可定义开关状态、灯光颜色、朝向和半径的聚光灯）。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="eventgraphexamples" ></a><h3 id="事件图表范例">事件图表范例</h3>
+
+<p><strong>事件图表</strong> 范例说明：通过时间轴设置静态网格体动画的方法、自动旋转Actor跟踪玩家移动的方法、在蓝图之间传递变量的方法、创建一个自动触发打开的门的方法、创建不同类型拾取物的方法。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>范例 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>展示内容 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="../Blueprints_Advanced/2_1/index.html" ><span>2.1 时间轴动画范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用时间轴设置静态网格体的动画，通过事件轨迹在特定点生成发射器的方法（如创建一个反弹的球）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="../Blueprints_Advanced/2_2/index.html" ><span>2.2 Actor 追踪范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使一个Actor在玩家进入特定范围后朝向玩家的方法（如一个对玩家移动做出响应，跟随玩家的聚光灯）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="../Blueprints_Advanced/2_3/index.html" ><span>2.3 按钮触发器（蓝图接口）范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用蓝图接口将一个变量从一个蓝图传递到另一个蓝图的方法（如将一个开关变量从按钮传递到一套有动画的装置）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="../Blueprints_Advanced/2_4/index.html" ><span>2.4 开门（触发器）范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用触发器和时间轴实现门自动开关的方法。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="../Blueprints_Advanced/2_5/index.html" ><span>2.5 子蓝图范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>应用来自相同父类的不同类型拾取物的方法（如拾起后功能各不相同的回复品、硬币、杯型蛋糕）。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="blueprint_communicationmap" ></a><h2 id="蓝图_通信页面">蓝图_通信页面</h2>
+
+<p><img alt="BlueprintCommunication_Header.png" width="640" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/BlueprintCommunication_Header.jpg" />
+</p><p>使用蓝图时，可能需要从其他蓝图执行函数或访问特定变量，根据不同需要采取不同的通信方法。<strong>蓝图_通信</strong> 页面展示了通过 <strong>直接蓝图通信</strong>、<strong>事件调度器</strong> 或 <strong>蓝图接口</strong> 在蓝图间传递信息的多种方法。 
+</p><a name="blueprintcommunicationexamples" ></a><h3 id="蓝图通信范例">蓝图通信范例</h3>
+
+<p><strong>直接蓝图通信</strong> 或 <strong>蓝图通信</strong> 部分介绍了通过蓝图定向和投射在蓝图之间访问和提供信息的基本方法。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>范例 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>展示内容 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1.1 基础通信（目标蓝图）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>通过自定义事件开关灯光蓝图的按钮蓝图范例。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1.2 基础通信（Actor投射）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用重叠事件检测特定类的蓝图的方法（如连接电池进行开关的灯泡）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1.3 通信（Actor投射到子蓝图）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用共享其父项功能但同时拥有独立功能的子蓝图的方法（如连接不同能量值的电池对灯光进行开关）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1.4 与特定类所有Actor的通信</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>与一个特定类的数个Actor进行通信的方法（如一次性打开数个灯光，每个灯光的功能均不相同）。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="eventdispatcherexamples" ></a><h3 id="事件调度器范例">事件调度器范例</h3>
+
+<p><strong>事件调度器</strong> 范例包含在蓝图和 <strong>关卡蓝图</strong> 之间通信的另一种方法。此外，将一个或多个事件 <strong>绑定</strong> 至 <strong>事件调度器</strong> 后，调用 <strong>事件调度器</strong> 时将立即触发绑定的多个事件。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>范例 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>展示内容 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>2.1 使用事件调度器</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用事件调度器在关卡蓝图中调用事件的方法（如使用事件调度器开关灯光）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>2.2 将事件调度器和自定义事件绑定</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在关卡蓝图中将事件调度器和自定义事件绑定的方法（如开关一个使物体随时间旋转的按钮）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>2.3 将事件调度器和自定义生成事件绑定</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启用/禁用事件调度器的触发器的方法，该事件调度器在生成的Actor摧毁后被调用（如按下按钮生成一个炸弹，在此炸弹爆炸前无法生成其他炸弹）。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="blueprintinterfaceexamples" ></a><h3 id="蓝图接口范例">蓝图接口范例</h3>
+
+<p>在一些情况下，多个蓝图间存在共通性（如被发射物击中，受到一定程度的损伤），但它们实质却完全不同（如一辆车和一棵树）。车和树受损时，**蓝图接口* 提供一种通信方法，在两者自身组件和功能完全不同的情况下使它们对损伤做出相同的响应。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>范例 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>展示内容 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>3.1 蓝图接口（蓝图阵列）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用阵列在多个不同类的蓝图之间通信的方法（如通过一个开关旋转物体并开关不同的灯光）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>3.2 蓝图接口（互动蓝图）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>基于输入从玩家蓝图到Actor蓝图之间通信的方法（如互动开关、曲柄、或带滑轮链条的杠杆）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>3.3 蓝图接口（发射物碰撞）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用蓝图接口检查与特定类型 Actor 碰撞的资源的方法（如三个物体在与火焰或水形成碰撞时存在不同的响应）。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="blueprint_input_examplesmap" ></a><h2 id="蓝图_输入_范例页面">蓝图_输入_范例页面</h2>
+
+<p><img alt="BlueprintInput_Header.png" width="640" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/BlueprintInput_Header.jpg" />
+</p><p><strong>蓝图_输入_范例</strong> 页面中包含三个范例，解释利用三种不同类型游戏（2D横卷轴游戏、俯视2D太空射击游戏、3D飞行UFO游戏）中的蓝图创建玩家输入的方法。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>范例 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>展示内容 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1.1 2D输入（横卷轴角色）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>展示一个包含左右移动和跳跃的2D横卷轴游戏范例。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1.2 2D 输入（太空射击）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>展示一个包含左右移动和可发射物的2D太空射击游戏范例。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1.3 物理驱动输入（UFO范例）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>展示一个包含WASD按键移动、升空和降落、加速、以及诱导光线机制的太空船游戏范例。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="blueprint_mouse_interactionmap" ></a><h2 id="蓝图_鼠标_互动页面">蓝图_鼠标_互动页面</h2>
+
+<p><img alt="BlueprintMouse_Header.png" width="640" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/BlueprintMouse_Header.jpg" />
+</p><p><strong>蓝图_鼠标_互动</strong> 页面说明合并鼠标输入（或移动设备触摸输入）的方法，以及通过蓝图使物体对鼠标或触摸输入做出响应的方法。在范例中，可在屏幕上随意点击拖动物体，这些物体互动时将形成响应，并与移动的组件形成互动。 
+</p><p>可在此处查阅该页面的详细信息： 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>范例 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>展示内容 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="../MouseInterface/index.html" ><span>1.1 蓝图鼠标互动</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>展示在游戏中应用鼠标和触摸输入的方法。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="blueprint_hudmap" ></a><h2 id="蓝图_hud页面">蓝图_HUD页面</h2>
+
+<p><img alt="BlueprintHUD_Header.png" width="640" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/BlueprintHUD_Header.jpg" />
+</p><p><strong>蓝图_HUD</strong> 页面包含利用 <strong>HUD蓝图</strong> 生成HUD元素、以及创建基础暂停菜单的范例。范例还将展示创建体力/伤害和拾取系统、以及路径任务标记系统的方法。 
+</p><p>可在此处查阅该页面的详细信息： 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>范例 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>展示内容 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong><a id="content_link" href="../Blueprints_HUD/1_1/index.html" ><span>1.1 蓝图HUD范例</span></a>
+</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>展示简单的游戏内HUD，该HUD同时包含了基础暂停菜单形式的可点击按钮。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="blueprint_splinesmap" ></a><h2 id="蓝图_样条页面">蓝图_样条页面</h2>
+
+<p><img alt="blueprintSplines_ce_header.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/ContentExamples/Blueprints/blueprintSplines_ce_header.png" />
+</p><p>内容范例中的 <strong>蓝图_样条</strong> 页面展示如何使用 <strong>样条组件</strong> 并结合 <strong>蓝图</strong> 来创建能以多种不同方式使用的路径。向蓝图添加一个样条组件并选择蓝图的一个实例，即可在关卡中编辑样条。然后便能在视口中选择样条键，并使用平移、旋转和缩放控件对其进行操纵，方式与操纵其他Actor相同。 
+</p><p>提供的内容范例将说明使用 <strong>蓝图样条</strong> 并结合构造脚本，创建静态网格物体路径的方法；或是在游戏进程中修改样条路径或样条网格体，创建内容或动画的方法。 
+</p><a name="constructionscriptexamples" ></a><h3 id="构造脚本范例">构造脚本范例</h3>
+
+<p>以下范例展示如何结合蓝图的构造脚本使用样条组件，在视口中实时生成路径和可缩放的静态网格体。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>范例 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>展示内容 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1.1 蓝图样条组件</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在视口中简单编辑样条组件的方法（如在视口中移动一个样条组件的四个样条点）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1.2 沿样条放置组件</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>展示蓝图从样条组件中获取多种信息的方法（如静态网格体组件沿样条放置的方式，组件的朝向由其所放置的样条方向决定）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1.3 样条网格体组件</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>样条网格体是另一类样条组件，用于拉伸和弯曲静态网格体资源（如使用视口中的控件可拉伸管道并确定其方向）。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="dynamicexamples" ></a><h3 id="动态范例">动态范例</h3>
+
+<p><strong>动态范例</strong> 展示在游戏进程中动态更新样条组件的方式，以提供物体的环境背景移动，或设置物体和可操作角色的动画！ 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>范例 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>展示内容 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>2.1 将样条用作路径</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>样条组件用作粒子特效跟随路径的范例。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>2.2 模拟时变更样条</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>展示在游戏进程中动态创建样条组件的方法（如进行游戏或模拟时沿样条设置灯笼线的动画）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>2.3 设置样条网格体动画</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>样条组件也可用作样条网格体移动的路径（如藤蔓从地面沿样条路径生长）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>2.4 样条网格体用于Pawn动画</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使用样条网格体设置pawn动画的方法（如利用样条网格体设置可操作鱼的游泳动画）。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="../../../Engine/Blueprints/Overview/index.html" title="蓝图总览页面包含蓝图剖析和可用的不同蓝图类型。 ">蓝图总览</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Engine/Blueprints/UserGuide/Variables/index.html" title="保存值或参考世界场景中的对象或Actor的属性。">蓝图变量</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Engine/Blueprints/UserGuide/BlueprintComms/index.html" title="如何从一个蓝图中使用另一个蓝图的函数、事件和变量。">直接蓝图通信</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Engine/Blueprints/UserGuide/Types/MacroLibrary/index.html" title="声明和定义宏以便在其他蓝图中重复利用的蓝图。">蓝图宏库</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Engine/Animation/AnimBlueprints/EventGraph/index.html" title="基于事件的图表，用于更新动画了蓝图并计算值以供在动画图表中使用。">事件图表</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Engine/Blueprints/UserGuide/UserConstructionScript/index.html" title="当创建一个蓝图实例来执行初始化动作时执行该构造脚本。">构造脚本</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Gameplay/HowTo/SetUpInput/Blueprints/index.html" title="关于如何在蓝图中进行输入设置的操作指南。">如何在蓝图中设置输入</a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Resources/ContentExamples/Blueprints/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 03:19:50 GMT -->
+</html>

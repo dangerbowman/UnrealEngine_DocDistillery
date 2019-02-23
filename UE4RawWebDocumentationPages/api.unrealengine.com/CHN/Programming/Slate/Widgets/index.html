@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Slate/Widgets/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 02:01:19 GMT -->
+<head>
+    <title>Slate控件 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Programming/Slate/Widgets/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Programming/Slate/Widgets/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Programming/Slate/Widgets/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Programming/Slate/Widgets/index.html" hreflang="zh-CN" />
+
+	<meta name="availability" content="Public" />
+<meta name="title" content="Slate控件" />
+<meta name="description" content="在Slate Viewer Widget Gallery中没有展示的布局和控件复杂性。" />
+<meta name="parent" content="Programming/Slate" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="Slate控件" />
+	<meta property="og:description" content="在Slate Viewer Widget Gallery中没有展示的布局和控件复杂性。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">Slate 用户界面框架</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                                                <!-- start loc warning -->
+                        <div class="warning">
+                        	<!------ 
+                        	The translation of this page is out of date. Please see the English version for the latest version of the page.
+                        	------>
+                            此中文页面内容对应的英文页面有后续更新，如需浏览最新文档可切换至英文页面浏览。
+                        </div>
+                        <!-- end loc warning -->
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">Slate控件</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#常见的slate参数">常见的Slate参数</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#可见性">可见性</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#对齐">对齐</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#方框面板">方框面板</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#插槽属性">插槽属性</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#均匀网格面板">均匀网格面板</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#自动换行的方框">自动换行的方框</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#单选按钮">单选按钮</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#菜单和工具条">菜单和工具条</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#菜单">菜单</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#关联菜单">关联菜单</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#工具栏">工具栏</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#项目视图">项目视图</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#列表视图">列表视图</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#树形视图">树形视图</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#平铺视图">平铺视图</a>
+	</li>					</ul>
+	</li>		    	        </ul>
+</div>
+<h2 id="常见的slate参数">常见的Slate参数</h2>
+
+<p>以下参数对于创建的每个控件所共有的。
+</p><ul ><li><p>IsEnabled - 该参数指出是否可以同该控件进行交互。如果禁用该项，那么控件将会呈现灰掉状态。
+</p></li><li><p>ToolTip（工具提示） - 该项指出了为该控件的工具提示使用哪种自定义的 SToolTip控件。如果不指定该项，那么工具提示将不出现。
+</p></li><li><p>ToolTipText（工具提示文本） - 该项指出将显示哪种文本作为该控件工具提示的简单工具提示。如果不指定该项，或者如果使用了ToolTip属性，那么工具提示将不出现。
+</p></li><li><p>Cursor（光标） - 该项指出了当鼠标悬停到该控件上时显示何种光标。
+</p></li><li><p>Visibility（可见性） - 参照下面的可见性部分。
+</p></li></ul><p>以下参数不是每个控件上都有，但是大部分控件都具有。
+</p><ul ><li><p>Text（文本） - 如果适用，该项指出了该控件(如果适用)将具有的文本。
+</p></li><li><p>Content（内容） - 如果适用，该项指出了将会把何种控件放到该控件的内容部分。
+</p></li><li><p>ReadOnly(只读) - 如果该项为true，则阻止编辑该控件。
+</p></li><li><p>Style（风格） - 该项指出了该控件将使用的图片或字体的风格。根据控件不同，该项的应用方式也有所变化。
+</p></li><li><p>[...]ColorAndOpacity（颜色和不透明度） - 指定系统或控件的颜色和不透明度。
+</p></li><li><p>Padding（边距） - 控件在其父项中的左侧、上部、右侧及下部的空白边距量，以slate单位为单位。您可以为这四个部分指定一个值，或者指定为一个水平值和垂直值，或者指定为四个独立的值。
+</p></li><li><p>HAlign - 控件中内容水平对齐。
+</p></li><li><p>VAlign - 控件中内容垂直对齐。
+</p></li></ul><h3 id="可见性">可见性</h3>
+
+<p>控件的可见性决定了控件的出现方式及交互性。
+</p><ul ><li><p>Visible (Default)（可见（默认）） - 控件将会正常出现。
+</p></li><li><p>Collapsed（合并） - 控件将不可见，且不占用布局中的空间。它将不能交互。
+</p></li><li><p>Hidden（隐藏） - 控件将不可见的，但是占用布局中的空间。它将不能交互。
+</p></li><li><p>HitTestInvisible（碰撞检测可见） - 对于用户可见，但仅是作为艺术品。不能交互。
+</p></li><li><p>SelfHitTestInvisible（自身碰撞测试可见） - 和HitTestInvisible一样，但是不会应用到子控件上。
+</p></li></ul><h3 id="对齐">对齐</h3>
+
+<p>控件的对齐方式决定了它在其父项中的位置。如果控件的父项和该控件的大小（包括填充留白）一样，那么对齐方式就没有什么意义了。当您为控件指定“Fill（填充）”时或者盒体插槽指定了Fill Size(填充大小)时，盒体插槽会自动进行这种处理。
+</p><p>可能的对齐方式如下所示:
+</p><ul ><li><p>HAlign_Fill/VAlign_Fill
+</p></li><li><p>HAlign_Left
+</p></li><li><p>VAlign_Top
+</p></li><li><p>HAlign_Center/VAlign_Center
+</p></li><li><p>HAlign_Right
+</p></li><li><p>VAlign_Bottom
+</p></li></ul><h2 id="方框面板">方框面板</h2>
+
+<p>SHorizontalBox 和 SVerticalBox 是排列布局时最常用的控件。这两个方框面板虽然被声明为控件，但是稍后会将插槽插入到它们内部。SHorizontalBoxes排列这些插槽，让第一个控件位于左侧，最后一个控件位于右侧；而SVerticalBoxes则让这些插槽自上而下排列。
+</p><p>SScrollBox的工作方式和SVerticalBox类似，只不过它允许垂直滚动子插槽。
+</p><h3 id="插槽属性">插槽属性</h3>
+
+<ul ><li><p>宽度或高度设置 (以下选项是互相排斥的):
+</p><ul ><li><p>Auto Size (Default)（自动大小（默认）） - 该项指出插槽将会填充它所需要的空间，但不会填充过多的空间。插槽对齐在这里没有影响。
+</p></li><li><p>Fill Size（填充大小） - 指定一个填充系数，使得它基于其他插槽的填充系数来填充空间。同一方向的插槽对齐没有影响。
+</p></li></ul></li><li><p>Max Size（最大尺寸） - 这将指定该插槽的最大尺寸，以slate单位为单位。
+</p></li><li><p>Padding（边距） - 这指定了插槽在面板中的边距。
+</p></li><li><p>Alignment（对齐） - 这将决定子控件如何在插槽中排列。如果在同一方向上指定了Fill Size（填充大小），那么该项没有意义了。
+</p></li></ul><p>以下示例是嵌套在一个滚动框中的具有自动大小的水平方框和具有填充大小的水平方框。同时展示了如何结合这些插槽使用对齐方式。
+</p>
+<pre class="prettyprint"><code>SNew(SScrollBox)
++SScrollBox::Slot() .Padding(10,5)
+&#91;
+    SNew(SHorizontalBox)
+    +SHorizontalBox::Slot() .HAlign(HAlign_Left)
+    &#91;
+        ...
+    &#93;
+    +SHorizontalBox::Slot() .HAlign(HAlign_Center)
+    &#91;
+        ...
+    &#93;
+    +SHorizontalBox::Slot() .HAlign(HAlign_Right)
+    &#91;
+        ...
+    &#93;
+&#93;
++SScrollBox::Slot() .Padding(10,5)
+&#91;
+    SNew(SHorizontalBox)
+    +SHorizontalBox::Slot() .FillWidth(2)
+    &#91;
+        ...
+    &#93;
+    +SHorizontalBox::Slot() .FillWidth(1)
+    &#91;
+        ...
+    &#93;
+    +SHorizontalBox::Slot() .FillWidth(3)
+    &#91;
+        ...
+    &#93;
+&#93;</code></pre>
+<h3 id="均匀网格面板">均匀网格面板</h3>
+
+<p>SUniformGridPanel面板在水平方向和垂直方向上均匀地分布其子控件。它的子插槽使用一对整数指定，这两个整数指定了该子项的索引。以下是这样的一个均匀网格面板。
+</p>
+<pre class="prettyprint"><code>SNew(SUniformGridPanel)
+.SlotPadding( FMargin( 5.0f ) )
++SUniformGridPanel::Slot(0,0)
+.HAlign(HAlign_Right)
+&#91;
+    ...
+&#93;
++SUniformGridPanel::Slot(0,1)
+.HAlign(HAlign_Right)
+&#91;
+    ...
+&#93;
++SUniformGridPanel::Slot(0,2)
+.HAlign(HAlign_Center)
+&#91;
+    ...
+&#93;
++SUniformGridPanel::Slot(1,0)
+&#91;
+    ...
+&#93;
++SUniformGridPanel::Slot(1,1)
+&#91;
+    ...
+&#93;</code></pre>
+<h3 id="自动换行的方框">自动换行的方框</h3>
+
+<p>SWrapBox是一个方框，它在水平方向上放置控件，直到这些控件超出一定宽度后，便将控件放置到下一行上，以此类推。以下是这样的一个示例。
+</p>
+<pre class="prettyprint"><code>SNew(SWrapBox)
+.PreferredWidth( 300.f )
++SWrapBox::Slot()
+.Padding( 5 )
+.VAlign(VAlign_Top)
+&#91;
+    ...
+&#93;
++SWrapBox::Slot()
+.Padding( 5 )
+.VAlign(VAlign_Bottom)
+&#91;
+    ...
+&#93;
++SWrapBox::Slot()
+.Padding( FMargin(20, 5, 0, 5) )
+.VAlign(VAlign_Center)
+&#91;
+    ...
+&#93;
++SWrapBox::Slot()
+.Padding( 0 )
+.VAlign(VAlign_Fill)
+&#91;
+    ...
+&#93;</code></pre>
+<h2 id="单选按钮">单选按钮</h2>
+
+<p>单选按钮在slate中是复选框，因为复选框需要一种如何决定是否选中它们的代理。要想制作一系列的单选按钮，最简单的方法是创建一个枚举值，用该枚举值来决定选中哪个复选框。保存一个决定了当前选项的枚举值的实例。然后，对于检测代理，则传入一个函数，该函数将传入的正确枚举值同当前选项进行比较。在修改选中项时，需要更新当前选中项。
+</p>
+<pre class="prettyprint"><code>ERadioChoice CurrentChoice;
+
+...
+
+ESlateCheckBoxState::Type IsRadioChecked( ERadioChoice ButtonId ) const
+{
+    return (CurrentChoice == ButtonId)
+        ? ESlateCheckBoxState::Checked
+        : ESlateCheckBoxState::Unchecked;
+}
+
+...
+
+void OnRadioChanged( ERadioChoice RadioThatChanged, ESlateCheckBoxState::Type NewRadioState )
+{
+    if (NewRadioState == ESlateCheckBoxState::Checked)
+    {
+        CurrentChoice = RadioThatChanged;
+    }
+}</code></pre>
+<h2 id="菜单和工具条">菜单和工具条</h2>
+
+<h3 id="菜单">菜单</h3>
+
+<p>要想创建菜单或工具条，请使用multibox(多框)。虽然这不能通过动态地生成按钮/控件 来完成，但是命令应该使用Slate的UI_COMMAND系统。
+</p><p>要想创建一个菜单，请创建一个传入FUICommandList 的FMenuBarBuilder，您可以在菜单条构建器上调用MakeWidget()来获得一个要放置的控件。
+</p>
+<pre class="prettyprint"><code>FMenuBarBuilder MenuBarBuilder( CommandList );
+{
+    MenuBarBuilder.AddPullDownMenu( TEXT("Menu 1"), TEXT("Opens Menu 1"), FNewMenuDelegate::CreateRaw( &amp;FMenus::FillMenu1Entries ) );
+
+    MenuBarBuilder.AddPullDownMenu( TEXT("Menu 2"), TEXT("Opens Menu 2"), FNewMenuDelegate::CreateRaw( &amp;FMenus::FillMenu2Entries ) );
+}
+
+return MenuBarBuilder.MakeWidget();</code></pre>
+<p>在创建的菜单中，您可以添加菜单头、菜单项、分隔符、子菜单项、可编辑器的文本或者自定义控件。
+</p>
+<pre class="prettyprint"><code>static void FillMenu1Entries( FMenuBuilder&amp; MenuBuilder )
+{
+    MenuBuilder.AddEditableText( TEXT( "Editable Item" ), TEXT( "You can edit this item's text" ), NAME_None, TEXT( "Edit Me!" ) );
+
+    MenuBuilder.AddMenuEntry( FMultiBoxTestCommandList::Get().EighthCommandInfo );
+
+    MenuBuilder.AddMenuSeparator();
+
+    MenuBuilder.AddSubMenu( TEXT("Sub Menu"), TEXT("Opens a submenu"), FNewMenuDelegate::CreateRaw( &amp;FMenus::FillSubMenuEntries ) );
+
+    MenuBuilder.AddWidget(SNew(SVolumeControl), TEXT("Volume"));
+}</code></pre>
+<h3 id="关联菜单">关联菜单</h3>
+
+<p>要想调用其中一个菜单作为关联菜单，那么请获得从FMenuBuilder生成的控件，并将其传入到PushMenu函数，如下所示。
+</p>
+<pre class="prettyprint"><code>FSlateApplication::Get().PushMenu(
+    MenuBuilder.MakeWidget(),
+    MouseCursorLocation,
+    FPopupTransitionEffect( FPopupTransitionEffect::ContextMenu )
+    );</code></pre>
+<h3 id="工具栏">工具栏</h3>
+
+<p>要想创建一个工具条，请使用FToolBarBuilder。至于子项，您可以添加工具条按钮、组合按钮、普通按钮及下拉菜单。
+</p>
+<pre class="prettyprint"><code>FToolBarBuilder GameToolBarBuilder( InCommandList );
+{
+    GameToolBarBuilder.AddToolBarButton( FLevelEditorCommands::Get().Simulate );
+
+    GameToolBarBuilder.AddToolBarButton( 
+        FLevelEditorCommands::Get().RepeatLastPlay, 
+        LOCTEXT("RepeatLastPlay", "Play"),
+        TAttribute&lt; FString &gt;::Create( TAttribute&lt; FString &gt;::FGetter::CreateRaw( &amp;FLevelEditorActionCallbacks::GetRepeatLastPlayToolTip ) ),
+        TAttribute&lt; const FSlateBrush* &gt;::Create( TAttribute&lt; const FSlateBrush* &gt;::FGetter::CreateRaw( &amp;FLevelEditorActionCallbacks::GetRepeatLastPlayIconSlateBrush ) )
+        );
+
+    GameToolBarBuilder.AddComboButton(
+        SpecialPIEOptionsMenuAction,
+        FOnGetContent::CreateRaw( &amp;FLevelEditorToolBar::GeneratePIEMenuContent, InCommandList ),
+        FText(),
+        LOCTEXT("PIEComboToolTip", "Play-In-Editor options") );
+}
+
+return GameToolBarBuilder.MakeWidget();</code></pre>
+<h2 id="项目视图">项目视图</h2>
+
+<p>这些视图获得一个指向某种数据的共享指针的模板参数。它们由一个TArray或TSharedPtr指向的数据类型进行填充。它们的内部控件通过传入的OnGenerateRow或OnGenerateTile进行动态填充，每栏生成不同的控件。
+</p><h3 id="列表视图">列表视图</h3>
+
+<p>列表视图是存储一个子控件列表的控件。它们通过SListView&lt;...>制作。
+</p>
+<pre class="prettyprint"><code>SNew( SListView&lt; TSharedPtr&lt;FTestData&gt; &gt; )
+.ItemHeight(24)
+.ListItemsSource( &amp;Items )
+.OnGenerateRow( this, &amp;STableViewTesting::OnGenerateWidgetForList )
+.OnContextMenuOpening( this, &amp;STableViewTesting::GetListContextMenu )
+.SelectionMode( this, &amp;STableViewTesting::GetSelectionMode )
+.HeaderRow
+(
+    SNew(SHeaderRow)
+    + SHeaderRow::Column("Name")
+    &#91;
+        SNew(SBorder)
+        .Padding(5)
+        .Content()
+        &#91;
+            SNew(STextBlock)
+            .Text(TEXT("Name"))
+        &#93;
+    &#93;
+    + SHeaderRow::Column("Number") .DefaultLabel(TEXT("Number"))
+    + SHeaderRow::Column("TextField") .DefaultLabel(TEXT("Text Field"))
+    + SHeaderRow::Column("TextBlock") .DefaultLabel(TEXT("Text Block"))
+    + SHeaderRow::Column("AddChild") .DefaultLabel(TEXT("Add Child"))
+)</code></pre>
+<h3 id="树形视图">树形视图</h3>
+
+<p>树形视图，通过STreeView&lt;...>制作，和列表视图类似，但是它支持将控件作为列表中其他控件的子项。要想决定哪个控件位于哪个父项下，那么请使用OnGetChildren 代理来传回传入项的子项。
+</p>
+<pre class="prettyprint"><code>SNew( STreeView&lt; TSharedPtr&lt;FTestData&gt; &gt; )
+.ItemHeight(24)
+.TreeItemsSource( &amp;Items )
+.OnGenerateRow( this, &amp;STableViewTesting::OnGenerateWidgetForTree )
+.OnGetChildren( this, &amp;STableViewTesting::OnGetChildrenForTree )
+.OnContextMenuOpening( this, &amp;STableViewTesting::GetTreeContextMenu )
+.SelectionMode( this, &amp;STableViewTesting::GetSelectionMode )
+.HeaderRow
+(
+    SNew(SHeaderRow)
+    + SHeaderRow::Column("Name") .DefaultLabel(TEXT("Name"))
+    + SHeaderRow::Column("Number") .DefaultLabel(TEXT("Number"))
+    + SHeaderRow::Column("TextField") .DefaultLabel(TEXT("Text Field"))
+    + SHeaderRow::Column("TextBlock") .DefaultLabel(TEXT("Text Block"))
+    + SHeaderRow::Column("AddChild") .DefaultLabel(TEXT("Add Child"))
+)</code></pre>
+<h3 id="平铺视图">平铺视图</h3>
+
+<p>平铺视图，使用STileView&lt;...>制作，和列表视图类似，但是子控件位于一个网格中，而不是列表中。由于这个原因，它不支持行标题或列标题。
+</p>
+<pre class="prettyprint"><code>SNew( STileView&lt; TSharedPtr&lt;FTestData&gt; &gt; )
+.ItemWidth(128)
+.ItemHeight(64)
+.ListItemsSource( &amp;Items )
+.OnGenerateTile( this, &amp;STableViewTesting::OnGenerateWidgetForTileView )
+.OnContextMenuOpening( this, &amp;STableViewTesting::GetTileViewContextMenu )
+.SelectionMode( this, &amp;STableViewTesting::GetSelectionMode )</code></pre>
+
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Slate/Widgets/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 02:01:19 GMT -->
+</html>

@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/PostProcessEffects/ColorGrading/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:37 GMT -->
+<head>
+    <title>颜色分级和胶片色调映射器 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/PostProcessEffects/ColorGrading/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/PostProcessEffects/ColorGrading/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/PostProcessEffects/ColorGrading/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/PostProcessEffects/ColorGrading/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3801260" />
+<meta name="availability" content="Public" />
+<meta name="title" content="颜色分级和胶片色调映射器" />
+<meta name="description" content="用于调整场景颜色的色调映射器和颜色校正效果。" />
+<meta name="type" content="Overview" />
+<meta name="skilllevel" content="Beginner" />
+<meta name="version" content="4.16" />
+<meta name="parent" content="Engine/Rendering/PostProcessEffects" />
+<meta name="related" content="Engine/Rendering/PostProcessEffects/UsingLUTs" />
+<meta name="order" content="4" />
+<meta name="tags" content="Post Process" />
+<meta name="topic-image" content="ColorGrading_Overview.png" />
+<meta name="social-image" content="ColorGrading_Overview.png" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="颜色分级和胶片色调映射器" />
+	<meta property="og:description" content="用于调整场景颜色的色调映射器和颜色校正效果。" />
+		<meta property="og:image" content="https://docs.unrealengine.com/latest/images/Engine/Rendering/PostProcessEffects/ColorGrading/ColorGrading_Overview.png" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">后处理效果</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexed41.html">Post Process</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_16"><a id="version_link" href="../../../../SiteIndex/index6b5c.html">Unreal Engine 4.16</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">颜色分级和胶片色调映射器</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+
+                            <div class="version_tag_filter 4_16"><a id="version_link" href="../../../../SiteIndex/index6b5c.html">Unreal Engine 4.16</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#色调映射">色调映射</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#学院色彩编码系统（aces）胶片色调映射器">学院色彩编码系统（ACES）胶片色调映射器</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#色调映射器设置">色调映射器设置</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#颜色校正">颜色校正</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#颜色校正属性">颜色校正属性</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#良好颜色校正的工作流">良好颜色校正的工作流</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#培训视频">培训视频</a>
+	</li>		    	        </ul>
+</div>
+<p><img alt="ColorGrading_Overview.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/ColorGrading_Overview.jpg" />
+<div class="caption">
+	<p>颜色分级工具使您能够更改场景的视觉效果和色调，例如本文中使用不同场景颜色显示场景的示例。</p>
+</div>
+</p><p>在虚幻引擎中，**颜色分级**一词涵盖了<a id="content_link" href="../../HDRDisplayOutput/index.html" ><span>高动态范围（HDR）显示输出</span></a>
+使用的色调映射功能（HDR到LDR转换），
+并改进了图像的颜色校正（用于筛选颜色变换的LDR颜色）处理。
+</p><a name="tonemapping" ></a><h2 id="色调映射">色调映射</h2>
+
+<p><strong>色调映射</strong> 功能的目的是将广泛的高动态范围（HDR）颜色映射到显示器能够输出的低动态范围（LDR）。这是后期处理的最后一个阶段，
+经过法线渲染后，这个过程在后期处理期间执行。您可以将色调映射的过程想象成一种模拟胶片对光线的反应的方法。 
+</p><a name="academycolorencodingsystem_aces" ></a><p>filmictonemapper)
+</p><h3 id="学院色彩编码系统（aces）胶片色调映射器">学院色彩编码系统（ACES）胶片色调映射器</h3>
+
+<div class="note">
+	<p>从虚幻引擎4.15版本开始，胶片色调映射器作为默认色调映射器启用。之前开发的任何内容可能会因为这项更改而呈现不同的效果。要使用旧色调映射器， 
+可以输入以下控制台命令：
+</p>
+<pre class="prettyprint"><code>r.TonemapperFilm 0</code></pre>
+<p>输入以下内容，可以使用最接近“旧”色调映射器的色调映射器属性值：
+</p><ul ><li><p><strong>斜面（Slope）：</strong>0.98
+</p></li><li><p><strong>末端（Toe）：</strong>0.3
+</p></li><li><p><strong>肩部（Shoulder）：</strong>0.22
+</p></li><li><p><strong>黑色调（Black Clip）：</strong>0
+</p></li><li><p><strong>白色调（White Clip）：</strong>0.025
+</p></li></ul>
+</div><p>UE4中使用的胶片色调映射器符合<a id="content_link" href="../../../../../../external.html?link=http://www.oscars.org/science-technology/sci-tech-projects/aces" ><span>学院色彩编码系统（ACES）</span></a>
+针对电视和电影 
+设定的行业标准。这样可确保在多种不同的格式和显示器之间保持颜色一致，同时确保源资料在未来的可用性，因为不必针对未来出现的 
+每种介质进行调整。该胶片色调映射器还使用UE4之前使用的相同全局色调映射器，唯一不同的是现在有一种胶片反应，意味着S形曲线现在能更好地模拟
+生胶片来打造更优质的总体外观。 
+</p><p>有明显不同的两个地方分别是泛光和曝光度。
+</p><a name="physicallycorrectemissiveandbloom" ></a><h4 id="物理更正自发光和泛光">物理更正自发光和泛光</h4>
+
+<p>现在，自发光值在物理上是正确的，因此随着自发光率的增大，颜色会变浅，类似于彩色光在真实世界中的工作原理。颜色经过色调映射后，如果最终颜色
+足够量，能够开始让胶片/传感器变得饱和，颜色就会变白。
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="胶片色调映射器 | 自发光" width="700" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/Bloom_FilmicToneMapper.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="旧色调映射器 | 自发光" width="700" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/Bloom_OldToneMapper.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><p>该示例对比的是“旧”色调映射器和新的胶片色调映射器。自发光率足够大时，颜色开始变白，这与旧色调映射器不同，旧版的值会
+变得过度饱和，导致材质区域失去细节。在胶片色调映射器中，您甚至可以看到，该场景中的泛光保持其物理上的正确度，同时 
+也不会过度饱和，从而保留反射原色值。
+</p><a name="exposurelevels" ></a><h4 id="曝光度">曝光度</h4>
+
+<p>曝光度在物理上是正确的，因此颜色仍保持其原有的形状，而不是失去细节。
+</p><p><img alt="Exposure_Default.png" width="500" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/Exposure_Default.jpg" />
+</p><p>在该示例中，有多种颜色和材质类型以及不同的粗糙度和金属感。曝光偏差也设置为0。 
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="胶片色调映射器 | 曝光偏差：3" width="700" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/Exposure_FilmicToneMapper.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="旧色调映射器 | 曝光偏差：3" width="700" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/Exposure_OldToneMapper.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><p>在这个比较中，曝光偏差已经增加到值3，因此真实地展现了胶片色调映射器与“旧”色调映射器实现相比较的反应。此外，值3也意味着，经过处理的图像亮度是默认值0的八倍，如以上示例所示。
+</p><p>随着曝光度的增加，胶片和“旧”色调映射器之间的差异会变得越来越明显。胶片示例中的球体会继续保持其颜色和阴影的形状，即使它们看起来似乎更明亮一些。使用“旧”色调映射器的球体的颜色将开始与阴影混合起来。纯色球体确实会变得明亮，但你很难辨别出它们有较高的曝光值，而胶片色调映射器考虑了这一点。如果增大曝光值，胶片反应看起来就像一个自然的镜头效果。
+</p><a name="tonemappersettings" ></a><h3 id="色调映射器设置">色调映射器设置</h3>
+
+<p>在后期处理体积的 <strong>色调映射器（Tone Mapper）</strong> 部分中，您会看到与ACES标准化生胶片相符的属性。您可以调节这些色调映射器控制，为项目模拟出其他类型的生胶片效果。 
+</p><div class="note">
+	<p>建议在项目范围内对这些属性进行更改来打造特定的效果，而不是动态更改或逐个镜头的更改。相反，您应使用 
+<a id="content_link" href="index.html#colorcorrectionproperties" ><span>颜色分级</span></a>
+属性进行任何艺术效果调整。
+</p>
+</div><p><img alt="ToneMapperProperties.png" width="500" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/ToneMapperProperties.jpg" />
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		<p><div class="tablesection">
+	<p> 色调映射器</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>斜面（Slope）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性调整用于色调映射器的S曲线的坡度，值越大，斜坡越陡（越深），值越小，斜坡越平缓（越浅）。值在范围[0.0, 1.0].[0.0, 1.0]。<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Slope:0.88（默认值）" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/DefaultSettings_FilmicToneMapper.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Slope:0.6" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/Slope_0_6.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Slope:0.88（默认值）" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/DefaultToneMapper.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Slope:0.6" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/SlopeToneMap.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>末端（Toe）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性调节色调映射器中的深色。值在范围[0.0, 1.0].[0.0, 1.0]。<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Toe:0.55（默认值）" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/DefaultSettings_FilmicToneMapper.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Toe:0.8" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/Toe_0_8.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Toe:0.55（默认值）" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/DefaultToneMapper.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Toe:0.8" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/ToeToneMap.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>肩部（Shoulder）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性调节色调映射器中的亮色。值在范围[0.0, 1.0]中 <table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Shoulder:0.26（默认值）" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/DefaultSettings_FilmicToneMapper.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Shoulder:1" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/Shoulder_1.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Shoulder:0.26（默认值）" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/DefaultToneMapper.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Shoulder:1" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/ShoulderToneMap.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>黑色调（Black Clip）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性设置当黑色开始截断其值时发生交叉的位置。一般来说，<strong>不应</strong> 调整该值。该值在范围[0.0, 1.0]中 <table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Black Clip:0（默认值）" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/DefaultSettings_FilmicToneMapper.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Black Clip:0.1" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/BlackClip_0_1.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="Black Clip:0（默认值）" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/DefaultToneMapper.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="Black Clip:0.1" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/BlackClipToneMap.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>白色调（White Clip）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性设置当白色开始开始截断其值时发生交叉的位置。在大多数情况下会呈现出细微变化。该值在范围 [0.0, 1.0] 中 <table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="White Clip:0.04（默认值）" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/DefaultSettings_FilmicToneMapper.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="White Clip:0.2" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/WhiteClip_0_2.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="White Clip:0.04（默认值）" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/DefaultToneMapper.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="White Clip:0.2" width="450" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/WhiteClipToneMap.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="2" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table></p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><div class="note">
+	<p>如果您想像上图一样在实时图表中测试不同的色调映射器值，可以设置默认<a id="content_link" href="../../../../../../external.html?link=https://www.desmos.com/calculator/h8rbdpawxj" ><span>UE4色调映射器示例</span></a>
+。
+</p>
+</div><a name="colorcorrection" ></a><h2 id="颜色校正">颜色校正</h2>
+
+<p>颜色校正或颜色分级用于变更或增强场景的总体照明颜色。随着HDR显示器的出现，在处理前保持颜色
+原有的色彩变得非常重要。这样可确保正确显示颜色。<br /></p><p>在过去，颜色校正是通过<a id="content_link" href="../UsingLUTs/index.html" ><span>查找表（LUT）</span></a>
+实现的，而LUT使用的是LDR，显示器上输出的最终颜色 
+使用的是sRGB颜色空间。这在使用HDR显示器时会存在问题，因为LUT只是当前支持的、调节参数时所针对的显示器的一个快照，
+不能在HDR显示器上呈现相同的效果。为解决这类问题，<a id="content_link" href="index.html#colorcorrectionproperties" ><span>颜色校正控制</span></a>
+在场景引用的线性空间中完成其工作， 
+这意味着所有颜色都是先捕捉，再进行色调映射。这样就可以根据任何颜色校正仅调节一个HDR显示器上的颜色，然后在输出图像的所有显示器都能正确显示， 
+而无论是HDR还是LDR均无影响。
+</p><div class="note">
+	<p>如需进一步了解HDR管道以及如何有效利用以为您创造更优质内容的信息，请参阅<a id="content_link" href="../../HDRDisplayOutput/index.html" ><span>高动态范围显示输出</span></a>
+页面。
+</p>
+</div><a name="colorcorrectionproperties" ></a><h3 id="颜色校正属性">颜色校正属性</h3>
+
+<p>在后期处理体积的 <strong>颜色分级</strong> 部分中，您会找到能够对场景进行更多艺术效果控制的属性。 
+</p><a name="settings" ></a><h4 id="设置">设置</h4>
+
+<div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="RGBColorWheel.png" width="500" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/RGBColorWheel.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="HSVColorWheel.png" width="500" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/HSVColorWheel.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>RGB</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>HSV</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>在每个部分下面，您可以使用色轮来选择和拖动颜色值。您还可以在以下模式中选择：
+</p><ul ><li><p>RGB——该选项调节红色、绿色、蓝色值。
+</p></li><li><p>HSV——该选项调节色调和饱和度值。
+</p></li></ul><div class="tip">
+	<p>要更精准地控制滑块值，可以按住 <strong>Shift</strong> 键，同时拖动滑块。
+</p>
+</div><p><img alt="ColorGradingProperties.png" width="500" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/ColorGradingProperties.jpg" />
+</p><div class="raw">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><div class="tablesection">
+	<p> 白平衡 </p>
+</div></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该部分中的属性用于调节场景中的颜色，以便白色呈现出真正的白色。这样在指定光照条件下，能够正确照亮场景中的其他颜色。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>色温（Temp）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性调节与场景中的光线温度有关的白平衡。光线温度与该属性匹配时，光线呈现为白色。使用的值高于场景中的光线时，会产生“暖色”或黄色，相反，如果值低于场景光线，则产生“冷色”或蓝色。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>色调（Tint）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性通过调节青色和洋红色范围来调整场景的白平衡温度色调。理想状态下，调节白平衡 <strong>色温（Temp）</strong> 属性后应使用该设置来获得正确的颜色。在某些光线温度下，颜色可能会看起来更黄或更蓝。该属性可以用于平衡所产生的颜色，让颜色看起来更自然一些。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><div class="tablesection">
+	<p> 全局 </p>
+</div></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该部分中的属性是您可以用于场景的一组全局颜色校正。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>饱和度（Saturation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性调整所表现的颜色（色调）的强度（纯度）。饱和度越高，颜色看起来越接近原色（红色、绿色、蓝色），饱和度降低时，颜色的灰色或褪色效果变得明显。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>对比度（Contrast）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性将调节场景中光线和深色值的色调范围。降低强度会去除高亮，让图像显得更亮，营造出一种褪色效果，而强度提升会加强高亮，让整体图像变暗。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>伽马（Gamma）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性将调节图像中间色调的亮度以准确重现颜色。降低或增大该值会让图像呈现出褪色或过暗的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>增益（Gain）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性调节图像白色（高亮）的亮度以准确重现颜色。增大或降低该值会让图像呈现出褪色或过暗的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>偏移（Offset）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性将调节图像黑色（阴影）的亮度以准确重现颜色。增大或降低该值会让图像阴影呈现出褪色或过暗的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>场景颜色色调（Scene Color Tint）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是一个应用于HDR场景颜色的滤色贴图的乘数。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>颜色分级LUT强度（Color Grading LUT Intensity）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一种控制颜色校正效果的比例因子。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>颜色分级LUT</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用作颜色校正的查找表的LUT纹理。<div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/lut_none.png" ><span><img alt="中性色调场景" width="300" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/lut_none.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p><div class="caption">
+	<p>单击查看大图。</p>
+</div>
+</p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/lut_green.png" ><span><img alt="偏绿场景" width="300" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/lut_green.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p><div class="caption">
+	<p>单击查看大图。</p>
+</div>
+</p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/lut_red.png" ><span><img alt="偏红场景" width="300" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/lut_red.jpg" /><img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p><div class="caption">
+	<p>单击查看大图。</p>
+</div>
+</p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><img alt="中性LUT" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/RGBTable16x1.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><img alt="偏绿LUT" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/LUT_Greenish.jpg" /></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><img alt="偏红LUT" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/PostProcessEffects/ColorGrading/LUT_Reddish.jpg" /></p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><div class="tablesection">
+	<p> 阴影 </p>
+</div></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该部分中的属性用于调整场景中阴影的颜色校正值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Saturation</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性调整所表现的颜色（色调）的强度（纯度）。饱和度越高，颜色看起来越接近原色（红色、绿色、蓝色），饱和度降低时，颜色的灰色或褪色效果变得明显。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>对比度（Contrast）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性将调节场景中光线和深色值的色调范围。降低强度会去除高亮，让图像显得更亮，营造出一种褪色效果，而强度提升会加强高亮，让整体图像变暗。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>伽马（Gamma）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性将调节图像的亮度以准确重现颜色。增大或降低该值会让图像中间色调呈现出褪色或过暗的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>增益（Gain）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性调节图像白色（高亮）的亮度以准确重现颜色。增大或降低该值会让图像呈现出褪色或过暗的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>偏移（Offset）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性将调节图像黑色（阴影）的亮度以准确重现颜色。增大或降低该值会让图像阴影呈现出褪色或过暗的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最大阴影（Shadows Max）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是影响 <strong>阴影</strong> 部分中已经调整的颜色校正属性的属性乘数。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><div class="tablesection">
+	<p> 中间色调 </p>
+</div></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该部分中的属性用于调整场景的中间色调的颜色校正值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>饱和度（Saturation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性调整所表现的颜色（色调）的强度（纯度）。饱和度越高，颜色看起来越接近原色（红色、绿色、蓝色），饱和度降低时，颜色的灰色或褪色效果变得明显。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>对比度（Contrast）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性将调节场景中光线和深色值的色调范围。降低强度会去除高亮，让图像显得更亮，营造出一种褪色效果，而强度提升会加强高亮，让整体图像变暗。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>伽马（Gamma）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性将调节图像的亮度以准确重现颜色。增大或降低该值会让图像中间色调呈现出褪色或过暗的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>增益（Gain）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性调节图像白色（高亮）的亮度以准确重现颜色。增大或降低该值会让图像呈现出褪色或过暗的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>偏移（Offset）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性将调节图像黑色（阴影）的亮度以准确重现颜色。增大或降低该值会让图像阴影呈现出褪色或过暗的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><div class="tablesection">
+	<p> 高亮 </p>
+</div></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该部分中的属性用于调整场景的高亮部分的颜色校正值。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>饱和度（Saturation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性调整所表现的颜色（色调）的强度（纯度）。饱和度越高，颜色看起来越接近原色（红色、绿色、蓝色），饱和度降低时，颜色的灰色或褪色效果变得明显。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>对比度（Contrast）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性将调节场景中光线和深色值的色调范围。降低强度会去除高亮，让图像显得更亮，营造出一种褪色效果，而强度提升会加强高亮，让整体图像变暗。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>伽马（Gamma）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性将调节图像的亮度以准确重现颜色。增大或降低该值会让图像中间色调呈现出褪色或过暗的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>增益（Gain）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性调节图像白色（高亮）的亮度以准确重现颜色。增大或降低该值会让图像呈现出褪色或过暗的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>偏移（Offset）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该属性将调节图像黑色（阴影）的亮度以准确重现颜色。增大或降低该值会让图像阴影呈现出褪色或过暗的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最小高亮（HighLights Min）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是影响 <strong>阴影</strong> 部分中已经调整的颜色校正属性的属性乘数。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="workflowforgoodcolorcorrection" ></a><h3 id="良好颜色校正的工作流">良好颜色校正的工作流</h3>
+
+<p>在使用后期处理体积中的颜色分级工具时，应培养一些好的使用习惯。 
+</p><ul ><li><p><strong>色调映射器</strong> 控制应针对项目范围外观进行设置。理想状态下，这些属性不应调整，更不应动态调整或逐个镜头的调整。 
+如有需要，可以使用<a id="content_link" href="index.html#colorcorrectionproperties" ><span>颜色分级</span></a>
+属性。
+</p></li><li><p>首先使用 <strong>全局</strong> 颜色校正属性对场景进行初始总体润色，然后再调整任何其他属性。大部分颜色分级更改应该使用 
+这些属性来完成。
+</p></li><li><p>不应尝试使用 <strong>增益（Gain）</strong> 属性来调节场景曝光度。该属性应该用于针对不同颜色进行微调。请改为使用 <strong>曝光偏差（Exposure Bias）</strong>，这个选项位于 <strong>镜头（Lens）</strong> > 
+<strong>自动曝光（Auto-Exposure）</strong> 部分中。
+</p></li><li><p>使用较小的 <strong>偏移（Offset）</strong> 让阴影或暗色区域显得更明亮一些。如果希望事物看起来有些模糊或泛光效果，可以设置更大的值，反之， 
+如果场景过于模糊或泛光过多，可以降低该值，从场景中剔除一些颜色。
+</p></li><li><p>改为使用<a id="content_link" href="../UsingLUTs/index.html" ><span>查找表（LUT）</span></a>
+来为场景着色，该操作发生在色调映射之后，因此应使用颜色分级属性 
+实现您想要的效果，以保持在所有输出显示器（LDR和HDR）上呈现一致的效果。但是，使用LUT设置色调，然后调整颜色校正来获得相似效果， 
+也是快速实现效果的好方法。
+</p></li></ul><a name="trainingstreams" ></a><h2 id="培训视频">培训视频</h2>
+
+<!--
+videoid:paramliteral
+width:paramliteral
+height:paramliteral
+units:paramliteral
+type:paramliteral
+-->
+<div id="player_A-wectYNfRQ"><div style="position:absolute;display:block;width:100%;height:100%;"><iframe class="embedded_video" id="A-wectYNfRQ" width="100%" height="100%" src="../../../../../../external.html?link=https://www.youtube.com/embed/A-wectYNfRQ?rel=0&amp;modestbranding=1&amp;showinfo=0&amp;loop=1&amp;controls=0" frameborder="0" allowfullscreen></iframe></div></div>
+<style type="text/css">
+#player_A-wectYNfRQ
+{
+	margin: 0px;
+	width: 50%;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+#player_A-wectYNfRQ:after
+{
+	content: "";
+	padding-top: 56.25%;
+	display: block;
+}
+</style>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="../UsingLUTs/index.html" title="如何在虚幻引擎4中创建和使用您自己的查找表来进行颜色校正。">使用查找表（LUT）进行颜色校正</a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexed41.html">Post Process</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/PostProcessEffects/ColorGrading/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:37 GMT -->
+</html>

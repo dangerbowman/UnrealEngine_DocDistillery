@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Physics/Vehicles/DoubleWishboneVehicle/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:55 GMT -->
+<head>
+    <title>如何创建双横臂悬挂载具 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Physics/Vehicles/DoubleWishboneVehicle/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Physics/Vehicles/DoubleWishboneVehicle/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Physics/Vehicles/DoubleWishboneVehicle/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Physics/Vehicles/DoubleWishboneVehicle/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="4649792" />
+<meta name="availability" content="Public" />
+<meta name="title" content="如何创建双横臂悬挂载具" />
+<meta name="description" content="利用虚幻引擎 4 设置双横臂悬挂载具的描述" />
+<meta name="navigation" content="topic" />
+<meta name="skilllevel" content="Advanced" />
+<meta name="version" content="4.9" />
+<meta name="parent" content="Engine/Physics" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="如何创建双横臂悬挂载具" />
+	<meta property="og:description" content="利用虚幻引擎 4 设置双横臂悬挂载具的描述" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../../index.html">物理模拟</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">如何创建双横臂悬挂载具</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#前言">前言</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#模拟轮子与后悬挂连杆结构">模拟轮子与后悬挂连杆结构</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#骨骼节点的作用">骨骼节点的作用</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#copybone">Copy Bone</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#lookat">Look At</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#安装总览">安装总览</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#构建模型">构建模型</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#虚幻引擎4中的设置">虚幻引擎 4 中的设置</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#phat">PhAT</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#天线设置">天线设置</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#自行操作">自行操作</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#导入选项">导入选项</a>
+	</li>		    	        </ul>
+</div>
+<h2 id="前言">前言</h2>
+
+<p>此项目和教程由社区网友 Xenome 热心提供并授权在此发布。
+</p><p>感谢 Xenome！
+</p><hr />
+<p>此教程将讲述高级载具模板的细节。完成教程后，您将对其理论有良好的理解，并掌握创建和调配的方法。主要焦点在悬挂上。
+</p><p>此载具模板中使用的所有 FBX 资源均可 <strong><span class="non-localized"><a id="content_link" href="../../../../../../external.html?link=https://api.unrealengine.com/attachments/Engine/Physics/Vehicles/DoubleWishboneVehicle/DoubleWishboneVehicle_Files.zip" ><span>于此处下载<img class="languageinline" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span></strong>。在可读写 FBX 文件的模型包中，您可对原始文件进行分析并对自己的设计进行试验。
+</p><p>开始之前您需要知晓，双横臂悬挂的设置方法比标准虚幻引擎 4 载具复杂许多。如您尚未成功设置标准虚幻引擎 4 载具，强烈建议您先完成此设置再继续学习本文档。在 Epic 的 YouTube 页面上有许多优秀的标准操作教学视频 <strong><a id="content_link" href="../../../../../../wiki.unrealengine.com/Introduction_to_Vehicles_in_UE4_Playlist.html" ><span>点击此处链接</span></a>
+</strong>。
+</p><p>在您观看这些视频并成功设置基础载具后，即可继续此处的双横臂悬架设计学习。开始先学习一些基础理论。
+</p><h2 id="模拟轮子与后悬挂连杆结构">模拟轮子与后悬挂连杆结构</h2>
+
+<p>设置载具运动组件并为其指定轮子后，轮子的垂直运动由载具动画蓝图中的 WheelHandler 节点进行更新。在每一帧中，处理器将沿局部 Z 轴上下移动轮子模拟悬挂效果，确保轮子在必要时着地。
+</p><p>另外，<strong>WheelHandler</strong> 还使轮子沿其 Y 轴旋转，由模拟引擎和变速箱的旋转速度所决定。除此之外，它可使轮子沿其 Z 轴转向，由当前的转向角度所决定。
+</p><p>默认的垂直悬挂运动由 <strong>VehicleWheel-derived</strong> 类中的 <strong>Suspension Max Raise</strong> 和 <strong>Drop</strong> 设置锁定。它是绝对的直线运动，如下图所示：
+</p><p><img alt="simwheeldefaultmovement.gif" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/simwheeldefaultmovement.gif" />
+</p><p><em>WheelHandler 生成的标准垂直运动</em>
+</p><p>虽然并非完全真实，但事实上这种类型的悬挂模拟可用于大多数载具，因为通常无法看到悬挂臂和其他组件，如弹簧和减震。拥有整体车架的车辆模型均可使用此悬挂。
+</p><p>开放式车架载具（如越野大脚车或方程式赛车）的运动部件均清晰可见，悬挂直线垂直运动就存在问题了，因为现实世界中的悬挂设计均不会出现此类运动方式。
+</p><p>为获得更加真实的效果，我们需要的是沿载具车架上一些固定枢轴点进行旋转的运动方式：
+</p><p><img alt="realwheelmovement.gif" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/realwheelmovement.gif" />
+</p><p><em>典型的垂直和侧方运动</em>
+</p><p>为解决这个小小的难题，我们可以首先假定轮子管理拥有两种不同类型：第一类是由 WheelHandler 控制的模拟轮子节点、第二类是在车辆行驶中对我们看到的轮子进行渲染。之后我们便可将 WheelHandler 返回的数据传输给其余的悬挂设置，以获取预期效果。
+</p><p>简单而言，看见的轮子和模拟的轮子事实上可能是完全不同的两个物体，模拟的轮子甚至可能为不可见。
+</p><p>在 VehicleWheel 类中定义的轮子参数可以明确地指定 <strong>碰撞网格体</strong>、<strong>半径</strong> 和 <strong>宽度</strong>。这些规格不必符合载具骨骼网格体中的真实几何体，因此无需为网格体中的模拟轮子节点附着任意真实几何体。此外可在载具蓝图的轮子设置部分指定额外的轮子偏差，因此轮子的枢轴点无需与可见轮子网格体的几何中心对齐。
+</p><p>以上便是创建拥有机械真实感悬挂的见解。
+</p><h2 id="骨骼节点的作用">骨骼节点的作用</h2>
+
+<p>在继续之前，我们需要了解两个对设置至关重要的动画蓝图节点。之前已经谈到了必备的 WheelHandler 节点，此外还有对这类绑定十分重要的强大工具：<strong>CopyBone</strong> 和 <strong>LookAt</strong> 节点。它们均可在动画蓝图编辑器的 Skeletal Control 类目下找到，它们和其他应用程序（如 Maya）中标准位置、旋转和瞄准约束执行的任务相同。
+</p><h3 id="copybone">Copy Bone</h3>
+
+<p>正如其名称所表达的那样，CopyBone 节点能将转变数据从一个骨骼（来源）复制到另一个骨骼（目标）。
+</p><p><img alt="node_copybone.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/node_copybone.jpg" />
+</p><p><em>CopyBone 动画蓝图节点与其默认设置。</em>
+</p><p>这意味着 WheelHandler 更新模拟轮子的转变后，我们可以（举例而言）只抓取其生成的旋转数值并应用到可见的轮子上。基本步骤将处理轮子的旋转和转向（这是我们需要的数据），同时避免获取平移（位置）数据（这是我们不需要的数据）。
+</p><h3 id="lookat">Look At</h3>
+
+<p>LookAt 节点可旋转任意特定骨骼，使其中一个铰轴最后对准另一个骨骼：
+</p><p><img alt="node_lookat.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/node_lookat.jpg" />
+</p><p><em>LookAt 动画蓝图节点与其默认设置。</em>
+</p><p>它提供了一个对设置十分有用的方法，确保悬挂系统的所有组件均保持向正确方向更新，由模拟轮子当前位置直接或间接决定。需要做的只是确保有 LookAt 节点瞄准的骨骼存在。它将用于动画蓝图中的多个骨骼。
+</p><h2 id="安装总览">安装总览</h2>
+
+<p>简要重述：针对载具的四个轮子，我们将使用一个不可见的轮子让 WheelHandler 进行管理，在游戏中实际渲染另一个可见的轮子。前者为单个的骨骼/连接点，不含带权重的网格体部分；而后者是在模型包中创建并添加到载具模型的任意轮状网格体。之后，将载具模型导入 UE4 进行最终设置。
+</p><p>为确保一切正常工作，悬挂的关键部分将从其他骨骼复制所需的转变数据，或通过观看模型中设置的目标对定向进行调整。
+</p><h2 id="构建模型">构建模型</h2>
+
+<p>理论部分到此为止，现在开始构建这个演示载具。在主建模应用程序中打开 <code >Assets/FBX/vehicle_proto_S2.9.fbx</code> 文件可以看到模型的构建方式。
+</p><p>此教程载具原型悬挂铰接的设计如下图所示：
+</p><p><img alt="keycomponents.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/keycomponents.jpg" />
+</p><p><em>载具原型右前悬挂的特写。添加颜色便于辨识 - 他们并未指派到 FBX 文件中的材质上。</em>
+</p><p>关键组件是上下摇臂（黄色）、中心立轴（红色）、以及轮毂（蓝色）。两个摇臂以各自的六角螺栓（上图右侧）为中心旋转。
+</p><p>所有组件的中心点靠近下摇臂上的绿色螺栓。那是模拟轮子连接点 <code >PhysWheel_&#91;loc&#93;</code> 最初所在的位置。中心立轴、轮毂、和可见轮子的枢轴点也位于此处。
+</p><p>每个组件均拥有严格的职责和转变范围。摇臂只围绕其前方的轴进行旋转。中心立轴跟随下摇臂前端的位置，但将永久保持垂直状态，不会相对载具旋转。轮毂只围绕其垂直轴旋转，对转向作出响应。可见状态的轮子从模拟轮子复制旋转，并获取下摇臂前端的位置。一切组件皆紧密地结合在一起。
+</p><p>在复杂的铰接结构中，须对层级和更新顺序了如指掌。在此特例中，下摇臂旋转时必须带动一个子网格体（下方的绿色螺栓）。中心立轴随后需要此子网格体，以利用 CopyBone 节点将自己正确放置。而上摇臂需获取中心立轴子网格体的更新位置（上方绿色螺栓附近），以获得使用 LookAt 节点进行瞄准的目标。因此可以了解到使不同组件按正确顺序更新的重要性，否则悬挂部分的显示较之其他部分的运动存在延迟。
+</p><p>所有的每帧更新均由动画蓝图处理。
+</p><p>在 DCC（数字内容创建）应用程序中建模时，只需要注意层级和组件枢轴点的准确位置和定向。对由 LookAt 节点更新旋转的组件而言，可感知定向尤为重要。
+</p><p>在设计这类机械系统时，使用模型包提供的约束可能会有所帮助。在导入时约束将不跟随 FBX 文件进入 UE4，但如果在建模时能设置一些基础运动，则能更轻松地找到需要执行的方法。需要注意的是让各种组件按其既定的方式进行移动，并避免部件之间的穿插。但请不要使用动画蓝图中无法重新创建的约束。
+</p><h2 id="虚幻引擎4中的设置">虚幻引擎 4 中的设置</h2>
+
+<p>我们一起来看看如何在虚幻引擎中设置这个演示。在编辑器中加载项目文件，然后打开载具的动画蓝图。注意多数操作均应用了四次，每个轮子各一次。
+</p><p>驾驶载具时，动画蓝图中将出现以下情况：
+</p><p>首先，WheelHandler 更新模拟轮子（<code >PhysWheel</code> 骨骼）的位置和旋转。可见状态的轮子（VisWheel<code >骨骼）从</code>PhysWheels` 复制旋转并更新自身的旋转：
+</p><p><img alt="animBP_1.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/animBP_1.jpg" />
+</p><p><em>Copy Rotation 跟随 WheelHandler 到可见的轮子上。</em>
+</p><p>这将获得一个视觉上无误的旋转和转向，但轮子将不会改变位置。这将在之后的步骤中单独处理。
+</p><p>接下来，下摇臂（<code >ArmLower</code> 骨骼）瞄准 <code >PhysWheel</code> 的位置。载具右边的摇臂使用 Y 轴作为朝向目标轴，左边的摇臂则使用的是负 Y 轴。
+</p><p><img alt="animBP_2.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/animBP_2.jpg" />
+</p><p><em>ArmLower 骨骼朝向 PhysWheel 的位置。</em>
+</p><p>可在动画蓝图编辑器的 3D 窗口中预览 LookAt 节点的结果：所选 LookAt 节点的当前目标被标记为一个红色叉号。将预览视口设为线框模式更便于分辨。
+</p><p>当 <code >ArmLower</code> 骨骼旋转匹配其 LookAt 目标时，它带来了一个名为 <code >POS_Hub</code> 的子组件。它在下一步中利用 CopyBone 节点正确放置中心立轴。该节点只抓取 <code >POS_Hub</code> 骨骼的平移：
+</p><p><img alt="animBP_3.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/animBP_3.jpg" />
+</p><p><em>设置中心立轴位置。</em>
+</p><p>稍后将使用相同方法将轮毂和 <code >VisWheel</code> 设置到相同位置。
+</p><p>下一步对上摇臂（<code >ArmUpper</code> 骨骼）进行调整，使其对准其相应的目标（<code >LAT_ArmUp</code> 骨骼）。这些目标是之前步骤中更新的中心立轴骨骼的子项，这些子项已被放置在正确的位置。
+</p><p><img alt="animBP_4.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/animBP_4.jpg" />
+</p><p><em>为上摇臂确定方向。</em>
+</p><p>设置轮毂的位置后，需要单独在前轮毂上进行一些操作，使转向引起沿 Z 轴的旋转。它由对准 <code >LAT_Hub</code> 骨骼（此骨骼为前方 PhysWheels 的子项）的 LookAt 节点处理：
+</p><p><img alt="animBP_5.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/animBP_5.jpg" />
+</p><p><em>设置轮毂位置和转向角度。</em>
+</p><p>最后，设置 VisWheel 位置匹配 <code >POS_Hub</code> 骨骼后，需确保减震的上部对准下方的减震架（<code >ShockMount_Low</code>）；下方减震骨骼跟随同一个减震架的位置，而此减震架是上摇臂的一个子项：
+</p><p><img alt="animBP_6.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/animBP_6.jpg" />
+</p><p><em>放置可见的轮子，并调整减震组件。</em>
+</p><h2 id="phat">PhAT</h2>
+
+<p>原型的物理资源设置和标准载具模板基本相同，只存在几点不同。最明显的区别是天线周围有许多小球状形体，而更重要的区别是载具主车架周围的自定义碰撞形态。
+</p><p><img alt="phat_1.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/phat_1.jpg" />
+</p><p><em>PhAT 中的碰撞形体。</em>
+</p><p>此模型的根组件实际为一个连接点，因此用于创建细节碰撞体积的几何体并不存在。导入一个配备 UCX 网格体（Assets/FBX/vehicle_collision_S2.9.fbx）的单独静态网格体，创建主形体体积。
+</p><p><img alt="phat_2.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/phat_2.jpg" />
+</p><p><em>单独导入带碰撞的静态网格体资源。</em>
+</p><p>无法在 PhAT 进行完整处理。第一部是在选择的 3D 模型包中创建碰撞资源（从主体网格体本身开始为佳）。然后将碰撞模型作为标准静态网格体，和 UCX 碰撞一起导入 UE4。此操作完成后，我们即可在 PhAT 中将此碰撞数据简单复制到载具的根节点。在 PhAT hierarchy 面板中的现有形体上 <strong>单击右键</strong> 将出现此选项。如目标骨骼上尚未指定形体，可先添加一个类似于长菱形的形体并投入使用。随后添加自定义碰撞后即可删除长菱形。
+</p><p><img alt="phat_3.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/phat_3.jpg" />
+</p><p><em>菜单最底部“Advanced”中的 Copy collision 选项。</em>
+</p><h3 id="天线设置">天线设置</h3>
+
+<p>虽然天线不是双横臂悬挂，但它仍能影响载具的整体操控。
+最简单的解决方案当然是天线完全为刚性、不受物理影响。但此模板将为我们展示如何
+设置一个随载具行驶移动而对载具本身移动无负面影响的天线。
+</p><p>在此模板中，从 <strong>Antenna1</strong> 开始直到顶端 <strong>Antenna10</strong> 的每个天线骨骼已设有一个球状形体。 
+此球状形体的半径与天线网格体本身的半径接近匹配。将形体的 <strong>Enable Gravity</strong> 属性关闭，确保天线只需 
+物理系统的少许消耗即可保持直立状态。形体底部的质量标度设为 16，越往上形体质量越小。上一层形体的质量标度设为 
+下一层的 50<code >%</code>，以此类推，从下到上的数值序列为 16、8、4、2、1、0.5、0.25、0.12、0.06、0.03。这样的设置将使底部较重， 
+顶部较轻，而两端之间存在流畅的梯度。
+</p><p><img alt="phat_antenna_1.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/phat_antenna_1.jpg" />
+</p><p>应用到这些形体的约束在线和角方面均被完全锁定。此骨骼链相对较长，因此加速度将使朝向出现细微变化。 
+加速度是二者的结合：上文所述用于获得稳定模拟的质量标度设置，以及真实的轻微摆动。
+</p><p>为确保极限加速状态下模拟不会破坏，所有的天线约束均要求勾选 <strong>Enable Projection</strong>，<strong>Angular Tolerance</strong> 数值设为 1.0， 
+形体的 <strong>Position Solver Iteration Count</strong> 的数值增加至 16。
+</p><p><img alt="phat_antenna_2.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/phat_antenna_2.jpg" />
+</p><p>最后需要禁用天线形体和载具形体其他部分之间的内部碰撞，防止不必要的消耗。如需简单完成此操作，
+ 只需从 hierarchy 面板中选择形体的所有骨骼，然后在 PhAT 工具栏中点击 <strong>Collision Off</strong> 按钮。
+</p><p><img alt="phat_antenna_3.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/phat_antenna_3.jpg" />
+</p><h2 id="自行操作">自行操作</h2>
+
+<p>通晓设置方法后，现在可以开始构建您自己的模型，替代原型。以下指示将助您较为轻松地执行操作。
+</p><p>首先要保持命名和层级与原型相同。此操作将确保动画蓝图可在不同骨骼网格体上被重新指派和重新使用，而无需进行任何修改。这将为您节约大量时间。可对所有网格体重新建模并移动到不同位置。须确保所有资源对齐。为模型添加更多网格体节点并无难度，只需保证它不对关键悬挂组件的整体层级构成干扰即可。
+</p><p>载具根应被放置在整体空间中 0,0,0 的坐标上，且不能以任何方式旋转。将根设为一个简单的连接物可确保 FBX 导出和导入出现的问题较少，尤其在使用软边界组件（如变形减震网格体）时。
+</p><p>如模型包允许，将 Z 轴设为向上轴。无论如何皆假定 X 为向前的轴，即使选择的应用中 Y 为向前的轴。
+</p><p>在建模应用程序中，轮子网格体应该接触地面/网格。确保模型单独组件的枢轴点位于旋转的中心，且旋转已归零。明显的例外是避震，需要使根和顶部连接点朝向对方所在的方向。除非作用明确，否则不要使用 1,1,1 之外的缩放比例，也不要冻结变形或其他相同的功能。
+</p><h2 id="导入选项">导入选项</h2>
+
+<p>下列导入选项（之前用于原型载具）是良好的自定义模型导入指南：
+</p><p><img alt="import_options.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Physics/Vehicles/DoubleWishboneVehicle/import_options.jpg" />
+</p><p><em>原型载具使用的导入选项。</em>
+</p><p>以上便是如何构建高级载具的内容。祝您好运！
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Physics/Vehicles/DoubleWishboneVehicle/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:08:55 GMT -->
+</html>

@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/ParticleSystems/Optimization/Results/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:30 GMT -->
+<head>
+    <title>获取结果 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/ParticleSystems/Optimization/Results/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/ParticleSystems/Optimization/Results/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/ParticleSystems/Optimization/Results/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/ParticleSystems/Optimization/Results/index.html" hreflang="zh-CN" />
+
+	<meta name="availability" content="Public" />
+<meta name="title" content="获取结果" />
+<meta name="description" content="分析粒子系统的常见问题区域。" />
+<meta name="parent" content="Engine/Rendering/ParticleSystems/Optimization" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="获取结果" />
+	<meta property="og:description" content="分析粒子系统的常见问题区域。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">VFX 优化指南</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">获取结果</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#cascade中的核心系统-gpu/游戏线程/渲染线程">Cascade 中的核心系统 - GPU/游戏线程/渲染线程</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#过度描画-gpu">过度描画 - GPU</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#lods-细节层次-gpu/游戏线程">LODs - 细节层次 - GPU/游戏线程</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#lod距离检查时间">LOD 距离检查时间</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#lod模式-游戏线程">LOD模式 - 游戏线程</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#固定vsstop非固定的边界-游戏线程">固定 vs. 非固定的边界 - 游戏线程</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#描画调用函数-渲染线程">描画调用函数 - 渲染线程</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#网格物体发射-游戏线程/渲染线程">网格物体发射 - 游戏线程/渲染线程</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#cpu碰撞-游戏线程">CPU碰撞 - 游戏线程</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#基于每个单位生成粒子-gpu/游戏线程">基于每个单位生成粒子 - GPU/游戏线程</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#内存消耗">内存消耗</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#更新时间-游戏线程">更新时间 - 游戏线程</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#nondirectionallightingcosts-gamethread">Non Directional Lighting Costs - Game Thread</a>
+	</li>		    	        </ul>
+</div>
+<h2 id="cascade中的核心系统-gpu/游戏线程/渲染线程">Cascade 中的核心系统 - GPU/游戏线程/渲染线程</h2>
+
+<p>Cascade 会创建可以使动态性能消耗在虚幻引擎 4 中的三个核心引擎系统之间传播的完整粒子系统。  游戏线程、渲染线程和 GPU。
+</p><ul ><li><p>在游戏线程 (gamethread) 上计算粒子仿真时间(Tick)。
+</p></li><li><p>在渲染线程上计算粒子数据最终结果（打包几何体，描画函数调用）。
+</p></li><li><p>在 GPU 上计算粒子可视程度（着色器复杂度，过渡描画）。
+</p></li></ul><p>所有这些系统相互并行地进行计算，所以如果其中某个系统速度降低可能在渲染过程中会出现瓶颈现象，等同于帧速率低的情况。 重点是要在 Cascade 中创建粒子系统的时候考虑所有这 3 个过程。
+</p><p>还有一点也很重要，注意 Cascade 会在游戏线程上运行粒子评估，游戏性计算也是在这里进行的。
+</p><a name="overdrawgraphics" ></a><h2 id="过度描画-gpu">过度描画 - GPU</h2>
+
+<p>当您添加材质到平面粒子的表面，该材质在指令数中会形成性能损耗。  对于半透明物体，这个指令消耗会随着半透明物体堆栈上升而增加，最后造成过度描画。  不透明物体图层越多，消耗越高。 简单地说，可以将过渡描画描述为：
+</p>
+<pre class="prettyprint"><code>过度描画 = Pixel shader cost（像素着色器消耗） = 图层的数量 * 受图层影响的平均像素数量 * 图层的平均指令数</code></pre>
+<p>您可以轻松地在 <strong>Shader Complexity Mode（着色器复杂度模式）</strong> 中看到这个损耗。  亮红色 = 300 条指令，粉色 = 600 条指令，而白色 >= 900 条指令。  在 PC 上按下 <strong>Alt+8</strong> 来查看着色器复杂度。
+</p><div class="note">
+	<p>您可以在材质编辑器中查看材质的指令数。
+</p>
+</div><p>着色器复杂度会输出系统将要消耗的近似值，但是它还取决于场景，因为半透明物体要相对也有消耗的透明物体进行计算。
+</p><p>检查您的效果使用情况，这一点也很关键。  可能在任何给定情境中调用的效果（武器撞击）通常需要比您可以自定义构建的效果更亮，这样才能与特定情境相符，因为它将会在消耗不断变动的情境中进行描画。
+</p><p>可以使过渡描画影响处于控制范围内需要采取的一些步骤：
+</p><ul ><li><p>降低发射率。
+</p></li><li><p>减少材质指令数量。
+</p></li><li><p>减少粒子范围（填充屏幕面积较小）。
+</p></li><li><p>为近处/远处粒子发射创建 LOD，降低不同视线距离的消耗。
+</p></li><li><p>检查并排放置互相堆叠在一起的发射器（静态放置的效果）。
+</p></li></ul><a name="gamethread" ></a><h2 id="lods-细节层次-gpu/游戏线程">LODs - 细节层次 - GPU/游戏线程</h2>
+
+<p>Cascade 中的 LOD 为用户提供了根据玩家距离发射器的距离控制模块和行为的功能。  为了使用 LOD 系统，可以对粒子系统中的任何属性进行修改。
+</p><p>请参阅 <a id="content_link" href="../../Cascade/index.html" ><span>Cascade参考指南</span></a>
+ 的<a id="content_link" href="../../Cascade/index.html#partilesystemlods" ><span>粒子系统细节层次 (LOD)</span></a>
+部分了解更多有关设置 LOD 的技术信息。
+</p><p>重点是记住在创建 LOD 的时候会产生与未共享模块相关的内存消耗。  尽量在 LOD 之间共享很多歌模块，这样可以降低内存占用量。 只需创建为您想要修改的属性而设置的唯一模块。
+</p><div class="topic noclear" style="margin:-2em 0em 0em 0em;">
+	<div class="img" style="float:left;">
+		<p><img alt="detailModes.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/ParticleSystems/Optimization/Results/detailModes.png" /></p>
+	</div>
+    <div class="transparent wrapper">
+		<p>Cascade 中的预览模式与编辑器透视图的工作方式不同。 为了可以在 Cascade 中正确预览，请确保设置 <strong>View（视图）</strong> -> <strong>Detail Mode（细节模式）</strong> 为 <strong>High（高）</strong> 。
+</p><p>Cascade 允许在 LOD 之间进行切换，并且显示指定的 LOD。  为了看到 Cascade 正确更新，请务必禁用 Editor LOD 视图模式。
+</p><p>启用编辑器预览可以提供飞过场景以及在您四处移动的时候会看到粒子系统在 LOD 之间切换的功能。
+</p><p>重点是仔细考虑这个场景，然后了解为了看到正常状态的效果需要多少个单元的现实情况。  在环境粒子系统的实例中，可以发射 0.00 粒子，并且在可能看不到粒子系统的时候减少更新时间。  通过按住鼠标中间按钮然后在任何正交视图（正面、侧面、顶部）中拖拽可以测量距离。
+</p>
+	</div>
+</div>
+<h3 id="lod距离检查时间">LOD 距离检查时间</h3>
+
+<p><strong>LOD Distance Check Time（LOD 距离检查时间）</strong> 功能会指定游戏检查玩家与放置在场景中的发射器之间的距离的频率，以此确定要使用哪一个 LOD。  在将 LOD模式设置为自动化后 LOD Distance Check Time（LOD 距离检查时间）开始运行。
+</p><p>将其设置为自动实质上会在您进行游戏的时候让游戏确定 LOD。  如果您增加了 LOD Distance Check Time，那么检查之间的时间量将会增加。  LOD DistanceCheckTime 以秒为单位进行计算，所以在设置它的时候要考虑您的玩家的最大运动速度。  如果您将 LOD Distance Check Time 的值设置为 0.00，那么会在每一帧对距离进行检查，这样做等同于降低性能。
+</p><h3 id="lod模式-游戏线程">LOD模式 - 游戏线程</h3>
+
+<p>正确设置 LOD 方法对于性能和视觉效果来说至关重要。
+</p><p>自动 - 游戏将会根据效果中定义的距离参数设置 LOD，使用 LOD Distance Check Time 设置。 通常用于可以循环但没有被游戏代码调用的环境效果。
+</p><p>直接设置 - 在生成这个效果时确定 LOD（通常通过游戏代码）并且保留在定义的 LOD。  通常在诸如爆炸或撞击这样的爆炸效果中使用。
+</p><p>激活自动 - 在生成效果时根据 LOD 中定义的距离参数定义 LOD。  通常用于像蓝图等这样要求 LOD 生成后就永远不发生变换的程序中调用的爆炸效果。
+</p><h2 id="固定vsstop非固定的边界-游戏线程">固定 vs. 非固定的边界 - 游戏线程</h2>
+
+<p>边界是引擎可以确定效果的可视性的方法之一。  这些看不见的坐标会告知引擎效果是否在视线范围内。  如果您的边界的一个角可见，那么引擎将会计算所有必要的效果分量。
+</p><p>边界性能消耗比较大，每一帧都需要进行检查和更新，因此将边界设置为固定的，然后确定边界需要多大。  在某些情况下，如果您需要看到爆炸飞出的每一块碎片，那么您可能希望您的边界相对大一点。  如果您使消耗变低，那么将边界收紧到核心分量可能会提高性能，但是在边界超出视线范围的时候效果会突然消失。
+</p><p>对于固定 vs. 非固定边界要注意一些事项。
+</p><p>火箭轨迹快速移动效果（例如，火箭轨迹，追踪器或任何附加到射弹上的东西等等）不应该设置固定边界，或者将固定边界设置得很大，这样发射器将无法飞出边界外面。
+</p><p>在设置边界的时候需要注意在您的系统中定义的本地 vs. 世界空间坐标。  如果将发射器旋转到您的边界朝向相反的方向，那么效果的元素可以飞出您的边界，同时会发生元素突然弹出视图的现象。
+</p><a name="renderthread" ></a><h2 id="描画调用函数-渲染线程">描画调用函数 - 渲染线程</h2>
+
+<p>粒子系统中的描画调用函数通常追踪很困难。  在确定描画调用函数消耗的时候要记住的几个综合因素。
+</p><p>平面粒子发射的每个发射器对应 1 个描画调用函数，不考虑屏幕方位。
+</p><p>网格物体发射的每个网格物体发射器对应 1 个描画调用，不考虑发射的网格物体数量。 但是，在移动设备上，性能消耗为每个 <em>发射</em> 的网格物体消耗1个描画调用。 所以，在移动设备上，如果您在特效中有 2 个发射器，每个发射 10 个网格物体，那么您的消耗就是与该粒子相关的 20 个描画调用函数的消耗总量。
+</p><p>材质通路也可以确定描画调用函数消耗。 您的材质中通路越多，您的效果中的描画函数调用就会越多。
+</p><p>比如：
+</p><ul ><li><p>粒子系统 A 的组成：  1 个发射器生成 12 个平面实例，使用带有 1 个通路的材质，整个系统消耗 1 个描画函数。
+</p></li><li><p>粒子系统 B 的组成：  1 个发射器生成 12 个平面实例，使用带有 2 个通路的材质，整个系统消耗 2 个描画函数。
+</p></li><li><p>粒子系统 C 的组成：  1 个发射器生成 12 个网格物体，使用带有 2 个通路的材质
+</p><ul ><li><p><strong>移动平台</strong>： 整个系统消耗24个描画函数。 （2 个通路每个调用12 个网格物体，因为每个网格物体是一个单独的描画函数调用，所以最后 = 24 个描画函数）
+</p></li><li><p><strong>所有其它平台</strong>： 整个系统消耗2个描画函数。
+</p></li></ul></li><li><p>粒子系统 D 的组成：  1 个发射器生成 6 个网格物体，使用带有 2 个通路的材质，与此同时 1 个发射器使用 1 个通路生成 10 个平面实例，所以整个系统消耗 13 个描画函数。 （2 个通路每个调用 <em> 6 个网格物体，因为每个网格物体是一个单独的描画函数调用，最后 = 12 个描画函数，1 个通路 </em> 10 个平面实例 = 1 个描画函数调用）
+</p></li></ul><p>可以增加通路的 Material Attribute（材质属性）：
+</p><p>半透明材质 = 1 个通路基数
+</p><ul ><li><p>变形 +2 个通路
+</p></li><li><p><code >bUseLitTranslucencyDepthPass</code> +1 个通路
+</p></li><li><p>bUseLitTranslucencyPostRenderDepthPass +1 个通路
+</p></li><li><p><code >bUsedWithFogVolumes</code> +2 个通路
+</p></li></ul><p>不透明 / 蒙板材质 = 2 个通路基数
+</p><p>可以使用 <code >DumpParticleFrameRenderingStats</code> 命令查看特定场景的描画函数调用。  这个命令会输出详细列出了描画函数调用消耗的电子表格。
+</p><p>描画函数调用造成的影响将会按比例增加被渲染的视图数量。 这意味着在分屏中效果将会加强。 请参阅VFX 优化：分屏页面了解更多有关优化分屏后的效果的详细信息。
+</p><p>重要的是在构建您的效果以及优化效果的时候记住对应的消耗。  如果由于描画函数调用使得您的渲染线程消耗较高，而环境在预算范围内，那么这里时可以开始看的地方。
+</p><h2 id="网格物体发射-游戏线程/渲染线程">网格物体发射 - 游戏线程/渲染线程</h2>
+
+<p>网格物体发射是 Cascade 中较为强大的一个功能。 因为发射率与描画函数调用的数量相同，所以可能会在移动设备上无意滥用这个功能。  另外，减少您的网格物体上的顶点数量也是个不错的方法。
+</p><p>在某些情况下，可以使用一个单独的网格物体发射仿造大量物体，比如，在不消耗性能计算创建大量碎片时需要的所有平面实例的位置。
+</p><h2 id="cpu碰撞-游戏线程">CPU碰撞 - 游戏线程</h2>
+
+<p>通常在虚幻引擎4 中进行与CPU粒子碰撞相关的操作时性能消耗都比较高，所以只有在真正需要它们的时候才会使用。
+</p><p>可以使用一些设置降低碰撞消耗，这些设置包括：
+</p><ul ><li><p>MaxCollisions: 尽量使这个值低一些。
+</p></li><li><p>Collision Completion Option（碰撞完成选项）： 将它设置为 HaltCollisions/Freeze 可以在到达 MaxCollision 后停止对场景进行碰撞检查。
+</p></li><li><p>Damping Factor（衰减因数）可以确定物体在碰撞后的弹跳量，值越低可能会更快地停下来（降低 Max Collision（最大碰撞） 值）。
+</p></li></ul><h2 id="基于每个单位生成粒子-gpu/游戏线程">基于每个单位生成粒子 - GPU/游戏线程</h2>
+
+<p><strong>基于每个单位生成粒子</strong> 是 Cascade 中的功能，它可以在粒子系统移动的时候帮助填充空隙。  虽然这个功能可以用于创建好看的粒子轨迹，但是重点是在使用 Spawn Per Unit 时平衡视觉效果与性能限制。
+</p><p>下面有一些控制发射的技巧：
+</p><ul ><li><p>尽量使 Unit Scalar（单位标量）的值高一些，然后在它与发射率之间平衡，这样可以得到您需要的填充率，不会使效果过重。
+</p></li><li><p>如果您知道自己使用 Spawn Per Unit 将会具有较高的发射率，那么尝试使用指令数较少的材质。
+</p></li><li><p>调整 Max Frame Distance（最大帧距离）限制可以发射的粒子数量。  如果该发射器超出这个 Max Frame Distance（最大帧距离），那么 Spawn Per Unit 将会停止发射，直到它返回这个距离范围以内。  这样可以阻止发射器将大量平面实例转存到场景中。
+</p></li></ul><h2 id="内存消耗">内存消耗</h2>
+
+<p>Cascade 提供了显示大量与粒子系统创建相关的重要信息的功能。  它通常可以帮助显示这些信息，以便更好地了解您的系统分配的粒子数量以及您的系统发射的粒子数。
+</p><p>Particle Allocation（粒子分配）可以确定在给定时间可以为发射器放置在世界中的粒子数量，它对确定您的粒子系统将会消耗多少内存起到了很大的作用。  您可以通过在 Cascade 中启用 View（视图）下拉菜单的粒子内存覆盖层看到内存估值。
+</p><p>通过调整设置，可以看到内存消耗增加和减少。
+</p><p>减少内存占用的方法包括：
+</p><ul ><li><p>将系统中的模块数量减少到只包含指定操作所必需的模块。
+</p></li><li><p>对于虚幻效果，减少 Loop Time（循环时间）/Duration（持续时间）（为每个虚幻分配更少的粒子）。
+</p></li><li><p>减少生命周期（总体上说就是粒子更少）。
+</p></li><li><p>尽量共享更多的模块。
+</p></li></ul><p>Cascade 具有在一个发射器与下一个发射器之间共享模块的功能。  使用这个功能有两个好处。  首先，如果您想要编辑多个发射器的值，那么您可以只编辑 1 个模块，然后更新所有其他设置即可。  其次，共享模块会减少内存占用量，因为烘焙版本会将模块消耗看做是该模块的 1 个实例。
+</p><p>最近添加到烘焙器中的内容可以比较粒子系统中的所有模块，并确定相同的模块，然后共享模块自动减少烘焙时的内存占用量。
+</p><h2 id="更新时间-游戏线程">更新时间 - 游戏线程</h2>
+
+<p>Tick Time（更新时间）指的是在场景中更新粒子系统所花费的时间。  可以使用会列出估计粒子评估消耗所需要的所有相关信息的 stat 粒子命令查看 Tick Time（更新时间）。
+</p><p>可以使用很多方法降低 Tick（更新）消耗。
+</p><p>Tick Time（更新时间）会直接受到您的场景中处于激活状态的 emitterActor 数量的影响。  场景中处于激活状态的发射器越多，Tick Time（更新时间）的数值会越高。  如果在关卡启动的时候需要发射器循环，那么只应该将发射器设置为 autoActivate。
+</p><p>如果在编辑器中加载关卡的时候可以看到大量平面实例/爆炸/爆裂效果，那么运行时会自动评估这些效果，而且在关卡加载完成的时候会出现明显的停顿现象。
+</p><p>只要将效果放置在世界中后，就可以在效果中使用粒子参数留出位置偏移量。  通过使用粒子参数，可以减少发射器数量，从而总体降低更新消耗。  Particle Parameter（粒子参数）可以通过从单独设置模块的分布列表中选择 particleParameter 进行设置。
+</p><p>当它们不在视图中时或者它们与不再在内存中的关卡的某个区域相关联的情况下，可以动态载出并禁用EmitterActor。  随关卡几何体一起动态加载 EmitterActor 是可以减少更新消耗的绝佳实践方案。  在气氛效果较强的情况下，可以在战斗过程中使用蓝图动作切换关闭和打开气氛，减少更新时间和消耗。
+</p><p>加载到内存中但是不在视线范围内（也就是说在位于您上方的地板上）的 Particle System（粒子系统）也可以使用蓝图操作和动态加载体积进行切换，以此减少评估消耗。
+</p><p>在某些情况下，网格物体效果是粒子系统的一个较好的代替。  放置的静态网格物体在游戏线程上没有评估消耗。  在很多情况下放置一个静态网格物体代替粒子系统的做法更有利。  这其中包括远景效果、雾效果等等。
+</p><p>粒子数量直接影响评估计算的性能消耗。  场景中的粒子越多，它们存活的时间越长，需要进行的评估计算越多。  总的来说，将生命周期限制在效果需要的持续时间段内是个不错的实践方案。
+</p><p>当系统不在最佳视线范围内时，在粒子系统中启用 LOD 可以减少粒子发射。  它可以帮助您从主要状态的角度考虑您的效果，允许关卡在视线距离变长的情况下效果质量降低。  将 LOD 收紧到要求的距离可以大大降低场景中的评估计算消耗，而视觉效果质量不会发生明显变化。
+</p><p>检查您的评估计算消耗较高的效果，例如，Collisions（碰撞）、非固定边界以及每个单位生成粒子数量过高。  将边界设置为一个固定的状态可以显著提高性能，任何时候只要可能就应该使用固定边界。
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/ParticleSystems/Optimization/Results/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:30 GMT -->
+</html>

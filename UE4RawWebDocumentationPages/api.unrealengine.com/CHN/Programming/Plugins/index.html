@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Plugins/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 02:28:30 GMT -->
+<head>
+    <title>插件 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../docs.unrealengine.com/latest/INT/Programming/Plugins/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../docs.unrealengine.com/latest/KOR/Programming/Plugins/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../docs.unrealengine.com/latest/JPN/Programming/Plugins/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../docs.unrealengine.com/latest/CHN/Programming/Plugins/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3808342" />
+<meta name="availability" content="Public" />
+<meta name="title" content="插件" />
+<meta name="description" content="如何创建虚幻引擎插件。" />
+<meta name="version" content="4.16" />
+<meta name="parent" content="Programming/UnrealArchitecture/Reference" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="插件" />
+	<meta property="og:description" content="如何创建虚幻引擎插件。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../UnrealArchitecture/Reference/index.html">虚幻架构</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_16"><a id="version_link" href="../../SiteIndex/index6b5c.html">Unreal Engine 4.16</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">插件</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_16"><a id="version_link" href="../../SiteIndex/index6b5c.html">Unreal Engine 4.16</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#插件编辑器用户界面">插件编辑器用户界面</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#插件剖析">插件剖析</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#插件文件夹">插件文件夹</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#插件中的代码">插件中的代码</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#插件中的内容">插件中的内容</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#游戏项目中的插件">游戏项目中的插件</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#引擎插件">引擎插件</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#分配插件">分配插件</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#插件描述符文件">插件描述符文件</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#描述符文件示例">描述符文件示例</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#描述符文件格式">描述符文件格式</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#模块描述符">模块描述符</a>
+	</li>					</ul>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#图标文件">图标文件</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#插件示例">插件示例</a>
+	</li>		    	        </ul>
+</div>
+<p>本页介绍如何开发自己的插件，以便配合虚幻引擎工具和运行时间使用和。 
+</p><p>许多虚幻引擎子系统都设计为可扩展，无需修改引擎代码， 
+可直接添加全新的功能，及修改内置的功能。您可以创建新文件类型，添加新菜单项目和工具栏命 
+令至编辑器，甚至可以添加全新的功能和编辑器子模式！
+</p><p>如需直入正题，并马上试用插件，请参阅<a id="content_link" href="index.html#pluginexamples" ><span>插件示例</span></a>
+部分。
+</p><a name="pluginseditorui" ></a><h2 id="插件编辑器用户界面">插件编辑器用户界面</h2>
+
+<p>您可以打开 <strong>编辑（Edit）</strong> 菜单的 <strong>插件（Plugin）</strong> 编辑界面查看当前已安装的插件。 
+</p><p><img alt="PluginsEditor.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Programming/Plugins/PluginsEditor.jpg" />
+</p><p>您可从主“窗口（Window）”菜单访问插件编辑器。此界面显示当前已安装的所有插件， 
+并且可逐项启用或禁用。
+</p><p>您可以使用左侧的树形界面浏览插件类别。选择一个类别就会显示该类别的所有插件， 
+及其任意子类别中的插件。浏览类别时，UI 顶部显示的“面包屑” 
+痕迹可以快速跳转至上一级的类别。类别名称旁 
+显示的数字表示该类别可用的插件数量。
+</p><p><img alt="PluginCategories.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Programming/Plugins/PluginCategories.jpg" />
+</p><p>插件显示在主列表中，与插件一起显示的还有插件的名称、图标、 
+当前版本、有效描述、作者（及可选的网页超链接）及当前是否启用。
+</p><p>可以使用顶部的搜索功能按钮按名称搜索列表中显示的插件。
+</p><p><img alt="SearchingPlugins.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Programming/Plugins/SearchingPlugins.jpg" />
+</p><p>切换插件描述下的 <strong>启用（Enable）</strong> 复选框即可启用或禁用插件， 
+以便配合当前活跃的项目使用。可能需要重启编辑器，所做更改才会生效。
+</p><a name="anatomyofaplugin" ></a><h2 id="插件剖析">插件剖析</h2>
+
+<p>有代码的插件将有源文件夹。该文件夹包含一个或多个含该插件模块源 
+代码的目录。请注意，插件通常都有代码，但并非一定要有代码。请参阅<a id="content_link" href="index.html#codeinplugins" ><span>插件的代码</span></a>
+ 
+部分了解更多信息。
+</p><p>包含代码模块的插件将有自己的二进制文件夹，该文件夹包含该插件的已编译代码。 
+另外，临时构建的产品文件将保存在插件目录下的中间文件夹。 
+</p><p>插件可拥有包含其特有的资源文件的自有内容文件夹。请参阅<a id="content_link" href="index.html#contentinplugins" ><span>插件中的内容</span></a>
+ 
+部分了解更多信息。
+</p><div class="warning">
+	<p>插件暂不支持配置文件。我们正考虑日后添加此功能。 
+</p><p>另外，插件暂不支持各自的派生数据缓存分配。我们正考虑 
+日后添加此功能。
+</p>
+</div><a name="pluginfolders" ></a><h2 id="插件文件夹">插件文件夹</h2>
+
+<p>插件始终位于插件目录中。为了方便查找，插件必须位于 
+虚幻引擎上适用于插件的有效搜索路径上。 
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>插件类型          </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>搜索路径                                        </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>引擎（Engine）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>/UE4 Root/Engine/Plugins/My Engine Plugin/</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>游戏（Game）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>/My Project/Plugins/My Game Plugin/</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>您也可将插件安排在基础插件文件夹下的子目录中。引擎将扫描待加载插件 
+的基础插件文件夹下的全部子文件夹，找到插件后不再扫描下方的子目录。
+</p><p>虚幻引擎通过搜索磁盘上的.uplugin查找插件。我们将这些文件称之为插件描述符。它们都是文本文件， 
+介绍插件的基本信息。每当这些程序运行时，虚幻引擎、虚幻编辑器和虚幻构建工具 
+都会自动查找并加载插件描述符。请参阅<a id="content_link" href="index.html#plugindescriptorfiles" ><span>插件描述符</span></a>
+中的相关内容， 
+了解如何创建和自定义这些文件。
+</p><a name="codeinplugins" ></a><h2 id="插件中的代码">插件中的代码</h2>
+
+<p>为Visual Studio或Xcode生成项目文件时，任何带源文件夹（含*.Build.cs 文件）的插件都将添加至 
+项目文件，以便导航至各自的源代码。编译游戏项目时， 
+虚幻构建工具将自动编译这些插件。
+</p><p>插件可拥有任意数量的模块源目录。大部分插件只包含一个模块，但可以 
+创建多个模块，例如，需要设计为仅编辑器可以编译的部分功能，以及 
+仅在游戏运行时才需要的其他代码。 
+</p><p>大多数情况下，插件源文件布局与虚幻引擎中的任意其他C++模块一样。
+</p><p>插件可以在模块代码文件夹中类子目录的标头文件中表明新Uobject类型（UCLASS、USTRUCT 等） 
+。虚幻引擎编译系统将检测这些文件并视需要生成代码，用以支持这些UObject。您将需要按照在C++模块中使用Uobject的一般规则操作， 
+如在模块源文件中包含生成 
+的标头文件和模块的已生成 .inl 文件。
+</p><p>插件模块中有一点不同，就是要包含公共源文件标头。大部分插件模块的公共源文件夹中的标头文件没有业务导出 
+公共 API，因为它们永远不会对引擎或游戏代码建立 
+直接依赖性（静态链接）。所以，您的公共源文件夹通常是空的。但也有几种例外情况：
+</p><ul ><li><p>如果插件包含多个C++模块，公共文件夹中的代码可在插件内的模块之间共享。
+</p></li><li><p>如果您创建的是游戏插件（而非引擎插件），而且您需要允许游戏静态链接其中一个插件 
+模块。这与插件的概念有些不符，但通常对需要声明游戏类可以直接从中传递或 
+使用的新Uobject类型的插件有用。引擎本身对此插件没有依赖性，但游戏项目代码和内容 
+可能对插件有非常大的直接依赖性。
+</p></li><li><p>如需使用插件分配公共界面标头，以允许游戏代码或其他插件访问 
+该插件模块中实施的类型。这种情况较罕见，通常不鼓励这样做，因为我们目 
+前不打算支持直接依赖其他插件的插件。
+</p></li></ul><a name="contentinplugins" ></a><h2 id="插件中的内容">插件中的内容</h2>
+
+<p>虚幻引擎支持包含内容及二进制代码的插件。如需使用插件中的内容，必须将插件描述符中的“可
+包含内容（CanContainContent）”设置设为“（true）”。
+</p><a name="pluginsinyourgameproject" ></a><h2 id="游戏项目中的插件">游戏项目中的插件</h2>
+
+<p>插件位于游戏项目目录下的插件子文件夹中，游戏引擎和编辑器会在启动时检测和加载插件。 
+</p><p>如果插件包含带源文件夹（及*.Build.cs文件）的模块，插件代码将自动添加至生成的C++项目文件， 
+以便您可以在编译游戏项目的同时轻松开发插件。无论何时编译游戏项目， 
+任何有源代码可用的插件也将编译为对游戏有合成依赖性。 
+</p><p>没有源代码子文件夹的插件将被项目生成器忽略，且不会出现在C++项目文件中，但 
+只要二进制文件存在，游戏启动时将加载这些插件。
+</p><a name="engineplugins" ></a><h2 id="引擎插件">引擎插件</h2>
+
+<p>虚幻引擎4有一些内置插件位于引擎目录下。引擎插件就像游戏项目中的插件， 
+但不同的是，引擎插件适用于所有游戏项目。通常，这些插件由引擎和工具程序员创建， 
+以插件方式提供基本功能。这可让用户无需修改任何引擎代码便可删除或覆盖整个引擎功能。 
+</p><p>默认情况下，在加载任意游戏模块或游戏项目插件之前加载引擎插件。
+</p><p>引擎插件有个特殊要求：引擎代码模块不能针对引擎插件模块库创建静态链接。 
+即引擎插件必须与引擎本身分离，插件模块绝不可成为对引擎模块“有依赖性的模块”。 
+这种互不依赖的状态能够让引擎在没有插件可供加载时也能正常运行。
+</p><a name="distributingaplugin" ></a><h2 id="分配插件">分配插件</h2>
+
+<p>插件分配需按以下步骤操作.
+</p><ol ><li><p>确保 .uplugin 文件中的模块列表中加入白名单和黑名单的平台没有错误。
+</p></li><li><p>在编辑器插件浏览器中找到您的插件，并单击“<strong>编辑（Edit）……</strong>”链接以更新与插件相关的元数据
+（描述、文档链接等）。
+</p></li><li><p>单击“**打包（Package）……*”链接可将插件打包至插件分配文件夹。
+</p></li></ol><p>默认情况下，仅源代码、二进制文件和内容会随着插件一起打包。如需添加其他文件进行打包，
+请在插件文件夹下创建一个文件，命名为 Config/FilterPlugin.ini，就可以将此文件置于补充打包路径上，如下：
+</p>
+<pre class="prettyprint"><code>&#91;FilterPlugin&#93;
+/ThirdParty/...
+/MyOtherFolder/...</code></pre>
+<div class="warning">
+	<p>重要事项：
+</p><ul ><li><p>对于含内容的插件，您可能需要生成派生数据以便将内容包含在插件中，以免 
+要求终端用户生成此数据。此功能暂不可用，不过日后会添加。敬请关注！
+</p></li><li><p>暂不支持将 EULA 或其他文档加入待分配的插件。我们可能于日后提供此支持。
+</p></li></ul>
+</div><a name="plugindescriptorfiles" ></a><h2 id="插件描述符文件">插件描述符文件</h2>
+
+<p>插件描述符文件的扩展名通常以 <strong>.uplugin</strong> 结尾。文件名的第一部分即为插件名称。 
+插件描述文件始终位于插件目录下，引擎会在启动时检测到这些文件。
+</p><p>插件描述符的文件格式为Json（<a id="content_link" href="../../../../external.html?link=http://www.json.org/" ><span>对象表示法（JavaScript Object Notation）</span></a>
+）。
+</p><a name="descriptorfileexample" ></a><h3 id="描述符文件示例">描述符文件示例</h3>
+
+<p>此插件描述符示例来自于上文 <strong>UObjectPlugin</strong> <a id="content_link" href="index.html#pluginexamples" ><span>示例</span></a>
+。
+</p>
+<pre class="prettyprint"><code>{
+    "FileVersion" : 3,
+    "Version" : 1,
+    "VersionName" : "1.0",
+    "FriendlyName" : "UObject Example Plugin",
+    "Description" : “声明自带的Uobject类型的插件示例。可用作创建自有插件的起始点。",
+    "Category" : "Examples",
+    "CreatedBy" : "Epic Games, Inc.",
+    "CreatedByURL" : "http://epicgames.com",
+    "DocsURL" : "",
+    "MarketplaceURL" : "",
+    "SupportURL" : "",
+    "EnabledByDefault" : true,
+    "CanContainContent" : false,
+    "IsBetaVersion" : false,
+    "Installed" : false,
+    "Modules" :
+    &#91;
+        {
+            "Name" : "UObjectPlugin",
+            "Type" : "Developer",
+            "LoadingPhase" : "Default"
+        }
+    &#93;
+}</code></pre>
+<a name="descriptorfileformat" ></a><h3 id="描述符文件格式">描述符文件格式</h3>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>域名                        </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>信息            </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>FileVersion</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Required</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此插件描述符文件自己的版本。用于与添加至插件系统的新功能后向兼容。您应经常将此设为现在所用引擎版本所允许的最新版本。最新版本目前是 <strong>3</strong>，但这是指此处已记录的格式的版本。我们预计此版本不会频繁变更。在源代码中，您可以查看 <strong>EProjectDescriptorVersion</strong> 了解实际值。如需与旧版引擎最大程度兼容，可使用旧版格式，但不推荐这种做法。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Version</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此版本插件的当前版本编号。此值会随着以后版本的推出而增加。此版本编号通常对终端用户不可见。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>VersionName</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>编辑器UI中显示的插件版本。它从不用于进行任何版本检查，所以无论任何格式都可以，但我们建议使用简单的、 Major.Minor格式。每逢版本编号增加，就要更新此版本名称。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>FriendlyName</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>编辑器UI中显示的插件名称。如未指定，名称将默认为 .uplugin 文件名。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Description</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一段用于描述该插件用途的文本，也将在编辑器插件窗口中显示。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Category</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这是一种特殊的用点隔开的路径字符串，用来将您的插件分配至编辑器UI中的类别。它纯粹是为了组织结构而设。以 <strong>"Editor Features.Level Editing.Mesh Painting"</strong> 这一类别路径为例。每个类别都用句号隔开，且代表树中更深的层级。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>CreatedBy</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>创建此插件的个人或公司名称。可能显示在插件UI中，也可能在其他位置显示。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>CreatedBy</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>创建此插件的个人或公司的网页链接。若指定，编辑器UI可能显示供用户浏览此网页的超链接。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>DocsURL</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>插件文档网页链接。若指定，编辑器的插件浏览器可能显示供用户浏览此网页的超链接。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>MarketplaceURL</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该插件市场页面的链接。若指定，编辑器的插件浏览器可能显示供用户浏览此网页的超链接。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>SupportURL</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>该插件支持页面的链接。若指定，将在编辑器插件浏览器上显示。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>EnabledByDefault</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果设为（true），则将在该插件存在时，默认启用该插件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>CanContainContent</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>对此有规定，并设为 <strong>true</strong> 时，启用该插件的内容支持。默认设置为 <strong>false</strong>。请参阅<a id="content_link" href="index.html#contentinplugins" ><span>插件中的内容</span></a>
+了解更多信息。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>IsBetaVersion</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将其内容标记为测试版本。在插件列表中，“版本（Version）”将被“测试版本（BETA Version）”代替。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Installed</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果设为“true”，该插件将位于插件列表的“已安装”（Installed）分段，而非“项目”（Project）或“内置”（Built-in）分段。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Modules</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>对于包含源代码（和二进制文件）的插件，此模块列表应在启动时加载。请参阅下文了解更多信息。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="moduledescriptors" ></a><h4 id="模块描述符">模块描述符</h4>
+
+<p>对于包含代码的插件，此描述符文件将包含至少一个模块描述符。 
+</p>
+<pre class="prettyprint"><code>{
+    "Name" : "UObjectPlugin",
+    "Type" : "Developer"
+    "LoadingPhase" : "Default"
+}</code></pre>
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>域名                </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>信息            </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Name</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Required</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将与该插件一起加载的插件模块的唯一名称。运行时，引擎的二进制文件夹下将存在相应的插件二进制文件，且模块使用此处指定的名称。对于包含源目录的模块，则模块的子文件夹树下将存在匹配的*.Build.cs文件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>Type</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Required</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置模块的类型。有效选项有 <strong>Runtime</strong>、<strong>RuntimeNoCommandlet</strong>, <strong>Developer</strong>、<strong>Editor</strong>、 <strong>EditorNoCommandlet</strong> 和 <strong>Program</strong>。此类型决定了此插件模块适合加载的应用程序类型。例如，有些插件可能包括被设计为仅在编辑器运行时加载的模块。运行时模块将在任意情况下加载，即使在已经推出的游戏中也可以。开发者模块仅在开发运行时或编辑器版本中加载，绝不会在正在推出的版本中加载。编辑器模块仅在编辑器启动时加载。插件可使用不同类型的模块组合。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>LoadingPhase</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如指定，则控制在启动时加载插件的时间。这是高级选项，通常对此不作要求。有效选项有 <strong>Default</strong>（在未指定 LoadingPhase 时使用）、<strong>PreDefault</strong> 和 <strong>PostConfigInit</strong>。<strong>PostConfigInit</strong> 允许在引擎完成关键子系统的启动之前加载该模块。PreDefault在法线阶段之前加载。通常，仅在您认为游戏模块对插件中的内容或插件代码中表明的类型有直接依赖性时才需要用到此选项。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>WhitelistPlatforms</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>若指定，则提供将为其编译此模块的平台列表。若未指定，则将为所有平台编译此模块。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>BlacklistPlatforms</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Optional</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>若指定，则提供将不为其编译此模块的平台列表。若未指定，则将为所有平台编译此模块。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="iconfiles" ></a><h2 id="图标文件">图标文件</h2>
+
+<p>和描述符文件一样，插件通常都有一个用于在编辑 UI 显示插件的图标文件。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>文件名                       </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>信息            </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>格式           </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>/Resources/Icon128.png</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><em>Required</em></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>128x128 PNG 文件</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此图标在编辑器UI中代表着此插件。它将显示在插件用户界面，可从主窗口菜单访问。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="pluginexamples" ></a><h2 id="插件示例">插件示例</h2>
+
+<p>我们创建了几个不具备任何功能的插件示例，但您可以在开始创建自己的插件时将其作为空壳使用。这些示例均包含引擎源代码。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>示例名称  </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>信息 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>BlankPlugin</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此插件为空壳，仅作为示范，展示构建新代码插件模块所需的多个最小空文件。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>UObjectPlugin</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于展示如何声明自带Uobject类的简单空插件。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>如需将这些示例用作构建插件的起始点：
+</p><ol ><li><p>将示例插件复制到新文件夹，将目录、文件和代码内容重命名，使之与您的新插件名称相匹配。请勿继续沿用现有名称，因为这会和与引擎一起打包的内置插件冲突。
+</p></li><li><p>在游戏项目目录下 <strong>创建“Plugins”文件夹</strong>，然后将插件复制到“Plugins”下的任意子目录。
+</p><p><img alt="ExamplePlugins.png" src="../../../../external.html?link=https://api.unrealengine.com/images/Programming/Plugins/ExamplePlugins.jpg" />
+</p></li><li><p><strong>重新构建C++项目文件</strong>。插件模块和源代码将显示在项目文件中项目目录下的目录中。 
+</p></li><li><p>按常规方式 <strong>编译游戏项目</strong>。虚幻构建工具将检测这些插件，并按照对游戏的依赖情况进行编译！
+</p></li><li><p><strong>启动编辑器</strong>（或游戏。）起初插件将是禁用状态，但您可以在编辑器UI中启用。
+</p></li><li><p><strong>打开插件编辑器</strong> （窗口（Window） -> 插件（Plugin）），搜索您的插件，并单击复选框启用即可。
+</p></li><li><p><strong>重启编辑器</strong>。您的插件将在启动时自动加载。
+</p></li></ol><p>打开 <strong>窗口（Window） -> 开发者工具（Developer Tool）</strong> 菜单下的 <strong>模块（Module）</strong> 查看器即可查看已加载的插件。 
+还可以使用代码调试器在插件的启动代码中放置一个断点，如*FBlankPlugin::StartupModule()*。
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Plugins/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 02:28:44 GMT -->
+</html>

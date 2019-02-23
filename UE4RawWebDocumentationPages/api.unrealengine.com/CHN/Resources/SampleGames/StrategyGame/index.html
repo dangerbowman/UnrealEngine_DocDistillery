@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Resources/SampleGames/StrategyGame/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 03:37:57 GMT -->
+<head>
+    <title>战略游戏 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Resources/SampleGames/StrategyGame/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Resources/SampleGames/StrategyGame/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Resources/SampleGames/StrategyGame/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Resources/SampleGames/StrategyGame/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3782314" />
+<meta name="availability" content="Public" />
+<meta name="title" content="战略游戏" />
+<meta name="description" content="涵盖塔防游戏的文件。" />
+<meta name="related" content="Gameplay/AI" />
+<meta name="related" content="Programming/Slate" />
+<meta name="related" content="Engine/Blueprints/UserGuide/Types/LevelBlueprint" />
+<meta name="related" content="Engine/Blueprints/Editor" />
+<meta name="related" content="Programming/Slate" />
+<meta name="related" content="Gameplay/Framework/UIAndHUD" />
+<meta name="related" content="Gameplay/Input" />
+<meta name="related" content="Engine/Rendering/ParticleSystems" />
+<meta name="version" content="4.9" />
+<meta name="topic-image" content="StrategyGameTopic.png" />
+<meta name="parent" content="Resources/SampleGames" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="战略游戏" />
+	<meta property="og:description" content="涵盖塔防游戏的文件。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">游戏示例项目</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">战略游戏</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="fullwidth">
+	<p><img alt="StragetyGame.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/SampleGames/StrategyGame/StragetyGame.jpg" />
+</p>
+</div><div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#ai逻辑和自动生成的pawns">AI逻辑和自动生成的Pawns</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#建造建筑">建造建筑</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#相机">相机</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#游戏中的hud">游戏中的HUD</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#菜单">菜单</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#关卡蓝图">关卡蓝图</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#资源节点-金币">资源节点 - 金币</a>
+	</li>		    	        </ul>
+</div>
+<p><strong>塔防</strong> 实例是即时战略游戏/塔防游戏的一个示例。 
+</p><p>特性的完整列表如下：
+</p><ul ><li><p>简单AI逻辑
+</p></li><li><p>自动生成的Pawns
+</p></li><li><p>自上而下的相机
+</p></li><li><p>建造建筑
+</p></li><li><p>主菜单
+</p></li><li><p>组合了画布描画和Slate控件的游戏中的HUD
+</p></li><li><p>游戏中的菜单
+</p></li></ul><p>在塔防游戏中，玩家必须通过建造劲弩、自动弩以及喷火炮塔来防卫其酿酒厂，同时还会有我方的士兵Pawn来协助防卫。  如果为保卫的酿酒厂购买了升级，这些士兵就会拥有大锤和盾牌。  炮塔，士兵以及升级都需要花费金币，可以从金币节点中收集，也可以击败敌人来获得。 如果玩家能从5波敌人的进攻中幸存，包括最终BOSS的攻击，而没有失去全部三条生命，那么他们会赢得胜利！
+</p><a name="ailogicandautomatedpawns" ></a><h2 id="ai逻辑和自动生成的pawns">AI逻辑和自动生成的Pawns</h2>
+
+<p><img alt="minion_attack.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/SampleGames/StrategyGame/minion_attack.jpg" />
+</p><p>塔防中的AI逻辑是简单的有限自动机（FSM）。  两种可能的状态为向敌人基地移动以及攻击敌人，两种状态均为继承于<code >StrategyAIAction</code>的单独类。 状态位于优先数组内，最为重要的操作排在最前面。  这个数组被进行迭代，并且会选择最为适合执行的操作，如果需要执行具有更高优先级的操作，则可以终止当前操作。
+</p><p>敌方Pawn和我方Pawn都根据AI逻辑运行，向对方基地移动，并且如果遇到对方则开始攻击对方的Pawn。  玩家无法控制我方Pawn的移动或行为，但是他们可以购买新的单位以供生成。<br /></p><p>同时使用了蓝图来添加逻辑到士兵的生成。  友军和敌军都可以装备盾牌；如果您为酿酒厂购买了兵工厂升级，则友军可以获得盾牌，如果在 <em>关卡蓝图</em> 中调用SpawnHeavyFunction或SpawnEndBossFunction，则敌军的Pawn将会获得盾牌。 如果Pawn拥有盾牌，则来自于自动弩的射弹将会被销毁并且不会造成伤害。 这个逻辑使用 <em>蓝图接口</em> 来实现。  名称为 <strong>Minion</strong> （士兵）的蓝图也包含了网络，可以在其被火焰炮塔蓄力击中时令敌军Pawns行动缓慢。<br /></p><a name="buildingconstruction" ></a><h2 id="建造建筑">建造建筑</h2>
+
+<p>在塔防游戏中，有两种建筑类 - <code >StrategyBuilding</code> 和 <code >StrategyBuilding_Brewery</code> 。  塔防中所有的炮塔类型，以及空白建筑格，都使用父类为<code >StrategyBuilding</code>的蓝图。  玩家可以点击任意空白建筑格来显示关联菜单并选择建造新建筑。  在建造建筑时，空白建筑格会被销毁，同时生成新建筑。<br /></p><p>同时还有一个升级建筑的机制。 <code >StrategyBuilding_Brewery</code>类被用于此例中，因此升级被建造在酿酒厂基地附近的关联空格中。
+</p><p>再次重申，塔防中的代码会创建基础建筑类。 塔防游戏中建筑的所有逻辑和设计都由关卡设计师在蓝图中制作。
+</p><a name="brewery" ></a><h3 id="酿酒厂">酿酒厂</h3>
+
+<p><strong>Brewery</strong> （酿酒厂）蓝图具有父类<code >StrategyBuilding_Brewery</code>，并且还包含了AIDirector组件。  在TowerDefenseMap（塔防地图）中放置了两个酿造厂，一个是敌人生成的地方，还有一个是我方的酿造厂，您可以在此处构建兵工厂和铁匠铺升级，并且可以生成我方的Pawns。在 <strong>Brewery</strong> 蓝图中没有图表逻辑，只有建造属性的*默认设置以及包含AIDirector，触发器盒体，以及 <em>静态网格物体</em> 的组件列表。 
+</p><a name="upgrades" ></a><h4 id="升级">升级</h4>
+
+<p><img alt="upgraded_brewery.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/SampleGames/StrategyGame/upgraded_brewery.jpg" />
+</p><p>我方酿酒厂的有两格升级槽。  它们来自于继承<code >StrategyBuilding</code>类的 <em>蓝图类</em> 。  如果在酿酒厂菜单中选择一项升级，则一个槽会由该升级所取代。 您只能购买一项铁匠铺升级和一项兵工厂升级。 
+</p><p>在购买铁匠铺升级后，建造开始，在 <strong>Wall_Smithy</strong> 蓝图中触发OnBuildStarted事件。  这个蓝图还会在建造完成时告知系统升级已经完成。  此时，任何我方Pawn都会获得来自<code >StrategyAttachment</code>类中继承的蓝图的盾牌。  在兵工厂升级报告其构建完成之后，指派"shield-attaching"操作的网络出现于 TowerDefenseMap <em>关卡蓝图</em> 的PlayerBaseUpgrades折叠图表中。 <code >StrategyAttachment</code>类包含一个<code >SkeletalMeshComponent</code>（骨架网格物体组件）；附加的网格物体和附加点在 <strong>Attachment_Armorer</strong> 蓝图的默认值中进行设置。
+</p><p>兵工厂蓝图包含了使用OnBuildStarted和OnBuildFinished事件设置的相同逻辑。  在建造兵工厂后，生成的任何我方Pawn都会拥有大锤，也是继承自<code >StrategyAttachment</code>类。  在铁匠铺升级报告其建造完成之后，指派"hammer-attaching"操作的网络也出现于 TowerDefenseMap <em>关卡蓝图</em> 的PlayerBaseUpgrades折叠图表中。
+</p><a name="turrets" ></a><h3 id="炮塔">炮塔</h3>
+
+<a name="emptyslot" ></a><h4 id="空白栏">空白栏</h4>
+
+<p><img alt="building_empty_slot.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/SampleGames/StrategyGame/building_empty_slot.jpg" />
+</p><p>空白栏也是具有<code >StrategyBuilding</code>父类的蓝图，Wall_EmptySlot。 在蓝图图表中没有逻辑。 这是一个对建造属性和静态网格物体以及作为组件设置的触发器盒体的默认值进行设置的 <em>蓝图类</em> 。
+</p><p>所有可能的炮塔升级都在建造分类的升级部分的Wall_EmptySlot蓝图的默认值部分进行设置。<br /></p><a name="arbalest" ></a><h4 id="劲弩">劲弩</h4>
+
+<p><img alt="building_arbalest_shooting.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/SampleGames/StrategyGame/building_arbalest_shooting.jpg" />
+</p><p><strong>Wall_arbalest</strong> 蓝图包含了弩的逻辑，弩是一种基本的炮塔类型。 弩使用中等强度的射弹射击最近距离的敌人，在其默认模式中自动射箭。 玩家也可以手动发射弩，他可以点击弩然后按照他们希望发射的方向来拖曳。  鼠标拖曳的距离越长，发射的弩的强度越大。<br /></p><p>弩的射弹被存储在继承于具有<code >StrategyProjectile</code>的蓝图TestProjectile的另一蓝图Projectile_arbalest中。Wall_arbalest蓝图具有一定数量的子网络，都包含在事件图表内。  在ConstructionScript中没有蓝图逻辑。<br /></p><a name="auto-arbalest" ></a><h4 id="自动发射的弩">自动发射的弩</h4>
+
+<p><img alt="building_auto-arbalest_shooting.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/SampleGames/StrategyGame/building_auto-arbalest_shooting.jpg" />
+</p><p><strong>Wall_arbalest_auto</strong> 蓝图包含了自动发射的弩的逻辑。  自动发射的弩从墙壁处直接发射射弹，对射弹穿过的每个单位造成少量的损伤。  自动发射的弩只有在射击到墙壁或敌人的盾牌时才会被销毁。  您可以通过点击并拖曳来让自动发射的弩瞄准所需方向；当您按下鼠标按钮时，自动发射的弩将会持续向瞄准的方向射击，但在您松开鼠标按钮后返回其默认发射位置。 
+</p><p>和劲弩一样，这个炮塔发射的射弹弓箭包含于单独的蓝图中。  名称为Projectile_arbalest_auto的自动发射的弓箭只有在撞击具有盾牌的敌人Pawn或墙壁时才会被销毁，而且这个操作是通过 <em>蓝图接口</em> ，Interface_Auto_Arbalest和Interface_Auto_Projectile的辅助来执行的。 
+</p><a name="flamethrower" ></a><h4 id="喷火器">喷火器</h4>
+
+<p><img alt="building_fire_shooting_normal.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/SampleGames/StrategyGame/building_fire_shooting_normal.jpg" />
+</p><p>喷火器并不像其他炮台类型那样发射射弹。  它在喷火区域中对所有敌人喷火。  玩家可以点击并按住鼠标不放来积攒喷火器的能量；根据按下的时间不同，释放鼠标后产生的能量可以达到最高三倍的伤害，并减缓受损伤的敌军Pawn的速度。  如果玩家积聚喷火器的能量，随后会需要很短的冷却时间，然后继续开始常规的火焰攻击。<br /></p><a name="camera" ></a><h2 id="相机">相机</h2>
+
+<p>塔防的相机具有固定的视角，并能根据鼠标滚轮的滑动来缩放视角。  相机的运算在<code >StrategyPlayerController</code>类的<code >CalcCamera</code>函数中进行，而您可以在<code >DefaultGame.ini</code>中计算诸如相机最小和最大偏移，相机角度以及相机速度的常量。
+</p><p>我们使用观察者Pawn来创建不具有可见Pawn的玩家。<br /></p><a name="in-gamehud" ></a><h2 id="游戏中的hud">游戏中的HUD</h2>
+
+<p>游戏中的HUD是通过混合使用画布描画和Slate控件来创建的。<br /></p><p><img alt="StrategyGameHUDcallouts.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/SampleGames/StrategyGame/StrategyGameHUDcallouts.jpg" />
+</p><p>在右上角，游戏计时器为游戏计算热身的倒计时时间，使用的是类<code >SStrategySlateHUDWidget</code>中的函数<code >GetGameTime</code>。 在游戏开始后，倒计时从屏幕上消失，并显示剩余的生命数(1) 。  "剩余生命数"显示的属性在<code >AStrategyHUD</code>类的<code >DrawLives</code>函数中进行设置；生命值的初始数值在TowerDefenseMap <em>关卡蓝图</em> 中的PlayerBaseUpgrades子图表中进行设置。<br /></p><p>当前的金币资源显示在屏幕的顶部中心位置(2)。  游戏计时器和资源显示都使用<code >SStrategySlateHUDWidget</code>中的基础控件进行定义。  同一个类被用于创建所有顶层的控件，但并不默认显示所有控件。
+</p><p>迷你地图位于HUD的左下角(3)。  它是从不可见的Slate控件叠加中构建的，它处理输入和实际地图图像，而此图像使用画布来描画。  <code >SStrategyMiniMapWidget</code>负责在按钮被按下时或在迷你地图区域按住按钮不放时移动相机。
+</p><p>当点击建筑空格时，会显示<code >SStrategyActionGrid</code>菜单。  只存在此控件的一个实例;其位置由激活的建筑空格来决定。  计算菜单的屏幕位置是以<code >DrawHUD</code>方式来完成的，它会投射选定的Actor位置到二维坐标。  此菜单的动作按钮的外观和事件映射在<code >ShowActionMenu</code>或<code >ShowCustomAction</code>方式的<code >AStrategyBuilding</code>类中进行定义。 <code >按钮</code>控件在<code >SStrategyButtonWidget</code>类中进行定义，任意绑定到动作按钮的额外信息都存储在<code >FActionButton</code>信息结构中。
+</p><p>Pawns和建筑的生命条都使用<code >DrawActorsHealth</code>方式在画布上进行描画。  每个队伍都有不同的生命条贴图。
+</p><div class="fullwidth">
+	<p><img alt="health_bar_textures.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/SampleGames/StrategyGame/health_bar_textures.jpg" />
+</p>
+</div><p>在HUD的右下角位置处，有一个<code >PauseButton</code>（暂停按钮）(4)，它可以切换暂停游戏和游戏中菜单的可视性。
+</p><p>在用完游戏时间后，或者在基地之一被摧毁后，游戏将会暂停，同时在屏幕中心位置会出现动画处理的"胜利"或"失败"文本。  动画会随着时间而变更字体大小。 文本使用简单的<code >STextBlock</code>控件来创建，具有可视度、字体和文本的代理。
+</p><a name="menus" ></a><h2 id="菜单">菜单</h2>
+
+<a name="mainmenu" ></a><h3 id="主菜单">主菜单</h3>
+
+<p><img alt="StrategyGameMainMenu1.png" width="700" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/SampleGames/StrategyGame/StrategyGameMainMenu1.jpg" />
+</p><p>主菜单位于 <strong>StrategyMenu</strong> 贴图内，它会载入主菜单的特定HUD。  菜单是基于Slate的，<code >SStrategyMenuWidget</code>负责主菜单的动画、布局甚至处理。  <code >SStrategyMenuItem</code>类继承于在游戏中HUD中使用的<code >SStrategyButtonWidget</code>，并且描述了单个菜单项目。  每个菜单项目（以及附着于项目的事件）都在<code >StrategyMenuHUD</code>中进行定义。<br /></p><p>如需返回到上一菜单，菜单共享指针的数组都被存储在<code >MenuHistory</code>变量中。 这个变量如同堆栈，存储之前查看过的菜单，这样在返回时很方便，同时能移除存储菜单父类的需求，这样菜单可以在多个场合中重新使用。‏
+</p><p>菜单动画使用在<code >SStrategyMenuWidget::SetupAnimations</code>中定义的插值曲线。 每条曲线都定义了起始时间、持续时间和插值方式，而且可以正反向播放。 如需在特定时间播放动画属性，则使用<code >GetLerp()</code>，它会返回在0.0f和1.0f之间的值。‏‎‏
+</p><a name="in-gamemenu" ></a><h3 id="游戏中菜单">游戏中菜单</h3>
+
+<div class="fullwidth">
+	<p><img alt="StrategyGamePauseMenu.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Resources/SampleGames/StrategyGame/StrategyGamePauseMenu.jpg" />
+</p>
+</div><p>当游戏中的菜单为激活状态时，会显示半透明的全屏Slate重叠，并且游戏被暂停。 <code >PauseMenuButtons</code> 在<code >SStrategySlateHUDWidget</code>中进行定义。 游戏中的暂停菜单有两个按钮： 一个是退出游戏，第二个返回主菜单。  如需退出游戏中菜单，玩家应再次按下右下方的暂停按钮。
+</p><a name="levelblueprint" ></a><h2 id="关卡蓝图">关卡蓝图</h2>
+
+<p><em>关卡蓝图</em> 具有生成每波攻击的模块化结构，以及初始化和胜利/失败条件。
+</p><a name="enemyspawns" ></a><h3 id="敌人生成">敌人生成</h3>
+
+<p>使用三个 <em>蓝图宏</em> 来构建每波进攻： spawn fast（生成快速敌军），spawn normal（生成正常敌军），以及spawn heavy（生成重型敌军）。  每次生成都使用所需的单位参数和附件，并随后等待<code >StrategyAIDirector</code>中的<code >SpawnMinions</code>函数的触发。 宏会等待敌军酿酒厂的<code >StrategyAIDirector</code>返回已经生成一波攻击的报告，然后允许在退出子网络的情况下执行。
+</p><p>每个生成的宏取入两个执行输入，一个用于开始宏，一个用于在*OnWaveSpawned事件触发后打开 <strong>大门</strong> ，并对生成的Pawns数量赋予整数输入。  来自类<code >StrategyAIDirector</code>的函数被调用，同时对每种类型的Pawn进攻波指定输入。  三个函数为<code >SetDefaultWeapon</code>, <code >SetDefaultArmor</code>以及 <code >SetBuffModifier</code>。  <code >SetDefaultWeapon</code>和<code >SetDefaultArmor</code>取入蓝图作为输入并指派这些蓝图为生成时的新默认武器或默认装甲。  举例来说，所有由SpawnFastMacro生成的敌军Pawn将Attachment_Smithy大锤蓝图作为默认武器，所有由SpawnHeavyMacro生成的敌军Pawn将Attachment_Armorer盾牌蓝图作为其默认装甲。 
+</p><p>最后由生成的蓝图函数调用的<code >StrategyAIDirector</code>函数是<code >SetBuffModifier</code>，它具有包括Pawn的攻击能力、生命值加成、速度和大小的多个数据输入。  这些输入都在蓝图中进行显示，所以对于关卡设计师创建要生成的敌军Pawn的新类是很简单的。  最后，每个生成的蓝图函数都会设置敌军酿酒厂的<code >StrategyAIDirector</code>的<code >WaveSize</code>属性。<br /></p><p>一共有五波敌人的攻击，每波都组合了不同的敌军Pawn，有快速、普通以及重型敌军。  在每波攻击的起始处， Show Wave Title（显示每波的标题）节点都会显示波数。  然后，调用首波敌人的生成。  在生成后有两种类型的延迟： 一个是由延迟节点设置的计时器延迟，一个是由WaitForWaveMacro设置的基于Pawn的延迟。WaitForWaveMacro宏继续检查有多少敌军Pawns仍存活，并且除非延迟时间过期或所有敌军Pawn均被摧毁，否则不会退出宏的执行。 在一波攻击的所有生成都完成，并且该波的所有敌军Pawn都被消灭后（或者过了两分钟），会使用 <em>远程事件</em>  节点来对下一波调用 <em>自定义事件</em> 。
+</p><a name="winandloseconditions" ></a><h3 id="输赢条件">输赢条件</h3>
+
+<p>在游戏中，您的基地有三条命。  如果有一个敌军Pawn到达了我方的酿酒厂，则扣除一条命，所有命都扣除后，游戏失败。  如果敌军的首领到达了我方的酿酒厂，则游戏失败。 要赢得游戏，您必须在损失所有三条命前击败所有的五波敌军。 该网络同时设置了输赢条件，它们位于 <strong>TowerDefenseMap</strong> 的 <em>关卡蓝图</em> 中，并会调用在类<code >StrategyGameMode</code>中设置的函数，而它来源于<code >AGameModeBase</code>类。  <code >StrategyGameMode</code>类同时包含诸如<code >InitGame</code>的函数，它会初始化游戏，并且在Actor的预初始化组件<code >SetGamePaused</code>和<code >SetGameDifficulty</code>被调用前进行调用。
+</p><p>在第五波生成的最终首领被消灭后，使用 <em>远程事件</em> 节点来调用胜利 <em>自定义事件</em> 。  这个 <em>自定义事件</em> 位于 <strong>胜利条件</strong> 评论框内，然后触发子网络WaitForWin的执行，而其会检查是否有其它仍存在的敌军Pawn。  如果该值为 <em>true</em> ，则在WinningTeam输入被设置为"玩家"的情况下调用<code >Finish Game</code>函数。<br /></p><p>在 <strong>失败条件</strong> 评论框中有两个节点，它们会调用胜利队伍输入设置为"Enemy"的<code >Finish Game</code>函数，这会导致玩家的游戏失败。  第一个节点会在全部三条命都损失后触发，三条生命会在敌军Pawn到达我方酿酒厂时被扣除。  每次敌军Pawn到达我方酿酒厂时都会触发 <strong>MultiGate</strong> 节点。MultiGate节点的第一个和第二个输出执行引脚都与更新我方酿酒厂的NumberOfLives（残余生命值量）值的节点相连接，从而每次将值降低1。 最后的输出执行引脚设置我方酿酒厂的生命值量为0，并随后触发WinningTeam值为"Enemy"的<code >Finish Game</code>函数。   在敌方首领生成后，BossSpawned <em>自定义事件</em> 关闭Gate节点，这会造成"3条命版本"的MultiGate，并打开另一个GateNode，从而使得第二个<code >Finish Game</code>函数的WinningTeam设置为"Enemy" 。 这样会创建开放的网络，这样如果最终的敌方首领到达我方酿酒厂，FinishGame函数会被激活并且玩家将失败。<br /></p><a name="resourcenode-gold" ></a><h2 id="资源节点-金币">资源节点 - 金币</h2>
+
+<p>金币节点为具有父类<code >StrategyResourceNode</code>的蓝图。  这个类包含公共函数<code >GetAvailableResources</code>和<code >GetInitialResources</code>、受保护的函数<code >OnDepleted</code>、在资源用尽时的报告函数<code >BlueprintImplementableEvent</code>、以及设置节点中资源数量的受保护属性<code >NumResources</code>。<br /></p><p>金币节点的蓝图包含子网络，从而让节点按照计时器来出现和消失。蓝图中的 <strong>构建脚本</strong> 在蓝图被放置在关卡时设置节点为自动隐藏。 当金币节点出现时，AppearFX粒子特效和声音一起播放。 如果由于节点被成功收集而触发了 <strong>OnDepleted</strong>  事件，则在节点中出现的金币数量被添加到玩家的总金币池中。  播放CollectFX粒子特效和CoinSound，随后节点被再次隐藏。  如果玩家未能及时通过点击金币来收藏节点，则播放FadeFX粒子特效和相应的声音。<br /></p>
+						    <div class="topic">
+        <div class="wrapper transparent">
+            <div class="largetitle topicbutton">
+                <div class="logo">
+                    <p>
+                        <img src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/related_icon.png" />
+                    </p>
+                </div>
+                <p>
+                    相关页面
+                </p>
+            </div>
+            <div class="linkcontainer">
+                <div class="buttonlist">
+                    <ul>
+                                                <li>
+                            <p>
+                                <a href="../../../Gameplay/AI/index.html" title="与人工智能相关的信息，包括行为树和寻路网格体的使用。">AI和行为树</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Programming/Slate/index.html" title="创建工具及游戏用户界面的跨平台用户界面框架。">Slate 用户界面框架</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Engine/Blueprints/UserGuide/Types/LevelBlueprint/index.html" title="用于为地图中特定于关卡的事件编写脚本的蓝图。">关卡蓝图</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Engine/Blueprints/Editor/index.html" title="本页包含蓝图编辑器的界面元素和基础使用说明。 ">蓝图编辑器参考</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Programming/Slate/index.html" title="创建工具及游戏用户界面的跨平台用户界面框架。">Slate 用户界面框架</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Gameplay/Framework/UIAndHUD/index.html" title="为美术师和程序员提供的创建用户界面(比如菜单和HUD)相关的指南和信息。">用户界面 & HUD</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Gameplay/Input/index.html" title="输入对象负责将玩家的输入转换为以Actor能够理解和使用之形式表现的数据。">输入</a>
+                            </p>
+                        </li>
+                                                <li>
+                            <p>
+                                <a href="../../../Engine/Rendering/ParticleSystems/index.html" title="包含任意数量粒子发射器的资源，用于在场景世界中创建特效。">级联粒子系统</a>
+                            </p>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Resources/SampleGames/StrategyGame/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 03:37:57 GMT -->
+</html>

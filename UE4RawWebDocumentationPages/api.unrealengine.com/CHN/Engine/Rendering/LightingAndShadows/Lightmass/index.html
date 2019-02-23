@@ -1,0 +1,1163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/LightingAndShadows/Lightmass/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:08 GMT -->
+<head>
+    <title>全局光照全局照明 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/LightingAndShadows/Lightmass/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/LightingAndShadows/Lightmass/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/LightingAndShadows/Lightmass/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/LightingAndShadows/Lightmass/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3807086" />
+<meta name="availability" content="Public" />
+<meta name="title" content="全局光照全局照明" />
+<meta name="description" content="全局光照的所有特性和设置的概要。" />
+<meta name="version" content="4.9" />
+<meta name="topic-image" content="%ROOT%/Engine/Rendering/LightingAndShadows/lighting_topic.png" />
+<meta name="parent" content="Engine/Rendering/LightingAndShadows" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="全局光照全局照明" />
+	<meta property="og:description" content="全局光照的所有特性和设置的概要。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">照亮环境</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">全局光照全局照明</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="fullwidth raw">
+	<p><img alt="lighting_overview_banner_001.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/lighting_overview_banner_001.png" />
+</p>
+</div><div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#静态和固定灯源的特性">静态和固定灯源的特性</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#仅适用于固定光源的特性">仅适用于固定光源的特性</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#仅适用于静态光源的特性">仅适用于静态光源的特性</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#使用全局光照获取最佳质量">使用全局光照获取最佳质量</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#获取最佳照明构建时间">获取最佳照明构建时间</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#全局光照设置">全局光照设置</a>
+	</li>		    	        </ul>
+</div>
+<p> <strong>全局光照（Lightmass）</strong> 创建具有复杂光交互作用的光照图，例如区域阴影和漫反射。它用于预计算具有固定和静止运动性的光源的照明贡献部分。 
+</p><p>编辑器和全局光照之间的通信由 <strong>Swarm Agent</strong> 处理，它管理本地的照明构建，也可以将照明构建分发到远程机器。默认情况下以最小化方式打开的Swarm Agent还会跟踪照明构建进度，并让您了解哪些机器为您工作，它们在做什么，以及每个机器使用了多少线程。<br /></p><p>下图是Swarm Agent的一个示例图像（靠近底部的条形图显示了构建的完成程度）。
+</p><p><img alt="SwarmAgent.png" width="640" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/SwarmAgent.jpg" />
+</p><a name="featuresforstaticandstationarylights" ></a><h2 id="静态和固定灯源的特性">静态和固定灯源的特性</h2>
+
+<a name="diffuseinterreflection" ></a><h3 id="漫反射">漫反射</h3>
+
+<p> <strong>漫反射（Diffuse Interreflection）</strong> 是目前为止视觉上最重要的全局照明效果。在默认情况下，光源以全局光照反射，而材质的基本颜色（BaseColor）项控制有多少光（和什么颜色）向各个方向反射。这种效果有时被称为渗色。漫反射是入射光在各个方向上均匀反射，即不受观测方向或位置的影响。
+</p><p>这里是一个由全局光照创建的场景，只有一个方向的光，且仅显示直接照明。光源无法直接照射的区域是黑色的。这是没有全局照明的结果。
+</p><p><img alt="3DirectOnly.jpg" width="720" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/3DirectOnly.jpg" />
+</p><p>这是第一个漫反射全局照明反射的样子。注意左边椅子后面的阴影，这叫做间接阴影，因为它是间接光的阴影。漫反射的亮度和颜色取决于入射光和与之相互作用的材质的漫反射项。每次反射都比前一次更暗，因为一些光被表面吸收而不是被反射。柱子底座比其他表面得到更多的间接光，因为它们更接近直射光下的区域。
+</p><p><img alt="3FirstBounceOnly.jpg" width="720" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/3FirstBounceOnly.jpg" />
+</p><p>这是第二次漫反射。光线变得更弱，分布更均匀。
+</p><p><img alt="3SecondBounceOnly.jpg" width="720" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/3SecondBounceOnly.jpg" />
+</p><p>这是四种漫反射相结合的场景。比起手动放置补光灯，模拟全局照明可以创建更细致和现实的照明。尤其是补光灯无法实现间接阴影。
+</p><p><img alt="3FourBounces.jpg" width="720" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/3FourBounces.jpg" />
+</p><p>反射光照获取基础材质的漫反射颜色，如下所示。这就是渗色这个术语的由来。渗色最明显的是高度饱和的颜色。你可以通过在基元（Primitive）、材质（Material）或关卡（Level）上提升_DiffuseBoost_来夸大效果。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="diffusebounce_T.JPG" height="445" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/diffusebounce_T.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="diffusebounce_L.JPG" height="445" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/diffusebounce_L.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="characterlighting" ></a><h3 id="角色照明">角色照明</h3>
+
+<p>全局光照在<a id="content_link" href="index.html#lightmassimportancevolume" ><span><strong>全局光照重要性体积（Lightmass Importance Volume）</strong></span></a>
+内以较低的分辨率将样本放置在一个统一的三维网格体中，并以较高的分辨率将样本放置在角色可能行走的向上表面上。每个照明示例捕获来自各个方向的间接光照，但不包括直接光照。
+</p><p>第一幅图像是放置在地板上方的照明样本调试可视化，第二幅图像是光照模式下的相同场景。请注意红色挂毯上面的样本如何获取红色反射光。这些样本被可视化为单一颜色，但它们确实捕获了来自各个方向的光线。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="02CharacterLighting.jpg" width="465" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/02CharacterLighting.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="02CharacterLightingLit.jpg" width="465" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/02CharacterLightingLit.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>然后间接照明缓存使用这些照明样本内插可移动对象的间接照明。间接照明影响光源环境阴影的颜色，而不是方向。使用显示（Show）->可视化（Visualize）->体积照明样本（Volume Lighting Samples）在您的视口中预览它们。
+</p><p>有关更多信息，请参阅<a id="content_link" href="../IndirectLightingCache/index.html" ><span><strong>间接照明缓存（Indirect Lighting Cache）</strong></span></a>
+文档。
+</p><a name="limitations" ></a><h4 id="限制">限制</h4>
+
+<ul ><li><p>体积样本放置的默认设置将导致在大型贴图中出现大量样本。这将导致间接照明缓存插值时间非常大。使用静态光源等级缩放（Static Lighting Level Scale）减少大贴图中的样本计数。
+</p></li><li><p>全局光照重要性体积外的可移动对象将采用黑色间接照明。
+</p></li></ul><a name="ambientocclusion" ></a><h3 id="环境遮挡">环境遮挡</h3>
+
+<p>全局光照会自动计算出详细的间接阴影，但是为了艺术目的夸大间接阴影或者增强场景的接近感是很有用的。<br /></p><p> <strong>环境遮挡（Ambient occlusion）</strong> 是您从一个均匀明亮的上半球得到的间接阴影，就像阴天。全局光照支持计算环境遮挡，将其应用于直接和间接照明，然后将其烘焙成光照图。默认情况下，环境遮挡是启用的，可以通过取消选中世界场景设置（World Settings）下的全局光照（Lightmass）的全局光照设置（Lightmass Settings）中的使用环境遮挡（Use Ambient Occlusion）复选框来禁用。
+</p><p>第一幅图是一个有间接照明但没有环境遮挡的场景。第二幅图是有环境遮挡的相同场景，且环境遮挡应用于直接和间接照明，注意对象聚集的地方变暗。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="9NoAO.jpg" width="465" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/9NoAO.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="9WithAO.jpg" width="465" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/9WithAO.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>无环境遮挡</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>环境遮挡</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="ambientocclusionsettings" ></a><h4 id="环境遮挡设置">环境遮挡设置</h4>
+
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>可视化环境遮挡（Visualize Ambient Occlusion）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在构建照明时，仅使用遮挡因子覆盖光照图。这有助于准确地了解遮挡因子是什么，并比较不同设置的效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最大遮挡距离（Max Occlusion Distance）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个对象对另一个对象造成遮挡的最大距离。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>完全遮挡样本比例（Fully Occluded Samples Fraction）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>为了达到完全遮挡，必须遮挡的样本的比例。请注意，还有一个逐基元FullyOccludedSamplesFraction，它允许控制一个对象对其他对象造成的遮挡量。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>遮挡指数（Occlusion Exponent）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指数越高，对比度越高。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="92Defaults.jpg" width="230" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/92Defaults.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="92MaxDist5.jpg" width="230" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/92MaxDist5.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="92MaxPct80.jpg" width="230" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/92MaxPct80.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="92Exponent2.jpg" width="230" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/92Exponent2.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>默认AO设置（最大遮挡距离（MaxOcclusionDistance）为200，完全遮挡样本比例（FullyOccludedSamplesFraction）为1.0，遮挡指数（OcclusionExponent）为1.0）。</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>最大遮挡距离（MaxOcclusionDistance）为5。去除低频遮挡，只留下角落遮挡。</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>完全遮挡样本比例（FullyOccludedSamplesFraction）为0.8。所有范围内的遮挡都变暗了，任何80%遮挡或以上的区域都饱和成黑色。</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>遮挡指数为2。遮挡从中等过渡到饱和黑色要快得多，遮挡被推到角落里。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>当间接照明反射次数大于0时，在照明构建时间范围内，环境遮挡几乎是没有的。
+</p><a name="limitations" ></a><h4 id="限制">限制</h4>
+
+<ul ><li><p>环境遮挡需要相当高的光照图分辨率才能良好显示，因为它在角落变化很快。 
+</p></li><li><p>预览质量构建在预览环境遮挡方面做得不是很好，因为AO需要非常密集的光照样本（就像间接阴影）。
+</p></li></ul><a name="maskedshadows" ></a><h3 id="遮罩阴影">遮罩阴影</h3>
+
+<p>全局光照在计算阴影时考虑了BLEND_Masked材质的不透明度遮罩。在编辑器视口中被剪切的部分材质也不会引起任何投影，这允许从树和叶子进行更详细的投影。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="masked.JPG" height="420" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/masked.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="masked_L.JPG" height="420" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/masked_L.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><a name="featuresforstationarylightsonly" ></a><h2 id="仅适用于固定光源的特性">仅适用于固定光源的特性</h2>
+
+<a name="bentnormalskyocclusion" ></a><h3 id="环境法线天空遮挡">环境法线天空遮挡</h3>
+
+<p>当启用具有固定移动性的<a id="content_link" href="../LightTypes/SkyLight/index.html" ><span><strong>天空光照（Sky Light）</strong></span></a>
+具有固定移动能力时，全局光照以环境法线的形式产生定向遮挡。<br /></p><a name="distancefieldshadowmaps" ></a><h3 id="距离场阴影贴图">距离场阴影贴图</h3>
+
+<p>全局光照计算<a id="content_link" href="../LightMobility/StationaryLights/index.html" ><span><strong>固定光源（Stationary Lights）</strong></span></a>
+的距离场阴影贴图。距离场阴影贴图即使在较低的分辨率下也能很好地保持其曲线形状；然而，它们不支持区域阴影或半透明阴影。
+</p><a name="featuresforstaticlightsonly" ></a><h2 id="仅适用于静态光源的特性">仅适用于静态光源的特性</h2>
+
+<a name="arealightsandshadows" ></a><h3 id="区域光源和阴影">区域光源和阴影</h3>
+
+<p>采用全局光照时，所有具有静态移动性的光源在默认情况下都是区域光源。点光源和聚光灯光源使用的形状是一个球体，其半径是由全局光照设置（Lightmass Settings）下的光源半径（Light Source Radius）设置的。定向光源使用一个圆盘，位于场景的边缘。光源的大小是控制阴影柔度的两个因素之一，因为较大的光源会产生较柔和的阴影。另一个因素是从接收位置到阴影投射物的距离。随着距离的增加，阴影变得柔和，就像在现实生活中一样。
+</p><p>第一幅图像是一个静态定向光源，只有静态照明，半影大小在任何地方都是相同的。在第二幅图像中，全局光照计算的区域阴影的清晰度由光源大小和遮挡物距离控制。注意柱子阴影在接近地面的地方如何变得更加清晰。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="7OldUE3Shadows.jpg" height="520" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/7OldUE3Shadows.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="7LightmassShadows.jpg" height="520" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/7LightmassShadows.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>点光源和聚光灯光源的半径用黄色线框表示，影响半径用蓝绿色线框表示。在大多数情况下，您需要确保光源不与任何投射阴影的几何体相交，否则光线将在该几何体的两侧发出。
+</p><p><img alt="AreaLight.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/AreaLight.jpg" />
+</p><a name="translucentshadows" ></a><h3 id="半透明阴影">半透明阴影</h3>
+
+<p>光在通过应用到静态阴影投射网格体的半透明材质之后，将失去一些能量，导致半透明的阴影。<br /></p><p><img alt="translucent_T.JPG" height="400" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/translucent_T.jpg" />
+</p><a name="translucentshadowcolor" ></a><h4 id="半透明阴影颜色">半透明阴影颜色</h4>
+
+<p>穿过材质的光称为透射光，每个颜色通道的透射光量在0到1之间。值为0表示完全不透明，1意味着入射光可以不受影响的穿过。由于透射光没有材质输入，所以目前是由以下其他材质输入得出的：
+</p><ul ><li><p>光照材质
+</p><ul ><li><p>BLEND_Translucent和BLEND_Additive：透射光 = Lerp（白色（White）、基本颜色（BaseColor）、不透明度（Opacity））
+</p></li><li><p>BLEND_Modulate：透射光 = 基本颜色（BaseColor）
+</p></li></ul></li><li><p>无光照材质
+</p><ul ><li><p>BLEND_Translucent和BLEND_Additive：透射光 = Lerp（白色（White）、自发光（Emissive）、不透明度（Opacity））
+</p></li><li><p>BLEND_Modulate：透射光 = 自发光（Emissive）
+</p></li></ul></li></ul><p>这意味着在不透明度为0时，该材质不会过滤掉入射光，也不会有半透明的阴影。在不透明度为1时，入射光将被材质的自发光或基本颜色（取决于是否被点亮）过滤。请注意，间接照明有时会洗掉半透明的阴影，使它们比半透明材料的自发光或漫反射更不饱和。
+</p><a name="translucentshadowsharpness" ></a><h4 id="半透明阴影清晰度">半透明阴影清晰度</h4>
+
+<p>有几个因素控制半透明阴影清晰度。
+</p><p>第一幅图像中使用大光源（光源角度为5的定向光源），第二幅图像中使用小光源（光源角度为0）。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="5LargeLightSource.jpg" height="560" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/5LargeLightSource.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="5SmallLightSource.jpg" height="560" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/5SmallLightSource.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>第一幅图像中使用了一个小光源，但是光照图的分辨率太低，无法捕捉到清晰的半透明阴影。第二幅图像中，材质导出的分辨率过低（由材质编辑器中的导出分辨率比例（Export Resolution Scale）控制），无法捕捉到清晰的阴影。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="5LowLightmapResolution.jpg" height="565" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/5LowLightmapResolution.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="5LowExportResolutionScale.jpg" height="565" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/5LowExportResolutionScale.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>间接光源也受到半透明材质的影响。该图像中的窗口根据光线的透射情况对入射光进行过滤，然后光线会在场景中来回反射，且颜色会发生变化。
+</p><p><img alt="TranslucentShadowIndirectLight.jpg" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/TranslucentShadowIndirectLight.jpg" />
+</p><a name="limitations" ></a><h4 id="限制">限制</h4>
+
+<ul ><li><p><strong>半透明材质（Translucent Materials）</strong> 目前不散射光，所以它们不会在其周围的对象上渗色。
+</p></li><li><p>第一个漫反射目前不受半透明阴影的影响。这意味着，通过半透明材质的第一反射间接光源不会被该材质的 <strong>透射（Transmission）</strong> 过滤。
+</p></li><li><p>目前不支持折射（透射光的焦散）。
+</p></li></ul><a name="gettingthebestqualitywithlightmass" ></a><h2 id="使用全局光照获取最佳质量">使用全局光照获取最佳质量</h2>
+
+<a name="makinglightingnoticeable" ></a><h3 id="使灯光显眼">使灯光显眼</h3>
+
+<a name="diffusetextures" ></a><h4 id="漫反射纹理">漫反射纹理</h4>
+
+<p>渲染期间，光照像素颜色被确定为基本颜色 * 照明，所以基本颜色直接影响光照的可见度。高对比度或暗漫反射纹理使光照很难被注意到，而低对比度中距离漫反射纹理让光照的细节表现出来。
+</p><p>比较第一幅图像中使用中等漫反射纹理构建的场景和第二幅图像中同样使用全局光照但带有噪点的黑色漫反射纹理构建的场景照明清晰度。第二幅图像中，只有最频繁的变化才会在场景中被注意到，比如阴影过渡。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="94MidToneDiffuse.jpg" width="465" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/94MidToneDiffuse.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="94DarkDiffuse.jpg" width="465" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/94DarkDiffuse.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p> <strong>无光照（Unlit）</strong> 视图模式可用于查看漫反射项。第一幅图像中的场景在无光照视图模式下看起来更加平坦和单调，这意味着所有的工作都是由光照完成的，最终像素颜色的变化主要是由于光照的不同。（为了获得良好的照明，在无光照视图模式下，您的场景应看起来单调乏味。）将照明和宏观特征烘焙到漫反射纹理中将抵消照明。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="94MidToneDiffuseUnlit.jpg" width="465" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/94MidToneDiffuseUnlit.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="94DarkDiffuseUnlit.jpg" width="465" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/94DarkDiffuseUnlit.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>在无光照图像的几个部分上使用编辑器的颜色选择器，我们可以看到第一幅图像中场景的漫反射值约为0.5，而第二幅图像中场景的漫反射值约为0.08。在Photoshop中查看这些无光照图像的直方图可以很好地了解漫反射纹理的分布。<br /></p><div class="note">
+	<p>Photoshop向您展示了伽马空间中的颜色值，因此186(.73)的值（而不是127(.5)的值）实际上介于黑色和白色之间。*第一幅图像显示了直方图的样子，以便获得显著的照明。
+</p>
+</div><p><img alt="hist_Spo.jpg" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/hist_Spo.jpg" />
+<img alt="hist_UT.jpg" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/hist_UT.jpg" />
+</p><a name="lightingsetup" ></a><h4 id="照明设置">照明设置</h4>
+
+<ul ><li><p>避免环境照明！像环境立方体贴图这样的环境照明会在您的关卡中添加一个恒定的环境项，从而减少间接光照区域的对比度。<br /></p></li><li><p>设置光源，使直接光照区域和间接光照区域之间有鲜明对比。对比度会让您更容易找到阴影过渡的位置，也会让您的关卡更有深度感。
+</p></li><li><p>设置光源，使明亮区域不是太亮，黑暗区域不全黑，而仍然有值得注意的细节。检查最终目标显示器上的黑暗区域是很重要的。
+</p></li></ul><a name="improvinglightingquality" ></a><h3 id="改善照明质量">改善照明质量</h3>
+
+<a name="lightmapresolution" ></a><h4 id="光照图分辨率">光照图分辨率</h4>
+
+<p>使用高分辨率的纹理光照图是获得清晰、高质量照明的最好方法。使用高光照图分辨率的缺点是占用更多纹理内存和增加构建时间，所以需要做一个权衡。理想情况下，场景中的大部分光照图分辨率应该分配在高视觉影响区域和有高频阴影的地方。<br /></p><a name="lightmasssolverquality" ></a><h4 id="全局光照解算器质量">全局光照解算器质量</h4>
+
+<p> <strong>全局光照解算器（Lightmass Solver）</strong> 设置是根据“照明构建选项（Lighting Build Options）”对话框中请求的构建质量自动设置的。生产应该提供足够好的质量，即在应用漫反射纹理时，穿帮不是很明显。<br /></p><a name="gettingthebestlightingbuildtimes" ></a><h2 id="获取最佳照明构建时间">获取最佳照明构建时间</h2>
+
+<p>有几种方法可以缩短全局光照构建时间：
+</p><ul ><li><p>只有高频率（快速变化）照明区域才有高分辨率的光照图。减少笔刷表面和静态网格体的光照图分辨率，这些表面和网格体不在直接光照范围内，或不受到清晰间接阴影的影响。这将在最明显的区域给您高分辨率的阴影。
+</p></li><li><p>对玩家来说永远不可见的表面应该设置尽可能低的光照图分辨率。
+</p></li><li><p>使用<a id="content_link" href="index.html#lightmassimportancevolume" ><span>全局光照重要性体积</span></a>
+来包含最重要的区域（仅在可玩区域附近）。
+</p></li><li><p>优化整个贴图的光照图分辨率，使网格体的构建时间更加均匀。无论有多少台机器在进行分布式构建，照明构建的速度都不能快于最慢的单个对象。避免大的连续网格体包围关卡的一大部分和使用高光照图分辨率。如果将它们分解成更模块化的部件，特别是在具有许多核心的机器上，那么构建时间将会更短。
+</p></li><li><p>有很多自遮挡的网格体需要更长的时间来构建，例如，有许多层相互平行的地毯比平坦的地板需要更长的时间来构建。
+</p></li></ul><p> <strong>照明构建信息（Lighting Build Info）</strong> 对话框是改善照明构建时间的一个非常重要的工具。首先，在您想要查看统计数据的关卡中构建照明。然后，打开 <em>构建（Build）->照明信息（Lighting Info）->照明StaticMesh信息（Lighting StaticMesh Info）</em> 下的对话框。将下拉列表更改为 <em>照明构建信息（Lighting Build Info）</em>。这将显示网格体的排序列表，以及它们计算光照的时间。
+</p><p><img alt="LightingBuildInfo.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/LightingBuildInfo.jpg" />
+</p><a name="lightmasssettings" ></a><h2 id="全局光照设置">全局光照设置</h2>
+
+<a name="lightmassimportancevolume" ></a><h3 id="全局光照重要性体积">全局光照重要性体积</h3>
+
+<p>许多贴图在编辑器中已经网格化到网格的边缘，但是需要高质量照明的实际可玩区域要小得多。全局光照取决于关卡的大小发射光子，因此这些背景网格体将大大增加需要发射的光子数量，而照明构建时间也将增加。全局光照重要性体积控制全局光照发射光子的区域，允许您将其集中在需要清晰间接照明的区域。在重要性体积之外的区域在较低的质量下只能得到一次间接照明的反射。
+</p><p>第一幅图像中显示了多玩家地图的系统占用线框视图。需要高质量照明的实际可玩区域是中心的绿色小团。<br /></p><p>第二幅图像中显示了多玩家地图可玩区域的近景，并正确选择了设置 <strong>全局光照重要性体积（Lightmass Importance Volume）</strong>。全局光照重要性体积将该区域的半径从80,000单位减少到10,000单位，照明面积小了64x倍。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="JacintoImportanceFar.jpg" width="465" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/JacintoImportanceFar.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="JacintoImportanceNear.jpg" width="465" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/JacintoImportanceNear.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>要将一个全局光照重要性体积添加到某个关卡中，您可以从 <strong>模式（Modes）</strong> 菜单的 <strong>体积（Volume）</strong> 选项卡中将这个 <strong>全局光照重要性体积（Lightmass Importance Volume）</strong> 对象拖动到关卡中，然后将其缩放到所需的大小。
+</p><p><img alt="AddingLightMassVolume.png" width="840" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/AddingLightMassVolume.jpg" />
+</p><p>您还可以通过单击 <strong>Actor</strong> 下的 <strong>细节（Details）</strong> 面板中的 <strong>转换Actor（Convert Actor）</strong> 下拉框，将画笔转换为全局光照重要性体积。
+</p><p><img alt="ConvertBrush_Actor.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/ConvertBrush_Actor.jpg" />
+</p><p>单击该下拉框后，将出现一个菜单，您可以在其中选择要替换画笔的Actor类型。
+</p><p><img alt="ConvertBrush_LightMassVol.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/ConvertBrush_LightMassVol.jpg" />
+</p><p>如果您放置多个全局光照重要性体积，那么大多数照明工作将通过包含所有这些体积的边界框来完成。但是，体积照明样本仅放置在较小的体块中。
+</p><a name="worldsettings" ></a><h3 id="世界场景设置">世界场景设置</h3>
+
+<p>可在 <strong>全局光照（Lightmass）</strong> 部分下的 <strong>世界场景设置（World Settings）</strong> 窗口中调整全局光照设置。 
+</p><p><img alt="worldlightmasssettings.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/worldlightmasssettings.jpg" />
+</p><p>可从主 <strong>工具栏（Toolbar）</strong> 单击<img alt="WorldSettings_Icon.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/WorldSettings_Icon.jpg" />图标以访问 <strong>世界场景设置（World Settings）</strong>。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>强制不使用预计算照明（Force No Precomputed Lighting）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这将使全局光照无法生成光源和阴影贴图，强制关卡仅使用动态照明。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>静态光源等级缩放（Static Lighting Level Scale）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>关卡的比例相对于引擎的比例，1虚幻单位 == 1cm。这可用于确定在照明中计算多少细节，较小的比例将大大增加构建时间。对于巨型关卡，可以使用2或4左右的较大比例来减少构建时间。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>间接照明反射次数（Num Indirect Lighting Bounces）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>允许光从光源反射到物体表面的次数。0为仅直接光照，1为一次反射，以此类推。反射1次计算时间最长，其次是反射2次。连续的反射几乎是不受约束的，但也不会增加太多的光，因为光在每次反射后都会衰减。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>间接照明质量（Indirect Lighting Quality）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>缩放全局光照GI解算器使用的样本计数。设置越高，会导致构建时间大量增加，但解算器穿帮（噪点、斑点）变少。请注意，这不会影响由于使用光照图（纹理接缝、压缩假影、纹索形状）而产生的穿帮。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>间接照明平滑度（Indirect Lighting Smoothness）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>数值越高，间接照明越平滑，可以隐藏解算器噪点，但也会丢失清晰的间接阴影和环境遮挡。在增大 <em>间接照明质量（Indirect Lighting Quality）</em> 以获取最高质量时，把这个值降低一些是有用的（0.66或0.75）。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>环境颜色（Environment Color）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>错过这个场景的光线会被染上的颜色。环境可以可视化为一个围绕着关卡的球体，向各个方向发射这种颜色的光。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>环境强度（Environment Intensity）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>缩放环境颜色以允许HDR环境颜色。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>漫射增强（Diffuse Boost）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>缩放场景中所有材质的漫反射效果。增加漫射增强（DiffuseBoost）是增加场景中间接照明强度的有效方法。在应用漫射增强（DiffuseBoost）之后，漫反射项的亮度被限制为1.0，以保持材质的能量守恒（这意味着光在每次反射时必须减少，而不是增加）。如果提高漫射增强（DiffuseBoost）未导致更明亮的间接照明，漫射项正被限制，光的IndirectLightingScale应该用于增加间接照明。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>使用环境遮挡（Use Ambient Occlusion）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>使静态环境遮挡可以通过全局光照计算并内置到您的光照图中。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>直接照明遮挡率（Direct Illumination Occlusion Fraction）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>多少AO应用于直接照明。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>间接照明遮挡率（Indirect Illumination Occlusion Fraction）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>多少AO应用于间接照明。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>遮挡指数（Occlusion Exponent）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>指数越高，对比度越高。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>完全遮挡样本比例（Fully Occluded Samples Fraction）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>为了达到完全遮挡，必须遮挡的样本的比例。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>最大遮挡距离（Max Occlusion Distance）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>一个对象对另一个对象造成遮挡的最大距离。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>可视化材质漫反射（Visualize Material Diffuse）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>仅用导出到全局光照的材质漫反射覆盖法线直接和间接照明。这在验证导出的材质漫反射与实际漫反射匹配时非常有用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>可视化环境遮挡（Visualize Ambient Occlusion）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>仅用AO项覆盖法线直接和间接照明。这在调整环境遮挡设置时很有用，因为它隔离了遮挡项。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>关卡照明质量（Level Lighting Quality）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>这反映了当前关卡的照明构建质量设置。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="lightsettings" ></a><h3 id="光源设置">光源设置</h3>
+
+<p>下面是可以在 <strong>全局光照（Lightmass）</strong> 部分的光源属性中进行调整的全局光照（Lightmass）设置。 
+</p><p><img alt="LightLightmassSettings.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/LightLightmassSettings.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>间接照明饱和度（Indirect Lighting Saturation）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>0将导致间接照明完全不饱和，1将保持不变。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>阴影指数（Shadow Exponent）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>控制阴影半影的衰减，或区域从完全光照到完全阴影的变化速度。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>光源角度（Light Source Angle）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>对于 <strong>仅定向光源（Directional Lights Only）</strong>，确定光的自发光面相对于接收器的延伸角度，影响半影大小。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="primitivecomponentsettings" ></a><h3 id="基元组件设置">基元组件设置</h3>
+
+<p>下面是可以在从 <strong>模式（Modes）</strong> 菜单的 <strong>几何体（Geometry）</strong> 选项卡中添加的 <strong>画笔（Brush）</strong> 上进行调整的全局光照（Lightmass）设置。这些选项可以在 <strong>画笔（Brush）</strong> 的 <strong>细节（Details）</strong> 面板下找到。 
+</p><p><img alt="objectlightmasssettings.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/objectlightmasssettings.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>漫射增强（Diffuse Boost）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>缩放应用到此对象的所有材质的漫反射效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>完全遮挡样本比例（Fully Occluded Samples Fraction）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>为了实现对其他对象的完全遮挡，从此对象中采集的AO样本必须被遮挡的比例。这允许控制一个对象对其他对象造成多少遮挡。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>仅间接阴影（Shadow Indirect Only）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果选中此项，则此对象只会对间接照明产生阴影。这对于草非常有用，因为渲染的几何体只是实际几何体的表示，并不一定会投射出精确形状的阴影。它对草也很有用，因为产生阴影的频率太高，无法存储在预计算的光照图中。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>使用双面照明（Use Two Sided Lighting）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>如果选中此项，该对象将被照亮，就好像它接受来自其多边形两侧的光照。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="basematerialsettings" ></a><h3 id="基本材质设置">基本材质设置</h3>
+
+<p>下面是可以在 <strong>细节（Details）</strong> 面板下的基本节点（Base Node）的材质（Material）中进行调整的全局光照（Lightmass）设置。 
+</p><p>有关材质编辑器的更多信息，请参阅 <strong><a id="content_link" href="../../Materials/Editor/index.html" ><span>材质编辑器用户指南</span></a>
+</strong>。
+</p><p><img alt="materialsettings.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/LightingAndShadows/Lightmass/materialsettings.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>属性 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>像在遮罩状态一样下投射阴影（Cast Shadow as Masked）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>对于半透明材质，将该材质视为已被遮罩的材质，以用于阴影投射。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>漫射增强（Diffuse Boost）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>缩放此材质对静态照明的漫反射效果。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>导出分辨率缩放（Export Resolution Scale）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>缩放导出此材质属性时的分辨率。当需要细节时，这对于提高材质分辨率非常有用。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/LightingAndShadows/Lightmass/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:08 GMT -->
+</html>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Development/VisualStudioSetup/UnrealVS/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:53:16 GMT -->
+<head>
+    <title>UnrealVS扩展 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/INT/Programming/Development/VisualStudioSetup/UnrealVS/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/KOR/Programming/Development/VisualStudioSetup/UnrealVS/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/JPN/Programming/Development/VisualStudioSetup/UnrealVS/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../docs.unrealengine.com/latest/CHN/Programming/Development/VisualStudioSetup/UnrealVS/index.html" hreflang="zh-CN" />
+
+	<meta name="availability" content="Public" />
+<meta name="title" content="UnrealVS扩展" />
+<meta name="description" content="用于Visual Studio的安装，设置以及使用UnrealVS扩展的指南。" />
+<meta name="parent" content="Programming/Development/VisualStudioSetup" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="UnrealVS扩展" />
+	<meta property="og:description" content="用于Visual Studio的安装，设置以及使用UnrealVS扩展的指南。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">为虚幻 4 设置 Visual Studio</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                                                <!-- start loc warning -->
+                        <div class="warning">
+                        	<!------ 
+                        	The translation of this page is out of date. Please see the English version for the latest version of the page.
+                        	------>
+                            此中文页面内容对应的英文页面有后续更新，如需浏览最新文档可切换至英文页面浏览。
+                        </div>
+                        <!-- end loc warning -->
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">UnrealVS扩展</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<p>Visual Studio的UnrealVS扩展提供了在使用虚幻引擎进行开发时对常见操作的轻松访问。
+</p><p><img alt="unrealvs_toolbar_cmd.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/unrealvs_toolbar_cmd.jpg" />
+</p><p>功能包括：
+</p><ul ><li><p>设置启动项目。
+</p></li><li><p>编译启动项目的可绑定命令。
+</p></li><li><p>设置命令行参数。
+</p></li><li><p>批量编译项目。
+</p></li><li><p>快速编译项目菜单。
+</p></li></ul><div class="note">
+	<p>UnrealVS扩展 <strong>无法</strong> 与 <strong>Visual Studio Express</strong> 版本 共同运作。它仅与Visual Studio专业版兼容。
+</p>
+</div><h2 id="安装及设置">安装及设置</h2>
+
+<p><strong>如需安装UnrealVS扩展:</strong>
+</p><ol ><li><p>在以下位置搜寻您的Visual Studio版本的扩展：
+</p>
+<pre class="prettyprint"><code>&#91;UE4RootLocation&#93;/Engine/Extras/UnrealVS/&lt;VS-Version&gt;/UnrealVS.vsix</code></pre></li><li><p><strong>双击</strong> <code >UnrealVS.vsix</code>文件来开始安装。
+</p></li><li><p>UnrealVS扩展可用于特定的Visual Studio版本。请注意安装程序正在查找您的版本并且框体已经更新，然后点击<img alt="Install" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/button_install.jpg" />按钮以继续。
+</p><p><img alt="install_dialog.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/install_dialog.jpg" />
+</p></li><li><p>在安装完成后，点击<img alt="Close" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/button_close.jpg" />按钮。
+</p><p><img alt="Install Complete" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/install_complete_dialog.jpg" />
+</p></li><li><p>运行Visual Studio并且在 <strong>工具->扩展和更新...</strong> 中，您应该可以看到该扩展。
+</p><p><img alt="Extension Manager" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/extension_manager.jpg" />
+</p><div class="note">
+	<p>如果Visual Studio已经在运行，您需要在载入和显示扩展前重新启动。
+</p>
+</div></li><li><p>扩展同时在 <strong>帮助->关于微软Visual Studio</strong> 对话框的已安装产品列表中显示。
+</p></li><li><p>转到 <strong>视图->工具栏</strong> 或对Visual Studio工具栏区域 <strong>右键点击</strong> ，然后选择 <strong>UnrealVS</strong> 以显示扩展的工具栏。
+</p><p><img alt="UnrealVS Toolbar" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/unrealvs_toolbar_cmd.jpg" />
+</p></li><li><p>默认情况下，工具栏出现在上方，但其内容可通过选择 <strong>命令</strong> 选项卡的 <strong>UnrealVS</strong> 工具栏的 <strong>工具->自定义...</strong> 来进行自定义。
+</p><p><img alt="UnrealVS Customize Toolbar" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/toolbar_customize.jpg" />
+</p></li><li><p>在自定义对话框中，选择 Categories（分类）列表的 <strong>添加命令...</strong> 并选择 <strong>UnrealVS</strong> 来查看可添加到工具栏的UnrealVS命令列表。
+</p><p><img alt="UnrealVS Customize Commands" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/toolbar_customize_commands.jpg" />
+</p></li></ol><h2 id="设置启动项目">设置启动项目</h2>
+
+<p><strong>启动项目</strong> 下拉框是在 <em>启动项目</em> 间快速设置或切换的方法。它会自动在解决方案中列出编译可执行程序的所有可用项目。从列表中选择项目并将其设置为当前的  <em>启动项目</em> 。
+</p><p><img alt="startup_project_menu.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/startup_project_menu.jpg" />
+</p><p>您可以变更位于UnrealVS选项的项目。如需只显示游戏项目，请转到 <strong>工具->选项...</strong> 并选择 <strong>UnrealVS</strong> 。
+</p><p><img alt="options_screen.png" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/options_screen.jpg" />
+</p><h3 id="编译启动项目">编译启动项目</h3>
+
+<p>扩展还包含了编译当前 <em>启动项目</em> 的命令，它可被绑定到热键或其他正在运行的自定义命令上。
+</p><p><strong>如需绑定命令到热键：</strong>
+</p><ol ><li><p>请转到 <strong>工具->选项...</strong> 并选择 <strong>选项</strong> 对话框的 <strong>键盘</strong> 。
+</p></li><li><p>在命令列表中选择 <strong><em>UnrealVS.BuildStartupProject</em></strong> 命令。
+</p><div class="tip">
+	<p>在搜索框中输入'<code >UnrealVS</code>来筛选列表。
+</p>
+</div><p><img alt="Filtered Command List" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/build_startup_search.jpg" />
+</p></li><li><p>选中命令后，点击 <strong>按下快捷键</strong> 框体并随后按下您想要用于执行命令的按键组合。(例如， <strong>Ctrl + Alt + Shift + B</strong> 显示在下方的示例中）
+</p><p><img alt="Shortcut Keys" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/build_startup_keys.jpg" />
+</p><div class="note">
+	<p>您应该选择当前未被指派给另一个命令的按键组合。<strong>Shortcut currently used by</strong> （快捷方式当前正被使用）框体将告知您选定的组合当前已被使用的事实。
+</p>
+</div></li><li><p>按下<img alt="Assign" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/button_assign.jpg" />按钮来绑定按键到命令。这些按键被显示在 <strong>Shortcuts for selected command</strong> （选定命令的快捷方式）框体中。
+</p><p><img alt="Assigned Keys" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/build_startup_assigned.jpg" />
+</p></li><li><p>点击 <img alt="OK" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/button_ok.jpg" /> 按钮来保存修改。现在，当您使用快捷方式时，设置为 <em>启动项目</em> 的项目会自动进行编译。
+</p></li></ol><h2 id="命令行参数">命令行参数</h2>
+
+<p><strong> 命令行</strong> 控制用于在运行调试会话时对当前项目设置 <strong>命令参数</strong>。这是通过项目 <strong>属性</strong> 来对其进行设置的快捷方式。实际上，此处的变更会在 <strong>属性</strong> 中被自动反映出来，反之亦然。
+</p><p>在文本框中输入参数或使用下拉列表从最近的参数列表中选择。在调试会话启动时，它们将被传递到可执行程序中。
+</p><p><img alt="Command Arguments" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/unrealvs_toolbar_args.jpg" />
+</p><div class="note">
+	<p>对编译虚幻引擎的游戏项目的项目配置自动添加项目名称到命令行，以告知编辑器可执行文件您正在使用的项目。
+举例来说，如果您使用编译配置'Debug Editor'（调试编辑器）来编译QAGame，命令行将添加QAGame.uproject到命令参数而无需在框体中输入它。
+如需启动QAGame的编辑器，您可以把 <strong>命令行</strong> 控制留空，编辑器将仍然会知道您正在运行的项目。
+</p>
+</div><p>请参阅<a id="content_link" href="../../../Basics/CommandLineArguments/index.html" ><span>命令行参数</span></a>
+以获得所有可用参数的列表。
+</p><h2 id="刷新项目">刷新项目</h2>
+
+<p>项目文件可使用<a id="content_link" href="../../../UnrealBuildSystem/ProjectFileGenerator/index.html" ><span>自动项目文件生成</span></a>
+在Visual Studio中生成。这使得同步和更新所有项目文件变得更快，因为您不必查看<code >.bat</code>文件并手动运行它。
+</p><p><strong>如您想要刷新项目文件:</strong>
+</p><ol ><li><p>按下 <strong>UnrealVS</strong> 工具栏的刷新项目<img alt="Refresh Projects" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/button_refresh.jpg" />按钮。
+</p></li><li><p>项目生成过程将会随着 <strong>输出</strong> 窗口的出现而显示。
+</p><p><img alt="Project Generator Output" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/refresh_output.jpg" />
+</p></li><li><p>当提示您时，重新载入任意需要它的项目。
+</p></li></ol><h2 id="批量编译程序">批量编译程序</h2>
+
+<p><strong>UnrealVS批量编译程序</strong> 提供了一种方式让我们可以创建和运行自定义的编译任务的设置。它比Visual Studio中的 <strong>编译->批量编译...</strong> 选项更好用。
+</p><p><strong>如需打开批量编译程序窗口：</strong>
+</p><ol ><li><p>按下 <strong>UnrealVS</strong> 工具栏的批量编译程序<img alt="Batch Builder" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/button_batchbuilder.jpg" />按钮或使用您指派给命令 <em>UnrealVS.BatchBuilder</em> 的键盘快捷方式（请参阅以上的 <strong>编译启动项目</strong> 来获得对使用 <strong>UnrealVS</strong> 命令的键盘快捷方式进行设置的指南）。
+</p></li><li><p><strong>UnrealVS批量编译程序</strong> 窗口如图。
+</p><p><img alt="Batch Builder Window" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/batchbuilder_window.jpg" />
+</p><ul ><li><p>通过设置项目，配置，平台和任务类型来创建 <strong>编译任务</strong> 。
+</p></li><li><p>使用箭头按钮来添加/移除任务。
+</p></li><li><p>使用箭头按钮把选择的任务在列表中上/下移动。
+</p></li><li><p>控制将会对当前在组合中显示的 <strong>任务设置</strong> 进行编辑。
+</p></li><li><p>如需创建新建 <strong>任务设置</strong> ，在组合中输入新建名称。
+</p></li><li><p>您可以使用下拉列表选择已存的 <strong>任务设置</strong> 。
+</p></li><li><p><strong>删除</strong> 按钮会把选择的 <strong>任务设置</strong> 从列表中删除。
+</p></li><li><p>使用 <strong>开始</strong> 按钮来开始/停止当前 <strong>任务设置</strong> 上的批量编译任务。
+</p></li><li><p><strong>任务设置</strong> 被存储在.suo文件中以供载入的解决方案的下次使用。
+</p></li></ul></li><li><p>当您点击 <strong>开始</strong> 时，出现的 <strong>输出</strong> 选项卡会显示编译版本的进度。
+</p><p><img alt="Batch Builder Window running" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/batchbuilder_window2.jpg" />
+</p><ul ><li><p>运行设置中的 <strong>编译任务</strong> 被显示在输出列表中。
+</p><ul ><li><p><img alt="Queued Build Job" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/buildjob_lightgrey.jpg" /> - 排队任务
+</p></li><li><p><img alt="Succeeded Build Job" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/buildjob_green.jpg" /> - 完成，后续任务
+</p></li><li><p><img alt="Failed Build Job" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/buildjob_red.jpg" /> - 失败任务
+</p></li><li><p><img alt="Cancelled Build Job" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/buildjob_orange.jpg" /> - 取消任务
+</p></li><li><p>当前的  <strong>正在执行的编译任务以粗体显示</strong>
+</p></li></ul></li><li><p>当批量编译在运行时，会显示繁忙的动画处理和停止的按钮。
+</p></li></ul></li><li><p>您可以通过对 <strong>输出选项卡</strong> 的项目 <strong>双击</strong> 来查看来自于单个 <strong>编译任务</strong> 的输出，或者 <strong>双击</strong> 并从关联菜单中选择 <strong>显示输出</strong> 。
+</p><p><img alt="BatchBuild Output Pane" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/batchbuilder_outputpane.jpg" />
+</p><div class="note">
+	<p>单个项目的 <strong>批量编译程序</strong> 输出被显示在名称为 <em>UnrealVS - BatchBuild</em> 的面板的Visual Studio <strong>输出</strong> 窗口中。
+不要将其与显示当前/最近编译任务的输出的 <em>编译</em> 面板弄混了。
+</p>
+</div></li></ol><h2 id="快速编译菜单">快速编译菜单</h2>
+
+<p><strong>快速编译</strong> 菜单提供了使用任意配置和平台组合而无需变更主要解决方案的编译配置来编译项目的简单方法。
+</p><p><img alt="Quick Build Menu" src="../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Development/VisualStudioSetup/UnrealVS/menu_quickbuild.jpg" />
+</p><ol ><li><p>在 <strong>解决方案浏览器</strong> 中 <strong>右键点击</strong> 项目节点。
+</p></li><li><p><em>UnrealVS快速编译</em> 菜单包含来自虚幻引擎解决方案中的可用平台的子菜单和编译配置。
+</p></li><li><p>选择项目来编译选择的项目，平台和设置。比起在IDE中变更解决方案配置和解决方案平台，这要快得多，开始编译然后再次切换回配置和平台。
+</p></li></ol><div class="note">
+	<p>比起在IDE中变更解决方案配置和平台要快得多！
+</p>
+</div><h2 id="使用unrealvs源代码来运行">使用UnrealVS源代码来运行</h2>
+
+<p>UnrealVS源代码位于[UE4RootLocation]/Engine/Source/Programs/UnrealVS/ folder。
+</p><p>为能载入具有Visual Studio的UnrealVS项目文件，您需要安装兼容于UnrealVS的合适版本的Visual Studio的Visual Studio SDK。举例来说，当需要对版本直到Visual Studio 2013的支持时，您需要安装<a id="content_link" href="../../../../../../external.html?link=http://www.microsoft.com/en-us/download/details.aspx?id=40758" ><span>Visual Studio 2013 SDK</span></a>
+，然后载入UnrealVS项目文件到Visual Studio 2013中。
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Development/VisualStudioSetup/UnrealVS/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:53:16 GMT -->
+</html>

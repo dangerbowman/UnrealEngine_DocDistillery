@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html  lang="en-US">
+
+<!-- Mirrored from docs.unrealengine.com/latest/INT by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Feb 2019 13:04:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head id="Head">
+<!--*********************************************-->
+<!-- DNN Platform - http://www.dnnsoftware.com   -->
+<!-- Copyright (c) 2002-2018, by DNN Corporation -->
+<!--*********************************************-->
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /><title>
+	Unreal Engine 4 Documentation
+</title><meta id="MetaDescription" name="DESCRIPTION" content="Complete resources for learning to use Unreal Engine 4" /><meta id="MetaKeywords" name="KEYWORDS" content=",DotNetNuke,DNN" /><meta id="MetaGenerator" name="GENERATOR" content="DotNetNuke " /><meta id="MetaRobots" name="ROBOTS" content="INDEX, FOLLOW" /><link href="../Resources/Shared/stylesheets/dnndefault/7.0.0/default44d3.css?cdv=1013" type="text/css" rel="stylesheet"/><link href="../Resources/Search/SearchSkinObjectPreview44d3.css?cdv=1013" type="text/css" rel="stylesheet"/><link href="../Portals/_default/skins/unrealdocs/skin44d3.css?cdv=1013" type="text/css" rel="stylesheet"/><link href="../Portals/_default/skins/unrealdocs/default44d3.css?cdv=1013" type="text/css" rel="stylesheet"/><link href="../desktopmodules/EpicGames.Visualizer/module44d3.css?cdv=1013" type="text/css" rel="stylesheet"/><link href="../desktopmodules/EpicGames.Visualizer/css/togglecontent44d3.css?cdv=1013" type="text/css" rel="stylesheet"/><script src="../Resources/libraries/jQuery/03_02_01/jquery44d3.js?cdv=1013" type="text/javascript"></script><script src="../Resources/libraries/jQuery-Migrate/03_00_00/jquery-migrate44d3.js?cdv=1013" type="text/javascript"></script><script src="../Resources/libraries/jQuery-UI/01_12_01/jquery-ui44d3.js?cdv=1013" type="text/javascript"></script><link id="bootstrapCSS" rel="stylesheet" type="text/css" href="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /><link id="fontOpenSans" rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" /><link id="fontAwesome" rel="stylesheet" type="text/css" href="../../maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" /><link id="qTip" rel="stylesheet" type="text/css" href="../../cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.min.css" /><link id="twentyTwentyCss" rel="stylesheet" type="text/css" href="../Portals/_default/skins/unrealdocs/js/twentytwenty/twentytwenty.css" /><link id="fancyboxCss" rel="stylesheet" type="text/css" href="../Portals/_default/skins/unrealdocs/js/fancybox/fancybox.css" /><link id="customCss" rel="stylesheet" type="text/css" href="../Portals/_default/skins/unrealdocs/jquery-ui-1.10.3.custom.css" /><link rel='SHORTCUT ICON' href='https://docs.unrealengine.com/Portals/0/site_icon.ico?ver=2018-02-13-014026-527' type='image/x-icon' /><link href="INT-2.html" rel="canonical" /><meta name="viewport" content="width=device-width,initial-scale=1" /></head>
+<body id="Body">
+<script>window.__tracking_base = 'https://tracking.unrealengine.com/';</script> <script src="../../tracking.unrealengine.com/tracking.js" async></script>
+
+    
+    <form method="post" action="https://docs.unrealengine.com/latest/INT" id="Form" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="ayy2NsutzYaPDnReDVxXGIt2iPlMwt0gXoth00SzoQZN6wGt/z14MxTrzMlz7SgVpFQm1m/49GswhARwoZcq4ABx43GCWP0vBP65diWcD9tI8BUA3BEL8nN9jjXCHdp6ibXuSfSYHdBrwhvoe2jlTUQZI5rWYkX9ckILtPJn/13wOVO8s8qiTLQn6vUAbP+35k5K0lv83+XJdi3w3Ivtdev0f0g/arnb8NXarw==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form'];
+if (!theForm) {
+    theForm = document.Form;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="https://docs.unrealengine.com/WebResource.axd?d=pynGkmcFUV1ZZXERyYgzPaAYQM8toJDi3ubXdQG0W7Rgz_EkQpArelb1XYA1&amp;t=636797514873430424" type="text/javascript"></script>
+
+
+<script src="https://docs.unrealengine.com/ScriptResource.axd?d=NJmAwtEo3IrtfaMHdqeUdy5BvdWM5SK35bjsZyUDhwC0mmSzQKXDTtj_njT7DicXlLM6uvjpqGW0ulqluW3h6lyjl5yITAhadqUkY1ux4bduSNlR67nV1fNWqJuAsIAn7ieojg2&amp;t=ffffffff999c3159" type="text/javascript"></script>
+<script src="https://docs.unrealengine.com/ScriptResource.axd?d=dwY9oWetJoJLFNYuuy2TXwZMQs3F4pA3Uhl945NUFM0GhW8nMZX7Qp0hK15Vueag8rRwX-4OSGVeA2RqvA1hKG0ND5mb4uVtAOVO52b6t5j4YFApcY237lBpcTv0aTXs-jSGvu7KlZXlT80g0&amp;t=ffffffff999c3159" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="9yn7D2nwJOhmZTjPcanAxUeZqf1WFjRKnYOOj6OOoy7jvwddskIZW9DuSwh7DuLdcrmc6UhfyvZh9Y8WZnr4vnW/r2VKWFTl0ntYa2tJMOffyLT5UGR5onslY56rRAoNdg+EHbiEpN6HcPf22fuX65JIE8CmPzjE7cCS8qxGECMHTdAM" />
+</div><script src="../js/dnn44d3.js?cdv=1013" type="text/javascript"></script><script src="../js/dnn.modalpopup44d3.js?cdv=1013" type="text/javascript"></script><script src="../js/dnncore44d3.js?cdv=1013" type="text/javascript"></script><script src="../DesktopModules/DNNCorp/StructuredContentVisualizer/ClientScripts/VisualizerList44d3.js?cdv=1013" type="text/javascript"></script><script src="../Resources/Search/SearchSkinObjectPreview44d3.js?cdv=1013" type="text/javascript"></script><script src="../DesktopModules/EpicGames.Visualizer/Scripts/sectionParser44d3.js?cdv=1013" type="text/javascript"></script><script src="../desktopmodules/EpicGames.Visualizer/scripts/togglecontent44d3.js?cdv=1013" type="text/javascript"></script><script src="../DesktopModules/EpicGames.Visualizer/Scripts/pageTags44d3.js?cdv=1013" type="text/javascript"></script><script src="../js/dnn.servicesframework44d3.js?cdv=1013" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager', 'Form', [], [], [], 900, '');
+//]]>
+</script>
+
+        
+        
+        
+
+<script type="text/javascript">
+    var portalPath = 'https://docs.unrealengine.com/Portals/0/';
+</script>
+
+
+
+
+
+
+
+
+
+
+<!--CDF(Javascript|/Portals/_default/skins/unrealdocs/js/jscrollpane/jquery.jscrollpane.min.js?cdv=1013)-->
+<!--CDF(Javascript|/Portals/_default/skins/unrealdocs/js/jquery.move/jquery.event.move.js?cdv=1013)-->
+<!--CDF(Javascript|/Portals/_default/skins/unrealdocs/js/twentytwenty/twentytwenty.js?cdv=1013)-->
+<!--CDF(Javascript|/Portals/_default/skins/unrealdocs/js/fancybox/fancybox.js?cdv=1013)-->
+<!--CDF(Javascript|/Portals/_default/skins/unrealdocs/js/js-cookie/js.cookie-2.2.0.min.js?cdv=1013)-->
+<!--CDF(Javascript|/Portals/_default/skins/unrealdocs/js/custom.js?cdv=1013)-->
+
+
+
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<div id="siteWrapper" class="default-page">
+    <nav id="global-nav">
+        
+<script type="text/javascript">
+    (function($) {
+        window._egNavReadyCallback = function () {
+            window._epicGamesNavObserver.set('accountLinks', {
+                signInLinks: [{
+                    href: 'https://docs.unrealengine.com/en-us/Login?returnurl=%2flatest%2fINT',
+                    title: 'Sign In',
+                    key: 'login'
+                }],
+                //sign out link
+                signOutLink: {
+                    href: 'https://docs.unrealengine.com/en-us/Root/ctl/LogOff',
+                    title: 'Sign Out'
+                },
+                
+                dropdownLinks: [{
+                    title: 'Personal',
+                    href: 'https://www.unrealengine.com/account/personal?lang=en-US',
+                }, {
+                    title: 'Seller',
+                    href: 'https://publish.unrealengine.com'
+                }]
+
+                
+            });
+
+            window._epicGamesNavObserver.set('isLoggedIn', false);
+            window._epicGamesNavObserver.set('hideSignIn', false);
+
+            window._epicGamesNavObserver.set('displayName', '');
+        }
+    })(jQuery);
+</script>
+    </nav>
+    <div class="top-header">
+        <div class="top">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="dnn_breadcrumbPane" class="breadcrumb-pane col-sm-8">
+                        
+                    </div>
+                    <div class="search-wrapper-pane col-sm-4">
+                        <span id="dnn_topSearch_ClassicSearch">
+    
+    <span class="hidden" title="Site Search"><input id="dnn_topSearch_SiteRadioButton" type="radio" name="dnn$topSearch$Search" value="SiteRadioButton" checked="checked" /><label for="dnn_topSearch_SiteRadioButton">Site</label></span>
+    <span class="searchInputContainer" data-moreresults="See More Results" data-noresult="No Results Found">
+        <input name="dnn$topSearch$txtSearch" type="text" maxlength="255" size="20" id="dnn_topSearch_txtSearch" class="NormalTextBox" aria-label="Search" autocomplete="off" placeholder="Search..." />
+        <a class="dnnSearchBoxClearText" title="Clear search text"></a>
+    </span>
+    <a id="dnn_topSearch_cmdSearch" class="hidden" href="javascript:__doPostBack(&#39;dnn$topSearch$cmdSearch&#39;,&#39;&#39;)">Search</a>
+</span>
+
+
+<script type="text/javascript">
+    $(function() {
+        if (typeof dnn != "undefined" && typeof dnn.searchSkinObject != "undefined") {
+            var searchSkinObject = new dnn.searchSkinObject({
+                delayTriggerAutoSearch : 400,
+                minCharRequiredTriggerAutoSearch : 2,
+                searchType: 'S',
+                enableWildSearch: true,
+                cultureCode: 'en-US',
+                portalId: -1
+                }
+            );
+            searchSkinObject.init();
+            
+            
+            // attach classic search
+            var siteBtn = $('#dnn_topSearch_SiteRadioButton');
+            var webBtn = $('#dnn_topSearch_WebRadioButton');
+            var clickHandler = function() {
+                if (siteBtn.is(':checked')) searchSkinObject.settings.searchType = 'S';
+                else searchSkinObject.settings.searchType = 'W';
+            };
+            siteBtn.on('change', clickHandler);
+            webBtn.on('change', clickHandler);
+            
+            
+        }
+    });
+</script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid content-wrapper">
+        <div class="row">
+            <div id="dnn_sidNavPane" class="col-sm-4 col-md-3 sidebar-wrapper">
+                
+<button class="visible-xs visible-sm side-nav-toggle">
+    <span></span>
+</button>
+<div id="egviz-container"></div>
+<script>
+    var currentUserCanView = "True";
+    var currentTabId = 12151;
+    var currentStructure = "[{\"Name\":\"Root\",\"Title\":\"Unreal Engine 4 Documentation\",\"URL\":\"https://docs.unrealengine.com/en-us/\",\"TabId\":\"12151\",\"ImageUrl\":null,\"ParentTabId\":-1,\"HasChildren\":true,\"IsOpen\":true,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[{\"Name\":\"GettingStarted\",\"Title\":\"Get Started with UE4\",\"URL\":\"https://docs.unrealengine.com/en-us/GettingStarted\",\"TabId\":\"12157\",\"ImageUrl\":null,\"ParentTabId\":12151,\"HasChildren\":true,\"IsOpen\":false,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[]},{\"Name\":\"Editor\",\"Title\":\"Unreal Editor Manual\",\"URL\":\"https://docs.unrealengine.com/en-us/Engine/Editor\",\"TabId\":\"12180\",\"ImageUrl\":null,\"ParentTabId\":12151,\"HasChildren\":true,\"IsOpen\":false,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[]},{\"Name\":\"Engine\",\"Title\":\"Engine Features\",\"URL\":\"https://docs.unrealengine.com/en-us/Engine\",\"TabId\":\"12434\",\"ImageUrl\":null,\"ParentTabId\":12151,\"HasChildren\":true,\"IsOpen\":false,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[]},{\"Name\":\"Programming\",\"Title\":\"Programming Guide\",\"URL\":\"https://docs.unrealengine.com/en-us/Programming\",\"TabId\":\"13254\",\"ImageUrl\":null,\"ParentTabId\":12151,\"HasChildren\":true,\"IsOpen\":false,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[]},{\"Name\":\"Blueprints\",\"Title\":\"Blueprints Visual Scripting\",\"URL\":\"https://docs.unrealengine.com/en-us/Engine/Blueprints\",\"TabId\":\"13462\",\"ImageUrl\":null,\"ParentTabId\":12151,\"HasChildren\":true,\"IsOpen\":false,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[]},{\"Name\":\"Gameplay\",\"Title\":\"Gameplay Guide\",\"URL\":\"https://docs.unrealengine.com/en-us/Gameplay\",\"TabId\":\"13608\",\"ImageUrl\":null,\"ParentTabId\":12151,\"HasChildren\":true,\"IsOpen\":false,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[]},{\"Name\":\"Resources\",\"Title\":\"Samples and Tutorials\",\"URL\":\"https://docs.unrealengine.com/en-us/Resources\",\"TabId\":\"13696\",\"ImageUrl\":null,\"ParentTabId\":12151,\"HasChildren\":true,\"IsOpen\":false,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[]},{\"Name\":\"Studio\",\"Title\":\"Unreal Studio\",\"URL\":\"https://docs.unrealengine.com/en-us/Studio\",\"TabId\":\"14439\",\"ImageUrl\":null,\"ParentTabId\":12151,\"HasChildren\":true,\"IsOpen\":false,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[]},{\"Name\":\"Platforms\",\"Title\":\"Platform Development\",\"URL\":\"https://docs.unrealengine.com/en-us/Platforms\",\"TabId\":\"13968\",\"ImageUrl\":null,\"ParentTabId\":12151,\"HasChildren\":true,\"IsOpen\":false,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[]},{\"Name\":\"Builds\",\"Title\":\"Release Notes\",\"URL\":\"https://docs.unrealengine.com/en-us/Support/Builds\",\"TabId\":\"14212\",\"ImageUrl\":null,\"ParentTabId\":12151,\"HasChildren\":true,\"IsOpen\":false,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[]},{\"Name\":\"EarlyAccessFeatures\",\"Title\":\"Early Access Features\",\"URL\":\"https://docs.unrealengine.com/en-us/EarlyAccessFeatures\",\"TabId\":\"14694\",\"ImageUrl\":null,\"ParentTabId\":12151,\"HasChildren\":false,\"IsOpen\":false,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[]},{\"Name\":\"ExperimentalFeatures\",\"Title\":\"Experimental Features\",\"URL\":\"https://docs.unrealengine.com/en-us/ExperimentalFeatures\",\"TabId\":\"14560\",\"ImageUrl\":null,\"ParentTabId\":12151,\"HasChildren\":false,\"IsOpen\":false,\"Selectable\":true,\"CheckedState\":1,\"ChildTabs\":[]}]}]";
+    if (currentUserCanView === "True") {
+	    var sf = $.ServicesFramework(-1);
+        function loadScript() {
+            //var url = "http://localhost:8080/dist/egvisualizer-bundle.js";
+            var url = "../DesktopModules/EpicGames.Visualizer/scripts/egvisualizer-bundle.js";
+            var api = "http://localhost:52430/api/values";
+            $.ajax({
+                dataType: "script",
+                cache: true,
+                url: url
+            });
+        }
+
+	    var _sf = {
+		    serviceRoot: "",
+		    controller: "",
+		    init: function(serviceRoot, controller){
+			    this.serviceRoot = serviceRoot;
+			    this.controller = controller;
+		    },
+		    get: function(endPointUrl, data, callback, errorCallback){
+			    $.ajax({
+				    url: sf.getServiceRoot(this.serviceRoot) + this.controller + "/" + endPointUrl,
+				    type: "GET",
+				    data: data,
+				    beforeSend: sf.setModuleHeaders,
+				    success: callback,
+				    failure: errorCallback
+			    });
+		    },
+		    post: function(endPointUrl, data, callback, errorCallback){
+			    $.ajax({
+				    url: sf.getServiceRoot(this.serviceRoot) + this.controller + "/" + endPointUrl,
+				    type: "POST",
+				    data: data,
+				    beforeSend: sf.setModuleHeaders,
+				    success: callback,
+				    failure: errorCallback
+			    });
+		    },
+			getCurrentTabId: function(){
+		        return currentTabId;
+			},
+		    getCurrentStructure: function(){
+		        return currentStructure;
+			}
+	    };
+
+	    $(document).ready(function(){
+		    window.dnn.initEgViz = function(){
+			    return {
+				    sf: _sf
+			    };
+		    }
+			if(!window.dnn.egvisualizerLoaded){
+				loadScript();
+				window.dnn.egvisualizerLoaded = true;
+			}
+	    });
+    }
+
+</script>
+            </div>
+            <div class="col-xs-12 col-md-3 hidden-xs hidden-sm pull-right" id="on_this_page">
+                <div>
+					<div id="dnn_rightBar">
+						
+<div id="eg-sectionlinks">
+    
+</div>
+
+<script type="text/javascript">
+    (function($) {
+        $(document.body).ready(function () {
+            var containerId = 'eg-sectionlinks';
+
+            new dnn.epicGames.sectionParser({
+                containerId: containerId,
+                contentWrapper: '#dnn_ContentPane div.ModVisualizerC > div[id$="View_ScopeWrapper"], .content-pane div.ModVisualizerC > div[id$="View_ScopeWrapper"], .ModDNNHTMLC div[id$="HtmlModule_lblContent"]', //the parent node of documentation content, the section elements should under this directly.
+                startLevel: parseInt($('#tocStart').val()) || 0,
+                endLevel: parseInt($('#tocEnd').val()) || 0,
+                fixedPane: 'rightBar',
+                resx: {
+                    onThisPage: 'On this page'
+                }
+            });
+        });
+    })(jQuery);
+</script>
+					<div class="DnnModule DnnModule-Visualizer DnnModule-426931 DnnVersionableControl"><a name="426931"></a>
+<div class="DNNContainer_noTitle blue-left-border">
+	<div id="dnn_ctr426931_ContentPane"><!-- Start_Module_426931 --><div id="dnn_ctr426931_ModuleContent" class="DNNModuleContent ModVisualizerC">
+	<div id="dnn_ctr426931_View_ScopeWrapper" data-mid="426931" data-vid="d29adff0-6582-4615-81cd-0b53fa99227e" data-dnn-content-items="{&quot;vi&quot;:&quot;d29adff0-6582-4615-81cd-0b53fa99227e&quot;,&quot;ci&quot;:[&quot;3d583d2c-80bd-4b29-8d4b-8a5b2fc681b2&quot;]}"><div class="note">  <p>We are in the process of migrating documentation translated to other languages into our new system. We appreciate your patience as we complete this process. Pages for other languages&nbsp;can currently&nbsp;be found at:</p><ul>	<li><a href="https://api.unrealengine.com/CHN/">Chinese</a></li>	<li><a href="https://api.unrealengine.com/JPN/">Japanese</a></li>	<li><a href="https://api.unrealengine.com/KOR/">Korean</a></li></ul>  </div></div>
+</div><!-- End_Module_426931 --></div>
+	<div class="clear"></div>
+</div>
+</div></div>
+				</div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-sm-8 content-container pull-right">
+                <section id="wrapper">
+                    <div class="content-bar">
+                        
+<div class="version-tag foo" data-hasqtip="0" title="Engine Version" aria-describedby="qtip-0">
+</div>
+<script type="text/javascript">
+    (function($) {
+        $(document.body).ready(function () {
+            var $container = $('div.version-tag');
+            var engineVersion = $('input#engineVersion').val();
+            if (!engineVersion || engineVersion === "0") {
+                $container.remove();
+            } else {
+                if (engineVersion === "4.1") {
+                    engineVersion = "4.10";
+                }
+
+                $container.html(engineVersion);
+            }
+        });
+    })(jQuery);
+</script>
+
+                        
+<div id="eg-toggle-static"></div>
+<script type="text/html" id="toggle_Static_Template">  
+    <div class="btn-group os-toggle">
+		<button class="btn btn-default btn-lg dropdown-toggle foo {className}" 
+            type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hasqtip="1" 
+            title="Toggle between OS Version" aria-describedby="qtip-1">Toggle between OS Version<span class="caret"></span></button>
+        {toggleButtons}
+	</div>
+</script>
+<script type="text/javascript">
+    (function($) {
+        $(document.body).ready(function() {
+            dnn.epicGames.toggleContent.init({
+                staticContainer: $('#eg-toggle-static'),
+                dynamicContainer: $('.eg-toggle-dynamic'),
+                staticTemplate: $('#toggle_Static_Template').html(),
+                dynamicSelector: '.eg-toggle-button',
+                contentSelector: '.button_content',
+                showStatic: true,
+                resx: {
+                    windows: 'Windows',
+                    mac: 'Mac',
+                    linux: 'Linux'
+                }
+            });
+        });
+    })(jQuery);
+</script>
+
+                    </div>
+                    <div id="dnn_topPane" class="DNNEmptyPane"></div>
+                    <div id="dnn_contentPane" class="content-pane"><div class="DnnModule DnnModule-Visualizer DnnModule-421406 DnnVersionableControl"><a name="421406"></a>
+<div class="DNNContainer_noTitle blue-left-border">
+	<div id="dnn_ctr421406_ContentPane"><!-- Start_Module_421406 --><div id="dnn_ctr421406_ModuleContent" class="DNNModuleContent ModVisualizerC">
+	<div id="dnn_ctr421406_View_ScopeWrapper" data-mid="421406" data-vid="476d825d-2c90-4697-941f-217ac90c7b61" data-dnn-content-items="{&quot;vi&quot;:&quot;476d825d-2c90-4697-941f-217ac90c7b61&quot;,&quot;ci&quot;:[&quot;e90acaa7-01e7-4480-bff0-1a76f89f131c&quot;]}"><input type="hidden" value="0" id="tocStart" /><input type="hidden" value="0" id="tocEnd" /><input type="hidden" value="" id="pageTags" /><input type="hidden" value="" id="engineVersion" /><input type="hidden" value="None" id="skilLevel" /><h1 id="H1TitleId">Unreal Engine 4 Documentation</h1></div>
+</div><!-- End_Module_421406 --></div>
+	<div class="clear"></div>
+</div>
+</div><div class="DnnModule DnnModule-Visualizer DnnModule-565439 DnnVersionableControl"><a name="565439"></a>
+<div class="DNNContainer_noTitle blue-left-border">
+	<div id="dnn_ctr565439_ContentPane"><!-- Start_Module_565439 --><div id="dnn_ctr565439_ModuleContent" class="DNNModuleContent ModVisualizerC">
+	<div id="dnn_ctr565439_View_ScopeWrapper" data-mid="565439" data-vid="f6a6eb0f-5ace-4ed6-b067-db987e505a02" data-dnn-content-items="{&quot;vi&quot;:&quot;f6a6eb0f-5ace-4ed6-b067-db987e505a02&quot;,&quot;ci&quot;:[&quot;6d1cf588-e83c-453d-bf5e-4e36d194d919&quot;,&quot;76478e22-54c3-4a2a-bde6-d03830e1561f&quot;,&quot;6918dba5-29c1-490f-9a76-7f4f6e82cf68&quot;,&quot;b556a6bb-2994-4530-aca0-4fe520f3851d&quot;,&quot;0499cd8c-15bb-4eef-8afe-def33bc0310b&quot;,&quot;71973aa5-39d4-4f77-b0a7-8658c43ebc65&quot;,&quot;4d0ab6b2-31c3-4e7d-b410-44c8de23ec5c&quot;,&quot;ea779c22-5b31-4cc4-bba8-2a80826e66c2&quot;,&quot;36bb7bab-c598-4b51-8cf9-80912ffbe28e&quot;,&quot;21fc3f25-d68a-420c-8eeb-5459b36f4865&quot;,&quot;1c7363d7-6410-4973-b91e-10473469544c&quot;,&quot;bbbc30f2-616c-45bb-8664-84db1ec85cb0&quot;,&quot;2cb28d44-3582-4e1a-9b91-9986dd2e5871&quot;]}"><div class="icon-links">    <a data-availability='All Users' class="icon-link" href="https://docs.unrealengine.com/en-US/GettingStarted">	<div class="features role">		<div class="inner">			<p>				<img src="../portals/0/images/start_icon.png" class="subimage">			</p>			<div class="info">				<div class="title">Get Started with UE4</div>				<div class="content">					<div class="description">						<p>Introductory information for developers starting out creating games with Unreal Engine.</p>					</div>				</div>			</div>		</div>	</div></a>    <a data-availability='All Users' class="icon-link" href="https://docs.unrealengine.com/en-US/Engine/Editor">	<div class="features role">		<div class="inner">			<p>				<img src="../portals/0/images/editor_icon.png" class="subimage">			</p>			<div class="info">				<div class="title">Unreal Editor Manual</div>				<div class="content">					<div class="description">						<p>Guide to using and configuring the Unreal Editor toolset.</p>					</div>				</div>			</div>		</div>	</div></a>    <a data-availability='All Users' class="icon-link" href="https://docs.unrealengine.com/en-US/Engine">	<div class="features role">		<div class="inner">			<p>				<img src="../portals/0/images/docs_icon.png" class="subimage">			</p>			<div class="info">				<div class="title">Engine Features</div>				<div class="content">					<div class="description">						<p>Complete guide to using the tools and systems that make up Unreal Engine.</p>					</div>				</div>			</div>		</div>	</div></a>    <a data-availability='All Users' class="icon-link" href="https://docs.unrealengine.com/en-US/Programming">	<div class="features role">		<div class="inner">			<p>				<img src="../portals/0/images/prog_icon.png" class="subimage">			</p>			<div class="info">				<div class="title">Programming Guide</div>				<div class="content">					<div class="description">						<p>Information for programmers developing with Unreal Engine.</p>					</div>				</div>			</div>		</div>	</div></a>    <a data-availability='All Users' class="icon-link" href="https://docs.unrealengine.com/en-US/Engine/Blueprints">	<div class="features role">		<div class="inner">			<p>				<img src="../portals/0/images/blueprint_icon.png" class="subimage">			</p>			<div class="info">				<div class="title">Blueprints Visual Scripting</div>				<div class="content">					<div class="description">						<p>Overview of using the Blueprint visual scripting system for gameplay.</p>					</div>				</div>			</div>		</div>	</div></a>    <a data-availability='All Users' class="icon-link" href="https://docs.unrealengine.com/en-US/Gameplay">	<div class="features role">		<div class="inner">			<p>				<img src="../portals/0/images/gameplay_icon.png" class="subimage">			</p>			<div class="info">				<div class="title">Gameplay Guide</div>				<div class="content">					<div class="description">						<p>Overviews and examples of gameplay functionality for programmers and visual scripters.</p>					</div>				</div>			</div>		</div>	</div></a>    <a data-availability='All Users' class="icon-link" href="https://docs.unrealengine.com/en-US/Resources">	<div class="features role">		<div class="inner">			<p>				<img src="../portals/0/images/tutorial_icon.png" class="subimage">			</p>			<div class="info">				<div class="title">Samples and Tutorials</div>				<div class="content">					<div class="description">						<p>Links to various example scenes, sample games, and tutorials.</p>					</div>				</div>			</div>		</div>	</div></a>    <a data-availability='All Users' class="icon-link" href="https://docs.unrealengine.com/en-US/Studio">	<div class="features role">		<div class="inner">			<p>				<img src="../../dnnrz1gqa.blob.core.windows.net/portals/0/Images/enterprise_icon5700.png?sv=2017-04-17&amp;sr=b&amp;si=DNNFileManagerPolicy&amp;sig=RZXXkkK%2B795PaQyDpyKFS6T0zYGLaAYDMX4Kf0rKDFg%3D" class="subimage">			</p>			<div class="info">				<div class="title">Unreal Studio</div>				<div class="content">					<div class="description">						<p>Using Unreal Engine for linear media, visualization, and other non-game applications</p>					</div>				</div>			</div>		</div>	</div></a>    <a data-availability='All Users' class="icon-link" href="https://docs.unrealengine.com/en-US/Platforms">	<div class="features role">		<div class="inner">			<p>				<img src="../portals/0/images/platform_icon.png" class="subimage">			</p>			<div class="info">				<div class="title">Platform Development</div>				<div class="content">					<div class="description">						<p>Information over developing for platforms other than PC.</p>					</div>				</div>			</div>		</div>	</div></a>    <a data-availability='All Users' class="icon-link" href="https://docs.unrealengine.com/en-US/Support/Builds">	<div class="features role">		<div class="inner">			<p>				<img src="../portals/0/images/outline_icon.png" class="subimage">			</p>			<div class="info">				<div class="title">Release Notes</div>				<div class="content">					<div class="description">						<p>Release notes for Unreal Engine builds.</p>					</div>				</div>			</div>		</div>	</div></a>        <a data-availability='All Users' class="icon-link" href="https://docs.unrealengine.com/en-US/EarlyAccessFeatures">	<div class="features role">		<div class="inner">			<p>				<img src="../../dnnrz1gqa.blob.core.windows.net/portals/0/Images/earlyaccess_icon8c22.png?sv=2017-04-17&amp;sr=b&amp;si=DNNFileManagerPolicy&amp;sig=2mo6QUMwZdQoQwy98IdLJgyKfXCECYDxFt9urrk1xLY%3D" class="subimage">			</p>			<div class="info">				<div class="title">Early Access Features</div>				<div class="content">					<div class="description">						<p>Features that are in development, but available in a stable state.</p>					</div>				</div>			</div>		</div>	</div></a>    <a data-availability='All Users' class="icon-link" href="https://docs.unrealengine.com/en-US/ExperimentalFeatures">	<div class="features role">		<div class="inner">			<p>				<img src="../../dnnrz1gqa.blob.core.windows.net/portals/0/Images/experimental_iconf2fb.png?sv=2017-04-17&amp;sr=b&amp;si=DNNFileManagerPolicy&amp;sig=0KxO58Nj6oriLSRTicZH%2BvmNff80Q7uL%2FpO2yd%2FIx%2FI%3D" class="subimage">			</p>			<div class="info">				<div class="title">Experimental Features</div>				<div class="content">					<div class="description">						<p>Features that are still in flux and not quite ready for use in shipping projects.</p>					</div>				</div>			</div>		</div>	</div></a></div></div>
+</div><!-- End_Module_565439 --></div>
+	<div class="clear"></div>
+</div>
+</div></div>
+                </section>
+            </div>
+        </div>
+        <div class="row bottom-row">
+            
+            <div id="dnn_tagPane" class="col-xs-12 col-md-8 col-md-offset-2">
+				
+<div id="eg-tags">
+</div>
+
+<script type="text/javascript">
+    (function ($) {
+        $(document.body).ready(function () {
+            window.dnn.epicGames.pageTags.init({
+                searchUrl: 'https://docs.unrealengine.com/en-us/Search-Results',
+                container: $('#eg-tags'),
+                tags: $('input[id="pageTags"]').val(),
+                resx: {
+                    tags: 'Tags'
+                }
+            });
+        });
+    })(jQuery);
+</script>
+
+			</div>
+        </div>
+    </div>
+
+
+    <div class="scroll-top">
+        <span class="line-a"></span>
+        <span class="line-b"></span>
+    </div>
+
+
+    <footer></footer>
+</div>
+<script src='../../maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src='../../cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.min.js'></script>
+<script src='../../cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
+<script src="../../cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+        <input name="ScrollTop" type="hidden" id="ScrollTop" />
+        <input name="__dnnVariable" type="hidden" id="__dnnVariable" autocomplete="off" value="`{`trackLinks`:`false`,`__scdoff`:`1`,`sf_siteRoot`:`/latest/int/`,`sf_tabId`:`12151`,`evoq_TabId`:`12151`,`evoq_PageLanguage`:`en-US`,`evoq_ContentItemId`:`-1`,`evoq_UrlReferrer`:`//Root`,`evoq_UrlPath`:`https%3a%2f%2fdocs.unrealengine.com%2flatest%2fINT`,`evoq_UrlQuery`:`%3fTabId%3d12151%26language%3den-US`,`evoq_ContentItemReferrer`:`-1`,`evoq_PersonalizedUrlReferrer`:`-1`,`evoq_DisableAnalytics`:`False`}" />
+        <input name="__RequestVerificationToken" type="hidden" value="xmGUBkLShxSYOj_ale6K5_IIhaJgEbe1JjW6McrdzcpvP3A5y-Jao5lin9Oy675T1vFuQQ2" /><script src="../Portals/_default/skins/unrealdocs/js/jscrollpane/jquery.jscrollpane.min44d3.js?cdv=1013" type="text/javascript"></script><script src="../Portals/_default/skins/unrealdocs/js/jquery.move/jquery.event.move44d3.js?cdv=1013" type="text/javascript"></script><script src="../Portals/_default/skins/unrealdocs/js/twentytwenty/twentytwenty44d3.js?cdv=1013" type="text/javascript"></script><script src="../Portals/_default/skins/unrealdocs/js/fancybox/fancybox44d3.js?cdv=1013" type="text/javascript"></script><script src="../Portals/_default/skins/unrealdocs/js/js-cookie/js.cookie-2.2.0.min44d3.js?cdv=1013" type="text/javascript"></script><script src="../Portals/_default/skins/unrealdocs/js/custom44d3.js?cdv=1013" type="text/javascript"></script>
+    </form>
+    <!--CDF(Javascript|/js/dnncore.js?cdv=1013)--><!--CDF(Javascript|/js/dnn.modalpopup.js?cdv=1013)--><!--CDF(Css|/Resources/Shared/stylesheets/dnndefault/7.0.0/default.css?cdv=1013)--><!--CDF(Css|/Portals/_default/skins/unrealdocs/skin.css?cdv=1013)--><!--CDF(Css|/Portals/_default/skins/unrealdocs/default.css?cdv=1013)--><!--CDF(Javascript|/DesktopModules/DNNCorp/StructuredContentVisualizer/ClientScripts/VisualizerList.js?cdv=1013)--><!--CDF(Css|/Resources/Search/SearchSkinObjectPreview.css?cdv=1013)--><!--CDF(Javascript|/Resources/Search/SearchSkinObjectPreview.js?cdv=1013)--><!--CDF(Javascript|/DesktopModules/EpicGames.Visualizer/Scripts/sectionParser.js?cdv=1013)--><!--CDF(Css|/desktopmodules/EpicGames.Visualizer/module.css?cdv=1013)--><!--CDF(Css|/desktopmodules/EpicGames.Visualizer/css/togglecontent.css?cdv=1013)--><!--CDF(Javascript|/desktopmodules/EpicGames.Visualizer/scripts/togglecontent.js?cdv=1013)--><!--CDF(Javascript|/DesktopModules/EpicGames.Visualizer/Scripts/pageTags.js?cdv=1013)--><!--CDF(Javascript|/js/dnn.js?cdv=1013)--><!--CDF(Javascript|/js/dnn.servicesframework.js?cdv=1013)--><!--CDF(Javascript|/Resources/libraries/jQuery-UI/01_12_01/jquery-ui.js?cdv=1013)--><!--CDF(Javascript|/Resources/libraries/jQuery/03_02_01/jquery.js?cdv=1013)--><!--CDF(Javascript|/Resources/libraries/jQuery-Migrate/03_00_00/jquery-migrate.js?cdv=1013)-->
+    
+</body>
+
+<!-- Mirrored from docs.unrealengine.com/latest/INT by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Feb 2019 13:04:11 GMT -->
+</html>

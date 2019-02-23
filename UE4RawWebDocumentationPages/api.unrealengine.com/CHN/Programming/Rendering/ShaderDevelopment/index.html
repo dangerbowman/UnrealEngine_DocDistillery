@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Rendering/ShaderDevelopment/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:58:37 GMT -->
+<head>
+    <title>着色器开发 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Programming/Rendering/ShaderDevelopment/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Programming/Rendering/ShaderDevelopment/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Programming/Rendering/ShaderDevelopment/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Programming/Rendering/ShaderDevelopment/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3151855" />
+<meta name="availability" content="Public" />
+<meta name="title" content="着色器开发" />
+<meta name="description" content="面向编写着色器的图形程序员的信息。" />
+<meta name="version" content="4.9" />
+<meta name="tags" content="Rendering" />
+<meta name="parent" content="Programming/Rendering" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="着色器开发" />
+	<meta property="og:description" content="面向编写着色器的图形程序员的信息。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">图形编程</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index310e.html">Rendering</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">着色器开发</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_9"><a id="version_link" href="../../../SiteIndex/index62ec.html">Unreal Engine 4.9</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<a name="quickstart" ></a><h2 id="快速入门">快速入门</h2>
+
+<p>处理着色器时，请务必将 r.ShaderDevelopmentMode 设置为 1，以将其启用。最简单的方法是编辑 ConsoleVariables.ini，以便每次加载时都进行启用。这将启用“出错时重试”以及与着色器开发相关的日志和警告。
+</p><p>将更改保存到 .usf 文件之后，使用 <strong>Ctrl+Shift+.</strong> 可重新编译已更改的着色器。
+如果您更改包括在许多着色器中的文件（例如，common.usf），那么此操作可能需要花费一些时间。如果您想对某个材质进行迭代，那么可通过对材质进行小幅更改（例如移动节点）并使用材质编辑器中的“应用”（Apply）来触发材质重新编译。
+</p><a name="shadersandmaterials" ></a><h2 id="着色器与材质">着色器与材质</h2>
+
+<a name="globalshaders" ></a><h4 id="全局着色器">全局着色器</h4>
+
+<p>全局着色器是对固定几何体（例如全屏幕四边形）执行操作并且不需要与材质进行交互的着色器。示例包括阴影过滤或者后处理。在内存中，对于任何给定的全局着色器类型，只有一个着色器。
+</p><a name="materialandmeshtypes" ></a><h4 id="材质与网格类型">材质与网格类型</h4>
+
+<p>材质由一组用于控制材质渲染方式（混合模式以及双面，等等）的状态以及一组用于控制材质与各种渲染过程的交互方式的材质输入（底色、粗糙度和法线，等等）控制。
+</p><a name="vertexfactories" ></a><h4 id="顶点工厂">顶点工厂</h4>
+
+<p>材质必须支持应用于不同的网格类型，而这是通过顶点工厂来实现的。<code >FVertexFactoryType</code> 代表唯一的网格类型，而 <code >FVertexFactory</code> 实例存储每个实例的数据以支持该唯一网格类型。例如，<code >FGPUSkinVertexFactory</code> 存储皮肤处理所需的骨基质，以及对 GPU 皮肤顶点工厂着色器代码需要用作输入的各种顶点缓冲区的引用。顶点工厂着色器代码是一个隐式接口，由各种过程着色器用于抽取网格类型差异。顶点工厂主要由顶点着色器代码组成，但也包含一些像素着色器代码。顶点工厂着色器代码的一些重要组成部分如下：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>函数</p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明</p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>FVertexFactoryInput</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>定义顶点工厂所需的顶点着色器输入。这些输入必须与 C++ 端的 FVertexFactory 中的顶点声明匹配。例如，LocalVertexFactory 的 FVertexFactoryInput 具有 float4 Position：POSITION;，对应于 FStaticMeshLODResources::SetupVertexFactory 中的位置流声明。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>FVertexFactoryIntermediates</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>用于存储高速缓存的中间数据，该数据将在多个顶点工厂函数中使用。一个常用的示例是 TangentToLocal 矩阵，该矩阵必须根据未打包的顶点输入进行计算。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>FVertexFactoryInterpolantsVSToPS</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>要从顶点着色器传递到像素着色器的顶点工厂数据。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>VertexFactoryGetWorldPosition</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此函数从顶点着色器中调用，用于获取全局空间顶点位置。对于静态网格，此函数只是使用 LocalToWorld 矩阵将局部空间位置从顶点缓冲区转换到全局空间。对于由 GPU 处理皮肤的网格，将首先处理此位置的皮肤，然后再转换到全局空间。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>VertexFactoryGetInterpolantsVSToPS</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>将 FVertexFactoryInput 转换为 FVertexFactoryInterpolants，后者将由图形硬件进行插值，然后再传递到像素着色器。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>GetMaterialPixelParameters</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>此函数在像素着色器中调用，并将特定于顶点工厂的插值 (FVertexFactoryInterpolants) 转换为 FMaterialPixelParameters 结构，该结构由过程像素着色器使用。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><a name="materialshaders" ></a><h4 id="材质着色器">材质着色器</h4>
+
+<p>使用 <code >FMaterialShaderType</code> 的着色器是特定于过程的着色器，它们需要访问材质的某些属性，因此必须针对每个材质进行编译，但不需要访问任何网格属性。光函数过程着色器是 <code >FMaterialShaderType</code> 的示例。
+</p><p>使用 <code >FMeshMaterialShaderType</code> 的着色器是特定于过程的着色器，它们依赖于材质的属性和网格类型，因此必须针对每个材质/顶点工厂组合进行编译。例如，<code >TBasePassVS</code> / <code >TBasePassPS</code> 需要对正向渲染过程中的所有材质输入进行评估。
+</p><p>材质的必需着色器集合包含在 <code >FMaterialShaderMap</code> 中。其类似于：
+</p>
+<pre class="prettyprint"><code>FMaterialShaderMap 
+    FLightFunctionPixelShader - FMaterialShaderType
+    FLocalVertexFactory - FVertexFactoryType
+        TDepthOnlyPS - FMeshMaterialShaderType
+        TDepthOnlyVS - FMeshMaterialShaderType
+        TBasePassPS - FMeshMaterialShaderType
+        TBasePassVS - FMeshMaterialShaderType
+        等等
+    FGPUSkinVertexFactory - FVertexFactoryType
+        等等</code></pre>
+<p>顶点工厂根据其 <strong>ShouldCache</strong> 函数包括在此矩阵中，该函数依赖于材质的使用。例如，bUsedWithSkeletalMesh 值为 <code >true</code> 表示包括 GPU 皮肤顶点工厂。<code >FMeshMaterialShaderType</code> 根据其 ShouldCache 函数包括在此矩阵中，该函数依赖于材质及顶点工厂属性。这是一种对着色器进行高速缓存的稀疏矩阵方法，这种方法会导致着色器数目迅速增加，从而占用内存并增加编译时间。相对于存储实际需要的着色器列表，主要优点是不必生成任何列表，因此在控制台上运行之前，所需的着色器始终已编译完成。UE4 通过压缩着色器来缓解着色器内存问题，并通过多内核着色器编译来缓解编译时间问题。
+</p><a name="creatingamaterialshader" ></a><h4 id="创建材质着色器">创建材质着色器</h4>
+
+<p>材质着色器类型是使用 DECLARE_SHADER_TYPE 宏来创建的：
+</p>
+<pre class="prettyprint"><code>class FLightFunctionPixelShader : public FShader { DECLARE_SHADER_TYPE(FLightFunctionPixelShader,Material);</code></pre>
+<p>这个宏为材质着色器类型声明必要的元数据和函数。材质着色器类型将使用 IMPLEMENT_MATERIAL_SHADER_TYPE 进行实例化：
+</p>
+<pre class="prettyprint"><code>IMPLEMENT_MATERIAL_SHADER_TYPE(,FLightFunctionPixelShader,TEXT("LightFunctionPixelShader")</code></pre>
+<p>这将生成材质着色器类型的全局元数据，这些元数据允许我们在运行时执行各种操作，例如使用给定的着色器类型对所有着色器进行迭代。
+</p><p>典型的材质像素着色器类型将先通过调用 <strong>GetMaterialPixelParameters</strong> 顶点工厂函数来创建 <code >FMaterialPixelParameters</code> 构造。GetMaterialPixelParameters 将特定于顶点工厂的输入转换为任何过程可能想访问的属性，例如 WorldPosition 和 TangentNormal 等等。然后，材质着色器将调用 <strong>CalcMaterialParameters</strong>，后者将写出 <code >FMaterialPixelParameters</code> 的其余成员，之后 <code >FMaterialPixelParameters</code> 完全初始化。然后，材质着色器将通过 MaterialTemplate.usf 中的函数来访问该材质的某些输入（例如，通过 <strong>GetMaterialEmissive</strong> 访问材质的自发光输入），执行一些明暗处理，然后输出该过程的最终颜色。
+</p><a name="specialenginematerials" ></a><h4 id="特殊引擎材质">特殊引擎材质</h4>
+
+<p><strong>UMaterial</strong> 具有一项名为 bUsedAsSpecialEngineMaterial 的设置，该设置允许将材质与任何顶点工厂类型配合使用。这意味着所有顶点工厂都随该材质一起编译，而这将是一个非常大的集合。bUsedAsSpecialEngineMaterial 用于：
+</p><ul ><li><p>仅与渲染视图模式（例如照明）配合使用的材质。
+</p></li><li><p>在发生编译错误时用作后备的材质（DefaultDecalMaterial 和 DefaultMaterial，等等）。
+</p></li><li><p>在渲染其他材质时使用其着色器，以减少必须高速缓存的着色器数目的材质。例如，某个不透明材质的“仅深度”着色器将生成与 DefaultMaterial 相同的深度输出，因此将改为使用 DefaultMaterial 的着色器，而该不透明材质将跳过对该“仅深度”着色器的高速缓存。
+</p></li></ul><a name="shadercompilation" ></a><h2 id="着色器编译">着色器编译</h2>
+
+<p>UE4 使用流式系统以异步方式编译着色器。编译请求在没有高速缓存的着色器贴图的材质加载时排入队列，编译结果将在它们变为可用时应用，而不会阻塞引擎。这可在装入时间和编译吞吐量方面实现最佳结果，但这意味着实际平台着色器编译与请求编译的材质之间存在相当多的层。<br /></p><p>实际编译工作在称为“着色器编译工作程序”的辅助进程中完成，这是因为平台着色器编译函数 (D3DCompile) 中通常包含不可分割区块，这些区块导致无法在单个进程中进行多内核比例调整。
+</p><a name="debuggingshadercompilers" ></a><h4 id="调试着色器编译器">调试着色器编译器</h4>
+
+<p>有一些设置可控制完成编译的方式，这可以简化着色器编译器的调试。您可在 BaseEngine.ini 的 [DevOptions.Shaders] 一节中找到这些设置。
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>设置</p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>说明</p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>bAllowCompilingThroughWorkers</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是否启动 SCW 以调用编译器 DLL，或者 UE4 是否应直接调用编译器 DLL。如果禁用此设置，那么将以单内核方式执行编译。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>bAllowAsynchronousShaderCompiling</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是否应通过 UE4 中的另一个线程来执行编译。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>如果您想直接从 UE4 中单步跳入着色器编译器 DLL（例如 CompileD3D11Shader），那么应将这两者都设置为 <em>false</em>。但是，编译将花费较长时间，因此请确保已对所有其他着色器进行高速缓存。
+</p><a name="retryingoncompileerrors" ></a><h4 id="发生编译错误时重试">发生编译错误时重试</h4>
+
+<p>启用 r.ShaderDevelopmentMode 之后，您将有机会在发生着色器编译错误时重试。这对于全局着色器而言特别重要，因为无法成功编译即表示发生致命错误。
+</p><p>在连接调试器之后进行调试时，您将遇到断点，而编译错误会显示在 Visual Studio 输出窗口中。然后，您可 <strong>双击</strong> 错误日志，以直接转到存在问题的行。
+</p><p><img alt="CompilerErrorDebug.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderDevelopment/CompilerErrorDebug.jpg" />
+</p><p>否则，系统将显示 Yes/No 对话框
+</p><p><img alt="CompileError.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderDevelopment/CompileError.jpg" />
+</p><a name="shadercachingandcooking" ></a><h2 id="着色器高速缓存与准备">着色器高速缓存与准备</h2>
+
+<p>着色器编译之后，它们将存储在“派生的数据高速缓存”中。在它们的键中，包含所有编译输入（包括着色器源文件）的散列。这意味着，您每次重新启动引擎或执行 'recompileshaders changed' 时，都会自动应用对着色器源文件所作的更改。
+</p><p>当您修改 FShader 序列化函数时，不需要处理向后兼容性，而只需在该着色器所包括的着色器文件中添加一个空格。
+</p><p>准备资产时，材质着色器将直接插入到材质的包中，而全局着色器单独存储在全局着色器文件中，这使其可以在引擎启动过程中的早期加载。
+</p><a name="debugging" ></a><h2 id="调试">调试</h2>
+
+<p>调试着色器的主要方法是修改着色器以输出中间结果，然后使用适当的 VisualizeTexture 命令将该结果可视化。这样就可以快速执行迭代，因为您可以迅速完成编译，而不必重新启动引擎。例如，您可以使用类似于以下的代码来验证 WorldPosition 是否正确：
+</p>
+<pre class="prettyprint"><code>OutColor = frac(WorldPosition / 1000);</code></pre>
+<p>然后，验证比例正确，并且结果与视图无关。但是，对于那些构建数据结构的较复杂着色器，此方法无法很好地调整比例。
+</p><a name="dumpingdebuginfo" ></a><h4 id="转储调试信息">转储调试信息</h4>
+
+<p>您还可以使用 r.DumpShaderDebugInfo=1，以将编译的所有着色器的文件保存到磁盘。就像 r.ShaderDevelopmentMode 一样，在 ConsoleVariables.ini 中进行此设置可能非常有用。文件将保存到 GameName/Saved/ShaderDebugInfo，其中包括
+</p><ul ><li><p>源文件，并包括
+</p></li><li><p>着色器的预处理版本
+</p></li><li><p>一个批处理文件，用于使用与已使用的编译器等效的命令行选项来编译预处理版本
+</p><div class="note">
+	<p>如果保持此设置开启，那么会在硬盘上生成许多非常小的文件和文件夹。
+</p>
+</div></li></ul><a name="iterationbestpractices" ></a><h2 id="迭代最佳实践">迭代最佳实践</h2>
+
+<p>如果您正在处理全局着色器，那么 recompileshaders changed 或 <strong>Ctrl+Shift+.</strong> 是最快的迭代方法。如果着色器要花费较长时间才能完成编译，您可考虑在着色器的 ModifyCompilationEnvironment 中指定 CFLAG_StandardOptimization 作为编译标志。
+</p><p>如果您正在处理材质着色器，例如 BasePassPixelShader.usf，那么对单个材质执行迭代将会快得多。您每次在材质编辑器中单击“应用”按钮时，都会从磁盘重新读取着色器文件，并且仅重新编译该材质。
+</p><a name="crosscompiler" ></a><h2 id="交叉编译器">交叉编译器</h2>
+
+<p><a id="content_link" href="HLSLCrossCompiler/index.html" ><span>HLSL 交叉编译器</span></a>
+ 用来将 HLSL 自动转换为用于 OpenGL 平台的 GLSL，从而使您只需针对所有平台编写一次着色器。它在离线着色器编译期间运行，并对代码执行 OpenGL 驱动程序经常遗漏的各种优化。
+</p><a name="asynccompute" ></a><h2 id="asynccompute">AsyncCompute</h2>
+
+<p><a id="content_link" href="AsyncCompute/index.html" ><span>AsyncCompute</span></a>
+ 是某些使用特定 GPU 的 API 中提供的一项硬件功能。
+它使交错能够更好更有效率地利用 GPU 中的硬件单元。
+</p>
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index310e.html">Rendering</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Rendering/ShaderDevelopment/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:58:52 GMT -->
+</html>

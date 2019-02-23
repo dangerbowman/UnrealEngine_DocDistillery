@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Rendering/ShaderInPlugin/QuickStart/1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:59:57 GMT -->
+<head>
+    <title>在插件 - 代码设置中新建一个全局着色器 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/INT/Programming/Rendering/ShaderInPlugin/QuickStart/1/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/KOR/Programming/Rendering/ShaderInPlugin/QuickStart/1/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/JPN/Programming/Rendering/ShaderInPlugin/QuickStart/1/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../../../docs.unrealengine.com/latest/CHN/Programming/Rendering/ShaderInPlugin/QuickStart/1/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="3967023" />
+<meta name="availability" content="Public " />
+<meta name="title" content="在插件 - 代码设置中新建一个全局着色器" />
+<meta name="description" content="设置全局着色器插件的插件和代码" />
+<meta name="type" content="quick start" />
+<meta name="type" content="multi-step" />
+<meta name="skilllevel" content="Intermediate" />
+<meta name="version" content="4.17" />
+<meta name="parent" content="Programming/Rendering/ShaderInPlugin/QuickStart" />
+<meta name="order" content="1" />
+<meta name="tags" content="Rendering" />
+<meta name="tags" content="Programming" />
+<meta name="checkpoint" content="shaderqs" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="在插件 - 代码设置中新建一个全局着色器" />
+	<meta property="og:description" content="设置全局着色器插件的插件和代码" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">将一个新全局着色器创建为插件</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index310e.html">Rendering</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index0f06.html">Programming</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Skill Level:
+									</div>
+									<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+								</div>
+																								<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_17"><a id="version_link" href="../../../../../SiteIndex/index8ccf.html">Unreal Engine 4.17</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">在插件 - 代码设置中新建一个全局着色器</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            <div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+
+                            <div class="version_tag_filter 4_17"><a id="version_link" href="../../../../../SiteIndex/index8ccf.html">Unreal Engine 4.17</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="navigation">
+        <div class="button disabled previous">
+        <a><span>Previous Step</span></a>
+    </div>
+            <div class="button next">
+        <a id="content_link" href="../2/index.html" title="在插件 - 蓝图设置中新建一个全局着色器"><span>Next Step</span></a>
+
+    </div>
+            <div class="button home">
+        <a id="content_link" href="../index.html" title="通过插件创建并设置一个新的全局着色器。"><span>将一个新全局着色器创建为插件</span></a>
+
+    </div>
+    </div><p>开始新建虚幻引擎 4 的插件之前，需要先安装 Visual Studio。此快速入门需要 Visual Studio，用户需要对插件代码进行编译，使其能正常运行。如不了解如何进行此操作，请查阅 <a id="content_link" href="../../../../Development/VisualStudioSetup/index.html" ><span>设置 UE4 的 Visual Studio</span></a>
+ 文档。<br /></p><ol ><li><p>首先新建一个 C++ <strong>基础代码（Basic Code）</strong> 项目，<strong>桌面设置（Desktop Setting）</strong> 设为 <strong>最高精度（Maximum Quality）</strong>，且不带 <strong>新手内容（Starter Content）</strong>。 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_00.png" ><span><img alt="HT_ShadersInPlugins_00.png" width="555" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_00.jpg" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p>点击查看全图。
+</p>
+</div></li><li><p>项目创建后，Visual Studio 将打开，之后即可右键点击 ShadersInPlugins 项目并选择 <strong>Build</strong> 选项编译项目。
+</p><p><img alt="HT_ShadersInPlugins_01.png" width="481" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_01.jpg" />
+</p></li><li><p>项目编译完成后，在 Visual Studio 中按下 <strong>F5</strong> 键在 UE4 编辑器中运行 ShadersInPlugins 项目。
+</p></li><li><p>UE4 编辑器加载完成后，前往 <strong>Edit</strong> > <strong>Plugins</strong> 打开 <strong>Plugins</strong> 管理器，然后点击 Plugin 窗口右下侧的 <strong>New Plugin</strong> 选项呼出新插件创建窗口。 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_02.png" ><span><img alt="HT_ShadersInPlugins_02.png" width="564" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_02.jpg" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p>点击查看全图。
+</p>
+</div></li><li><p>在 <strong>New Plugin</strong> 窗口中选择 <strong>Blank</strong> 插件，然后将其命名为 <strong>Foo</strong>，保留全部默认设置。所有操作完成后，按下 <strong>Create Plugin</strong> 键创建插件最初需要的全部内容。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_03.png" ><span><img alt="HT_ShadersInPlugins_03.png" width="564" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_03.jpg" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p>点击查看全图。 
+</p>
+</div></li><li><p>完成后，关闭 UE4 和 Visual Studio，前往在项目文件夹中创建的 <strong>Plugins</strong> > <strong>Foo</strong> 插件文件夹。
+</p></li><li><p>在 Foo plugins 文件夹中添加一个名为 <strong>Shaders</strong> 的新文件夹，并在其中再新建一个名为 <strong>Private</strong> 的文件夹。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_04.png" ><span><img alt="HT_ShadersInPlugins_04.png" width="564" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_04.jpg" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p>点击查看全图。
+</p>
+</div></li><li><p>在 Private 文件夹中新建一个文本文件并将其命名为 <strong>MyShader.USF</strong>，然后将以下 HLSL 代码复制粘贴到此文件中，完成操作后保存文件。
+</p><div class="note">
+	<p>必须将文件扩展名改为 <strong>.USF</strong>，否则 UE4 无法将其识别为着色器文件。
+</p>
+</div>
+<pre class="prettyprint"><code>// 版权所有 1998-2018 Epic Games, Inc. 保留所有权利。
+
+/*=============================================================================
+    LensDistortionUVGeneration.usf:将光学变形和不
+    变形 UV 置换贴图生成到一个渲染目标中。
+
+    像素着色器直接计算变形视口 UV，
+    不对使用 Sv_Position 和参考方程式的视口 UV 置换执行变形，
+    并将它们保存到红色和绿色的通道中。
+
+    为避免用费拉里法进行解析、
+    或在 GPU 上执行牛顿法计算不变形视口 UV 这两种方式
+    来对视口 UV 置换进行变形，这对着色器的工作方式如下：顶点着色器不对网格的顶点执行变形，
+    并下传到像素着色器视口 UV 应在屏幕上
+    所处的位置，而不进行变形。像素
+    着色器可生成不变形视口 UV，
+    减去像素的视口 UV 后即可对视口 UV 置换进行变形。
+=============================================================================*/
+
+#include "/Engine/Public/Platform.ush"
+
+// 视口 UV 坐标中的像素大小。
+float2 PixelUVSize;
+
+// K1, K2, K3
+float3 RadialDistortionCoefs;
+
+// P1, P2
+float2 TangentialDistortionCoefs;
+
+// 未变形视口的摄像机矩阵。
+float4 UndistortedCameraMatrix;
+
+// 变形视口的摄像机矩阵。
+float4 DistortedCameraMatrix;
+
+// 对渲染目标输出乘法和加法。
+float2 OutputMultiplyAndAdd;
+
+// 不对 V.z=1 视图位置进行变形。
+float2 UndistortNormalizedViewPosition(float2 V)
+{
+    float2 V2 = V * V;
+    float R2 = V2.x + V2.y;
+
+    // 径向变形（额外添加括号是为匹配 MF_Undistortion.uasset）。
+    float2 UndistortedV = V * (1.0 + R2 * (RadialDistortionCoefs.x + R2 * (RadialDistortionCoefs.y + R2 * RadialDistortionCoefs.z)));
+
+    // 切向变形。
+    UndistortedV.x += TangentialDistortionCoefs.y * (R2 + 2 * V2.x) + 2 * TangentialDistortionCoefs.x * V.x * V.y;
+    UndistortedV.y += TangentialDistortionCoefs.x * (R2 + 2 * V2.y) + 2 * TangentialDistortionCoefs.y * V.x * V.y;
+
+    return UndistortedV;
+}
+
+// 返回变形视口 UV 的未变形视口 UV。
+//
+// 注意：
+//        UV 创建于左下角。
+float2 UndistortViewportUV(float2 ViewportUV)
+{
+    // 已变形视口 UV -&gt; 已变形视图位置（z=1）
+    float2 DistortedViewPosition = (ViewportUV - DistortedCameraMatrix.zw) / DistortedCameraMatrix.xy;
+
+    // 计算未变形的视图位置 (z=1)
+    float2 UndistortedViewPosition = UndistortNormalizedViewPosition(DistortedViewPosition);
+
+    // 未变形的视图位置 (z=1) -&gt; 未变形的视口 UV。
+    return UndistortedCameraMatrix.xy * UndistortedViewPosition + UndistortedCameraMatrix.zw;
+}
+
+// 翻转 UV 的 y 组件。
+float2 FlipUV(float2 UV)
+{
+    return float2(UV.x, 1 - UV.y);
+}
+
+void MainVS(
+    in uint GlobalVertexId :SV_VertexID,
+    out float2 OutVertexDistortedViewportUV :TEXCOORD0,
+    out float4 OutPosition :SV_POSITION
+    ）
+{
+    // 计算单元索引。
+    uint GridCellIndex = GlobalVertexId / 6;
+
+    // 计算网格中单元行和列的 ID。
+    uint GridColumnId = GridCellIndex / GRID_SUBDIVISION_Y;
+    uint GridRowId = GridCellIndex - GridColumnId * GRID_SUBDIVISION_Y;
+
+    // 计算双三角形网格单元中的顶点 ID。
+    uint VertexId = GlobalVertexId - GridCellIndex * 6;
+
+    // 计算单元中三角形顶点源自左下角的 UV 坐标。
+    float2 CellVertexUV = float2(0x1 &amp; ((VertexId + 1) / 3), VertexId &amp; 0x1);
+
+    // 计算网格中顶点源自左上角的 UV。
+    float2 GridInvSize = 1.f / float2(GRID_SUBDIVISION_X, GRID_SUBDIVISION_Y);
+    float2 GridVertexUV = FlipUV(
+        GridInvSize * (CellVertexUV + float2(GridColumnId, GridRowId)));
+
+    // 标准不含半像素位移。
+    GridVertexUV -= PixelUVSize * 0.5;
+
+    // 输出顶点位置。
+    OutPosition = float4(FlipUV(
+        UndistortViewportUV(GridVertexUV) + PixelUVSize * 0.5) * 2 - 1, 0, 1);
+
+    // 输出顶点源自左上角的 UV。
+    OutVertexDistortedViewportUV = GridVertexUV;
+}
+
+void MainPS(
+    in noperspective float2 VertexDistortedViewportUV :TEXCOORD0,
+    in float4 SvPosition :SV_POSITION,
+    out float4 OutColor :SV_Target0
+    ）
+{
+    // 计算像素源自左上角的 UV。
+    float2 ViewportUV = SvPosition.xy * PixelUVSize;
+
+    // 标准不含半像素位移。
+    ViewportUV -= PixelUVSize * 0.5;
+
+    float2 DistortUVtoUndistortUV = (UndistortViewportUV((ViewportUV))) - ViewportUV;
+    float2 UndistortUVtoDistortUV = VertexDistortedViewportUV - ViewportUV;
+
+    // 输出置换通道。
+    OutColor = OutputMultiplyAndAdd.y + OutputMultiplyAndAdd.x * float4(
+        DistortUVtoUndistortUV, UndistortUVtoDistortUV);
+}</code></pre></li><li><p>现在找到 <strong>Foo.uplugin</strong> 文件并将其在文本编辑器中打开，用以下文本替代文件中的信息，完成后保存文件。
+</p>
+<pre class="prettyprint"><code>{
+    "FileVersion" :3,
+    "Version" :1,
+    "VersionName" :"1.0",
+    "FriendlyName" :"Foo",
+    "Description" :"Plugin to play around with shaders.",
+    "Category" :"Sandbox",
+    "CreatedBy" :"Epic Games, Inc.",
+    "CreatedByURL" :"http://epicgames.com",
+    "DocsURL" :"",
+    "MarketplaceURL" :"",
+    "SupportURL" :"",
+    "EnabledByDefault" : false,
+    "CanContainContent" : true,
+    "IsBetaVersion" : false,
+    "Installed" : false,
+    "Modules" :
+    &#91;
+        {
+            “Name" :"Foo",
+            "Type" :"Developer",
+            "LoadingPhase" :"PostConfigInit"
+        }
+    &#93;
+}</code></pre></li><li><p>接下来前往 <strong>Plugins\Foo\Source\Foo</strong> 并新建一个文件夹 <strong>Classes</strong>，然后从 <strong>Engine\Plugins\Compositing\LensDistortion</strong> 路径下复制 <strong>LensDistortionAPI.h</strong> 和 <strong>LensDistortionBlueprintLibrary.h</strong> 文件到这个新建的文件夹中。
+</p><div class="note">
+	<p>我们将要复制的文件在 <strong>Engine\Plugins\Compositing\LensDistortion</strong> 中。
+</p>
+</div><ul ><li><p>类 - 新建文件夹
+</p><ul ><li><p>复制 - LensDistortionAPI.h
+</p></li><li><p>复制 - LensDistortionBlueprintLibrary.h
+</p></li></ul><p><img alt="HT_ShadersInPlugins_05.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_05.jpg" />
+</p></li></ul></li><li><p>然后前往 <strong>Private</strong> 文件夹并将 <strong>LensDistortionBlueprintLibrary.cpp</strong> 和 <strong>LensDistortionRendering.cpp</strong> 文件复制到这个 Private 文件夹。
+</p><ul ><li><p>Private - 现有文件夹
+</p><ul ><li><p>复制 - LensDistortionBlueprintLibrary.cpp
+</p></li><li><p>复制 - LensDistortionRendering.cpp
+</p></li></ul><p><img alt="HT_ShadersInPlugins_06.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_06.jpg" />
+</p></li></ul></li><li><p>现在关闭 UE4 编辑器和 Visual Studio，然后找到项目的 .U 项目文件。找到后，对其单击右键，并选择 <strong>Generate Visual Studio project files</strong> 选项。
+</p><p><img alt="HT_ShadersInPlugins_07.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_07.jpg" />
+</p></li><li><p>重新打开 Visual Studio 解决方案，然后前往 Foo > Classes 并打开 <strong>LensDistortionAPI.h</strong> 文件。在此文件中用 <strong>FFooCameraModel</strong> 替换 <strong>FLensDistortionCameraModel</strong>。
+</p><div class="note">
+	<p>您需要在此文件中 <strong>四次</strong> 用 FFooCameraModel 替换 FLensDistortionCameraModel。
+</p>
+</div>
+<pre class="prettyprint"><code>    // 版权所有 1998-2018 Epic Games, Inc. 保留所有权利。
+
+    #pragma once
+
+    #include "CoreMinimal.h"
+    #include "LensDistortionAPI.generated.h"
+
+    /** 光学变形/不变形的数学摄像机模型。
+     *
+     * 摄像机矩阵 =
+     *  &#124; F.X  0  C.x &#124;
+     *  &#124;  0  F.Y C.Y &#124;
+     *  &#124;  0   0   1  &#124;
+     */
+    USTRUCT(BlueprintType)
+    struct FFooCameraModel
+    {
+        GENERATED_USTRUCT_BODY()
+        FFooCameraModel()
+        {
+            K1 = K2 = K3 = P1 = P2 = 0.f;
+            F = FVector2D(1.f, 1.f);
+            C = FVector2D(0.5f, 0.5f);
+        }
+
+        /** 径向参数 #1。*/
+        UPROPERTY(Interp, EditAnywhere, BlueprintReadWrite, Category = "Lens Distortion&#124;Camera Model")
+        float K1;
+
+        /** 径向参数 #2。*/
+        UPROPERTY(Interp, EditAnywhere, BlueprintReadWrite, Category = "Lens Distortion&#124;Camera Model")
+        float K2;
+
+        /** 径向参数 #3。*/
+        UPROPERTY(Interp, EditAnywhere, BlueprintReadWrite, Category = "Lens Distortion&#124;Camera Model")
+        float K3;
+
+        /** 切向参数 #1。*/
+        UPROPERTY(Interp, EditAnywhere, BlueprintReadWrite, Category = "Lens Distortion&#124;Camera Model")
+        float P1;
+
+        /** 切向参数 #2。*/
+        UPROPERTY(Interp, EditAnywhere, BlueprintReadWrite, Category = "Lens Distortion&#124;Camera Model")
+        float P2;
+
+        /** 摄像机矩阵的 Fx 和 Fy。*/
+        UPROPERTY(Interp, EditAnywhere, BlueprintReadWrite, Category = "Lens Distortion&#124;Camera Model")
+        FVector2D F;
+
+        /** 摄像机矩阵的 Cx 和 Cy。*/
+        UPROPERTY(Interp, EditAnywhere, BlueprintReadWrite, Category = "Lens Distortion&#124;Camera Model")
+        FVector2D C;
+
+        /** 不在视图空间中进行 3D 矢量变形（x, y, z=1.f）并返回（x', y', z'=1.f）。*/
+        FVector2D UndistortNormalizedViewPosition(FVector2D V) const;
+
+        /** 返回不变形渲染所需的过扫描因子，避免出现未渲染的变形像素。*/
+        float GetUndistortOverscanFactor(
+            float DistortedHorizontalFOV,
+            float DistortedAspectRatio) const;
+
+        /** 在输出渲染目标中绘制 UV 置换贴图。
+         * - 红色和绿色通道负责变形置换；
+         * - 蓝色和透明通道负责不变形置换。
+         * @param World 获取渲染设置的当前世界场景（如特征场景）。
+         * @param DistortedHorizontalFOV 变形渲染中理想的水平视野。
+         * @param DistortedAspectRatio 变形渲染中理想的高宽比。
+         * @param UndistortOverscanFactor 未变形渲染的过扫描因子。
+         * @param OutputRenderTarget 进行绘制的渲染目标。不必拥有和变形渲染相同的分辨率或高宽比。
+         * @param OutputMultiply 应用在置换上的乘法因子。
+         * @param OutputAdd 保存到输出渲染目标中之前被添加到相乘置换的值。
+         */
+        void DrawUVDisplacementToRenderTarget(
+            class UWorld* World,
+            float DistortedHorizontalFOV,
+            float DistortedAspectRatio,
+            float UndistortOverscanFactor,
+            class UTextureRenderTarget2D* OutputRenderTarget,
+            float OutputMultiply,
+            float OutputAdd) const;
+
+        /** 对比两个光学变形模型并返回它们是否相同。*/
+        bool operator == (const FFooCameraModel&amp; Other) const
+        {
+            return (
+                K1 == Other.K1 &amp;&amp;
+                K2 == Other.K2 &amp;&amp;
+                K3 == Other.K3 &amp;&amp;
+                P1 == Other.P1 &amp;&amp;
+                P2 == Other.P2 &amp;&amp;
+                F == Other.F &amp;&amp;
+                C == Other.C);
+        }
+
+        /** 对比两个光学变形模型并返回它们是否不同。*/
+        bool operator != (const FFooCameraModel&amp; Other) const
+        {
+            return !(*this == Other);
+        }
+    };</code></pre></li><li><p>接下来打开 <strong>LensDistortionBlueprintLibrary.h</strong> 文件。此文件控制此节点在蓝图中的显示方式，因此我们不仅需要用 <strong>FFooCameraModel</strong> 替换 <strong>FLensDistortionCameraModel</strong>，还需要将 <strong>Category = "Lens Distortion” </strong> 改为 <strong>Category = "Foo | Lens Distortion”</strong>。
+</p><div class="note">
+	<p>您需要在此文件中 <strong>六次</strong> 用 FFooCameraModel 替换 FLensDistortionCameraModel。
+</p>
+</div>
+<pre class="prettyprint"><code>// 版权所有 1998-2018 Epic Games, Inc. 保留所有权利。
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "UObject/ObjectMacros.h"
+#include "Classes/Kismet/BlueprintFunctionLibrary.h"
+#include "LensDistortionAPI.h"
+#include "LensDistortionBlueprintLibrary.generated.h"
+
+UCLASS(MinimalAPI)
+class ULensDistortionBlueprintLibrary : public UBlueprintFunctionLibrary
+{
+    GENERATED_UCLASS_BODY()
+
+    /** 返回不变形渲染所需的过扫描因子，避免出现未渲染的变形像素。*/
+    UFUNCTION(BlueprintPure, Category = "Foo &#124; Lens Distortion")
+    static void GetUndistortOverscanFactor(
+        const FFooCameraModel&amp; CameraModel,
+        float DistortedHorizontalFOV,
+        float DistortedAspectRatio,
+        float&amp; UndistortOverscanFactor);
+
+    /** 在输出渲染目标中绘制 UV 置换贴图。
+     * - 红色和绿色通道负责变形置换；
+     * - 蓝色和透明通道负责不变形置换。
+     * @param DistortedHorizontalFOV 变形渲染中理想的水平视野。
+     * @param DistortedAspectRatio 变形渲染中理想的高宽比。
+     * @param UndistortOverscanFactor 未变形渲染的过扫描因子。
+     * @param OutputRenderTarget 进行绘制的渲染目标。不必拥有和变形渲染相同的分辨率或高宽比。
+     * @param OutputMultiply 应用在置换上的乘法因子。
+     * @param OutputAdd 保存到输出渲染目标中之前被添加到相乘置换的值。
+     */
+    UFUNCTION(BlueprintCallable, Category = "Foo &#124; Lens Distortion", meta = (WorldContext = "WorldContextObject"))
+    static void DrawUVDisplacementToRenderTarget(
+        const UObject* WorldContextObject,
+        const FFooCameraModel&amp; CameraModel,
+        float DistortedHorizontalFOV,
+        float DistortedAspectRatio,
+        float UndistortOverscanFactor,
+        class UTextureRenderTarget2D* OutputRenderTarget,
+        float OutputMultiply = 0.5,
+        float OutputAdd = 0.5
+        );
+
+    /* 如 A 等于 B，则返回true (A == B) */
+    UFUNCTION(BlueprintPure, meta=(DisplayName = "Equal (LensDistortionCameraModel)", CompactNodeTitle = "==", Keywords = "== equal"), Category = "Foo &#124; Lens Distortion")
+    static bool EqualEqual_CompareLensDistortionModels(
+        const FFooCameraModel&amp; A,
+        const FFooCameraModel&amp; B)
+    {
+        return A == B;
+    }
+
+    /* 如 A 不等于 B，则返回 true (A != B) */
+    UFUNCTION(BlueprintPure, meta = (DisplayName = "NotEqual (LensDistortionCameraModel)", CompactNodeTitle = "!=", Keywords = "!= not equal"), Category = "Foo &#124; Lens Distortion")
+    static bool NotEqual_CompareLensDistortionModels(
+        const FFooCameraModel&amp; A,
+        const FFooCameraModel&amp; B)
+    {
+        return A != B;
+    }
+};</code></pre></li><li><p>现在前往 <strong>Private</strong> 文件夹打开 <strong>LensDistortionBlueprintLibrary.cpp</strong> 进行以下替换：
+</p><ul ><li><p><strong>FFooCameraModel</strong> 替换 <strong>FLensDistortionCameraModel</strong>
+</p></li><li><p><strong>UFooBlueprintLibrary</strong> 替换 <strong>ULensDistortionBlueprintLibrary</strong>
+</p></li></ul><div class="note">
+	<p>您应该用 FFooCameraModel 替换 FLensDistortionCameraModel <strong>两次</strong>；用 UFooBlueprintLibrary 替换 ULensDistortionBlueprintLibrary <strong>四次</strong>。
+</p>
+</div>
+<pre class="prettyprint"><code>    // 版权所有 1998-2018 Epic Games, Inc. 保留所有权利。
+
+    #include "LensDistortionBlueprintLibrary.h"
+
+    ULensDistortionBlueprintLibrary::ULensDistortionBlueprintLibrary(const FObjectInitializer&amp; ObjectInitializer)
+        :Super(ObjectInitializer)
+    { }
+
+    // static
+    void ULensDistortionBlueprintLibrary::GetUndistortOverscanFactor(
+        const FFooCameraModel&amp; CameraModel,
+        float DistortedHorizontalFOV,
+        float DistortedAspectRatio,
+        float&amp; UndistortOverscanFactor)
+    {
+        UndistortOverscanFactor = CameraModel.GetUndistortOverscanFactor(DistortedHorizontalFOV, DistortedAspectRatio);
+    }
+
+    // static
+    void ULensDistortionBlueprintLibrary::DrawUVDisplacementToRenderTarget(
+        const UObject* WorldContextObject,
+        const FFooCameraModel&amp; CameraModel,
+        float DistortedHorizontalFOV,
+        float DistortedAspectRatio,
+        float UndistortOverscanFactor,
+        class UTextureRenderTarget2D* OutputRenderTarget,
+        float OutputMultiply,
+        float OutputAdd)
+    {
+        CameraModel.DrawUVDisplacementToRenderTarget(
+            WorldContextObject-&gt;GetWorld(),
+            DistortedHorizontalFOV, DistortedAspectRatio,
+            UndistortOverscanFactor, OutputRenderTarget,
+            OutputMultiply, OutputAdd);
+    }</code></pre></li><li><p>接下来在 <strong>Private</strong> 文件夹中打开 <strong>LensDistortionRendering.cpp</strong> 文件并用 <strong>FFooCameraModel</strong> 替代 <strong>FLensDistortionCameraModel</strong>
+</p><div class="note">
+	<p>您需要在此文件中用 FFooCameraModel 替换 FLensDistortionCameraModel <strong>六次</strong>。
+</p>
+</div>
+<pre class="prettyprint"><code>    // 版权所有 1998-2018 Epic Games, Inc. 保留所有权利。
+
+    #include "LensDistortionAPI.h"
+    #include "Classes/Engine/TextureRenderTarget2D.h"
+    #include "Classes/Engine/World.h"
+    #include "Public/GlobalShader.h"
+    #include "Public/PipelineStateCache.h"
+    #include "Public/RHIStaticStates.h"
+    #include "Public/SceneUtils.h"
+    #include "Public/SceneInterface.h"
+    #include "Public/ShaderParameterUtils.h"
+
+    static const uint32 kGridSubdivisionX = 32;
+    static const uint32 kGridSubdivisionY = 16;
+
+    /**
+     * 派生自 FFooCameraModel 的中间结构体，
+     * 由游戏线程交付给渲染线程。
+     */
+    struct FCompiledCameraModel
+    {
+        /** 生成此编译模型的原始摄像机模型。*/
+        FFooCameraModel OriginalCameraModel;
+
+        /** 未变形和变形渲染光学变形的摄像机矩阵。
+         *  XY 保存缩放因子，ZW 保存平移。
+         */
+        FVector4 DistortedCameraMatrix;
+        FVector4 UndistortedCameraMatrix;
+
+        /** 对渲染目标输出通道的乘法和加法。*/
+        FVector2D OutputMultiplyAndAdd;
+    };
+
+    /** 不对源自左上角的视口 UV 进行变形，将其放入视图空间（x', y', z'=1.f）*/
+    static FVector2D LensUndistortViewportUVIntoViewSpace(
+        const FFooCameraModel&amp; CameraModel,
+        float TanHalfDistortedHorizontalFOV, float DistortedAspectRatio,
+        FVector2D DistortedViewportUV)
+    {
+        FVector2D AspectRatioAwareF = CameraModel.F * FVector2D(1, -DistortedAspectRatio);
+        return CameraModel.UndistortNormalizedViewPosition((DistortedViewportUV - CameraModel.C) / AspectRatioAwareF);
+    }
+
+    class FLensDistortionUVGenerationShader : public FGlobalShader
+    {
+    public:
+        static bool ShouldCache(EShaderPlatform Platform)
+        {
+            return IsFeatureLevelSupported(Platform, ERHIFeatureLevel::SM4);
+        }
+
+        static void ModifyCompilationEnvironment(EShaderPlatform Platform, FShaderCompilerEnvironment&amp; OutEnvironment)
+        {
+            FGlobalShader::ModifyCompilationEnvironment(Platform, OutEnvironment);
+            OutEnvironment.SetDefine(TEXT("GRID_SUBDIVISION_X"), kGridSubdivisionX);
+            OutEnvironment.SetDefine(TEXT("GRID_SUBDIVISION_Y"), kGridSubdivisionY);
+        }
+
+        FLensDistortionUVGenerationShader() {}
+
+        FLensDistortionUVGenerationShader(const ShaderMetaType::CompiledShaderInitializerType&amp; Initializer)
+            :FGlobalShader(Initializer)
+        {
+            PixelUVSize.Bind(Initializer.ParameterMap, TEXT("PixelUVSize"));
+            RadialDistortionCoefs.Bind(Initializer.ParameterMap, TEXT("RadialDistortionCoefs"));
+            TangentialDistortionCoefs.Bind(Initializer.ParameterMap, TEXT("TangentialDistortionCoefs"));
+            DistortedCameraMatrix.Bind(Initializer.ParameterMap, TEXT("DistortedCameraMatrix"));
+            UndistortedCameraMatrix.Bind(Initializer.ParameterMap, TEXT("UndistortedCameraMatrix"));
+            OutputMultiplyAndAdd.Bind(Initializer.ParameterMap, TEXT("OutputMultiplyAndAdd"));
+        }
+
+        template&lt;typename TShaderRHIParamRef&gt;
+        void SetParameters(
+            FRHICommandListImmediate&amp; RHICmdList,
+            const TShaderRHIParamRef ShaderRHI,
+            const FCompiledCameraModel&amp; CompiledCameraModel,
+            const FIntPoint&amp; DisplacementMapResolution)
+        {
+            FVector2D PixelUVSizeValue(
+                1.f / float(DisplacementMapResolution.X), 1.f / float(DisplacementMapResolution.Y));
+            FVector RadialDistortionCoefsValue(
+                CompiledCameraModel.OriginalCameraModel.K1,
+                CompiledCameraModel.OriginalCameraModel.K2,
+                CompiledCameraModel.OriginalCameraModel.K3);
+            FVector2D TangentialDistortionCoefsValue(
+                CompiledCameraModel.OriginalCameraModel.P1,
+                CompiledCameraModel.OriginalCameraModel.P2);
+
+            SetShaderValue(RHICmdList, ShaderRHI, PixelUVSize, PixelUVSizeValue);
+            SetShaderValue(RHICmdList, ShaderRHI, DistortedCameraMatrix, CompiledCameraModel.DistortedCameraMatrix);
+            SetShaderValue(RHICmdList, ShaderRHI, UndistortedCameraMatrix, CompiledCameraModel.UndistortedCameraMatrix);
+            SetShaderValue(RHICmdList, ShaderRHI, RadialDistortionCoefs, RadialDistortionCoefsValue);
+            SetShaderValue(RHICmdList, ShaderRHI, TangentialDistortionCoefs, TangentialDistortionCoefsValue);
+            SetShaderValue(RHICmdList, ShaderRHI, OutputMultiplyAndAdd, CompiledCameraModel.OutputMultiplyAndAdd);
+        }
+
+        virtual bool Serialize(FArchive&amp; Ar) override
+        {
+            bool bShaderHasOutdatedParameters = FGlobalShader::Serialize(Ar);
+            Ar &lt;&lt; PixelUVSize &lt;&lt; RadialDistortionCoefs &lt;&lt; TangentialDistortionCoefs &lt;&lt; DistortedCameraMatrix &lt;&lt; UndistortedCameraMatrix &lt;&lt; OutputMultiplyAndAdd;
+            return bShaderHasOutdatedParameters;
+        }
+
+    private:
+        FShaderParameter PixelUVSize;
+        FShaderParameter RadialDistortionCoefs;
+        FShaderParameter TangentialDistortionCoefs;
+        FShaderParameter DistortedCameraMatrix;
+        FShaderParameter UndistortedCameraMatrix;
+        FShaderParameter OutputMultiplyAndAdd;
+
+    };
+
+    class FLensDistortionUVGenerationVS : public FLensDistortionUVGenerationShader
+    {
+        DECLARE_SHADER_TYPE(FLensDistortionUVGenerationVS, Global);
+
+    public:
+
+        /** 默认构造函数。*/
+        FLensDistortionUVGenerationVS() {}
+
+        /** 初始化构造函数。*/
+        FLensDistortionUVGenerationVS(const ShaderMetaType::CompiledShaderInitializerType&amp; Initializer)
+            :FLensDistortionUVGenerationShader(Initializer)
+        {
+        }
+    };
+
+    class FLensDistortionUVGenerationPS : public FLensDistortionUVGenerationShader
+    {
+        DECLARE_SHADER_TYPE(FLensDistortionUVGenerationPS, Global);
+
+    public:
+
+        /** 默认构造函数。*/
+        FLensDistortionUVGenerationPS() {}
+
+        /** 初始化构造函数。*/
+        FLensDistortionUVGenerationPS(const ShaderMetaType::CompiledShaderInitializerType&amp; Initializer)
+            :FLensDistortionUVGenerationShader(Initializer)
+        { }
+    };
+
+    IMPLEMENT_SHADER_TYPE(, FLensDistortionUVGenerationVS, TEXT("/Plugin/Foo/Private/MyShader.usf"), TEXT("MainVS"), SF_Vertex)
+    IMPLEMENT_SHADER_TYPE(, FLensDistortionUVGenerationPS, TEXT("/Plugin/Foo/Private/MyShader.usf"), TEXT("MainPS"), SF_Pixel)
+
+    static void DrawUVDisplacementToRenderTarget_RenderThread(
+        FRHICommandListImmediate&amp; RHICmdList,
+        const FCompiledCameraModel&amp; CompiledCameraModel,
+        const FName&amp; TextureRenderTargetName,
+        FTextureRenderTargetResource* OutTextureRenderTargetResource,
+        ERHIFeatureLevel::Type FeatureLevel)
+    {
+        check(IsInRenderingThread());
+
+    #if WANTS_DRAW_MESH_EVENTS
+        FString EventName;
+        TextureRenderTargetName.ToString(EventName);
+        SCOPED_DRAW_EVENTF(RHICmdList, SceneCapture, TEXT("LensDistortionDisplacementGeneration %s"), *EventName);
+    #else
+        SCOPED_DRAW_EVENT(RHICmdList, DrawUVDisplacementToRenderTarget_RenderThread);
+    #endif
+
+        // 设置渲染目标
+        SetRenderTarget(
+            RHICmdList,
+            OutTextureRenderTargetResource-&gt;GetRenderTargetTexture(),
+            FTextureRHIRef(),
+            ESimpleRenderTargetMode::EUninitializedColorAndDepth,
+            FExclusiveDepthStencil::DepthNop_StencilNop);
+
+        FIntPoint DisplacementMapResolution(OutTextureRenderTargetResource-&gt;GetSizeX(), OutTextureRenderTargetResource-&gt;GetSizeY());
+
+        // 更新视口。
+        RHICmdList.SetViewport(
+            0, 0, 0.f,
+            DisplacementMapResolution.X, DisplacementMapResolution.Y, 1.f);
+
+        // 获取着色器。
+        TShaderMap&lt;FGlobalShaderType&gt;* GlobalShaderMap = GetGlobalShaderMap(FeatureLevel);
+        TShaderMapRef&lt; FLensDistortionUVGenerationVS &gt; VertexShader(GlobalShaderMap);
+        TShaderMapRef&lt; FLensDistortionUVGenerationPS &gt; PixelShader(GlobalShaderMap);
+
+        // 设置图像管线状态。
+        FGraphicsPipelineStateInitializer GraphicsPSOInit;
+        RHICmdList.ApplyCachedRenderTargets(GraphicsPSOInit);
+        GraphicsPSOInit.DepthStencilState = TStaticDepthStencilState&lt;false, CF_Always&gt;::GetRHI();
+        GraphicsPSOInit.BlendState = TStaticBlendState&lt;&gt;::GetRHI();
+        GraphicsPSOInit.RasterizerState = TStaticRasterizerState&lt;&gt;::GetRHI();
+        GraphicsPSOInit.PrimitiveType = PT_TriangleList;
+        GraphicsPSOInit.BoundShaderState.VertexDeclarationRHI = GetVertexDeclarationFVector4();
+        GraphicsPSOInit.BoundShaderState.VertexShaderRHI = GETSAFERHISHADER_VERTEX(*VertexShader);
+        GraphicsPSOInit.BoundShaderState.PixelShaderRHI = GETSAFERHISHADER_PIXEL(*PixelShader);
+        SetGraphicsPipelineState(RHICmdList, GraphicsPSOInit);
+
+        // 更新视口。
+        RHICmdList.SetViewport(
+            0, 0, 0.f,
+            OutTextureRenderTargetResource-&gt;GetSizeX(), OutTextureRenderTargetResource-&gt;GetSizeY(), 1.f);
+
+        // 更新着色器的统一参数。
+        VertexShader-&gt;SetParameters(RHICmdList, VertexShader-&gt;GetVertexShader(), CompiledCameraModel, DisplacementMapResolution);
+        PixelShader-&gt;SetParameters(RHICmdList, PixelShader-&gt;GetPixelShader(), CompiledCameraModel, DisplacementMapResolution);
+
+        // 绘制网格。
+        uint32 PrimitiveCount = kGridSubdivisionX * kGridSubdivisionY * 2;
+        RHICmdList.DrawPrimitive(PT_TriangleList, 0, PrimitiveCount, 1);
+
+        // 解析渲染目标。
+        RHICmdList.CopyToResolveTarget(
+            OutTextureRenderTargetResource-&gt;GetRenderTargetTexture(),
+            OutTextureRenderTargetResource-&gt;TextureRHI,
+            false, FResolveParams());
+    }
+
+    FVector2D FFooCameraModel::UndistortNormalizedViewPosition(FVector2D EngineV) const
+    {
+        // 引擎视图空间 -&gt; 标准视图空间。
+        FVector2D V = FVector2D(1, -1) * EngineV;
+
+        FVector2D V2 = V * V;
+        float R2 = V2.X + V2.Y;
+
+        // 径向变形（额外添加括号是为匹配 MF_Undistortion.uasset）。
+        FVector2D UndistortedV = V * (1.0 + (R2 * K1 + (R2 * R2) * K2 + (R2 * R2 * R2) * K3));
+
+        // 切向变形。
+        UndistortedV.X += P2 * (R2 + 2 * V2.X) + 2 * P1 * V.X * V.Y;
+        UndistortedV.Y += P1 * (R2 + 2 * V2.Y) + 2 * P2 * V.X * V.Y;
+
+        // 返回引擎 V。
+        return UndistortedV * FVector2D(1, -1);
+    }
+
+    /** 编译摄像机模型。*/
+    float FFooCameraModel::GetUndistortOverscanFactor(
+        float DistortedHorizontalFOV, float DistortedAspectRatio) const
+    {
+        // 如光学变形模型为同一，则会及早返回 1。
+        if (*this == FFooCameraModel())
+        {
+            return 1.0f;
+        }
+
+        float TanHalfDistortedHorizontalFOV = FMath::Tan(DistortedHorizontalFOV * 0.5f);
+
+        // 获取变形视口 UV 坐标系统中不同关键点在 z'=1 处视图空间中所处的位置。
+        // 这非常近似于知晓未变形视口所需的过扫描缩放因子，但在实际操作中效果极佳。
+        //
+        //  视图空间中未变形 UV 位置：
+        //                 ^ 视图空间的 Y 轴
+        //                 &#124;
+        //        0        1        2
+        //     
+        //        7        0        3 --&gt; 视图空间的 X 轴
+        //     
+        //        6        5        4
+        FVector2D UndistortCornerPos0 = LensUndistortViewportUVIntoViewSpace(
+            *this, TanHalfDistortedHorizontalFOV, DistortedAspectRatio, FVector2D(0.0f, 0.0f));
+        FVector2D UndistortCornerPos1 = LensUndistortViewportUVIntoViewSpace(
+            *this, TanHalfDistortedHorizontalFOV, DistortedAspectRatio, FVector2D(0.5f, 0.0f));
+        FVector2D UndistortCornerPos2 = LensUndistortViewportUVIntoViewSpace(
+            *this, TanHalfDistortedHorizontalFOV, DistortedAspectRatio, FVector2D(1.0f, 0.0f));
+        FVector2D UndistortCornerPos3 = LensUndistortViewportUVIntoViewSpace(
+            *this, TanHalfDistortedHorizontalFOV, DistortedAspectRatio, FVector2D(1.0f, 0.5f));
+        FVector2D UndistortCornerPos4 = LensUndistortViewportUVIntoViewSpace(
+            *this, TanHalfDistortedHorizontalFOV, DistortedAspectRatio, FVector2D(1.0f, 1.0f));
+        FVector2D UndistortCornerPos5 = LensUndistortViewportUVIntoViewSpace(
+            *this, TanHalfDistortedHorizontalFOV, DistortedAspectRatio, FVector2D(0.5f, 1.0f));
+        FVector2D UndistortCornerPos6 = LensUndistortViewportUVIntoViewSpace(
+            *this, TanHalfDistortedHorizontalFOV, DistortedAspectRatio, FVector2D(0.0f, 1.0f));
+        FVector2D UndistortCornerPos7 = LensUndistortViewportUVIntoViewSpace(
+            *this, TanHalfDistortedHorizontalFOV, DistortedAspectRatio, FVector2D(0.0f, 0.5f));
+
+        // 寻找 z'=1 处视图空间中未变形视口的内方最大与最小值。
+        FVector2D MinInnerViewportRect;
+        FVector2D MaxInnerViewportRect;
+        MinInnerViewportRect.X = FMath::Max3(UndistortCornerPos0.X, UndistortCornerPos6.X, UndistortCornerPos7.X);
+        MinInnerViewportRect.Y = FMath::Max3(UndistortCornerPos4.Y, UndistortCornerPos5.Y, UndistortCornerPos6.Y);
+        MaxInnerViewportRect.X = FMath::Min3(UndistortCornerPos2.X, UndistortCornerPos3.X, UndistortCornerPos4.X);
+        MaxInnerViewportRect.Y = FMath::Min3(UndistortCornerPos0.Y, UndistortCornerPos1.Y, UndistortCornerPos2.Y);
+
+        check(MinInnerViewportRect.X &lt; 0.f);
+        check(MinInnerViewportRect.Y &lt; 0.f);
+        check(MaxInnerViewportRect.X &gt; 0.f);
+        check(MaxInnerViewportRect.Y &gt; 0.f);
+
+        // 计算正切（VerticalFOV * 0.5）
+        float TanHalfDistortedVerticalFOV = TanHalfDistortedHorizontalFOV / DistortedAspectRatio;
+
+        // 计算每个轴上所需的未变形视口比例。
+        FVector2D ViewportScaleUpFactorPerViewAxis = 0.5 * FVector2D(
+            TanHalfDistortedHorizontalFOV / FMath::Max(-MinInnerViewportRect.X, MaxInnerViewportRect.X),
+            TanHalfDistortedVerticalFOV / FMath::Max(-MinInnerViewportRect.Y, MaxInnerViewportRect.Y));
+
+        // 将视图空间中未变形视口尺寸调大 2%，
+        // 即可解决奇数未变形位置在切向
+        // 桶状光学变形中并不为最小的问题。
+        const float ViewportScaleUpConstMultiplier = 1.02f;
+        return FMath::Max(ViewportScaleUpFactorPerViewAxis.X, ViewportScaleUpFactorPerViewAxis.Y) * ViewportScaleUpConstMultiplier;
+    }
+
+    void FFooCameraModel::DrawUVDisplacementToRenderTarget(
+        UWorld* World,
+        float DistortedHorizontalFOV,
+        float DistortedAspectRatio,
+        float UndistortOverscanFactor,
+        UTextureRenderTarget2D* OutputRenderTarget,
+        float OutputMultiply,
+        float OutputAdd) const
+    {
+        check(IsInGameThread());
+
+        // 编译摄像机模型，以了解过扫描比例因子。
+        float TanHalfUndistortedHorizontalFOV = FMath::Tan(DistortedHorizontalFOV * 0.5f) * UndistortOverscanFactor;
+        float TanHalfUndistortedVerticalFOV = TanHalfUndistortedHorizontalFOV / DistortedAspectRatio;
+
+        // 输出。
+        FCompiledCameraModel CompiledCameraModel;
+        CompiledCameraModel.OriginalCameraModel = *this;
+
+        CompiledCameraModel.DistortedCameraMatrix.X = 1.0f / TanHalfUndistortedHorizontalFOV;
+        CompiledCameraModel.DistortedCameraMatrix.Y = 1.0f / TanHalfUndistortedVerticalFOV;
+        CompiledCameraModel.DistortedCameraMatrix.Z = 0.5f;
+        CompiledCameraModel.DistortedCameraMatrix.W = 0.5f;
+
+        CompiledCameraModel.UndistortedCameraMatrix.X = F.X;
+        CompiledCameraModel.UndistortedCameraMatrix.Y = F.Y * DistortedAspectRatio;
+        CompiledCameraModel.UndistortedCameraMatrix.Z = C.X;
+        CompiledCameraModel.UndistortedCameraMatrix.W = C.Y;
+
+        CompiledCameraModel.OutputMultiplyAndAdd.X = OutputMultiply;
+        CompiledCameraModel.OutputMultiplyAndAdd.Y = OutputAdd;
+
+        const FName TextureRenderTargetName = OutputRenderTarget-&gt;GetFName();
+        FTextureRenderTargetResource* TextureRenderTargetResource = OutputRenderTarget-&gt;GameThread_GetRenderTargetResource();
+
+        ERHIFeatureLevel::Type FeatureLevel = World-&gt;Scene-&gt;GetFeatureLevel();
+
+        ENQUEUE_RENDER_COMMAND(CaptureCommand)(
+            &#91;CompiledCameraModel, TextureRenderTargetResource, TextureRenderTargetName, FeatureLevel&#93;(FRHICommandListImmediate&amp; RHICmdList)
+            {
+                DrawUVDisplacementToRenderTarget_RenderThread(
+                    RHICmdList,
+                    CompiledCameraModel,
+                    TextureRenderTargetName,
+                    TextureRenderTargetResource,
+                    FeatureLevel);
+            }
+        );
+    }</code></pre></li><li><p>最后在 <strong>LensDistortionRendering.cpp</strong> 文件中第 155 和 156 行将以下两行代码改为指向之前新创建的 MyShader.USF 文件。
+</p><p>修改：
+</p><ul ><li><p>IMPLEMENT_SHADER_TYPE(, FLensDistortionUVGenerationVS, TEXT("/Plugin/LensDistortion/Private/UVGeneration.usf"), TEXT("MainVS"), SF_Vertex)
+</p></li></ul><p>改为： 
+</p><ul ><li><p>IMPLEMENT_SHADER_TYPE(, FLensDistortionUVGenerationVS, TEXT("/Plugin/Foo/Private/MyShader.usf"), TEXT("MainVS"), SF_Vertex)
+</p></li></ul><p>修改： 
+</p><ul ><li><p>IMPLEMENT_SHADER_TYPE(, FLensDistortionUVGenerationPS, TEXT("/Plugin/LensDistortion/Private/UVGeneration.usf"), TEXT("MainPS"), SF_Pixel)
+</p></li></ul><p> 改为： 
+</p><ul ><li><p>IMPLEMENT_SHADER_TYPE(, FLensDistortionUVGenerationPS, TEXT("/Plugin/Foo/Private/MyShader.usf"), TEXT("MainPS"), SF_Pixel)
+</p></li></ul></li><li><p>现在前往 <strong>Foo/Source</strong> 文件夹打开 <strong>Foo.Build.cs</strong> 文件，在 <strong>Foo.Build.cs</strong> 中的 <strong>PublicDependencyModuleNames.AddRange</strong> 部分下添加以下代码行：
+</p>
+<pre class="prettyprint"><code>    PublicDependencyModuleNames.AddRange(
+    new string&#91;&#93;
+    {
+        "Core",
+        "RenderCore",
+        "ShaderCore",
+        "RHI",
+        // ... 在此处添加静态连接的其他公共依赖性 ...
+    }
+    );</code></pre></li><li><p>然后在 <strong>Foo.Build.cs</strong> 文件中的 <strong>PrivateDependencyModuleNames.AddRange</strong> 部分移除 <strong>Slate</strong> 和 <strong>SlateCore</strong>。操作完成后 Foo.Build.cs 应如下：
+</p>
+<pre class="prettyprint"><code>// 版权所有 1998-2018 Epic Games, Inc. 保留所有权利。
+
+using UnrealBuildTool;
+
+public class Foo :ModuleRules
+{
+    public Foo(ReadOnlyTargetRules Target) : base(Target)
+    {
+        PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+
+        PublicIncludePaths.AddRange(
+            new string&#91;&#93; {
+                "Foo/Public"
+                // ... 在此处添加所需的公共包含路径 ...
+            }
+            );    
+        PrivateIncludePaths.AddRange(
+            new string&#91;&#93; {
+                "Foo/Private",
+                // ... 在此处添加所需的其他私有包含路径 ...
+            }
+            );
+
+        PublicDependencyModuleNames.AddRange(
+            new string&#91;&#93;
+            {
+                "Core",
+                "RenderCore",
+                "ShaderCore",
+                "RHI",
+                // ... 在此处添加静态连接的其他公共依赖性 ...
+            }
+            );
+        PrivateDependencyModuleNames.AddRange(
+            new string&#91;&#93;
+            {
+                "CoreUObject",
+                "Engine",
+                // ... 在此处添加静态连接的私有依赖性 ...    
+            }
+            );
+
+        DynamicallyLoadedModuleNames.AddRange(
+            new string&#91;&#93;
+            {
+                // ... 在此处添加您的模式动态加载的模式 ...
+            }
+            );
+    }
+}</code></pre></li><li><p>重新启动项目的 Visual Studio 解决方案文件，并按下 <strong>CRTL + 5</strong> 重新编译项目。编译完成后按下 <strong>F5</strong> 启动 UE4 编辑器。 
+</p></li><li><p>UE4 编辑器加载完成后，前往 <strong>Edit</strong> > <strong>Plugins</strong> 访问 <strong>Plugins</strong> 管理器。
+</p><p><img alt="HT_ShadersInPlugins_08.png" width="250" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_08.jpg" />
+</p></li><li><p>在 Plugins 管理器中向下滚动寻找 <strong>Project</strong> 部分，在此部分中找到插件。 
+</p><p><img alt="HT_ShadersInPlugins_09.png" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_09.jpg" />
+</p><div class="note">
+	<p>如插件未启用，则点击其命名旁边的勾选框将其启用，并重启 UE4 编辑器。 
+</p>
+</div></li><li><p>打开关卡蓝图，在事件图表中点击右键，在搜索框中输入 <strong>Foo</strong> 即可检查是否所有内容均齐备。完成后，您便可看到所有项目均被添加到 Foo Camera。 
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_10.png" ><span><img alt="HT_ShadersInPlugins_10.png" width="950" src="../../../../../../../external.html?link=https://api.unrealengine.com/images/Programming/Rendering/ShaderInPlugin/QuickStart/1/HT_ShadersInPlugins_10.jpg" /><img class="languageinline" src="../../../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p>点击查看全图。
+</p>
+</div></li></ol><h2 id="最终结果">最终结果</h2>
+
+<p>恭喜，您便已成功重建和编译了 UE4 Lense Distortion 插件的新版本。下一部分将讲述如何从蓝图调用这个新全局着色器，以及其如何对渲染目标进行变形。
+</p><div class="navigation">
+        <div class="button disabled previous">
+        <a><span>Previous Step</span></a>
+    </div>
+            <div class="button next">
+        <a id="content_link" href="../2/index.html" title="在插件 - 蓝图设置中新建一个全局着色器"><span>Next Step</span></a>
+
+    </div>
+            <div class="button home">
+        <a id="content_link" href="../index.html" title="通过插件创建并设置一个新的全局着色器。"><span>将一个新全局着色器创建为插件</span></a>
+
+    </div>
+    </div>
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index310e.html">Rendering</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../../../SiteIndex/index0f06.html">Programming</a></div>
+
+						</div>
+						                        <script type="text/javascript">
+    checkpoint = "shaderqs";
+</script>
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Programming/Rendering/ShaderInPlugin/QuickStart/1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:59:57 GMT -->
+</html>

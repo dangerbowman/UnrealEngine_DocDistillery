@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Actors/Transform/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:07:39 GMT -->
+<head>
+    <title>变换Actor | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Engine/Actors/Transform/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Engine/Actors/Transform/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Engine/Actors/Transform/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Engine/Actors/Transform/index.html" hreflang="zh-CN" />
+
+	<meta name="availability" content="Public" />
+<meta name="title" content="变换Actor" />
+<meta name="description" content="修改放置在关卡中的Actors的位置、旋转度及缩放比例。" />
+<meta name="topic-image" content="actortransform_topic.png" />
+<meta name="parent" content="Engine/Actors" />
+<meta name="order" content="0" />
+<meta name="type" content="" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="变换Actor" />
+	<meta property="og:description" content="修改放置在关卡中的Actors的位置、旋转度及缩放比例。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">Actor和几何体</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">变换Actor</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<div class="section toc">
+    <div class="largetitle">
+    本页面的内容：
+    </div>
+
+    <ul>
+	    		    			    <li id="">
+	<a id="toc_link" href="#概述">概述</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#手动变换">手动变换</a>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#交互式变换">交互式变换</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#平移控件">平移控件</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#旋转控件">旋转控件</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#缩放控件">缩放控件</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#actor支点调整">Actor支点调整</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#世界变换模式和局部变换模式">世界变换模式和局部变换模式</a>
+	</li>					</ul>
+	</li>		    			    <li id="">
+	<a id="toc_link" href="#对齐">对齐</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#拖拽网格、旋转网格及缩放网格">拖拽网格、旋转网格及缩放网格</a>
+	</li>							<li id="">
+	<a id="toc_link" href="#对齐的偏好设置">对齐的偏好设置</a>
+			<ul>
+							<li id="">
+	<a id="toc_link" href="#用户定义的增量">用户定义的增量</a>
+	</li>					</ul>
+	</li>							<li id="">
+	<a id="toc_link" href="#顶点对齐">顶点对齐</a>
+	</li>					</ul>
+	</li>		    	        </ul>
+</div>
+<h2 id="概述">概述</h2>
+
+<p>变换Actor是指移动、旋转或缩放Actor，这是关卡编辑过程中的一个重要部分。在虚幻编辑器中有两种变换Actor的基本方法。这两种方法都可以将变换应用到当前选中的所有Actor上。
+</p><h2 id="手动变换">手动变换</h2>
+
+<p>Details（详细信息）面板的 <strong>Transform(变换)</strong> 部分允许您查看及编辑选中Actor的这些变换属性 - <strong>Location（位置）</strong> 、 <strong>Rotation（旋转度）</strong> 和 <strong>Scale（比例）</strong> 。在适用的情况下，也会包含Actor移动性的设置。
+</p><p><img alt="Transform Properties" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/UI/LevelEditor/Details/Customizations/Transform/Transform_Properties.jpg" />
+</p><p>每种 <strong>变换</strong> 属性具有针对X、Y和Z轴的数值文本框。您可以直接在这些文本框中输入精确的数值来 
+调整选中的Actors。当选中了多个Actor且其属性值各不相同时， 
+这些文本框将会显示 <em>多个值</em> 。在这些情况下，输入一个值将会导致为所有选中的Actor输入这个值。
+</p><p> <strong>Rotation（旋转度）</strong> 文本框有一个独特的功能，它可以用作为滑块。点击并拖拽该文本框允许您 
+<em>滚动</em> 这个值，根据您移动鼠标的距离来增加或减小该值。
+</p><p> <strong>Scale(比例)</strong> 文本框也可以通过点击 <img alt="button_lock_scale.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/UI/LevelEditor/Details/Customizations/Transform/button_lock_scale.jpg" /> 按钮进行锁定。当锁定了该文本框后， 
+将会维持每个坐标轴的缩放比例值的比率，当单独修改任何一个值时，都会进行均匀缩放。
+</p><p>变换属性默认是 <em>相对</em> 变换。这意味着，变换是相对于组件的父项进行的。
+每个属性标签都有超链接，可以点击该链接来在 <em>绝对变换</em> 和 <em>相对变换</em> 之间切换。当使用 <em>绝对</em> 变换时，变换是相对于世界空间进行的而不是相对于父项。
+</p><h2 id="交互式变换">交互式变换</h2>
+
+<p>第二种变换Actor的方法需要使用视口中的可视化工具户控件。通过使用该控件，您可以使用鼠标来直接在视口中移动、旋转及缩放该Actor。这种方法的优缺点和手动变换方法正好相反。尽管它非常直观，但是它却不是那么精确，而有时候需要一定精确度。在这个问题方面，拖拽网格、旋转网格及缩放网格可辅助呈现更好地精确度。对齐到已知数值或者按照已知增量进行对齐使得您可以对其进行更加精确的控制。
+</p><p>视口中用于操作Actor的可视化工具称为变换控件。一般，一个变换控件由几个部分组成，每个部分具有不同的颜色，对应着它们所影响的坐标轴。
+</p><ul ><li><p>红色意味着影响X轴。
+</p></li><li><p>绿色意味着影响Y轴。
+</p></li><li><p>蓝色意味着影响Z轴。
+</p></li></ul><p>根据所执行的变换类型(平移、旋转或缩放)的不同， 变换控件呈现不同的形式。您可以通过在视口的右上角部分的工具条中点击它的图标，来选择您想使用的变换控件的类型。
+</p><p><img alt="LE_Trans_WidgetIcons.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/LE_Trans_WidgetIcons.jpg" />
+</p><div class="tip">
+	<p>您可以通过按下键盘上的空格键，来在不同类型的变换控件间切换。
+</p>
+</div><h3 id="平移控件">平移控件</h3>
+
+<p><strong>平移控件</strong> 由一组带颜色的箭头组成，这些箭头分别指向世界中每个坐标轴的正方向。每个箭头实质上是一个手柄，可以拖拽该手柄来沿着特定的坐标轴移动选中的Actor。当鼠标光标悬停到其中一个手柄上时，手柄变为黄色，表示拖拽操作将沿着那个坐标轴移动该对象。
+</p><p><img alt="Translation Widget - Axis" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/LE_Trans_Widget.jpg" />
+</p><p>同时，每个手柄上会伸出沿着其他两个坐标轴方向的线，这些线最终彼此汇合到一起。这些线构成了沿着每个平面(XY, XZ, YZ)方向的四方形。鼠标悬停到其中一个方形上，将会使得那个方形和相关的箭头变为黄色。拖拽Actor可以沿着这个两个坐标轴定义的平面移动该Actor。
+</p><p><img alt="Translation Widget - Plane" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/LE_Trans_Plane.jpg" />
+</p><p>在三个坐标轴相交的地方，有一个小的白色球体。当您鼠标悬停到该球体上时，它的颜色变为黄色，表示可以拖拽它。通过拖拽中心球体，可以在空间中自由地相对于场景相机移动该Actor，从而潜在地改变沿着三个坐标轴的位置值。
+</p><p><img alt="Translation Widget - All" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/LE_Trans_All.jpg" />
+</p><h3 id="旋转控件">旋转控件</h3>
+
+<p> <strong>旋转控件</strong> 是三个带颜色的一组弧，每个弧和一个坐标轴相关联。当您拖拽其中一个弧时，选中的Actor则沿着那个坐标轴旋转。在旋转控件中，受到任何相关弧影响的坐标轴都和弧本身垂直。这意味着沿着 XY平面的弧实际上将会围绕Z-轴旋转actor。
+</p><p><img alt="Rotation Widget" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/Transform_Rotate.jpg" />
+</p><p>当鼠标悬停到一个特定弧上时，该弧会变为黄色，表示您可以拖拽它来改变Actor的旋转度。
+</p><p><img alt="Rotation Widget" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/Transform_Rotate_Axis.jpg" />
+</p><p>当您开始拖拽来旋转选中的Actor时，控件会改变形状，仅显示Actor围绕其进行旋转的坐标轴。旋转量可以实时显示，以便帮助您调整您的操作过程。
+</p><p><img alt="Rotation Widget" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/Transform_Rotate_Offset.jpg" />
+</p><h3 id="缩放控件">缩放控件</h3>
+
+<p><strong>缩放控件</strong> 具有带颜色的手柄，手柄的尾部有小的立方体形状。当您通过其中一个手柄拖拽控件时，您仅可以沿着相关的坐标轴缩放选中的Actor。这些手柄是按坐标轴进行着色的，同 <strong>平移控件</strong> 及 <strong>旋转控件</strong> 类似。
+</p><p><img alt="Scaling Widget" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/LE_Trans_ScaleWidget.jpg" />
+</p><p>您可以同时沿着两个轴缩放Actor，同您使用 <strong>平移控件</strong> 同时沿着两个坐标轴定义的平面移动Actor一样。每个 <strong>缩放控件</strong> 的手柄会伸出一条线，沿着其他的每个坐标轴彼此交汇到一起。这些线构成了沿着其中一个平面(XY, XZ, YZ)的三角形。拖拽其中一个三角形，则沿着定义那个平面的两个坐标轴缩放该Actor。当鼠标悬停到其中一个三角形上时，相关的手柄将变为黄色。
+</p><p><img alt="Scaling Widget - Plane" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/LE_Trans_Scale2Axes.jpg" />
+</p><p>您也可以沿着三个坐标轴缩放Actor，从而维持其原始比例。如果您将鼠标悬停到三个坐标轴交互到的立方体处，那么三个手柄会全都变为黄色。通过拖拽中心的立方体可以按比例缩放该Actor。
+</p><p><img alt="Scaling Widget - All" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/LE_Trans_ScaleAll.jpg" />
+</p><h3 id="actor支点调整">Actor支点调整</h3>
+
+<p>当变换对象时，您一般都是从该对象的基本支点开始进行变换的。但是，对于某些变换操作，您可能想调整该支点的位置。
+</p><p><img alt="DefaultPivot.png" width="500" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/DefaultPivot.jpg" />
+</p><p>通过从该 <strong>变换控件</strong> 的中心处，点击并拖拽鼠标中键，您可以临时地移动该支点。然后您可以像往常一样通过按下空格键来切换各个变换工具。
+</p><p><img alt="AdjustedPivot.png" width="500" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/AdjustedPivot.jpg" />
+</p><p>现在，您可以使用这个新支点来变换该Ator。
+</p><p><img alt="TransformAroundNewPivot.png" width="500" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/TransformAroundNewPivot.jpg" />
+</p><p>您一点击(选择)其他对象，该支点就会跳回到其默认为处。
+</p><h3 id="世界变换模式和局部变换模式">世界变换模式和局部变换模式</h3>
+
+<p>当您使用交互式的变换方法时，您可以选择您执行变换时想使用的参考坐标系统。这意味着您可以在世界空间中沿着世界坐标中变换Actor，或者可以在它自己的局部空间中沿着局部坐标轴变换Actor。这提供了更大的灵活性，而且这几乎是手动设置值所不能做到的；至少在没有事先经过大量复杂的计算的情况下是不能达到的。
+</p><div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="Transform_World.png" width="400" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/Transform_World.jpg" /> </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="Transform_Local.png" width="400" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/Transform_Local.jpg" /> </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p>世界坐标系</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>局部坐标系</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p>默认情况下，虚幻编辑器启动时为世界变换模式。要想切换到局部变换模式，请点击视口右上角部分中工具条上的‘地球’图标。当‘地球’图标变为一个立方体图标时，这表示您现在处于局部变换模式中。
+</p><p><img alt="LE_Trans_CubeIcon.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/LE_Trans_CubeIcon.jpg" />
+</p><p>点击立方体图标可以切换回到世界变换模式。
+</p><h2 id="对齐">对齐</h2>
+
+<p>这三个手动变换工具都可以让其值对齐到特定的增量值。这对于在您的关卡中精确地放置对象是有用的。在UE4中，可以通过4中不同的方式来完成对齐处理：
+</p><ul ><li><p>拖拽网格 
+</p></li><li><p>旋转网格 
+</p></li><li><p>缩放网格
+</p></li><li><p>顶点对齐
+</p></li></ul><h3 id="拖拽网格、旋转网格及缩放网格">拖拽网格、旋转网格及缩放网格</h3>
+
+<div class="imagetable">
+	<table>
+	<caption></caption>
+	<col align="center"/>
+	<col align="center"/>
+	<col align="center"/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p><img alt="DragGrid.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/DragGrid.jpg" /></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="RotationGrid.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/RotationGrid.jpg" /></p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p><img alt="ScaleGrid.png" width="300" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/ScaleGrid.jpg" /></p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="center">
+		<p>拖拽网格</p>
+		</td>
+		<td rowspan="1" colspan="1" align="center">
+		<p>旋转网格</p>
+		</td>
+		<td rowspan="1" colspan="1" align="center">
+		<p>缩放网格</p>
+		</td>
+	
+</tr>
+</tbody>
+</table>
+</div><p><strong>拖拽网格</strong> 允许对齐到场景中的一个三维隐性网格上。<strong>旋转网格</strong> 提供了增量旋转对齐。<strong>Scale Grid（缩放网格）</strong> 强制缩放控件对齐到附加的增量值，但是可以在对齐偏好设置中设置为百分比值。
+</p><p>每个对齐网格可以通过点击视口工具条中的相应图标来激活。当激活时，该图标将会突出显示。每个网格的增量可以通过它们激活按钮右侧的下拉菜单来进行修改。
+</p><h3 id="对齐的偏好设置">对齐的偏好设置</h3>
+
+<p>拖拽网格、旋转网格、缩放网格的设置都可以在编辑器偏好设置中进行设置，同时还可以有其它的几个对齐行为方面的设置。
+</p><p>这些偏好设置可以通过从主工具条中选择 <strong>Edit（编辑） > Editor Preferences（编辑器偏好设置） > Viewports（视口）并滚动到  </strong>Snap（对齐）** 类目来进行访问。
+</p><p><img alt="SnapSettings.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/SnapSettings.jpg" />
+</p><h4 id="用户定义的增量">用户定义的增量</h4>
+
+<p>当使用拖拽网格、旋转网格或缩放网格时，您可能注意到每个工具的下拉菜单包含一列预制增量和一列用户定义的增量：
+</p><p><img alt="UserDefinedIncrementsShown.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/UserDefinedIncrementsShown.jpg" />
+</p><p>要想填充用户定义的列表，您可以使用对齐偏好设置中的数组属性：
+</p><p><img alt="UserDefinedArrays.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/UserDefinedArrays.jpg" />
+</p><ul ><li><p><strong>Grid Sizes（网格大小）</strong> - 存放了用户为平移控件定义的对齐增量。
+</p></li><li><p><strong>Rotation Snap Intervals（旋转度对齐间隔）</strong> - 存放了用户为旋转控件定义的对齐增量。
+</p></li><li><p><strong>Scale Grid Sizes（缩放网格大小）</strong> - 存放了用户为缩放控件定义的对齐增量。
+</p></li></ul><h3 id="顶点对齐">顶点对齐</h3>
+
+<p>偶尔，您可能想使用一个网格物体的多边形顶点将某个对象对齐到另一个对象上。这个通过在使用平移控件时简单地按下  <strong>V 键</strong> 来完成。当按下 <strong>V</strong> 键时，一旦您开始移动一个对象，那么您会注意到所有可用的多边形都会突出显示：
+</p><p><img alt="VertexSnapping.png" width="500" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/VertexSnapping.jpg" />
+</p><p>当同支点调整结合使用时，这是非常有用的，因为您可以直接将支点对齐到一个顶点上，然后使用它作为一种对齐到另一个对象的顶点上的方法。在下面的图片中，我们展示了我们如何使用这个方法精确地对齐两段管道。
+</p><p><img alt="VertexSnappedPivot.png" width="500" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/VertexSnappedPivot.jpg" />
+</p><div class="caption">
+	<p>通过使用 V+鼠标中键，我们可以将该对象的支点对齐到一个现有顶点上。
+</p>
+</div><p>一旦该支点移动了，我们可以使用新的支点位置来将该对象对齐到另一个网格物体的相应顶点上。
+</p><p><img alt="VertexSnappingObjects.png" width="500" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/VertexSnappingObjects.jpg" />
+</p><div class="caption">
+	<p>通过在拖拽过程中使用V键，我们可以将该对象对齐到另一个网格物体的适当顶点上。
+</p>
+</div><p>通过重复这个过程，我们就可以很好地放置网格物体。这个技术对于通道、墙壁、门或者需要相对于另一个网格物体或对象进行精确放置的物体是有用的。
+</p><p><img alt="snappedMeshes.png" width="500" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Actors/Transform/snappedMeshes.jpg" />
+</p>
+						
+						<!-- End of Markdown converted page content -->
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Actors/Transform/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:07:39 GMT -->
+</html>

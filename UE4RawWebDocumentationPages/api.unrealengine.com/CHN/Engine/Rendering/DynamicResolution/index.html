@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/DynamicResolution/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:43 GMT -->
+<head>
+    <title>动态分辨率 | Unreal Engine</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/udn_public_CN.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery-ui-1.10.3.custom.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/udn_extras.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.qtip.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.fancybox.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/jquery.qtip.css" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/prettify.js" type="text/javascript"></script>
+    <!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/prettify.css" /> 
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/ytv.css" type="text/css" rel="stylesheet" />	
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/navBar.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/ytv.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.slimscroll.js" type="text/javascript"></script>
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/twentytwenty.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.event.move.js" type="text/javascript"></script>
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/jquery.twentytwenty.js" type="text/javascript"></script>
+
+    <link rel="icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/site_icon.png" type="image/x-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon.png" rel="apple-touch-icon" />
+    <link href="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/touch_icon_114.png" sizes="114x114" rel="apple-touch-icon" />
+    
+	<!-- Navigation Bar scripts -->
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/CollapsibleLists.js" type="text/javascript"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBarUI.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/navigationBar.js"></script>
+	<script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/history.js" type="text/javascript"></script>
+	<link href="../../../../../external.html?link=https://api.unrealengine.com/Include/CSS/rrssb.css" type="text/css" rel="stylesheet" />
+    <script src="../../../../../external.html?link=https://api.unrealengine.com/Include/Javascript/rrssb.js" type="text/javascript"></script>
+	<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/INT/Engine/Rendering/DynamicResolution/index.html" hreflang="x-default" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/KOR/Engine/Rendering/DynamicResolution/index.html" hreflang="ko" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/JPN/Engine/Rendering/DynamicResolution/index.html" hreflang="ja" />
+<link rel="alternate" href="../../../../../docs.unrealengine.com/latest/CHN/Engine/Rendering/DynamicResolution/index.html" hreflang="zh-CN" />
+
+	<meta name="intsourcechangelist" content="4684265" />
+<meta name="availability" content="Public" />
+<meta name="title" content="动态分辨率" />
+<meta name="description" content="虚幻引擎4中使用的动态分辨率系统的概述。" />
+<meta name="type" content="" />
+<meta name="version" content="4.19" />
+<meta name="parent" content="" />
+<meta name="order" content="" />
+<meta name="tags" content="Rendering, Graphics" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:title" content="动态分辨率" />
+	<meta property="og:description" content="虚幻引擎4中使用的动态分辨率系统的概述。" />
+	
+</head>
+<body id="webbgThree">
+
+	<script>window.__tracking_base = '../../../../../tracking.unrealengine.com/index.html';</script>
+	<script src="../../../../../external.html?link=https://tracking.unrealengine.com/tracking.js" async></script>
+    <div id="crumbs_bg"></div>
+    <div id="webThree">
+        <div id="head">
+            <div style="height:50px;">
+                <header data-path="" id="header">
+                    <input type="hidden" value="en_US" id="current_locale" />
+                    <nav class="main-menu">
+                        <div class="menu-mobile">
+                            <a href="../../../../../external.html?link=https://www.unrealengine.com:443/blog" class="menu-mobile-icon"> </a>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+        </div>
+        <!-- end head -->
+		<div id="navWrapper">
+			<nav id="navPanel"></nav>
+			<div id="navigation" title="Click to toggle navigation menu">Navigation</div>
+		</div>
+		<div id="contentContainer">
+			<div id="pagedefault">
+				<div id="pagecontainer">
+					<div id="pagenav">
+						<!-- Buttons start here. Copy this ul to your document. -->
+							<div class="rrssb-buttons-mobile">
+							<!-- Start of Other language links -->
+							<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+							<!-- End of Other language links -->
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-label">Share:</li>
+							</ul>
+							</div>
+						<!-- Buttons end here -->
+					<div class="videonav">
+    <div class="navigation">
+            <div class="button back" style="display:inline-block;"><a id="parent_link" href="../index.html">图形和渲染</a></div>
+
+            </div>
+</div>
+					</div>
+					<div id="maincol"><div id="sideinfo">
+							<div class="widget" style="overflow: hidden; padding: 0px;">
+                        <!-- Start of Search -->
+								 <div class="search_container">
+                            <form method="get" action="../../../../../external.html?link=https://www.unrealengine.com/bing-search">
+								<input type="image" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/search_box_icon.png" class="searchbutton" />
+								<input type="hidden" name="filter" value="Documentation" />
+								<input type="text" name="keyword" placeholder="Search Documentation..." class="searchbox" />
+							</form>
+                        </div>
+                        <!-- End of Search -->
+								<!-- Start of Other language links -->
+								<div style="display: inline-block; font-weight: bold; font-size: 1.125em; padding: 6px 0px 0px;">Language:</div>
+								<div class="localized_links"><select onchange="changeLanguage(this.value);" style="margin: 8px 0px 0px; font-size: 1.25em; padding: 2px; height: 30px;">
+    <option value="INT">English</option>
+<option value="KOR">한국어</option>
+<option value="JPN">日本語</option>
+<option value="CHN" selected>中国</option>
+
+</select>
+</div>
+								<!-- End of Other language links -->
+							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Page Info
+								</div>
+																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Tags:
+									</div>
+									<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index03b4.html">Rendering, Graphics</a></div>
+
+								</div>
+																																<div>
+									<div style="font-weight:bold;display:inline-block;">
+										Engine Version:
+									</div>
+									<div class="version_tag_filter 4_19"><a id="version_link" href="../../../SiteIndex/index1112.html">Unreal Engine 4.19</a></div>
+
+								</div>
+																							</div>
+														<div class="widget">
+								<div class="widget_heading">
+								Discover
+								</div>
+								<div style="font-weight:bold;">
+								By Skill Level
+								</div>
+								<div class="skill_tag_filter Beginner"><a id="skill_link" href="../../../SiteIndex/index3207.html">Beginner</a></div>
+<div class="skill_tag_filter Intermediate"><a id="skill_link" href="../../../SiteIndex/indexf37e.html">Intermediate</a></div>
+<div class="skill_tag_filter Advanced"><a id="skill_link" href="../../../SiteIndex/index3e0d.html">Advanced</a></div>
+
+								<div style="font-weight:bold;">
+								By Category
+								</div>
+								<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index9785.html">AR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index48b5.html">Blueprints</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexf6a1.html">Materials</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5d12.html">VR</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index8c05.html">UI</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index0e30.html">Animation</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexd55d.html">Sequencer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3dea.html">Mobile</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index989b.html">UMG</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index3d3d.html">UMG UI Designer</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/indexdbe5.html">Android</a></div>
+<div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index5dcd.html">Particles</a></div>
+
+							</div>
+							<!--<div class="widget">
+								<div class="widget_heading">
+								Feedback
+								</div>
+								<div style="font-size:1.25em">Was this page helpful?</div>
+								<div>
+									<div style="text-align: center; width: 47%; margin: 6px 1% 0px 0px; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">Yes</div>
+									<div style="text-align: center; width: 47%; margin: 6px 0px 0px 1%; padding: 2px 0px; display: inline-block; border: 1px solid rgb(0, 0, 0); border-radius: 6px; font-weight: bold;">No</div>
+								</div>
+							</div>-->
+							<div class="widget">
+								<div class="widget_heading">
+								Share
+								</div>
+						  <!-- Buttons start here. Copy this ul to your document. -->
+						  <div class="rrssb-buttons-inline">
+							<ul class="rrssb-buttons">
+<!---- remove googleplus button for chn page
+							  <li class="rrssb-googleplus">
+								<a title="Google+" href="https://plus.google.com/share" class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/></svg>            </span>
+								</a>
+							  </li>
+---->
+							  <li class="rrssb-linkedin">
+								<a title="LinkedIn" href="../../../../../external.html?link=http://www.linkedin.com/shareArticle?mini=true" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M25.424 15.887v8.447h-4.896v-7.882c0-1.98-.71-3.33-2.48-3.33-1.354 0-2.158.91-2.514 1.802-.13.315-.162.753-.162 1.194v8.216h-4.9s.067-13.35 0-14.73h4.9v2.087c-.01.017-.023.033-.033.05h.032v-.05c.65-1.002 1.812-2.435 4.414-2.435 3.222 0 5.638 2.106 5.638 6.632zM5.348 2.5c-1.676 0-2.772 1.093-2.772 2.54 0 1.42 1.066 2.538 2.717 2.546h.032c1.71 0 2.77-1.132 2.77-2.546C8.056 3.593 7.02 2.5 5.344 2.5h.005zm-2.48 21.834h4.896V9.604H2.867v14.73z"/></svg></span>
+								</a>
+							  </li>
+							  <li class="rrssb-reddit">
+								<a title="reddit" href="../../../../../external.html?link=http://www.reddit.com/submit">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M11.794 15.316c0-1.03-.835-1.895-1.866-1.895-1.03 0-1.893.866-1.893 1.896s.863 1.9 1.9 1.9c1.023-.016 1.865-.916 1.865-1.9zM18.1 13.422c-1.03 0-1.895.864-1.895 1.895 0 1 .9 1.9 1.9 1.865 1.03 0 1.87-.836 1.87-1.865-.006-1.017-.875-1.917-1.875-1.895zM17.527 19.79c-.678.68-1.826 1.007-3.514 1.007h-.03c-1.686 0-2.834-.328-3.51-1.005-.264-.265-.693-.265-.958 0-.264.265-.264.7 0 1 .943.9 2.4 1.4 4.5 1.402.005 0 0 0 0 0 .005 0 0 0 0 0 2.066 0 3.527-.46 4.47-1.402.265-.264.265-.693.002-.958-.267-.334-.688-.334-.988-.043z"
+									  />
+									  <path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237-.792 0-1.517.287-2.08.76-2.04-1.294-4.647-2.068-7.44-2.218l1.484-4.69 4.062.955c.07 1.4 1.3 2.6 2.7 2.555 1.488 0 2.695-1.208 2.695-2.695C25.88 3.2 24.7 2 23.2 2c-1.06 0-1.98.616-2.42 1.508l-4.633-1.09c-.344-.082-.693.117-.803.454l-1.793 5.7C10.55 8.6 7.7 9.4 5.6 10.75c-.594-.45-1.3-.75-2.1-.72-1.785 0-3.237 1.45-3.237 3.2 0 1.1.6 2.1 1.4 2.69-.04.27-.06.55-.06.83 0 2.3 1.3 4.4 3.7 5.9 2.298 1.5 5.3 2.3 8.6 2.325 3.227 0 6.27-.825 8.57-2.325 2.387-1.56 3.7-3.66 3.7-5.917 0-.26-.016-.514-.05-.768.965-.465 1.577-1.565 1.577-2.698zm-4.52-9.912c.74 0 1.3.6 1.3 1.3 0 .738-.6 1.34-1.34 1.34s-1.343-.602-1.343-1.34c.04-.655.596-1.255 1.396-1.3zM1.646 13.3c0-1.038.845-1.882 1.883-1.882.31 0 .6.1.9.21-1.05.867-1.813 1.86-2.26 2.9-.338-.328-.57-.728-.57-1.26zm20.126 8.27c-2.082 1.357-4.863 2.105-7.83 2.105-2.968 0-5.748-.748-7.83-2.105-1.99-1.3-3.087-3-3.087-4.782 0-1.784 1.097-3.484 3.088-4.784 2.08-1.358 4.86-2.106 7.828-2.106 2.967 0 5.7.7 7.8 2.106 1.99 1.3 3.1 3 3.1 4.784C24.86 18.6 23.8 20.3 21.8 21.57zm4.014-6.97c-.432-1.084-1.19-2.095-2.244-2.977.273-.156.59-.245.928-.245 1.036 0 1.9.8 1.9 1.9-.016.522-.27 1.022-.57 1.327z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+<!---- remove twitter/fb button for chn page
+							  <li class="rrssb-twitter">
+								<a title="Twitter" href="https://twitter.com/intent/tweet"
+								class="popup">
+								  <span class="rrssb-icon">
+									<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+									  <path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"
+									  />
+									</svg>
+								  </span>
+								</a>
+							  </li>
+							  <li class="rrssb-facebook">
+								<a title="facebook" href="https://www.facebook.com/sharer/sharer.php" class="popup">
+								  <span class="rrssb-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29"><path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z"/></svg></span>
+								</a>
+							  </li>
+---->
+							</ul>
+						</div>
+						<!-- Buttons end here -->
+							</div>
+						</div>                        
+                        						<!-- Start of H1 -->
+						<h1 id="H1TitleId">动态分辨率</h1>
+						<!-- End of H1 -->
+                        <div style="margin:-20px 0px 30px 0px;">
+							<span id="inline_tags">
+                            
+                            
+                            <div class="version_tag_filter 4_19"><a id="version_link" href="../../../SiteIndex/index1112.html">Unreal Engine 4.19</a></div>
+
+							</span>
+                            
+                        </div>         
+						<!-- Start of Markdown converted page content -->
+						<p><img alt="DynamicRes_FN1.png" title="DynamicRes842352655FN1.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/DynamicRes_FN1.jpg" />
+</p><p><strong>动态分辨率</strong> 可根据先前画面的GPU工作负载调节主要屏幕百分比。分辨率是基于启发法（按需要）调节的，例如，如果在屏幕上有太多Object，或者有成本高昂的效果突然进入画面，GPU渲染时间将会延长，此时为了维持目标帧率就会降低屏幕分辨率。
+</p><a name="enablingdynamicresolution" ></a><h3 id="启用动态分辨率">启用动态分辨率</h3>
+
+<p>你可以使用 <strong>运算模式（Operation Mode）</strong> 为项目启用动态分辨率，设置在游戏中覆盖它和使用它的方式。为了控制这种模式，在项目所对应平台（Xbox One、PlayStation 4等）的平台配置描述（或设备描述）中，你可以使用下列控制台命令：
+</p>
+<pre class="prettyprint"><code>r.DynamicRes.OperationMode</code></pre>
+<p>使用下列数值之一来设置运算模式如何针对项目的平台工作：
+</p><ul ><li><p><strong>1</strong> 是根据游戏用户设置状态（在C++或蓝图中设置）启用动态分辨率。
+</p></li><li><p><strong>2</strong> 是无论游戏用户设置状态如何都启用动态分辨率。
+</p></li></ul><p>启用动态分辨率后，下列控制台变量会设置屏幕百分比的最大值和最小值，以及在降低分辨率之前任何给定帧的最大预算。如果你不设置，这些变量都有默认值：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>控制台变量 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>默认值 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>r.DynamicRes.MinScreenPercentage</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>50</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置要使用的最小屏幕百分比。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>r.DynamicRes.MaxScreenPercentage</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>100</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置用于分配渲染目标的最大主要屏幕百分比。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>r.DynamicRes.FrameTimeBudget</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>33.3</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>设置帧预算（以毫秒为单位）。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><div class="tip">
+	<p>你可以使用UE4中的“设备描述（Device Profiles）”窗口设置和管理配置文件。可以通过“文件（File）”菜单选择 <strong>编辑（Edit）> Developer Tools（开发者工具）> Device Profiles（设备描述）</strong> 来访问此窗口。
+</p>
+</div><a name="pausingandresumingdynamicresolution" ></a><h3 id="暂停和恢复动态分辨率">暂停和恢复动态分辨率</h3>
+
+<p>有时你可能需要为项目启用动态分辨率，但你又不想对主大厅之类的区域启用。动态分辨率可以随运作模式暂停和恢复。下列控制台变量可用于设置动态分辨率的运算模式：
+</p>
+<pre class="prettyprint"><code>r.DynamicRes.OperationMode</code></pre>
+<table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>数值 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>0</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>禁用（默认）</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>根据GameUserSettings中使用的设置启用。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>2</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>无论GameUserSettings中的设置如何都会启用。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>下表概括了当启用或禁用特定运算模式时可用的不同状态，以及GameUserSettings所受的影响：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		
+		</th>
+		<th rowspan="1" colspan="2" >
+		<p>Game User Settings = False </p>
+		</th>
+		<th rowspan="1" colspan="2" >
+		<p>Game User Settings = True</p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><div class="tablesection">
+	
+</div></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><div class="tablesection">
+	<p>暂停</p>
+</div></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><div class="tablesection">
+	<p>不暂停</p>
+</div></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><div class="tablesection">
+	<p>暂停</p>
+</div></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p><div class="tablesection">
+	<p>不暂停</p>
+</div></p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>OperationMode=0</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>否</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>否</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>否</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>否</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>OperationMode=1</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>否</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>否</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>否</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>OperationMode=2</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>否</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>否</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>是</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>在 <strong>C++</strong> 中，你可以使用下列函数控制和检查动态分辨率的状态：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>操作 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>C++函数 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>暂停</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>GEngine->PauseDynamicResolution();</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>恢复</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>GEngine->ResumeDynamicResolution();</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>检查状态（禁用/启用或暂停）</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>GEngine->GetDynamicResolutionStatus();</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><div class="note">
+	<p>此表中用于 <strong>暂停</strong> 和 <strong>恢复</strong> 的C++函数所提供的功能可以通过启用或禁用节点 <strong>将动态分辨率设置为启用（Set Dynamic Resolution Enabled）</strong> 来实现。要检查状态，请使用节点 <strong>已启用动态分辨率（Is Dynamic Resolution Enabled）</strong>。
+</p>
+</div><a name="usingstats" ></a><h2 id="使用统计">使用统计</h2>
+
+<p>你可以启用几个统计屏幕来调试与动态和分辨率有关的性能。可以使用反引号（<strong>`</strong>） 键打开控制台，然后输入下列命令之一来启用它们：
+</p><ul ><li><p><strong>Stat Unit</strong> 用于查看总体帧时间，以及游戏线程、渲染线程和GPU时间。
+</p></li><li><p><strong>Stat UnitGraph</strong> 用于查看使用Stat Unit的数据制作的图。
+</p></li><li><p><strong>Stat Raw</strong> 使用Stat UnitGraph输出未经过滤的数据。
+</p></li></ul><p>(statunit)
+</p><h3 id="statunit">Stat Unit</h3>
+
+<p>调用 <strong>Stat Unit</strong> 时，你可以通过参考 <strong>DynRes</strong> 行来即时了解你的场景是否启用了动态分辨率。
+</p><p><img alt="DynResOFF.png" title="DynResOFF.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/DynResOFF.jpg" />
+</p><p>如果已启用，<strong>DynRes</strong> 标签将会显示 <a id="content_link" href="../ScreenPercentage/index.html#primaryscreenpercentage" ><span>主要屏幕百分比</span></a>
+ 和 <a id="content_link" href="../ScreenPercentage/index.html#secondaryspatialupscale" ><span>次要屏幕百分比</span></a>
+ ：
+</p><p><img alt="DynResON.png" title="DynResON.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/DynResON.jpg" />
+</p><p>此处显示X轴和Y轴的主要屏幕百分比，以免你忘记它是在两条轴上缩放的。GPU绘制的像素数实际上与 <strong>屏幕百分比x屏幕百分比</strong> 成正比。
+</p><p>例如1920x1080或1280x720。
+</p><a name="statunitgraphandstatraw" ></a><h3 id="statunitgraph和statraw">Stat UnitGraph和Stat Raw</h3>
+
+<p>如果调用 <strong>Stat UnitGraph</strong>，将会绘制一张图来显示动态分辨率功能选择的<a id="content_link" href="../ScreenPercentage/index.html#primaryscreenpercentage" ><span>主要屏幕百分比</span></a>
+。
+</p><p><img alt="StatUnitGraph.png" title="StatUnitGraph.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/StatUnitGraph.jpg" />
+</p><ol ><li><p>时间（过滤后的时间或原始时间）
+</p></li><li><p>目标帧时阈值
+</p></li><li><p>动态分辨率最大屏幕百分比
+</p></li><li><p>动态主要屏幕百分比曲线
+</p></li></ol><p>UnitGraph可以显示动态分辨率功能选择的主要屏幕百分比。但是，该曲线也与GPU使用屏幕百分比x屏幕百分比绘制的像素数成正比。
+</p><p>此外，你可以使用 <strong>Stat Raw</strong> 在经过滤和未过滤数据之间切换，获取UnitGraph中未经过滤（原始）的时间。该图的时间标签将会发生变化，以表明其显示的是原始时间。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/RawTimings.png" ><span><img alt="RawTimings.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/RawTimings.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p>原始时间
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/FilteredTimings.png" ><span><img alt="FilteredTimings.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/FilteredTimings.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><p>过滤后的时间
+</p><div class="note">
+	<p>使用控制台窗口在过滤后和未过滤的时间之间切换。要切换 <strong>Stat Raw</strong>，必须先输入 <strong>Stat UnitGraph</strong>。
+</p>
+</div><a name="dynamicresolutioncruising" ></a><h2 id="动态分辨率巡航">动态分辨率巡航</h2>
+
+<p>在UE4中，动态分辨率功能的实现与以前其他引擎中同类功能有所不同，因为我们允许分辨率根据需要在一个给定的范围内变化，而不是限制为单一的分辨率（1080p、900p、720p）。在这张示例图中，此模型演示了控制台变量所控制的对象。它演示了当一切都运行顺利、没有超过给定帧的预算时，动态分辨率是如何在给定范围（3）中自动调节的。可以把这个范围想象为飞机的巡航高度，飞机在这一高度范围可以自由机动，以实现到达目的地的理想速度。和飞机一样，分辨率也可以根据需要上下调节，从而在分辨率和充足的性能之间保持良好的平衡。
+</p><div class="note">
+	<p>这个模型是用于演示的，没有考虑在给定场景中发生的所有情况。例如，它没有体现GPU不与CPU同步会是什么情况，甚至也没有体现启发法正确估算出分辨率应该变化多少的情况。它的目的是清晰地演示“理想”情况，从而展现动态分辨率控制态变量的运算方式。
+</p>
+</div><p><img alt="FrameGPUGraph.png" title="FrameGPUGraph.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/FrameGPUGraph.jpg" />
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>参考号 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>控制台变量 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>1</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>r.DynamicRes.FrameTimeBudget</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>以毫秒（ms）计的帧时间预算。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>2</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>r.DynamicRes.TargetedGPUHeadRoom</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在超出预算前可供GPU增加的余量（按帧预算的百分比计）。这很可能要取决于发布平台或根据启用的渲染功能而定。例如，动态模糊需要另外留出成本余量用于摄像机的快速旋转运动。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>3</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>r.DynamicRes.ChangePercentageThreshold</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>为了实际调整分配大小，在屏幕百分比中需要的最小变化。如果不想经常在非常相近的分辨率大小之间变换，可以利用此变量。如果它的数值过小，分辨率最终可能还是会经常改变，而如果它过大，可能会增加超出GPU预算的风险。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>4</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>r.DynamicRes.MinResolutionChangePeriod</p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>在允许进行任何分辨率更改之前，必须达到的最小帧数。此命令有多种用途。这包括提高启发法在给定主要屏幕百分比下排除测量噪点模拟GPU消耗的可靠性，避免可能在逐帧偏移抖动之间发生的<a id="content_link" href="../ScreenPercentage/index.html#temporalanti-aliasingupsample" ><span>时空放大取样</span></a>
+的输入样本偏移干扰，以及更改可能造成抗锯齿发散的分辨率。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>如果你的瓶颈是在CPU而非GPU，还可以使用下列控制台变量调节用于动态分辨率的启发法历史记录和要使用的屏幕百分比：
+</p><table>
+	<caption></caption>
+	<col align=""/>
+	<col align=""/>
+	<thead>
+		<tr>
+	<th rowspan="1" colspan="1" >
+		<p>控制台变量 </p>
+		</th>
+		<th rowspan="1" colspan="1" >
+		<p>描述 </p>
+		</th>
+	
+</tr>
+	</thead>
+<tbody>
+<tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>r.DynamicRes.HistorySize</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>启发法帧历史记录中的帧数。如果历史记录过短，可能包含过多噪点，影响可靠性；而如果历史记录过长，调节延迟可能会非常严重。</p>
+		</td>
+	
+</tr><tr>
+	<td rowspan="1" colspan="1" align="">
+		<p><strong>r.DynamicRes.CPUBoundScreenPercentage</strong></p>
+		</td>
+		<td rowspan="1" colspan="1" align="">
+		<p>当你遇到CPU瓶颈时应该瞄准的主要屏幕百分比。如果平台上的CPU和GPU共享相同的内存带宽，可以用它设置较低的屏幕百分比来降低分辨率。</p>
+		</td>
+	
+</tr>
+</tbody>
+</table><p>(overbudgetpanic)
+</p><h3 id="超预算应急">超预算应急</h3>
+
+<p>如果你发现动态分辨率会非常迅速地超出预算，例如在镜头切换时或者成本高昂的视觉效果出现时，那就说明使用的启发法实际上无法预测这种情况何时会发生。在这类情况确实发生时，可以使用某种“应急”按钮快速降低分辨率，从而减少超出预算的帧数。如果启发法发现有N（一定数量）个连续帧的可用GPU时间超出预算，它将会立即调整分辨率来应对这些超预算时间。它还会自动执行历史记录重置，使得先前成本较低的帧时间不会影响启发法对成本较高的帧的判断。
+</p><p>请使用下列控制台命令来控制在启用“应急”开关降低分辨率之前可以出现的超GPU预算的连续帧数：<br /></p>
+<pre class="prettyprint"><code>r.DynamicRes.MaxConsecutiveOverbudgetGPUFrameCount</code></pre>
+<p>在此图中，画面中突然发生跳跃，因此有两个以上的连续帧超过了设定的33.3毫秒的预算。系统激活了应急开关来快速降低分辨率，使得后续帧不再超出预算。
+</p><p><img alt="OverBudgetPanicGraph.png" title="OverBudgetPanicGraph.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/OverBudgetPanicGraph.jpg" />
+</p><ol ><li><p>超出预算的最大连续GPU帧数。
+</p></li><li><p>从检测到GPU导致分辨率变化为止未与渲染线程同步的帧延迟。 
+</p></li><li><p>发生紧急情况检测，引发帧率下降。
+</p></li><li><p>一定数量的帧发生分辨率更改。
+</p></li></ol><p>在下列截图（取自Epic Games Launcher的 <strong>学习（Learn）</strong> 选项卡中提供的Infiltrator演示）中，使用了 <strong>Stat Raw</strong> 命令明确标识当发生镜头切换或者屏幕上出现高成本的视觉效果时的场景行为：
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/OverBudgetPanicExample.png" ><span><img alt="OverBudgetPanicExample.png" title="OverBudgetPanicExample.png" width="500" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/OverBudgetPanicExample.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p>单击查看大图。
+</p>
+</div><ol ><li><p>在镜头切换之后，画面的渲染成本显著提高，至少有若干帧是如此。 
+</p></li><li><p>动态分辨率有应急反应能力，可以快速降低分辨率进行补偿，然后再慢慢将分辨率提高到正常水平。
+</p></li></ol><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/ViewportSPValue.png" ><span><img alt="ViewportSPValue.png" title="ViewportSPValue.png" width="500" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/ViewportSPValue.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p>单击查看大图。
+</p>
+</div><ol ><li><p>发生了渲染成本较高的视觉效果，导致相当数量的帧超出分配的帧预算。 
+</p></li><li><p>动态分辨率迅速作出反应，降低了分辨率，然后又缓慢将分辨率提高到正常水平。
+</p></li></ol><a name="testingcontentwithdifferentprimaryscreenpercentages" ></a><h2 id="测试使用不同的主要屏幕百分比的内容">测试使用不同的主要屏幕百分比的内容</h2>
+
+<p>如果你的项目启用了动态分辨率，你需要对它进行测试，确保在使用降低的主要屏幕百分比时图像与预期差异不大。在分辨率降低时，有些细节可能会丢失，你的资源可能不会保持你所希望的外观。正因如此，所有的编辑器视口都可以使用滑块设置屏幕百分比以便测试。
+</p><div class="lightbox">
+	<p><span class="non-localized"><a id="content_link" href="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/ScreenPercentageViewportSlider.png" ><span><img alt="ScreenPercentageViewportSlider.png" title="ScreenPercentageViewportSlider.png" width="200" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/ScreenPercentageViewportSlider.jpg" /><img class="languageinline" src="../../../../../external.html?link=https://api.unrealengine.com/Include/Images/INT_flag.jpg" /></span></a>
+</span>
+</p>
+</div><div class="caption">
+	<p>单击查看大图。
+</p>
+</div><p>使用滑块对视口应用更高或更低的屏幕百分比，然后相应检查关卡内容。特别是美工，应该使用该滑块在将用于项目的高低范围屏幕百分比下检查他们的内容。
+</p><!--
+before:param
+after:param
+position:paramliteral
+-->
+<div class="comparison_slider">
+    <div class="first">
+        <p><img alt="编辑器屏幕百分比：| 100（默认）" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/ScreenPercentage100.jpg" /></p>
+        <div class="overlay-first "></div>
+    </div>
+    <div class="last">
+        <p><img alt="编辑器屏幕百分比：| 50" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/ScreenPercentage50.jpg" /></p>
+        <div class="overlay-last "></div>
+    </div>
+</div><p>在调节屏幕百分比滑块时，视口（右下）将显示所有高于100的屏幕百分比值。这样设计的目的是提醒用户视口屏幕百分比值已经更改为非默认值，因为使用了高于正常水平的分辨率，可能导致性能问题。
+</p><p><img alt="Editor_ScreenPercentageIndicator.png" title="Editor842352655ScreenPercentageIndicator.png" src="../../../../../external.html?link=https://api.unrealengine.com/images/Engine/Rendering/DynamicResolution/Editor_ScreenPercentageIndicator.jpg" />
+</p><div class="warning">
+	<p>高于默认值的屏幕百分比值可能造成编辑器的响应迟缓或性能下降。如果发生这种情况，可尝试将该数值设置为默认值100。
+</p>
+</div><a name="supportedplatforms" ></a><h2 id="支持的平台">支持的平台</h2>
+
+<p>目前，Xbox One、PlayStation 4（不含PSVR）、Nintendo Switch和Oculus VR都支持动态分辨率。计划在今后的引擎版本中提供其他平台支持。
+</p><div class="warning">
+	<p>针对不在白名单中的平台启用动态分辨率支持是很危险的，可能造成意外后果。这类后果包括GPU时间错误，这可能使分辨率不必要地下降，或者分辨率提高过多，发生丢帧。这最终可能毁掉Gameplay体验。默认情况下，引擎不允许你使用不在白名单中的平台。
+</p>
+</div><a name="replacingdynamicresolutionheuristicinc++" ></a><h2 id="在c++中替换动态分辨率启发法">在C++中替换动态分辨率启发法</h2>
+
+<p>引擎提供的渲染线程启发法完整地自包含在 <strong>DynamicResolution.cpp</strong> 中。它的架构设置使你可以在游戏代码中用插件将启发法完全替换掉。
+</p><p>例如，如果你希望Gameplay代码提示后续帧将发生的情况，因而需要在项目中替换掉默认启发法，可以重写整套启发法来达成这一目的。通过实现<code >IDynamicResolutionState</code>和<code >ISceneViewFamilyScreenPercentage</code>，你可以替换默认的动态分辨率状态，如下例所示：<br /></p>
+<pre class="prettyprint"><code>GEngine-&gt;ChangeDynamicResolutionStateNextFrame(new FMyGameSpecificDynamicResolutionState());</code></pre>
+<div class="note">
+	<p>此时渲染器将使用 <strong>ResolutionFraction</strong> 来避免在屏幕百分比计算中每次都除以100。它的名称是 <strong>fraction（分数）</strong> 而不是“scale（比例）”，这是因为放大比例的操作是由TAA放大取样完成的，或者空间放大比例实际是由1除以分辨率分数来表示的，就像这样：
+</p>
+<pre class="prettyprint"><code>分辨率分数 = 屏幕百分比/100 = 1/放大系数</code></pre>
+
+</div><a name="limitations" ></a><h2 id="局限性">局限性</h2>
+
+<p>以下是动态分辨率在当前的一些局限性：<br /></p><ul ><li><p>它的设计不支持配合多场景的“在编辑器中运行”功能使用。
+</p></li><li><p>如果启用了TAAU，它将会与VR一起工作。多重取样抗锯齿（MSAA）支持将在今后的发行版中提供。 
+</p></li><li><p>API与移动渲染器完全兼容。但是，我们还没有采取措施使视图大小保持不等于主要屏幕百分比上限所设置的渲染目标缓冲区大小。 
+</p></li><li><p>高斯景深（DoF）和<a id="content_link" href="../LightingAndShadows/DistanceFieldAmbientOcclusion/index.html" ><span>距离场环境光遮蔽</span></a>
+（DFAO）在分辨率更改时会有问题。
+</p></li></ul><a name="frequentlyaskedquestions" ></a><h2 id="常见问题及解答">常见问题及解答</h2>
+
+<p>下面是关于动态分辨率的一些常见问题： 
+</p><p><strong>可以替换用于动态分辨率的启发法吗？</strong>
+</p><p>可以，它采用了模块化设计，可以在C++中插入。虚幻引擎4不仅保有一种启发法，而且它的架构允许创建独立的自定义启发法，后者可具备能够由Gameplay代码或Sequencer触发的自定义游戏线程事件。
+</p><p><strong>动态分辨率可以使用任意的次要屏幕百分比吗？</strong>
+</p><p>是的。可以使用控制台变量 <strong>r.SecondaryScreenPercentage.GameViewport.</strong> 来实现这一点
+</p><div class="note">
+	<p>有关更多信息，请参见<a id="content_link" href="../ScreenPercentage/index.html" ><span>屏幕百分比与时空放大取样</span><span class="newlink">NEW!</span></a>
+页面。
+</p>
+</div><p><strong>可以控制次要屏幕百分比的动态分辨率吗？</strong><br /></p><p>这是不可能的，它的设计就是这样。你不会希望更改时空抗锯齿历史记录的大小，这就是为什么你不需要动态地更改次要屏幕百分比。<br /></p><p><strong>为什么动态分辨率忽略了FPostProcessSettings中用于ScreenPercentage的函数？</strong><br /></p><p>这是先前的机制的一部分，在这种机制下，可以在设置中将后期处理体积的屏幕百分比配置为手动调高或调低。如果使用动态分辨率，就再也不需要设置了，因为它会根据GPU工作负载自动处理。
+</p><p><strong>为什么在编辑器中动态分辨率没有可选的显示标志？</strong>
+</p><p>因为它是全局发生的，由游戏线程来判断。屏幕百分比显示标志只会切换<a id="content_link" href="../ScreenPercentage/index.html#primaryscreenpercentage" ><span>主要屏幕百分比</span></a>
+的显示。
+</p><p><strong>为什么在编辑器视口中不支持动态分辨率？</strong>
+</p><p>当前仅对Xbox One、PlayStation 4和Nintendo Switch支持动态分辨率，它们不使用PIE。等到它在平台上提供的时候（Vulkan，D3D12），你就可以在编辑器中将它与PIE配合使用了。
+</p><p><strong>可以在材质中访问主要和次要屏幕百分比吗？</strong><br /></p><p>不可以。材质的渲染应该独立于分辨率。
+</p>
+						
+						<!-- End of Markdown converted page content -->
+												<div class="section" id="bottom_tags">
+						<div class="normaltitle">Tags</div>
+                        <div class="keyword_tag_filter"><a id="tag_link" href="../../../SiteIndex/index03b4.html">Rendering, Graphics</a></div>
+
+						</div>
+						                        
+					</div>
+					<div class="bottomlinks">
+						<a href="../../../SiteIndex/index.html">完整内容索引</a>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+            <div id="brand">
+
+            </div>
+            <div id="legal">
+                <div id="copyright">
+                    © 2004-2017, Epic Games, Inc. 版权所有。Unreal 及相关的商标是 Epic 在美国和其他国家的注册商标。
+                </div>
+                <div id="terms">
+                    <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/tou">使用条款</a> | <a target="_blank" href="../../../../../external.html?link=http://epicgames.com/privacynotice">隐私政策</a>
+                </div>
+            </div>
+        </div>
+		</div>
+	</div>
+</body>
+
+<!-- Mirrored from api.unrealengine.com/CHN/Engine/Rendering/DynamicResolution/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 23 Feb 2019 01:09:43 GMT -->
+</html>
